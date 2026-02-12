@@ -3,8 +3,8 @@
 ```zsh
 info:info
 administrator
-discovery:Start123!
-Angela.Davies # tier zero
+discovery:Start123! # MAINTENANCEと同じグループに所属
+Angela.Davies # tier zero # Administratorsグループ
 Annette.Buckley
 Anthony.Anderson
 Catherine.Knight
@@ -18,7 +18,7 @@ Grace.Lees
 Irene.Dean
 Julian.Davies
 Lynne.Tyler
-Molly.Edwards # tier zero
+Molly.Edwards # tier zero # rdpグループ
 Rachel.Jones
 Sian.Gordon
 Tracy.Wood
