@@ -36,6 +36,8 @@ discovery@hokkaido-aerospace.com
 ```
 - 一般的でないユーザーは、"info"と"discovery"
 
+- kerbruteのpasswordsprayで、info:infoであることを確認
+![[Pasted image 20260212100440.png]]
 
 ---
 
