@@ -369,21 +369,6 @@ sudo nano /etc/fstab
 
 ---
 
-## Xfreerdpがうまく接続できない
-
-- mtuを下げる（デフォルト1,500）
-```zsh
-sudo ifconfig tun0 mtu 1200
-```
-
-- 環境変数ではなく、IPアドレス直指定する
-	- 確信なし
-```zsh
-⭕️xfreerdp3 /v:192.168....
-❌xfreerdp3 /v:$TargetIP
-```
-
----
 
 # 便利機能
 
