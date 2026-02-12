@@ -60,6 +60,12 @@ id   name               password
  0   b'hrapp-service'   b'Untimed$Runny'   
 ```
 
+- HRAPP-SERVICEは、HAZEL.GREENに対してGenericWriteをもっている
+
+![[Pasted image 20260212144519.png]]
+
+- 
+
 ---
 
 # Screenshot
