@@ -48,7 +48,7 @@ swaks --to jim@relia.com --from maildmz@relia.com --attach @config.library-ms --
 
 17. MICHELLEをBloodHoundで確認すると、INTRANETRDPというグループに所属していたため、VM15(INTRANET)へRDP接続
 
-18. INTRANETでサービスとして実行されているexeにDLL hijackが可能そうであることがわかったため、WINPREPマシンに持っていき、サービスとして実行した上でProcmonで確認し、DLLを特定→権限昇格し、intranet\administratorを侵害
+18. INTRANETでサービスとして実行されているexeにDLL hijackが可能そうであることがわかったため、WINPREPマシンに持っていき、**サービスとして実行したうえで**Procmonで確認し、DLLを特定→権限昇格し、intranet\administratorを侵害
 	- MySQLでデータベースからadminのパスワードハッシュを入手して、2時間かかるのにクラック試行していた→==クラックに5分以上かかるときは別の攻撃ベクターを探索==
 	- ProcmonでDLLのローディングを確認するときは==実環境を真似てから実行すること==
 
@@ -80,6 +80,7 @@ User sarah may run the following commands on backup:
 ```zsh
 ./pspy64 -p -i 1000
 ```
+- パスフレーズを求められるスクリプトが、他ユーザーによって実行されてそうなら、
 
 24. 入手したパスフレーズを用いて、borgのバックアップの中身を確認したところ、amyのパスワードハッシュとandrewのパスワードを入手できた
 ```zsh
