@@ -375,6 +375,8 @@ smbclient //$TargetIP/[share] -U <username>%<password>
 smb: > put [local] [remote]
 ```
 
+## Misc
+
 | 攻撃手法          | Tool                  | Command例                                        |
 | ------------- | --------------------- | ----------------------------------------------- |
 | Pass-the-Hash | NetExec               | `netexec smb $TargetIP -u <username> -H [NTLM]` |
