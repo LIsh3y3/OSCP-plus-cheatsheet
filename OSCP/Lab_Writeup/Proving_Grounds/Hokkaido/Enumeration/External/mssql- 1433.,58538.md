@@ -64,7 +64,8 @@ id   name               password
 
 ![[Pasted image 20260212144519.png]]
 
-- 
+- Hazelが所属しているTIER2-ADMINSは、MOLLYに対してForceChangePasswordを持っている
+![[Pasted image 20260212151845.png]]
 
 ---
 
