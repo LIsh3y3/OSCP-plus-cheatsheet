@@ -9,6 +9,10 @@ PORT   STATE SERVICE REASON  VERSION
 
 # Enumeration
 
+- kerbruteでユーザー列挙
+```sh
+
+```
 
 ---
 
