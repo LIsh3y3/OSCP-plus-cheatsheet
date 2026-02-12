@@ -8,7 +8,7 @@
 
 4. 権限昇格したWEB02上でpowerview.ps1を使い、ADユーザーを明らかにした
 
-5. 管理者権限をもったWEB02錠でmimikatzを実施し、joeのNT hashを抽出し、解析した
+5. 管理者権限をもったWEB02上でmimikatzを実施し、joeのNT hashを抽出し、解析した
 
 6. joeの認証情報でNetExecでpassword sprayをしたところ、FILES02で管理者権限を持つことを確認し、winrmでログインした
 
