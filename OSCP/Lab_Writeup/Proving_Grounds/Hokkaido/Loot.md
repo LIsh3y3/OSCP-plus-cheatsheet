@@ -3,6 +3,7 @@
 ```zsh
 info@hokkaido-aerospace.com
 administrator@hokkaido-aerospace.com
+discovery@hokkaido-aerospace.com
 
 ```
 

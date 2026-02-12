@@ -30,9 +30,12 @@ Version: v1.0.3 (9dad6e1) - 02/12/26 - Ronnie Flathers @ropnop
 2026/02/12 09:52:55 >  [+] VALID USERNAME:       administrator@hokkaido-aerospace.com
 2026/02/12 09:53:12 >  [+] VALID USERNAME:       INFO@hokkaido-aerospace.com
 2026/02/12 09:54:53 >  [+] VALID USERNAME:       Info@hokkaido-aerospace.com
+discovery@hokkaido-aerospace.com
 
 
 ```
+- 一般的でないユーザーは、"info"と"discovery"
+
 
 ---
 
