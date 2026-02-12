@@ -71,6 +71,7 @@ SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_princ
 - ↓別のユーザーに成りすましてアクセス権を取得できる
 ```sql
 EXECUTE AS LOGIN = '<impersonate_username>';
+-- 成否確認：SELECT suser_name();
 ```
 
 全ユーザー列挙
