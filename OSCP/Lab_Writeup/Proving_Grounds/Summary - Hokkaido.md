@@ -1,0 +1,1 @@
+kerbruteで入手したユーザー名にパスワードブルートフォースをして有効なアカウントを発見。SMBを列挙して他ユーザーの認証情報を入手し、MSSQLにログイン。MSSQLでIMPERSONATEしてテーブルを列挙し、さらに他ユーザーの認証情報を入手。BloodHound でGenericWriteやForceChangePassword をエクスプロイトし横移動していき、SeBackup
