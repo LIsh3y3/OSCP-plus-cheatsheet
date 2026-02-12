@@ -1,6 +1,8 @@
 # Credentials
 
 ```zsh
+info@hokkaido-aerospace.com
+administrator@hokkaido-aerospace.com
 
 ```
 
