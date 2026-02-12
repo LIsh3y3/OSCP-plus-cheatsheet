@@ -18,7 +18,7 @@ Grace.Lees
 Irene.Dean
 Julian.Davies
 Lynne.Tyler
-Molly.Edwards # tier zero # rdpグループ
+Molly.Edwards
 Rachel.Jones
 Sian.Gordon
 Tracy.Wood
@@ -26,6 +26,7 @@ Victor.Kelly
 MAINTENANCE # tier zero
 hrapp-service:Untimed$Runny
 HAZEL.GREEN:haze1988
+Molly.Smith
 Hannah.O'Neill
 ```
 
