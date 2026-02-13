@@ -168,6 +168,7 @@ Finished
 
 ## filemanager
 
+- RESPONSIVE filemanager v9.13.4
 
 
 ---
@@ -189,3 +190,6 @@ Finished
 
 - filemanager
 ![[Pasted image 20260213121412.png]]
+
+- filemanager version
+![[Pasted image 20260213125019.png]]
