@@ -154,13 +154,16 @@ Finished
 - ログインページあり
 - 💡OpenEMR自体には大量の脆弱性がある
 - デフォルトの認証情報 "admin:pass" ではログイン失敗
+	- Invalid username or password
 - OpenEMRの認証情報は、ケースセンシティブ
 
 ## sourece
 
 
-## thums
+## thums -> nothing
 
+- サムネイル用のフォルダとのこと
+- "thums.txt"をダウンロードし、`exiftool -a -u thums.txt`としても、有用な情報はない
 
 ## filemanager
 
