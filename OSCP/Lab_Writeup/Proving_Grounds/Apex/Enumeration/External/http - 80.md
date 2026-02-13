@@ -192,4 +192,4 @@ Finished
 ![[Pasted image 20260213121412.png]]
 
 - filemanager version
-![[Pasted image 20260213125019.png]]
+![[Pasted image 20260213125045.png]]
