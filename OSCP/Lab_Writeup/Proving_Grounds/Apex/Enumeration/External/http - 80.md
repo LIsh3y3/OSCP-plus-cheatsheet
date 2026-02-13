@@ -157,11 +157,9 @@ Finished
 	- Invalid username or password
 - OpenEMRの認証情報は、ケースセンシティブ
 
-## source
+## source -> nothing
 
-## Documents -> nothing
-
-- pdfファイルがあったが、公式ドキュメントのようで、`exiftool`しても特に何も情報なし
+- 中にDocumentsとIMagesフォルダがあり、Documentsフォルダにpdfファイルがあったが、公式ドキュメントのようで、`exiftool`しても特に何も情報なし
 
 ## thums -> nothing
 
