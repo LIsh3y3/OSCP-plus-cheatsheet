@@ -70,21 +70,17 @@ drwxr-xr-x 102 root root 4096 May 27  2021 ..
 -rw-r--r--   1 root root  102 Nov 16  2017 .placeholder
 -rw-r--r--   1 root root  589 Mar  7  2018 mdadm
 
+# ポート22（おそらくSSH）が動作
+╔══════════╣ Active Ports
+╚ https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#open-ports                                                                    
+══╣ Active Ports (netstat)                                                    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN    
 
-# rootによって実行されているapacheのファイルが書き換え可能かもしれない
-╔══════════╣ Systemd Information
-╚ https://book.hacktricks.wiki/en/linux-hardening/privilege-                      
-═╣ Systemd version and vulnerabilities? .............. ═╣ Services running as root? .....                                                                       
-═╣ Running services with dangerous capabilities? ... 
-═╣ Services with writable paths? . apache2.service: Uses relative path 'start' (from ExecStart=/usr/sbin/apachectl start)
-mariadb.service: Uses relative path 'ExecStartPre=/usr/bin/mysql_install_db' (from # ExecStartPre=/usr/bin/mysql_install_db -u mysql)
-mariadb.service: Uses relative path '$MYSQLD_OPTS' (from ExecStart=/usr/sbin/mysqld $MYSQLD_OPTS $_WSREP_NEW_CLUSTER $_WSREP_START_POSITION)
-mariadb.service: Uses relative path 'ExecStartPre=sync' (from # ExecStartPre=sync)
-mariadb.service: Uses relative path 'ExecStartPre=sysctl' (from # ExecStartPre=sysctl -q -w vm.drop_caches=3)
-mariadb.service: Uses relative path 'Change' (from # Change ExecStart=numactl --interleave=all /usr/sbin/mysqld......)
-networkd-dispatcher.service: Uses relative path '$networkd_dispatcher_args' (from ExecStart=/usr/bin/networkd-dispatcher $networkd_dispatcher_args)
-rsyslog.service: Uses relative path '-n' (from ExecStart=/usr/sbin/rsyslogd -n)
-
+══╣ Polkit Binary
+Pkexec binary found at: /usr/bin/pkexec                                       
+Pkexec binary has SUID bit set!
+-rwsr-xr-x 1 root root 22520 Mar 27  2019 /usr/bin/pkexec
+pkexec version 0.105
 
 ```
 
