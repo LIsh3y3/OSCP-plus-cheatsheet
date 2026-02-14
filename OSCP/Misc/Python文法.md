@@ -116,5 +116,5 @@ print url_exploit
 # python exploit.py http://.. /etc/passwd
 file_name = sys.argv[2] # ← /etc/passwd
 name_file = file_name.split('/')[-1]
-# splitの結果、["",etc,pass]
+# splitの結果、["",etc,passwd]となり、[-1]なのでpasswdが入る
 ```
