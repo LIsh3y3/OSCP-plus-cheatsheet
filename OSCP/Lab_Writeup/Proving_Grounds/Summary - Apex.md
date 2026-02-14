@@ -13,6 +13,28 @@ Kernel Exploit である PwnKit を用いて権限昇格。
 	- **反省**：PoC に Verified マークがない、かつ、CVE が N/A になっていても、利用可能なケースがあるとは思わず、エクスプロイトを無視していた
 
 4. SMB (Samba) を列挙すると、NULL セッションで READ 可能な Shareがあり、中身を確認すると、HTTP ディレクトリスキャンで発見した Documents というディレクトリに保存されているファイルと全く同じであったため、 Documents ディレクトリは HTTP と SMB 両方からアクセスできるものと推察
-	- [[Web Shell#Webアプリのソースコードを取得する考え方と手法概要]]
 
-5. OpenEMR には データベースパスワードが保存されいてる PHP ファイルがあるが、RESPONSIVE filemanager の脆弱性は HTTP サービスにPHPファイルをペーストして中身を読み込むものであるため、HTTP サービスからアクセスすると、PHP ファイルが読み込むと実行されてしまうため、
+5. OpenEMR には データベースパスワードが保存されいてる PHP ファイルがあるが、RESPONSIVE filemanager の脆弱性は HTTP サービスにPHPファイルをペーストして中身を読み込むものであるため、OpenEMR の PHP ファイルをHTTP サービスにペーストしてからアクセスすると、PHP ファイルが実行され、中身が読み取れないことを確認
+
+6. Documents ディレクトリが、HTTP と SMB 双方からアクセスできる物理ディレクトリであるため、[[Web Shell#Webアプリのソースコードを取得する考え方と手法概要]]に従い、Path Traversal ([49359 - Exploit-DB](https://www.exploit-db.com/exploits/49359)) の PoC で Documents にペーストするように修正
+```python
+# 修正前
+...
+def paste_clipboard(url, session_cookie):
+	headers = {'Cookie': session_cookie,'Content-Type': 'application/x-www-form-urlencoded'}
+	url_paste = "%s/filemanager/execute.php?action=paste_clipboard" % (url)
+	r = requests.post(
+	url_paste, data="path=", headers=headers)
+	return r.status_code
+...
+
+# 修正後
+	r = requests.post(
+	url_paste, data="path=Documents/", headers=headers)
+...
+```
+
+7. smbclient で接続し、 OpenEMR の PHP ファイルを読み取り、MySQL DB のパスワードを入手したので、接続
+```sh
+mysql -u openemr -h $TargetIP -p --skip-ssl
+```
