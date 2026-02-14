@@ -38,6 +38,9 @@ if __name__ == "__main__":
 
 ## `__name__` とは？
 
+`if __name__ == "__main__":`
+は「スクリプトとして直接起動されたときだけ実行する」という意味。
+
 Pythonでは、実行されているモジュールには `__name__` という特殊変数が自動で入る
 - 直接実行された場合 → `"__main__"`    
 - 他のファイルから `import` された場合  → `__name__ == ファイル名（拡張子なし）`
@@ -75,8 +78,9 @@ print("main.pyの __name__:", __name__)
 python3 main.py
 # このファイルの __name__: test_module
 # Hello!
-# main.pyの __name__ : __test_module__
+# main.pyの __name__ : __main__
 ```
+- test_module.pyの`print("直接実行されました")`は実行されない
 
 ---
 
