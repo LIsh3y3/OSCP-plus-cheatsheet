@@ -71,7 +71,7 @@ odbc.allow_persistent = On
 ibase.allow_persistent = 1
 mysqli.allow_persistent = On
 pgsql.allow_persistent = On
--rw-r--r-- 1 root root 71429 Oct  7  2020 /etc/php/7.2/cli/php.ini
+-rw-r--r-- 1 root root 71429 Oct  7  2020 /etc/php/7.2/cli/php.ini# 特になし
 allow_url_fopen = On
 allow_url_include = Off
 odbc.allow_persistent = On
