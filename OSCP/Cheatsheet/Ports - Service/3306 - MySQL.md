@@ -207,7 +207,6 @@ FLUSH PRIVILEGES;
 
 # Misc
 
-
 ## MariaDB を 0.0.0.0:3306 でホストする手順
 
 - WordPressのsetup-config.phpをエクスプロイトするためなどに使用 ([Exploit-DB - 18417](https://www.exploit-db.com/exploits/18417))

@@ -134,7 +134,7 @@ Finished
 
 目的は、機密情報やバージョン情報がないかどうかを探すこと
 
-- feroxbusterでスキャンしたところ、大量の200が
+- feroxbusterでスキャンしたところ、大量の200が表示されたので途中でやめる
 ```sh
 ┌──(koshi㉿kali)-[~/ProvingGrounds/Apex]
 └─$ feroxbuster -u http://$TargetIP/openemr/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt --auto-tune -o WebEnum/feroxbuster_80_openemr.txt -x 'html,txt,php,cgi,pdf' -s 200,301,302 -b "" 
