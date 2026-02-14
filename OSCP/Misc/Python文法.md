@@ -100,3 +100,21 @@ print url_exploit
 # http://example/../../etc/passwd
 ```
 
+---
+
+# 配列について
+
+## インデックス指定
+
+- -1は最後のバリューを指定する
+```python
+['', 'etc', 'passwd'][-1]
+```
+
+- `split`があわせて使われることが多い
+```python
+# python exploit.py http://.. /etc/passwd
+file_name = sys.argv[2] # ← /etc/passwd
+name_file = file_name.split('/')[-1]
+# splitの結果、["",etc,pass]
+```
