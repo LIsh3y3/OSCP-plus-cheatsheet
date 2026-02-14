@@ -22,8 +22,9 @@ PORT   STATE SERVICE REASON  VERSION
 ```sh
 ┌──(koshi㉿kali)-[~/ProvingGrounds/Apex/Payloads]
 └─$ mysql -u openemr -h $TargetIP -p --skip-ssl
-
 ```
+![[Pasted image 20260214165811.png]]
+
 
 
 ---
