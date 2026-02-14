@@ -6,6 +6,7 @@ jamanda
 jsarah
 wwalter
 openemr:C78maEQUIEuQ
+admin:thedoctor
 ```
 
 ---
