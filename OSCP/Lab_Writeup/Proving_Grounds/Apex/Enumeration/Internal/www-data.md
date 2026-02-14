@@ -183,7 +183,12 @@ no crontab for www-data
 
 ## システムデーモン
 
+- pspyでは特に何も見つけられず
+```sh
+./pspy64 -p -i 1000
+```
 
+- 
 
 ---
 
