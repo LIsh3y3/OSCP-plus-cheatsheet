@@ -693,3 +693,9 @@ $sql_root[0]['ssl']['verifyServerCertificate']='0';
 $sql['debug'] = false;
 
 ```
+
+- 認証成功
+	- rootでもfroxlorとしても成功できる
+```sh
+
+```
