@@ -731,5 +731,11 @@ MariaDB [(none)]> show databases;
 |  5 | froxlor/letsencrypt | letsencrypt  | \Froxlor\Cron\Http\LetsEncrypt\AcmeSh |          0 | 5 MINUTE |        0 | cron_letsencrypt  |                                                                                                                                                                                  
 |  6 | froxlor/backup      | backup       | \Froxlor\Cron\System\BackupCron       | 1668921001 | 1 DAY    |        1 | cron_backup       |  
 ```
+- このID 5のプログラムが、上書き可能なら、5分でrootシェルが取れそう
 
-- panel_adminsとftp_usersテーブルにそれぞれパスワードハッシュがあった
+
+- 以下それぞれパスワードハッシュがあった
+	- panel_admins
+	- ftp_users
+	- panel_htpasswds;
+	- 
