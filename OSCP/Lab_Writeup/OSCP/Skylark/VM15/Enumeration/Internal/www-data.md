@@ -59,8 +59,19 @@ chmod +x linpeas.sh
 ### 実行結果抽出
 
 ```sh
-
+╔══════════╣ Check for vulnerable cron jobs
+╚ https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#scheduledcron-jobs                                      
+══╣ Cron jobs list     
+...
 -rw-r-----   1 root root   859 Nov 18  2022 froxlor
+
+# mysql がローカルで動作
+# ssh も動作
+╔══════════╣ Active Ports
+╚ https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#open-ports                                                                
+══╣ Active Ports (netstat)                                                                                                                                  
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -     
 
 ```
 
@@ -86,6 +97,7 @@ chmod +x linpeas.sh
 
 ## ネットワーク
 
+- Pivot には使えない
 
 ---
 
