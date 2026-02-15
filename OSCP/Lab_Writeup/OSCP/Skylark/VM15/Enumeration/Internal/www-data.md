@@ -278,6 +278,10 @@ strings Not Found
 
 ## 興味深い情報
 
+### /homeディレクトリ
+
+
+
 
 ---
 
@@ -452,6 +456,8 @@ tcp6       0      0 :::60002                :::*                    LISTEN      
 admin:admin
 admin:S1mplerCloud
 froxlor:froxlor
+oscuser:7NVLVTDGJ38HM2TQ
+froxlor:7NVLVTDGJ38HM2TQ
 ```
 
 ![[Pasted image 20260215143704.png]]
