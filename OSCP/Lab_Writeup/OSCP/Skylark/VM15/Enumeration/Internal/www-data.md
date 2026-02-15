@@ -735,8 +735,11 @@ MariaDB [(none)]> show databases;
 - `/var/www/html/froxlor/lib/Froxlor/Cron/Http/LetsEncrypt/AcmeSh.php` というファイルが存在するが、書き込みはできなさそう
 
 - 今考えているのが、①cronを上書きするか、②cronのPATH変数を悪用するか、③froxlorのログイン情報を入手してRCEするかを考えている
-	- ①は不可
-	- ②
+```sh
+-rwxr-xr-x 1 www-data www-data 22025 Oct 10  2021 TasksCron.php
+```
+- www-dataが所有者なので、書き換え可能
+
 
 
 - 以下それぞれパスワードハッシュがあった
