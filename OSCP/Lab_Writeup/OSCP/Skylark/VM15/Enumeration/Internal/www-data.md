@@ -92,7 +92,10 @@ uid=1000(milan) gid=1000(milan04) groups=1000(milan04),4(adm),24(cdrom),27(sudo)
 
 -rwxr-xr-x 1 www-data www-data 7036 Aug 18  2017 /var/www/html/oscommerce/catalog/admin/includes/functions/database.php
 
-
+# Froxlor については任意の書き込みが可能
+╔══════════╣ Interesting writable files owned by me or writable by everyone (not in Home) (max 200)
+╚ https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#writable-files       
+var/www/html/froxlor/lib/Froxlor/Database/Database.php
 ```
 
 ---
@@ -128,6 +131,15 @@ uid=1000(milan) gid=1000(milan04) groups=1000(milan04),4(adm),24(cdrom),27(sudo)
 
 ## インストール済みアプリケーション
 
+### froxlor
+
+>Froxlor は、お客様のニーズに応える軽量のサーバー管理ソフトウェアです。
+経験豊富なサーバー管理者によって開発されたこのオープン ソース (GPL) パネルは、ホスティング プラットフォームの管理作業を簡素化します。
+
+- ディレクトリ
+```
+/var/www/html/froxlor/
+```
 
 ---
 
