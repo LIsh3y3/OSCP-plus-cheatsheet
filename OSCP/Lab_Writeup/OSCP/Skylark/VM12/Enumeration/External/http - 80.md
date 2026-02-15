@@ -90,9 +90,11 @@ HTTP Headers:
 
 errorが多ければ`-t 64`も試す
 
-## Basic認証情報なし
+## Basic認証情報なし -> nothing
 
 ```zsh
+┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM12]
+└─$ gobuster dir -u http://$TargetIP/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o WebEnum/gobuster_80_nonauth.txt -x 'aspx,asp,html,htm,txt,pdf,config,cs,ashx,asmx' -s 200,301,302 -b ""
 
 ```
 
