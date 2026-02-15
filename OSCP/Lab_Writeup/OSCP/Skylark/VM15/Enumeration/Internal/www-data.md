@@ -359,5 +359,7 @@ su: Authentication failure
 
 # トンネリング
 
+目的：ローカルサービスにアクセスする
+
 - GLIBCが古いため、ligoloはつかえず
 - chiselを使う

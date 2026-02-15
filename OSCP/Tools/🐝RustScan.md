@@ -5,9 +5,6 @@
 - `/etc/hosts/`にドメイン名を追加してから再度実行すると、より詳細な結果が得られるかも
 
 - Openポートを探索し、Openポートにのみ詳細なスキャン(rustscanの仕様)
-```zsh
-
-```
 
 ## [[Port Scan & Vuln Scan|Port Scan & Vuln Scan]]と比較した際の注意点
 
