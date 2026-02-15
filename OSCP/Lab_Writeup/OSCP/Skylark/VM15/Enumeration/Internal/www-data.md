@@ -447,7 +447,20 @@ tcp6       0      0 :::60002                :::*                    LISTEN      
 
 - [[#トンネリング]]して、60002にアクセス
 - foxlorのログイン画面が表示
+- 以下の認証情報は失敗
+```
+admin:admin
+admin:S1mplerCloud
+froxlor:froxlor
+```
+
 ![[Pasted image 20260215143704.png]]
+
+
+### 気になる情報
+
+- https://qiita.com/kk0128/items/d7c6298a68995ad53c8f
+	- pspyを実行しても、froxlorと思われるプロセスは見当たらない
 
 
 ## LinPEASでfroxlor関連の情報
