@@ -719,6 +719,12 @@ MariaDB [(none)]> show databases;
 5 rows in set (0.003 sec)
 ```
 
+- ちなみに以下それぞれパスワードハッシュがあった
+	- panel_admins
+	- ftp_users
+	- panel_htpasswds;
+	- 
+
 - CronJobs
 ```sql
 +----+---------------------+--------------+---------------------------------------+------------+----------+----------+-------------------+                                                                                                                                                                                  
@@ -740,10 +746,21 @@ MariaDB [(none)]> show databases;
 ```
 - www-dataが所有者なので、書き換え可能
 
+- IvanのペイロードでTasksCron.phpを上書きする
+```sh
+# Attacker
+┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM15/Payloads]
+└─$ subl TasksCron.php
+```
+- ↓変更箇所
+![[Pasted image 20260216001721.png]]
 
+```sh
+┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM15/Payloads]
+└─$ sudo python -m http.server 22
+```
 
-- 以下それぞれパスワードハッシュがあった
-	- panel_admins
-	- ftp_users
-	- panel_htpasswds;
-	- 
+```sh
+# Target
+
+```
