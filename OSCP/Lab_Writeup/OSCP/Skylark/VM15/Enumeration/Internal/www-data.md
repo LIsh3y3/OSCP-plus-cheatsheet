@@ -449,6 +449,7 @@ tcp6       0      0 :::60002                :::*                    LISTEN      
 - foxlorのログイン画面が表示
 ![[Pasted image 20260215143704.png]]
 
+
 ## LinPEASでfroxlor関連の情報
 
 - 大量（"froxlor" というキーワードに 245 件マッチ）
