@@ -39,7 +39,7 @@ $$ChiselによるローカルNWへのアクセスイメージ図(PEN-200)$$
 
 ### ChiselによるHTTP Tunneling(リモートポートフォワーディング)
 
-1. 足場(chisel client)がWindowsの場合は[Chisel release page - Github](https://github.com/jpillora/chisel/releases)のAssetsからアーキテクチャに応じたバイナリをダウンロードし、Linuxの場合は以下のコマンドでchiselをダウンロード
+1. 足場(chisel client)がWindowsの場合は[Chisel release page - Github](https://github.com/jpillora/chisel/releases)のAssetsからアーキテクチャに応じたバイナリ（`.gz`ファイル）をダウンロードし、Linuxの場合は以下のコマンドでchiselをダウンロード
 ```zsh
 sudo apt install chisel
 ```
