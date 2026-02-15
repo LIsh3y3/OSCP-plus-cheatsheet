@@ -363,3 +363,13 @@ su: Authentication failure
 
 - GLIBCが古いため、ligoloはつかえず
 - chiselを使う
+```sh
+# attacker
+wget https://github.com/jpillora/chisel/releases/download/v1.11.3/chisel_1.11.3_linux_amd64.gz
+
+gunzip chisel_1.11.3_linux_amd64.gz
+sudo python -m http.server 443
+
+# target
+
+```
