@@ -454,5 +454,28 @@ tcp6       0      0 :::60002                :::*                    LISTEN      
 - 大量（"froxlor" というキーワードに 245 件マッチ）
 ```sh
 ╔══════════╣ Interesting writable files owned by me or writable by everyone (not in Home) (max 200)
+/var/www/html/froxlor/actions/admin
+/var/www/html/froxlor/actions/admin/settings
+...
+/var/www/html/froxlor/lib/Froxlor/Api/Commands/Admins.php
 
+═╣ Cron jobs list
+/usr/bin/crontab
+incrontab Not Found
+-rw-r--r-- 1 root root    1042 Feb 13  2020 /etc/crontab
+
+/etc/cron.d:
+total 40
+drwxr-xr-x   2 root root  4096 Nov 18  2022 .
+drwxr-xr-x 134 root root 12288 Dec  7  2022 ..
+-rw-r--r--   1 root root   102 Feb 13  2020 .placeholder
+-rw-r--r--   1 root root   285 Jul 16  2019 anacron
+-rw-r--r--   1 root root   201 Feb 14  2020 e2scrub_all
+-rw-r-----   1 root root   859 Nov 18  2022 froxlor
+
+╔══════════╣ Searching passwords in config PHP files
+/var/www/html/froxlor/admin_configfiles.php:		'<SQL_UNPRIVILEGED_PASSWORD>' => 'FROXLOR_MYSQL_PASSWORD',
 ```
+- www-dataが書き込み可能だが、rootによってcronで実行されている
+
+- cronからだと、froxlorが何を実行しているかは確認できない
