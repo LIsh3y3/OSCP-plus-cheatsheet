@@ -276,5 +276,29 @@ strings Not Found
 
 ## デバイスドライバ・カーネルモジュール
 
+---
 
+# MariaDB
 
+- LinPEAS  の結果入手したクレデンシャルで認証成功
+```sh
+www-data@milan:/tmp$ mysql -u oscuser  -p
+Enter password: # ← "7NVLVTDGJ38HM2TQ" と入力
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 37
+Server version: 10.3.34-MariaDB-0ubuntu0.20.04.1 Ubuntu 20.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SELECT version();
++----------------------------------+
+| version()                        |
++----------------------------------+
+| 10.3.34-MariaDB-0ubuntu0.20.04.1 |
++----------------------------------+
+1 row in set (0.000 sec)
+```
+
+- 認証情報がないか探す
