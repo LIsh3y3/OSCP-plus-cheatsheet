@@ -381,3 +381,9 @@ chmod +x chisel_1.11.3_linux_amd64
 ./chisel_1.11.3_linux_amd64 client 192.168.45.215:443 R:631:127.0.0.1:631
 ```
 ![[Pasted image 20260215135249.png]]
+
+---
+
+# CUPS
+
+>CUPS（カップス、以前の名称はCommon UNIX Printing System）とはUnix系オペレーティングシステム (OS) 用のモジュール化された印刷システムである。
