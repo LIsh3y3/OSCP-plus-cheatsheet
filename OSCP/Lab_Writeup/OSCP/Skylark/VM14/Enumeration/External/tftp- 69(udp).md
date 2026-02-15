@@ -23,7 +23,8 @@ PORT STATE SERVICE VERSION
    sip_327.cfg
 ```
 
-- backup.cfg
+### backup.cfg
+
 ```sh
 ┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM14]
 └─$ cat backup.cfg                         
@@ -33,7 +34,8 @@ ftp_jp
 ~be<3@6fe1Z:2e8
 ```
 
-- sip-confg
+### sip-confg→特になし
+
 ```sh
 ┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM14]
 └─$ cat sip-confg 
@@ -43,6 +45,105 @@ net.java.sip.communicator.service.protocol.DTMF_MINIMAL_TONE_DURATION=70
 # SIP specific properties
 net.java.sip.communicator.service.protocol.sip.SERVER_PORT=5060
 ...
+```
+
+### sip.cfg
+
+```sh
+┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM14]
+└─$ cat sip.cfg  
+[misc]
+log_collection_upload_server_url=https://www.linphone.org:444/lft.php
+prefer_basic_chat_room=1
+uuid=11ca34e7-4c29-0070-a37c-6a329e977275
+hide_empty_chat_rooms=0
+file_transfer_server_url=https://www.linphone.org:444/lft.php
+...
+
+[auth_info_0]
+username=l.nguyen
+userid=l.nguyen
+passwd=ChangeMePlease__XMPPTest
+
+[auth_info_1]
+username=j.jameson
+userid=j.jameson
+passwd=ChangeMePlease__XMPPTest
+
+[auth_info_2]
+username=j.jones
+userid=j.jones
+passwd=ChangeMePlease__XMPPTest
+
+[proxy_0]
+reg_proxy=<sip:172.16.50.32;transport=tls>
+reg_identity=sip:l.nguyen@skylark.com
+realm=sip.linphone.org
+quality_reporting_collector=sip:voip-metrics@sip.linphone.org;transport=tls
+quality_reporting_enabled=1
+quality_reporting_interval=180
+reg_expires=600
+reg_sendregister=0
+publish=0
+avpf=-1
+avpf_rr_interval=1
+dial_escape_plus=0
+use_dial_prefix_for_calls_and_chats=1
+privacy=32768
+push_notification_allowed=0
+remote_push_notification_allowed=0
+cpim_in_basic_chat_rooms_enabled=1
+idkey=proxy_config_~WjXyb2WdBWMb2C
+publish_expires=0
+nat_policy_ref=olAoFDLyvvfk39w
+conference_factory_uri=sip:conference-factory@sip.linphone.org
+
+[proxy_1]
+reg_proxy=<sip:172.16.50.32;transport=tls>
+reg_identity=sip:j.jones@skylark.com
+realm=sip.linphone.org
+quality_reporting_collector=sip:voip-metrics@sip.linphone.org;transport=tls
+quality_reporting_enabled=1
+quality_reporting_interval=180
+reg_expires=600
+reg_sendregister=0
+publish=0
+avpf=-1
+avpf_rr_interval=1
+dial_escape_plus=0
+use_dial_prefix_for_calls_and_chats=1
+privacy=32768
+push_notification_allowed=0
+remote_push_notification_allowed=0
+cpim_in_basic_chat_rooms_enabled=1
+idkey=proxy_config_7vBEtYkTrruvfT2
+publish_expires=0
+nat_policy_ref=qdY3XE30EZHSTo5
+conference_factory_uri=sip:conference-factory@sip.linphone.org
+
+[proxy_2]
+reg_proxy=<sip:172.16.50.32;transport=tls>
+reg_identity=sip:j.jameson@skylark.com
+realm=sip.linphone.org
+quality_reporting_collector=sip:voip-metrics@sip.linphone.org;transport=tls
+quality_reporting_enabled=1
+quality_reporting_interval=180
+reg_expires=600
+reg_sendregister=0
+publish=0
+avpf=-1
+avpf_rr_interval=1
+dial_escape_plus=0
+use_dial_prefix_for_calls_and_chats=1
+privacy=32768
+push_notification_allowed=0
+remote_push_notification_allowed=0
+cpim_in_basic_chat_rooms_enabled=1
+idkey=proxy_config_TyhsjEkUSFxpkxA
+publish_expires=0
+nat_policy_ref=x9Q58Jqg3ZDHHP6
+conference_factory_uri=sip:conference-factory@sip.linphone.org
+
 ```
 
 
