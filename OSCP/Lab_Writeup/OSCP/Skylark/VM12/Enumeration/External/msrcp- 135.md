@@ -9,6 +9,13 @@ PORT   STATE SERVICE REASON  VERSION
 
 # Enumeration
 
+- NULLセッションン接続試行 -> 失敗
+```sh
+┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM12]
+└─$ rpcclient $TargetIP -U "" -N
+Cannot connect to server.  Error was NT_STATUS_ACCESS_DENIED
+```
+
 
 ---
 

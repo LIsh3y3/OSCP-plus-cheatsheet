@@ -1,7 +1,8 @@
 # Host Information
 
 ```zsh
-
+host名:HOUSTON01
+domain:SKYLARK.com
 ```
 
 ---
