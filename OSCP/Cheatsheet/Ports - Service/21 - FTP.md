@@ -44,7 +44,7 @@ ftp <TargetIP> [Port]
 
 💡lftpコマンド（拡張版）
 ```zsh
-lftp <TargetIP> -u <username>
+lftp <TargetIP> -u <username> [-p <port>]
 ```
 - ftpの拡張版で使いやすく、可視性も良いため、基本は==これを使う==（`ls -la`も可能）
 
