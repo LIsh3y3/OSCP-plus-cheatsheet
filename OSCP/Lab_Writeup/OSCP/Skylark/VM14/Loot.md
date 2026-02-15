@@ -12,6 +12,9 @@ j.jones@skylark.com:ChangeMePlease__XMPPTest
 # Zoiper5 Contact Serviceというツールの認証情報っぽい
 reynolds@testing.com:bj1ZzWEmJd870YHMsV+NdfsTuce+zsQRyvb7e5fIgY8=
 
+# UmbracoTraceLog.Tokyo07.20221130より
+umbracoAdmin@tokyo07.jp
+
 # VM15のDBパスワード
 oscuser:7NVLVTDGJ38HM2TQ
 ```
