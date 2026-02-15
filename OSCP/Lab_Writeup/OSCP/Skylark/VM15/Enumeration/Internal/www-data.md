@@ -732,6 +732,11 @@ MariaDB [(none)]> show databases;
 |  6 | froxlor/backup      | backup       | \Froxlor\Cron\System\BackupCron       | 1668921001 | 1 DAY    |        1 | cron_backup       |  
 ```
 - このID 5のプログラムが、上書き可能なら、5分でrootシェルが取れそう
+- `/var/www/html/froxlor/lib/Froxlor/Cron/Http/LetsEncrypt/AcmeSh.php` というファイルが存在するが、書き込みはできなさそう
+
+- 今考えているのが、①cronを上書きするか、②cronのPATH変数を悪用するか、③froxlorのログイン情報を入手してRCEするかを考えている
+	- ①は不可
+	- ②
 
 
 - 以下それぞれパスワードハッシュがあった
