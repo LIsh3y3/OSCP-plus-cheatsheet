@@ -598,6 +598,10 @@ hydra -l admin -P /usr/share/wordlists/fasttrack.txt 127.0.0.1 -s 60002 http-pos
 
 - いったん、Exploit-DBにあるエクスプロイトで、認証が必要なもの以外すべて試す
 	- 37725: MySQL Login Information Disclosure
+	- すべて試したが失敗
 
 - それでもだめなら、Linux Exploit Suggesterを試す
+	- PwnKitは使えない
+	- DirtyPipe
+
 - それでもだめなら、ほかのVMを列挙する
