@@ -493,3 +493,10 @@ drwxr-xr-x 134 root root 12288 Dec  7  2022 ..
 - www-dataが書き込み可能だが、rootによってcronで実行されている
 
 - cronからだと、froxlorが何を実行しているかは確認できない
+
+### 攻撃でやったこと
+
+- /var/www/html/froxlor配下に、Ivanのphp web shellを置き、トンネリング経由でアクセス
+	- → www-data としてリバースシェルを獲得しただけ。
+	- webサービスそのものは、rootが動かしているわけではない。
+	- 
