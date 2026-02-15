@@ -1,7 +1,7 @@
 # Credentials
 
 ```zsh
-oscuser:7NVLVTDGJ38HM2TQ # VM15のDBパスワード？
+oscuser:7NVLVTDGJ38HM2TQ # VM15のDBパスワード
 ```
 
 ---
