@@ -586,6 +586,7 @@ ls -la ~/.ssh/
 
 中身に認証情報の記載があるファイルを探す ([EvilTree](https://github.com/t3l3machus/eviltree)）
 	🚨gzやzipファイル等の圧縮ファイルの中身は読み取れないことに留意する（機密情報が圧縮ファイルにある可能性）
+	⚠️これで探索するより、Googleで調べることを優先する
 ```zsh
 # 拡張子はターゲットシステムに応じて追記する（cnf等）
 grep -EiR "pass(word)?|pwd|credential" --include=\*.{txt,ini,cfg,conf,config,xml,ps1,git,yml,php} . 2>/dev/null  
@@ -598,7 +599,7 @@ wget https://raw.githubusercontent.com/t3l3machus/eviltree/refs/heads/main/evilt
 python3 eviltree.py -r <dir> -i -v -x ".{0,3}passw.{0,3}[=]{1}.{0,18}"
 
 # キーワードベース
-python3 eviltree.py -r <dir> -i -v -k passw,db_,admin,account,user,token,pwd
+python3 eviltree.py -r <dir> -i -v -k passw,db_,admin,account,user,token,pwd,key
 ```
 - `-i`：Interesiting only
 - `-v`：どのキーワードがマッチしたか表示
