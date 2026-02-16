@@ -113,8 +113,7 @@ nmap -p 21 --script ftp-brute <TargetIP>
 
 💡全ファイルの**一括ダウンロード**
 ```zsh
-# 例：wget -m ftp://anonymous:anonymous@<TargetIP>›
-wget -m ftp://<username>:<pw>@<TargetIP>[:Port]
+wget -m --user='<username>' --password='<pw>' ftp://<TargetIP>[:Port]
 ```
 - `-m`：ミラーリングモード
 
