@@ -20,6 +20,10 @@ passwd_milan  passwd_root_VM15  passwd_sarah  shadow  shadow_milan  shadow_root_
 
 ┌──(koshi㉿kali)-[~/PEN-200/Skylark/VM15/Unshadows]
 └─$ unshadow passwd_root_VM15 shadow_root_VM15 > root_VM15_unshadow.txt
+```
+
+- 3分まって解析できなかったら、次の解析をし、すべて無理だったらこれはベクターではない
+```sh
 
 ```
 
