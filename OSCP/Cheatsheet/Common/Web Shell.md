@@ -368,13 +368,19 @@ echo "Public key added successfully!";
 ### 基礎知識
 
 - ASPとASP.NETは異なるもので、ASPはインタプリタ方式の旧技術（.asp）、ASP.NETは.NETフレームワーク上で動作するコンパイル方式の高速な後継技術（.aspx）
+
+#### ASPクラシック
+
 - ASPは、区別のため「クラシックASP」と呼ばれる
+
+#### ASP.NET
+
 - ASP.NETは、以下の3種類ある
 	- ASP.NET: レガシー
 	- ASP.NET Core : ASP.NETのクラウド用
 	- ASP.NET 5: ASP.NETの最新版
 
-- ASP.NETのアプリケーションは、`/bin` 配下の `publish` にローンチされる（Web shell ペイロードをアップロードするときに必要な知識）
+- ASP.NETのアプリケーションは、==`/bin` 配下の `publish` にローンチ==される（Web shell ペイロードをアップロードするときに必要な知識）
 
 ### 基本 Web Shell
 
