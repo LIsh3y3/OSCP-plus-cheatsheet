@@ -417,67 +417,28 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 
 ### 重要ファイル（Windows + IIS）
 
-| パス                                                                                        | 内容                                          | ペンテスト的に嬉しいポイント                                                    | 優先度   |
-| ----------------------------------------------------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------- | ----- |
-| C:\inetpub\wwwroot\web.config                                                             | サイト設定 / 接続文字列                               | DB資格情報取得 → MSSQLログイン、machineKey取得 → ViewState改ざん・認証クッキー偽造、認証方式の把握 | ★★★★★ |
-| C:\Windows\System32\inetsrv\config\applicationHost.config                                 | IIS全体設定                                     | 仮想ディレクトリ・物理パス特定 → 隠しサイト発見・横展開、ハンドラ設定 → 実行可能拡張子把握、認証方式確認           | ★★★★★ |
-| C:\inetpub\wwwroot\bin*.dll                                                               | .NETアセンブリ                                   | dnSpy / ILSpyで逆コンパイル → ハードコード資格情報・内部API・暗号鍵・ファイルパス取得              | ★★★★★ |
-| C:\inetpub\wwwroot\App_Data*.mdf                                                          | ローカルDB                                      | オフライン解析 → ユーザー・ハッシュ取得 → クラック・資格情報再利用、アプリ構造把握                      | ★★★★☆ |
-| C:\inetpub\wwwroot\appsettings.json                                                       | .NET Core設定                                 | DB接続文字列・APIキー・JWTシークレット取得 → APIなりすまし・DB侵入                         | ★★★★☆ |
-| C:\inetpub\wwwroot\Global.asax                                                            | アプリケーションイベント                                | 認証処理・ルーティング理解 → 認可バイパス・攻撃対象エンドポイント特定                              | ★★★☆☆ |
-| C:\Program Files\Microsoft SQL Server\|MSSQL本体                                            | DBファイル・設定取得 → サービスアカウント特定・権限昇格・バックアップから機密取得 | ★★★☆☆                                                             |       |
-| C:\Users*\AppData\Roaming\FileZilla\recentservers.xml                                     | FTP接続履歴                                     | 平文FTP資格情報取得 → 別サーバ侵入・Webroot書き込み・横展開                              | ★★★★☆ |
-| C:\Users*\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt | PowerShell履歴                                | 実行コマンドから資格情報・内部サーバ・管理操作特定 → lateral movement・権限昇格                 | ★★★★☆ |
+| パス                                                        | 内容            | ペンテスト的に嬉しいポイント                                                    |
+| --------------------------------------------------------- | ------------- | ----------------------------------------------------------------- |
+| C:\inetpub\wwwroot\web.config                             | サイト設定 / 接続文字列 | DB資格情報取得 → MSSQLログイン、machineKey取得 → ViewState改ざん・認証クッキー偽造、認証方式の把握 |
+| C:\Windows\System32\inetsrv\config\applicationHost.config | IIS全体設定       | 仮想ディレクトリ・物理パス特定 → 隠しサイト発見・横展開、ハンドラ設定 → 実行可能拡張子把握、認証方式確認           |
+| C:\inetpub\wwwroot\bin*.dll                               | .NETアセンブリ     | dnSpy / ILSpyで逆コンパイル → ハードコード資格情報・内部API・暗号鍵・ファイルパス取得              |
+| C:\inetpub\wwwroot\App_Data*.mdf                          | ローカルDB        | オフライン解析 → ユーザー・ハッシュ取得 → クラック・資格情報再利用、アプリ構造把握                      |
+| C:\inetpub\wwwroot\appsettings.json                       | .NET Core設定   | DB接続文字列・APIキー・JWTシークレット取得 → APIなりすまし・DB侵入                         |
+| C:\inetpub\wwwroot\Global.asax                            | アプリケーションイベント  | 認証処理・ルーティング理解 → 認可バイパス・攻撃対象エンドポイント特定                              |
+| C:\Program Files\Microsoft SQL Server                     | MSSQL本体       | DBファイル・設定取得 → サービスアカウント特定・権限昇格・バックアップから機密取得                       |
+| C:\Users*\AppData\Roaming\FileZilla\recentservers.xml     | FTP接続履歴       | 平文FTP資格情報取得 → 別サーバ侵入・Webroot書き込み・横展開                              |
 
-### DLL アップロードによる RCE
+### ファイルアップロード
 
-ASP.NET は bin の DLL を自動ロード
+- 実行可能拡張子
+	- aspx
+	- ashx
+	- asmx
+	- config（場合による）
 
-条件：
-- Webroot書き込み可能
-- /bin に配置可能
+#### web.config アップロードで RCE
 
-理由：
-
-
-
----
-
-## MSSQL 連携攻撃
-
-web.config に：
-
-```
-connectionStrings
-```
-
-がある。
-
-取得後：
-
-```sql
-xp_cmdshell
-```
-
-有効化で OS コマンド実行。
-
----
-
-## ファイルアップロード → 実行
-
-### 実行可能拡張子
-
-| 拡張子 |
-|--------|
-aspx
-ashx
-asmx
-config（場合による）
-
----
-
-### web.config アップロードで RCE
-
+txt を ASP として実行可能
 ```xml
 <configuration>
   <system.webServer>
@@ -490,11 +451,15 @@ config（場合による）
 </configuration>
 ```
 
-txt を ASP として実行可能。
+#### DLL アップロードによる RCE
 
----
+- ASP.NET は bin の DLL を自動ロードする
 
-## 認証バイパス
+条件：
+- Webroot書き込み可能
+- /bin に配置可能
+
+### 認証バイパス
 
 ### web.config
 
@@ -511,36 +476,6 @@ txt を ASP として実行可能。
 ```
 
 を置くとバイパス。
-
----
-
-## パス列挙
-
-```
-trace.axd
-elmah.axd
-```
-
----
-
-
-## ログ
-
-```
-C:\inetpub\logs\LogFiles\
-```
-
----
-
-## 重要ディレクトリ
-
-| ディレクトリ | 意味 |
-|-------------|------|
-App_Data | DB / 機密 |
-bin | DLL |
-Views | ソース |
-
-
 
 ---
 ---
