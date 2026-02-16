@@ -365,6 +365,12 @@ echo "Public key added successfully!";
 
 ## ASP / ASP.NET (IIS)
 
+### 基礎知識
+
+- ASPとASP.NETは異なるもの
+- ASPのアプリケーションは、/bin/
+
+
 ### 基本 Web Shell
 
 - Payload
