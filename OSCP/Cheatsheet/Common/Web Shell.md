@@ -438,6 +438,8 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 
 - ASP.NET は `/bin` の DLL を自動ロードするため、webrootにある`/bin`のDLL を<u>上書き</u>できれば、DLL hijacking が可能
 - 具体的には、Umbraco (cms) で FTP によるバージョンアップグレードを実施するようにしている Web サイトは、これで侵害できる
+- [[💥Windows Privilege Escalation#Service Exploits - DLL Hijacking]]と同じく、ProcMonでロードされる DLL を確認のうえ上書きすること
+	- ⚠️間違っても `Microsoft.`系の DLLは上書きしないこと
 
 #### 認証バイパス
 
