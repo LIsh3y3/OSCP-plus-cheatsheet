@@ -372,6 +372,10 @@ echo "Public key added successfully!";
 #### ASPクラシック
 
 - ASPは、区別のため「クラシックASP」と呼ばれる
+- - Windows Server 2000
+- IIS バージョン5.0
+- VB Script
+- JScript
 
 #### ASP.NET
 
