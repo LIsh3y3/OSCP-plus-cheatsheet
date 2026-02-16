@@ -440,23 +440,22 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 
 #### 認証バイパス
 
-
-
-### web.config
-
+- IIS / ASP.NET の設定評価ルールとして、子ディレクトリの web.config は親の web.config を継承し、追加ルールとして評価される
+- つまり、親ディレクトリが認証で保護されていても、子ディレクトリに認証を不要とするweb.config を置けば、アクセスが可能になる
 ```xml
+<?親?>
 <authorization>
   <deny users="?" />
 </authorization>
 ```
 
-フォルダ内に
-
+子ディレクトリに以下を置くと認証をバイパスできる
 ```xml
-<allow users="*" />
+<?子?>
+<authorization>
+　<allow users="*" />
+</authorization>
 ```
-
-を置くとバイパス。
 
 ---
 ---
