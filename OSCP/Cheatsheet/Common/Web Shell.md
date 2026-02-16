@@ -153,7 +153,6 @@ http://example/config.php
 
 - cmd引数でコマンド実行できないとき、現在の状態確認
 - phpinfoの内容、コマンド実行に必要なphp関数の有効有無
-
 ```php
 <?php
 	echo "<h3>phpinfo()</h3>";
