@@ -432,21 +432,15 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 	- aspx
 	- ashx
 	- asmx
-	- config（場合による）
-
-#### web.config アップロードで RCE
-
-
+- 拡張子は、[[⚡️File upload vuln#サーバ設定の上書きによるバイパス]]で変更できる可能性がある
 
 #### DLL アップロードによる RCE
 
-- ASP.NET は bin の DLL を自動ロードする
+- ASP.NET は `/bin` の DLL を自動ロードするため、webrootにある`/bin`のDLL を上書きできれば、DLL hijacking が可能
 
-条件：
-- Webroot書き込み可能
-- /bin に配置可能
+#### 認証バイパス
 
-### 認証バイパス
+
 
 ### web.config
 
