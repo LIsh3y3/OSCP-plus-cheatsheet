@@ -376,7 +376,7 @@ echo "Public key added successfully!";
 
 - ASP.NET
     - 現在の**主流**で、拡張子は `.aspx`
-    - 方式: コンパイル方式（事前に機械語に翻訳されるため高速）
+    - 方式: コンパイル方式
     - 言語: C#, VB.NET
 
 #### ASP.NET の世代別比較表
