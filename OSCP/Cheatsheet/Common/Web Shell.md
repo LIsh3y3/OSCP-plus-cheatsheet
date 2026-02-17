@@ -1,3 +1,4 @@
+
 - 関連ノート：
 	- [[What is the shell]]
 
