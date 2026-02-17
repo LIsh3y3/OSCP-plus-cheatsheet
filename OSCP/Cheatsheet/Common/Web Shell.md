@@ -384,7 +384,7 @@ echo "Public key added successfully!";
         
     - 言語: C#, VB.NET。
 
->[! TIP]
+>[! TIP] Hoge
 >test
 >test
 
