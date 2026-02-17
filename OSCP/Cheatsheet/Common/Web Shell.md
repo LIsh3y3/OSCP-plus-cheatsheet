@@ -390,16 +390,13 @@ echo "Public key added successfully!";
         
 #### Webディレクトリ構造の知識
 
-ターゲットのFTPを覗いた際、以下の構造が見えたら「新世代のASP.NET」であると判断できる。
-
-### 開発・ビルド時のパス
-
 通常は以下の階層に公開用ファイルが生成される
 ```sh
 # 具体例：/umbraco/bin/Debug/net6.0/publish
 <プロジェクト名>/bin/[Debug | Release]/<.NETバージョン>/publish/
 ```
 - publish フォルダ: 実際にWebサーバに公開すべきファイルがまとまっている場所
+- Web サイトをローンチするとき、publish ディレクトリを公開する
 
 
 ## 4. 判別テクニック
