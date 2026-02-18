@@ -112,7 +112,20 @@ gobuster vhost -u http://<TargetIP|Domain>:<Port>/> -w /usr/share/seclists/Disco
 </VirtualHost>
 ```
 
-
+​- Apache (Linux: Debian/Ubuntu/Kali)
+​メイン設定ファイル: `/etc/apache2/sites-available/000-default.conf`
+​個別設定ファイル: `/etc/apache2/sites-available/skylark.conf`
+​仕組み: `ServerName` の記述がない `<VirtualHost>` が最上部にある場合、それが「デフォルト（Catch-all）」として機能する。
+​- Apache (Linux: RHEL/CentOS)
+​メイン設定ファイル: `/etc/httpd/conf/httpd.conf`
+​追加設定ファイル: `/etc/httpd/conf.d/vhost.conf`
+​- Apache (Windows: XAMPP)
+​メイン設定ファイル: `C:\xampp\apache\conf\extra\httpd-vhosts.conf`
+​- IIS (Windows Server)
+​メイン設定ファイル: `C:\Windows\System32\inetsrv\config\applicationHost.config`
+​設定の該当箇所: `<system.applicationHost>` セクション内の `<sites>` 要素に記述。
+​仕組み: `<binding>` タグの hostHeader 属性でドメイン名を判別し、`<virtualDirectory>` の physicalPath で物理ディレクトリを指定する。
+​管理ツール: GUIツールである inetmgr (IIS マネージャー) を使用して設定するのが一般的。
 
 ---
 
