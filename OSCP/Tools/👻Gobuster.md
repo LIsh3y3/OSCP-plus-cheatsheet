@@ -97,7 +97,10 @@ gobuster vhost -u http://<TargetIP|Domain>:<Port>/> -w /usr/share/seclists/Disco
 
 ## 補足：バーチャルホストとは
 
-リクエスト内容によって、アクセス先を変更させるぎじゅつ
+- 1 台のマシン上で (company1.com と company2.com のような) 二つ以上のウェブサイトを扱う運用方法のこと
+- 以下 Apache 例の場合 (/etc/apache2/sites-available/xxxx.conf)：
+	- IPアドレスでアクセス → /var/www/html/umbraco のindexが表示
+	- skylark.jpでアクセス →/var/www/html のindexが表示
 ```xml
 <VirtualHost *:80>
     DocumentRoot /var/www/html/umbraco/
@@ -108,13 +111,6 @@ gobuster vhost -u http://<TargetIP|Domain>:<Port>/> -w /usr/share/seclists/Disco
     DocumentRoot /var/www/html/
 </VirtualHost>
 ```
-
-If you browse http://ip/, it'll show you /var/www/html/umbraco/index.php page.
-2) IIS default web pages (Available only by browsing skylark.jp)
-
-
-When you browse http://skylark.jp/, it'll redirect you to /var/www/html/index.php
-Does it make sense now? 🙂
 
 ---
 
