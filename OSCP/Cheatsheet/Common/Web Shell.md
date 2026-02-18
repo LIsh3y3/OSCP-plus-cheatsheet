@@ -422,8 +422,9 @@ echo "Public key added successfully!";
 - Payload：[cmdexec.aspx - GitHub](https://github.com/tennc/webshell/blob/master/aspx/asp.net-backdoors/cmdexec.aspx)（`/use/share/webshells/aspx/cmd.aspx`）
 実行例
 ```
-http://target/shell.aspx?cmd=whoami
+http://target/shell.aspx
 ```
+
 
 #### Reverse shell 
 
