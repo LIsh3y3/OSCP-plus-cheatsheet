@@ -391,8 +391,6 @@ echo "Public key added successfully!";
 
 #### ディレクトリ構造と Web Shell の設置場所
 
-ASP.NET Core (5+) では、開発時のパスがそのままサーバーに残っていることがあり、これが攻撃のヒントになる。
-
 ASP.NET framework（旧）を除き、通常は以下の階層に公開用ファイルが生成される
 ```sh
 # 具体例：/umbraco/bin/Debug/net6.0/publish
