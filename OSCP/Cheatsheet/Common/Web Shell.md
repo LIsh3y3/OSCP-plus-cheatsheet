@@ -391,16 +391,16 @@ echo "Public key added successfully!";
 
 #### ディレクトリ構造と Web Shell の設置場所
 
-ASP.NET framework（旧）を除き、通常は以下の階層に公開用ファイルが生成される
+- ASP.NET Frameworkは、`.aspx`ファイルが動作するため、Web Shellのアップロード先として有効
+
+- ASP.NET Core以降は、通常は以下の階層に公開用ファイルが生成されるが、aspxファイルは動作しないため無効
+	- アップロードしたaspxファイルはアクセスできないが、.txtファイルなどのファイル形式ならアクセス可能という場合、ASP.NET Core以降と推定できる
 ```sh
 # 具体例：/umbraco/bin/Debug/net6.0/publish
 <プロジェクト名>/bin/[Debug | Release]/<.NETバージョン>/publish/
 ```
 - publish フォルダ: 実際にWebサーバに公開すべきファイルがまとまっている場所
 - Web サイトをローンチするときは、コンパイルしたファイルを保存してある publish ディレクトリを公開する
-
->[!TIP] 
->これがWeb shell アップロード先として使われる
 
 #### ターゲットのASPバージョン特定
 
