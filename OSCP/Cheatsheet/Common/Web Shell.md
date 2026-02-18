@@ -375,7 +375,7 @@ echo "Public key added successfully!";
     - 言語: VBScript, JScript（Windows Server 2000 / IIS 5.0 時代）
 
 - ASP.NET
-    - 現在の**主流**で、拡張子は `.aspx`
+    - 現在の**主流**で、旧verのASP.NETの拡張子は `.aspx`（新しいASP.NETには拡張子がない）
     - 方式: コンパイル方式
     - 言語: C#, VB.NET
 
@@ -383,11 +383,11 @@ echo "Public key added successfully!";
 
 「ASP.NET」という名前でも、中身は大きく3つの世代に分かれる
 
-| 世代  | 名称                               | 特徴                           | 主な Web ルート            |
-| --- | -------------------------------- | ---------------------------- | --------------------- |
-| 旧世代 | ASP.NET Framework (~4.8)         | レガシー。Windows専用。IISと密結合。      | `C:\inetpub\wwwroot`  |
-| 新世代 | ASP.NET Core (1.0~3.1)           | モダン。Linux等でも動作（クロスプラットフォーム）。 | `.../publish/wwwroot` |
-| 最新  | .NET (5 / 6 / 7 / 8 / 9) (5+が総称) | Coreの名前が取れたが、中身はCoreの進化系。    | `.../publish/wwwroot` |
+| 世代  | 名称                               | 特徴                           | 主な Web ルート            | 拡張子     |
+| --- | -------------------------------- | ---------------------------- | --------------------- | ------- |
+| 旧世代 | ASP.NET Framework (~4.8)         | レガシー。Windows専用。IISと密結合。      | `C:\inetpub\wwwroot`  | `.aspx` |
+| 新世代 | ASP.NET Core (1.0~3.1)           | モダン。Linux等でも動作（クロスプラットフォーム）。 | `.../publish/wwwroot` | なし      |
+| 最新  | .NET (5 / 6 / 7 / 8 / 9) (5+が総称) | Coreの名前が取れたが、中身はCoreの進化系。    | `.../publish/wwwroot` | なし      |
 
 #### ディレクトリ構造と Web Shell の設置場所
 
@@ -400,7 +400,9 @@ echo "Public key added successfully!";
 <プロジェクト名>/bin/[Debug | Release]/<.NETバージョン>/publish/
 ```
 - publish フォルダ: 実際にWebサーバに公開すべきファイルがまとまっている場所
-- Web サイトをローンチするときは、コンパイルしたファイルを保存してある publish ディレクトリを公開する
+
+>[!TIP] 
+>これがWeb shell アップロード先として使われる
 
 #### ターゲットのASPバージョン特定
 
@@ -410,8 +412,8 @@ echo "Public key added successfully!";
     - `X-Powered-By: ASP.NET`：ASP.NET が動いている証拠
     - `X-AspNet-Version`: これがあれば旧世代（Framework）、なければ新世代（Core系）の可能性
 - URLの拡張子:
-    - `.aspx` あり：旧世代（Framework）の作法
-    - なし：新世代（Core系）のルーティング機能
+    - `.aspx` あり：旧世代（Framework）
+    - なし：新世代（Core以降）のルーティング機能
 - ファイル構成:
     - `web.config` のみ：旧世代（framework）
     - `appsettings.json` や `*.dll` が大量にある：新世代（Core系）
