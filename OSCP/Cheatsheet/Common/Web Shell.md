@@ -420,11 +420,12 @@ echo "Public key added successfully!";
 #### Web shell 
 
 - Payload：[cmdexec.aspx - GitHub](https://github.com/tennc/webshell/blob/master/aspx/asp.net-backdoors/cmdexec.aspx)（`/use/share/webshells/aspx/cmd.aspx`）
-実行例
+- 実行例
 ```
 http://target/shell.aspx
 ```
-
+![[Pasted image 20260219000105.png]]
+- Auth Keyはスクリプトの中にある（通常woanware）
 
 #### Reverse shell 
 

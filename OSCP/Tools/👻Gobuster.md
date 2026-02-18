@@ -88,7 +88,7 @@ gobuster dns -d <Target_domain> -i --wildcard -w /usr/share/seclists/Discovery/D
 # バーチャルホスト列挙：vhost モード
 
 - バーチャルホスト（1つのサーバー上で複数のドメインを運用）を発見する
-- 一部のサーバーでは、異なるバーチャルホストごとに異なるコンテンツが配置されているため、追加の攻撃対象を発見できる
+- 異なるバーチャルホストごとに異なるコンテンツが配置されているため、追加の攻撃対象を発見できる可能性がある
 	- たとえば、ホストAは堅牢だが、ホストBは脆弱で Web shell 実行可能など
 - 使用ワードリスト：`/usr/share/seclists/Discovery/DNS/`
 ```zsh
