@@ -110,6 +110,7 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 ## 補足：バーチャルホストとは
 
 - 1 台のマシン上で (company1.com と company2.com のような) 2つ以上の Web サイトを扱う運用方法のこと
+- 名前ベースもしくはIPベースで振り分ける
 - 以下 Apache 例の場合 (/etc/apache2/sites-available/xxxx.conf)：
 	- IPアドレスでアクセス → /var/www/html/umbraco のindexが表示
 	- skylark.jpでアクセス →/var/www/html のindexが表示
