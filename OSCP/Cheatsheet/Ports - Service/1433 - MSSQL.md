@@ -21,12 +21,18 @@ impacket-mssqlclient <username>@<TargetIP|domain> -port <port>
 - SQL認証：自分自身の内部DB（SAMやADではなく、SQL Server内のユーザーリスト）に `sql_svc` というユーザーがいないか確認
 
 接続(Windowsから)
+	⚠️SQL認証のみ
 ```powershell
-# ⚠️SQL認証のみ
+# インタラクティブモード
 sqlcmd [-S <TargetIP|domain>] -U <username> -P <pw> -l 30
+
+# 非インタラクティブモード
+sqlcmd [-S <TargetIP|domain>] -U <username> -P <pw> -30 -Q "<SQL_query>"
 ```
 - ローカルの場合は`-S`不要
-- 💡WinRM/リバースシェルなど非インタラクティブシェルのとき、Windows認証で他ユーザーとしてログオンしたいのであれば、[[Tunneling Through Deep Packet Inspection]]と組み合わせて、`impacket`でアクセスしないと失敗する
+
+>[!WARNING] 注意
+>WinRM/リバースシェルなど非インタラクティブシェルのとき、Windows認証で他ユーザーとしてログオンしたいのであれば、[[Tunneling Through Deep Packet Inspection]]と組み合わせて、`impacket`でアクセスしないと失敗する
 - 💡RDP/SSH接続であれば、`runas`で対象ユーザーとしてcmdを実行し、`sqlcmd -E`でWindows認証のログオン可能
 
 ---
