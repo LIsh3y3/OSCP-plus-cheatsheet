@@ -146,16 +146,18 @@ PS C:\> ls
 - Development...というフォルダに、`?????.exe`というファイルがある
 - ファイルをローカルに転送すると、「売上を分析する.exe」というファイルが見つかるので、中身を表示する
 ```sh
-strings 売上を分析する.exe 
+strings 売上を分析する.exe # 特になし
 ```
-
-
 ```sh
 strings -e l 売上を分析する.exe # 特になし
 ```
+- 機密情報は文字列に存在しない
+- DLL hijackingで使用する可能性あり
+
 
 #### SQL2022
 
+- iisユーザーは Permission denied
 
 
 ---
