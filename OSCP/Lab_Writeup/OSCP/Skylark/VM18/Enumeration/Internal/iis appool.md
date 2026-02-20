@@ -244,7 +244,26 @@ c:\windows\system32\inetsrv>
 ```
 
 ```powershell
+# PowerShellが利用できないときは、Accesschk.exeを使用する（方法はHackTricksに記載）
+powershell -ep bypass
+import-module .\PowerUp.ps1
+Get-ModifiableService
+Get-ModifiableServiceFile
+```
+- このコマンドやっても特に何も出ず
 
+- 以下のコマンドでいくつか利用できそうなサービスを見つける
+```powershell
+# cmd.exeの場合：sc query [service] ・ sc qc [service]
+Get-CimInstance -ClassName Win32_Service |
+  Where-Object { 
+      $_.State -eq 'Running' -and 
+      $_.StartName -notin @('NT AUTHORITY\LocalService', 'NT AUTHORITY\NetworkService') 
+  } |
+  Select-Object Name, StartName, PathName
+```
+```powershell
+MSSQLSERVER　NT Service MSSQLSERVER　"C: \Program Files \Microsoft SQL Server \MSSQL16.MSSQLSERVER\MSSQL Binn\ ...
 ```
 
 ---
