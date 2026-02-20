@@ -466,6 +466,9 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
 sc query type= service state= running
 ```
 
+>[!NOTE]
+>サービスの詳細を確認するには、`sc.exe qc <service>`
+
 ---
 
 # スケジュールタスクの列挙

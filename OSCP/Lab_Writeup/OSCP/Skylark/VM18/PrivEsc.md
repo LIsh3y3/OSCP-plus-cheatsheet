@@ -35,5 +35,9 @@ C:\Windows\system32>
 
 # Service 
 
-## filezilla
+## DevService
+
+- Unquoted Serviceなので、[[💥Windows Privilege Escalation#Service Exploits - Unquoted Service Path]]を使う
+
+
 
