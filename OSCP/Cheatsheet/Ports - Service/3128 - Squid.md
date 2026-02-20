@@ -83,16 +83,14 @@ proxychains nmap -sT -n -p- localhost
 ```zsh
 python3 spose.py --proxy http://<squid_IP>:3128 --target <squid_IP>
 ```
+- 関連ノート：[[コンパイル・ビルド#Python Package Management (pip)]]
 
 ## 各ツールのプロキシ対応オプション
 
-DIRB
+Gobuster
 ```zsh
-# プロキシなしだと403になる場合
-dirb http://<TargetIP>/path
-
-# プロキシ経由
-dirb http://<TargetIP>/path -p <squid_IP>:3128
+gobuster dir -u http://<TargetIP|Domain>:<Port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>' --proxy http://<squid_IP>:3128
+gobuster dir -u http://<TargetIP>:<port>/ -w /usr/share/wordlists/dirb/common.txt
 ```
 
 Nikto
@@ -102,7 +100,6 @@ nikto -h <TargetIP> -useproxy http://<squid_IP>:3128
 
 WPScan
 ```zsh
-# プロキシ経由
 wpscan --url http://<TargetIP>/wordpress --wp-content-dir wp-content --proxy http://<squid_IP>:3128
 ```
 
