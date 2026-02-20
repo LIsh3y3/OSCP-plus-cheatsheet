@@ -1,3 +1,6 @@
+このポートの見逃しがあった。。
+PowerShellWebAccessTestWebsiteとあるが、これはWindowsの機能で、ブラウザからPowerShellセッションを開始できる。
+
 # Nmap
 
 ```
