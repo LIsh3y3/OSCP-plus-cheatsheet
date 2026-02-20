@@ -169,6 +169,7 @@ NULL
 (2 rows affected)
 ```
 
+- umbracoは一般的でない
 
 
 ---

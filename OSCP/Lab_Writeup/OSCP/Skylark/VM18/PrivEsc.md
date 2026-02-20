@@ -22,3 +22,6 @@ C:\Windows\system32>
 ```
 
 - C:\SQL2022は閲覧できない
+
+- mssqlもSeImpersonatePrivilegeをもっているがSigmaPotatoとPrintSpooferは失敗する
+	- →なぜ？
