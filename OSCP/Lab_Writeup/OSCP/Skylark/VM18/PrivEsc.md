@@ -1,0 +1,2 @@
+- SigmaPotatoおよびPrintSpooferは動作しない
+	- Spoolerサービスが停止しているから？
