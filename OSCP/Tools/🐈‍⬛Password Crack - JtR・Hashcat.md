@@ -1,3 +1,5 @@
+>[!TIP]
+>wordlsitは rockyou.txt もしくは fastr
 # ✂️JtR vs 🐈‍⬛Hashcat比較表
 
 それぞれが異なるアルゴリズムをサポートするので、両方に精通する必要がある
@@ -178,7 +180,7 @@ kdbxファイル：*keepass2john*
 # 例：keepass2john Database.kdbx > crackable.txt
 keepass2john <file.kdbx> > <output_file>
 ```
-- `Database.kdbx`をクラックするとmasterパスワードを入手できるので、`Database.kdbx`ファイルをKeePassXC-で開き、masterパスワードで中身のパスワードを確認する
+- `Database.kdbx`をクラックするとmasterパスワードを入手できるので、`Database.kdbx`ファイルを `keepass2` で開き、master パスワードで中身のパスワードを確認する
 ![[Pasted image 20251215070623.png]]
 $$keepassxcでwindowsのパスワードを確認$$
 
