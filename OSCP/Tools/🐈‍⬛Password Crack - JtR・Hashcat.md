@@ -1,5 +1,6 @@
 >[!TIP]
->wordlsitは rockyou.txt もしくは fastr
+>パスワードクラックに使用する wordlsit は rockyou.txt もしくは fasttrack.txt
+
 # ✂️JtR vs 🐈‍⬛Hashcat比較表
 
 それぞれが異なるアルゴリズムをサポートするので、両方に精通する必要がある
@@ -180,9 +181,9 @@ kdbxファイル：*keepass2john*
 # 例：keepass2john Database.kdbx > crackable.txt
 keepass2john <file.kdbx> > <output_file>
 ```
-- `Database.kdbx`をクラックするとmasterパスワードを入手できるので、`Database.kdbx`ファイルを `keepass2` で開き、master パスワードで中身のパスワードを確認する
-![[Pasted image 20251215070623.png]]
-$$keepassxcでwindowsのパスワードを確認$$
+- `Database.kdbx`をクラックするとmasterパスワードを入手できるので、 `keepass2` で`Database.kdbx`ファイルを開き、master パスワードで中身のパスワードを確認する
+![[Pasted image 20260220163242.png]]
+$$keepass2でパスワードを確認$$
 
 #### 補足：/etc/shadowについて
 
