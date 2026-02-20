@@ -2,9 +2,9 @@
 
 - DesktopにPasswords.kdbxファイルがあったため、`keepass2john`でクラック試行
 	- →すぐにはできず
-	- fasttrack.txtで解読できた。
+	- fasttrack.txtで解読できた。→　`P@ssword!`
 		- **まずはfasttrackで解読**
-- squidのパスワードを入手したので、
+- squidのパスワードを入手したので、[[squid-http？ - 3128]]へ
 
 ---
 

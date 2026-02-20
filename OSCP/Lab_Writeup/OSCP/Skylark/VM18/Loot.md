@@ -29,7 +29,8 @@ milan
 # umbraco DB on vm18
 sa:DeathMarchPac1942
 
-ext_acc:DoNotShare!SkyLarkLegacyInternal2008
+# from vm18 Passwords.kdbx
+ext_acc:DoNotShare!SkyLarkLegacyInternal2008 # squid
 ann.sales:B9aL9lbDOlNkGmJxusmi
 Hitoshi@skylark.com:ganbatteyo!123
 j.local:5iQ78OU2JHAAKbQc5XAr
