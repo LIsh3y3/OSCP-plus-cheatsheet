@@ -55,6 +55,10 @@ j.jones@skylark.com:ChangeMePlease__XMPPTest
 reynolds@testing.com:bj1ZzWEmJd870YHMsV+NdfsTuce+zsQRyvb7e5fIgY8=
 ```
 
+- spose.py を使用
+```
+```
+
 ---
 
 # Screenshot
