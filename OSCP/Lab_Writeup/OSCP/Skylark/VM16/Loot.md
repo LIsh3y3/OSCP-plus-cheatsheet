@@ -5,9 +5,9 @@
 ftp_jp:~be<3@6fe1Z:2e8
 
 # linphoneというVoIPツールのパスワードっぽい
-l.nguyen@skylark.com:ChangeMePlease__XMPPTest
-j.jameson@skylark.com:ChangeMePlease__XMPPTest
-j.jones@skylark.com:ChangeMePlease__XMPPTest
+l.nguyen:ChangeMePlease__XMPPTest
+j.jameson:ChangeMePlease__XMPPTest
+j.jones:ChangeMePlease__XMPPTest
 
 # Zoiper5 Contact Serviceというツールの認証情報っぽい
 reynolds@testing.com:bj1ZzWEmJd870YHMsV+NdfsTuce+zsQRyvb7e5fIgY8=
