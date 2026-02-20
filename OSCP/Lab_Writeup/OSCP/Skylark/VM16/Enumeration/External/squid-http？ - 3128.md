@@ -104,8 +104,11 @@ Nmap done: 4 IP addresses (4 hosts up) scanned in 225.75 seconds
 - 実際にブラウザでアクセスしたら、sipXcomというのが表示された
 - これは、[[tftp- 69(udp)]]で入手した認証情報を使ってログイン試行する
 ```
-
+l.nguyen:ChangeMePlease__XMPPTest
 ```
+- →ログイン成功
+
+- Exploitを検索すると複数のエクスプロイトがあるっぽい
 
 
 ---
