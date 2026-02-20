@@ -110,6 +110,11 @@ l.nguyen:ChangeMePlease__XMPPTest
 
 - Exploitを検索すると複数のエクスプロイトがあるっぽい
 
+- ==Discordをみた==
+- 以下を使う
+	- https://packetstorm.news/files/id/171281
+- 
+
 
 ---
 
