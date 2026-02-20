@@ -263,7 +263,7 @@ Get-CimInstance -ClassName Win32_Service |
   Select-Object Name, StartName, PathName
 ```
 ```powershell
-MSSQLSERVER　NT Service MSSQLSERVER　"C: \Program Files \Microsoft SQL Server \MSSQL16.MSSQLSERVER\MSSQL Binn\ ...
+filezilla-server LocalSystem "C:\Program Files\FileZilla Server\filezilla-server.exe
 ```
 
 ---
