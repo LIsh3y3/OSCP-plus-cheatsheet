@@ -20,7 +20,7 @@ PORT     STATE  SERVICE    VERSION
 ---
 
 >[!NOTE]
->以下、squid_IP はSquidが動作しているIPを指し、TargetIP 
+>以下、`<squid_IP>` はSquidが動作しているIPを指し、`<TargetIP>` はsquid 経由でアクセスしたいIP（多くは内部NWのインターフェース）を指す
 
 # 接続
 
