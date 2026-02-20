@@ -26,7 +26,7 @@ root:7NVLVTDGJ38HM2TQ
 sarah
 milan
 
-# umbraco DB
+# umbraco DB on vm18
 sa:DeathMarchPac1942
 ```
 
