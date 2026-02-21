@@ -78,11 +78,16 @@ chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<des
 	- →失敗したとき：[[スクリプト・コマンド・シェル操作#コマンドが動作しない原因を突き止める]]
 
 7. 目的の操作をする
-	- Proxychainsを使ってコマンドを実行する場合：[[Port Redirection & SSH Port Forwarding#SSH Remote Dynamic Port Forwarding]]のステップ5以降
-	- SOCK経由のSSHアクセスの場合：[[22 - SSH#SSHをSOCKSプロキシ経由で動かす]]
+```sh
+# Nmap
+sudo proxychains nmap -sT --top-ports=20 -Pn -n [DestIP]
+```
+- Proxychainsを使ってコマンドを実行する場合：[[Port Redirection & SSH Port Forwarding#SSH Remote Dynamic Port Forwarding]]のステップ6以降
+- SOCK経由のSSHアクセスの場合：[[22 - SSH#SSHをSOCKSプロキシ経由で動かす]]
 
 >[!WARNING] 注意
->socksを使うときは、`/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
+>- socksを使うときは、`/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
+>- Proxychains は sudo と一緒に使わないと
 
 ---
 ---
