@@ -19,6 +19,9 @@ test
 79 open finger
 2323 open telnet
 ```
+
+- ==telnetでrootアクセスでroot==
+
 ### full scan
 
 ```
