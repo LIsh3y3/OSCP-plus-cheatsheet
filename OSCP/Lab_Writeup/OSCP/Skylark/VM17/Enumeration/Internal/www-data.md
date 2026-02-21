@@ -1,7 +1,7 @@
 
 - 5432がローカルで動作しているため、postgresqlでアクセス
 - ~/backend/defaultsのconfig.phpがブラウザでアクセスすると解釈されて実行されるが中からみると認証情報ありけり
-- webappというdbに接続
+- webappというdbに接続し、postgreユーザーとしてリバースシェルを獲得
 ```sh
 
 ```
