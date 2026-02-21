@@ -37,7 +37,7 @@ feroxbuster -u http://<TargetIP>:<Port>/ --depth <num> -r -k -w  /usr/share/secl
 ```
 
 >[!WARNING]
->Ferox
+>レスポンスのステータスを絞ることは、表層が403で内部は200のようなパスを見逃すことにつながる
 
 ## 脆弱性のスキャン
 
