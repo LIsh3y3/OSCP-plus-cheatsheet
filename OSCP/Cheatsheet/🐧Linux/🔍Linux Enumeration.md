@@ -650,8 +650,8 @@ find / -type f \( -perm 440 -o -perm 640 -o -perm 660 \) 2>/dev/null
 
 通信上やり取りされているパスワードをキャプチャする
 ```zsh
-# 具体例：sudo tcpdump -i lo -A | grep "pass"
-sudo tcpdump -i <intarface> -A -w output.pcap
+# 簡易版：sudo tcpdump -i lo -A | grep "pass"
+sudo tcpdump -i <intarface> -vvv -w output.pcap
 ```
 >[!TIP]
 >root権限が必要なので、他マシンと通信している可能性がある場合は、権限昇格後に必ず実行し、[[🦈Wireshark]]を使って分析
