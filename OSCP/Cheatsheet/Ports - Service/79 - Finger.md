@@ -32,6 +32,8 @@ finger @<TargetIP>
 finger <username>@<TargetIP>
 ```
 
+>
+
 fingerコマンド代替
 ```zsh
 echo "<username>" | nc -vn <TargetIP> 79
@@ -81,7 +83,7 @@ exploit
 ## Finger Bounce（ピボット）
 
 中間の侵害済みホストを経由して、ファイアウォール内部のマシンへFingerクエリをリレーする手法。
-
+ただし、中間の侵害済みホストとターゲットホスト両方でFinger が使える必要がある。
 
 ```zsh
 # 中間ホスト経由でクエリをリレー
@@ -92,10 +94,6 @@ finger @<InternalHost>@<ExternalHost>
 ```
 
 > [!TIP] Finger Bounceは、外部から直接アクセスできない内部マシンへのラテラルムーブメントに使える。侵害済みのホストをリレーとして、内部ネットワーク上のFingerサービスへクエリを送る。
-
-## プランファイル・プロジェクトファイルの確認
-
-Fingerは `~/.plan` や `~/.project` の内容を返すことがある。プロジェクトタイムラインや機密情報、場合によってはクレデンシャルが含まれていることがある。
 
 ---
 
