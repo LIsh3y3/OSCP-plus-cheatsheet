@@ -32,7 +32,8 @@ finger @<TargetIP>
 finger <username>@<TargetIP>
 ```
 
->
+>[!NOTE]
+>Fingerは `~/.plan` や `~/.project` の内容を返すことがある。プロジェクトタイムラインや機密情報、場合によってはクレデンシャルが含まれていることがある。
 
 fingerコマンド代替
 ```zsh
@@ -94,16 +95,6 @@ finger @<InternalHost>@<ExternalHost>
 ```
 
 > [!TIP] Finger Bounceは、外部から直接アクセスできない内部マシンへのラテラルムーブメントに使える。侵害済みのホストをリレーとして、内部ネットワーク上のFingerサービスへクエリを送る。
-
----
-
-# 攻撃フロー（まとめ）
-
-1. **Recon**：nmap / nc でポート79が開いているか確認し、バージョンを把握する
-2. **Enumeration**：`finger @<TargetIP>` や `finger-user-enum.pl` でユーザー一覧を取得する
-3. **Exploitation**：コマンドインジェクションが可能な実装であれば `finger "|/bin/id@<TargetIP>"` 等でRCEを試みる
-4. **Lateral Movement**：Finger Bounceで内部ネットワークへピボットする
-5. **Post-Exploitation**：権限昇格・永続化（`.bashrc`改ざん、バックドア設置等）
 
 ---
 
