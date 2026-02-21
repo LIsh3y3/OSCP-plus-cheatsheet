@@ -649,7 +649,7 @@ find / -type f \( -perm 440 -o -perm 640 -o -perm 660 \) 2>/dev/null
 - デーモンにより定期的に一瞬だけ実行されるプロセスも見逃さない
 
 通信上やり取りされているパスワードをキャプチャする
-	⚠️root権限が必要
+	⚠️root権限が必要なので、権限昇格後かつ他マシンと通信しているかのうせいがあｒ
 ```zsh
 # 具体例：sudo tcpdump -i lo -A | grep "pass"
 sudo tcpdump -i lo -A | grep "[keyword]"
