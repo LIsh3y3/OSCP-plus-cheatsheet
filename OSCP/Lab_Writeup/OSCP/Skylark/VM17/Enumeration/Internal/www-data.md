@@ -1,12 +1,3 @@
-# シェルの安定化
-
-※penelopeでシェル獲得できた場合は不要
-```zsh
-python3 -c 'import pty;pty.spawn("/bin/bash")'
-export TERM=xterm-256color
-# Ctrl + Z
-stty raw -echo; fg
-```
 
 ---
 
