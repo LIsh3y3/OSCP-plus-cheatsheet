@@ -80,13 +80,13 @@ chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<des
 7. 目的の操作をする
 ```sh
 # Nmap
-sudo proxychains nmap -sT -p- -Pn -n <TargetIP>
+sudo proxychains nmap -sT -p- -Pn -n <TargetIP> [2>/dev/null]
 ```
 - SOCK経由のSSHアクセスの場合：[[22 - SSH#SSHをSOCKSプロキシ経由で動かす]]
 
 >[!WARNING] 注意
->- socksを使うときは、`/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
->- Proxychains は sudo と一緒に使わないと
+>- socksを使うときは `/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
+>- Proxychains は sudo と一緒に使う
 
 ---
 ---
