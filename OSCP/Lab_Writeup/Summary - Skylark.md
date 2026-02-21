@@ -106,4 +106,8 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
 # VM17
 
 1. nginxのみしか動作していないように見えて、FeroxBusterでスキャンしたらUploadディレクトリを発見
-	- **反省**：FeroxBusterで403を見逃すと、表面上はアクセスできなくても、深いパスであればアクセスできるこ
+	- **反省**：FeroxBusterで403を見逃すと、表面上はアクセスできなくても、深いパスであればアクセスできることを見逃す
+
+2. PDFファイルしか受け付けないホワイトリスト型の防御であったため、[[⚡️File upload vuln#Magic Number フィルタ]]でPDFファイルとしてPHPファイルを詐称のうえ、アップロード
+
+3. FeroxBusterでUploadsディレクトリが403になっていた
