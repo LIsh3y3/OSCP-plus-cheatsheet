@@ -66,7 +66,7 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 http://skylark.jp:24680/reverse.aspx
 ```
 
-5. 内部でサービスを列挙したところ、クオテーションに囲まれていないサービスを発見（[[💥Windows Privilege Escalation#Unquoted Service Pathのエクスプロイト方法]]）
+5. 内部でサービスを列挙したところ、クオテーションに囲まれていないサービスを発見したので、エクスプロイトして権限昇格（[[💥Windows Privilege Escalation#Unquoted Service Pathのエクスプロイト方法]]）
 ```powershell
 Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
   Where-Object {
@@ -79,3 +79,5 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
   } |
   Select PSChildName, ImagePath, ObjectName
 ```
+
+6. Administrator に権限昇格後、C:\Users\j_local\Desktop にpasswords.
