@@ -170,4 +170,4 @@ xfreerdp <.rdp_file> /d:<domain> /u:<username>
 ```
 - [リモートアプリ VS RDP: どう違う？ - AnyViewer](https://www.anyviewer.com/jp/how-to/remoteapp-vs-rdp-2578.html)
 
-4
+3. ローカルサービスで...（ここで終了）
