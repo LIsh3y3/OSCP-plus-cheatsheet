@@ -111,6 +111,7 @@ bash /root/restart.sh
 postgres: autovacuum worker process openfire
 ```
 
+- tcpdumpしたところ、30からの認証情報を発見
 
 ---
 
