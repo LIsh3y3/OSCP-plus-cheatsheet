@@ -141,8 +141,8 @@ root
 
 # VM13
 
-1. [[#VM17]]で入手した認証情報でWebサービスの
-- ちなみに、最初
+1. [[#VM17]]で入手した認証情報でWebサービスに接続し、`.rdp`ファイルをゲット
+- ちなみに、nginxでGobusterしても何も出力はされなかったが、[[#VM17]]のPDFファイルに/RDWebというディレクトリがあることがわかった
 ```sh
 PORT   STATE SERVICE REASON  VERSION
 80/tcp    open  http          Microsoft IIS httpd 10.0
@@ -163,3 +163,5 @@ PORT   STATE SERVICE REASON  VERSION
 | tls-alpn: 
 |_  http/1.1
 ```
+
+2. 入手した
