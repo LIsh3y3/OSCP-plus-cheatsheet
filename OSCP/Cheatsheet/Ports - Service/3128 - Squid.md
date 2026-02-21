@@ -79,10 +79,10 @@ http <squid_IP> 3128 <username> <password>
 proxychainsからnmapを実行
 ```sh
 # 全ポートスキャン
-ports=$(proxychains nmap -sT -Pn <TargetIP> -p- -n --min-rate=1000 | grep '^[0-9]' | awk -F'/' '{print $1}' | tr '\n' ',' | sed 's/,$//')
+ports=$(sudo proxychains nmap -sT -Pn <TargetIP> -p- -n --min-rate=1000 | grep '^[0-9]' | awk -F'/' '{print $1}' | tr '\n' ',' | sed 's/,$//')
 
 # 詳細スキャン
-proxychains nmap -sT -Pn <TargetIP> -p $ports -n -A -sV -oN Nmap/scan_via_proxy.nmap
+sudo proxychains nmap -sT -Pn <TargetIP> -p $ports -n -A -sV -oN Nmap/scan_via_proxy.nmap
 ```
 
 >[!TIP]

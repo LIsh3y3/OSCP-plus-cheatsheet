@@ -195,7 +195,7 @@ socks5 [SSH client IP] [SSH client LISTEN Port(1025以上任意)]
 # 例：Nmapの場合（sTでないとProxyChains経由で動作しない）
 sudo proxychains nmap -vvv -sT --top-ports=20 -Pn [DestIP]
 # 例：smbclientの場合
-proxychains smbclient -L //[DestIP]/ -U hr_admin --password=Welcome1234
+sudo proxychains smbclient -L //[DestIP]/ -U hr_admin --password=Welcome1234
 ```
 - DestIPは、足場からネットワーク情報を列挙して発見する
 	- [[🔍Windows Local Enumeration#ネットワーク情報収集コマンド]]
