@@ -1,6 +1,10 @@
 
 - 5432がローカルで動作しているため、postgresqlでアクセス
-- ~/backend/defaultsのconfi
+- ~/backend/defaultsのconfig.phpがブラウザでアクセスすると解釈されて実行されるが中からみると認証情報ありけり
+- webappというdbに接続
+```sh
+
+```
 
 
 ---
