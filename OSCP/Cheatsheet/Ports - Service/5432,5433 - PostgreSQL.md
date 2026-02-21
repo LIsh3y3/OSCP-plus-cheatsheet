@@ -234,6 +234,8 @@ DO $$DECLARE cmd text;BEGIN
 
 ## Privilege Escalation
 
+PostgreSQL は権限を制限しているため、これでrootになれるわけではない。Postgre
+
 CREATEROLE 特権による昇格
 ```sql
 -- 自身を特権グループに所属させる
