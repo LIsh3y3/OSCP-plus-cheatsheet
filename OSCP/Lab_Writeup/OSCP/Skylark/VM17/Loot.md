@@ -77,7 +77,7 @@ postgres:EAZT5EMULA75F8MC
 ```
 
 ## proof.txt
-
+![[Pasted image 20260221221709.png]]
 ```zsh
 
 ```
