@@ -1,8 +1,7 @@
 - `/var/mail/root`を確認すると、Cron daemonからの自動メールログが確認できる
 - Cronでは、コマンド引数である`X-Cron-Env`を閲覧
 - openポートにメール用のポート（SMTPなど）がopenであることを確認
-
-
+- posgresが動いているみたいなのでアクセスしてみる
 
 ---
 
