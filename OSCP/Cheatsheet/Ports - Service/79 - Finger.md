@@ -44,41 +44,23 @@ nmap -sV -p 79 --script=banner <TargetIP>
 
 # Enumeration
 
-## fingerコマンドによるユーザー列挙
-
+fingerコマンドによるユーザー列挙
 ```zsh
 finger @<TargetIP>           # ユーザー一覧
 finger <username>@<TargetIP> # 特定ユーザーの情報
 ```
 
-## finger-user-enum.pl（PentestMonkey）
-
+finger-user-enum.pl（PentestMonkey）
 ```zsh
 finger-user-enum.pl -U /usr/share/seclists/Usernames/top-usernames-shortlist.txt -t <TargetIP>
 finger-user-enum.pl -u root -t <TargetIP>
 finger-user-enum.pl -U users.txt -T ips.txt
 ```
 
-## nmap スクリプト
-
+nmap スクリプト
 ```zsh
 nmap -p 79 --script finger <TargetIP>
 nmap -sV -p 79 --script=banner <TargetIP>
-```
-
-## Metasploit
-
-```zsh
-use auxiliary/scanner/finger/finger_users
-set RHOSTS <TargetIP>
-set USER_FILE /usr/share/seclists/Usernames/top-usernames-shortlist.txt
-run
-```
-
-## Shodan
-
-```
-port:79 USER
 ```
 
 ---
@@ -110,8 +92,11 @@ exploit
 中間の侵害済みホストを経由して、ファイアウォール内部のマシンへFingerクエリをリレーする手法。
 
 ```zsh
-finger user@<CompromisedHost>@<VictimIP>   # 中間ホスト経由でクエリをリレー
-finger @<InternalHost>@<ExternalHost>      # 別フォーマット
+# 中間ホスト経由でクエリをリレー
+finger user@<CompromisedHost>@<VictimIP>
+
+# 別フォーマット
+finger @<InternalHost>@<ExternalHost>
 ```
 
 > [!TIP] Finger Bounceは、外部から直接アクセスできない内部マシンへのラテラルムーブメントに使える。侵害済みのホストをリレーとして、内部ネットワーク上のFingerサービスへクエリを送る。
