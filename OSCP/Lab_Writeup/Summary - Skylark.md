@@ -39,4 +39,9 @@ drwxrwxrwx 1 ftp ftp               0 Nov 30  2022 aspnet_client
 drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 ```
 
-2. iisstart.htm (iisのデフォルトページ) と umbracoの２つがあり、かつ、`/etc/hosts`に以下のように登録してそれぞれFQDNとTLD+1でアクセスしたところ、umbracoとIISに振り分けられたので、[[👻Gobuster#]]
+2. iisstart.htm (iisのデフォルトページ) と umbracoの２つがあり、かつ、`/etc/hosts`に以下のように登録してそれぞれFQDNとTLD+1でアクセスしたところ、umbracoとIISに振り分けられたので、バーチャルホストと推定（[[👻Gobuster#補足：バーチャルホストとは]]）
+```sh
+192.168.1.20 tokyo07.skylark.com skylark.com
+```
+
+3. umba
