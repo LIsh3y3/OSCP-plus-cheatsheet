@@ -38,8 +38,11 @@ j.local:5iQ78OU2JHAAKbQc5XAr
 # sipxcom
 superadmin:2008_EndlessConversation
 
-# 30
+# 30 rdp
 desktop:Deskt0pTermin4L
+
+# on 30
+legacy:I_Miss_Windows3.1
 ```
 
 ---
