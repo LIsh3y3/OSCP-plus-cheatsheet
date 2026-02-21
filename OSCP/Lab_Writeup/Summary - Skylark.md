@@ -61,7 +61,9 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 -rw-rw-rw- 1 ftp ftp              74 Dec 01  2022 reverse.php
 ```
 
-4. 以下のURL（TLD+1：IISの方）でアクセスしたらリバースシェル獲得
+4. 以下のURL（TLD+1：IISの方）でアクセスしたらIISとしてリバースシェル獲得
 ```
 http://skylark.jp:24680/reverse.aspx
 ```
+
+5. 内部でサービスを列挙したところ、
