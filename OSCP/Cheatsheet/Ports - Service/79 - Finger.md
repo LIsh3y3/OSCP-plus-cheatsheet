@@ -7,16 +7,6 @@
 
 ---
 
-# 接続
-
-基本接続（nc）
-```zsh
-nc -vn <TargetIP> 79
-echo "root" | nc -vn <TargetIP> 79
-```
-
----
-
 # Recon
 
 ## バナーグラブ・バージョン確認
@@ -25,11 +15,16 @@ echo "root" | nc -vn <TargetIP> 79
 nc -vn <TargetIP> 79
 nmap -sV -p 79 --script=banner <TargetIP>
 ```
-
 確認すべき情報：
-
 - OSバージョン
 - Fingerデーモンのバージョン（古い実装はRCEに脆弱な場合あり）
+
+```zsh
+echo "<s>" | nc -vn <TargetIP> 79
+```
+
+---
+
 
 ---
 
