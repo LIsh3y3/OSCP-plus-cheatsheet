@@ -66,4 +66,16 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 http://skylark.jp:24680/reverse.aspx
 ```
 
-5. 内部でサービスを列挙したところ、
+5. 内部でサービスを列挙したところ、クオテーションに囲まれていないサービスを発見（[[💥Windows Privilege Escalation#Unquoted Service Pathのエクスプロイト方法]]）
+```powershell
+Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
+  Where-Object {
+    $_.ObjectName -and
+    $_.ObjectName -notmatch 'LocalService|NetworkService' -and
+    $_.ImagePath -and
+    $_.ImagePath -notmatch '^"?C:\\Windows\\'
+    # unquoted service path用
+    # $_.PathName -notmatch '"'
+  } |
+  Select PSChildName, ImagePath, ObjectName
+```
