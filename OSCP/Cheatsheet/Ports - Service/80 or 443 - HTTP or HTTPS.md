@@ -19,8 +19,6 @@ whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<TargetIP>
 1. まずGobusterで1階層の高速スキャン
 2. 気になるディレクトリ(301ステータス、api等)が見つかったらFeroxbusterで再帰的に深掘り
 
-- [ ] `-s`や`-b`でフィルタするのを当たり前にする？
-
 Gobuster：[[👻Gobuster]]
 ```zsh
 # ファイルアクセスエラー回避のため、同時に開けるファイルの最大数を調整
@@ -35,8 +33,11 @@ FeroxBuster：[[🦝FeroxBuster]]
 ulimit -n 8192
 
 # 再帰スキャン
-feroxbuster -u http://<TargetIP>:<Port>/ --depth <num> -r -k -w  /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt --auto-tune -s 200,301,302 -o WebEnum/feroxbuster.txt -x '<extensions>'
+feroxbuster -u http://<TargetIP>:<Port>/ --depth <num> -r -k -w  /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt --auto-tune -o WebEnum/feroxbuster.txt -x '<extensions>'
 ```
+
+>[!WARNING]
+>Ferox
 
 ## 脆弱性のスキャン
 
