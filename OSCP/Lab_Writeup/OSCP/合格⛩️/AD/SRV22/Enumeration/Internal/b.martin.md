@@ -65,6 +65,23 @@ Privilege Name                Description                    State
 ============================= ============================== ========
 SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
+
+
+---
+
+╔══════════╣ PowerShell events - script block logs (EID 4104) - searching for sensitive data.
+
+   User Id         :        S-1-5-21-318536300-2164503644-2098472648-500
+   Event Id        :        4104
+   Context         :        Write-CWarningOnce -Message ('You passed a plain text password to `Initialize-CLcm`. A future version of Carbon will remove support for plain-text passwords. Please pass a `SecureString` instead.')
+{
+if( $CertPassword -and $CertPassword -isnot [securestring] )
+ConvertTo-SecureString -String $CertPassword -AsPlainText -Force
+}
+$thumbprint = $null
+if( $CertificateID )
+   Created At      :        10/9/2024 1:55:57 PM
+   Command line    :        ConvertTo-SecureString -String $CertPassword -AsPlainText -Force
 ```
 
 ---
