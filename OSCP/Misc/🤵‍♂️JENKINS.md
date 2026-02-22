@@ -60,7 +60,7 @@ wget <url>/jnlpJars/jenkins-cli.jar
 
 認証付きCLI接続
 ```zsh
-java -jar jenkins-cli.jar -s <url> -auth <username>:password who-am-i
+java -jar jenkins-cli.jar -s <url> -auth <username>:<pw> who-am-i
 ```
 
 ## Jenkins API（REST）
