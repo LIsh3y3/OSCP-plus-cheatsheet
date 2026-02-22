@@ -63,6 +63,7 @@ Get-ChildItem -Path C:\ -Include *.ps1,*.xml,*.txt,*.config,*.ini -Recurse -Erro
 
 ## JENKINS
 
+## 共有の列挙
 
 
 # Local

