@@ -31,7 +31,7 @@ PORT   STATE SERVICE REASON  VERSION
 - Anonymousログイン可能
 - ファイルのアップロードは不可
 - ダウンロードしたすべてのファイルを閲覧してみる
-	- すべてPDFファイル
+	- すべてPDFファイルで、「Staedtler 」という実際にある会社のパンフレットっぽい
 
 - 2d5e...
 	- 
