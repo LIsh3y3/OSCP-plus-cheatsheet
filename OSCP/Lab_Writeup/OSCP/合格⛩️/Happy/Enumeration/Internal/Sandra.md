@@ -109,6 +109,29 @@ Mandatory Label\Medium Mandatory Level Label            S-1-16-8192
 
 ### インストール済みアプリケーション
 
+```powershell
+*Evil-WinRM* PS C:\> # Access deninedのときは、reg query "HKLM\..."
+$paths = @(
+"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*","HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*","HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*")
+Get-ItemProperty -Path $paths -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation | Sort-Object DisplayName
+
+DisplayName                                                        DisplayVersion  InstallLocation
+-----------                                                        --------------  ---------------
+Ahsay Cloud Backup Suite                                           8.1.1.50        C:\Program Files\AhsayCBS\
+Argus DVR Viewer
+Argus Surveillance DVR
+Microsoft Edge                                                     111.0.1661.41   C:\Program Files (x86)\Microsoft\Edge\Application
+
+Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.27.29016 14.27.29016.0
+Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.27.29016 14.27.29016.0
+Microsoft Visual C++ 2019 X64 Additional Runtime - 14.27.29016     14.27.29016
+Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.27.29016        14.27.29016
+Microsoft Visual C++ 2019 X86 Additional Runtime - 14.27.29016     14.27.29016
+Microsoft Visual C++ 2019 X86 Minimum Runtime - 14.27.29016        14.27.29016
+Update for Windows 10 for x64-based Systems (KB5001716)            4.91.0.0
+VMware Tools                                                       11.2.6.17901274 C:\Program Files\VMware\VMware Tools\
+Windows PC Health Check                                            3.2.2110.14001
+```
 
 ---
 
