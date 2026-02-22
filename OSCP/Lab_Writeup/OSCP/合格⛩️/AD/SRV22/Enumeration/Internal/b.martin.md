@@ -293,6 +293,16 @@ Get-ModifiableScheduledTaskFile
 
 ---
 
+### domain共有
+
+```powershell
+
+```
+
+
+---
+
+
 ### 興味深い情報
 
 #### Microsoft SQL Server
