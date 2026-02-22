@@ -26,14 +26,9 @@ administrator:CarHammerChip964
 
 ※IPアドレスの出力→フラグの出力のキャプチャ必要
 
-## local.txt
-
-```zsh
-
-```
-
 ## proof.txt
 
+![[Pasted image 20260222182128.png]]
 ```zsh
-
+f32449c44d7429d9a5e33b2e49032172
 ```
