@@ -4,6 +4,7 @@
 # from ftp env MySQL(local) creds（開発用が7500、公開用が7600のポートで動作しているみたい）
 Sandra:Nj82@1Waqk90$
 Administrator:V3rt1cal8Shr1nk2C3ntury!
+Sandra:V3rt1cal8Shr1nk2C3ntury!
 ```
 
 ---
