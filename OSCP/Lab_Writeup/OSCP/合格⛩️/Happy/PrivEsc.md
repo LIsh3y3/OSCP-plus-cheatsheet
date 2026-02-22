@@ -1,6 +1,25 @@
 # Argus surveilance dvr unquoted P.E
 
+- [Argus Surveillance DVR 4.0 - Unquoted Service Path](https://www.exploit-db.com/exploits/50261)
 
+- Local Systemで動作している、かつ、サービスは囲まれていない
+```powershell
+*Evil-WinRM* PS C:\Program Files\Argus Surveillance DVR> Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
+  Where-Object {
+    $_.ObjectName -and
+    $_.ObjectName -notmatch 'LocalService|NetworkService' -and
+    $_.ImagePath -and
+    $_.ImagePath -notmatch '^"?C:\\Windows\\'
+    # unquoted service path用
+    # $_.PathName -notmatch '"'
+  } |
+  Select PSChildName, ImagePath, ObjectName
+
+PSChildName                   ImagePath                                                                               ObjectName
+-----------                   ---------                                                                               ----------
+Files\AhsayCBS\bin\cbssvcX64.exe                                             .\Sandra
+ARGUSSURVEILLANCEDVR_WATCHDOG C:\Program Files\Argus Surveillance DVR\DVRWatchdog.exe                                 LocalSystem
+```
 
 
 
