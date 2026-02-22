@@ -114,6 +114,9 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ## 記録用結果（長文注意）
 
+```powershell
+
+```
 
 
 
