@@ -133,10 +133,10 @@ d-----         10/9/2024   2:44 PM                UnattendGC
 ```
 
 - unattend.xml
-```powershell
+```xml
  <Name>Admin</Name>
-                                                <Group>Administrators</Group>
-                                                <Password>*SENSITIVE*DATA*DELETED*</Password>
+   <Group>Administrators</Group>
+	<Password>*SENSITIVE*DATA*DELETED*</Password>
 
 ```
 
