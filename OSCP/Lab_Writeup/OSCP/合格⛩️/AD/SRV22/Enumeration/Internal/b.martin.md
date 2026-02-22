@@ -1,7 +1,8 @@
 # 試行錯誤の結果
 
-## sqlcmd
+## sqlログイン
 
+- ローカルから
 ```powershell
 PS C:\Program Files\Microsoft SQL Server> sqlcmd -S 127.0.0.1,1434 -A -E
 sqlcmd : Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : SQL Server Network Interfaces: Connection string is not valid [87]. .
@@ -42,6 +43,11 @@ At line:1 char:1
 + ~~~
     + CategoryInfo          : PermissionDenied: (C:\Windows\Temp:String) [Get-ChildItem], UnauthorizedAccessException
     + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+```
+
+- リモートから
+```sh
+
 ```
 
 ## パスワード探索
