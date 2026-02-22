@@ -105,12 +105,14 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 # Credential harvesting
 
-## powershell history
-
+powershell history->特になし
 ```powershell
 Get-History # 特になし
-
+(Get-PSReadlineOption).HistorySavePath も特になし
 ```
+
+cmdkey ->なし
+
 
 
 
