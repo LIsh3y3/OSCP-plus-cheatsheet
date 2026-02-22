@@ -261,6 +261,13 @@ At line:1 char:1
     + FullyQualifiedErrorId : NativeCommandError
 ```
 
+- windows認証を試すも失敗
+```powershell
+PS C:\Program Files\Microsoft SQL Server> sqlcmd -E
+PS C:\Program Files\Microsoft SQL Server> sqlcmd -S localhost -E -l 30
+PS C:\Program Files\Microsoft SQL Server>
+```
+
 ---
 ---
 
