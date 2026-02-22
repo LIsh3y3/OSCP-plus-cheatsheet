@@ -35,8 +35,8 @@ PORT   STATE SERVICE REASON  VERSION
 
 - 2d5e...と438...
 	- 「Staedtler 」という実際にある会社のパンフレットっぽい
-- 77cfe070...
-	- AuditorzRusというかい
+- **77cfe070...**
+	- AuditorzRusという会社（多分このターゲット）の年間レポートっぽい
 
 
 ---
