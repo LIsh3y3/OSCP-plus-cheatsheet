@@ -245,6 +245,11 @@ SMB         172.16.104.202  445    SRV22            [-] oscp.exam\IUSR@OSCP.EXAM
 `b.martin@oscp.exam:BusyWorkerDay777`
 ![[Pasted image 20260222190305.png]]
 
+- めちゃくちゃ詰まったが、RDPで接続できた
+```powershell
+xfreerdp3 /dynamic-resolution +clipboard /cert:ignore /v:172.16.104.202 /u:'b.martin' /p:'BusyWorkerDay777'   
+```
+
 ---
 
 # WinPEAS 結果
