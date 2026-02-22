@@ -391,8 +391,11 @@ C$       2147483648 Default share       WS26.oscp.exam
 
 - それぞれのshareにアクセス
 
-### 
+### SYSVOL
 
+
+
+### NETLOGON
 
 ### ADMIN$
 
