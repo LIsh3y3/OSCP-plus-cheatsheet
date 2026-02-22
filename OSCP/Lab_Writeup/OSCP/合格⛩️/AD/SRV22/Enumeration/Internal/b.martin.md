@@ -505,6 +505,8 @@ usage: Sqlcmd            [-U login id]          [-P password]
 - `env`なし
 - powershell history: なし（自分がやったコマンドだけ）
 
+## snaffler
+
 
 ---
 
