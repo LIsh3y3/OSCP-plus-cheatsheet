@@ -131,6 +131,46 @@ PORT      STATE         SERVICE       VERSION
 ## Rustscan
 
 ```
+PORT     STATE SERVICE    REASON         VERSION
+21/tcp   open  ftp        syn-ack ttl 63 vsftpd 3.0.5
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.49.104
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.5 - secure, fast, stable
+|_End of status
+22/tcp   open  ssh        syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 43:5c:c0:36:35:2e:9d:17:7a:5d:62:e5:57:15:a0:c9 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMCm/Qspq1Vwtb2s4iwqkan4VMPdZsP9WKbYIyNQtWjYGWaxpzEfZncOcWXPEkI2NC2OD8wBy/f4kn+glGuEx2s=
+|   256 e2:5e:b2:4e:13:3a:7a:8d:77:f1:a8:8a:b5:0c:14:85 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQxWLp2xH4iaavqDafgfhHcFN3kM8sjWjIlDxODbK34
+80/tcp   open  http       syn-ack ttl 63 Apache httpd 2.4.52 ((Ubuntu))
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+|_http-title: OSCP
+|_http-favicon: Unknown favicon MD5: B1085880D944251EE0036916008A74FC
+| http-methods: 
+|_  Supported Methods: POST OPTIONS HEAD GET
+5432/tcp open  postgresql syn-ack ttl 63 PostgreSQL DB 14.7 - 14.9
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=oscp
+| Subject Alternative Name: DNS:oscp
+| Issuer: commonName=oscp
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-05-02T14:26:17
+| Not valid after:  2033-04-29T14:26:17
+| MD5:   e296:59f8:e805:7476:cba5:8c47:4d63:6548
+| SHA-1: 8409:7514:72fe:48bf:0162:e35c:9adb:efea:ac1c:b741
 
 ```
 
