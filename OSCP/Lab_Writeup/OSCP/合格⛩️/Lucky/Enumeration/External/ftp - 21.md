@@ -37,7 +37,7 @@ PORT   STATE SERVICE REASON  VERSION
 	- 「Staedtler 」という実際にある会社のパンフレットっぽい
 - **77cfe070...**
 	- AuditorzRusという会社（多分このターゲット）の年間レポートっぽい
-	- ぱ
+	- パスワードが古く脆弱なので変えてくださいね、というレポート
 
 
 ---
