@@ -633,8 +633,6 @@ Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*
   Where-Object {$_.Message -match "Password|password|ConvertTo-SecureString"} |
   Format-List
 ```
-
-sqlcmd -S "127.0.0.1,1434" -A -E
 grep -rni "Password" C:\ 2>$null 特に C:\Program Files\Jenkins や、管理者が作業しそうな C:\Users\Administrator\Documents（もしアクセスできれば）、あるいは C:\Windows\Temp を重点的に
 jenkinsのweb uiにログインできないか再度試行
 jenkinsのconfigに直接はアクセスできないか
