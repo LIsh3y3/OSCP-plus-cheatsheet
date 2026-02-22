@@ -325,6 +325,10 @@ wpscan --url http://$TargetIP --no-banner --enumerate p,t --plugins-detection ag
 
 # Enumeration
 
+## wp-login.php
+
+- 以下の認証情報で試行
+
 
 ---
 
