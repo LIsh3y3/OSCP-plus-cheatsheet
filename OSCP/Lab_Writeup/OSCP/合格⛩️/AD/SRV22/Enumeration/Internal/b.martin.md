@@ -143,8 +143,76 @@ VMware Tools                                                       12.1.0.202196
 ### サービス
 
 ```powershell
+type C:\Users\b.martin\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+PS C:\Program Files\Microsoft SQL Server> # cmd.exe???:sc query [service] · sc qc [service]
+PS C:\Program Files\Microsoft SQL Server> Get-CimInstance -ClassName Win32_Service |
+>>   Where-Object {
+>>       $_.State -eq 'Running' -and
+>>       $_.StartName -notin @('NT AUTHORITY\LocalService', 'NT AUTHORITY\NetworkService')
+>>   } |
+>>   Select-Object Name, StartName, PathName
 
+Name                          StartName                 PathName
+----                          ---------                 --------
+AzureAttestService            LocalSystem               C:\Windows\system32\svchost.exe -k AzureAttestService
+BrokerInfrastructure          LocalSystem               C:\Windows\system32\svchost.exe -k DcomLaunch -p
+CertPropSvc                   LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs
+COMSysApp                     LocalSystem               C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+DcomLaunch                    LocalSystem               C:\Windows\system32\svchost.exe -k DcomLaunch -p
+DiagTrack                     LocalSystem               C:\Windows\System32\svchost.exe -k utcsvc -p
+DsmSvc                        LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+DsSvc                         LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+gpsvc                         LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+IKEEXT                        LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+iphlpsvc                      LocalSystem               C:\Windows\System32\svchost.exe -k NetSvcs -p
+Jenkins                       .\jenkins                 "C:\Program Files\Jenkins\jenkins.exe"
+KeyIso                        LocalSystem               C:\Windows\system32\lsass.exe
+LanmanServer                  LocalSystem               C:\Windows\System32\svchost.exe -k smbsvcs
+LSM
+MSSQLSERVER                   NT Service\MSSQLSERVER    "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Binn\sqlservr.exe" -sMSSQLSERVER
+NcbService                    LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+Netlogon                      LocalSystem               C:\Windows\system32\lsass.exe
+Netman                        LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+PcaSvc                        LocalSystem               C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p
+PlugPlay                      LocalSystem               C:\Windows\system32\svchost.exe -k DcomLaunch -p
+Power                         LocalSystem               C:\Windows\system32\svchost.exe -k DcomLaunch -p
+ProfSvc                       LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+RasMan                        localSystem               C:\Windows\System32\svchost.exe -k netsvcs
+SamSs                         LocalSystem               C:\Windows\system32\lsass.exe
+Schedule                      LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+SENS                          LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+SessionEnv                    localSystem               C:\Windows\System32\svchost.exe -k netsvcs -p
+ShellHWDetection              LocalSystem               C:\Windows\System32\svchost.exe -k netsvcs -p
+SQLSERVERAGENT                NT Service\SQLSERVERAGENT "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Binn\SQLAGENT.EXE" -i MSSQLSERVER
+SQLTELEMETRY                  NT Service\SQLTELEMETRY   "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Binn\sqlceip.exe" -Service
+SQLWriter                     LocalSystem               "C:\Program Files\Microsoft SQL Server\90\Shared\sqlwriter.exe"
+StateRepository               LocalSystem               C:\Windows\system32\svchost.exe -k appmodel -p
+StorSvc                       LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+SysMain                       LocalSystem               C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p
+SystemEventsBroker            LocalSystem               C:\Windows\system32\svchost.exe -k DcomLaunch -p
+TabletInputService            LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+Themes                        LocalSystem               C:\Windows\System32\svchost.exe -k netsvcs -p
+TokenBroker                   LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+TrkWks                        LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+UALSVC                        LocalSystem               C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p
+UmRdpService                  localSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+UserManager                   LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+UsoSvc                        LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+VaultSvc                      LocalSystem               C:\Windows\system32\lsass.exe
+VGAuthService                 LocalSystem               "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+VM3DService                   LocalSystem               C:\Windows\system32\vm3dservice.exe
+VMTools                       LocalSystem               "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+WdiSystemHost                 LocalSystem               C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+Winmgmt                       localSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+WpnService                    LocalSystem               C:\Windows\system32\svchost.exe -k netsvcs -p
+CDPUserSvc_13ac89                                       C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+PimIndexMaintenanceSvc_13ac89                           C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+UnistoreSvc_13ac89                                      C:\Windows\System32\svchost.exe -k UnistackSvcGroup
+UserDataSvc_13ac89                                      C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+WpnUserService_13ac89                                   C:\Windows\system32\svchost.exe -k UnistackSvcGroup
 ```
+
+- ちなみにjenkinsディレクトリにアクセスはできない
 
 ---
 
