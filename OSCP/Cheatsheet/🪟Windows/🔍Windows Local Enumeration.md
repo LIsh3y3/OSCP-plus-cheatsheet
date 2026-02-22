@@ -625,6 +625,15 @@ Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | S
 
 ---
 
+前回試験で。。。
+
+```
+Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*[System[EventID=4104]]" | 
+  Select-Object TimeCreated, Message | 
+  Where-Object {$_.Message -match "Password|password|ConvertTo-SecureString"} |
+  Format-List
+```
+
 ## WinPEAS結果の見方
 
 前提：
