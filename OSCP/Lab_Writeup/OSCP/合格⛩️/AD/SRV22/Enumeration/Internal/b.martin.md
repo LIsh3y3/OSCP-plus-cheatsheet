@@ -1,4 +1,48 @@
-# しこうさｋ
+# 試行錯誤の結果
+
+## sqlcmd
+
+```powershell
+PS C:\Program Files\Microsoft SQL Server> sqlcmd -S 127.0.0.1,1434 -A -E
+sqlcmd : Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : SQL Server Network Interfaces: Connection string is not valid [87]. .
+At line:1 char:1
++ sqlcmd -S 127.0.0.1,1434 -A -E
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Sqlcmd: Error: ...t valid [87]. .:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : Login timeout expired.
+Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL
+Server is configured to allow remote connections. For more information see SQL Server Books Online..
+PS C:\Program Files\Microsoft SQL Server> cd /
+PS C:\> dir
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        9/15/2018  12:19 AM                PerfLogs
+d-r---       10/10/2024   6:00 AM                Program Files
+d-----        10/9/2024   1:48 PM                Program Files (x86)
+d-r---        10/9/2024   1:57 PM                Users
+d-----        10/9/2024  12:28 PM                Windows
+-a----        2/22/2026   8:56 AM           2665 output.txt
+
+```
+
+```powershell
+PS C:\> cd .\Windows\
+PS C:\Windows> cd .\Temp\
+PS C:\Windows\Temp> dir
+dir : Access to the path 'C:\Windows\Temp' is denied.
+At line:1 char:1
++ dir
++ ~~~
+    + CategoryInfo          : PermissionDenied: (C:\Windows\Temp:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+```
 
 # Local
 
