@@ -251,7 +251,15 @@ C:.
         └───Log
 ```
 
-``
+```powershell
+PS C:\Program Files\Microsoft SQL Server> sqlcmd -U b.martin -P BusyWorkerDay777 -l 30
+sqlcmd : Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : Login failed for user 'b.martin'..
+At line:1 char:1
++ sqlcmd -U b.martin -P BusyWorkerDay777 -l 30
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Sqlcmd: Error: ...er 'b.martin'..:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+```
 
 ---
 ---
