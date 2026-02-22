@@ -315,7 +315,7 @@ Transfer          0                     WS26.oscp.exam
 ```
 - これらの中身はすでに確認済みだけど何もないよ
 ```powershell
-ls \\
+ls \\172.16.104.202\ADMIN$
 ```
 
 
