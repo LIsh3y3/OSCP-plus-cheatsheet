@@ -732,7 +732,7 @@ Interesting Finding(s):
 # WPScanユーザー列挙
 
 ```sh
-
+wpscan --url https://$TargetIP/ --enumerate u
 ```
 # Nikto
 
