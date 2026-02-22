@@ -128,4 +128,5 @@ errorが多ければ`-t 64`も試す
 - index
 ![[Pasted image 20260222194253.png]]
 
-- usernam
+- usernameの候補らしきものがあった
+![[Pasted image 20260222194354.png]]
