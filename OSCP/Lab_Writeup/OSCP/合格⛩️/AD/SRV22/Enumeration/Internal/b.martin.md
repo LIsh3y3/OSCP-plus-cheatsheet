@@ -507,6 +507,10 @@ usage: Sqlcmd            [-U login id]          [-P password]
 
 ## snaffler
 
+```powershell
+copy \\172.16.104.206\Transfer\Snaffler.exe .
+
+```
 
 ---
 
