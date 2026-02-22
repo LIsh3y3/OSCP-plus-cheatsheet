@@ -114,6 +114,12 @@ get-item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
 
 ### 興味深い情報
 
+#### C:\Windows
+
+```powershell
+
+```
+
 
 ---
 ---
@@ -121,7 +127,7 @@ get-item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
 # Credential harvesting
 
 - cmdkeyなし
-- powershell history
+- powershell historyはなし
 
 - Unattendはパスワード消されている
 ```powershell
