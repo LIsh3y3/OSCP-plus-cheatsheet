@@ -1,7 +1,7 @@
 # Host Information
 
 ```
-
+192.168.104.110
 ```
 ```zsh
 Host:Linux
@@ -60,7 +60,47 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 ### full scan
 
 ```
-
+PORT      STATE  SERVICE        VERSION
+21/tcp    open   ftp            vsftpd 3.0.5
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.49.104
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 3
+|      vsFTPd 3.0.5 - secure, fast, stable
+|_End of status
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+22/tcp    open   ssh            OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 43:5c:c0:36:35:2e:9d:17:7a:5d:62:e5:57:15:a0:c9 (ECDSA)
+|_  256 e2:5e:b2:4e:13:3a:7a:8d:77:f1:a8:8a:b5:0c:14:85 (ED25519)
+80/tcp    open   http           Apache httpd 2.4.52 ((Ubuntu))
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+|_http-title: OSCP
+1548/tcp  closed axon-lm
+3306/tcp  open   mysql          MariaDB 5.5.5-10.6.22
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.6.22-MariaDB-0ubuntu0.22.04.1
+|   Thread ID: 14
+|   Capabilities flags: 63486
+|   Some Capabilities: SupportsTransactions, Speaks41ProtocolOld, Speaks41ProtocolNew, SupportsLoadDataLocal, Support41Auth, LongColumnFlag, ConnectWithDatabase, IgnoreSigpipes, FoundRows, InteractiveClient, SupportsCompression, ODBCClient, DontAllowDatabaseTableColumn, IgnoreSpaceBeforeParenthesis, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: 6i1S2<xg|[2'h[m6`bJ.
+|_  Auth Plugin Name: mysql_native_password
+5432/tcp  open   postgresql     PostgreSQL DB 14.7 - 14.9
+| ssl-cert: Subject: commonName=oscp
+| Subject Alternative Name: DNS:oscp
+| Not valid before: 2023-05-02T14:26:17
+|_Not valid after:  2033-04-29T14:26:17
+8128/tcp  closed paycash-online
+...
 ```
 
 ### udp scan
