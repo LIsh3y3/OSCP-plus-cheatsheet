@@ -185,6 +185,9 @@ HTTP Headers:
 
 >AhsayCBSは、高度なクラウド/ローカルバックアップソフトウェア
 
+## index（/cbs/Logon.do）
+
+- デフォルト認証情報である `system:system` 
 
 ---
 
