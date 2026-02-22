@@ -247,7 +247,7 @@ root:vagrant
 root:123qweASD#
 
 ```
-→[[ftp - 21|ftp - 21]]や[[OSCP/OSCP/Lab_Writeup/OSCP/Charie/Enumeration/External/ssh - 22|ssh - 22]]でも試してみる価値はある
+→[[OSCP/Lab_Writeup/OSCP/Old_Exam/Charie2/Enumeration/External/ftp - 21|ftp - 21]]や[[OSCP/OSCP/Lab_Writeup/OSCP/Charie/Enumeration/External/ssh - 22|ssh - 22]]でも試してみる価値はある
 
 ### Hydra
 
