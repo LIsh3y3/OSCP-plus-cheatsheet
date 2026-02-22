@@ -17,7 +17,7 @@ PORT   STATE SERVICE REASON  VERSION
 
 # Exploit
 
-- 認証施行
+- 入手した認証情報でスプレー
 ```sh
 
 
