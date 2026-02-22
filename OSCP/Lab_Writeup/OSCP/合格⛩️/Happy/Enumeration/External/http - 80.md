@@ -203,6 +203,8 @@ Server is stopped. Please contact your service provider. Access denied
 
 # Exploit
 
+- バージョンやこのシステム用のえくすぷろ
+
 ## User Enumeration
 
 いったん後回し
