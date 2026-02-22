@@ -70,8 +70,35 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ### インストール済みアプリケーション
 
+- 特になし
 ```sh
+PS C:\> $paths = @(
+>> "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*","HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*","HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*")
+PS C:\> Get-ItemProperty -Path $paths -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation | Sort-Object DisplayName
 
+DisplayName                                                        DisplayVersion   InstallLocation
+-----------                                                        --------------   ---------------
+Microsoft Edge                                                     100.0.1185.36    C:\Program Files (x86)\Microsoft\Edge\Application
+Microsoft Edge Update                                              1.3.173.55
+Microsoft Edge WebView2 Runtime                                    100.0.1185.36
+Microsoft OneDrive                                                 22.012.0117.0003
+Microsoft Update Health Tools                                      5.72.0.0
+Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.32.31326 14.32.31326.0
+Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.32.31326 14.32.31326.0
+Microsoft Visual C++ 2022 X64 Additional Runtime - 14.32.31326     14.32.31326
+Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.32.31326        14.32.31326
+Microsoft Visual C++ 2022 X86 Additional Runtime - 14.32.31326     14.32.31326
+Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.32.31326        14.32.31326
+VMware Tools                                                       12.1.0.20219665  C:\Program Files\VMware\VMware Tools\
+```
+
+```powershell
+# 64bit版
+dir "C:\Program Files"
+# 32bit版
+dir "C:\Program Files (x86)"
+# Downloadフォルダの探索
+dir ~\Downloads
 ```
 
 ---
