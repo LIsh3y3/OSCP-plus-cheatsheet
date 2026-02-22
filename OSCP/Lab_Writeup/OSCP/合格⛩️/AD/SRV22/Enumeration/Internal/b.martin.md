@@ -242,7 +242,6 @@ At line:1 char:1
     + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
 ```
 
-
 ```powershell
 PS C:\Program Files\Microsoft SQL Server> Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
 >>   Where-Object {
@@ -267,10 +266,26 @@ VGAuthService  "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService
 VMTools        "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"                                                LocalSystem
 ```
 
+- 編集可能なサービスはなさそう
+```powershell
+PS C:\Users\b.martin> Get-ModifiableServiceFile
+Get-Acl : Attempted to perform an unauthorized operation.
+At C:\Users\b.martin\PowerUp.ps1:898 char:17
++                 Get-Acl -Path $CandidatePath | Select-Object -ExpandP ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], UnauthorizedAccessException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.GetAclCommand
+```
+
 ---
 
 ### スケジュールタスク
 
+- 以下特にヒットなし
+```powershell
+$header="HostName","TaskName","NextRunTime","Status","LogonMode","LastRunTime","LastResult","Author","TaskToRun","StartIn","Comment","ScheduledTaskState","IdleTime","PowerManagement","RunAsUser","DeleteTaskIfNotRescheduled","StopTaskIfRunsXHoursandXMins","Schedule","ScheduleType","StartTime","StartDate","EndDate","Days","Months","RepeatEvery","RepeatUntilTime","RepeatUntilDuration","RepeatStopIfStillRunning"
+schtasks /query /fo csv /nh /v | ConvertFrom-Csv -Header $header | select -uniq TaskName,NextRunTime,ScheduleType,Status,TaskToRun,RunAsUser | Where-Object {$_.RunAsUser -ne $env:UserName -and $_.TaskToRun -notlike "%windir%*" -and $_.TaskToRun -ne "COM handler" -and $_.TaskToRun -notlike "%systemroot%*" -and $_.TaskToRun -notlike "C:\Windows\*" -and $_.TaskName -notlike "\Microsoft\Windows\*"}
+```
 
 ---
 
