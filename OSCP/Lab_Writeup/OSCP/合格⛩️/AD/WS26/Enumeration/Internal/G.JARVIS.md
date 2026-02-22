@@ -70,6 +70,10 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ### インストール済みアプリケーション
 
+```powershell
+
+```
+
 
 ---
 
@@ -96,7 +100,7 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 # Credential harvesting
 
-
+- cmdkeyなし
 
 ---
 
