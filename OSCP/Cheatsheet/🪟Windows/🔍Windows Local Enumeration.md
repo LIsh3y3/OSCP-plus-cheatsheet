@@ -633,7 +633,7 @@ jenkinsのconfigに直接はアクセスできないか
 `C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets\initialAdminPassword`にアクセスできないか
 
 `# Cドライブ全体から "password" という文字列を含むファイルを再帰的に検索
-Get-ChildItem -Path C:\ -Include *.ps1,*.xml,*.txt,*.config,*.ini -Recurse -ErrorAction SilentlyContinue | Select-String -Pattern "password"`
+
 
 `\\172.16.104.202\C$\Users\xxx`
 

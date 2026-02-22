@@ -56,8 +56,14 @@ Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*
 
 - ファイル再帰探索も何もなし
 ```powershell
-
+PS C:\> ls -file -recurse -include "password" -ErrorAction SilentlyContinue
+PS C:\> ls -file -recurse -include "Password" -ErrorAction SilentlyContinue
+Get-ChildItem -Path C:\ -Include *.ps1,*.xml,*.txt,*.config,*.ini -Recurse -ErrorAction SilentlyContinue | Select-String -Pattern "password"`
 ```
+
+## JENKINS
+
+
 
 # Local
 
