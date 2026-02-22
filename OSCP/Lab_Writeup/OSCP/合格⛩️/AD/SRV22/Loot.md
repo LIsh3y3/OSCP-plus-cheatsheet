@@ -1,6 +1,7 @@
 # Credentials
 
 ```zsh
+administrator:CarHammerChip964
 
 ```
 
