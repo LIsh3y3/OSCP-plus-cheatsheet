@@ -315,8 +315,15 @@ C$       2147483648 Default share       SRV22.oscp.exam
 Transfer          0                     WS26.oscp.exam
 ```
 
+- SMB共有経由で列挙するも失敗
 ```powershell
-ls \\SRV22.oscp.exam\C$
+S C:\Users\b.martin> ls '\\SRV22.oscp.exam\C$\Program Files\Jenkins'
+ls : Access to the path '\\SRV22.oscp.exam\C$\Program Files\Jenkins' is denied.
+At line:1 char:1
++ ls '\\SRV22.oscp.exam\C$\Program Files\Jenkins'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (\\SRV22.oscp.ex...m Files\Jenkins:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
 ```
 
 ### SPN
