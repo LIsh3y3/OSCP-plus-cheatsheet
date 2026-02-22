@@ -328,9 +328,18 @@ krbtgt         kadmin/changepw
 ---
 
 
-### 興味深い情報
+---
+---
 
-#### Microsoft SQL Server
+# Credential harvesting
+
+- cmdkeyなし
+- `env`なし
+- powershell history: なし（自分がやったコマンドだけ）
+
+## 興味深い情報
+
+### Microsoft SQL Server
 
 ```powershell
 PS C:\Program Files\Microsoft SQL Server> tree
@@ -530,15 +539,11 @@ usage: Sqlcmd            [-U login id]          [-P password]
   [-G use Azure Active Directory for authentication]
 ```
 
+- リモートから実行してみる
+```powershell
+impacket-mssqlclient OSCP.EXAM/b.martin@$TargetIP|domain> -port <port> -windows-auth
 
----
----
-
-# Credential harvesting
-
-- cmdkeyなし
-- `env`なし
-- powershell history: なし（自分がやったコマンドだけ）
+```
 
 ## snaffler
 
