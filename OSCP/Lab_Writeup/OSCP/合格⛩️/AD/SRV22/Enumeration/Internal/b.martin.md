@@ -65,6 +65,24 @@ Get-ChildItem -Path C:\ -Include *.ps1,*.xml,*.txt,*.config,*.ini -Recurse -Erro
 
 ## 共有の列挙
 
+```powershell
+# from wk26
+*Evil-WinRM* PS C:\PublicShare> ls \\172.16.104.202\C$\Users\jenkins
+Access is denied
+At line:1 char:1
++ ls \\172.16.104.202\C$\Users\jenkins
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (\\172.16.104.202\C$\Users\jenkins:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : ItemExistsUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+Cannot find path '\\172.16.104.202\C$\Users\jenkins' because it does not exist.
+At line:1 char:1
++ ls \\172.16.104.202\C$\Users\jenkins
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\\172.16.104.202\C$\Users\jenkins:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+```
+
 
 # Local
 
