@@ -60,6 +60,58 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ### システム情報
 
+```powershell
+PS C:\Users\Public> systeminfo
+
+Host Name:                 WS26
+OS Name:                   Microsoft Windows 11 Enterprise
+OS Version:                10.0.22631 N/A Build 22631
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Member Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:
+Product ID:                00328-90000-00000-AAOEM
+Original Install Date:     10/9/2024, 2:48:16 PM
+System Boot Time:          11/11/2024, 10:49:27 AM
+System Manufacturer:       VMware, Inc.
+System Model:              VMware7,1
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 79 Stepping 1 GenuineIntel ~2300 Mhz
+BIOS Version:              VMware, Inc. VMW71.00V.20192059.B64.2207280708, 7/28/2022
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC-08:00) Pacific Time (US & Canada)
+Total Physical Memory:     6,143 MB
+Available Physical Memory: 3,655 MB
+Virtual Memory: Max Size:  7,807 MB
+Virtual Memory: Available: 5,183 MB
+Virtual Memory: In Use:    2,624 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    oscp.exam
+Logon Server:              \\DC20
+Hotfix(s):                 4 Hotfix(s) Installed.
+                           [01]: KB5044033
+                           [02]: KB5027397
+                           [03]: KB5044285
+                           [04]: KB5046247
+Network Card(s):           2 NIC(s) Installed.
+                           [01]: vmxnet3 Ethernet Adapter
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.104.206
+                           [02]: Intel(R) 82574L Gigabit Network Connection
+                                 Connection Name: Ethernet1
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 172.16.104.206
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+```
 
 ---
 
