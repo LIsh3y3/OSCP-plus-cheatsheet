@@ -40,9 +40,6 @@ PORT   STATE SERVICE REASON  VERSION
 
 - AuditorzRusという会社（多分このターゲット）の年間レポートっぽい
 - パスワードが古く脆弱なので変えてくださいね、というレポート
-- 
-
-
 
 
 ---
