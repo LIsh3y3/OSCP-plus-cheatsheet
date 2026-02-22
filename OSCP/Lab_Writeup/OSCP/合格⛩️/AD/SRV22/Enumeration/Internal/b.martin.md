@@ -326,6 +326,19 @@ At line:1 char:1
     + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
 ```
 
+ - 以下のどれも失敗する
+```powershell
+dir C:\ /s /b | findstr config.xml
+-  dir C:\Users\Public /s （共有フォルダに関連するゴミがないか）
+-  dir \\SRV\C$ や dir \\SRV22\Jenkins
+- dir C:\Windows\System32\config\systemprofile\
+
+-  SMBでC$経由でJenkinsディレクトリにアクセスを試みる
+-  dir \\SRV22\C$\Program Files\Jenkins\
+-  dir\\SRV22\C$\ProgramData\Jenkins\
+-  dir \\SRV22\C$\Windows\System32\config\systemprofile\.jenkins\
+```
+
 ### SPN
 
 ```powershell
