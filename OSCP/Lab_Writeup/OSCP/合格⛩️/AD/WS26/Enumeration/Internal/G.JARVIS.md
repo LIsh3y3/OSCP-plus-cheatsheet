@@ -28,7 +28,7 @@ cp \\192.168.49.104\share\Seatbelt.exe .
     Password: CarHammerChip964
     Not Found
 ```
-
+![[Pasted image 20260222181842.png]]
 
 ## Auto w/ [WinPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS)
 
