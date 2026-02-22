@@ -75,11 +75,8 @@ SeTimeZonePrivilege           Change the time zone                 Enabled
 
 ---
 
-### システム情報
+### システム情報-> r.andrewsと一緒
 
-```powershell
-
-```
 
 ---
 
