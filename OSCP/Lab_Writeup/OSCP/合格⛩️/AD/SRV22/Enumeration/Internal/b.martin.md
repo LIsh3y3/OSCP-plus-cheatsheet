@@ -44,6 +44,15 @@ At line:1 char:1
     + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
 ```
 
+## パスワード探索
+
+```powrshell
+Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*[System[EventID=4104]]" | 
+  Select-Object TimeCreated, Message | 
+  Where-Object {$_.Message -match "Password|password|ConvertTo-SecureString"} |
+  Format-List
+```
+
 # Local
 
 ## Auto w/ [Seatbelt](https://github.com/GhostPack/Seatbelt)
