@@ -94,6 +94,7 @@ HTTP Headers:
 
 errorが多ければ`-t 64`も試す
 
+- 以下出力されたディレクトリに特に情報はなし
 ```zsh
 ┌──(koshi㉿kali)-[~/Exam/Bless]
 └─$ gobuster dir -u http://$TargetIP:/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o WebEnum/gobuster.txt -x 'html,htm,txt,sh,php,cgi,asp,aspx,jsp,pl,py,pdf'
