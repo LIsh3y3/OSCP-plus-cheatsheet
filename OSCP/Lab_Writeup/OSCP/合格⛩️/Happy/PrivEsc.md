@@ -119,5 +119,5 @@ d-----         2/23/2022  10:47 AM                WinX86
 
 - サービス再起動
 ```powershell
-
+net stop ahsaycbs
 ```
