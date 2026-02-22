@@ -29,6 +29,14 @@ cp \\192.168.49.104\share\Seatbelt.exe .
     Not Found
 ```
 ![[Pasted image 20260222181842.png]]
+- これでRDP接続
+```powershell
+┌──(koshi㉿kali)-[~]
+└─$ xfreerdp3 /dynamic-resolution +clipboard /cert:ignore /v:192.168.104.206 /u:'administrator' /p:'CarHammerChip964'   
+```
+- **Administrator**!!
+![[Pasted image 20260222181957.png]]
+
 
 ## Auto w/ [WinPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS)
 
