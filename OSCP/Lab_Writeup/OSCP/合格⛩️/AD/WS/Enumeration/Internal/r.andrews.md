@@ -99,6 +99,17 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 ---
 ---
 
+# AD
+
+- AS-REP roastable
+
+- 
+
+
+
+
+---
+
 # WinPEAS
 
 ## 記録用総出力（長い）
