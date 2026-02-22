@@ -157,8 +157,15 @@ HTTP Headers:
 
 # Gobuster
 
-errorが多ければ`-t 64`も試す
+- jspが使われている
+
 ```zsh
+┌──(koshi㉿kali)-[~/Exam/Happy]
+└─$ gobuster dir -u http://$TargetIP:/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o WebEnum/gobuster.txt -x 'html,htm,txt,sh,php,cgi,asp,aspx,jsp,pl,py,pdf'
+
+/index.jsp            (Status: 200) [Size: 51938]
+/.                    (Status: 200) [Size: 51938]
+/cbs                  (Status: 200) [Size: 210]
 
 ```
 
