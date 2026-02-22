@@ -874,7 +874,7 @@ administrator
 
 # 認証施行
 
-- `@Administrator`なら、
+- `@Administrator`なら、"Error: The password you entered for the username @Administrator is incorrect. Lost your password?"と表示される
 
 ---
 
