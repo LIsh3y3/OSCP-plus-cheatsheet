@@ -1,6 +1,10 @@
 # Credentials
 
 ```zsh
+lee@auditorzr.us
+sam@auditorzr.us
+simon@auditorzr.us
+
 
 ```
 
