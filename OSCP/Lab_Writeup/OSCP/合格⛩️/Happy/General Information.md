@@ -32,3 +32,6 @@
 ```
 
 ```
+
+
+![[Pasted image 20260222111945.png]]![[Pasted image 20260222112017.png]]
