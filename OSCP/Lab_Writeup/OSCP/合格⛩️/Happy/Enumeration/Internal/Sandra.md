@@ -45,6 +45,12 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 ### 実行結果抽出
 
 ```powershell
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Interesting Services -non Microsoft-
+È Check if you can overwrite some service binary or perform a DLL hijacking, also check for unquoted paths https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#services                                                                                                     
+  [X] Exception: Access denied 
+    Ahsay Cloud Backup Suite(Ahsay Cloud Backup Suite)[C:\Program Files\AhsayCBS\bin\cbssvcX64.exe] - Autoload - No quotes and Space detected
+    File Permissions: Users [Allow: AllAccess]
+    Possible DLL Hijacking in binary folder: C:\Program Files\AhsayCBS\bin (Users [Allow: AllAccess])
 
 ```
 
