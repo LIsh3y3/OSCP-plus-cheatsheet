@@ -309,7 +309,9 @@ Starting gobuster in directory enumeration mode
 # WPScan
 
 ```sh
-wpscan --url http://$TargetIP --no-banner --enumerate p,t --plugins-detection aggressive -o WebEnum/wpscan --api-token svP1khwitgUTmxDwLDuZZRTDg6ms875XmsU8MZVLqYs
+$ wpscan --url http://$TargetIP --no-banner --enumerate p,t --plugins-detection aggressive -o WebEnum/wpscan --api-token svP1khwitgUTmxDwLDuZZRTDg6ms875XmsU8MZVLqYs
+
+
 ```
 
 
@@ -335,6 +337,8 @@ simon@auditorzr.us
 lee
 sam
 simon
+admin
+administrator
 ```
 - emailのとき："Unknown email address. Check again or try your sername."
 - ユーザー名のとき："The username lee is not registered on this site. If you are unsure of your username, try your email address instead."
