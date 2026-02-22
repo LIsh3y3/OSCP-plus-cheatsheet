@@ -328,7 +328,9 @@ krbtgt         kadmin/changepw
 ### Groupの探索
 
 - Travel agencyってなんだ？
-- 
+- なにもoutbound controlもってないし、なんでもなさそう
+- メンバーはb.martinだけ
+![[Pasted image 20260223004701.png]]
 
 ---
 
