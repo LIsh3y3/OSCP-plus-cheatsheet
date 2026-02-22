@@ -29,6 +29,9 @@ PORT   STATE SERVICE REASON  VERSION
 # Enumeration
 
 - Anonymousログイン可能
+- ファイルのアップロードは不可
+- ダウンロードしたすべてのファイルを閲覧してみる
+
 
 ---
 
