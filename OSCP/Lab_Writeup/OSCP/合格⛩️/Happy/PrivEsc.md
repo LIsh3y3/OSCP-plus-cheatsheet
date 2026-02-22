@@ -37,10 +37,10 @@ DVRWatchdog.exe BUILTIN\Users:(I)(F)
 
 - マシンを最起動
 ```powershell
-
+*Evil-WinRM* PS C:\Program Files\Argus Surveillance DVR>shutdown /r /t 0
 ```
 
-- 権限昇格
+- **権限昇格**
 ![[Pasted image 20260222160445.png]]
 
 # Argus surveilance DVR DLL hijacking
