@@ -309,7 +309,7 @@ Starting gobuster in directory enumeration mode
 # WPScan
 
 ```sh
-
+wpscan --url http://$TargetIP --no-banner --enumerate p,t --plugins-detection aggressive -o WebEnum/wpscan --api-token svP1khwitgUTmxDwLDuZZRTDg6ms875XmsU8MZVLqYs
 ```
 
 
