@@ -101,9 +101,7 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 # AD
 
-- AS-REP roastable
-
-- Kerberoastable
+- AS-REP roastable、Kerberoastableは両方存在しない
 
 
 
