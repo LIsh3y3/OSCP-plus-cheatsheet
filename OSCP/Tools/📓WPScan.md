@@ -63,7 +63,7 @@ wpscan --url http://<TargetIP> --no-banner --enumerate p,t --plugins-detection a
 
 1. ユーザー名を列挙する：​
 ```zsh
-wpscan --url https://[target.com]/ --enumerate u
+wpscan --url http://[target.com]/ --enumerate u
 ```
 
 2. 見つかったユーザー名に対してパスワードのブルートフォース攻撃を行う：​
