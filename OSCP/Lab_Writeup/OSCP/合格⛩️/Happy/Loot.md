@@ -1,6 +1,7 @@
 # Credentials
 
 ```zsh
+# from ftp env MySQL(local) creds（ポート
 
 ```
 

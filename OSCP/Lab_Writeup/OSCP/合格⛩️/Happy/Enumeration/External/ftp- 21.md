@@ -23,6 +23,23 @@ PORT   STATE SERVICE REASON  VERSION
 - ファイルをアップロードしてweb shell？
 	- →書き込みは不可
 
+## env
+
+- MySQLのパスワードがわかった（initial access後）
+```sh
+lftp 192.168.104.111:/> cat .env
+STATUS = development                        
+DEV_PORT = 7500
+PROD_PORT = 7600
+HOST = localhost
+DATABASE = db.dev
+USER = Sandra
+PASSWORD = Nj82@1Waqk90$
+DIALECT = MSSQL 
+145 bytes transferred in 1 second (125 B/s)
+
+```
+
 ---
 
 # Screenshot
