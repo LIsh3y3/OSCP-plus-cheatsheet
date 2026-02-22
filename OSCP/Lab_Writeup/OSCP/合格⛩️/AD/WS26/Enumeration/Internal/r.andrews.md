@@ -108,9 +108,71 @@ dir ~\Downloads
 ```powershell
 # 除外ワードは,"<term>"で追加可能
 ps | Where-Object -Property ProcessName -notin "svchost"
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    176      11     3608      11336              3000   0 AggregatorHost
+    324      17    14008      35768       6.44   6776   2 conhost
+    498      21     1720       5928               512   0 csrss
+    161      11     1664       5484               616   1 csrss
+    405      17     2104      13676              6148   2 csrss
+    628      25     9148      33664       0.59   5504   2 ctfmon
+    276      15     3816      14880              3792   0 dllhost
+    148       9     1600       8992       0.06   4796   2 dllhost
+    251      18     3656      15200       0.08   8556   2 dllhost
+    710      27    22272      51436               676   1 dwm
+    954      64    40252     104328              6652   2 dwm
+   3017      95    63304     186956      15.80   4916   2 explorer
+     42       6     1500       4144               884   1 fontdrvhost
+     42       6     1532       4108               888   0 fontdrvhost
+     42       8     3140       7312              6660   2 fontdrvhost
+      0       0       60          8                 0   0 Idle
+    759      35    13828      56364              3916   1 LogonUI
+   1459      34     6376      25008               748   0 lsass
+      0       0       40          0              1952   0 Memory Compression
+    219      14     1924        236              5968   0 MicrosoftEdgeUpdate
+    259      14     8608      23124              5032   0 MoUsoCoreWorker
+    237      14     2856      11056              3924   0 msdtc
+    213      14     6848      19152       0.13   1460   2 msedgewebview2
+    994      44    23456      86352       1.28   3752   2 msedgewebview2
+    268      17     8636      28416       0.13   4172   2 msedgewebview2
+    153      10     1948       7944       0.03   5800   2 msedgewebview2
+    442      23   102624      37088       0.27   8588   2 msedgewebview2
+    291      16    34056      79696       8.06   9004   2 msedgewebview2
+    680      34    21268      73152       3.02   1916   2 Notepad
+    563      34    12236      52512       0.28   9012   2 OneDrive
+    559      29    54212      67860       0.47   4236   2 powershell
+    805      37   111128     133732      14.36   9116   2 powershell
+    348      13     2608      13008       0.30   6920   2 rdpclip
+      0      16     4184      21168                92   0 Registry
+    363      20     5692      28584       1.41   7400   2 RuntimeBroker
+    687      34    13496      49948       1.58   8164   2 RuntimeBroker
+   1424     103   122500     209132       7.64   8052   2 SearchHost
+    753      19    17604      31540              5172   0 SearchIndexer
+    687      15     5344      13992               716   0 services
+    549      26     9172       3528       0.23   8944   2 ShellExperienceHost
+    599      18     5756      27660       4.11   4124   2 sihost
+     61       3     1072       1228               376   0 smss
+    869      41    45472     104456       3.83   8060   2 StartMenuExperienceHost
+   3227       0       36        148                 4   0 System
+    281      29     5256      17024       0.17   6740   2 taskhostw
+   1102      37    25584      73500       1.64   8828   2 TextInputHost
+    125       7     1296       6364              1340   0 uhssvc
+    142      10     1740       9220       0.03   6636   2 UserOOBEBroker
+    178      12     2896      12324              3004   0 VGAuthService
+    130       8     1468       6632              2224   0 vm3dservice
+    130       9     1580       7056              3256   1 vm3dservice
+    234      17     4796      15776       0.13   1292   2 vmtoolsd
+    417      25    10824      23868              3020   0 vmtoolsd
+    552      25     7028      35016       0.78   3404   2 Widgets
+    132      11     1264       7192               608   0 wininit
+    224      13     2468      18212               700   1 winlogon
+    242      11     2204      10400              6464   2 winlogon
+    334      19    11284      24168              4440   0 WmiPrvSE
+    371      14     3692      38508              4396   0 WUDFHost
 
-# 除外ワードは,"<term>"で追加可能
-ps | Where-Object -Property ProcessName -notin "svchost"
+
+PS C:\Users\Public>
+
 ```
 
 
