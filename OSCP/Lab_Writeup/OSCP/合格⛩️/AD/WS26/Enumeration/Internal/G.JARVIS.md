@@ -80,7 +80,7 @@ SeTimeZonePrivilege           Change the time zone                 Enabled
 
 ---
 
-### ネットワーク
+### ネットワーク -> r.adnrewsと一緒と推定
 
 
 ---
