@@ -116,7 +116,78 @@ dir ~\Downloads
 ### サービス
 
 ```powershell
+PS C:\> # cmd.exeの場合：sc query [service]  sc qc [service]
+PS C:\> Get-CimInstance -ClassName Win32_Service |
+>>   Where-Object {
+>>       $_.State -eq 'Running' -and
+>>       $_.StartName -notin @('NT AUTHORITY\LocalService', 'NT AUTHORITY\NetworkService')
+>>   } |
+>>   Select-Object Name, StartName, PathName
 
+Name                          StartName   PathName
+----                          ---------   --------
+Appinfo                       LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+AudioEndpointBuilder          LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+BITS                          LocalSystem C:\Windows\System32\svchost.exe -k netsvcs -p
+BrokerInfrastructure          LocalSystem C:\Windows\system32\svchost.exe -k DcomLaunch -p
+camsvc                        LocalSystem C:\Windows\system32\svchost.exe -k osprivacy -p
+CertPropSvc                   LocalSystem C:\Windows\system32\svchost.exe -k netsvcs
+COMSysApp                     LocalSystem C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+DcomLaunch                    LocalSystem C:\Windows\system32\svchost.exe -k DcomLaunch -p
+DiagTrack                     LocalSystem C:\Windows\System32\svchost.exe -k utcsvc -p
+DisplayEnhancementService     LocalSystem C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p
+DsmSvc                        LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+DsSvc                         LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+gpsvc                         LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+IKEEXT                        LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+InstallService                LocalSystem C:\Windows\System32\svchost.exe -k netsvcs -p
+InventorySvc                  LocalSystem C:\Windows\system32\svchost.exe -k InvSvcGroup -p
+iphlpsvc                      LocalSystem C:\Windows\System32\svchost.exe -k NetSvcs -p
+KeyIso                        LocalSystem C:\Windows\system32\lsass.exe
+LanmanServer                  LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+lfsvc                         LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+LSM
+NcbService                    LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+Netlogon                      LocalSystem C:\Windows\system32\lsass.exe
+Netman                        LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+PcaSvc                        LocalSystem C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p
+PlugPlay                      LocalSystem C:\Windows\system32\svchost.exe -k DcomLaunch -p
+Power                         LocalSystem C:\Windows\system32\svchost.exe -k DcomLaunch -p
+ProfSvc                       LocalSystem C:\Windows\system32\svchost.exe -k UserProfileService -p
+SamSs                         LocalSystem C:\Windows\system32\lsass.exe
+ScDeviceEnum                  LocalSystem C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted
+Schedule                      LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+SENS                          LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+SessionEnv                    localSystem C:\Windows\System32\svchost.exe -k netsvcs -p
+ShellHWDetection              LocalSystem C:\Windows\System32\svchost.exe -k netsvcs -p
+StateRepository               LocalSystem C:\Windows\system32\svchost.exe -k appmodel -p
+StorSvc                       LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+SysMain                       LocalSystem C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p
+SystemEventsBroker            LocalSystem C:\Windows\system32\svchost.exe -k DcomLaunch -p
+TextInputManagementService    LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+Themes                        LocalSystem C:\Windows\System32\svchost.exe -k netsvcs -p
+TokenBroker                   LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+TrkWks                        LocalSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+uhssvc                        LocalSystem "C:\Program Files\Microsoft Update Health Tools\uhssvc.exe"
+UmRdpService                  localSystem C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p
+UserManager                   LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+UsoSvc                        LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+VaultSvc                      LocalSystem C:\Windows\system32\lsass.exe
+VGAuthService                 LocalSystem "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+vm3dservice                   LocalSystem C:\Windows\system32\vm3dservice.exe
+VMTools                       LocalSystem "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+Winmgmt                       localSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+WpnService                    LocalSystem C:\Windows\system32\svchost.exe -k netsvcs -p
+WSearch                       LocalSystem C:\Windows\system32\SearchIndexer.exe /Embedding
+cbdhsvc_29ccec                            C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p
+CDPUserSvc_29ccec                         C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+NPSMSvc_29ccec                            C:\Windows\system32\svchost.exe -k LocalService -p
+OneSyncSvc_29ccec                         C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+PimIndexMaintenanceSvc_29ccec             C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+UdkUserSvc_29ccec                         C:\Windows\system32\svchost.exe -k UdkSvcGroup
+UnistoreSvc_29ccec                        C:\Windows\System32\svchost.exe -k UnistackSvcGroup
+UserDataSvc_29ccec                        C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+WpnUserService_29ccec                     C:\Windows\system32\svchost.exe -k UnistackSvcGroup
 ```
 
 
