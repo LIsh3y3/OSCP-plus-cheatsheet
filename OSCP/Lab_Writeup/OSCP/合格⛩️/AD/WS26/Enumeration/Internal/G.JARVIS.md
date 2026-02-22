@@ -111,7 +111,43 @@ get-item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
 
 ```
 
+```powershell
+   Directory: C:\Program Files
 
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         10/9/2024   3:13 PM                Common Files
+d-----         10/9/2024  12:32 PM                Internet Explorer
+d-----         10/9/2024   3:53 PM                Microsoft
+d-----         10/9/2024  11:19 AM                Microsoft Update Health Tools
+d-----          5/6/2022  10:24 PM                ModifiableWindowsApps
+d-----         10/9/2024   3:13 PM                VMware
+d-----         10/9/2024  12:32 PM                Windows Defender
+d-----         10/9/2024  12:32 PM                Windows Defender Advanced Threat Protection
+d-----          7/3/2024  11:43 PM                Windows Mail
+d-----          7/3/2024  11:43 PM                Windows Media Player
+d-----          5/7/2022  12:30 AM                Windows NT
+d-----          5/7/2022  12:39 AM                Windows Photo Viewer
+d-----          5/6/2022  10:42 PM                WindowsPowerShell
+
+
+    Directory: C:\Program Files (x86)
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          5/6/2022  10:42 PM                Common Files
+d-----         10/9/2024  12:32 PM                Internet Explorer
+d-----         10/9/2024   3:56 PM                Microsoft
+d-----          5/6/2022  10:42 PM                Microsoft.NET
+d-----          7/3/2024  11:43 PM                Windows Mail
+d-----          7/3/2024  11:43 PM                Windows Media Player
+d-----          5/7/2022  12:30 AM                Windows NT
+d-----          5/7/2022  12:39 AM                Windows Photo Viewer
+d-----          5/6/2022  10:42 PM                WindowsPowerShell
+
+```
 
 
 ---
