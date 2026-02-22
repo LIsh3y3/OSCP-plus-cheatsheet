@@ -315,7 +315,7 @@ C$       2147483648 Default share       SRV22.oscp.exam
 Transfer          0                     WS26.oscp.exam
 ```
 
-- SMB共有経由で列挙するも失敗
+- SMB共有経由で列挙するもJENKINSにアクセスできず
 ```powershell
 S C:\Users\b.martin> ls '\\SRV22.oscp.exam\C$\Program Files\Jenkins'
 ls : Access to the path '\\SRV22.oscp.exam\C$\Program Files\Jenkins' is denied.
@@ -356,6 +356,11 @@ krbtgt         kadmin/changepw
 - powershell history: なし（自分がやったコマンドだけ）
 
 ## 興味深い情報
+
+### configファイルの探索
+
+```powershell
+```
 
 ### Users
 
