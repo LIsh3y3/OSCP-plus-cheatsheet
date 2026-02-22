@@ -31,6 +31,10 @@ PORT   STATE SERVICE REASON  VERSION
 - Anonymousログイン可能
 - ファイルのアップロードは不可
 - ダウンロードしたすべてのファイルを閲覧してみる
+	- すべてPDFファイル
+
+- 2d5e...
+	- 
 
 
 ---
