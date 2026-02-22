@@ -346,6 +346,13 @@ krbtgt         kadmin/changepw
 
 ## 興味深い情報
 
+### Users
+
+- 自身のディレクトリのみアクセス可能で、jenkinsにはアクセスできない
+```powershell
+
+```
+
 ### Microsoft SQL Server
 
 ```powershell
