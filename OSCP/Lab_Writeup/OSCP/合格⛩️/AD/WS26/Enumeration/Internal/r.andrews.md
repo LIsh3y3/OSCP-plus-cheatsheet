@@ -307,6 +307,10 @@ cmdkey ->なし
 
 - AS-REP roastable、Kerberoastableは両方存在しない
 
+- r.andrewsは、G.Jarvisに"AllExtendedRights"をもつ
+
+![[Pasted image 20260222163423.png]]
+
 
 
 
