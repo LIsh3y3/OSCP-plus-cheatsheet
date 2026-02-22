@@ -73,6 +73,15 @@ d-----         2/23/2022   3:16 AM                NetCams Models
 
 ```
 
+- システムをシャットダウンして再起動
+```sh
+shutdown /r /t 0
+```
+
+```sh
+
+```
+
 # Argus surveilance dvr unquoted P.E -> Program Filesが書き込み不可なので失敗
 
 - [Argus Surveillance DVR 4.0 - Unquoted Service Path](https://www.exploit-db.com/exploits/50261)
