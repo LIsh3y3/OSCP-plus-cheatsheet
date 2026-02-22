@@ -379,8 +379,14 @@ C$       2147483648 Default share       WS26.oscp.exam
 IPC$     2147483651 Remote IPC          WS26.oscp.exam
 
 # アクセス可能なdomain共有の列挙
+PS C:\Users\Public> Find-DomainShare -CheckShareAccess
 
-
+Name           Type Remark              ComputerName
+----           ---- ------              ------------
+NETLOGON          0 Logon server share  DC20.oscp.exam
+SYSVOL            0 Logon server share  DC20.oscp.exam
+ADMIN$   2147483648 Remote Admin        WS26.oscp.exam
+C$       2147483648 Default share       WS26.oscp.exam
 ```
 
 ## G.JARVISへの横展開
