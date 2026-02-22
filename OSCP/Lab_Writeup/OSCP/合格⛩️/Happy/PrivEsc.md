@@ -1,6 +1,12 @@
 # Argus Surveillance DVR binary hijack
 
+- ペイロード作成
+```sh
 
+```
+
+- 権限昇格
+![[Pasted image 20260222160445.png]]
 
 # Argus surveilance DVR DLL hijacking
 
