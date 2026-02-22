@@ -205,7 +205,13 @@ CDPUserSvc_13ac89
 
 - ちなみにjenkinsディレクトリにアクセスはできない
 ```powershell
-dir C:\
+PS C:\Program Files\Microsoft SQL Server> dir 'C:\Program Files\Jenkins\'
+dir : Access to the path 'C:\Program Files\Jenkins' is denied.
+At line:1 char:1
++ dir 'C:\Program Files\Jenkins\'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\Program Files\Jenkins\:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
 ```
 
 
