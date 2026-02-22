@@ -87,7 +87,50 @@ SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
 ### インストール済みアプリケーション
 
 ```powershell
+PS C:\Program Files\Microsoft SQL Server> # Access denined?????reg query "HKLM\..."????Get-Item "HKLM\.."
+PS C:\Program Files\Microsoft SQL Server> $paths = @(
+>> "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*","HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*","HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*")
+PS C:\Program Files\Microsoft SQL Server> Get-ItemProperty -Path $paths -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation | Sort-Object DisplayName
 
+DisplayName                                                        DisplayVersion  InstallLocation
+-----------                                                        --------------  ---------------
+Browser for SQL Server 2019                                        15.0.2000.5
+Java(TM) SE Development Kit 21.0.3 (64-bit)                        21.0.3.0        C:\Program Files\Java\jdk-21\
+Jenkins 2.440.3                                                    2.255.4403
+Microsoft ODBC Driver 17 for SQL Server                            17.4.0.1
+Microsoft OLE DB Driver for SQL Server                             18.2.3.0
+Microsoft SQL Server 2012 Native Client                            11.4.7462.6
+Microsoft SQL Server 2019 (64-bit)
+Microsoft SQL Server 2019 (64-bit)
+Microsoft SQL Server 2019 RsFx Driver                              15.0.2000.5
+Microsoft SQL Server 2019 Setup (English)                          15.0.2000.5
+Microsoft SQL Server 2019 T-SQL Language Service                   15.0.2000.5
+Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.32.31326 14.32.31326.0
+Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.32.31326 14.32.31326.0
+Microsoft Visual C++ 2022 X64 Additional Runtime - 14.32.31326     14.32.31326
+Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.32.31326        14.32.31326
+Microsoft Visual C++ 2022 X86 Additional Runtime - 14.32.31326     14.32.31326
+Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.32.31326        14.32.31326
+Microsoft VSS Writer for SQL Server 2019                           15.0.2000.5
+SQL Server 2019 Batch Parser                                       15.0.2000.5
+SQL Server 2019 Common Files                                       15.0.2000.5
+SQL Server 2019 Common Files                                       15.0.2000.5
+SQL Server 2019 Connection Info                                    15.0.2000.5
+SQL Server 2019 Connection Info                                    15.0.2000.5
+SQL Server 2019 Database Engine Services                           15.0.2000.5
+SQL Server 2019 Database Engine Services                           15.0.2000.5
+SQL Server 2019 Database Engine Shared                             15.0.2000.5
+SQL Server 2019 Database Engine Shared                             15.0.2000.5
+SQL Server 2019 DMF                                                15.0.2000.5
+SQL Server 2019 DMF                                                15.0.2000.5
+SQL Server 2019 Shared Management Objects                          15.0.2000.5
+SQL Server 2019 Shared Management Objects                          15.0.2000.5
+SQL Server 2019 Shared Management Objects Extensions               15.0.2000.5
+SQL Server 2019 Shared Management Objects Extensions               15.0.2000.5
+SQL Server 2019 SQL Diagnostics                                    15.0.2000.5
+SQL Server 2019 XEvent                                             15.0.2000.5
+SQL Server 2019 XEvent                                             15.0.2000.5
+VMware Tools                                                       12.1.0.20219665 C:\Program Files\VMware\VMware Tools\
 ```
 
 ---
