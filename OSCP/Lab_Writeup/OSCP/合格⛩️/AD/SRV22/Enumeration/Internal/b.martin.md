@@ -296,7 +296,7 @@ Get-ModifiableScheduledTaskFile
 ### domain共有
 
 ```powershell
-
+copy \\172.16.104.206\Transfer\powerview.ps1 .
 ```
 
 
