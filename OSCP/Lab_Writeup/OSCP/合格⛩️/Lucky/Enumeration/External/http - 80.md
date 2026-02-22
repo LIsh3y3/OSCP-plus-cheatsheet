@@ -300,8 +300,7 @@ Starting gobuster in directory enumeration mode
 /page61               (Status: 200) [Size: 33201]
 /page66               (Status: 200) [Size: 33201]
 /pencil               (Status: 200) [Size: 30637]
-/sitemap-xml          (Status: 200) [Size: 532]
-
+/sitemap-xml          (Status: 200) [Size: 532]#←nothing
 ```
 
 ---
