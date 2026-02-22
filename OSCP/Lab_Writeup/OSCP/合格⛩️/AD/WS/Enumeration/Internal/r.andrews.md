@@ -103,7 +103,7 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 - AS-REP roastable
 
-- 
+- Kerberoastable
 
 
 
