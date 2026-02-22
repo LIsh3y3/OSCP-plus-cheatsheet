@@ -106,7 +106,26 @@ PORT      STATE  SERVICE        VERSION
 ### udp scan
 
 ```
-
+PORT      STATE         SERVICE       VERSION
+21/tcp    open          ftp           vsftpd 3.0.5
+22/tcp    open          ssh           OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+80/tcp    open          http          Apache httpd 2.4.52 ((Ubuntu))
+3306/tcp  open          mysql         MariaDB 5.5.5-10.6.22
+5432/tcp  open          postgresql    PostgreSQL DB 14.7 - 14.9
+120/udp   open|filtered cfdptkt
+427/udp   open|filtered svrloc
+514/udp   open|filtered syslog
+520/udp   open|filtered route
+626/udp   open|filtered serialnumberd
+999/udp   open|filtered applix
+1813/udp  open|filtered radacct
+3283/udp  open|filtered netassistant
+5353/udp  open|filtered zeroconf
+31337/udp open|filtered BackOrifice
+49152/udp open|filtered unknown
+49153/udp open|filtered unknown
+49186/udp open|filtered unknown
+49191/udp open|filtered unknown
 ```
 
 ## Rustscan
