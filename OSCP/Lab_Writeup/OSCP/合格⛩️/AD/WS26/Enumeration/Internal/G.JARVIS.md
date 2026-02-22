@@ -70,8 +70,9 @@ cp \\192.168.49.104\share\winPEASx64.exe .
 
 ### インストール済みアプリケーション
 
+- access deninedだったので、一つずつ確認
 ```powershell
-
+get-item "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"
 ```
 
 

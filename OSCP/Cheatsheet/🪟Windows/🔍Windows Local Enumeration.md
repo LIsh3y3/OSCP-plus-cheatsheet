@@ -230,7 +230,7 @@ Active Connections
 
 インストール済みアプリケーションの列挙（可視性高）
 ```powershell
-# Access deninedのときは、reg query "HKLM\..."
+# Access deninedのときは、reg query "HKLM\..."もしくはGet-Item "HKLM\.."
 $paths = @(
 "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*","HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*","HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*")
 Get-ItemProperty -Path $paths -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation | Sort-Object DisplayName
