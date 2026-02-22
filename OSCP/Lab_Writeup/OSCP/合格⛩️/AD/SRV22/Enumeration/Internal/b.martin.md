@@ -52,6 +52,12 @@ Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*
   Where-Object {$_.Message -match "Password|password|ConvertTo-SecureString"} |
   Format-List
 ```
+→特になし（サンプルのパスワードのみ）
+
+- ファイル再帰探索も何もなし
+```powershell
+
+```
 
 # Local
 

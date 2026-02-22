@@ -627,12 +627,6 @@ Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | S
 
 前回試験で。。。
 
-```
-Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -FilterXPath "*[System[EventID=4104]]" | 
-  Select-Object TimeCreated, Message | 
-  Where-Object {$_.Message -match "Password|password|ConvertTo-SecureString"} |
-  Format-List
-```
 grep -rni "Password" C:\ 2>$null 特に C:\Program Files\Jenkins や、管理者が作業しそうな C:\Users\Administrator\Documents（もしアクセスできれば）、あるいは C:\Windows\Temp を重点的に
 jenkinsのweb uiにログインできないか再度試行
 jenkinsのconfigに直接はアクセスできないか
