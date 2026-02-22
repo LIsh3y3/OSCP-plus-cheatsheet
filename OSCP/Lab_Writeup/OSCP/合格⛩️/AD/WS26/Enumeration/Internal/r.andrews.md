@@ -360,6 +360,21 @@ cmdkey ->なし
 - AS-REP roastable、Kerberoastableは両方存在しない
 - Domain共有の列挙
 ```powershell
+PS C:\Users\Public> find-domainshare
+
+Name           Type Remark              ComputerName
+----           ---- ------              ------------
+ADMIN$   2147483648 Remote Admin        DC20.oscp.exam
+C$       2147483648 Default share       DC20.oscp.exam
+IPC$     2147483651 Remote IPC          DC20.oscp.exam
+NETLOGON          0 Logon server share  DC20.oscp.exam
+SYSVOL            0 Logon server share  DC20.oscp.exam
+ADMIN$   2147483648 Remote Admin        SRV22.oscp.exam
+C$       2147483648 Default share       SRV22.oscp.exam
+IPC$     2147483651 Remote IPC          SRV22.oscp.exam
+ADMIN$   2147483648 Remote Admin        WS26.oscp.exam
+C$       2147483648 Default share       WS26.oscp.exam
+IPC$     2147483651 Remote IPC          WS26.oscp.exam
 
 ```
 
