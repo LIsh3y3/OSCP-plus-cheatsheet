@@ -313,6 +313,12 @@ ADMIN$   2147483648 Remote Admin        SRV22.oscp.exam
 C$       2147483648 Default share       SRV22.oscp.exam
 Transfer          0                     WS26.oscp.exam
 ```
+- これらの中身はすでに確認済みだけど何もないよ
+```powershell
+ls \\
+```
+
+
 
 ---
 
