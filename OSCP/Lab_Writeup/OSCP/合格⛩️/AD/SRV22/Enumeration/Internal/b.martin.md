@@ -140,11 +140,11 @@ VMware Tools                                                       12.1.0.202196
 
 ---
 
-
----
-
 ### サービス
 
+```powershell
+
+```
 
 ---
 
@@ -327,7 +327,7 @@ PS C:\Program Files\Microsoft SQL Server>
 
 - cmdkeyなし
 - `env`なし
-- 
+- powershell history: なし（自分がやったコマンドだけ）
 
 
 ---
