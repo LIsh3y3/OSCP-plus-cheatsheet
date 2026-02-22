@@ -406,6 +406,58 @@ krbtgt         kadmin/changepw
 ### Microsoft SQL Server
 
 ```powershell
+PS C:\Program Files> cd '.\Microsoft SQL Server\'
+PS C:\Program Files\Microsoft SQL Server> ls -Recurse -Include *.txt,*.ini,*.cfg,*.config,*conf,*.xml,*.git,*.ps1,*.yml -File | Select-String -Pattern "pass(word)?|pwd|cred(ential)?" -List | Select-Object -ExpandProperty Path
+C:\Program Files\Microsoft SQL Server\150\DTS\Connections\en\Microsoft.SqlServer.ManagedConnections.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\ForEachEnumerators\en\Microsoft.SqlServer.ForEachAdoEnumerator.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\ForEachEnumerators\en\Microsoft.SqlServer.ForEachSMOEnumerator.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\Tasks\en\Microsoft.SqlServer.TransferJobsTask.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\Tasks\en\Microsoft.SqlServer.TransferLoginsTask.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\Tasks\en\Microsoft.SqlServer.TransferStoredProceduresTask.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\Tasks\en\Microsoft.SqlServer.WebServiceTask.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\Tasks\en\Microsoft.SqlServer.WMIDRTask.xml
+C:\Program Files\Microsoft SQL Server\150\DTS\Tasks\en\Microsoft.SqlServer.WMIEWTask.xml
+C:\Program Files\Microsoft SQL Server\150\SDK\Assemblies\en\Microsoft.SqlServer.Replication.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\InputSettings_ChainerSettings_SlpSettings.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\ProductSettings_Agent_Public.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\ProductSettings_AS_Private.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\ProductSettings_ClusterNode_Public.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\ProductSettings_SqlEngine_Private.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\ProductSettings_SqlEngine_Public.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\RunRuleResults_RunFeatureSpecificConfigRules.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\RunRuleResults_RunFeatureSpecificRules.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\RunRuleResults_RunScenarioGlobalRules.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\RunRuleResults_RunStandaloneRules.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Datastore\SLP_Actions_PersistedActionData.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\ConfigurationFile.ini
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Detail.txt
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Settings.xml
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\SQLServer_ERRORLOG_2024-10-09T12.21.06.txt
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20241009_121735\Summary_SRV22_20241009_121735.txt
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\Summary.txt
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\SQL2019\1033_ENU_LP\x64\1033\ThirdPartyNotices.txt
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\SQL2019\x64\PidPrivateConfigObjectMaps.xml
+C:\Program Files\Microsoft SQL Server\150\Shared\hkengperfctr.xml
+C:\Program Files\Microsoft SQL Server\150\Tools\Binn\Resources\1033\sqlcm.xml
+ls : Access to the path 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup' is denied.
+At line:1 char:1
++ ls -Recurse -Include *.txt,*.ini,*.cfg,*.config,*conf,*.xml,*.git,*.p ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\Program File...ER\MSSQL\Backup:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+ls : Access to the path 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Binn\Xtp' is denied.
+At line:1 char:1
++ ls -Recurse -Include *.txt,*.ini,*.cfg,*.config,*conf,*.xml,*.git,*.p ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\Program File...\MSSQL\Binn\Xtp:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Binn\perf-MSSQLSERVERsqlctr.ini
+C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Binn\sqlctr.ini
+```
+
+```powershell
 PS C:\Program Files\Microsoft SQL Server> tree
 Folder PATH listing
 Volume serial number is 7CB4-BC42
