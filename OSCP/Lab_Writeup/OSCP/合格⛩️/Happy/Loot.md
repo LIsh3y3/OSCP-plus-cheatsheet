@@ -33,8 +33,9 @@ Sandra:V3rt1cal8Shr1nk2C3ntury!
 
 ## local.txt
 
+![[Pasted image 20260222143035.png]]
 ```zsh
-
+a47a1a066872d0307a913199c9ff90ea
 ```
 
 ## proof.txt
