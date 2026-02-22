@@ -19,7 +19,8 @@ PORT   STATE SERVICE REASON  VERSION
 
 # Enumeration
 
-- Anon
+- Anonymousログインが可能
+- ファイルをアップロードしてweb shell？
 
 ---
 
