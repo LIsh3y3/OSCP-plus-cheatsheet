@@ -298,7 +298,9 @@ Get-ModifiableScheduledTaskFile
 ```powershell
 copy \\172.16.104.206\Transfer\powerview.ps1 .
 ```
-
+```powershell
+Find-DomainShare -CheckShareAccess
+```
 
 ---
 
