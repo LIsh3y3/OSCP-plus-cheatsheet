@@ -21,6 +21,7 @@ PORT   STATE SERVICE REASON  VERSION
 
 - Anonymousログインが可能
 - ファイルをアップロードしてweb shell？
+	- →書き込みは不可
 
 ---
 
