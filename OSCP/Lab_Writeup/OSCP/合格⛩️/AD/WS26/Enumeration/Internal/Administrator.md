@@ -41,3 +41,11 @@ ERROR kuhl_m_sekurlsa_acquireLSA ; Logon list
 
 mimikatz #
 ```
+
+---
+
+# Admin Password spray
+
+```sh
+
+```
