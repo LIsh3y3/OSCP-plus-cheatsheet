@@ -318,7 +318,11 @@ Transfer          0                     WS26.oscp.exam
 ### SPN
 
 ```powershell
-Get-NetUser -SPN | select samaccountname,serviceprincipalname
+PS C:\Users\b.martin> Get-NetUser -SPN | select samaccountname,serviceprincipalname
+
+samaccountname serviceprincipalname
+-------------- --------------------
+krbtgt         kadmin/changepw
 ```
 
 ---
