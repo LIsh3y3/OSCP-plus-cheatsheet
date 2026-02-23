@@ -350,7 +350,7 @@ VMware Tools                                                       12.1.0.202196
 ### 実行中のプロセス
 
 ```powershell
-ps <search_word> -ErrorAction SilentlyContinue | Watch-Command -Difference -Continuous -Seconds 30
+ps -ErrorAction SilentlyContinue | Watch-Command -Difference -Continuous -Seconds 30
 ```
 
 
