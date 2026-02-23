@@ -1,9 +1,15 @@
 # 試行錯誤の結果
 
 ```sh
+Sqlcmd: Warning: The last operation was terminated because the user pressed CTRL+C.
 PS C:\Users\b.martin> sqlcmd -E -S 127.0.0.1
 1> SELECT USER_NAME();
-2>
+2> SELECT SYSTEM_USER;
+3> whoami
+4> test
+5> help
+6> ?
+7>
 ```
 
 ## sqlログイン
