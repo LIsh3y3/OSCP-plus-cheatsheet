@@ -273,15 +273,11 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt \
 
 # OSCP第１回受験JENKINS環境
 
--  dir C:\ /s /b | findstr config.xml
--  dir C:\Users\Public /s （共有フォルダに関連するゴミがないか）
--  dir \\SRV\C$ や dir \\SRV22\Jenkins
-- dir C:\Windows\System32\config\systemprofile\
+Jenkins のディレクトリやバイナリに b.martin の書き込み権限があるか確認
+icacls "C:\Program Files\Jenkins"
+icacls "C:\Program Files\Jenkins\jenkins.exe"
 
--  SMBでC$経由でJenkinsディレクトリにアクセスを試みる
--  dir \\SRV22\C$\Program Files\Jenkins\
--  dir\\SRV22\C$\ProgramData\Jenkins\
--  dir \\SRV22\C$\Windows\System32\config\systemprofile\.jenkins\
+DCにそのままアクセスできないか試行する？
 
 - OSCP試験第一回は、以下のようなJNKINSのAD setで落ちた
 
