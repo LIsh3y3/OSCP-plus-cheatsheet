@@ -56,3 +56,5 @@ SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
 
 ```
 
+![[Pasted image 20260223103227.png]]
+
