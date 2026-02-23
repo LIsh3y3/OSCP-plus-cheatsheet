@@ -25,7 +25,7 @@ Microsoft SQL Server 2019 (RTM) - 15.0.2000.5 (X64)
 1>
 
 ```
-
+![[Pasted image 20260223100230.png]]
 ## sqlログイン
 
 - ローカルから
