@@ -31,14 +31,9 @@ oscp\v.skinner:DeeplyImportantThing444                              oscp\k.freem
 
 ※IPアドレスの出力→フラグの出力のキャプチャ必要
 
-## local.txt
-
-```zsh
-
-```
-
 ## proof.txt
 
+![[Pasted image 20260223101226.png]]
 ```zsh
-
+1757b535c7fcf972ce03319da2f5550e
 ```
