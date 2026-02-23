@@ -248,7 +248,7 @@ icacls C:\PublicShare /grant "Everyone:(OI)(CI)F" /T
 copy \\172.16.104.206\Transfer\WinPEASx64.exe .
 ```
 ```powershell
-.\winPEASx64.exe | Tee-Object -FilePath \\172.16.104.206\Transfer\peas_result.txt
+.\winPEASx64.exe
 ```
 
 ### 実行結果抽出
