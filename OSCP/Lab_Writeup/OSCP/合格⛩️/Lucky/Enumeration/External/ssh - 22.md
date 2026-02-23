@@ -91,3 +91,5 @@ sarah@oscp:~$
 ```
 
 ![[Pasted image 20260223162704.png]]
+
+![[Pasted image 20260223165318.png]]
