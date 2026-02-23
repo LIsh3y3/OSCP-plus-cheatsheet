@@ -30,7 +30,7 @@ administrator:CarHammerChip964
 
 メモ帳の上に
 cmd.exeひらき、背景がわからなくする。
-出力は自身の環境のcmd.exeの形式にする。winrmの結果を
+出力は自身の環境のcmd.exeの形式にする。winrmの結果をcmd.exeの形式で出すイメージ。
 
 ![[Pasted image 20260222182128.png]]
 ```zsh
