@@ -226,12 +226,15 @@ arp -a
 
 ## インストール済みアプリケーションの列挙コマンド
 
-インストール済みアプリケーションの列挙（可視性高）
+レジストリからインストール済アプリケーションの列挙
 ```powershell
 # Access deninedのときは、reg query "HKLM\..."もしくはGet-Item "HKLM\.."
 $paths = @(
 "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*","HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*","HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*")
-Get-ItemProperty -Path $paths -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation | Sort-Object DisplayName
+Get-ItemProperty -Path $paths -ErrorAction SilentlyContinue |
+Where-Object { $_.DisplayName } |
+Select-Object DisplayName, DisplayVersion, InstallLocation |
+Sort-Object DisplayName
 ```
 - →パスワードマネージャーを使っている場合は、クラックへ：[[Password Attack]]
 - →設定ファイルに含まれる認証情報列挙へ：[[#ファイルに含まれる認証情報の列挙]]
