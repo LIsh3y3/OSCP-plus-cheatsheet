@@ -142,7 +142,7 @@ OS・バージョン・アーキテクチャの表示
 systeminfo
 ```
 - `OS Name`
-- `OS Version xxxx Build <num`：Buildの番号を[List of Microsoft Windows versions - Wikipedia](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions)で検索することで、詳細で**正確**なOSバージョンがわかる
+- `OS Version xxxx Build <num>`：Buildの番号を[List of Microsoft Windows versions - Wikipedia](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions)で検索することで、詳細で**正確**なOSバージョンがわかる
 - `System Type`：64bitか32bitかで使用できるPEファイルが異なる
 
 Access deniedの場合
@@ -171,7 +171,7 @@ $$MSRCの検索結果$$
 ## 目的
 
 - マシンのネットワーク構成や、アクセス可能なリソース（ADや他のマシン）を特定する
-- Nmapではわからなかったサービスが動作していないかを確認する
+- Nmapでわからなかったサービスが動作していないかを確認する
 
 ## ネットワーク情報収集コマンド
 
