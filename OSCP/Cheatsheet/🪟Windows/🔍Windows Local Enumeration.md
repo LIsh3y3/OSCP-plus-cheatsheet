@@ -341,9 +341,9 @@ Get-WmiObject win32_service | Select-Object Name, PathName, StartName | Where-Ob
 ```
 - ⚠️出力のPathNameが空白となるものは、アクセス権限がない
 
-### 💡Tips：サービス列挙がpermisison deniedで実行できないとき
+### 💡Tip：サービス列挙がpermisison deniedで実行できないとき
 
-- WinRMやbind shellのように、完全にインタラクティブなシェル（RDPやssh）でないとWMIやCMIが使えずPermission deniedが返ることがある
+- WinRMやbind shellのように、完全にインタラクティブなシェル（RDPやssh）でないと、WMIやCMIが使えずPermission deniedが返ることがある
 
 レジストリから、Windows標準フォルダ以外で実行されるサービスを列挙
 ```powershell
