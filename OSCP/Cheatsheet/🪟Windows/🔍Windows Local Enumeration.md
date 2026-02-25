@@ -153,7 +153,7 @@ reg query "HKLM\HARDWARE\DESCRIPTION\System\CentralProcessor\0" /v Identifier
 Get-CimInstance -Class win32_quickfixengineering | 
 Where-Object { $_.Description -eq "Security Update" }
 ```
-- 💥インストールされたセキュリティパッチをメモし、ターゲットのOSを[Microsoft Security Response Center](https://msrc.microsoft.com/update-guide/deployments)のページで検索し、未修正の脆弱性を明らかにする
+- インストールされたセキュリティパッチをメモし、ターゲットのOSを[Microsoft Security Response Center](https://msrc.microsoft.com/update-guide/deployments)のページで検索し、未修正の脆弱性を明らかにする
 	- 日付範囲は１年のみ選択可能
 ![[Pasted image 20250823155239.png]]
 $$MSRCの検索結果$$
@@ -164,7 +164,7 @@ $$MSRCの検索結果$$
 
 ## 目的
 
-- FWによる遮断によりNmapでわからなかったサービスや、ローカルで動作しているサービスがないかを確認する
+- FWによる遮断などでポートスキャンでは検知されなかったサービスや、ローカルで動作しているサービスがないかを確認する
 - マシンのネットワーク構成や、アクセス可能なリソース（ADや他のマシン）を特定する
 
 ## ネットワーク情報収集コマンド
