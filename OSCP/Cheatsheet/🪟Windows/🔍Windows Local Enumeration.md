@@ -264,15 +264,7 @@ dir ~\Downloads
 
 実行中プロセスの確認
 ```powershell
-# 除外ワードは,"<term>"で追加可能
 ps | Where-Object -Property ProcessName -notin "svchost"
-```
-	↓
-```
-Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName         
--------  ------    -----      -----     ------     --  -- -----------         
-     58      13      528       1088       0.00   2064   0 access              
-...                                                  
 ```
 - →Idと[[#ネットワーク情報の列挙]]の`netstat`で表示されたPIDを突合し、どのポートでどのプロセス（ProcessName）が動作しているかを確定できる
 
