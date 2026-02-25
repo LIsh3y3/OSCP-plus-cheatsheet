@@ -175,6 +175,23 @@ $$MSRCの検索結果$$
 
 ## ネットワーク情報収集コマンド
 
+アクティブなネットワーク接続一覧
+```powershell
+netstat -ano
+```
+	↓
+```
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING       3340
+  ...
+```
+- `State LISTINING`：そのポートで何かのサービスが動作している
+- `State ESTABLISHED`：現在使用中
+- ポート番号から、動作しているサービスを推測できる→[[#実行中のプロセスの列挙]]で列挙したPIDと突合して、どのポートでどのサービスが動作しているかを確定
+- 補足：[[#ルーティングテーブルの見方]]
+
 すべてのネットワークインターフェース情報
 ```powershell
 ipconfig /all
