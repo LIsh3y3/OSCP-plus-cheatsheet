@@ -281,6 +281,7 @@ ps -id <PID> | Select-Object Path
 
 リアルタイムにプロセスの状況を確認（[Watch-Command.ps1](https://github.com/markwragg/PowerShell-Watch/blob/master/Watch/Public/Watch-Command.ps1)）
 ```powershell
+# kaliにwatch-command.ps1をインストールして転送する必要がある
 import-module .\Watch-Command.ps1
 # 実行時のプロセスとの差分のみを30秒間隔で表示する
 ps <search_word> -ErrorAction SilentlyContinue | Watch-Command -Difference -Continuous -Seconds 30
