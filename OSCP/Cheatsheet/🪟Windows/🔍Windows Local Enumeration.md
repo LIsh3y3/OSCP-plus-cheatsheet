@@ -247,7 +247,6 @@ dir "C:\Program Files (x86)"
 # Downloadフォルダの探索
 dir ~\Downloads
 ```
-
 - 補足：[[#インストール済みアプリ列挙コマンド詳細]]
 - [[用語#レジストリのHKCU、HKLMの違い]]
 
