@@ -89,7 +89,6 @@ whoami /groups
 # グループ名のみの表示
 whoami /groups /fo csv | ConvertFrom-Csv | Select-Object "Group Name"
 ```
-- グループだけでなく、`NT AUTHORITY\NTLM Authentication`や`Everyone`など、そのユーザーの状態やログイン方法を表す出力もあるため、`Get-LocalGroup`で存在するグループかどうかを確認すること
 
 現在のユーザーの権限
 ```cmd
@@ -139,7 +138,7 @@ systeminfo
 - `OS Version xxxx Build <num>`：Buildの番号を[List of Microsoft Windows versions - Wikipedia](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions)で検索することで、詳細で**正確**なOSバージョンがわかる
 - `System Type`：64bitか32bitかで使用できるPEファイルが異なる
 
-Access deniedの場合
+`Systeminfo`がAccess deniedの場合
 ```powershell
 Get-ComputerInfo
 ```
