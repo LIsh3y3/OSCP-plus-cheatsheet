@@ -18,7 +18,7 @@ OSINT = Passive Recon
 - [Sublist3r](https://www.kali.org/tools/sublist3r/)
 	サブドメインを列挙する
 ```zsh
-sublist3r -d [domain] -t [thread] -e [search engine(bing等)]
+sublist3r -d domain] -t [thread] -e [search engine(bing等)]
 ```
 
 ---
