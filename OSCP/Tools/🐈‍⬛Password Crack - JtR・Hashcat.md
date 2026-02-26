@@ -124,9 +124,8 @@ john --list=rules
 
 ### 前提事項・注意事項
 
-- ハッシュ値をJtRのサポートする形式に整理整頓しないと、クラックできない。
-整形するためのツールがある
-- 💡以下に紹介しているツール以外にもまだまだある：[Tools : John - Kali.org](https://www.kali.org/tools/john/)
+- ハッシュ値をJtRのサポートする形式に整理整頓しないと、クラックできないので、サポートする形式に整形するためのツールがある
+- 以下に紹介しているツール以外にもまだまだある：[Tools : John - Kali.org](https://www.kali.org/tools/john/)
 
 - 🚨整形ツールを使用した場合で、JtRではなくHashcatでクラックするときは、Hashcatのハッシュフォーマットを確認の上、必要であればユーザー名を削除する必要がある：
 	- 例：keepass2johnで出力されたハッシュの先頭にユーザー名が付与されているが、[Hashcat wiki](https://hashcat.net/wiki/doku.php?id=example_hashes)を確認するとユーザー名が不要であることがわかる（モード13400）
