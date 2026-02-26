@@ -28,18 +28,18 @@
 - Get-Commandでコマンドの列挙
 - Get-Helpでコマンドの使い方
 ```powershell
-Get-Help [command]
+Get-Help <command>
 #特定のパラメタについて知りたい
-Get-Help [command] -Parameter [param]
+Get-Help <command> -Parameter [param]
 #コマンド例を知りたい
-Get-Help [command] -Example
+Get-Help <command> -Example
 #コマンドについての詳細な説明を別ウィンドウで表示
-Get-Help [command] -ShowWindow
+Get-Help <command> -ShowWindow
 ```
 
 - エイリアスの設定
 ```powershell
-New-Alias -Name [エイリアス] -Value [command]
+New-Alias -Name [エイリアス] -Value <command>
 ```
 
 ---
