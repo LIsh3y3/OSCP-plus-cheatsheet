@@ -156,7 +156,7 @@ ssh2john <PrivateKey> > <output_file>
 ```zsh
 unshadow <path_to_/etc/passwd> <path_to_/etc/shadow> > <output_file>
 ```
-- 💡`/etc/passwd`のユーザーのすべてクラックしようとすると時間がかかるため、特定ユーザーのに絞ってJtRを実行
+- 💡`/etc/passwd`のユーザーのすべてクラックしようとすると時間がかかるため、特定ユーザーに絞ってJtRを実行
 
 kdbxファイル：*keepass2john*
 ```zsh
