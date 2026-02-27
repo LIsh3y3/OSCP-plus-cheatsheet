@@ -393,10 +393,8 @@ sed -i '/^[a-zA-Z0-9]*$/d' <wordlist>
 - Not enough allocatable device memory or free host memory for mapping.
 	- →メモリ不足のため、他のプロセスを一旦終了する
 - Token length exception
-	- →ハッシュタイプが異な→[[#Hashの識別]]を実施
-> - HashcatがサポートしないHashアルゴリズム
-> 	- →JtRを使用
-
+	- →`-m`で指定したハッシュタイプが違う可能性があるため、[[#Hashの識別]]を実施 
+	- →HashcatがサポートしないHashアルゴリズムである可能性があるため、JtRを使用
 
 ---
 ---
@@ -405,11 +403,11 @@ sed -i '/^[a-zA-Z0-9]*$/d' <wordlist>
 
 ## 前提事項・注意事項
 
-- JtRでも自動でHashタイプを認識しない時があるし、HashcatではHashアルゴリズムの指定が必須
+- JtRでも自動でHashタイプを認識しないときがあるし、HashcatではHashアルゴリズムの指定が必須
 - Hashの識別には[hash-identifier](https://www.kali.org/tools/hash-identifier/) もしくは [hashid](https://www.kali.org/tools/hashid/)というツールを使う
 	- ==2つのツールで確認すること==
 		- 異なる結果を返す場合は、信頼性が低い
-	- ツールでもわからない場合は、hashcatのhelpを使用
+	- ツールでもわからない場合は、
 
 - 💡識別結果のHashアルゴリズムでクラックできないときは？
 	- 誤ったアルゴリズムである可能性がある
