@@ -201,11 +201,11 @@ john --show --format=<format> <hashファイル>
 
 ## 辞書攻撃 w/ Hashcat
 
-- 基本構文
+基本構文
 ```zsh
 hashcat <hash_file> -m <hash_mode> -a <attack_mode> <wordlist> --force
 ```
-- `--force` はCPUでのクラックに関する警告を無視して強制的に実行するオプション（GPUならなし）
+
 - 🚨hashcat は引数の順番に厳格。hashファイルを最初に指定しないと `Insufficient memory available` のエラーが出る場合がある
 
 - 具体例
