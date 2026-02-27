@@ -210,7 +210,7 @@ hashcat <hash_file> -m <hash_mode> -a 0 <wordlist> --force
 - `-m` : 解析するハッシュのモード（[Hashcat example](https://hashcat.net/wiki/doku.php?id=example_hashes)）
 
 
-> [!ERROR] Token length exceptio
+> [!ERROR] Token length exception
 > TEST
 
 ⚠️n エラー：
