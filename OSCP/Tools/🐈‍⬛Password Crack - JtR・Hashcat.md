@@ -209,13 +209,6 @@ hashcat <hash_file> -m <hash_mode> -a 0 <wordlist> --force
 - `-a` : 攻撃モードで、0は辞書攻撃
 - `-m` : 解析するハッシュのモード（[Hashcat example](https://hashcat.net/wiki/doku.php?id=example_hashes)）
 
-
-> [!ERROR] Token length exception
-> - ハッシュタイプが異なる
-> 	- →[[#Hashの識別]]を実施
-> - HashcatがサポートしないHashアルゴリズム
-> 	- →JtRを使用
-
 ---
 
 ## ブルートフォース攻撃 w/ Hashcat
