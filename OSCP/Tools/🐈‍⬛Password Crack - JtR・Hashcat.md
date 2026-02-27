@@ -206,7 +206,7 @@ john --show --format=<format> <hashファイル>
 hashcat <hash_file> -m <hash_mode> -a <attack_mode> <wordlist> --force
 ```
 
-- 🚨hashcat は引数の順番に厳格。hashファイルを最初に指定しないと `Insufficient memory available` のエラーが出る場合がある
+- 🚨has場合がある
 
 - 具体例
 ```zsh
