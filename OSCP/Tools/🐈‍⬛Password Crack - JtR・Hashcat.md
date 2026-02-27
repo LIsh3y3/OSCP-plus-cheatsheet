@@ -210,9 +210,10 @@ hashcat <hash_file> -m <hash_mode> -a 0 <wordlist> --force
 - `-m` : 解析するハッシュのモード（[Hashcat example](https://hashcat.net/wiki/doku.php?id=example_hashes)）
 
 
-> [!ERR]
+> [!ERROR] Token length exceptio
+> TEST
 
-⚠️Token length exception エラー：
+⚠️n エラー：
 	ハッシュタイプが異なる場合（[[#Hashの識別]]をやる）
 		or
 	HashcatがサポートしないHashアルゴリズム（JtRを使用）
