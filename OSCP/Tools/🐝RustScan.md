@@ -3,7 +3,7 @@
 - [RustScan](https://github.com/bee-san/RustScan)
 - Rust言語で構築されたオープンソースのモダンポートスキャナー
 - 全65,535ポートを最速で数秒以内にスキャンできる（バッチサイズ・タイムアウト次第）
-- **NmapのラッパーとしてNmapを置き換えるものではなく、補完するツール**
+- **NmapのラッパーとしてNmapを置き換えるものではなく**、補完するツール
     - Openポートを高速で発見し、その結果を自動的にNmapへパイプするという思想
     - Nmapがインストールされていることが前提
 - RustScan Scripting Engine（RSE）により、Python・Lua・Shellで書かれた任意のスクリプトを実行可能（[詳細](https://github.com/RustScan/RustScan/wiki/RustScan-Scripting-Engine)）
@@ -24,10 +24,6 @@
 | Adaptive Learning | なし                         | あり（OS環境に応じて自動調整）         |
 
 **実世界ではNmapの方が推奨。** RustScanはCTFや初期偵察フェーズでの速度重視の場面に向いている。
-
----
-
-## 注意事項
 
 > [!WARNING]
 > - Nmap同様、**結果を信じ込まない**（検出しなかった ≠ サービスが動作していない）
