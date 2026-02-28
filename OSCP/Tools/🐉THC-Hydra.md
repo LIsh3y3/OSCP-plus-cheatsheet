@@ -1,4 +1,4 @@
-Hydra試す前に... :
+✋️Hydra試す前に... 
 - 他にできることはすべてやったか？
 - 以下は実行したか？
 ```
@@ -29,7 +29,10 @@ Basic authenticationへのパスワードアタック
 ```zsh
 hydra -l <username> -P <wordlist> $TargetIP http-get /<URL_path>
 ```
-- ⚠️：HTTPSの場合はhttp*s*-get
+- ⚠️：
+
+> [!WARNING]
+> HTTPSの場合はhttp*s*-get
 
 特定サービスへのパスワードアタック
 ```zsh
