@@ -50,7 +50,7 @@ nikto -Format htm -o nikto.html --maxtime=180s -C all -h <target₋IP>
 
 特定のホストのポートをスキャンするとき、`-p`を使用し、複数のポートをスキャンできる
 ```zsh
-nikto -h <target₋IP> -p <Port>, <Port>
+nikto -h <target₋IP> -p <port>, <port>
 ```
 - ⚠️`nikto -h http://`とやると、ポート80しか検査されない
 
