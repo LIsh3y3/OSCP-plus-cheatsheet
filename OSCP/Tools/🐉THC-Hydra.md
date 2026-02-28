@@ -36,7 +36,7 @@ hydra -l <username> -P <wordlist> <target_ip> http-get /<URL_path>
 
 > [!INFO]
 > - HTTPSの場合はhttp*s*-get
-> - JSONとの場合は相性が悪いため、ffufかBurp Suiteを使用
+> - JSONとの相性が悪いため、ffufかBurp Suiteを使用
 > - Errorメッセージのないログインフォームをパスワードアタックするようなことは少ない
 
 特定サービスへのパスワードアタック
@@ -76,14 +76,6 @@ hydra -l <username> -x 1:6:1A <service>://<target_ip>
 | secLists/Passwords                                            | デフォルトクレデンシャルや、最も使われるパスワード100選など豊富なワードリスト                     |
 | dirb/others/names.txt                                         | 8000以上のユーザー名エントリ                                             |
 | secLists/Passwords/Common-Credentials/500-worst-passwords.txt | 非常に脆弱（単純）なパスワードを集めたもので、hydraでデフォルト認証情報を使っているサービスをクラックするときに使う |
-
-
-プロキシ経由で攻撃（通信内容をBurp Suiteで確認したいときなどに使う）
-```zsh
-export HYDRA_PROXY_HTTP=http://127.0.0.1:8080
-hydra ...
-unset HYDRA_PROXY_HTTP
-```
 
 ---
 ---
