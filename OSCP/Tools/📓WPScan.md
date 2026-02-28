@@ -17,7 +17,7 @@ wpscan --update
 
 ターゲットのWordPressの有名なプラグイン・テーマとその脆弱性を列挙
 ```zsh
-wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection aggressive -o WebEnum/wpscan --api-token <API>
+wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection aggressive -o WebEnum/wpscan --api-token <API_token>
 ```
 - `[+]`発見情報、`[!]`脆弱性情報
 - 💡`out of date`に着目
