@@ -19,13 +19,13 @@ Webログインフォームへのパスワードアタック(POST)
 	（[[#構成要素]]を確認（特にFailure Message））
 ```zsh
 # 具体例：hydra -l admin -P /usr/share/wordlists/fasttrack.txt 10.10.10.43 http-post-form "/user/login.php:username=^USER^&password=^PASS^:F=Invalid Password!"
-hydra -l <username> -P <wordlist> $TargetIP http-post-form "/<url残り>:<クエリ文字列>:F=<Failure_Message>" 
+hydra -l <username> -P <wordlist> <target_ip> http-post-form "/<url残り>:<クエリ文字列>:F=<Failure_Message>" 
 ```
 - 💡：Errorメッセージのないログインフォームをパスワードアタックするようなことは少ない
 
 Basic authenticationへのパスワードアタック
 ```zsh
-hydra -l <username> -P <wordlist> $TargetIP http-get /<URL_path>
+hydra -l <username> -P <wordlist> <target_ip> http-get /<URL_path>
 ```
 
 > [!WARNING]
@@ -34,22 +34,22 @@ hydra -l <username> -P <wordlist> $TargetIP http-get /<URL_path>
 
 特定サービスへのパスワードアタック
 ```zsh
-hydra -l <username> -P <wordlist> <service>://$TargetIP
+hydra -l <username> -P <wordlist> <service>://<target_ip>
 ```
 
 ユーザー名とパスワードの同時辞書攻撃(時間かかる)
 ```zsh
-hydra -L <username_wordlist> -P <pw_wordlist> -u <service>://$TargetIP
+hydra -L <username_wordlist> -P <pw_wordlist> -u <service>://<target_ip>
 ```
 
 デフォルトクレデンシャルの組み合わせ(ftpの例)
 ```zsh
-hydra -C /usr/share/seclists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt ftp://$TargetIP
+hydra -C /usr/share/seclists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt ftp://<target_ip>
 ```
 
 単純なブルートフォース
 ```zsh
-hydra -l <username> -x 1:6:1A <service>://$TargetIP
+hydra -l <username> -x 1:6:1A <service>://<target_ip>
 ```
 
 その他よく使うオプション：
@@ -99,13 +99,13 @@ unset HYDRA_PROXY_HTTP
 - サービスが明確な場合
 	- 指定したサービスに対して、ユーザー名とパスワードを試行する。
 ```zsh
-hydra -l <username> -P <wordlist>　<service>://$TargetIP
+hydra -l <username> -P <wordlist>　<service>://<target_ip>
 ```
 
 - サービスが不明確な場合（あまり使わない）
 	- 対象IPに対してサービス名を指定して試行する。効率は下がる可能性がある。
 ```zsh
-hydra -l <username> -P <wordlist>　$TargetIP <protocol>
+hydra -l <username> -P <wordlist>　<target_ip> <protocol>
 ```
 
 ### POSTフォームに対する辞書攻撃
@@ -117,7 +117,7 @@ hydra -U http-post-form
 
 - リクエスト内容を把握する必要があり、そのためにBurp Suiteなどでフォームの構造を確認する。
 ```zsh
-hydra -l <username> -P <wordlist> $TargetIP http-post-form "/<URL_path>:<クエリ文字列>:F=<Failure_Messeage>"
+hydra -l <username> -P <wordlist> <target_ip> http-post-form "/<URL_path>:<クエリ文字列>:F=<Failure_Messeage>"
 ```
 
 #### 構成要素
@@ -137,13 +137,13 @@ $$POSTフォームのクエリ文字列$$
 ### BASIC認証における辞書攻撃
 
 ```zsh
-hydra -l <username> -P <wordlist> $TargetIP http-get /<URL_path>
+hydra -l <username> -P <wordlist> <target_ip> http-get /<URL_path>
 ```
 
 ### ブルートフォース
 
 ```zsh
-hydra -l <username> -x <最小長>:<最大長>:<文字セット> <service>://$TargetIP
+hydra -l <username> -x <最小長>:<最大長>:<文字セット> <service>://<target_ip>
 ```
 
 |記号|意味|
