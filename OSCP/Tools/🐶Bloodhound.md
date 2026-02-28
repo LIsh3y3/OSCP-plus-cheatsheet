@@ -200,15 +200,6 @@ $$groupラベルでadminとつくグループのみを検索している$$
 > - AS-REP Roastable users (DontReqPreAuth)
 > - All Kerberoastable users
 
-![[Pasted image 20251006124753.png]]
-$$定義済みクエリですべてのドメインadminを列挙しているイメージ$$
-
----
-
-# 留意点
-
-- csvファイルは使えない（BCEのバージョンが1.xxなら使えるが、古い）
-- ローカルGPOは収集できない
 
 ---
 
