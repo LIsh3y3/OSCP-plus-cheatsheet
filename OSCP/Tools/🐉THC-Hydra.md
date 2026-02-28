@@ -13,6 +13,7 @@ Administrator:Administrator
 - （※）list of xxxx username password　と検索
 - そのほか、簡易的なパスワード（年号＋季節など）を試す
 
+-
 # Summery
 
 Webログインフォームへのパスワードアタック(POST)
@@ -69,7 +70,6 @@ hydra -l <username> -x 1:6:1A <service>://<target_ip>
 | secLists/Passwords                                            | デフォルトクレデンシャルや、最も使われるパスワード100選など豊富なワードリスト                     |
 | dirb/others/names.txt                                         | 8000以上のユーザー名エントリ                                             |
 | secLists/Passwords/Common-Credentials/500-worst-passwords.txt | 非常に脆弱（単純）なパスワードを集めたもので、hydraでデフォルト認証情報を使っているサービスをクラックするときに使う |
-|                                                               |                                                              |
 
 
 プロキシ経由で攻撃（通信内容をBurp Suiteで確認したいときなどに使う）
