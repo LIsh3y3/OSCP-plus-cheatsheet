@@ -1,4 +1,6 @@
-✋️Hydra試す前に... 
+# ✋️Hydra実行前に
+
+- 
 - 他にできることはすべてやったか？
 - 以下は実行したか？
 ```
@@ -13,7 +15,8 @@ Administrator:Administrator
 - （※）list of xxxx username password　と検索
 - そのほか、簡易的なパスワード（年号＋季節など）を試す
 
--
+---
+
 # Summery
 
 Webログインフォームへのパスワードアタック(POST)
