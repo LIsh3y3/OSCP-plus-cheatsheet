@@ -30,11 +30,6 @@
 > - 偽陽性・偽陰性を軽減するため、**2回実施すること**
 > - `/etc/hosts` にドメイン名を追加してから再度実行することで結果が変わることがある
 
-> [!WARNING]
-> - Nmap同様、==結果を信じ込まない== （検出しなかった≠サービスが動作していない）
-> - 偽陽性、偽陰性を軽減するため、**2回実施すること**
-> - `/etc/hosts/`にドメイン名を追加してから再度実行することで結果が変わることがある
-
 ---
 
 # RustScanコマンド解説
@@ -43,11 +38,11 @@
 ```zsh
 rustscan -a <target_IP>
 ```
-→空いているポートだけ表示
+- →空いているポートだけ表示
 
 nmapのコマンドを用いたスキャン
 ```zsh
-rustscan -r ports] -a <target_IP> -- [nmap commands]
+rustscan -r <ports> -a <target_IP> -- <nmap_commands>
 ```
 
 複数IP同時スキャン
@@ -66,9 +61,8 @@ rustscan -a <target_IP>/<subnet_mask>
 ```
 
 スキャン対象のリスト一覧が記載されたファイルを用いて対象を同時にスキャン
+(例: hosts.txt)
 ```txt
-
-# hosts.txt
 192.168.0.1
 192.168.0.2
 google.com
@@ -81,17 +75,17 @@ rustscan -a 'hosts.txt'
 
 特定ポートのスキャン
 ```zsh
-rustscan -a <target_IP> -p [port]
+rustscan -a <target_IP> -p <port>
 ```
 
 複数ポートのスキャン
 ```zsh
-rustscan -a <target_IP> -p [port1],[port2]
+rustscan -a <target_IP> -p <port1>,<port2>
 ```
 
 ポートの範囲指定スキャン
 ```zsh
-rustscan -<target_IP> --range [start]-[end]
+rustscan -<target_IP> --range <start>-<end>
 ```
 
 ランダムな順序でのスキャン
@@ -103,7 +97,7 @@ rustscan -a <target_IP> --scan-order "Random"
 
 - [RustScan Usage](https://github.com/RustScan/RustScan/wiki/Usage)
 
-- バッチサイズの調整（指定したポート数を一度にスキャン）
+バッチサイズの調整（指定したポート数を一度にスキャン）
 ```zsh
 rustscan -b [batch size]
 ```
