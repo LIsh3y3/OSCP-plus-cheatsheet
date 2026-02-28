@@ -188,9 +188,9 @@ $$groupラベルでadminとつくグループのみを検索している$$
 - 指定したStart NodeからDestination Nodeまでの侵害経路をグラフ化する
 	- 存在しない場合はPATH NOT FINDING(存在しないと表示された場合でも[[💥Lateral Movement & Persistance in AD]]のテクニックで横展開可能な場合も多い)
 
-### ⭐️CYPHER
+### CYPHER
 
-- 🔗公式ドキュメント[Search With Cypher - SPECTEROPS](https://bloodhound.specterops.io/analyze-data/cypher-search)
+- 公式ドキュメント[Search With Cypher - SPECTEROPS](https://bloodhound.specterops.io/analyze-data/cypher-search)
 - 関連ノート：[[Cypher文法]]
 
 - クエリを使用して、任意の情報を表示する
