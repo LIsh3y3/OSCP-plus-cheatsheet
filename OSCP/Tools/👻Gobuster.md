@@ -90,10 +90,10 @@ gobuster dns -d <target_domain> -i --wildcard -w /usr/share/seclists/Discovery/D
 
 - バーチャルホスト（1つのサーバー上で複数のドメインを運用）を発見する
 - 異なるバーチャルホストごとに異なるコンテンツが配置されているため、追加の攻撃対象を発見できる可能性がある
-	- たとえば、ホストAは堅牢だが、ホストBは脆弱で Web shell 実行可能など
+	- たとえば、ホストAは堅牢だが、ホストBは脆弱で webshell 実行可能など
 - 使用ワードリスト：`/usr/share/seclists/Discovery/DNS/`
 ```zsh
-gobuster vhost -u http://<target₋IP|Domain>:<port>/> -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+gobuster vhost -u http://<target₋IP>:<port>/> -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
 ```
 
 >[!TIP]
@@ -114,14 +114,14 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 - 名前ベースもしくはIPベースで振り分ける
 - 以下 Apache 例の場合 (/etc/apache2/sites-available/xxxx.conf)：
 	- IPアドレスでアクセス → /var/www/html/umbraco のindexが表示
-	- skylark.jpでアクセス →/var/www/html のindexが表示
+	- example.jpでアクセス →/var/www/html のindexが表示
 ```xml
 <VirtualHost *:80>
     DocumentRoot /var/www/html/umbraco/
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName skylark.jp
+    ServerName example.jp
     DocumentRoot /var/www/html/
 </VirtualHost>
 ```
@@ -131,7 +131,7 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 	- IIS：
 		- %SystemRoot%\System32\inetsrv\config\applicationHost.config
 		- web.config
-		- appsettings.jsonなそ
+		- appsettings.jsonなど
 
 ---
 
