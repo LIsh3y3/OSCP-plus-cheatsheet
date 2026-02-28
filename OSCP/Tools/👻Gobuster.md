@@ -15,9 +15,8 @@
 - Webサーバ上の隠れたディレクトリ / ファイルを探索する
 
 > [!WARNING]
-> **再帰探索はできない**ため、一階層下のディレクトリしか探索しない
-	- 手動で`-u`の値を都度変えてスキャンするか、[[🦝FeroxBuster]]を使う
-
+> - **再帰探索はできない**ため、一階層下のディレクトリしか探索しない
+> 	- →手動で`-u`の値を都度変えてスキャンするか、[[🦝FeroxBuster]]を使う
 
 ## ディレクトリ・ファイル列挙コマンド
 
@@ -27,7 +26,6 @@
 ulimit -n 8192
 ```
 ```zsh
-# 気になるディレクトリがあれば-uに指定して再度実行すること
 gobuster dir -u http://<TargetIP|Domain>:<Port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>'
 ```
 - `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[[#拡張子リスト]]）
