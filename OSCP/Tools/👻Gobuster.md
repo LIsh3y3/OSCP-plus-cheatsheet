@@ -26,7 +26,7 @@
 ulimit -n 8192
 ```
 ```zsh
-gobuster dir -u http://<target₋IP>:<port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>'
+gobuster dir -u http://<target_IP>:<port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>'
 ```
 - `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[[#拡張子リスト]]）
 
@@ -37,7 +37,7 @@ gobuster dir -u http://<target₋IP>:<port>/ -r -k -w /usr/share/seclists/Discov
 {GOBUSTER}/v2
 ```
 ```zsh
-gobuster dir -u http://<target₋IP>:<port>/ -w <wordlist> -p pattern.txt
+gobuster dir -u http://<target_IP>:<port>/ -w <wordlist> -p pattern.txt
 ```
 
 ## dirモードラブルシューティング / Tips
@@ -93,7 +93,7 @@ gobuster dns -d <target_domain> -i --wildcard -w /usr/share/seclists/Discovery/D
 	- たとえば、ホストAは堅牢だが、ホストBは脆弱で webshell 実行可能など
 - 使用ワードリスト：`/usr/share/seclists/Discovery/DNS/`
 ```zsh
-gobuster vhost -u http://<target₋IP>:<port>/> -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+gobuster vhost -u http://<target_IP>:<port>/> -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
 ```
 
 >[!TIP]
