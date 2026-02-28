@@ -41,7 +41,7 @@ python -m json.tool < ffuf.json | tee pretty_result.json
 # 特定のレスポンスコードで絞る
 cat ffuf.json | jq '.results[] | select(.status == 200) | .url'
 ```
-レスポンスのフィルタリングは、ffuf実行時点でも可能[[#⌛️レスポンスのフィルタリングとマッチング]]）
+- レスポンスのフィルタリングは、ffuf実行時点でも可能[[#⌛️レスポンスのフィルタリングとマッチング]]
 
 ---
 
