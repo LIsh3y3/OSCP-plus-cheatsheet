@@ -1,7 +1,7 @@
 # 目的
 
-- Active DirectoryやEntra ID（旧称：Azure AD）の攻撃ベクターを見つけるために使うドメインマップを作成する
-	- ADにおけるGoogle Mapのようなもの...
+Active DirectoryやEntra ID（旧称：Azure AD）の攻撃ベクターを見つけるために使うドメインマップを作成する。
+（ADにおけるGoogle Mapのようなもの。）
 
 ---
 

@@ -1,7 +1,7 @@
 # RustScanとは
 
 - [RustScan](https://github.com/bee-san/RustScan)
-- Rust言語で構築されたオープンソースのモダンポートスキャナー
+- Rust言語で構築されたオープンソースのポートスキャナー
 - 全65,535ポートを最速で数秒以内にスキャンできる（バッチサイズ・タイムアウト次第）
 - **NmapのラッパーとしてNmapを置き換えるものではなく**、補完するツール
     - Openポートを高速で発見し、その結果を自動的にNmapへパイプするという思想
@@ -42,7 +42,7 @@ rustscan -a <target_IP>
 
 nmapのコマンドを用いたスキャン
 ```zsh
-rustscan -r <ports> -a <target_IP> -- <nmap_commands>
+rustscan -r <port> -a <target_IP> -- <nmap_commands>
 ```
 
 複数IP同時スキャン
@@ -99,12 +99,12 @@ rustscan -a <target_IP> --scan-order "Random"
 
 バッチサイズの調整（指定したポート数を一度にスキャン）
 ```zsh
-rustscan -b [batch size]
+rustscan -b <batch_size>
 ```
 
 - タイムアウト時間の調整(5秒＝5000ミリセカンド)
 ```zsh
-rustscan -T [miliseconds]
+rustscan -T <miliseconds>
 ```
 
 ---
