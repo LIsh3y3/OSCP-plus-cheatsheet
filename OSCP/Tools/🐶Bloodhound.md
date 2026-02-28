@@ -196,7 +196,9 @@ $$groupラベルでadminとつくグループのみを検索している$$
 - クエリを使用して、任意の情報を表示する
 - 「Saved Query」で定義済みのクエリを使用可能
 > [!TIP] 便利なCYPHER
+> - Shortest paths from Owned objects
 
+	- All Kerberoastable users
 
 
 
