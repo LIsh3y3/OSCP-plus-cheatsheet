@@ -26,7 +26,7 @@
 ulimit -n 8192
 ```
 ```zsh
-gobuster dir -u http://<target₋IP|domain>:<port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>'
+gobuster dir -u http://<target₋IP>:<port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>'
 ```
 - `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[[#拡張子リスト]]）
 
@@ -37,7 +37,7 @@ gobuster dir -u http://<target₋IP|domain>:<port>/ -r -k -w /usr/share/seclists
 {GOBUSTER}/v2
 ```
 ```zsh
-gobuster dir -u http://<target₋IP|Domain>:<port>/ -w <wordlist> -p pattern.txt
+gobuster dir -u http://<target₋IP>:<port>/ -w <wordlist> -p pattern.txt
 ```
 
 ## dirモードラブルシューティング / Tips
