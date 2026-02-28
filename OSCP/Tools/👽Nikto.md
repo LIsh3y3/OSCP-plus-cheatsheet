@@ -61,7 +61,7 @@ nikto -h <target₋IP> -p <port>, <port>
 - スキャンした後、その情報からターゲットに適したプラグインを探す
 	- プラグインは`--list-plugins`でリストを閲覧できる
 ```zsh
-nikto -h <Target> -Plugin apacheuser
+nikto -h <target₋IP> -Plugin apacheuser
 ```
 
 Plugin名|	Description
