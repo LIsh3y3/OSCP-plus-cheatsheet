@@ -388,9 +388,8 @@ sed -i '/^[a-zA-Z0-9]*$/d' <wordlist>
 ## Hashcatのトラブルシューティング
 
 - すぐに辞書攻撃が終わり、StatusがExhaustedになる
-	- →ハッシュファイルに余計な改行が入っていないか確認
 	- →ワードリストの候補見直し
-	- →くらっくできな
+	- →クラックできないハッシュ
 - Not enough allocatable device memory or free host memory for mapping.
 	- →メモリ不足のため、他のプロセスを一旦終了する
 - Token length exception
@@ -413,7 +412,7 @@ sed -i '/^[a-zA-Z0-9]*$/d' <wordlist>
 
 - 💡識別結果のHashアルゴリズムでクラックできないときは？
 	- 誤ったアルゴリズムである可能性がある
-	- インターネットでクラック対象のサービスが、どのアルゴリズムを使ってHash化しているかを検索する
+	- インターネットで検索し、クラック対象のサービスが、どのアルゴリズムを使ってHash化しているかを確認する
 	- ==Hashcatではサポートしていない==場合はJtRを使う（逆もまた然り）
 
 ## Hashの識別方法
@@ -424,7 +423,7 @@ hashid <hash_file>
 ```
 
 hash-identifier
-```zs
+```zsh
 hash-identifier
 ```
 

@@ -1,5 +1,7 @@
-関連ノート：
-- [[Module 16：Antivirus Evasion#Veil-frameworkを使ったAV evasion]]
+- 関連ノート：
+	- [[Module 16：Antivirus Evasion#Veil-frameworkを使ったAV evasion]]
+
+---
 
 # 概要・特徴
 
@@ -17,9 +19,9 @@
 | LHOST    | リスナー（待ち受け）を起動する側のIPアドレス。ローカルネットワークならLAN IP、インターネット越しならグローバルIP（WAN）を指定。                 |
 | LPORT    | リスナーが接続を受け付けるポート番号。任意の空いているポートを指定可能。                                                   |
 | RHOST    | 攻撃対象（ターゲット）マシンのIPアドレス。                                                                 |
-| Rport    | 攻撃対象マシンでサービスが動作しているポート番号。多くのExploitやスキャナではあらかじめ設定済みのことが多い。                             |
+| RPORT    | 攻撃対象マシンでサービスが動作しているポート番号。多くのExploitやスキャナではあらかじめ設定済みのことが多い。                             |
 | SRVHOST  | 攻撃を仕掛ける側（自分の）マシンのIPアドレス。HTTPサーバーなどでファイル提供する場合などに使用。                                    |
-| SRVport  | 自分のマシン上で使うポート番号。たとえばexploitで使うHTTPサーバーなどに利用。                                           |
+| SRVPORT  | 自分のマシン上で使うポート番号。たとえばexploitで使うHTTPサーバーなどに利用。                                           |
 | URIPATH  | URLの末尾部分に指定する文字列。例：`http://192.168.0.1:8080/malware` で `malware` の部分。                  |
 | EXITFUNC | ペイロード終了後に呼び出す終了関数の種類を指定。クリーンな終了が必要な場合に重要。<br>指定しない場合はペイロードにあわせてthreadかprocessが自動選択される。 |
 
@@ -52,7 +54,7 @@ sudo msfvenom -p linux/x86/shell/reverse_tcp -f c -e x86/shikata_ga_nai -o shell
 | `-f`  | 出力フォーマット（exe, elf, raw など）                                                         |
 | `-e`  | エンコード形式                                                                            |
 | `-o`  | 出力ファイル名とパス                                                                         |
-| `-b`  | 生成コードに指定したbad charsを含まない<br>（bad chars：`\x00`（=null）など、制御文字として解釈されてしまう恐れがある文字列のこと） |
+| `-b`  | 指定したbad charsを生成コードに含まない<br>（bad chars：`\x00`（=null）など、制御文字として解釈されてしまう恐れがある文字列のこと） |
 
 ---
 
