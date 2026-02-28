@@ -33,6 +33,7 @@ hydra -l <username> -P <wordlist> $TargetIP http-get /<URL_path>
 
 > [!WARNING]
 > - HTTPSの場合はhttp*s*-get
+> - JSONと相性が悪いため、ffufかBurp Suiteを使用
 
 特定サービスへのパスワードアタック
 ```zsh
