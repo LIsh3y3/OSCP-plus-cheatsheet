@@ -73,7 +73,7 @@ john --single --format=<format> <file>
 sudo touch john-local.conf
 ```
 - 設定ファイルである`john.conf`が読み込まれた後、`john-local.conf`が読み込まれ、内容を上書き・追加する(競合した場合は`john-local.conf`が優先される)
-	- `john.conf`はアップデートで自動更新されるので、直接編集はやめた方がいい
+	- `john.conf`はアップデートで自動更新されるので、直接編集はひすいしょ
 
 3. `john-local.conf`にルールを定義し保存
 ```
