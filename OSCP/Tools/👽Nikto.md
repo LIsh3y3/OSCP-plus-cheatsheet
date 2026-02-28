@@ -1,6 +1,11 @@
 - あらゆるタイプのwebアプリに対応
 - 参考記事：[Niktoの解説 - 個人ブログzenn](https://zenn.dev/oreha_gao/scraps/e413e7e88fb929)
 
+
+> [! WARNIN] Title
+> Contents
+
+
 # 目的
 
 - Webサーバーが公開しているファイル、CGIスクリプト、ディレクトリなどから、Webサーバの以下の脆弱性を探す：
