@@ -79,7 +79,7 @@ gobuster dir -u http://<target₋IP>:<port>/ -w <wordlist> -p pattern.txt
 - 使用ワードリスト：/usr/share/seclists/Discovery/DNS/
 
 ```zsh
-gobuster dns -d <Target_domain> -i --wildcard -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+gobuster dns -d <target_domain> -i --wildcard -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
 ```
 - `-i`：IPアドレスも表示
 - `--wildcard`：存在しないサブドメインが返ってきた場合、ワイルドカードDNSという旨の警告を出す
