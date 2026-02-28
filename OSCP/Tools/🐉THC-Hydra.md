@@ -35,6 +35,7 @@ hydra -l <username> -P <wordlist> <target_ip> http-get /<URL_path>
 ```
 
 > [!INFO]
+> - ユーザー名とパスワードのプレースホルダーはそれぞれ^USER^, ^PASS^
 > - HTTPSの場合はhttp*s*-get
 > - JSONとの相性が悪いため、ffufかBurp Suiteを使用
 > - Errorメッセージのないログインフォームをパスワードアタックするようなことは少ない
@@ -101,16 +102,9 @@ unset HYDRA_PROXY_HTTP
 
 ### サービスに対する辞書攻撃
 
-- サービスが明確な場合
-	- 指定したサービスに対して、ユーザー名とパスワードを試行する。
+- 指定したサービスに対して、ユーザー名とパスワードでログインを試行する
 ```zsh
 hydra -l <username> -P <wordlist>　<service>://<target_ip>
-```
-
-- サービスが不明確な場合（あまり使わない）
-	- 対象IPに対してサービス名を指定して試行する。効率は下がる可能性がある。
-```zsh
-hydra -l <username> -P <wordlist>　<target_ip> <protocol>
 ```
 
 ### POSTフォームに対する辞書攻撃
@@ -172,5 +166,3 @@ hydra -l <username> -x <最小長>:<最大長>:<文字セット> <service>://<ta
 	    - 数字（`0-9`）
 	    - 感嘆符（`!`）
 	→`aA1 AA! zZ9 123! a1B! ...`
-
----

@@ -1,31 +1,28 @@
 - [FFUF - GitHub](http://github.com/ffuf/ffuf)
 
-- FFUFを実行するまえに、丁寧な列挙をすること
-	- （これまでのBoxでは、FFUFの実行が必要だったことはない）
-
 # 特徴
 
-- Gobusterのようにディレクトリを発見、または脆弱性の検出にも使われる
+- Gobusterのようにディレクトリを発見、または脆弱性の検出し、さらにパスワード攻撃などにも使われる汎用ツール
 - SOCKSプロキシでのスキャンに便利：参考🔗：[HTTP proxy vs SOCS proxy - Developer.io](http://dev.classmethod.jp/articles/socks-proxy-and-http-proxy/)
 
 ---
 
 # ディレクトリ・ファイル探索
 
-隠しディレクトリやファイルを探す基本例：
+隠しディレクトリやファイルを探す基本例
 ```zsh
 ffuf -c -w <wordlist> -u http://<target.com>/FUZZ
 ```
 - `-w`: ワードリストを指定
 - `-u`: `FUZZ`の位置にワードが挿入されるURL
 
-拡張子付きで探索：
+拡張子付きで探索
 ```zsh
 ffuf -c -w <wordlist> -u http://<target.com>/FUZZ -e .php,.html,.txt
 ```
 - `-e`: `.php`や`.html`などを付けて試す
 
-再帰探索を有効にする：
+再帰探索を有効にする
 ```zsh
 ffuf -c -w <wordlist> -u http://<target.com>/FUZZ -recursion -recursion-depth [深さ]
 ```
