@@ -1,6 +1,6 @@
 WPSCanとはなにか、なにをスキャンするかは、公式ドキュメントを参照→[WPScan docs - Github](https://github.com/wpscanteam/wpscan/wiki/WPScan-User-Documentation)
 
-- 用途は、**Wordpress**のテーマ、プラグインから脆弱性を検出する
+- 用途は、**Wordpress**のテーマ、プラグインから脆弱性を検出することや、ユーザ・パスワードをブルートフォースすること
 	- Wordpress本体（コア）は開発者が迅速にセキュリティパッチを適用するが、コミュニティプラグインやテーマは脆弱性が放置されたまま残ってることが多い
 
 - ❗️ターゲットがWordpressを使っていたら、必ず実行する
