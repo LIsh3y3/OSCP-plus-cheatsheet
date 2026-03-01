@@ -1,4 +1,4 @@
-- [WPScan docs - Github](https://github.com/wpscanteam/wpscan/wiki/WPScan-User-Documentation)
+WPSCanとはなにか、なにをスキャンするかは、こうし[WPScan docs - Github](https://github.com/wpscanteam/wpscan/wiki/WPScan-User-Documentation)
 
 - 用途：
 	- テーマ、プラグインから脆弱性を検出する
