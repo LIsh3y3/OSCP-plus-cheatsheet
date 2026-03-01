@@ -39,6 +39,7 @@ wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection 
 	- →`-t 1`: スレッド数減少で対策
 
 - `--enumerate` オプション一覧表：
+	- （引数なしで`--enumerate`を使った場合のデフォルト値：  `vp,vt,tt,cb,dbe,u,m`）
 
 | オプション | 内容                     | 備考     |
 | ----- | ---------------------- | ------ |
