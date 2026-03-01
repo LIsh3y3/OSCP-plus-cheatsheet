@@ -53,7 +53,6 @@ wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection 
 | `dbe` | データベースのエクスポートファイル探索    |        |
 | `u`   | ユーザー名列挙（ID 1〜10）       |        |
 | `m`   | メディアIDの列挙（ID 1〜10）     |        |
-（引数なしで`--enumerate`を使った場合のデフォルト値：  `vp,vt,tt,cb,dbe,u,m`）
 
 ---
 
