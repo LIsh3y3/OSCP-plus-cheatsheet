@@ -28,8 +28,7 @@ wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection 
 - 無料版は1日25リクエストまで
 - ただし、プラグイン・テーマごとにリクエストするので、1日25回スキャンできるわけではない
 	- API使えないときは、`--api-token`なしでスキャンし、searchsploitする
-- APIトークン：[https://wpscan.com/profile](https://wpscan.com/profile)
-![[Pasted image 20250426154502.png]]
+- APIトークンはログイン後利用可能：[https://wpscan.com/profile](https://wpscan.com/profile)
 
 ## オプション一覧
 
