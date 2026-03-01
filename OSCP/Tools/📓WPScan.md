@@ -21,7 +21,6 @@ wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection 
 ```
 - `[+]`発見情報、`[!]`脆弱性情報
 - 💡`out of date`に着目
-- Error：Scan aborted -> Kaliからwpscan.comに接続できない場合は、[[vmware-kali linux#トラブルシューティング]]を参照
 
 ## 補足：APIトークンについて
 
