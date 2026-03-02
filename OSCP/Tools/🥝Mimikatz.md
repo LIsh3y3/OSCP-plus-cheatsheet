@@ -116,7 +116,7 @@ token::elevate
 ログの記録（Mimikatzを起動したディレクトリにコマンド出力が保存される）
 ```powershell
 # ログ記録開始
-log [filename].log
+log <filename>.log
 
 # ログ記録停止
 log /stop
