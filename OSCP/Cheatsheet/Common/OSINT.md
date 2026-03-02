@@ -59,15 +59,16 @@ dig <domain> MX
 | 防御の甘さチェック    | オープンポートチェック  <br>古いホスト名が生きているか                                                                                         | ゾーン転送チェック  <br>サブドメインに死にレコードがないか                                                                         |
 
 ---
-### Google hacking
+
+# Google hacking
 
 - [DorkSearch](https://dorksearch.com/): 用意済みのdorkingがある（※AIは廃止されている）
 - [GHDB](https://www.exploit-db.com/google-hacking-database)：💡"Quick Search"よりも"Category"でフィルタリングする方が、目的のDorkが見つかる
 ![[Pasted image 20250302124658.png]]
 
-#### Dorking syntax
+## Dorking syntax
 
-##### フィルタ
+### フィルタ
 
 | フィルタ名                          | 説明                                              | 例                                                     |
 | ------------------------------ | ----------------------------------------------- | ----------------------------------------------------- |
@@ -85,7 +86,7 @@ dig <domain> MX
 | related                        | 指定したページと**似ているページ**を検索                          | related:www.google.com                                |
 | before / after                 | 特定の日付範囲を検索                                      | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
 
-##### 演算子
+### 演算子
 
 | 演算子       | 説明                  | 例                                                            |
 | --------- | ------------------- | ------------------------------------------------------------ |
@@ -98,7 +99,7 @@ dig <domain> MX
 
 - 参考：[Google Dorking cheat sheet](https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06)
 
-#### Dorking実例
+### Dorking実例
 
 ###### 🔐 管理画面探し（Adminページ探し）
 
@@ -175,26 +176,26 @@ dig <domain> MX
 | 社員名簿探し | filetype:xls intext:"社員名簿" site:example.com | 内部情報流出系   |
 | 連絡先リスト | intext:@example.com filetype:csv            | メールアドレス一覧 |
 
----
 
 ---
-### Open-Source Code
+
+# Open-Source Code
 
 - 以下の公開場所がある
-	- [_GitHub_](https://github.com/)
-	- [_GitHub Gist_](https://gist.github.com/)：コードスニペットのシェア
-	- [_GitLab_](https://about.gitlab.com/)：DevSecOpsに特化
-	- [_SourceForge_](https://sourceforge.net/)（GitHubやGitLabの劣化版。もはや使われない）
+	- [GitHub](https://github.com/)
+	- [GitHub Gist](https://gist.github.com/)：コードスニペットのシェア
+	- [GitLab](https://about.gitlab.com/)：DevSecOpsに特化
+	- [SourceForge](https://sourceforge.net/)（GitHubやGitLabの劣化版。もはや使われない）
 
-- [[#Google hacking]]のオペレーターをサポートしていることがある。
+- [[#Google hacking]]のオペレーターをサポートしていることがある
 
-#### Github Search
+## Github Search
 
 githubの右上検索バーで使えるGoogle dorkingのようなもの。
 
-##### 手動
+### 手動
 
-小規模な企業には最適
+小規模な企業には最適。
 
 ###### フィルタ
 
@@ -218,28 +219,26 @@ githubの右上検索バーで使えるGoogle dorkingのようなもの。
 - 参考：
 	- [github code search syntax](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax)
 
-##### 自動([gitleaks](https://github.com/gitleaks/gitleaks))
+### 自動 w/[gitleaks](https://github.com/gitleaks/gitleaks)
 
-- 大規模レポ向け。手動での列挙後に実行すること。
+- 大規模レポ向け
+- 手動での列挙後に実行すること
 	- エントロピー(複雑性)で機密情報と思われるハードコードを検出する。検知できないときもあるので注意（[[マインド#🚨ツールに頼りすぎない]]）
 
-###### コマンド
-
-- インストール
+インストール
 ```zsh
 sudo apt install gitleaks
 ```
 
-- 列挙対象のレポジトリをローカルにクローンする
+列挙対象のレポジトリをローカルにクローンする
 ```zsh
 git clone [https://xxx.git]
 ```
 
-- クローン先にcdしてから、探索実行
+クローン先にcdしてから、探索実行
 ```zsh
 gitleaks detect -v
 ```
- (このモジュールで手動では機密情報を確認できたが、gitleaksだと確認できなかった。)
 
 ---
 ### ツール(無料)：Netcraft、Shodan
