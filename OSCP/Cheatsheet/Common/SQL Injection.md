@@ -6,6 +6,8 @@
 	- [SQLi cheat sheet - PortsSwigger](https://portswigger.net/web-security/sql-injection/cheat-sheet) : RDBMSごとの文法で記載あり
 	- [SQL Injection Cheatsheet - tib3rius](https://tib3rius.com/sqli.html)
 
+---
+
 # In-band SQLi
 
 ## 🔍Enumeration

@@ -1,7 +1,5 @@
 # Sumemry: Port Scan
 
-## Nmap
-
 以下、必要に応じて[[#🧱FW回避用オプション]]をつけること。
 
 quick scan
@@ -31,9 +29,6 @@ nmap -sU -sS -sV <target_IP> -T4 -oN Nmap/udpscan.nmap --top-ports 100
 - SYNスキャンと組み合わせることでUDPスキャンの信頼性が高まる
 - SNMP、TFTP、DNSなどが要注意
 
-### 注意・Tips💡
-
-
 > [!TIP] 
 > - ==スキャンは最低2回実施すること！==(3回やっても見逃しはある)
 > - `/etc/hosts`にドメイン名登録し、再スキャンすることで、より正確な結果が表示される
@@ -54,8 +49,11 @@ sudo autorecon <target_IP> -p $ports
 
 出力に書き込みできるようにする
 ```zsh
-sudo chown -R <attacker_username>:<Attacker_username> results
+sudo chown -R <attacker_username>:<attacker_username> results
 ```
+
+> [!WARNING] 
+> ヌケモレや誤検知が多いので、過信せず、Nmapと併用すること
 
 ---
 
@@ -64,30 +62,31 @@ sudo chown -R <attacker_username>:<Attacker_username> results
 カテゴリに属するNSEすべてを実行（[[#NSEのカテゴリ一覧表]]）
 	⚠️トラフィックと情報量が膨大なのであまり実行すべきでない
 ```zsh
-sudo nmap --script　"<category>" <TargetIP> -p <Port>
+sudo nmap --script　"<category>" <target_IP> -p <port>
 ```
 
 サービスのバージョンをもとに脆弱性をスキャン
 	⚠️トラフィックと情報量が膨大なのであまり実行すべきでない
 ```zsh
-sudo nmap -sOV --script "vuln" <TargetIP> -p <Port>
+sudo nmap -sOV --script "vuln" <target_IP> -p <port>
 ```
 
 ✅特定のスクリプトのみ実行
 	トラフィックと情報量を必要な量に抑える
 ```zsh
-sudo nmap --script "<xxx.nse>" <TargetIP> -p <Port>
+sudo nmap --script "<xxx.nse>" <target_IP> -p <port>
 ```
 ```zsh
-sudo nmap --script "http-*" <TargetIP> -p <Port>
+sudo nmap --script "http-*" <target_IP> -p <port>
 ```
 
-### 特定の脆弱性のNSEを検索してダウンロードし、使えるようにする
+## 特定の脆弱性のNSEを検索してダウンロードし、使えるようにする
 
 1. 該当の脆弱性のNSEを検索
 ![[Pasted image 20250309222541.png]]
 
 2. 既存のNSEに存在しなければダウンロード
+
 3. 名前付けしてNSEのパスに保存
 ```zsh
 sudo cp /home/kali/Downloads/http-vuln-cve-2021-41773.nse /usr/share/nmap/scripts/http-vuln-cve2021-41773.nse
@@ -98,8 +97,7 @@ sudo cp /home/kali/Downloads/http-vuln-cve-2021-41773.nse /usr/share/nmap/script
 sudo nmap --script-updatedb
 ```
 
-
-### 使い方調査
+## 使い方調査
 
 | NSE指定方法                                 | 実行されるスクリプト                       |
 | --------------------------------------- | -------------------------------- |
@@ -120,16 +118,18 @@ cat /usr/share/nmap/scripts/script.db
 # ...Entry { filename = "memcached-info.nse", categories = { "discovery", "safe", } }...
 ```
 
-### 🚨注意点
 
-- 外部のNSEをダウンロードする時は注意が必要。悪意あるコードが外部のNSEに含まれており、そのNSEを使うと悪意ある第三者がフルアクセスをゲットできてしまう可能性がある。
-- スキャナが発見できるのは、スキャナが設定した脆弱性だけである
-- カテゴリごとにNSEがシステムにどのような影響を与えるかを確認してから実行すること
+> [!WARNING] 
+> - 外部のNSEをダウンロードする時は注意が必要で、悪意あるコードが外部のNSEに含まれており、そのNSEを使うと悪意ある第三者がフルアクセスをゲットできてしまう可能性がある
+> - スキャナが発見できるのは、スキャナが設定した脆弱性だけである
+> - カテゴリごとにNSEがシステムにどのような影響を与えるかを確認してから実行すること
 
 ---
 ----
 
 # Nmap詳細
+
+- [ ] Todo: 詳細とサマリに分ける必要ある？
 
 ## 基本ポイント
 
