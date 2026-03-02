@@ -485,6 +485,7 @@ klist
 
 1. Domain Admins、Enterprise Admins、DCのローカルAdministratorsグループ、Domain Controllersのいずれかのユーザーの権限を取得（一番難しい）
 	- これらのグループがデフォルトでドメインレプリケーションの権限をもつ
+
 2. DCsync攻撃
 	- 🚨`token::elevate`は使用しない
 ```powershell
