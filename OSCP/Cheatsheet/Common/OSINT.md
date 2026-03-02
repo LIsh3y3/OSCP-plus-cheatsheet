@@ -9,34 +9,32 @@ Passive Reconとも呼ばれる
 | Registry       | TLDを管理する親分的な組織                         | `.com`, `.net` → Verisign / `.jp` → JPRS / `.org` → PIR |
 | Registrar      | Registryと契約し、ユーザーにドメイン登録を提供する業者（ブローカー） | GoDaddy, Google Domains, Namecheap, お名前.com             |
 | **Registrant** | 実際にドメインを登録する企業や個人（利用者）                 | 個人情報                                                    |
-| Name Server    | IPアドレスとホスト名を変換 or 知らないと応答              | `dig`などのコマンドで情報収集につながる。<br>==ゾーン転送に使える情報==              |
+| Name Server    | IPアドレスとホスト名を変換 or 知らないと応答              | `dig`などのコマンドで情報収集につながる。<br>==ゾーン転送に使える情報==。             |
 
 ## コマンド
 
 ```zsh
-whois [domain | IP]
+whois <domain|IP>
 ```
 
-- 指定したWHOISサーバーにリクエスト
+指定したWHOISサーバーにリクエスト
 ```zsh
-whois [domain | IP] -h [whois server IP]
+whois <domain|IP> -h <whois_server_IP>
 ```
 
-###### 補足：dig←Active Recon
+### 補足：dig←Active Recon
 
-- ゾーン転送
+ゾーン転送
 ```zsh
-dig @[name server] [domain] AXFR
+dig @<name_server> <domain> AXFR
 ```
 
-- MX（メールサーバ）列挙
+MX（メールサーバ）列挙
 ```zsh
-dig [domain] MX
+dig <domain> MX
 ```
 
-##### IP・ドメインを指定したときの違い
-
-まとめ
+## IP・ドメインを指定したときの違い
 
 |                 | IP WHOIS | ドメイン WHOIS |
 | --------------- | -------- | ---------- |
@@ -49,7 +47,7 @@ dig [domain] MX
 
 ###### 詳細
 
-|              | `whois [IP]`                                                                                                           | `whois [ドメイン名]`                                                                                          |
+|              | `whois <IP>`                                                                                                           | `whois <domain>`                                                                                         |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | 主な目的         | ネットワークの割り当て情報から、所属組織・ネットワーク範囲を特定                                                                                       | ドメインの所有者・運用者を特定して、ブランド情報・関連企業を把握                                                                         |
 | 得られる情報       | - IPブロック範囲（同じ組織が持つIP）  <br>- 所属組織（OrgName）  <br>- データセンター/ISP情報  <br>- 連絡先（Tech/Abuse Contact）  <br>- ネットワーク名（NetName） | - 登録者（Registrant）情報  <br>- レジストラ名（Registrar）  <br>- 登録日・更新日・有効期限  <br>- ネームサーバー  <br>- DNSSEC設定          |
