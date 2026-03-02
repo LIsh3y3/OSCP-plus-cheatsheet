@@ -28,6 +28,7 @@ UDPスキャン & SYNスキャン
 ```zsh
 nmap -sU -sS -sV <target_IP> -T4 -oN Nmap/udpscan.nmap --top-ports 100
 ```
+- SYNスキャンと組み合わせることでUDPスキャンの信頼性が高まる
 - SNMP、TFTP、DNSなどが要注意
 
 ### 注意・Tips💡
