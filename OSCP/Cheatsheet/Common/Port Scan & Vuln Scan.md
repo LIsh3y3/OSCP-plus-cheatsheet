@@ -4,30 +4,29 @@
 
 以下、必要に応じて[[#🧱FW回避用オプション]]をつけること。
 
-quick scan x 1回
+quick scan
 ```zsh
-sudo nmap -sC -sV -oA Nmap/quickscan -T4 $TargetIP
+sudo nmap -sC -sV -oA Nmap/quickscan -T4 <target_IP>
 ```
 
 full scan
 ```zsh
 # ポートのリストを変数に代入：２回実施して差分を検証すること
-ports=$(sudo nmap $TargetIP -p- --min-rate=1000 | grep '^[0-9]' | awk -F'/' '{print $1}' | tr '\n' ',' | sed 's/,$//')
+ports=$(sudo nmap <target_IP> -p- --min-rate=1000 | grep '^[0-9]' | awk -F'/' '{print $1}' | tr '\n' ',' | sed 's/,$//')
 ```
 ```zsh
 # openポートを詳細スキャン
-sudo nmap -A -sV -p $ports -oA Nmap/fullscan $TargetIP
+sudo nmap -A -sV -p $ports -oA Nmap/fullscan <target_IP>
 ```
 
-Rustscan x 1回
+Rustscan
 ```zsh
-rustscan -a $TargetIP --ulimit 5000 -- -sC -sV -oN Nmap/rustscan.nmap
+rustscan -a <target_IP> --ulimit 5000 -- -sC -sV -oN Nmap/rustscan.nmap
 ```
 
-UDPスキャン & SYNスキャン x 2回（時間かかる）
-	(SYNスキャンと組み合わせることでUDPスキャンの信頼性が高まる)
+UDPスキャン & SYNスキャン
 ```zsh
-nmap -sU -sS -sV $TargetIP -T4 -oN Nmap/udpscan.nmap --top-ports 100
+nmap -sU -sS -sV <target_IP> -T4 -oN Nmap/udpscan.nmap --top-ports 100
 ```
 - SNMP、TFTP、DNSなどが要注意
 
@@ -46,7 +45,7 @@ Openポートを発見し、さらにenum4linuxなどでサービスの自動列
 ```zsh
 # 複数ホストの場合は、-t targets.txtとする
 # $portsは上記Nmapで作成した環境変数で、Openポートのリストを格納してある
-sudo autorecon $TargetIP -p $ports 
+sudo autorecon <target_IP> -p $ports 
 ```
 - 🚨：ヌケモレや誤検知が多いので、過信せず、Nmapと併用すること
 - `_manual_commands.txt`に手動で列挙する方法が記載されている
@@ -179,12 +178,12 @@ rdp-ntlm-info:
 
 全体スキャン
 ```bash
-sudo nmap -p- $TargetIP -oN nmap_ini.txt
+sudo nmap -p- <target_IP> -oN nmap_ini.txt
 ```
 
 - 詳細スキャン（openポート対象）
 ```zsh
-sudo nmap -A -sV -p <open_ports> $TargetIP -oN nmap_detail.txt
+sudo nmap -A -sV -p <open_ports> <target_IP> -oN nmap_detail.txt
 ```
 
 ### 主要フラグチートシート
@@ -232,12 +231,12 @@ sudo nmap -A -sV -p <open_ports> $TargetIP -oN nmap_detail.txt
 - 応答がない→ open or filtered と判断する
 - 対策: `--top-ports`：一般的なUDPポートのリストで絞る    
 ```zsh
-nmap -sU --top-ports [num] $TargetIP
+nmap -sU --top-ports [num] <target_IP>
 ```
 
 - SYN Scanと組み合わせることでホストへの理解がより鮮明になる
 ```zsh
-sudo nmap -sU -sS $TargetIP
+sudo nmap -sU -sS <target_IP>
 ```
   
 ### NULL/FIN/Xmasスキャン
@@ -266,7 +265,7 @@ nmap -sn 192.168.0.0/24
 
 使用例
 ```zsh
-nmap --script=vuln $TargetIP nmap --script=http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'
+nmap --script=vuln <target_IP> nmap --script=http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'
 ```
 （複数NSEを同時使用可：`--script=smb-enum-users,smb-enum-shares`）
 
@@ -308,11 +307,11 @@ nmap --script=vuln $TargetIP nmap --script=http-put --script-args http-put.url='
 
 |ステップ|コマンド|
 |---|---|
-|全ポートスキャン|`sudo nmap -p- $TargetIP`|
-|開いてるポートのみ詳細スキャン|`nmap -p$ports -sC -sV $TargetIP`|
-|速度優先スキャン|`nmap -T4 --min-rate=1000 $TargetIP`|
-|OS/バージョン/スクリプトまでフル実施|`nmap -A $TargetIP`|
-|NSEカテゴリ実行|`nmap --script=vuln $TargetIP`|
+|全ポートスキャン|`sudo nmap -p- <target_IP>`|
+|開いてるポートのみ詳細スキャン|`nmap -p$ports -sC -sV <target_IP>`|
+|速度優先スキャン|`nmap -T4 --min-rate=1000 <target_IP>`|
+|OS/バージョン/スクリプトまでフル実施|`nmap -A <target_IP>`|
+|NSEカテゴリ実行|`nmap --script=vuln <target_IP>`|
 |pingスイープ|`nmap -sn 192.168.1.0/24`|
 
 ---
