@@ -54,7 +54,7 @@ sudo autorecon <target_IP> -p $ports
 
 出力に書き込みできるようにする
 ```zsh
-sudo chown -R <Attacker_username>:<Attacker_username> results
+sudo chown -R <attacker_username>:<Attacker_username> results
 ```
 
 ---
