@@ -113,7 +113,7 @@ sudo nmap --script-updatedb
 nmap --script-help "<category | script>"
 ```
 
-- NSE、カテゴリを表示
+NSE、カテゴリを表示
 ```zsh
 cat /usr/share/nmap/scripts/script.db
 # ...Entry { filename = "memcached-info.nse", categories = { "discovery", "safe", } }...
@@ -128,16 +128,7 @@ cat /usr/share/nmap/scripts/script.db
 ---
 ----
 
-# Nmap詳細
-
-- [ ] Todo: 詳細とサマリに分ける必要ある？
-
-
----
-
-## 結果の読み解き方
-
-### ADに所属しているかどうか（Windows）
+## ADに所属しているかどうか（Windows）
 
 - DNS_Domain_Name の形式
     - FQDN形式 (例: `domain.com`) → AD所属
