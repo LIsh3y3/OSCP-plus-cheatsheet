@@ -351,8 +351,7 @@ SELECT IF(<条件文>=1,SLEEP(3),'false')
 ```
  - `AND IF (<ここに上記の条件が入ってる> = 1, sleep(3), 'false' -- //)`
 
-- 参考
-	- RDBごとの文法：[SQL cheet sheet Time delays & Conditional Time delays](https://portswigger.net/web-security/sql-injection/cheat-sheet#:~:text=a%20MySQL%20database.-,Time%20delays,-You%20can%20cause)
+- 参考: RDBごとの文法：[SQL cheet sheet Time delays & Conditional Time delays](https://portswigger.net/web-security/sql-injection/cheat-sheet#:~:text=a%20MySQL%20database.-,Time%20delays,-You%20can%20cause)
 	- Burp SuiteのRepeaterの右下にレスポンスタイムが記載
 ![[Pasted image 20250420100807.png]]
 
