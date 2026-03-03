@@ -84,14 +84,14 @@ sudo nmap --script "http-*" <target_IP> -p <port>
 
 ## NSEのダウンロード
 
-Nmap標準のスクリプトに存在しない
+Nmap標準のスクリプトに存在しないNSEをダウンロードして使うことができる。
 
 1. 該当の脆弱性のNSEを検索
 ![[Pasted image 20250309222541.png]]
 
 2. 既存のNSEに存在しなければダウンロード
 
-3. 名前付けしてNSEのパスに保存
+3. NSEのパスに保存
 ```zsh
 sudo cp /home/kali/Downloads/http-vuln-cve-2021-41773.nse /usr/share/nmap/scripts/http-vuln-cve2021-41773.nse
 ```
@@ -101,15 +101,15 @@ sudo cp /home/kali/Downloads/http-vuln-cve-2021-41773.nse /usr/share/nmap/script
 sudo nmap --script-updatedb
 ```
 
-## NSE使い方調査
+## NSEの使い方
 
-| NSE指定方法                                 | 実行されるスクリプト                       |
-| --------------------------------------- | -------------------------------- |
-| `--script vuln`                         | `vuln` カテゴリの全スクリプト               |
-| `--script vuln,safe`                    | `vuln` と `safe` の両方に属するスクリプト     |
-| `--script "default and safe"`           | `default` かつ `safe` に属するスクリプト    |
-| `--script "intrusive or vuln"`          | `intrusive` または `vuln` に属するスクリプト |
-| `--script "/path/to/custom_script.nse"` | 指定したカスタムスクリプトのみ                  |
+| NSE指定方法                                   | 実行されるスクリプト                       |
+| ----------------------------------------- | -------------------------------- |
+| `--script vuln`                           | `vuln` カテゴリの全スクリプト               |
+| `--script vuln,safe`                      | `vuln` と `safe` の両方に属するスクリプト     |
+| `--script "default and safe"`             | `default` かつ `safe` に属するスクリプト    |
+| `--script "intrusive or vuln"`            | `intrusive` または `vuln` に属するスクリプト |
+| `--script "</path/to/custom_script.nse>"` | 指定したカスタムスクリプトのみ                  |
 
 カテゴリごとの利用可能なスクリプト一覧 | スクリプトごとの引数を表示
 ```zsh
