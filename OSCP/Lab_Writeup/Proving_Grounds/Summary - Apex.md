@@ -18,7 +18,7 @@ Kernel Exploit である PwnKit を用いて権限昇格。
 
 5. OpenEMR には データベースパスワードが保存されいてる PHP ファイルがあるが、RESPONSIVE filemanager の脆弱性は HTTP サービスにPHPファイルをペーストして中身を読み込むものであるため、OpenEMR の PHP ファイルをHTTP サービスにペーストしてからアクセスすると、PHP ファイルが実行され、中身が読み取れないことを確認
 
-6. Documents ディレクトリが、HTTP と SMB 双方からアクセスできる物理ディレクトリであるため、[[Web Shell#Webアプリのソースコードを取得する考え方と手法概要]]に従い、Path Traversal ([49359 - Exploit-DB](https://www.exploit-db.com/exploits/49359)) の PoC で Documents にペーストするように修正
+6. Documents ディレクトリが、HTTP と SMB 双方からアクセスできる物理ディレクトリであるため、[[WebShell#Webアプリのソースコードを取得する考え方と手法概要]]に従い、Path Traversal ([49359 - Exploit-DB](https://www.exploit-db.com/exploits/49359)) の PoC で Documents にペーストするように修正
 ```python
 # 修正前
 ...

