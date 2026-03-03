@@ -206,7 +206,7 @@ http://example.com/webshell.php?cmd=id
 
 ### Boolean-based
 
-- 挿入した条件文のクエリがTrueかFalseかで、アプリのレスポンスの挙動に変化があるか確認
+挿入した条件文のクエリがTrueかFalseかで、アプリのレスポンスの挙動に変化があるか確認
 
 基本構文：
 ```sql
