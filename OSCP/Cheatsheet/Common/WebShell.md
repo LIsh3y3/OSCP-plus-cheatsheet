@@ -9,7 +9,8 @@
 
 - WebShellとは、Webサーバー上でコードを実行するスクリプトの俗称
 - サーバーに書き込み可能なWebアプリ上で、Bind / Reverse Shellが使えない場合は、代わりにWebShellを使用する
-	- 💡==WebShellからBind / Reverse Shellに展開==が可能
+
+
 
 - Webサーバーユーザーの権限でコマンドが実行される
 - HTMLフォームやURLの引数としてコマンドを入力する
