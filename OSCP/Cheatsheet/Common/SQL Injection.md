@@ -276,8 +276,8 @@ COPY shell FROM PROGRAM '<コマンド>';
 
 LIKE句を使う
 ```sql
-' AND database() LIKE 'o%' -- //  <--
-' AND database() LIKE 'p%' -- //  <-- fails
+' AND database() LIKE 'o%' -- // 
+' AND database() LIKE 'p%' -- // <-- 失敗
 ```
 
 SUBSTR関数を使う
