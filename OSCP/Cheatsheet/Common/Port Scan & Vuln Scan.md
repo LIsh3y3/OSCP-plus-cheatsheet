@@ -1,4 +1,4 @@
-# Sumemry: Port Scan
+# Port Scan
 
 以下、必要に応じて[[#🧱FW回避用オプション]]をつけること。
 
@@ -17,17 +17,18 @@ ports=$(sudo nmap <target_IP> -p- --min-rate=1000 | grep '^[0-9]' | awk -F'/' '{
 sudo nmap -A -sV -p $ports -oA Nmap/fullscan <target_IP>
 ```
 
-Rustscan
-```zsh
-rustscan -a <target_IP> --ulimit 5000 -- -sC -sV -oN Nmap/rustscan.nmap
-```
-
 UDPスキャン & SYNスキャン
 ```zsh
 nmap -sU -sS -sV <target_IP> -T4 -oN Nmap/udpscan.nmap --top-ports 100
 ```
 - SYNスキャンと組み合わせることでUDPスキャンの信頼性が高まる
 - SNMP、TFTP、DNSなどが要注意
+
+Rustscan
+```zsh
+rustscan -a <target_IP> --ulimit 5000 -- -sC -sV -oN Nmap/rustscan.nmap
+```
+
 
 > [!TIP] 
 > - ==スキャンは最低2回実施すること！==(3回やっても見逃しはある)
@@ -57,7 +58,7 @@ sudo chown -R <attacker_username>:<attacker_username> results
 
 ---
 
-# Summery: Vuln Scan w/ NSE
+# Vuln Scan w/ NSE
 
 カテゴリに属するNSEすべてを実行（[[#NSEのカテゴリ一覧表]]）
 	⚠️トラフィックと情報量が膨大なのであまり実行すべきでない
@@ -131,13 +132,6 @@ cat /usr/share/nmap/scripts/script.db
 
 - [ ] Todo: 詳細とサマリに分ける必要ある？
 
-## 基本ポイント
-
-- 速度より安全性・正確性・ステルス性を優先するときにNmapを使用
-	-  RustscanやMassscanは速度はあるがトラフィック量が多い。（Nmapは標準でトラフィック量を調整しようとする）
-- 2回実施推奨（偽陽性・偽陰性対策）
-- `/etc/hosts/` にドメイン名を追加後に再スキャンすると、より詳細な結果を得られる可能性あり
-- 全ポートスキャン→開いているポートのみ詳細スキャンがおすすめ
 
 ---
 
@@ -177,16 +171,6 @@ rdp-ntlm-info:
 ---
 
 ## 基本スキャンコマンド
-
-全体スキャン
-```bash
-sudo nmap -p- <target_IP> -oN nmap_ini.txt
-```
-
-- 詳細スキャン（openポート対象）
-```zsh
-sudo nmap -A -sV -p <open_ports> <target_IP> -oN nmap_detail.txt
-```
 
 ### 主要フラグチートシート
 
