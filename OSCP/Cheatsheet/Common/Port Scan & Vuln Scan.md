@@ -98,7 +98,7 @@ sudo cp /home/kali/Downloads/http-vuln-cve-2021-41773.nse /usr/share/nmap/script
 sudo nmap --script-updatedb
 ```
 
-## 使い方調査
+## NSE使い方調査
 
 | NSE指定方法                                 | 実行されるスクリプト                       |
 | --------------------------------------- | -------------------------------- |
@@ -108,7 +108,7 @@ sudo nmap --script-updatedb
 | `--script "intrusive or vuln"`          | `intrusive` または `vuln` に属するスクリプト |
 | `--script "/path/to/custom_script.nse"` | 指定したカスタムスクリプトのみ                  |
 
-- カテゴリごとの利用可能なスクリプト一覧 | スクリプトごとの引数を表示
+カテゴリごとの利用可能なスクリプト一覧 | スクリプトごとの引数を表示
 ```zsh
 nmap --script-help "<category | script>"
 ```
@@ -238,7 +238,6 @@ sudo nmap -sU -sS <target_IP>
 ```zsh
 nmap -sn 192.168.0.0/24
 ```
-    
 - ICMP Echo Requestだけでなく、TCP/80,443へのリクエスト、ICMP Timestamp requestも送信し、あらゆる角度からホストの生死を判断する
 
 ---
@@ -278,17 +277,6 @@ nmap --script=vuln <target_IP> nmap --script=http-put --script-args http-put.url
 
 ---
 
-## 💡 TIPSまとめ
-
-- スキャンは最低2回！
-- `/etc/hosts`にドメイン名登録→再スキャン
-- 全ポートスキャン→開いているポートのみ詳細スキャン
-- 速度優先ならRustScanも検討
-- フィルタ回避にはXmasスキャンやNULLスキャンも有効
-- NSEスクリプトを活用して詳細調査
-
----
-
 ## 基本コマンドまとめ
 
 |ステップ|コマンド|
@@ -319,4 +307,3 @@ nmap --script=vuln <target_IP> nmap --script=http-put --script-args http-put.url
 
 - [Nmap公式チートシート](https://www.stationx.net/nmap-cheat-sheet/)
 - [NSEスクリプト一覧](https://nmap.org/nsedoc/)
-- Nmap公式マニュアル
