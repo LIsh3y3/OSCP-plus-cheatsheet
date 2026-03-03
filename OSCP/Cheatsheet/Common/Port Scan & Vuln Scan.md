@@ -59,6 +59,8 @@ sudo chown -R <attacker_username>:<attacker_username> results
 
 # Vuln Scan w/ NSE
 
+[NSEドキュメント](https://nmap.org/nsedoc/)
+
 カテゴリに属するNSEすべてを実行（[[#NSEのカテゴリ一覧表]]）
 	⚠️トラフィックと情報量が膨大なのであまり実行すべきでない
 ```zsh
