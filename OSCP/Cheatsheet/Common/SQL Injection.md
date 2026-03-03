@@ -206,9 +206,9 @@ http://example.com/webshell.php?cmd=id
 
 ### Boolean-based
 
-挿入した条件文のクエリがTrueかFalseかで、アプリのレスポンスの挙動に変化があるか確認
+挿入した条件文のクエリがTrueかFalseかで、アプリのレスポンスの挙動に変化があるもの。
 
-基本構文：
+基本構文
 ```sql
 ' AND 1=1 -- //
 ' AND 1=2 -- //
@@ -217,9 +217,9 @@ http://example.com/webshell.php?cmd=id
 
 ### Time-based
 
-挿入した条件文のクエリがTrueかFalseかで、レスポンス時間の差が出るか確認
+挿入した条件文のクエリがTrueかFalseかで、レスポンス時間の差が出るもの。
 
-基本構文:
+基本構文
 ```sql
 ' AND IF (1=1, sleep(3),'false') -- //
 ' AND IF (1=2, sleep(3), 'false') -- //
