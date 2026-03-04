@@ -462,7 +462,7 @@ powershell -enc '<Base64エンコードされたペイロード>'
 - Metasploitフレームワークの`exploit/multi/handler`モジュールはsocat や netcat のように、リバースシェルを受信するために使用されるリスナー（OSCP examで無制限に利用可能）
 	- Meterpreterシェルは、Metasploit独自の完全な機能を備えたシェル
 	- ✅ファイルのアップロードやダウンロードなど、多くの機能を内蔵している
-	- ❌必ずmsfvenomの実行結果の通信
+	- ❌必ずMetaSploitモジュールから通信が必要である（msfvenomの実行結果の通信）
 
 1. msfvenomでペイロードの生成
 ```zsh
