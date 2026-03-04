@@ -256,13 +256,13 @@ sudo penelope -p <port>
 
 ### 安定化 w/ Python
 
-LinuxはPythonが標準インストールされてることが多い
+LinuxはPythonが標準インストールされてることが多い。
 
 1. PythonでPTYシェルに昇格
 ```zsh
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 ```
-- 擬似端末（PTY）を起動して、見た目も操作性も正しいbashに切り替える
+- 擬似端末（PTY）を起動して、見た目も操作性もbashに切り替える
 - ターゲットマシンのpython verに合わせる(`python2..`等)
 
 2.  clearやvimなど、ターミナル系のコマンドの不具合を解消するため、TERM変数を設定
@@ -279,7 +279,7 @@ stty raw -echo; fg
 ```
 - ※見た目が一時的に乱れるが、安定性は向上する
 
-💡シェルから離脱したいときや、文字化けや入力異常が起きた時の復旧手段
+シェルから離脱したいときや、文字化けや入力異常が起きた時の復旧手段
 ```zsh
 reset
 ```
