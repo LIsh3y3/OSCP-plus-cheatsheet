@@ -13,17 +13,20 @@
 - Linux でよく使われる bash や sh はシェルの一種であり、Windows の cmd.exe や Powershell もシェルの一種
 - sh / bash / zsh：shは元祖、bashはshを機能拡張したもの、zshは最上位の機能を持つ
 
-## インタラクティブシェルと非インタラクティブシェルとは
+## インタラクティブシェル/非インタラクティブシェルとは
 
-- インタラクティブシェル：実行により出力が出る対話型
+### インタラクティブシェル
+
+- 実行により出力が出る対話型
 ![[Pasted image 20230318182041.png]]
 
-- 非インタラクティブシェル：
-	- 双方向のやり取りが必要なプログラム(SSH接続等)は実行できない非対話型
-	- Reverse ShellとBind Shellの大半は非対話型
-	- 下のキャプチャのように、非対話型の`whoami`は問題なく実行できるが、`ssh`は実行できてない
-	 ![[Pasted image 20230318182007.png | 300]]
-	（`listener`コマンドは`sudo rlwrap nc -lvnp 443`aliasとして説明している）
+### 非インタラクティブシェル
+
+- 双方向のやり取りが必要なプログラム(SSH接続等)は実行できない非対話型
+- Reverse ShellとBind Shellの大半は非対話型
+- 下のキャプチャのように、非対話型の`whoami`は問題なく実行できるが、`ssh`は実行できてない
+ ![[Pasted image 20230318182007.png | 300]]
+（`listener`コマンドは`sudo rlwrap nc -lvnp 443`aliasとして説明している）
 
 ## Bind Shellとは
 
