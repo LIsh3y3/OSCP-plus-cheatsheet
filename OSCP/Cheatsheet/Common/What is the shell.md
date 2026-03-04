@@ -53,9 +53,8 @@ $$左が攻撃側、右がターゲット側$$
 ## Reverse Shellとは
 
 攻撃者のマシン上でポートをオープンし、ターゲットのマシンから攻撃者に通信を確立させる方法（Bind Shellとは逆）。
-- 💡攻撃者のマシンのFW設定は自由に設定できるため、Bind Shellとは異なり、FWによる通信の遮断の影響を受けにくい
 
-ターゲットがWindowsの例：
+攻撃者のマシンのFW設定は自由に設定できるため、Bind Shellとは異なり、FWによる通信の遮断の影響を受けにくい。
 
 1. 攻撃側のマシンでリスナーを用意
 ```zsh
@@ -74,13 +73,15 @@ $$左が攻撃側、右がターゲット側$$
 
 # Common Shell Payloads
 
-参考🔗：[Reverse Shell Cheat Sheet - PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
+参考：[Reverse Shell Cheat Sheet - PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 
 ## 🐧Linuxターゲット
 
 ### Bind Shell for Linux
 
-実践ではほとんど使わない
+
+> [!NOTE]
+> Contents
 
 1. ターゲットマシン上でリスナーを用意する
 	 ([[#補足：名前付きパイプコマンドの解説]])
