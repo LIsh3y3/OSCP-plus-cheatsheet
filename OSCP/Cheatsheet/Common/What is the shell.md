@@ -484,7 +484,7 @@ msfconsole -q -x "use exploit/multi/handler; set payload <生成ペイロード>
 
 - 目的：ネットワーク監視装置（IDS・IPS）の検知回避
 	- 暗号化されたシェルは、復号鍵がない限り傍受されることはない
-	- ⚠️AV/EDRは検知する
+	- ⚠️AV/EDRに検知される
 
 ## Reverse Shellの暗号化
 
