@@ -240,7 +240,6 @@ sudo rlwrap nc -lvnp <Port>
 - `rlwrap`は入力補完や履歴機能などの*readline機能*を付与
 - 普通の`nc`より遥かに快適なので、常に使うこと
 
-
 > [!TIP]
 > Unix系の場合は、[Penelope - GitHub](https://github.com/brightio/penelope)を使ったほうが非常に安定しており、Ctrl + Cなどの便利機能も標準で使える。
 
