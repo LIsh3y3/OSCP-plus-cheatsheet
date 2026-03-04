@@ -250,7 +250,7 @@ https://raw.githubusercontent.com/brightio/penelope/refs/heads/main/penelope.py
 ```
 ```zsh
 # 実行（自分はパスを通している）
-penelope -p <port>
+spenelope -p <port>
 ```
 
 ---
