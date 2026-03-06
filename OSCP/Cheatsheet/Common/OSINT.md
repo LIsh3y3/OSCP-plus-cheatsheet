@@ -206,6 +206,7 @@ githubの右上検索バーで使えるGoogle dorkingのようなもの。
 | in:file      | ファイルの中身にkeywordがある             | keyword in:file         |
 | in:path      | パスにkeywordがある                  | keyword in:path         |
 | in:file,path | ファイルパスか、もしくはファイルの中身にkeywordがある | keyword in:file,path    |
+
 演算子
 
 | 演算子 | 説明              | 例                                                           |
