@@ -147,12 +147,12 @@ dig <domain> MX
 
 脆弱なページ・古いページ探し
 
-|目的|Dork例|備考|
-|---|---|---|
-|古いページ・アーカイブ|site:example.com before:2010|⚠️ `before:` は非公式オペレータのため動作が不安定|
-|CGIスクリプト狙い|inurl:.cgi|古いスクリプト発掘|
-|PHPエラー画面探し|intext:"Fatal error" inurl:.php|~~filetype:php~~ → Googleはインデックスしないため非推奨|
-|ディレクトリリスティング|intitle:"index of" "parent directory"|ディレクトリ一覧が公開されているページ|
+| 目的           | Dork例                                 | 備考                                       |
+| ------------ | ------------------------------------- | ---------------------------------------- |
+| 古いページ・アーカイブ  | site:example.com before:2010          | ⚠️ `before:` は非公式オペレータのため動作が不安定          |
+| CGIスクリプト狙い   | inurl:.cgi                            | 古いスクリプト発掘                                |
+| PHPエラー画面探し   | intext:"Fatal error" inurl:.php       | ~~filetype:php~~ → Googleはインデックスしないため非推奨 |
+| ディレクトリリスティング | intitle:"index of" "parent directory" | ディレクトリ一覧が公開されているページ                      |
 
 監視カメラや機器のWebUI探し
 
