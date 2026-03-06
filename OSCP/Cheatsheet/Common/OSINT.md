@@ -156,11 +156,11 @@ dig <domain> MX
 
 監視カメラや機器のWebUI探し
 
-| 目的           | Dork例                                               | 備考                     |
-| ------------ | --------------------------------------------------- | ---------------------- |
-| 監視カメラ映像      | inurl:/view.shtml  <br>intitle:"Live View / - AXIS" | AXISカメラ以外にもヒットする汎用Dork |
-| NAS管理画面      | intitle:"NAS Login"                                 | Synology, QNAPなど       |
-| ルーター/モデム管理画面 | intitle:"Router Login"                              | SOHOルーターなど             |
+| 目的           | Dork例                                               | 備考               |
+| ------------ | --------------------------------------------------- | ---------------- |
+| 監視カメラ映像      | inurl:/view.shtml  <br>intitle:"Live View / - AXIS" | AXISカメラ          |
+| NAS管理画面      | intitle:"NAS Login"                                 | Synology, QNAPなど |
+| ルーター/モデム管理画面 | intitle:"Router Login"                              | SOHOルーターなど       |
 
 サブドメイン・関連サイト探し
 
