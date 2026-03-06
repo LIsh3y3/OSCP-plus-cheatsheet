@@ -101,26 +101,26 @@ dig <domain> MX
 
 ### Dorking実例
 
-###### 🔐 管理画面探し（Adminページ探し）
+管理画面探し（Adminページ探し）
 
-| 目的                  | Dork例                                           | 備考        |
-| ------------------- | ----------------------------------------------- | --------- |
-| 管理画面URL探索           | inurl:admin                                     | 超基本・よくヒット |
-| 管理画面ログインページ         | intitle:"管理画面" inurl:login                      | 日本サイト向け   |
-| WordPress管理画面       | inurl:wp-admin                                  | WPサイト特定に  |
-| CMS管理画面             | inurl:typo3<br>inurl:joomla<br>inurl:drupal     | CMS狙い撃ち   |
-| VPN/ネットワーク機器のログイン画面 | intitle:"VPN login"<br>intitle:"Firewall Login" | 重要インフラ系   |
+|目的|Dork例|備考|
+|---|---|---|
+|管理画面URL探索|inurl:admin|超基本・よくヒット|
+|管理画面ログインページ|intitle:"管理画面" inurl:login|日本サイト向け|
+|WordPress管理画面|inurl:wp-admin|WPサイト特定に|
+|CMS管理画面|inurl:typo3  <br>inurl:joomla  <br>inurl:drupal|CMS狙い撃ち|
+|VPN/ネットワーク機器のログイン画面|intitle:"VPN login"  <br>intitle:"Firewall Login"|重要インフラ系|
 
-###### 🔑 ログインページ探し
+ログインページ探し
 
-| 目的           | Dork例                                      | 備考       |
-| ------------ | ------------------------------------------ | -------- |
-| 一般的なログインページ  | intitle:"login" inurl:login                | 汎用Dork   |
-| 社内システムログイン   | site:example.com intitle:login             | 特定ドメイン向け |
-| 基幹システムログイン   | intitle:"ERP Login"<br>intitle:"SAP Login" | 大企業狙い撃ち  |
-| クラウドサービスログイン | inurl:auth<br>inurl:signin                 | SaaS系も対応 |
+|目的|Dork例|備考|
+|---|---|---|
+|一般的なログインページ|intitle:"login" inurl:login|汎用Dork|
+|社内システムログイン|site:example.com intitle:login|特定ドメイン向け|
+|基幹システムログイン|intitle:"ERP Login"  <br>intitle:"SAP Login"|大企業狙い撃ち|
+|クラウドサービスログイン|inurl:auth  <br>inurl:signin|SaaS系も対応|
 
-###### 🕵️‍♂️ 機密情報探し
+機密情報探し
 
 |目的|Dork例|備考|
 |---|---|---|
@@ -129,7 +129,7 @@ dig <domain> MX
 |社内文書探し|filetype:pdf site:example.com|特定企業の内部文書|
 |機密ログ探し|filetype:log "password" OR "API key"|誤公開ログ探し|
 
-###### 📄 意図せず公開されたドキュメント探し
+意図せず公開されたドキュメント探し
 
 |目的|Dork例|備考|
 |---|---|---|
@@ -137,31 +137,32 @@ dig <domain> MX
 |Excelに埋め込まれたパスワード|filetype:xls intext:password|よくあるミス|
 |Google Drive公開ファイル|site:docs.google.com|意図せず共有されがち|
 
-###### 💻 コード・設定ファイル探し
+コード・設定ファイル探し
 
 |目的|Dork例|備考|
 |---|---|---|
 |Gitリポジトリの誤公開|inurl:.git|.gitディレクトリ直叩き|
 |設定ファイル探し|filetype:conf OR filetype:ini|サーバー設定漏洩|
 |APIキー漏洩|intext:"API_KEY="|直書き事故チェック|
-###### 💥 脆弱なページ・古いページ探し
 
-| 目的                | Dork例                                 | 備考         |
-| ----------------- | ------------------------------------- | ---------- |
-| 古いページ・アーカイブ       | site:example.com before:2010          | 過去情報チェック   |
-| CGIスクリプト狙い        | inurl:.cgi                            | 古いスクリプト発掘  |
-| PHPエラー画面探し        | "Fatal error" filetype:php            | コードミス露呈ページ |
-| ディレクトリリスティング画面を表示 | intitle:"index of" "parent directory" |            |
+脆弱なページ・古いページ探し
 
-###### 📹 監視カメラや機器のWebUI探し
+|目的|Dork例|備考|
+|---|---|---|
+|古いページ・アーカイブ|site:example.com before:2010|⚠️ `before:` は非公式オペレータのため動作が不安定|
+|CGIスクリプト狙い|inurl:.cgi|古いスクリプト発掘|
+|PHPエラー画面探し|intext:"Fatal error" inurl:.php|~~filetype:php~~ → Googleはインデックスしないため非推奨|
+|ディレクトリリスティング|intitle:"index of" "parent directory"|ディレクトリ一覧が公開されているページ|
 
-| 目的           | Dork例                                             | 備考               |
-| ------------ | ------------------------------------------------- | ---------------- |
-| 監視カメラ映像      | inurl:/view.shtml<br>intitle:"Live View / - AXIS" | AXISカメラ狙い撃ち      |
-| NAS管理画面      | intitle:"NAS Login"                               | Synology, QNAPなど |
-| ルーター/モデム管理画面 | intitle:"Router Login"                            | SOHOルーターなど       |
+監視カメラや機器のWebUI探し
 
-###### 🔗 サブドメイン・関連サイト探し
+| 目的           | Dork例                                               | 備考                     |
+| ------------ | --------------------------------------------------- | ---------------------- |
+| 監視カメラ映像      | inurl:/view.shtml  <br>intitle:"Live View / - AXIS" | AXISカメラ以外にもヒットする汎用Dork |
+| NAS管理画面      | intitle:"NAS Login"                                 | Synology, QNAPなど       |
+| ルーター/モデム管理画面 | intitle:"Router Login"                              | SOHOルーターなど             |
+
+サブドメイン・関連サイト探し
 
 |目的|Dork例|備考|
 |---|---|---|
@@ -169,13 +170,12 @@ dig <domain> MX
 |関連サイト洗い出し|related:example.com|公式系列チェック|
 |サイト内検索|site:example.com "confidential"|キーワードと組み合わせ|
 
-###### 📚 社員リスト・名簿探し
+社員リスト・名簿探し
 
 | 目的     | Dork例                                       | 備考        |
 | ------ | ------------------------------------------- | --------- |
 | 社員名簿探し | filetype:xls intext:"社員名簿" site:example.com | 内部情報流出系   |
 | 連絡先リスト | intext:@example.com filetype:csv            | メールアドレス一覧 |
-
 
 ---
 
