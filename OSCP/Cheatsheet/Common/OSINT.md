@@ -189,15 +189,13 @@ dig <domain> MX
 
 - [[#Google hacking]]のオペレーターをサポートしていることがある
 
-## Github Search
+## GitHub Search
 
 githubの右上検索バーで使えるGoogle dorkingのようなもの。
 
 ### 手動
 
-小規模な企業には最適。
-
-###### フィルタ
+フィルタリング
 
 | フィルタ         | 説明                             | 例                       |
 | ------------ | ------------------------------ | ----------------------- |
@@ -208,7 +206,7 @@ githubの右上検索バーで使えるGoogle dorkingのようなもの。
 | in:file      | ファイルの中身にkeywordがある             | keyword in:file         |
 | in:path      | パスにkeywordがある                  | keyword in:path         |
 | in:file,path | ファイルパスか、もしくはファイルの中身にkeywordがある | keyword in:file,path    |
-###### 演算子
+演算子
 
 | 演算子 | 説明              | 例                                                           |
 | --- | --------------- | ----------------------------------------------------------- |
@@ -231,7 +229,7 @@ sudo apt install gitleaks
 
 列挙対象のレポジトリをローカルにクローンする
 ```zsh
-git clone [https://xxx.git]
+git clone <https://xxx.git>
 ```
 
 クローン先にcdしてから、探索実行
