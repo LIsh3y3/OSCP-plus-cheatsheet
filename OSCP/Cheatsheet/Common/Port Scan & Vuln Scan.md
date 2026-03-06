@@ -59,7 +59,7 @@ sudo chown -R <attacker_username>:<attacker_username> results
 
 # Vuln Scan w/ NSE
 
-[NSEドキュメント](https://nmap.org/nsedoc/)
+- [NSEドキュメント](https://nmap.org/nsedoc/)
 
 カテゴリに属するNSEすべてを実行（[[#NSEのカテゴリ一覧表]]）
 	⚠️トラフィックと情報量が膨大なのであまり実行すべきでない
@@ -131,9 +131,9 @@ cat /usr/share/nmap/scripts/script.db
 > - 外部のNSEをダウンロードする時は注意が必要で、悪意あるコードが外部のNSEに含まれており、そのNSEを使うと悪意ある第三者がフルアクセスをゲットできてしまう可能性がある
 > - スキャナが発見できるのは、スキャナが設定した脆弱性だけである
 > - カテゴリごとにNSEがシステムにどのような影響を与えるかを確認してから実行すること
+> 	-  [[#NSEのカテゴリ一覧表]]
 
 ---
-----
 
 # 基本スキャンコマンド
 
