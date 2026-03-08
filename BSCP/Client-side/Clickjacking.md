@@ -99,7 +99,7 @@ http://TARGET_NET/?[formタグ内inputのname属性の値]=hogehoge
 
 ###### 悪用ステップ
 
-1. [[#基本的なclickjackingの構築]]の`iframe`に`sandbox`属性を付与し、`allow-forms`か`allow-scripts`を設定する
+1. [Clickjacking](Clickjacking.md#基本的なclickjackingの構築)の`iframe`に`sandbox`属性を付与し、`allow-forms`か`allow-scripts`を設定する
 ```html
 <iframe id="target_website" src="[URL]" sandbox="allow-forms">
 ```
@@ -112,20 +112,20 @@ http://TARGET_NET/?[formタグ内inputのname属性の値]=hogehoge
 
 ###### 関連
 
-- [[5. DOM based XSS]]
+- [5. DOM based XSS](XSS/5.%20DOM%20based%20XSS.md)
 
 ###### 方法
 
 1. DOM based XSS脆弱性探索
 2. XSS攻撃のリンクを`iframe`の`src`属性に指定する
-	- 必要であれば[[#入力済みフォームのクリックジャッキング]]
+	- 必要であれば[Clickjacking](Clickjacking.md#入力済みフォームのクリックジャッキング)
 
 3. ペイロードを作成・ホストし、被害者にDeliver
 
 ---
 ## マルチステップなクリックジャッキング
 
-- [[#汎用版]]を2つコピーして、要素のid名(もしくはクラス名)をそれぞれ変えて位置を調整するだけ
+- [Clickjacking](Clickjacking.md#汎用版)を2つコピーして、要素のid名(もしくはクラス名)をそれぞれ変えて位置を調整するだけ
 - ↓シンプルなスクリプト例
 ```html
 <style>
@@ -156,7 +156,7 @@ http://TARGET_NET/?[formタグ内inputのname属性の値]=hogehoge
 ## クリックジャッキング対策
 
 - X-Frame-OptionsとCSPで多層防御する(ブラウザによってはサポートしてないこともあるので)
-- [[8. (範囲外)CSPによる攻撃の軽減とCSPのバイパス#[X-Frame-Options](https //developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-Frame-Options)との違い]]
+- [8. (範囲外)CSPによる攻撃の軽減とCSPのバイパス](XSS/8.%20(範囲外)CSPによる攻撃の軽減とCSPのバイパス.md#[X-Frame-Options](https%20//developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-Frame-Options)との違い)
 
 ### X-Frame-Options
 
@@ -178,4 +178,4 @@ X-Frame-Options: allow-from https://normal-website.com
 ### CSP
 
 - クリックジャッキングだけでなくXSSにも有効
-- [[8. (範囲外)CSPによる攻撃の軽減とCSPのバイパス#CSPによるクリックジャッキング対策]]
+- [8. (範囲外)CSPによる攻撃の軽減とCSPのバイパス](XSS/8.%20(範囲外)CSPによる攻撃の軽減とCSPのバイパス.md#CSPによるクリックジャッキング対策)

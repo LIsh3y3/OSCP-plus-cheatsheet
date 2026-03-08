@@ -1,4 +1,4 @@
-[[⚡️Authentication]]
+[⚡️Authentication](⚡️Authentication.md)
 
 #### 注目ポイント
 
@@ -47,7 +47,7 @@ Cookie: verify=wiener;
 ---
 ### Stay-logged-inがある場合
 
-- [[⚡️XSS#Stay-logged-in Cookieを取得]]で被害者のcookieを取得できるか
+- [⚡️XSS](../../Client-side/XSS/⚡️XSS.md#Stay-logged-in%20Cookieを取得)で被害者のcookieを取得できるか
 
 ---
 ### Change password
@@ -64,4 +64,4 @@ Cookie: verify=wiener;
 | New password | ⭕️ | hoge | foo | foo |
 | Confirm new password | ⭕️ | hoge | hoge | hoge |
 
-- -> [[⚡️Authentication#Change passwordを悪用して被害者パスワードのbrute-force]]
+- -> [⚡️Authentication](⚡️Authentication.md#Change%20passwordを悪用して被害者パスワードのbrute-force)

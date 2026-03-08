@@ -7,7 +7,7 @@
 
 # SIDについて
 
-- [[用語#SID, RID]]を参照
+- [用語](../../../Misc/用語.md#SID,%20RID)を参照
 - [well-known SID](https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids)があり、その中でもPrivEscの文脈で有用なものがある
 
 | SID                          | 意味                  |
@@ -22,7 +22,7 @@
 
 # Access token
 
-- [[用語#プロセス・スレッド]]
+- [用語](../../../Misc/用語.md#プロセス・スレッド)
 
 ## Access Token の中身（セキュリティコンテキスト）
 
@@ -99,7 +99,7 @@ PrimaryとImpersonationの違い：
 - 不正な、あるいは意図しないPrivEscを防ぐ目的
 - ==Access token + MIC + UACでセキュリティを担保==
 - アプリケーション・タスクを起動するユーザーがAdminであっても、Standard userの権限で実行する
-- 仕組みとして、LSASSはユーザーがログオン時に２つの[[#Access token]]を発行する
+- 仕組みとして、LSASSはユーザーがログオン時に２つの[PrivEsc前提知識：Windowsの特権とAccess Controlの仕組み](PrivEsc前提知識：Windowsの特権とAccess%20Controlの仕組み.md#Access%20token)を発行する
     - Adminトークン：必要なときのみ使われる
     - Standard userトークン：通常の操作
 - Administratorであっても、まずはStandard userトークン + Medium Integrityでプロセスを実行する

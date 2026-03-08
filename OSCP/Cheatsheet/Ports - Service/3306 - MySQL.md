@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[80 or 443 - HTTP or HTTPS#SQLi]]
+	- [80 or 443 - HTTP or HTTPS](80%20or%20443%20-%20HTTP%20or%20HTTPS.md#SQLi)
 
 - 🔗 参考リンク
     - [MySQL SQL Injection Cheat Sheet - pentestmonkey](https://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet)

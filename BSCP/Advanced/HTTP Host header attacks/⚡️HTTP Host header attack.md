@@ -7,12 +7,12 @@ Host: localhost
 
 #### Password reset poisoning
 
-- [[Password reset poisoning#攻撃手法]]
+- [Password reset poisoning](Password%20reset%20poisoning.md#攻撃手法)
 
 ---
 #### & Web cache poisoning
 
-- "Unkey"がHostヘッダであることを悪用[[⚡️Web cache poisoning#& Host header attack]]
+- "Unkey"がHostヘッダであることを悪用[⚡️Web cache poisoning](../Web%20cache%20poisoning/⚡️Web%20cache%20poisoning.md#&%20Host%20header%20attack)
 
 ---
 #### & Routing-based SSRF
@@ -26,9 +26,9 @@ Host: COLLABORATOR_DOMAIN
 GET https://TARGET_NET/admin HTTP/1.1
 Host: COLLABORATOR_DOMAIN
 ```
-2. [[🔍SSRF#②内部ファイルを探す]]
+2. [🔍SSRF](../../Server-side/SSRF/🔍SSRF.md#②内部ファイルを探す)
 	- ==⚠️=="Update Host header to match target"の☑️を外すこと
-	- [[2.  一般的なSSRF防御の回避#SSRF ブラックリスト回避]]
+	- [2.  一般的なSSRF防御の回避](../../Server-side/SSRF/2.%20%20一般的なSSRF防御の回避.md#SSRF%20ブラックリスト回避)
 3. 悪用
 ```http
 GET /admin HTTP/1.1

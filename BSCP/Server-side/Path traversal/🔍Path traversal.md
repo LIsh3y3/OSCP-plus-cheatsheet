@@ -1,4 +1,4 @@
-[[⚡️Path traversal]]
+[⚡️Path traversal](⚡️Path%20traversal.md)
 
 #### 注目ポイント
 
@@ -12,7 +12,7 @@
 ## Detect
 
 - `filename`パラメタの値など、脆弱かと思われる箇所をIntruderで選択してからScanする
-	- 💡File Path Manipulation(severity: Medium)と表示されたら[[⚡️Command injection#(blind)Path Traversalと組み合わせ、コマンド出力を保存&取得]]を考慮する
+	- 💡File Path Manipulation(severity: Medium)と表示されたら[⚡️Command injection](../Command%20Injection/⚡️Command%20injection.md#(blind)Path%20Traversalと組み合わせ、コマンド出力を保存&取得)を考慮する
 
 ---
 ## Fuzz

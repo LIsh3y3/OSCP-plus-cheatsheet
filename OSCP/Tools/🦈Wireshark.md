@@ -124,7 +124,7 @@ $$ICMPリクエストのキャプチャ$$
 ## TCP
 
 - 通常：SYN、ACK、FINなどで通信確立や終了を表現
-- nmapスキャン時：RST, ACKで赤く表示：[[#パケットの色の意味（色別の概要）]]
+- nmapスキャン時：RST, ACKで赤く表示：[🦈Wireshark](🦈Wireshark.md#パケットの色の意味（色別の概要）)
 - sequence numberとacknowledgment numberをチェック
 - acknowledgment numberが0ならポートが閉じている
 - Edit > Preferences > Protocols > TCP > relative sequence number をオフで実番号が見える

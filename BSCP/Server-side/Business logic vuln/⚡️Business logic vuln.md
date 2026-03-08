@@ -17,7 +17,7 @@
 
 ###### オーバーフロー(商品購入)
 
-- [[2. -1 事例：Business logic vuln#整数型のオーバーフローを起こす]]
+- [2. -1 事例：Business logic vuln](2.%20-1%20事例：Business%20logic%20vuln.md#整数型のオーバーフローを起こす)
 
 
 ---
@@ -30,8 +30,8 @@
 
 ###### クライアント側の制御に対する過度の信頼　- APPERENTICE
 
-- [[3. 多要素認証の脆弱性#ログイン状態のみアクセスできるページへの直接アクセス]]
+- [3. 多要素認証の脆弱性](../Authentication/3.%20多要素認証の脆弱性.md#ログイン状態のみアクセスできるページへの直接アクセス)
 
 ###### パスワードリセット
 
-- [[⚡️Password reset#Forgot passwordによるパスワードリセット]]
+- [⚡️Password reset](../Authentication/⚡️Password%20reset.md#Forgot%20passwordによるパスワードリセット)

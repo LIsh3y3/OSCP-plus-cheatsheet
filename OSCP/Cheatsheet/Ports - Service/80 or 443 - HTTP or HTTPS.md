@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[SQL Injection]]
+	- [SQL Injection](../Common/SQL%20Injection.md)
 # Web scanning / Enumeration
 
 ## Webテックスタックのスキャン
@@ -19,7 +19,7 @@ whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<TargetIP>
 1. まずGobusterで1階層の高速スキャン
 2. 気になるディレクトリ(301ステータス、api等)が見つかったらFeroxbusterで再帰的に深掘り
 
-Gobuster：[[👻Gobuster]]
+Gobuster：[👻Gobuster](../../Tools/👻Gobuster.md)
 ```zsh
 # ファイルアクセスエラー回避のため、同時に開けるファイルの最大数を調整
 ulimit -n 8192
@@ -27,7 +27,7 @@ ulimit -n 8192
 gobuster dir -u http://<TargetIP>:<Port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o WebEnum/gobuster.txt -x '<extensions>'
 ```
 
-FeroxBuster：[[🦝FeroxBuster]]
+FeroxBuster：[🦝FeroxBuster](../../Tools/🦝FeroxBuster.md)
 ```zsh
 # ファイルアクセスエラー回避のため、同時に開けるファイルの最大数を調整
 ulimit -n 8192
@@ -41,12 +41,12 @@ feroxbuster -u http://<TargetIP>:<Port>/ --depth <num> -r -k -w  /usr/share/secl
 
 ## 脆弱性のスキャン
 
-nikto：[[👽Nikto]]
+nikto：[👽Nikto](../../Tools/👽Nikto.md)
 ```zsh
 nikto -Format htm -o WebEnum/nikto.html --maxtime=180s -C all -h <TargetIP>
 ```
 
-Nmap：[[Port Scan & Vuln Scan#NSE]]
+Nmap：[Port Scan & Vuln Scan](../Common/Port%20Scan%20&%20Vuln%20Scan.md#NSE)
 ```zsh
 sudo nmap --script "http-*" <TargetIP> -p <Port>
 ```
@@ -68,7 +68,7 @@ sudo nmap --script "http-*" <TargetIP> -p <Port>
 - [ ] Apache VirtualHost（または nginx/IIS の同等機能）に注意！ `/etc/hosts` にすべての(サブ)ドメインをTarget IPで登録
 - [ ] デフォルト／一般的な認証情報でログイン試行
 - [ ] 認証バイパス(SQLi)：`' or 1=1 -- #` などで試行
-- [ ] 悪意ある文字でSQL/NoSQLインジェクションのテスト：`'")}$%%;\`: [[SQL Injection#悪意のある文字を使ったテスト（"Bad Chars"）]]
+- [ ] 悪意ある文字でSQL/NoSQLインジェクションのテスト：`'")}$%%;\`: [SQL Injection](../Common/SQL%20Injection.md#悪意のある文字を使ったテスト（"Bad%20Chars"）)
 - [ ] コマンドインジェクションをテスト：
     - [ ] 区切り文字: `; | & || &&`
     - [ ] クオート解除: `" '`
@@ -98,7 +98,7 @@ hydra POST
 ```zsh
 hydra -V -f -l <username> -P <wordlist> <TargetIP> http-post-form "/<login_path>:<username_param>=^USER^&<pw_param>=^PASS^:<failure_message>" -t 64
 ```
-- 参考ノート：[[🐉THC-Hydra]]
+- 参考ノート：[🐉THC-Hydra](../../Tools/🐉THC-Hydra.md)
 
 hydra GET(BASIC認証)
 ```zsh
@@ -124,7 +124,7 @@ ffuf -x socks5://localhost:1080 -u http://<TargetIP>/login -X POST -w /usr/share
 
 ### Enumeration
 
-- [[📓WPScan#基本スキャン]]
+- [📓WPScan](../../Tools/📓WPScan.md#基本スキャン)
 - ターゲット環境にアクセスできるなら、`wp-config.php`に認証情報がないか探す
 - 🔗参考： [Wordpress cheat sheet - HackTricks](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/wordpress.html)
 
@@ -216,7 +216,7 @@ Drupal CMSを使っているとき
 ```zsh
 droopescan scan drupal http://$TargetIP -t 32
 ```
-- [[コンパイル・ビルド#Python Package Management (pip)]]
+- [コンパイル・ビルド](../../Misc/コンパイル・ビルド.md#Python%20Package%20Management%20(pip))
 
 ---
 

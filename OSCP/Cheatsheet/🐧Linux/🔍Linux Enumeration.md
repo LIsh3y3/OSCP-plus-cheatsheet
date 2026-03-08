@@ -1,6 +1,6 @@
 - 関連のノート：
-	- [[💥Linux Privilege Escalation]]
-	- [[マインド#列挙時の心構え]]
+	- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md)
+	- [マインド](../../Misc/マインド.md#列挙時の心構え)
 
 ---
 
@@ -60,7 +60,7 @@ wget https://raw.githubusercontent.com/rebootuser/LinEnum/refs/heads/master/LinE
 
 - 偽陽性の可能性を疑うが、つまったら最後に必ずすべて試す
 	- Exposure（エクスプロイトの実行可能性）は当てにならない
-- [[💥Linux Privilege Escalation#主なカーネルエクスプロイト]]
+- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#主なカーネルエクスプロイト)
 
 | エクスプロイト名                                                                | CVE            | エクスプロイトの仕組み                                                                                                                                                               | 使用条件                                                                                                                                  |
 | ----------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -91,14 +91,14 @@ wget https://raw.githubusercontent.com/rebootuser/LinEnum/refs/heads/master/LinE
 ```zsh
 id
 ```
-- [[権限関連の知識、コマンド#IDの一覧表]]
+- [権限関連の知識、コマンド](../Common/権限関連の知識、コマンド.md#IDの一覧表)
 
 ==sudo権限の確認==
 ```zsh
 sudo -l
 ```
-- →[[💥Linux Privilege Escalation#Sudoを利用したPrivEsc]]
-- →`tcpdump`の場合、通信のキャプチャも可能：[[#デーモンの列挙コマンド]]
+- →[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Sudoを利用したPrivEsc)
+- →`tcpdump`の場合、通信のキャプチャも可能：[🔍Linux Enumeration](🔍Linux%20Enumeration.md#デーモンの列挙コマンド)
 - `NOPASSWD`：sudo xxxとしても、パスワード不要で実行可能
 
 ホスト名を確認
@@ -115,7 +115,7 @@ hostname
 ```zsh
 cat /etc/passwd
 ```
-- [[#補足：/etc/passwdの出力]]
+- [🔍Linux Enumeration](🔍Linux%20Enumeration.md#補足：/etc/passwdの出力)
 
 グループ一覧を取得
 ```zsh
@@ -161,7 +161,7 @@ last
 
 - マシンのOSやアーキテクチャ、バージョンを確認して、脆弱性や利用可能な攻撃ツールを特定する
 	- カーネルエクスプロイトなどに利用する情報
-	- [[💥Linux Privilege Escalation#カーネルの脆弱性を利用したPrivEsc]]
+	- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#カーネルの脆弱性を利用したPrivEsc)
 
 ## 基本的なシステム情報の列挙コマンド
 
@@ -212,7 +212,7 @@ cat /etc/os-release
 # 絞り込み：ps --pid <PID>
 ps auxw
 ```
-- ↓出力例：[[#補足：結果の見方]]
+- ↓出力例：[🔍Linux Enumeration](🔍Linux%20Enumeration.md#補足：結果の見方)
 ```zsh
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root       20566  0.0  0.0      0     0 ?        I    00:07   0:00 [kworker/0:2-
@@ -273,7 +273,7 @@ ip a
 routel
 ```
 - 侵害した足場から内部NWへアクセスしたいときなど、そのマシンから他にどのマシンにアクセスできそうかを確認する第一歩
-- →怪しいサブネットがあったら[[Port Scan & Vuln Scan#ホストディスカバリ]]でアクセス可能なIPアドレスを列挙する
+- →怪しいサブネットがあったら[Port Scan & Vuln Scan](../Common/Port%20Scan%20&%20Vuln%20Scan.md#ホストディスカバリ)でアクセス可能なIPアドレスを列挙する
 
 アクティブなネットワーク接続とリスニングポートの確認
 ```zsh
@@ -314,7 +314,7 @@ DNS設定の確認
 ```zsh
 cat /etc/resolv.conf
 ```
-→[[53 - DNS]]
+→[53 - DNS](../Ports%20-%20Service/53%20-%20DNS.md)
 
 ## 得られる情報
 
@@ -325,7 +325,7 @@ cat /etc/resolv.conf
 - すべての接続
 - ルーティングテーブル
 	- 対象マシンを経由して他のサブネットにアクセスできる可能性を探る。
-	- 他サブネットへのルートが存在すれば、そこを通じて新しいターゲットを列挙・攻撃可能 → [[Port Redirection & SSH Port Forwarding]]
+	- 他サブネットへのルートが存在すれば、そこを通じて新しいターゲットを列挙・攻撃可能 → [Port Redirection & SSH Port Forwarding](../Stealth&Evasion/Port%20Redirection/Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)
 
 ---
 
@@ -337,7 +337,7 @@ cat /etc/resolv.conf
     - （PrivEscの攻撃ベクターとしてよく利用される）
 - 💥ワイルドカートが使われていれば、GTFObinsで検索
 	-  chown, chmod, tar, rsyncなど
-- [[💥Linux Privilege Escalation#Cronを利用したPrivEsc]]
+- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Cronを利用したPrivEsc)
 
 ## Cronの列挙コマンド
 
@@ -390,7 +390,7 @@ grep "CRON" /var/log/syslog
 ## インストール済みアプリケーションの列挙コマンド
 
 インストールされているすべてのパッケージのリストを取得する
-	（[[Normal Informations#パッケージ]]）
+	（[Normal Informations](../../Misc/Normal%20Informations.md#パッケージ)）
 ```zsh
 # debian
 dpkg -l
@@ -445,7 +445,7 @@ find / -writable -type d 2>/dev/null
 cat /etc/fstab 
 ```
 - ここにないドライブをマウントしている可能性もあるので、`mount`による列挙も必須
-- [[#fstabの結果の見方]]
+- [🔍Linux Enumeration](🔍Linux%20Enumeration.md#fstabの結果の見方)
 ![[Pasted image 20250827123908.png]]
 $$fstabの結果例$$
 
@@ -453,7 +453,7 @@ $$fstabの結果例$$
 ```zsh
 mount
 ```
-- 💡[[Normal Informations#マウント仮想ファイルシステム]]は着目の優先度は低い
+- 💡[Normal Informations](../../Misc/Normal%20Informations.md#マウント仮想ファイルシステム)は着目の優先度は低い
 ![[Pasted image 20250826124828.png]]
 $$mountの実行結果例$$
 
@@ -471,7 +471,7 @@ lsblk -f
 
 - `fstab`(マウントのルール)に記載があるのに、`mount`(マウントの現状)には存在しない
 	-  `noauto`オプションにより手動でマウントすべきものがマウントされていない可能性アリ
-	- →`user`オプションもあれば、マウントして利用できるかも([[#fstabの結果の見方]])
+	- →`user`オプションもあれば、マウントして利用できるかも([🔍Linux Enumeration](🔍Linux%20Enumeration.md#fstabの結果の見方))
 ```zsh
 # マウント具体例：mount /media/usb0
 # マウントできない場合は、攻撃者のマシンに<fstabのfile_system>を転送してローカルでマウント
@@ -492,7 +492,7 @@ cd <fstabのmount_point>
 
 ### fstabの結果の見方
 
-- UUID：一意の場所を指定（[[権限関連の知識、コマンド#IDの一覧表]]）
+- UUID：一意の場所を指定（[権限関連の知識、コマンド](../Common/権限関連の知識、コマンド.md#IDの一覧表)）
 - file system：マウント対象のディスク・パーティション（マウント元）
 - mount point：file systemをどこに接続するか（マウント先）
 - option：マウントオプション
@@ -513,7 +513,7 @@ cd <fstabのmount_point>
 - SUID/SGID、Capability が設定された実行ファイルを探し、権限昇格に利用できる可能性を調査
 - root 所有の SUID バイナリを悪用できれば、root 権限を奪取できる
 - SGIDバイナリはグループの権限で動作可能なため、同じグループの他ユーザーへのLatMovにつながる
-	- →[[💥Linux Privilege Escalation#SUIDとCapabilityを利用したPrivEsc]]
+	- →[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#SUIDとCapabilityを利用したPrivEsc)
 
 ## SUID / SGIDバイナリの列挙コマンド
 
@@ -554,7 +554,7 @@ find / -type f \( -perm -2000 \) -exec ls -la {} \; 2>/dev/null
 
 - 保存されたパスワードやキャッシュされた資格情報を取得する
 	- そのまま**ダイレクトに**LatMovやPrivEscにつなげる
-	- 発見した認証情報をもとに、新たなパスワードリストを作成してブルートフォースを実施する[[../Common/Password Attack]]
+	- 発見した認証情報をもとに、新たなパスワードリストを作成してブルートフォースを実施する[Password Attack](../Common/Password%20Attack.md)
 
 - 💡Googleで、`<service> where is [database] password stored`と検索するのもよい手段
 
@@ -582,7 +582,7 @@ SSHキーの確認
 ```zsh
 ls -la ~/.ssh/
 ```
-- →秘密鍵があった場合：[[💥Linux Privilege Escalation#Misc]]
+- →秘密鍵があった場合：[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Misc)
 
 中身に認証情報の記載があるファイルを探す ([EvilTree](https://github.com/t3l3machus/eviltree)）
 	🚨gzやzipファイル等の圧縮ファイルの中身は読み取れないことに留意する（機密情報が圧縮ファイルにある可能性）
@@ -654,14 +654,14 @@ find / -type f \( -perm 440 -o -perm 640 -o -perm 660 \) 2>/dev/null
 sudo tcpdump -i <intarface> -vvv -w output.pcap
 ```
 >[!TIP]
->root権限が必要なので、他マシンと通信している可能性がある場合は、権限昇格後に必ず実行し、[[🦈Wireshark]]を使って分析
+>root権限が必要なので、他マシンと通信している可能性がある場合は、権限昇格後に必ず実行し、[🦈Wireshark](../../Tools/🦈Wireshark.md)を使って分析
 
 起動しているデーモンの状態を確認
 　（サービス≒デーモン）
 ```zsh
 systemctl list-units --type=service
 ```
-- 怪しいデーモン([[Normal Informations#デーモン]])が動作していないかを確認→[[💥Linux Privilege Escalation#Serviceを利用したPrivEsc]]
+- 怪しいデーモン([Normal Informations](../../Misc/Normal%20Informations.md#デーモン))が動作していないかを確認→[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Serviceを利用したPrivEsc)
 
 起動時に自動起動されるデーモンの確認
 ```zsh
@@ -687,7 +687,7 @@ SNMPデータを取得
 ```zsh
 snmpwalk -v1 -c public localhost
 ```
-→[[161,162 - SNMP]]
+→[161,162 - SNMP](../Ports%20-%20Service/161,162%20-%20SNMP.md)
 
 ## 得られる情報
 
@@ -702,7 +702,7 @@ snmpwalk -v1 -c public localhost
 
 - 利用中のカーネルモジュールやドライバのバージョンを把握
 - 既知の脆弱性に対してエクスプロイトを紐づけるための情報を収集する
-	- [[💥Linux Privilege Escalation#主なカーネルエクスプロイト]]にも情報収集方法あり
+	- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#主なカーネルエクスプロイト)にも情報収集方法あり
 
 ## ドライバ・モジュール関連コマンド
 

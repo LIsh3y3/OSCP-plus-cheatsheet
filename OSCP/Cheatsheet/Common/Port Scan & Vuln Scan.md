@@ -1,6 +1,6 @@
 # Port Scan
 
-以下、必要に応じて[[#🧱FW回避用オプション]]をつけること。
+以下、必要に応じて[Port Scan & Vuln Scan](Port%20Scan%20&%20Vuln%20Scan.md#🧱FW回避用オプション)をつけること。
 
 quick scan
 ```zsh
@@ -61,7 +61,7 @@ sudo chown -R <attacker_username>:<attacker_username> results
 
 - [NSEドキュメント](https://nmap.org/nsedoc/)
 
-カテゴリに属するNSEすべてを実行（[[#NSEのカテゴリ一覧表]]）
+カテゴリに属するNSEすべてを実行（[Port Scan & Vuln Scan](Port%20Scan%20&%20Vuln%20Scan.md#NSEのカテゴリ一覧表)）
 	⚠️トラフィックと情報量が膨大なのであまり実行すべきでない
 ```zsh
 sudo nmap --script　"<category>" <target_IP> -p <port>
@@ -131,7 +131,7 @@ cat /usr/share/nmap/scripts/script.db
 > - 外部のNSEをダウンロードする時は注意が必要で、悪意あるコードが外部のNSEに含まれており、そのNSEを使うと悪意ある第三者がフルアクセスをゲットできてしまう可能性がある
 > - スキャナが発見できるのは、スキャナが設定した脆弱性だけである
 > - カテゴリごとにNSEがシステムにどのような影響を与えるかを確認してから実行すること
-> 	-  [[#NSEのカテゴリ一覧表]]
+> 	-  [Port Scan & Vuln Scan](Port%20Scan%20&%20Vuln%20Scan.md#NSEのカテゴリ一覧表)
 
 ---
 ---
@@ -279,4 +279,4 @@ rdp-ntlm-info:
   DNS_Domain_Name: EXTERNAL           # 着目
   DNS_Computer_Name: EXTERNAL         # 着目
 ```
-- 関連ノート：[[ADの基本#Active Directoryとは]]
+- 関連ノート：[ADの基本](../🪟Windows/Active%20Directory/ADの基本.md#Active%20Directoryとは)

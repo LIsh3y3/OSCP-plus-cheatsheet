@@ -1,4 +1,4 @@
-- 関連ノート：[[🐶Bloodhound]]
+- 関連ノート：[🐶Bloodhound](../Tools/🐶Bloodhound.md)
 
 - 参考リンク🔗
 	- [Cypherクエリの基礎 2020 #neo4j](https://www.creationline.com/tech-blog/data-management/neo4j/33668)

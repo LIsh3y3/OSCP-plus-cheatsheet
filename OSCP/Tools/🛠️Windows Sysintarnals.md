@@ -6,7 +6,7 @@
 
 - プロセス、スレッド、ファイルシステム、レジストリ関連の活動に関する情報をリアルタイムで表示できる
 - サービスバイナリがロードするDLLを識別することなどに使われる
-	- →[[💥Windows Privilege Escalation#Service Exploits - DLL Hijacking]]
+	- →[💥Windows Privilege Escalation](../Cheatsheet/🪟Windows/💥Windows%20Privilege%20Escalation.md#Service%20Exploits%20-%20DLL%20Hijacking)
 
 ## Process Monitorの使用方法
 
@@ -43,7 +43,7 @@ $$Procmonでフィルターを適用したイメージ$$
 ## PsLoggedOnの使用方法
 
 ADのdnshostnameで列挙したマシンに対して実行し、ドメイン内のマシンにログオン中のユーザーがいないかを確かめる
-	[[🔍AD Enumeration#コンピューターオブジェクトの列挙 w/ PowerView]]
+	[🔍AD Enumeration](../Cheatsheet/🪟Windows/Active%20Directory/🔍AD%20Enumeration.md#コンピューターオブジェクトの列挙%20w/%20PowerView)
 ```powershell
 # 例：.\PsLoggedon.exe \\files04.corp.com
 .\PsLoggedon.exe \\<dnshostname>

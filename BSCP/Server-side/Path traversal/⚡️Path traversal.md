@@ -55,7 +55,7 @@
 ## 手法
 #### No defenceの場合
 
-- 値を直接、[[#/etc/passwdのtraversal wordlist]]でbrute-force
+- 値を直接、[⚡️Path traversal](⚡️Path%20traversal.md#/etc/passwdのtraversal%20wordlist)でbrute-force
 ```
 /image?filename=§§
 ```
@@ -63,7 +63,7 @@
 #### Prefix validationの場合
 
 - `?filename=/var/www/images/36.jpg `みたいに元々絶対パス指定のとき
-- 元の正常な値のうしろでpath traversalを実行する（[[#/etc/passwdのtraversal wordlist]]で）
+- 元の正常な値のうしろでpath traversalを実行する（[⚡️Path traversal](⚡️Path%20traversal.md#/etc/passwdのtraversal%20wordlist)で）
 ```
 /image?filename=10.jpg§§
 ```
@@ -71,7 +71,7 @@
 #### Suffix validationの場合
 
 - 上記2つでうまくいかなかった場合
-- null byteを使用する（[[#/etc/passwdのtraversal wordlist]]で）
+- null byteを使用する（[⚡️Path traversal](⚡️Path%20traversal.md#/etc/passwdのtraversal%20wordlist)で）
 ```
 /image?filename=§§%00
 ```
@@ -84,19 +84,19 @@
 
 初期侵入ができていない段階で有効
 
-1. [[#手法]]に従い、`/etc/passwd`を抽出し、ユーザーとそのhome directoryをメモ（`/home/<username>`）
+1. [⚡️Path traversal](⚡️Path%20traversal.md#手法)に従い、`/etc/passwd`を抽出し、ユーザーとそのhome directoryをメモ（`/home/<username>`）
 ```
 user:x:1000:1000:user,,,:/home/<username>:/usr/bin/zsh
 ```
 
 2. home directory配下の秘密鍵を抽出
-	- id_rsa以外にもある：[[22 - SSH#SSH Private Keyの種類]]
+	- id_rsa以外にもある：[22 - SSH](../../../OSCP/Cheatsheet/Ports%20-%20Service/22%20-%20SSH.md#SSH%20Private%20Keyの種類)
 ```
 ../../../../../../../../../home/<username>/.ssh/id_rsa
 ```
 
 3. 秘密鍵を使ってSSHサーバーにアクセスする
-	- パスフレーズがあればssh2johnでクラックを試みる：[[🐈‍⬛Password Crack - JtR・Hashcat#ハッシュ値の整形]]
+	- パスフレーズがあればssh2johnでクラックを試みる：[🐈‍⬛Password Crack - JtR・Hashcat](../../../OSCP/Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ハッシュ値の整形)
 
 
 -  その他、`/etc/shadow`なども抽出の候補となり得る

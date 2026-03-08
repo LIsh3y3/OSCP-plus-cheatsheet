@@ -86,7 +86,7 @@ sudo proxychains nmap -sT -Pn <TargetIP> -p $ports -n -A -sV -oN Nmap/scan_via_p
 ```
 
 >[!TIP]
->アクセスできる内部NW インターフェースを探し当てるため、[[Nmap Live Host Discovery]]を実施する（ただし、たとえばHTTPがopenになっていてもブラウザでアクセスできないことがあるので、実際にアクセスできるかどうかは確認が必要）
+>アクセスできる内部NW インターフェースを探し当てるため、[Nmap Live Host Discovery](../../TryHackME/Jr%20Penetration%20Tester/Nmap%20Live%20Host%20Discovery.md)を実施する（ただし、たとえばHTTPがopenになっていてもブラウザでアクセスできないことがあるので、実際にアクセスできるかどうかは確認が必要）
 
 >[!WARNING] 注意
 > - proxychains.confの デフォルト設定である `socks4 127.0.0.1 9050` は コメントアウトすること
@@ -101,7 +101,7 @@ sudo proxychains nmap -sT -Pn <TargetIP> -p $ports -n -A -sV -oN Nmap/scan_via_p
 ```zsh
 python3 spose.py --proxy http://<squid_IP>:3128 --target <TargetIP>
 ```
-- 関連ノート：[[コンパイル・ビルド#Python Package Management (pip)]]
+- 関連ノート：[コンパイル・ビルド](../../Misc/コンパイル・ビルド.md#Python%20Package%20Management%20(pip))
 
 ## 各ツールのプロキシ対応オプション
 
@@ -132,7 +132,7 @@ wpscan --url http://<TargetIP>/wordpress --wp-content-dir wp-content --proxy htt
 ## プロキシ経由での隠れたポートへのアクセス
 
 Squidプロキシが動いているターゲットでは、直接アクセスできない内部ポートが存在することがある。  
-[[#SPOSE Scanner]] などでスキャンして開いているポートを特定し、ブラウザのプロキシ設定経由でアクセスする。
+[3128 - Squid](3128%20-%20Squid.md#SPOSE%20Scanner) などでスキャンして開いているポートを特定し、ブラウザのプロキシ設定経由でアクセスする。
 
 典型的な攻撃フロー：
 

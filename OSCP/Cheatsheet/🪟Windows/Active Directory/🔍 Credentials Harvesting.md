@@ -1,8 +1,8 @@
 ---
 ---
 - 関連ノート：
-	- [[🥝Mimikatz]]
-	- [[🔍Windows Local Enumeration]]
+	- [🥝Mimikatz](../../../Tools/🥝Mimikatz.md)
+	- [🔍Windows Local Enumeration](../🔍Windows%20Local%20Enumeration.md)
 
 ---
 
@@ -61,7 +61,7 @@ nxc smb <TargetIP> -u <username> -p <pw> --dpapi
 
 ## Mimikatz
 
-- [[🥝Mimikatz]]
+- [🥝Mimikatz](../../../Tools/🥝Mimikatz.md)
 - 管理者権限が必要
 ```powershell
 .\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" exit
@@ -83,7 +83,7 @@ nxc smb <TargetIP> -u <username> -p <pw> --dpapi
 	- →🚨ゴミ情報が多いので、ルートディレクトリから探索は避ける
 - 💡以下のディレクトリで検索すること
 	- ①ユーザーのホームディレクトリ
-	- ②[[#インストール済みアプリケーションの列挙]]で判明したアプリケーションの`Install Location`
+	- ②[🔍 Credentials Harvesting](🔍%20Credentials%20Harvesting.md#インストール済みアプリケーションの列挙)で判明したアプリケーションの`Install Location`
 	- ③ユーザーのホームディレクトリから一階層上がったディレクトリ→さらに一階層あがったディレクトリ...
 	- ④`C:\`ディレクトリ：==通常の構成と異なるディレクトリがあれば==要注目
 - ⚠️興味深い情報がエンコードされていて簡単に読み取れない可能性もある
@@ -231,7 +231,7 @@ Set-PSReadlineOption -HistorySaveStyle SaveNothing
 
 ## Registry Hives からの取得
 
-[[💥Windows Privilege Escalation#SAM・SYSTEMハイブ悪用による権限昇格]]
+[💥Windows Privilege Escalation](../💥Windows%20Privilege%20Escalation.md#SAM・SYSTEMハイブ悪用による権限昇格)
 
 ## Volume Shadow Copy Service (VSS) を利用した取得
 
@@ -463,10 +463,10 @@ Get-AdmPwdPassword -ComputerName <MachineName>
 
 ## SMB Relay Attack
 
-- [[5. Exploiting Active Directory#Exploiting Authentication Relays]]
+- [5. Exploiting Active Directory](../../../TryHackME/Offensive%20Pentesting/Active%20Directory/5.%20Exploiting%20Active%20Directory.md#Exploiting%20Authentication%20Relays)
 
 ## LLMNR/NBNS Poisoning
 
-[[2. Breaching Active Directory#Authentication Relays]]
+[2. Breaching Active Directory](../../../TryHackME/Offensive%20Pentesting/Active%20Directory/2.%20Breaching%20Active%20Directory.md#Authentication%20Relays)
 
 - SMBリレーやLLMNR/NBNSポイズニング攻撃の最終目標は、被害者の認証NTLMハッシュを取得し、被害者のアカウントやマシンへのアクセス権を取得すること

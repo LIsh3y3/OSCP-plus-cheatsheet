@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[コンパイル・ビルド#Python Package Management (pip)]]
+	- [コンパイル・ビルド](../../Misc/コンパイル・ビルド.md#Python%20Package%20Management%20(pip))
 - 参照：[Git's Reference page](https://git-scm.com/docs).
 
 ---
@@ -79,4 +79,4 @@ pipx install git-dumper
 git-dumper <url> <output_dir>
 ```
 
-3. [[#Local Git Enumeration]]の手法で列挙
+3. [Git Enumeration](Git%20Enumeration.md#Local%20Git%20Enumeration)の手法で列挙

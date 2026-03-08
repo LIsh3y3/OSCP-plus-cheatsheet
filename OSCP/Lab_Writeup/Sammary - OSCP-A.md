@@ -70,7 +70,7 @@
 
 3. PoCを使い、リバースシェルを獲得した
 	- pythonのPoCでうまくいかないときは、python2、3とバージョンを指定してみる
-	- シェルのペイロードがうまくいかないときは、[[What is the shell]]もしくは[revshells.com](https://www.revshells.com/)で探す
+	- シェルのペイロードがうまくいかないときは、[What is the shell](../Cheatsheet/Common/What%20is%20the%20shell.md)もしくは[revshells.com](https://www.revshells.com/)で探す
 
 4. WinPEASを実行し、PuTTY sessionで高権限ユーザーの認証情報を入手
 

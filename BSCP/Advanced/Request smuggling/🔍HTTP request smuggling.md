@@ -1,4 +1,4 @@
-[[⚡️HTTP request smuggling]]
+[⚡️HTTP request smuggling](⚡️HTTP%20request%20smuggling.md)
 
 #### 注目ポイント
 
@@ -17,19 +17,19 @@
 ---
 ## Detect
 
-- [[#注目ポイント]]にHTTP Request Smugglerの以下の機能を同時に実行する：
+- [🔍HTTP request smuggling](🔍HTTP%20request%20smuggling.md#注目ポイント)にHTTP Request Smugglerの以下の機能を同時に実行する：
 	- Smuggle Probe 
 	- HTTP/2 probe
 	- CL.0
 
 - 結果：複数検知されたら以下の順に優先してエクスプロイトしていく
-	- CL.TE multicase, TE.CL multicase, TE.CL dualchunk(TE.TEの事)などHTTP/1.1系 ->[[⚡️HTTP request smuggling#HTTP /1.1 × Smuggler]]
-	- CL.0 desync -> [[⚡️HTTP request smuggling#CL.0]]
+	- CL.TE multicase, TE.CL multicase, TE.CL dualchunk(TE.TEの事)などHTTP/1.1系 ->[⚡️HTTP request smuggling](⚡️HTTP%20request%20smuggling.md#HTTP%20/1.1%20×%20Smuggler)
+	- CL.0 desync -> [⚡️HTTP request smuggling](⚡️HTTP%20request%20smuggling.md#CL.0)
 	- HTTP/2 TE desync~などHTTP/2系↓
 
 #### ⚠️ HTTP/2 TE desync~の場合
 
-- HTTP/2 CLの可能性もあるので必ず検証する。[[1. HTTP2 request smuggling#1. H2.CL検出ステップ]]
+- HTTP/2 CLの可能性もあるので必ず検証する。[1. HTTP2 request smuggling](5.%20Advanced%20request%20smuggling/1.%20HTTP2%20request%20smuggling.md#1.%20H2.CL検出ステップ)
 
 ###### やっても無駄なこと
 

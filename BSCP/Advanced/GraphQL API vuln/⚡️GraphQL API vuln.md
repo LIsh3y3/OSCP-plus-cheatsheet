@@ -1,8 +1,8 @@
 
-- [[#Passwordの抽出]]
-- [[#ミューテーションの実行]]
-- [[#brute-force防御バイパス]]
-- [[#& CSRF]]
+- [⚡️GraphQL API vuln](⚡️GraphQL%20API%20vuln.md#Passwordの抽出)
+- [⚡️GraphQL API vuln](⚡️GraphQL%20API%20vuln.md#ミューテーションの実行)
+- [⚡️GraphQL API vuln](⚡️GraphQL%20API%20vuln.md#brute-force防御バイパス)
+- [⚡️GraphQL API vuln](⚡️GraphQL%20API%20vuln.md#&%20CSRF)
 
 ---
 ### Passwordの抽出
@@ -29,14 +29,14 @@ query {
 - ミューテーションでデータの操作が可能(PUT, DELETE, POST)
 - 操作対象のデータを引数に指定する。少しややこしい
 
-- 具体例: [[3. GraphQLスキーマの情報窃取と防御バイパス#mutationの具体例]]
+- 具体例: [3. GraphQLスキーマの情報窃取と防御バイパス](3.%20GraphQLスキーマの情報窃取と防御バイパス.md#mutationの具体例)
 
 ---
 ### brute-force防御バイパス
 
-- [[5. Aliaseを使用した総当たり攻撃に対するrate制限のバイパス]]
+- [5. Aliaseを使用した総当たり攻撃に対するrate制限のバイパス](5.%20Aliaseを使用した総当たり攻撃に対するrate制限のバイパス.md)
 
 ---
 ### & CSRF
 
-[[6. GraphQL CSRF]]
+[6. GraphQL CSRF](6.%20GraphQL%20CSRF.md)

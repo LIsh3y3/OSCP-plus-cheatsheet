@@ -51,8 +51,8 @@
 ### 送信者のメールアドレスの入手先
 
 - 送信者のアドレスは、重要なブランド、既知の連絡先、または同僚を偽装したドメイン名であることが望ましい。
-	- [[Module 11：Phishing#フィッシングドメインの選択]]
-- ターゲットがどのようなブランドや人物と交流しているかを調べるには、OSINT戦術を活用：[[1. Recon]]
+	- [Module 11：Phishing](Module%2011：Phishing.md#フィッシングドメインの選択)
+- ターゲットがどのようなブランドや人物と交流しているかを調べるには、OSINT戦術を活用：[1. Recon](../TryHackME/Red%20Teaming/2.%20Initial%20Access/1.%20Recon.md)
 - SNSアカウントを観察し、ターゲットが興味をもっているブランドや友人について調べる。  
 - Googleでターゲットの名前と大まかな場所を検索し、ターゲットが地元の企業やブランドについて残したレビューがないか確認する。  
 - ターゲットのビジネスWebサイトを見て、取引先を見つける。  
@@ -91,7 +91,7 @@
 | HTA             | ・HTML Application の略（`.hta`）  <br>・IEエンジン上でHTML + JavaScriptやVBScriptを**Windowsアプリのように実行可能**  <br>・拡張子を偽装して送ることで実行を誘導されやすい                                                                     |
 | JS / JSE        | ・JScript または JavaScriptファイル（`.js`, `.jse`）  <br>・Windows上では WScript で実行され、ファイル操作やネットワーク通信が可能  <br>・`jse` は暗号化されたスクリプト                                                                          |
 | VBS / VBE       | ・VBScriptファイル（`.vbs`）とその暗号化版（`.vbe`）  <br>・ユーザー操作や自動実行でコードを実行可能                                                                                                                                |
-| DOC / XLS / PPT | ・Office文書形式  <br>・マクロを含むことが可能（`.docm`, `.xlsm` など）  <br>・MotWがあるとマクロが自動実行されないように設計されている：[[Module 12：Client-side Attacks#MotW（Mark of the Web）]]                                                |
+| DOC / XLS / PPT | ・Office文書形式  <br>・マクロを含むことが可能（`.docm`, `.xlsm` など）  <br>・MotWがあるとマクロが自動実行されないように設計されている：[Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#MotW（Mark%20of%20the%20Web）)                                                |
 | RTF             | ・Rich Text Format（書式付きテキスト）  <br>・テキストベースであるが、埋め込みオブジェクトや脆弱性（例：CVE-2023-21716）を利用してコード実行が可能  <br>・マクロ不要で実行される場合もあり危険性が高い<br>・[CVE-2023-21716](https://nvd.nist.gov/vuln/detail/CVE-2023-21716) |
 | LNK             | ・Windowsショートカットファイル  <br>・見た目は普通のファイルだが、内部で任意のコマンド（EXEやスクリプト）を実行できる                                                                                                                            |
 | PDF             | ・use-after-free脆弱性によるRCE：[CVE-2023-21608](https://nvd.nist.gov/vuln/detail/CVE-2023-21608)                                                                                                     |
@@ -115,7 +115,7 @@
 - フィッシングキャンペーンを成功させるためには、ある程度のインフラを整える必要がある
 
 ✅Domain Name:
-	本物そっくりのドメイン名か、他のドメインを模倣したドメイン名を登録する。完璧なドメイン名を作成する方法の詳細は[[Module 11：Phishing#Using GoPhish]]
+	本物そっくりのドメイン名か、他のドメインを模倣したドメイン名を登録する。完璧なドメイン名を作成する方法の詳細は[Module 11：Phishing](Module%2011：Phishing.md#Using%20GoPhish)
 
 ✅ SSL/TLS Certificates:
 	選択したドメイン名のSSL/TLS証明書を作成することで、攻撃に信憑性を持たせる
@@ -158,7 +158,7 @@
 
 - これはフィッシングメールがターゲットを誘導する先のWebサイト
 - 企業のWebサイトをクローンするなどの方法もとられる
-	- →[[#Credential Phishing実践]]
+	- →[Module 11：Phishing](Module%2011：Phishing.md#Credential%20Phishing実践)
 
 - Landing Pages -> New Page
 - Name：欄に適切な名前をつけ、次にHTMLボックスで「Source」ボタンを押し、以下のようにHTMLコードを入力する
@@ -248,7 +248,7 @@
 
 ## フィッシングドメインの選択
 
-[[Module 11：Phishing#送信者のメールアドレス]]
+[Module 11：Phishing](Module%2011：Phishing.md#送信者のメールアドレス)
 
 - ターゲットに対して心理的優位性を確保するためには、攻撃を開始するフィッシング・ドメインを適切に選択することが不可欠。攻撃者は以下のような方法を用いて最適なドメイン名を選択する
 
@@ -286,7 +286,7 @@
 # フィッシングでのMS Officeの利用
 
 - フィッシングキャンペーンでは、Microsoft Office文書（通常、Word、Excel、PowerPoint）が添付ファイルとして添付されることがよくある。
-- Office文書にはマクロが含まれていることがある。マクロはコンピュータのコマンドを実行するために使用され、被害者のコンピュータにマルウェアをインストールさせたり、攻撃者のネットワークに接続して被害者のコンピュータを制御させたりする可能性がある。[[2. WeaponizationとDelivery#Visual Basic for Application - VBA]]
+- Office文書にはマクロが含まれていることがある。マクロはコンピュータのコマンドを実行するために使用され、被害者のコンピュータにマルウェアをインストールさせたり、攻撃者のネットワークに接続して被害者のコンピュータを制御させたりする可能性がある。[2. WeaponizationとDelivery](../TryHackME/Red%20Teaming/2.%20Initial%20Access/2.%20WeaponizationとDelivery.md#Visual%20Basic%20for%20Application%20-%20VBA)
 
 - 例えば、会社で働くスタッフが、人事部から「Staff_Salaries.xlsx」というExcelスプレッドシートを含むメールを受け取った。 これは実は、攻撃者が人事部のメールアドレスを詐称し、スタッフを誘惑して添付ファイルを開かせようとしている。  職員が添付ファイルを開き、マクロを有効にすると、その職員のコンピュータが危険にさらされた
 
@@ -317,7 +317,7 @@
 ※以下、Zoomをクローン対象とする
 
 
-- 上記の2〜4はSETで自動化できる：[[#フィッシングサイト作成の自動化 w/ SET(Social- Engineer-Toolkit)]]
+- 上記の2〜4はSETで自動化できる：[Module 11：Phishing](Module%2011：Phishing.md#フィッシングサイト作成の自動化%20w/%20SET(Social-%20Engineer-Toolkit))
 	- しかし、Zoomのログインページのように、POSTリクエストを他のエンドポイントに送信して処理する場合、SETは指定したURLの静的なページしか入力情報をキャプチャできないので、うまくいかない
 	- 💡まず、SETでクローンしてみて、うまくキャプチャできないのであれば、下記の手法でクローンする。
 
@@ -578,7 +578,7 @@ subl signin.html
 2. 正規のSigninページに存在する画像のURLをコピーする
 ![[Pasted image 20250511162853.png]]
 
-3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[[#4.4 LLMにPOSTデータ送信先を用意させる]]）
+3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[Module 11：Phishing](Module%2011：Phishing.md#4.4%20LLMにPOSTデータ送信先を用意させる)）
 ```txt
 divタグを2つ書き、1つは左側に配置し、次の画像を入れてください：
 https://file-paa.zoom.us/1xJu7pL8RIWc9lsGFcnRcQ/MS4yLqsI3_R6GW921i53kTJpxI85yLrAIDXer91U-i7ukgBK/12b43c75-e1f7-4d9c-93ee-aaa7f83fdd1a.png
@@ -650,8 +650,8 @@ cat test_data.txt
 
 ## 5. フィッシングメールの作成
 
-- [[#1. Credential Phishing Pretext（口実）の作成]]で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
-- ドメイン名は、正規のFQDNを真似ること（[[#フィッシングドメインの選択]]）
+- [Module 11：Phishing](Module%2011：Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
+- ドメイン名は、正規のFQDNを真似ること（[Module 11：Phishing](Module%2011：Phishing.md#フィッシングドメインの選択)）
 ```txt
 Hello Sales department,
 
@@ -732,7 +732,7 @@ set:webattack> Enter the url to clone: [URL]
 
 # 補足：メールの送信方法
 
-→[[25,465,587 - SMTP#Phishingの送信]]
+→[25,465,587 - SMTP](../Cheatsheet/Ports%20-%20Service/25,465,587%20-%20SMTP.md#Phishingの送信)
 
 ---
 ---

@@ -1,4 +1,4 @@
-[[Port Scan & Vuln Scan]]
+[Port Scan & Vuln Scan](../../Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
 # スキャンタイプ一覧表
 
 | スキャンタイプ                | コマンド例                                                      |
@@ -35,7 +35,7 @@
 # ホストディスカバリ実行コマンド
 
 - どのホストがオンラインかわからない場合はまずこれを実行
-- `-Pn`は使わないこと [[Nmap Live Host Discovery#ホストディスカバリにおける注意点]]
+- `-Pn`は使わないこと [Nmap Live Host Discovery](Nmap%20Live%20Host%20Discovery.md#ホストディスカバリにおける注意点)
 
 複数ホストをスキャンしてオンラインホストの一覧を作成（ping sweep(`-sn`)より正確）
 ```zsh
@@ -56,4 +56,4 @@ Nmapが使えないとき：
 # サブネットに存在する機器に対し、特定ポートがopenかどうかを検証
 for i in $(seq 1 254); do nc -zv -w 1 [サブネットIP第三オクテット].$i <Port>; done
 ```
-- Windowsの場合は[[Living off the Land#Test-NetConnectionによるポートスキャン]]
+- Windowsの場合は[Living off the Land](../../Cheatsheet/🪟Windows/Living%20off%20the%20Land.md#Test-NetConnectionによるポートスキャン)

@@ -1,12 +1,12 @@
 
-- [[1. Request smugglingの基本]]
+- [1. Request smugglingの基本](1.%20Request%20smugglingの基本.md)
 - [公式ドキュメント：使い方](https://github.com/PortSwigger/http-request-smuggler?tab=readme-ov-file#practice)
 - 参考記事：[How to use HTTP Request Smuggler](https://peter-de-witte.medium.com/how-to-use-the-http-request-smuggler-extension-to-perform-an-attack-8a09c1a6801b)
 
 
 ###### 結果の確認方法
 
-- Pro: DashboardのIssuesタブから。Issuesなら[[2. 基本的なHRSの実行]]の種類がわかる
+- Pro: DashboardのIssuesタブから。Issuesなら[2. 基本的なHRSの実行](2.%20基本的なHRSの実行.md)の種類がわかる
 - Community: Extensions -> HTTP request smugglerのOutputタブから
 
 ###### 実行中の確認
@@ -44,7 +44,7 @@
 
 - ⭐️`prefix`の値を目的に合わせて変更すれば、HRS関連は(現実のアプリでも)原則すべて悪用可能
 - ==⚠️==: 多数のリクエストにより対象サーバが反応しなくなることがある。攻撃を停止し時間が経てば元に戻る
-	- 維持系の攻撃には使用しない[[4. HRS脆弱性の悪用]]
+	- 維持系の攻撃には使用しない[4. HRS脆弱性の悪用](4.%20HRS脆弱性の悪用.md)
 
 #### Pro Edition
 

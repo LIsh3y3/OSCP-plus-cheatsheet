@@ -1,11 +1,11 @@
-[[⚡️GraphQL API vuln]]
+[⚡️GraphQL API vuln](⚡️GraphQL%20API%20vuln.md)
 
 #### 注目ポイント
 
 - GraphQLが実行されている
 	- HTTP Historyに`graphql`と記載がある等
 
-- [[🔍CSRF#CSRFかもしれない条件]]が見られる
+- [🔍CSRF](../../Client-side/CSRF/🔍CSRF.md#CSRFかもしれない条件)が見られる
 
 ---
 ##### GraphQLをBurpで使用する際の注意点
@@ -24,7 +24,7 @@ query=
 ---
 ## Detect
 
-- [[🔍 Recon#2. 隠されたエンドポイントの検出]]で"Query not present"と検出されたエンドポイントがあるか？
+- [🔍 Recon](../../cheatsheet/🔍%20Recon.md#2.%20隠されたエンドポイントの検出)で"Query not present"と検出されたエンドポイントがあるか？
 	 or
 - IssueのInformationに"GraphQL endpoint found"が表示されるか？
 
@@ -39,7 +39,7 @@ query=
 ![[Pasted image 20240214125526.png | 300]]
 
 4. `shema.json`のテキストをコピーし、[GraphQL voyager](https://graphql-kit.com/graphql-voyager/)でビジュアライズする
-	- 使い方は[[3. GraphQLスキーマの情報窃取と防御バイパス#⭐️③ [GraphQL voyager](https //graphql-kit.com/graphql-voyager/)を使って、結果をわかりやすくする]]
+	- 使い方は[3. GraphQLスキーマの情報窃取と防御バイパス](3.%20GraphQLスキーマの情報窃取と防御バイパス.md#⭐️③%20[GraphQL%20voyager](https%20//graphql-kit.com/graphql-voyager/)を使って、結果をわかりやすくする)
 
 #### スキーマ取得妨害バイパス
 
@@ -80,4 +80,4 @@ query{__typename}
 
 ###### (ないとは思うが)これでもうまくいかないとき
 
-- [[2. GraphQL APIの脆弱性とエンドポイントの見つけ方#2. Repeaterの"Change request method"で以下の順に遷移するので、それぞれのリクエストメソッドを試す]]
+- [2. GraphQL APIの脆弱性とエンドポイントの見つけ方](2.%20GraphQL%20APIの脆弱性とエンドポイントの見つけ方.md#2.%20Repeaterの"Change%20request%20method"で以下の順に遷移するので、それぞれのリクエストメソッドを試す)

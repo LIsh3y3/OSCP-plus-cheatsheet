@@ -1,6 +1,6 @@
 - 関連ノート：
-	- [[1433 - MSSQL]]
-	- [[0. RDBMSの基本]]
+	- [1433 - MSSQL](../Ports%20-%20Service/1433%20-%20MSSQL.md)
+	- [0. RDBMSの基本](../../../BSCP/Server-side/SQLi/0.%20RDBMSの基本.md)
 
 - 参考：
 	- [SQLi cheat sheet - PortsSwigger](https://portswigger.net/web-security/sql-injection/cheat-sheet) : RDBMSごとの文法で記載あり
@@ -12,7 +12,7 @@
 
 結果がブラウザの画面やレスポンス内に直接表示されるタイプのSQLiのこと（攻撃の送信とデータの取得を同じ通信チャネルで実施）。
 
-直接結果が現れないタイプを、[[#Blind SQLi]]という。
+直接結果が現れないタイプを、[SQL Injection](SQL%20Injection.md#Blind%20SQLi)という。
 
 ## 🔍Enumeration
 
@@ -46,7 +46,7 @@ $
 > - 検索boxでは、行頭に`%`をつける(e.g.`%' xxx -- //`)
 > - `--` の後の空白がアプリ側で除去される場合があるので、コメントを使って対応する
 > 	- `-- #`
-> 	- `-- //` ...など（[[#SQLコメントアウトの種類表]]）
+> 	- `-- //` ...など（[SQL Injection](SQL%20Injection.md#SQLコメントアウトの種類表)）
 > - HTTPリクエストヘッダが`Content-Type: application/x-www-form-urlencoded`のときは、ペイロードをURLエンコードすること
 > - 明確なエラーメッセージが表示されない場合もあるため、レスポンスの応答時間やlengthの変化を観察
 
@@ -56,7 +56,7 @@ $
 
 | RDBMS      | 典型エラーメッセージ                                                                        | 備考                                                                       |
 | ---------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| MSSQL      | `Unclosed quotation mark after the character string`  <br>`Incorrect syntax near` | `SqlException` や `.SqlClient.` を含む<br>（参考ノート：[[Webアプリケーションのテクノロジー#ASP]]） |
+| MSSQL      | `Unclosed quotation mark after the character string`  <br>`Incorrect syntax near` | `SqlException` や `.SqlClient.` を含む<br>（参考ノート：[Webアプリケーションのテクノロジー](../../../BSCP/Misc/Webアプリケーションのテクノロジー.md#ASP)） |
 | MySQL      | `You have an error in your SQL syntax; check the manual...`                       | `MySqlException` など                                                      |
 | PostgreSQL | `syntax error at or near`                                                         | `org.postgresql.util.PSQLException`（Java系）                               |
 | Oracle     | `ORA-01756: quoted string not properly terminated`                                | `OracleException` が出ることもある                                               |
@@ -236,7 +236,7 @@ or
 ### Error-based
 
  挿入した条件文のクエリがtrueの場合に意図的にエラーを発生させる。
-[[#悪意のある文字を使ったテスト（"Bad Chars"）]]でわかる可能性が高い。
+[SQL Injection](SQL%20Injection.md#悪意のある文字を使ったテスト（"Bad%20Chars"）)でわかる可能性が高い。
 
 基本構文
 ```sql
@@ -252,8 +252,8 @@ or
 
 ### リモートコマンドの実行
 
-- MySQL：[[#★Webシェルの書き込み（MySQL）]]
-- MSSQL：[[1433 - MSSQL#💥 Exploit]]
+- MySQL：[SQL Injection](SQL%20Injection.md#★Webシェルの書き込み（MySQL）)
+- MSSQL：[1433 - MSSQL](../Ports%20-%20Service/1433%20-%20MSSQL.md#💥%20Exploit)
 
 #### PostgreSQL
 
@@ -390,7 +390,7 @@ SELECT EXTRACTVALUE(1, CONCAT(0x5c, (SELECT password FROM users LIMIT 1)));
 
 ##### Error-based SQLi 具体例：パスワードの抽出
 
-- 基本の考え方は[[#Boolean-based SQLi 具体例：パスワード抽出]]と同じだが、Error-basedはWebアプリのレスポンスから値が漏洩する
+- 基本の考え方は[SQL Injection](SQL%20Injection.md#Boolean-based%20SQLi%20具体例：パスワード抽出)と同じだが、Error-basedはWebアプリのレスポンスから値が漏洩する
 
 1. 文字のおおまかな範囲を決定する。
 ```sql
@@ -401,7 +401,7 @@ user=offsec' AND IF((SELECT LENGTH(password) FROM users WHERE username = 'admini
 ```sql
 user=offsec' AND IF((SELECT SUBSTRING(password, 1, 1) FROM users WHERE username='administrator') = 'm', 1/0, 'a') = 'a'--
 ```
-- 💡自動で実行する方法は、[[#Boolean-based SQLi 具体例：パスワード抽出]]のペイロードを、Error-basedに変更するだけ
+- 💡自動で実行する方法は、[SQL Injection](SQL%20Injection.md#Boolean-based%20SQLi%20具体例：パスワード抽出)のペイロードを、Error-basedに変更するだけ
 - 参考：[Extracting data via visible error messages - SQLi cheat sheet by PortSwigger](https://portswigger.net/web-security/sql-injection/cheat-sheet#:~:text=Extracting%20data%20via%20visible%20error%20messages)
 
 

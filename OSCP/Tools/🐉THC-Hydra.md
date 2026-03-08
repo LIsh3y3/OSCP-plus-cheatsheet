@@ -20,7 +20,7 @@ Administrator:Administrator
 # Summery
 
 Webログインフォームへのパスワードアタック(POST)
-	（[[#構成要素]]を確認（特にFailure Message））
+	（[🐉THC-Hydra](🐉THC-Hydra.md#構成要素)を確認（特にFailure Message））
 ```zsh
 hydra -l <username> -P <wordlist> <target_ip> http-post-form "/<url残り>:<クエリ文字列>:F=<Failure_Message>" 
 ```

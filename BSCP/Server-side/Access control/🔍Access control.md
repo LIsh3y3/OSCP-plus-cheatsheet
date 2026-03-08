@@ -1,4 +1,4 @@
-[[⚡️Access control]]
+[⚡️Access control](⚡️Access%20control.md)
 
 #### 注目ポイント
 
@@ -23,7 +23,7 @@ APPERENTICE
 - 具体例：
 	- `roleid`等
 	- Live chat機能で`[num].txt`形式のファイルをダウンロードする場合
--> [[⚡️Access control#リクエストパラメタでのIDOR悪用例]]
+-> [⚡️Access control](⚡️Access%20control.md#リクエストパラメタでのIDOR悪用例)
 
 ### PrivEsc
 
@@ -37,11 +37,11 @@ X-Original-URL: /hoge
 ```http
 X-Rewrite-URL: /hoge
 ```
--> [[⚡️Access control#URL-based access control bypass]]
+-> [⚡️Access control](⚡️Access%20control.md#URL-based%20access%20control%20bypass)
 
 ###### B. 他のリクエストメソッドが使用できないか
 
 - アプリの機能を実行するPOSTリクエストのメソッドをGETに変更してみる
 - "Missig parameter xxx"等のエラーが返ればOK
 - (または`OPTIONS`リクエストする)
--> [[⚡️Access control#Method-based access control bypass]]
+-> [⚡️Access control](⚡️Access%20control.md#Method-based%20access%20control%20bypass)

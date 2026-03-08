@@ -221,7 +221,7 @@ reboot -h now
 ### 対策
 
 - 一般的に、接続切断は、Staged payloadをnetcatリスナーで使用した場合にのみ起こるため、Stageless payloadにする
-	- [[5. AV Evasion：Shellcode#Staged / Stageless Payloads]]
+	- [5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md#Staged%20/%20Stageless%20Payloads)
 
 - ⭐️**mtu値を下げる** →代替これで解決する（ファイルダウンロードできない、などの事象も解消）
 ```zsh
@@ -368,7 +368,7 @@ sudo nano /etc/fstab
 
 # 基本機能
 
-- [[PEN-103]]
+- [PEN-103](PEN-103.md)
 
 ## スナップショットを撮る方法
 
@@ -466,8 +466,8 @@ sha256sum -c sha256sum_nessus
 - [x] Kaliに共有フォルダを設定
 - [x] sublime text, Bloodhound, kerbrute, penelope, Burp Suite,autorecon,rustscan,flameshotをインストール
 	- [x] sublimeはkey bindingの編集
-- [x] [[#Kaliで Windows と同じ「Win + Ctrl + →」でワークスペース切替する方法]]を設定
+- [x] [vmware-kali linux](vmware-kali%20linux.md#Kaliで%20Windows%20と同じ「Win%20+%20Ctrl%20+%20→」でワークスペース切替する方法)を設定
 	- [x] 追加で、"Move window to left/right workspace"を、shift + win + ctrl + →/←と設定
 - [x] rockyou.txt.gzをgzipでアンジップ
-- [x] [[#日本語入力]]を有効にする
+- [x] [vmware-kali linux](vmware-kali%20linux.md#日本語入力)を有効にする
 - [x] sublime textにANSI Escaping, Markdown Extended, MarkdownEditingを入れる

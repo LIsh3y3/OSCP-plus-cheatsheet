@@ -1,6 +1,6 @@
 ###### 使用されてないエンドポイントを悪用する
 
-- [[🔍API testing#有効なHTTPリクエスト作成のためのAPIエンドポイントについての調査]]で発見したHTTPメソッドや`Content-Type`を使用して任意の値に変更する
+- [🔍API testing](🔍API%20testing.md#有効なHTTPリクエスト作成のためのAPIエンドポイントについての調査)で発見したHTTPメソッドや`Content-Type`を使用して任意の値に変更する
 
 [Lab: Finding and exploiting an unused API endpoint](https://portswigger.net/web-security/api-testing/lab-exploiting-unused-api-endpoint)
 
@@ -66,12 +66,12 @@ PATCH /api/users/
 ## Server-side parameter pollution
 
 - パスワードリセット
-- [[2. クエリとして内部APIへ送信するストリングのテスト#Server-side parameter pollution]]
+- [2. クエリとして内部APIへ送信するストリングのテスト](4.%20Server-sideパラメタ汚染/2.%20クエリとして内部APIへ送信するストリングのテスト.md#Server-side%20parameter%20pollution)
 
 [Lab: Exploiting server-side parameter pollution in a query string](https://portswigger.net/web-security/api-testing/server-side-parameter-pollution/lab-exploiting-server-side-parameter-pollution-in-query-string)
 
 ---
 ## Expert: REST pathのテスト(可能性低)
 
-- [[3. REST pathのテスト]]
+- [3. REST pathのテスト](4.%20Server-sideパラメタ汚染/3.%20REST%20pathのテスト.md)
 

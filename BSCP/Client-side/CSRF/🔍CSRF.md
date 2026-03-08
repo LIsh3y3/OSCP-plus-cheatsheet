@@ -1,4 +1,4 @@
-[[⚡️CSRF]]
+[⚡️CSRF](⚡️CSRF.md)
 
 - 目的： adminのemailをエクスプロイトサーバのドメインを持つメールアドレスに変更し、adminのパスワードをリセットしてadminを侵害
 
@@ -7,7 +7,7 @@
 - Update email機能
 - Login with social media機能：OAuth
 - Live chat機能： WebSocket
-- Forgot password機能 -> [[2. CSRF token検証のバイパス#CSRF tokenがユーザのセッションと結びついていない]]
+- Forgot password機能 -> [2. CSRF token検証のバイパス](2.%20CSRF%20token検証のバイパス.md#CSRF%20tokenがユーザのセッションと結びついていない)
 ![[Pasted image 20240222153212.png | 250]]
 
 ---

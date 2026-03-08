@@ -14,11 +14,11 @@
 ---
 ### プラットフォームの誤設定によるアクセス制御の不具合を悪用する
 
-- 詳細：[[2. Privilege Escalationの基本#プラットフォームの誤設定によるアクセス制御の不具合]]
+- 詳細：[2. Privilege Escalationの基本](2.%20Privilege%20Escalationの基本.md#プラットフォームの誤設定によるアクセス制御の不具合)
 
 ###### URL-based access control bypass
 
-- [[🔍Access control#URL上書きヘッダをサポートしているか？]]でわかったヘッダでURLを上書きしてアクセスする
+- [🔍Access control](🔍Access%20control.md#URL上書きヘッダをサポートしているか？)でわかったヘッダでURLを上書きしてアクセスする
 ```http
 GET / HTTP/2
 ...
@@ -27,18 +27,18 @@ X-Original-URL: /admin
 
 ###### Method-based access control bypass
 
-- [[🔍Access control#他のリクエストメソッドが使用できないか]]
+- [🔍Access control](🔍Access%20control.md#他のリクエストメソッドが使用できないか)
 - 利用可能なメソッドでリクエストしてみる
 
 ---
 ### multi-stepプロセスにおけるアクセス制御の脆弱性
 
-- [[4. 様々なアクセス制御の脆弱性#multi-stepプロセスにおけるアクセス制御の脆弱性]]
+- [4. 様々なアクセス制御の脆弱性](4.%20様々なアクセス制御の脆弱性.md#multi-stepプロセスにおけるアクセス制御の脆弱性)
 
 ---
 ### Refererヘッダによるアクセス制御バイパス
 
-- [[4. 様々なアクセス制御の脆弱性#Refererヘッダによるアクセス制御バイパス]]
+- [4. 様々なアクセス制御の脆弱性](4.%20様々なアクセス制御の脆弱性.md#Refererヘッダによるアクセス制御バイパス)
 
 ---
 ### リクエストパラメタでのIDOR悪用例

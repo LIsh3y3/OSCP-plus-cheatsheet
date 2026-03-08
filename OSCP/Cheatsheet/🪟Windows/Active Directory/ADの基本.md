@@ -43,7 +43,7 @@
 | samAccountType                                  |                                                                             属性の１つ。オブジェクトの種類を識別するために使われる |                                                                                                                                                                         |
 | sAMAccountName                                  |                                                                           旧来のログオン名（Windows互換の短いアカウント名）。 | `jsmith`                                                                                                                                                                |
 | userPrincipalName（UPN）                          |                                                                                          電子メール形式のログオン名。 | `jsmith@corp.com`                                                                                                                                                       |
-| ADSI<br>(Active Directory Service Interface)    |                                                                    ADと通信するためのCOMコンポーネントの塊([[用語#COMとは]]) | ADSIは以下のプロバイダーをサポート：<br>・`LDAP://` : **LDAP プロバイダー**<br>・`WinNT:// `: Windows NT プロバイダー（古い形式）<br>・`IIS://` : IIS プロバイダー<br>・`NDS://` : Novell Directory Services プロバイダー |
+| ADSI<br>(Active Directory Service Interface)    |                                                                    ADと通信するためのCOMコンポーネントの塊([用語](../../../Misc/用語.md#COMとは)) | ADSIは以下のプロバイダーをサポート：<br>・`LDAP://` : **LDAP プロバイダー**<br>・`WinNT:// `: Windows NT プロバイダー（古い形式）<br>・`IIS://` : IIS プロバイダー<br>・`NDS://` : Novell Directory Services プロバイダー |
 | **LDAP**（Lightweight Directory Access Protocol） |                                                                       ADとの通信に使用されるプロトコルで、ADの列挙はLDAPに依存。 | `ldapsearch -x -H ldap://dc.corp.com -b "dc=corp,dc=com" "(objectClass=user)"`                                                                                          |
 | LDAPS / StartTLS                                |                                                                     LDAPのセキュア版（暗号化）。ポート636やSTARTTLSで使用。 | LDAPS ポート：`636`                                                                                                                                                         |
 | **DN**<br>(Distinguish Name)                    | AD内のオブジェクトを一意に識別する名前。==右から左に読む==(階層が上から下へ行く）。LDAPのパスとして使う。<br>==オブジェクトの指定にはDNを使うと確実==（`-Identity <DN>`) | `CN=Stephanie,CN=Users,DC=corp,DC=com`                                                                                                                                  |
@@ -177,7 +177,7 @@ $$TGSでサービスの使用要求$$
 
 - KDC LT Key：krbtgtがTGTを暗号化し==PACに署名する==ためのもの
 - Client LT Key：
-	- [[#Kerberos認証ステップ]]でUser Hashとあるもの
+	- [ADの基本](ADの基本.md#Kerberos認証ステップ)でUser Hashとあるもの
 	- サーバーは、クライアントのClient LT Keyを使用して、そのハッシュ値を検証し、クライアントが正当なユーザーであることを確認する
 	- 暗号化されたタイムスタンプの検証や、セッションキーの暗号化に使用
 - *PAC(Privilege Attribute Certificate)*： 
@@ -189,7 +189,7 @@ $$TGTのイメージ$$
 
 #### TGS
 
-- Service LT Key：[[#Kerberos認証ステップ]]でservice owner hashとあるもので、サービスチケットを暗号化する
+- Service LT Key：[ADの基本](ADの基本.md#Kerberos認証ステップ)でservice owner hashとあるもので、サービスチケットを暗号化する
 ![[Pasted image 20230413150522.png]]
 $$TGSのイメージ$$
 

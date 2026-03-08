@@ -1,22 +1,22 @@
 ## Passive (=OSINT)
 
-- [[OSINT]]
+- [OSINT](../Cheatsheet/Common/OSINT.md)
 
 ---
 ---
 ## Active
 
-- DNS Enumeration: [[53 - DNS|53 - DNS]]
+- DNS Enumeration: [53 - DNS](../Cheatsheet/Ports%20-%20Service/53%20-%20DNS.md)
 
-- PortScan：[[Port Scan & Vuln Scan]]
+- PortScan：[Port Scan & Vuln Scan](../Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
 
-- SMB Enumeration: [[139,445 -NetBIOS, SMB]]
+- SMB Enumeration: [139,445 -NetBIOS, SMB](../Cheatsheet/Ports%20-%20Service/139,445%20-NetBIOS,%20SMB.md)
 
-- SMTP Enumeration: [[25,465,587 - SMTP]]
+- SMTP Enumeration: [25,465,587 - SMTP](../Cheatsheet/Ports%20-%20Service/25,465,587%20-%20SMTP.md)
 
-- SNMP Enumeration: [[161,162 - SNMP]]
+- SNMP Enumeration: [161,162 - SNMP](../Cheatsheet/Ports%20-%20Service/161,162%20-%20SNMP.md)
 
-- Exiftool: [[Module 12：Client-side Attacks#Exiftool]]
+- Exiftool: [Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#Exiftool)
 
 ###### 🤖LLM
 

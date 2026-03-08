@@ -16,7 +16,7 @@
 
 > [!WARNING]
 > - **再帰探索はできない**ため、一階層下のディレクトリしか探索しない
-> 	- →手動で`-u`の値を都度変えてスキャンするか、[[🦝FeroxBuster]]を使う
+> 	- →手動で`-u`の値を都度変えてスキャンするか、[🦝FeroxBuster](🦝FeroxBuster.md)を使う
 
 ## ディレクトリ・ファイル列挙コマンド
 
@@ -28,7 +28,7 @@ ulimit -n 8192
 ```zsh
 gobuster dir -u http://<target_IP>:<port>/ -r -k -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -t 100 -o gobuster.txt -x '<extensions>'
 ```
-- `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[[#拡張子リスト]]）
+- `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[👻Gobuster](👻Gobuster.md#拡張子リスト)）
 
 ワードリストとパターンリストを組み合わせて、APIのバージョンパスなどを列挙する
 	（ファイル名：pattern.txtとする） 
@@ -42,7 +42,7 @@ gobuster dir -u http://<target_IP>:<port>/ -w <wordlist> -p pattern.txt
 
 ## dirモードラブルシューティング / Tips
 
-- 何も見つからない時は、他のwordlistを試す（[[#補足：利用ワードリスト候補]]）
+- 何も見つからない時は、他のwordlistを試す（[👻Gobuster](👻Gobuster.md#補足：利用ワードリスト候補)）
 - 404などの出力が多いときは`-s`、`-b`を使いフィルタリング
 - エラーが多いときは`--no-error`を使うか、`-t`を減らす
 

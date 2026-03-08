@@ -91,7 +91,7 @@ $$smbclientで接続後ls実施した画面$$
 
 ## 用語
 
-- RID: Relative Identifier([[用語#SID, RID]])
+- RID: Relative Identifier([用語](../../Misc/用語.md#SID,%20RID))
 - NULLセッション: 認証なし接続
 - UNCパス（`\\example\ADMIN$\`）：ネットワーク上のリソースを指定するWindowsの標準形式
 
@@ -333,7 +333,7 @@ netexec smb $TargetIP -u <username> -p '<password>' -M spider_plus
 netexec smb $TargetIP -u <username> -p '<PW>' --users
 ```
 
-ユーザーのブルートフォース([[用語#RID (Relative Identifier)]])
+ユーザーのブルートフォース([用語](../../Misc/用語.md#RID%20(Relative%20Identifier)))
 ```zsh
 netexec smb $TargetIP -u guest -p '' --rid-brute
 ```
@@ -355,7 +355,7 @@ NSE
 nmap --script smb-brute -p 445 $TargetIP
 ```
 
-Hydra（[[🐉THC-Hydra]]）
+Hydra（[🐉THC-Hydra](../../Tools/🐉THC-Hydra.md)）
 ```zsh
 hydra -V -f -l <username> -P <wordlist> $TargetIP smb
 ```
@@ -365,7 +365,7 @@ SMBリレー攻撃
 ```zsh
 netexec smb $TargetIP --gen-relay-list <output.txt>
 ```
-- [[../Common/Password Attack#Net-NTLMv2のリレーアタック]]へ
+- [Password Attack](../Common/Password%20Attack.md#Net-NTLMv2のリレーアタック)へ
 
 ## ファイルアップロード
 

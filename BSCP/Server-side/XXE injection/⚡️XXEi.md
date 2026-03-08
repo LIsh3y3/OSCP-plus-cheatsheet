@@ -1,6 +1,6 @@
 ###### & SSRF
 
-- [[⚡️SSRF#& XXE]]
+- [⚡️SSRF](../SSRF/⚡️SSRF.md#&%20XXE)
 
 ---
 ### 非blind
@@ -31,7 +31,7 @@
 2. アップロードしたsvgファイルを新しいタブで画像を開くで閲覧
 
 ###### DOCXの場合
-- [[4. 隠れたXXEi脆弱性の発見#DOCXへXXEiする方法]]
+- [4. 隠れたXXEi脆弱性の発見](4.%20隠れたXXEi脆弱性の発見.md#DOCXへXXEiする方法)
 
 ---
 #### SQL & XML & HackVertor
@@ -72,7 +72,7 @@ Stage2 & Stage 3
 - まずは[SQLi cheatsheet: Database contents](https://portswigger.net/web-security/sql-injection/cheat-sheet#:~:text=SELECT%20%40%40version-,Database%20contents,-You%20can%20list)で、抽出したいカラムを抽出する
 	- もし`*`が使えないのであれば...↓
 
-- [[2. SQLi UNION攻撃]]と[[3. DBの構成情報の探索]]で抽出できるカラム数、抽出したいテーブル、抽出したいカラムを割り出す必要があるかも...(面倒)
+- [2. SQLi UNION攻撃](../SQLi/2.%20SQLi%20UNION攻撃.md)と[3. DBの構成情報の探索](../SQLi/3.%20DBの構成情報の探索.md)で抽出できるカラム数、抽出したいテーブル、抽出したいカラムを割り出す必要があるかも...(面倒)
 
 - usernameとpasswordカラムを1行で抽出するペイロード例(PostgreSQL)
 ```xml
@@ -113,12 +113,12 @@ Content-Type: text/plain; charset=utf-8
 - `/etc/passwd`のような、出力に改行文字を含むものは取得できないケースがある
 - 改行文字を含まない他の機密情報(`/home/carlos/secret`等）を取得してみる
 - もしくはHTTPの代わりにFTPプロトコルを使用してみる。(PortSwiggerでは無いシナリオ)
-- or [[#DTD Blind Error messages]]
+- or [⚡️XXEi](⚡️XXEi.md#DTD%20Blind%20Error%20messages)
 
 ---
 #### DTD Blind Error messages
 
-[[#DTD Blind Out-of-band]]が無理だった時
+[⚡️XXEi](⚡️XXEi.md#DTD%20Blind%20Out-of-band)が無理だった時
 1. エクスプロイトサーバに以下をホストする(File: `/exploit.dtd`)
 ```dtd
 <!ENTITY % file SYSTEM "file:///home/carlos/secret">

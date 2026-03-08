@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[135,593 - MSRPC]]
+	- [135,593 - MSRPC](135,593%20-%20MSRPC.md)
 
 # 目的・シチュエーション
 
@@ -43,4 +43,4 @@ rpcclient $> enumdomusers
 rpcclient $> queryuser 0x[RID]
 ```
 
-その他のコマンドは[[135,593 - MSRPC]]を参照
+その他のコマンドは[135,593 - MSRPC](135,593%20-%20MSRPC.md)を参照

@@ -1,9 +1,9 @@
-[[⚡️NoSQLi]]
+[⚡️NoSQLi](⚡️NoSQLi.md)
 - MongoDBのみがLABに登場
 
 #### 注目ポイント
 
-- 基本は[[🔍SQLi - Automated#注目ポイント]]と同じ
+- 基本は[🔍SQLi - Automated](../SQLi/🔍SQLi%20-%20Automated.md#注目ポイント)と同じ
 - ==パスワード抽出==によく使われる
 	- パスワードリセット(Forgot password)
 	- ログインブルートフォース
@@ -34,8 +34,8 @@ JSON ver.(`\u0000`はNull byte)
 ```
 	↓
 - Internal server errorや異なるエラーメッセージなどの通常のレスポンスと違うものが返るか？
-	- YES -> Syntax injectionに脆弱な可能性あり:[[#Boolean注入可能か？]]へ進む
-	- No-> [[#Operator injection]]へ進む
+	- YES -> Syntax injectionに脆弱な可能性あり:[🔍NoSQLi](🔍NoSQLi.md#Boolean注入可能か？)へ進む
+	- No-> [🔍NoSQLi](🔍NoSQLi.md#Operator%20injection)へ進む
 
 #### Boolean注入可能か？
 
@@ -53,7 +53,7 @@ JSON ver.(`\u0000`はNull byte)
 ```
 ![[Pasted image 20240217160137.png | 300]]
 
-Internal server errorや異なるエラーメッセージなどの通常のレスポンスと違うものが返ればboolean注入可能である -> [[⚡️NoSQLi#Syntax injection]]
+Internal server errorや異なるエラーメッセージなどの通常のレスポンスと違うものが返ればboolean注入可能である -> [⚡️NoSQLi](⚡️NoSQLi.md#Syntax%20injection)
 
 ---
 ### Operator injection
@@ -98,7 +98,7 @@ POST /login HTTP/2
 
 #### 2. `$where`が使えるかの確認
 
-- `$where`が使用できるなら、JavaScriptも使用できる -> [[⚡️NoSQLi#リセットトークン抽出]]
+- `$where`が使用できるなら、JavaScriptも使用できる -> [⚡️NoSQLi](⚡️NoSQLi.md#リセットトークン抽出)
 - 以下のリクエストでレスポンスが異なる場合、`$where`句が使用できる
 ```json
 {"username":"wiener","password":"peter", "$where":"0"}

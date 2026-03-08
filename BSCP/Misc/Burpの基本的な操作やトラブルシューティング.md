@@ -103,7 +103,7 @@ WebSocketの場合：
 - ログインフォームを突破しようとしたとき、ログインフォームに適当な値を入力してキャプチャすると、ユーザ名とパスワードだけでなく、*リクエスト毎に*異なるセッションクッキーやCSRFトークン（正規のページからアクセスが行われてることを証明するための値）がレスポンスに見られることがある。
 	- この場合、ユーザ名とパスワードはpitch fork攻撃などで割り出せるが、セッションクッキーとCSRFトークンは割りだせない
 	- ログイン試行のたびにセッションクッキーやCSRFトークンのユニークな値が必要
-	- そのため、[[#Macro]]を使用する
+	- そのため、[Burpの基本的な操作やトラブルシューティング](Burpの基本的な操作やトラブルシューティング.md#Macro)を使用する
 		- ログインリクエスト毎に変わるセッションクッキーやCSRFトークンを値を毎回変えて入れてくれる
 
 ---
@@ -198,14 +198,14 @@ BAPPのインストールが進まない
 
 ### 応用的な使い方
 
-- [[#Turbo Intruder]]と合わせて使用可能
-- 詳細は[[3. 多要素認証の脆弱性#CSRF Token bypass 一定回数の入力ミスで認証コードがリセットされる場合]]を確認
+- [Burpの基本的な操作やトラブルシューティング](Burpの基本的な操作やトラブルシューティング.md#Turbo%20Intruder)と合わせて使用可能
+- 詳細は[3. 多要素認証の脆弱性](../Server-side/Authentication/3.%20多要素認証の脆弱性.md#CSRF%20Token%20bypass%20一定回数の入力ミスで認証コードがリセットされる場合)を確認
 
 ---
 
 # WebSocket関連
 
-- [[1. WebSocketsの基本と安全化]]
+- [1. WebSocketsの基本と安全化](../Client-side/WebSockets/1.%20WebSocketsの基本と安全化.md)
 - 詳細は[記事](https://portswigger.net/web-security/websockets#manipulating-websocket-messages-to-exploit-vulnerabilities)
 
 ## WebSocketメッセージのinterceptと変更
@@ -245,7 +245,7 @@ BAPPのインストールが進まない
 
 ### Repeaterからレスポンスが返ってこない
 
-- Proxy Settingsで[[#不要なリクエストがinterceptされてしまう]]の設定をしており、かつ、Repeaterへ送ったエントリがScopeに登録されていないから
+- Proxy Settingsで[Burpの基本的な操作やトラブルシューティング](Burpの基本的な操作やトラブルシューティング.md#不要なリクエストがinterceptされてしまう)の設定をしており、かつ、Repeaterへ送ったエントリがScopeに登録されていないから
 	- →Scopeに対象サイトを登録する
 
 - ヘッダの後に空行がないから

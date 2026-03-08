@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [[Tunneling Through Deep Packet Inspection]]
+	- [Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md)
 
 ---
 ---
@@ -71,15 +71,15 @@ $$socatでのポートフォワーディングイメージ図(PEN-200)$$
 	- インタラクティブなシェルが使える
 		- WinRM接続中など、インタラクティブなシェルが使えない場合は、
 			- (a) Unix系：`python3 -c 'import pty; pty.spawn("/bin/sh")'`
-			- (b) Windows：[[#Plink]]や[[#Netsh]]を使う
+			- (b) Windows：[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#Plink)や[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#Netsh)を使う
 
 - ✅通常のネットワークトラフィックと見分けがつきにくい
 - ❌近年のFWに実装されているDeep Packet Inspection(DPI)機能により、悪意ある通信は検知され遮断されてしまう
-	→HTTP通信が許可されている場合は[[Tunneling Through Deep Packet Inspection]]を使えば、DPIは回避可能
+	→HTTP通信が許可されている場合は[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md)を使えば、DPIは回避可能
 
 ## SSHポートフォワーディングの種類と概要
 
-単純な[[#ポートフォワーディング]]では、パケットをリッスンするホスト自身(CONFLUENCE01)がパケットを転送するが、SSHポートフォワーディングでは、リッスンする役割を担う機器と転送する役割を担う機器の２つの機器でポートフォワーディングをする
+単純な[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#ポートフォワーディング)では、パケットをリッスンするホスト自身(CONFLUENCE01)がパケットを転送するが、SSHポートフォワーディングでは、リッスンする役割を担う機器と転送する役割を担う機器の２つの機器でポートフォワーディングをする
 
 ### SSHローカルポートフォワーディング
 
@@ -120,7 +120,7 @@ $$SSHリモートダイナミックポートフォワーディングのイメー
 - 留意事項：
 	- FWのルールは、アウトバウンドトラフィックには比較的寛容に設定されているが、インバウンドトラフィックには厳しいことが多い
 	- Local Port Forwardingはインバウンドトラフィックが許可されていないと使えないので失敗することが多い(SSHクライアントで任意のリッスンポートを開いても、攻撃者のマシンからのリッスンポートへの通信がFWで遮断される)
-	- →[[#SSH Remote Port Forwarding]]のほうが成功確率高い
+	- →[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#SSH%20Remote%20Port%20Forwarding)のほうが成功確率高い
 
 1. SSHクライアント上でSSH接続に必要なTTY機能が使えるようにする
 ```zsh
@@ -135,8 +135,8 @@ ssh -N -L 0.0.0.0:[SSH client LISTEN Port(1025以上任意)]:[DestIP]:[DestPort]
 ```
 - Dest：下図の最終到達先である「HRSHARES」マシンのこと
 - DestIPは、足場からネットワーク情報を列挙して発見する
-	- [[🔍Windows Local Enumeration#ネットワーク情報収集コマンド]]
-	- [[🔍Linux Enumeration#ネットワーク情報収集コマンド]]
+	- [🔍Windows Local Enumeration](../../🪟Windows/🔍Windows%20Local%20Enumeration.md#ネットワーク情報収集コマンド)
+	- [🔍Linux Enumeration](../../🐧Linux/🔍Linux%20Enumeration.md#ネットワーク情報収集コマンド)
 - `-N`：ポートフォワーディングのために使用することを明示し、新たなシェルが開かないようにする
 ![[Pasted image 20250923145526.png]]
 $$SSHローカルポートフォワーディングイメージ図$$
@@ -159,8 +159,8 @@ tcp    LISTEN  0       128                  0.0.0.0:4455          0.0.0.0:*     
 
 # SSH Local Dynamic Port Forwarding
 
-- [[#SSH Local Port Forwarding]]と同じく、現実では失敗する可能性が高い
-	- →[[#SSH Remote Dynamic Port Forwarding]]
+- [Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#SSH%20Local%20Port%20Forwarding)と同じく、現実では失敗する可能性が高い
+	- →[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#SSH%20Remote%20Dynamic%20Port%20Forwarding)
 
 1. SSHクライアント上でSSH接続に必要なTTY機能が使えるようにする
 	- RDP接続など、インタラクティブなシェルにアクセスできているなら不要
@@ -198,8 +198,8 @@ sudo proxychains nmap -vvv -sT --top-ports=20 -Pn [DestIP]
 sudo proxychains smbclient -L //[DestIP]/ -U hr_admin --password=Welcome1234
 ```
 - DestIPは、足場からネットワーク情報を列挙して発見する
-	- [[🔍Windows Local Enumeration#ネットワーク情報収集コマンド]]
-	- [[🔍Linux Enumeration#ネットワーク情報収集コマンド]]
+	- [🔍Windows Local Enumeration](../../🪟Windows/🔍Windows%20Local%20Enumeration.md#ネットワーク情報収集コマンド)
+	- [🔍Linux Enumeration](../../🐧Linux/🔍Linux%20Enumeration.md#ネットワーク情報収集コマンド)
 
 💡`proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする
 ```zsh
@@ -234,8 +234,8 @@ python3 -c 'import pty; pty.spawn("/bin/sh")'
 ssh -N -R 127.0.0.1:[SSH server LISTEN Port(1025以上任意)]:[DestIP]:[DestPort] [SSH server username(攻撃者)]@[SSH server IP]
 ```
 - DestIPは、足場からネットワーク情報を列挙して発見する
-	- [[🔍Windows Local Enumeration#ネットワーク情報収集コマンド]]
-	- [[🔍Linux Enumeration#ネットワーク情報収集コマンド]]
+	- [🔍Windows Local Enumeration](../../🪟Windows/🔍Windows%20Local%20Enumeration.md#ネットワーク情報収集コマンド)
+	- [🔍Linux Enumeration](../../🐧Linux/🔍Linux%20Enumeration.md#ネットワーク情報収集コマンド)
 
 4. 攻撃者のマシンでリモートポートフォワーディングが成功しているかどうかを確認
 ```zsh
@@ -390,7 +390,7 @@ CommandType     Name    Version    Source
 Application     ssh.exe 8.1.0.1    C:\Windows\System32\OpenSSH\ssh.exe
 ```
 
-3. あとは[[#SSH Remote Dynamic Port Forwarding]]のステップ３以降と同じ(`ssh -N...`)
+3. あとは[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#SSH%20Remote%20Dynamic%20Port%20Forwarding)のステップ３以降と同じ(`ssh -N...`)
 
 ![[Pasted image 20250924072013.png]]
 $$ssh.exeを使ったリモートダイナミックポートフォワーディングのイメージ図(PEN-200)$$
@@ -413,7 +413,7 @@ sudo systemctl start ssh
 ```
 
 2. 攻撃者のマシンからPlinkを足場のマシンに転送
-	- [[ファイル操作、ユーティリティ#Apache webサーバー]]
+	- [ファイル操作、ユーティリティ](../../Common/ファイル操作、ユーティリティ.md#Apache%20webサーバー)
 ```zsh
 # plinkのパス
 /usr/share/windows-resources/binaries/plink.exe

@@ -26,10 +26,10 @@
 ---
 ###### まとめ
 
-- [[#CL.0脆弱性のprobe]]
-- [[#CL.0の挙動を引き出す]]
-- [[#CL.0のエクスプロイト]]
-- [[#H2.0脆弱性]]
+- [CL.0 request smuggling](CL.0%20request%20smuggling.md#CL.0脆弱性のprobe)
+- [CL.0 request smuggling](CL.0%20request%20smuggling.md#CL.0の挙動を引き出す)
+- [CL.0 request smuggling](CL.0%20request%20smuggling.md#CL.0のエクスプロイト)
+- [CL.0 request smuggling](CL.0%20request%20smuggling.md#H2.0脆弱性)
 
 ---
 ## CL.0脆弱性のprobe
@@ -78,7 +78,7 @@ Host: [ターゲットのホスト名]
 
 ###### 基本概念
 
-- リクエストのヘッダによってサーバエラーがトリガーされるとき、いくつかのサーバはリクエストボディを[[📕#ソケット]]から消費せずにエラーレスポンスを返す。
+- リクエストのヘッダによってサーバエラーがトリガーされるとき、いくつかのサーバはリクエストボディを[📕](../../../Misc/📕.md#ソケット)から消費せずにエラーレスポンスを返す。
 - その後に==コネクションを閉じない場合==、これはCL.0脆弱性ベクターの代替となる。
 	- つまり、body部が後続のリクエストの頭にくっつきエラーが起きる
 
@@ -88,7 +88,7 @@ Host: [ターゲットのホスト名]
 ### 方法①：ヘッダでエラーを起こす
 
 1. 1つのタブに存在しないサーバエラーを引き起こすためのヘッダを指定したリクエストを作成
-	- [[#CL.0 probeステップ]]のステップ1と同じ設定変更は忘れずに
+	- [CL.0 request smuggling](CL.0%20request%20smuggling.md#CL.0%20probeステップ)のステップ1と同じ設定変更は忘れずに
 ```http
 POST /[脆弱なエンドポイント候補] HTTP/1.1
 Host: [ターゲットのホスト名]
@@ -106,7 +106,7 @@ hogehoge
 ### 方法②GET × Content-Lengthの難読化
 
 1. 1つのタブに難読化したCLとbody部を含むGETリクエストを作成する
-	- [[#CL.0 probeステップ]]のステップ1と同じ設定変更は忘れずに
+	- [CL.0 request smuggling](CL.0%20request%20smuggling.md#CL.0%20probeステップ)のステップ1と同じ設定変更は忘れずに
 ```http
 GET /[脆弱なエンドポイント候補] HTTP/1.1
 Host: [ターゲットのホスト名]
@@ -117,7 +117,7 @@ hogehoge
 ```
 2. CL.0 probeのステップ2以降と同じ
 
-- 参考：[[2. 基本的なHRSの実行#TE.TE脆弱性]]
+- 参考：[2. 基本的なHRSの実行](../2.%20基本的なHRSの実行.md#TE.TE脆弱性)
 
 ---
 ## CL.0のエクスプロイト
@@ -139,6 +139,6 @@ X-Ignore: X
 ---
 ## H2.0脆弱性
 
-- HTTP2を1へダウングレード([[1. HTTP2 request smuggling#HTTP/2 downgrading]])するサイトは、バックエンドサーバがダウングレードされたリクエストの`Content-Length`ヘッダーを無視した場合、同等の "H2.0 "問題に脆弱になる可能性がある
+- HTTP2を1へダウングレード([1. HTTP2 request smuggling](../5.%20Advanced%20request%20smuggling/1.%20HTTP2%20request%20smuggling.md#HTTP/2%20downgrading))するサイトは、バックエンドサーバがダウングレードされたリクエストの`Content-Length`ヘッダーを無視した場合、同等の "H2.0 "問題に脆弱になる可能性がある
 
 

@@ -1,7 +1,7 @@
 - 関連ノート：
-	- [[ADの基本#認証方法]]
-	- [[../../Common/Password Attack]]
-	- [[🥝Mimikatz]]
+	- [ADの基本](ADの基本.md#認証方法)
+	- [Password Attack](../../Common/Password%20Attack.md)
+	- [🥝Mimikatz](../../../Tools/🥝Mimikatz.md)
 
 ---
 
@@ -11,7 +11,7 @@
 
 ### (a)ドメインユーザーの足場がある場合
 
-[[🔍AD Enumeration#⭐️PowerViewによるユーザー・グループの列挙列挙]]
+[🔍AD Enumeration](🔍AD%20Enumeration.md#⭐️PowerViewによるユーザー・グループの列挙列挙)
 
 ### (b)足場がない場合
 
@@ -22,7 +22,7 @@ kerbrute userenum --dc <DC_IP> -d <domain> <wordlist>
 ```
 
 SMBが有効(TCP 445 open)であれば、攻撃者のマシンからNetExecでユーザーの列挙（guestが有効である必要あり）：
-	[[139,445 -NetBIOS, SMB#アカウントの列挙]]
+	[139,445 -NetBIOS, SMB](../../Ports%20-%20Service/139,445%20-NetBIOS,%20SMB.md#アカウントの列挙)
 
 ## 2. アカウントロックポリシーの確認
 
@@ -131,7 +131,7 @@ powershell -ep bypass
 	- 事前認証(Pre-Authentication)が無効なユーザーを検索し、そのユーザーになりすましてAS-REQを送信し、レスポンス(AS-REP)のハッシュをキャプチャしてオフラインクラッキングしてユーザーパスワードを入手する
 
 - 背景：
-	- Kerberos認証の1stステップであるAS-REQは、デフォルトで事前認証（Pre-Authentication）を必須にしている（[[ADの基本#Kerberos認証ステップ]]）
+	- Kerberos認証の1stステップであるAS-REQは、デフォルトで事前認証（Pre-Authentication）を必須にしている（[ADの基本](ADの基本.md#Kerberos認証ステップ)）
 	- 事前認証が無効なユーザーがいれば、攻撃者はそのユーザーになりすまし、DCに対してAS-REQを送信できる
 	- 事前認証が無効なユーザーを検索するために、認証情報が必要な場合がある（ユーザーAの認証情報でログインし、DCに対し事前認証が無効なユーザー（A以外）を問い合わせ、AS-REQする）
 
@@ -141,7 +141,7 @@ powershell -ep bypass
 
 1. Rubeusをダウンロードし、ターゲットマシンに転送する
 	- [Compiled Binaries Rubeus.exe - GitHub](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe)
-	- [[ファイル操作、ユーティリティ#ファイルの転送]]
+	- [ファイル操作、ユーティリティ](../../Common/ファイル操作、ユーティリティ.md#ファイルの転送)
 
 2. AS-REP Roastingの実行
 ```powershell
@@ -149,13 +149,13 @@ powershell -ep bypass
 ```
 
 3. Hashcatでクラック
-	- [[🐈‍⬛Password Crack - JtR・Hashcat#🐈‍⬛Hashcat]]（モード：18200）
+	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：18200）
 
 ## AS-REP Roasting w/ impacket（リモート実行）
 
 - 内部へRDPもしくはSSH接続できていないときに攻撃者のマシンから実行
 - ❌FWなどの影響で失敗することがあるため、認証情報がわかっているならRubeusを使う
-- 💡他攻撃手法：[[389,636,3268 - LDAP#💥AS-REPRoasting]]
+- 💡他攻撃手法：[389,636,3268 - LDAP](../../Ports%20-%20Service/389,636,3268%20-%20LDAP.md#💥AS-REPRoasting)
 
 1. AS-REP Roastingの実行
 ```zsh
@@ -166,7 +166,7 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 ```
 
 2. Hashcatで解析
-	- [[🐈‍⬛Password Crack - JtR・Hashcat#🐈‍⬛Hashcat]]（モード：18200）
+	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：18200）
 
 - DCのIPが異なる場合や、認証情報に誤りがある場合、もしくは事前認証が有効な場合は、次のErrorが表示
 ```
@@ -184,7 +184,7 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 
 - 背景：
 	- TGS-REQではSPNを指定してTGSを要求するが、この時点でサービスへのアクセス権限は検証されないため、SPNさえ知っていればTGSを要求できる
-	- TGSはサービスアカウントのパスワードハッシュで暗号化されている（[[ADの基本#Kerberos認証ステップ]]のステップ3, 4）
+	- TGSはサービスアカウントのパスワードハッシュで暗号化されている（[ADの基本](ADの基本.md#Kerberos認証ステップ)のステップ3, 4）
 
 - 使用に適したシチュエーション：
 	- アカウントの種別（objectClass / samAccountType / sAMAccountName）が、userオブジェクトのコンテキストでサービスが動作しているときに非常に有効
@@ -196,7 +196,7 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 	- msDS-ManagedServiceAccount
 	- msDS-GroupManagedServiceAccount
 
-- 💡侵害したユーザーが、ターゲットオブジェクトに対して`GenericAll`、`GenericWrite`、`WriteProperty`、または`Validated-SPN`を持つ場合は、**Targeted Kerberoast**が可能([[💥AD Exploit#Targeted Kerberoast]])
+- 💡侵害したユーザーが、ターゲットオブジェクトに対して`GenericAll`、`GenericWrite`、`WriteProperty`、または`Validated-SPN`を持つ場合は、**Targeted Kerberoast**が可能([💥AD Exploit](💥AD%20Exploit.md#Targeted%20Kerberoast))
 
 ## Kerberoasting w/ Rubeus
 
@@ -208,15 +208,15 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 ```
 
 2. Hashcatで解析
-	- [[🐈‍⬛Password Crack - JtR・Hashcat#🐈‍⬛Hashcat]]（モード：13100）
+	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：13100）
 
 ## Kerberoasting w/ Impacket
 
 - ✅リモートから実行可能
-- ❌Impacketだけではアカウントの種別がユーザーかそれ以外かがわからず、[[#Kerberoastingの仕組み]]の「使用に適したシチュエーション」であるかどうかが判別つかない
+- ❌Impacketだけではアカウントの種別がユーザーかそれ以外かがわからず、[💥AD認証システムの攻撃](💥AD認証システムの攻撃.md#Kerberoastingの仕組み)の「使用に適したシチュエーション」であるかどうかが判別つかない
 - ❌FWなどの影響で失敗することがある
 - →==可能な限りRubeusを使用==
-- 💡他攻撃手法：[[389,636,3268 - LDAP#💥Kerberoasting]]
+- 💡他攻撃手法：[389,636,3268 - LDAP](../../Ports%20-%20Service/389,636,3268%20-%20LDAP.md#💥Kerberoasting)
 
 1. kerberoast実行
 ```zsh
@@ -224,7 +224,7 @@ impacket-GetUserSPNs -dc-ip <DC_IP> '<domain>/<username>' -request -outputfile <
 ```
 
 2. Hashcatで解析
-	- [[🐈‍⬛Password Crack - JtR・Hashcat#🐈‍⬛Hashcat]]（モード：13100）
+	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：13100）
 
 - Error : "KRB_AP_ERR_SKEW(Clock skew too great)"と表示された場合は、攻撃者のマシンとDCの時刻を同期する必要がある
 ```zsh
@@ -244,7 +244,7 @@ sudo timedatactl set-ntp true
 
 # Silver Ticket
 
-[[🥝Mimikatz#Silver Ticket]]
+[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#Silver%20Ticket)
 
 ---
 
@@ -252,7 +252,7 @@ sudo timedatactl set-ntp true
 
 ## Skelton Key(バックドア)
 
-[[🥝Mimikatz#Skeleton Key（バックドア）]]
+[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#Skeleton%20Key（バックドア）)
 
 ## Rubeusの他の使い方
 

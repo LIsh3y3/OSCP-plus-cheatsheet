@@ -1,11 +1,11 @@
-[[⚡️SQLi - Automated]]
+[⚡️SQLi - Automated](⚡️SQLi%20-%20Automated.md)
 
 #### 注目ポイント
 
 - Advances search機能
 - Refine your search機能
 - 長めのCookie (Tracking ID等)
-- ⚠️Check Stock機能などXMLのPOSTリクエスト -> [[🔍XXEi#& SQLi]]に従う
+- ⚠️Check Stock機能などXMLのPOSTリクエスト -> [🔍XXEi](../XXE%20injection/🔍XXEi.md#&%20SQLi)に従う
 
 ---
 ## Fuzz w/ SQLmap

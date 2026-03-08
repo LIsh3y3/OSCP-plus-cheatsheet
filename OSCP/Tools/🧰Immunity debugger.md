@@ -46,7 +46,7 @@ $$アクションの内容が表示される様子$$
 
 1. 上部タブView -> Executable modulesをクリック
 2. Name列に実行可能ファイルやDLL等のPEフォーマットが記載されている
-	- PEフォーマットとは：[[1. Windows Internal#Portable Executable Format]]
+	- PEフォーマットとは：[1. Windows Internal](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#Portable%20Executable%20Format)
 3. Name列から目的のモジュールを探す
 ![[Pasted image 20250609073042.png]]
 $$View->Executable　modules画面$$
@@ -65,11 +65,11 @@ $$View->Executable　modules画面$$
 $$Attach後のImmunityDebugger$$
 
 2. ASLRなどのセキュリティ保護機能が有効（True）か無効（False）かが表示される
-	- [[#!mona modulesの結果解説]]
+	- [🧰Immunity debugger](🧰Immunity%20debugger.md#!mona%20modulesの結果解説)
 ![[Pasted image 20250615092757.png]]
 $$ASLRなどのセキュリティ保護機構の有無表示$$
 
-3. [[#モジュールの探し方]]で該当のモジュールを開く
+3. [🧰Immunity debugger](🧰Immunity%20debugger.md#モジュールの探し方)で該当のモジュールを開く
 4. Ctrl + Fで任意の命令（多くの場合JMP ESP）を検索する
 ![[Pasted image 20250615101645.png]]
 $$Find　Command$$

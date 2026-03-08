@@ -1,15 +1,15 @@
 ###### まとめ
 
-- [[#Username列挙から入る場合]]
-	- [[#IPアドレスブロックバイパス]]
-	- [[#アカウントロックの場合]]
-	- [[#User rate制限バイパス]]
-- [[#2FAの場合]]
-- [[#Stay-logged-inから入る場合]]
-- [[#Change passwordを悪用して被害者パスワードのbrute-force]]
-- [[#brute-forceがリクエストごとのランダムな値で妨害される場合]]
+- [⚡️Authentication](⚡️Authentication.md#Username列挙から入る場合)
+	- [⚡️Authentication](⚡️Authentication.md#IPアドレスブロックバイパス)
+	- [⚡️Authentication](⚡️Authentication.md#アカウントロックの場合)
+	- [⚡️Authentication](⚡️Authentication.md#User%20rate制限バイパス)
+- [⚡️Authentication](⚡️Authentication.md#2FAの場合)
+- [⚡️Authentication](⚡️Authentication.md#Stay-logged-inから入る場合)
+- [⚡️Authentication](⚡️Authentication.md#Change%20passwordを悪用して被害者パスワードのbrute-force)
+- [⚡️Authentication](⚡️Authentication.md#brute-forceがリクエストごとのランダムな値で妨害される場合)
 
-- 難：暗号化を利用した認証バイパス[[2. -2 事例：Business logic vuln#暗号化オラクルの提供]]
+- 難：暗号化を利用した認証バイパス[2. -2 事例：Business logic vuln](../Business%20logic%20vuln/2.%20-2%20事例：Business%20logic%20vuln.md#暗号化オラクルの提供)
 
 ---
 ### Username列挙から入る場合
@@ -31,7 +31,7 @@ username=§§&password=peterpeter... //✖️ 100
 
 - 正規のusernameにだけアカウントロックがかかるのであれば、特定したusernameに単純なpasswordのbrute-forceをする
 
-- 試験ではないとは思うが[[2. パスワードログインの脆弱性#アカウントロックのバイパス概要]]
+- 試験ではないとは思うが[2. パスワードログインの脆弱性](2.%20パスワードログインの脆弱性.md#アカウントロックのバイパス概要)
 
 #### User rate制限バイパス
 
@@ -110,7 +110,7 @@ Cookie: verify=Victim;
 ---
 ### Change passwordを悪用して被害者パスワードのbrute-force
 
-- [[🔍Authentication#Change password]]でパターンDのとき
+- [🔍Authentication](🔍Authentication.md#Change%20password)でパターンDのとき
 ```
 username=wiener&current-password=peter&new-password-1=peter100&new-password-2=hoge
 ```

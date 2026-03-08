@@ -1,14 +1,14 @@
 
-- Unkey = その値を操作してもキャッシュ状態には変化がない部分([[2. 実装の欠陥の探索#Cacheされている兆候]])
+- Unkey = その値を操作してもキャッシュ状態には変化がない部分([2. 実装の欠陥の探索](4.%20キャッシュ実装の欠陥の悪用/2.%20実装の欠陥の探索.md#Cacheされている兆候))
 - ==⚠️==検証時はキャッシュバスターを追加すること
 
-- [[3. キャッシュ設計の欠陥の悪用]]
+- [3. キャッシュ設計の欠陥の悪用](3.%20キャッシュ設計の欠陥の悪用.md)
 	- Unkeyed header
 	- Cookie-based Webキャッシュポイズニング
 	- 複数のヘッダを使用したWebキャッシュポイズニング
 	- 必要以上の情報を提供するレスポンスの悪用
 
-- [[3. 実装の欠陥の悪用]]
+- [3. 実装の欠陥の悪用](4.%20キャッシュ実装の欠陥の悪用/3.%20実装の欠陥の悪用.md)
 	- Unkeyed ポート
 	- Unkeyed クエリストリング
 	- Unkeyed クエリパラメタ
@@ -19,7 +19,7 @@
 
 ### & Host header attack
 
-- [[⚡️HTTP Host header attack#& Web cache poisoning]]
+- [⚡️HTTP Host header attack](../HTTP%20Host%20header%20attacks/⚡️HTTP%20Host%20header%20attack.md#&%20Web%20cache%20poisoning)
 
 UnkeyがHostヘッダの時
 

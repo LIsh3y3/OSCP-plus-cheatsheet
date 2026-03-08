@@ -1,4 +1,4 @@
-[[⚡️XXEi]]
+[⚡️XXEi](⚡️XXEi.md)
 #### 注目ポイント
 
 - bodyがXMLのPOSTリクエスト
@@ -12,7 +12,7 @@
 
 #### 基本
 
-- [[#注目ポイント]]の(POST)リクエスト==全体==をActive Scanする : 4分ほどかかる
+- [🔍XXEi](🔍XXEi.md#注目ポイント)の(POST)リクエスト==全体==をActive Scanする : 4分ほどかかる
 	- XMLのbodyがあるなら、bodyだけscan selected insertion pointするのが早い
 
 - ⚠️：プレーンテキストでも、Content Type ConverterでXMLへ変換しリクエストするとXXEi脆弱性を検出できるかも？
@@ -64,7 +64,7 @@ productId=<ssk xmlns:xi="http://www.w3.org/2001/XInclude"><xi:include href="http
 - Post Comment機能など ❗️‼️
 
 1. SVGやDOCXをアップロードしてみる
-2. 無理なら[[⚡️File upload vuln]]を試す
+2. 無理なら[⚡️File upload vuln](../File%20upload%20vuln/⚡️File%20upload%20vuln.md)を試す
 
 ---
 #### & SQLi
@@ -85,4 +85,4 @@ Content-Length: 17
 - リクエストで`7*7`と入力して正しく評価されるときは脆弱
 ![[Pasted image 20240220165422.png | 500]]
 
--> [[⚡️XXEi#SQL & XML & HackVertor]]
+-> [⚡️XXEi](⚡️XXEi.md#SQL%20&%20XML%20&%20HackVertor)

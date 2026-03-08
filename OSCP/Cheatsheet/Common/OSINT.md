@@ -187,7 +187,7 @@ dig <domain> MX
 	- [GitLab](https://about.gitlab.com/)：DevSecOpsに特化
 	- [SourceForge](https://sourceforge.net/)（GitHubやGitLabの劣化版。もはや使われない）
 
-- [[#Google hacking]]のオペレーターをサポートしていることがある
+- [OSINT](OSINT.md#Google%20hacking)のオペレーターをサポートしていることがある
 
 ## GitHub Search
 
@@ -221,7 +221,7 @@ githubの右上検索バーで使えるGoogle dorkingのようなもの。
 
 - 大規模レポ向け
 - 手動での列挙後に実行すること
-	- エントロピー(複雑性)で機密情報と思われるハードコードを検出する。検知できないときもあるので注意（[[マインド#🚨ツールに頼りすぎない]]）
+	- エントロピー(複雑性)で機密情報と思われるハードコードを検出する。検知できないときもあるので注意（[マインド](../../Misc/マインド.md#🚨ツールに頼りすぎない)）
 
 インストール
 ```zsh

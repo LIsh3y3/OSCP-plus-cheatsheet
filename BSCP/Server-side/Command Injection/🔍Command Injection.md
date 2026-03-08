@@ -1,4 +1,4 @@
-[[⚡️Command injection]]
+[⚡️Command injection](⚡️Command%20injection.md)
 
 #### 注目ポイント
 
@@ -70,4 +70,4 @@
 |ping -c 10 127.0.0.1
 ||ping -c 10 127.0.0.1||
 ```
-- これでもうまくいかない時は[[Command injection#コマンド注入用の特殊文字リスト]]を使って`|`を別の文字に変更する
+- これでもうまくいかない時は[Command injection](Command%20injection.md#コマンド注入用の特殊文字リスト)を使って`|`を別の文字に変更する
