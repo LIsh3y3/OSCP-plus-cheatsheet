@@ -284,7 +284,12 @@ impacket-secretsdump -sam <SAMデータベースのファイルフルパス> -sy
 copy <path_to_lsass.DMP> C:\Tools\Mimikatz\lsass.DMP
 ```
 
-## Sysinternals Suite
+3. Mimikatzで解析
+```cmd
+.\mimikatz.exe "sekurlsa::minidump lsass.DMP" exit
+```
+
+## Sysinternals Suiteの方法
 
 - GUIが使えない場合の代替手段
 - 🔗[Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite)のProcdumpを使用する
@@ -362,8 +367,7 @@ Get-WebCredentials
 - NTDSは、デフォルトで`C:\Windows\NTDS`にあり、ターゲットマシンからのデータ抽出を防ぐために暗号化されている
 - NTDS.dit ファイルは ADで使用され、ロックされているため、実行中のマシンからのアクセスは禁止されている
 
-- しかし、様々な方法でアクセスすることが可能。
-- *ntdsutil*と*Diskshadow*ツールを使用してNTDSファイルをダンプする
+- しかし、様々な方法でアクセスすることが可能で、特に*ntdsutil*と*Diskshadow*ツールを使用してNTDSファイルをダンプできる
 - 復号には、SECURITYファイルシステムに格納されているシステムブートキーが必要
 
 ## Ntdsutil
@@ -453,9 +457,13 @@ Get-AdmPwdPassword -ComputerName <MachineName>
 
 ---
 
-#  Server Manager Description
+# Server Manager Description
 
-- 条件：サーバーへGUIアクセスできること及び管理者権限
+Descriptionにメモとしてパスワードを残していることがある。
+
+- 条件：
+	- サーバーへGUIアクセスできること
+	- 管理者権限
 
 1. Toolsタブ >   Active Directory Users and Computersを選択
 	- Toolsの中にはEvent Viewerなど、さまざまなツールがある
