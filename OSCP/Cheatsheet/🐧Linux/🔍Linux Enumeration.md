@@ -92,14 +92,14 @@ wget https://raw.githubusercontent.com/rebootuser/LinEnum/refs/heads/master/LinE
 ```zsh
 id
 ```
-- [権限関連の知識、コマンド](../Common/権限関連の知識、コマンド.md#IDの一覧表)
+- [IDの一覧表](../Common/権限関連の知識、コマンド.md#IDの一覧表)
 
 ==sudo権限の確認==
 ```zsh
 sudo -l
 ```
 - →[Sudoを利用したPrivEsc](💥Linux%20Privilege%20Escalation.md#Sudoを利用したPrivEsc)
-- →`tcpdump`の場合、通信のキャプチャも可能：[🔍Linux Enumeration](#デーモンの列挙コマンド)
+- →`tcpdump`の場合、通信のキャプチャも可能：[デーモンの列挙コマンド](#デーモンの列挙コマンド)
 - `NOPASSWD`：sudo xxxとしても、パスワード不要で実行可能
 
 ホスト名を確認
@@ -162,7 +162,7 @@ last
 
 - マシンのOSやアーキテクチャ、バージョンを確認して、脆弱性や利用可能な攻撃ツールを特定する
 	- カーネルエクスプロイトなどに利用する情報
-	- [💥Linux Privilege Escalation](💥Linux%20Privilege%20Escalation.md#カーネルの脆弱性を利用したPrivEsc)
+	- [カーネルの脆弱性を利用したPrivEsc](💥Linux%20Privilege%20Escalation.md#カーネルの脆弱性を利用したPrivEsc)
 
 ## 基本的なシステム情報の列挙コマンド
 
@@ -213,14 +213,14 @@ cat /etc/os-release
 # 絞り込み：ps --pid <PID>
 ps auxw
 ```
-- ↓出力例：[🔍Linux Enumeration](#補足：結果の見方)
+- ↓出力例](#補足：結果の見方)
 ```zsh
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root       20566  0.0  0.0      0     0 ?        I    00:07   0:00 [kworker/0:2-
 root       20674  0.0  0.1   8360  3376 ?        S    00:09   0:00 /usr/sbin/CRO
 ```
 
-### 補足：結果の見方
+### 補足：プロセス出力の見方
 
 - COMMAND列の値が`[]`で囲まれているものは、カーネルスレッドといい、OSの核となる機能であるため、着目しなくてもよい（マルウェアがカーネルスレッドに偽装し自身を隠蔽することがあるが、ペンテストの文脈では優先度低）
 - USER列がrootであり、かつ、COMMAND列が`[]`で囲まれていないものに着目する
