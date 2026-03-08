@@ -365,7 +365,6 @@ Get-WebCredentials
 	- データテーブル：ユーザーとグループ（オブジェクトの実データを格納する主テーブル）
 
 - NTDSは、デフォルトで`C:\Windows\NTDS`にあり、ターゲットマシンからのデータ抽出を防ぐために暗号化されている
-- NTDS.dit ファイルは ADで使用され、ロックされているため、実行中のマシンからのアクセスは禁止されている
 
 - しかし、様々な方法でアクセスすることが可能で、特に*ntdsutil*と*Diskshadow*ツールを使用してNTDSファイルをダンプできる
 - 復号には、SECURITYファイルシステムに格納されているシステムブートキーが必要
@@ -385,17 +384,16 @@ Get-WebCredentials
 powershell "ntdsutil.exe 'ac i ntds' 'ifm' 'create full c:\temp' q q"
 ```
 - `'ac i ntds'`: Active Directoryインスタンスでntdsをinstallする
-- `ifm`: Instal From Media。AD DBをバックアップする
-- `create full`: 完全なバックアップを作成し、指定したパスに保存する。
-- `q q`: 最初のは`ifm`の終了、2回目のは`ntdsutil.exe`の終了
+- `ifm`: Install From Mediaの略で、AD DBをバックアップする
+- `create full`: 完全なバックアップを作成し、指定したパスに保存する
+- `q q`: 最初の`q`は`ifm`の終了、2回目の`q`は`ntdsutil.exe`の終了
 
-2. `c:\temp`ディレクトリを確認すると、Active Directoryとregistryの2つのフォルダがあり、この中に必要な3つのファイルが含まれている。これらを攻撃者のマシンに転送する。
+2. `c:\temp`ディレクトリを確認すると、Active Directoryとregistryの2つのフォルダがあり、この中に必要な3つのファイルが含まれているため、これらを攻撃者のマシンに転送する
 
 3. secretsdump.pyスクリプトを実行して、ダンプされたメモリファイルからハッシュを抽出する
 ```zsh
 impacket-secretsdump -security <path_to_SECURITY> -system <path_to_SYSTEM> -ntds <path_to_ntds.dit> LOCAL
 ```
-- `Target system bootKey:`と表示される
 
 ---
 
@@ -428,16 +426,15 @@ Find-AdmPwdExtendedRights -Identity <OU_Target>
 
 ![](../../../画像ファイル/Pasted%20image%2020230602175950.png)
 
-
 3. ExtendedRightHoldersをもつグループのメンバーを確認する
 ```powershell
-# 例：net groups "LAPsReader"
+# 上記例：net groups "LAPsReader"
 net groups "<GroupName>"
 ```
 
 ## Getting the Password
 
-1. "ExtendedRightHolders"をもつユーザをクラッキングした
+1. "ExtendedRightHolders"をもつユーザをクラッキング
 
 2. 入手したCredsでRunAsする
 ```cmd

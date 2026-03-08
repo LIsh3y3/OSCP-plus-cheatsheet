@@ -6,21 +6,21 @@
 
 # ADの自動列挙 w/ ldapdomaindump
 
-- [ldapdomaindump](https://www.kali.org/tools/python-ldapdomaindump/)
+- 🔗[ldapdomaindump](https://www.kali.org/tools/python-ldapdomaindump/)
 - 初期段階において非常に有用
 ```zsh
 # anonymous
-ldapdomaindump <TargetIP> -n <DNSIP> -o <outputdir>
+ldapdomaindump <target_IP> -n <DC_IP> -o <outputdir>
 
 # 認証有り
-ldapdomaindump -u '<domain>\<username>' -p '<pw | LM:NTLMhash>' <TargetIP> -n <DNSIP> -o <outputdir>
+ldapdomaindump -u '<domain>\<username>' -p '<pw | LM:NTLMhash>' <target_IP> -n <DC_IP> -o <outputdir>
 ```
 
 ---
 
 # ADの自動列挙 w/BloodHound
 
-- 💡[🔍AD Enumeration](#ADの手動列挙)で確認できる内容とほぼ同じ内容を短時間かつ視覚的に確認でき、PEN-200モジュールでも、まずはBloodHoundを実行するよう推奨されている
+- 💡[ADの手動列挙](#ADの手動列挙)で確認できる内容とほぼ同じ内容を短時間かつ視覚的に確認でき、PEN-200モジュールでも、まずはBloodHoundを実行するよう推奨されている
 - 手動・自動の両方を駆使すること
 	- 例えば、`Find-LocalAdminAccess`でわかることが、BloodHoundではわからない
 
