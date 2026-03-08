@@ -37,6 +37,8 @@ ldapdomaindump -u '<domain>\<username>' -p '<pw | LM:NTLMhash>' <target_IP> -n <
 
 ## ユーザー・グループオブジェクトの列挙
 
+[補足：windowsに存在するユーザーについて](#補足：windowsに存在するユーザーについて)
+
 ### 目的
 
 1. ユーザー/グループの属性(Attribute)を把握し、リスト化する
@@ -190,7 +192,7 @@ $group.properties
 
 1. コンピューターオブジェクトをリスト化する
 2. OS情報からドメイン内で相対的に古いOSを使っているコンピューターを探す
-3. ホスト名からweb もしくは ファイルサーバーなどのクラウンジュエルを保有していそうなものに見当をつける
+3. ホスト名からweb もしくは ファイルサーバーなどの*クラウンジュエル*を保有していそうなものに見当をつける
 
 ### コンピューターオブジェクトの列挙 w/ PowerView
 
@@ -218,10 +220,11 @@ Resolve-DnsName -ComputerName '<dnshostname>'
 
 ### 目的
 
-1. ドメイン内の権限関係とログオン状況を把握して攻撃ベクター（足場→横展開→昇格）の候補を見つける（Chained Compromise）
+- ドメイン内の権限関係とログオン状況を把握して攻撃ベクター（足場→横展開→昇格）の候補を見つける（Chained Compromise）
 	- 最終ゴールはDomain Adminだが、[クラウンジュエル](https://www.sompocybersecurity.com/column/glossary/crown-jewel)を持つDBやファイルサーバーもゴールとなりえる
 	- 足場のユーザーが封鎖されても、同等権限を持つユーザーを侵害しておけば、足場を維持できる
-2. 他のユーザーがどの端末にログオンしているかを把握することで、横展開や資格情報収集、『有利な踏み台』の発見につなげる
+
+- 他のユーザーがどの端末にログオンしているかを把握することで、横展開や資格情報収集、「有利な踏み台」の発見につなげる
 	- ログオン済み端末のメモリからTGT/TGSやNTLMハッシュを盗む
 	- セッション乗っ取り
 
@@ -231,7 +234,7 @@ Resolve-DnsName -ComputerName '<dnshostname>'
 ```powershell
 Find-LocalAdminAccess
 ```
-- ⚠️ドメインのサイズなどの環境によっては、完了までに数分かかる
+- ドメインのサイズなどの環境によっては、完了までに数分かかる
 
 2. 誰がどこからログオンしているかを確認（PowerView）
 ```powershell
@@ -239,8 +242,8 @@ Get-NetSession -ComputerName <dnshostname(Get-NetComputerの出力)>　-Verbose
 ```
 
 3. `Get-NetSession`がAccess is deniedエラーで失敗した場合は、PsLoggedOnを試す
-	（[🛠️Windows Sysintarnals](../../../Tools/🛠️Windows%20Sysintarnals.md#PsLoggedOn)）
-	（[🔍AD Enumeration](#補足：Get-NetSessionがうまくいかない理由)）
+	（[PsLoggedOn](../../../Tools/🛠️Windows%20Sysintarnals.md#PsLoggedOn)）
+	（[補足：Get-NetSessionがうまくいかない理由](#補足：Get-NetSessionがうまくいかない理由)）
 ```powershell
 .\PsLoggedon.exe \\<dnshostname>
 ```
@@ -265,9 +268,9 @@ Get-NetSession -ComputerName <dnshostname(Get-NetComputerの出力)>　-Verbose
 
 ### 目的
 
-サービスアカウントとそれに紐づくSPN（Service Principal Name）を洗い出して、どのアカウントがどのサービス用SPNを持っているか（＝どの鍵で署名されるか）を把握する  
+サービスアカウントとそれに紐づくSPN（Service Principal Name）を洗い出して、どのアカウントがどのサービス用SPNを持っているか（＝どの鍵で署名されるか）を把握する。
 ※ 実際の稼働有無は別途確認が必要
-	SPN：[ADの基本](ADの基本.md#AD用語一覧表)
+	SPN：[AD用語一覧表](ADの基本.md#AD用語一覧表)
 
 ### 背景
 
@@ -288,8 +291,7 @@ krbtgt         kadmin/changepw
 iis_service    {HTTP/web04.corp.com, HTTP/web04, HTTP/web04.corp.com:80}
 ```
 - 読み方：`serviceprincipalname` に `HTTP/web04.corp.com` とあれば 、web04.corp.com 上で HTTP (80)サービスが動いている可能性が高いと判断
-	- ⚠️SPN があっても必ずサービスが稼働中とは限らない（古い登録、誤登録の可能性）ため、実接続で確認すること
-- →💥[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#Silver%20Ticket)
+	- →💥[Silver Ticket](../../../Tools/🥝Mimikatz.md#Silver%20Ticket)
 
 Windows標準インストールの`setspn.exe`
 ```powershell
@@ -297,25 +299,28 @@ Windows標準インストールの`setspn.exe`
 setspn -L <サービスアカウント>
 ```
 
+>[!NOTE]
+>SPN があっても必ずサービスが稼働中とは限らない（古い登録、誤登録の可能性）ため、実接続で確認すること。
+
 ---
 ---
 
 ## オブジェクトの権限列挙
 
 - 関連ノート：
-	- [用語](../../../Misc/用語.md#ACL,%20DACL,%20ACE)
-	- [用語](../../../Misc/用語.md#SID,%20RID)
+	- [ACL, DACL, ACE](../../../Misc/用語.md#ACL,%20DACL,%20ACE)
+	- [SID, RID](../../../Misc/用語.md#SID,%20RID)
 
 ### 目的
 
-オブジェクトのアクセス制御を列挙し、悪用可能な権限をもつプリンシパルをみつける
+オブジェクトのアクセス制御を列挙し、悪用可能な権限をもつプリンシパルをみつける。
 
 ### オブジェクトの権限列挙コマンド
 
 1. 指定したオブジェクトのアクセス制御を列挙し、権限及びその権限をもつプリンシパルを列挙（PowerView）
 ```powershell
-# 例：Get-ObjectAcl -Identity "Management Department" | ? {$_.ActiveDirectoryRights -eq "GenericAll"} | select SecurityIdentifier,ActiveDirectoryRights
-Get-ObjectAcl -Identity "<objectのcommon name>" | ? {$_.ActiveDirectoryRights -eq "<権限>"} | select SecurityIdentifier,ActiveDirectoryRights
+# 具体例：Get-ObjectAcl -Identity "Management Department" | ? {$_.ActiveDirectoryRights -eq "GenericAll"} | select SecurityIdentifier,ActiveDirectoryRights
+Get-ObjectAcl -Identity "<common_name>" | ? {$_.ActiveDirectoryRights -eq "<権限>"} | select SecurityIdentifier,ActiveDirectoryRights
 ```
 - `SecurityIdentifier`：指定したオブジェクトに対して権限をもつプリンシパル
 	- 例でいうと、Management Departmentオブジェクトに対して権限をもつプリンシパル（Adminなど）
