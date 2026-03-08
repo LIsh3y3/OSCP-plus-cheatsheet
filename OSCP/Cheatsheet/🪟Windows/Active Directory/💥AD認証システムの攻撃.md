@@ -156,8 +156,7 @@ powershell -ep bypass
 .\Rubeus.exe asreproast /nowrap /outfile:<outputfile>
 ```
 
-3. Hashcatでクラック
-	- [🐈‍⬛Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：18200）
+3. [🐈‍⬛Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)でクラック（モード：18200）
 
 ## AS-REP Roasting w/ impacket（リモート実行）
 
@@ -173,8 +172,7 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/<u
 impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -usersfile <wordlist> -no-pass
 ```
 
-2. Hashcatで解析
-	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：18200）
+2. [Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)でクラック（モード：18200）
 
 - DCのIPが異なる場合や、認証情報に誤りがある場合、もしくは事前認証が有効な場合は、次のErrorが表示
 ```
@@ -192,11 +190,11 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 
 - 背景：
 	- TGS-REQではSPNを指定してTGSを要求するが、この時点でサービスへのアクセス権限は検証されないため、SPNさえ知っていればTGSを要求できる
-	- TGSはサービスアカウントのパスワードハッシュで暗号化されている（[ADの基本](ADの基本.md#Kerberos認証ステップ)のステップ3, 4）
+	- TGSはサービスアカウントのパスワードハッシュで暗号化されている（[Kerberos認証ステップ](ADの基本.md#Kerberos認証ステップ)のステップ3, 4）
 
 - 使用に適したシチュエーション：
 	- アカウントの種別（objectClass / samAccountType / sAMAccountName）が、userオブジェクトのコンテキストでサービスが動作しているときに非常に有効
-	- 💡ADのユーザーに`iis_service`など、サービスを表すユーザーが存在するとき
+	- ADのユーザーに`iis_service`など、**サービス用のユーザー**が存在するとき
 
 - 一方で、以下のコンテキストで動作している場合は、パスワードがランダムかつ120文字以上であるため、実質解析は不可能
 	- computer
@@ -204,7 +202,8 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 	- msDS-ManagedServiceAccount
 	- msDS-GroupManagedServiceAccount
 
-- 💡侵害したユーザーが、ターゲットオブジェクトに対して`GenericAll`、`GenericWrite`、`WriteProperty`、または`Validated-SPN`を持つ場合は、**Targeted Kerberoast**が可能([💥AD Exploit](💥AD%20Exploit.md#Targeted%20Kerberoast))
+>[!TIP]
+>侵害したユーザーが、ターゲットオブジェクトに対して`GenericAll`、`GenericWrite`、`WriteProperty`、または`Validated-SPN`を持つ場合は、[Targeted Kerberoast](💥AD%20Exploit.md#Targeted%20Kerberoast)が可能
 
 ## Kerberoasting w/ Rubeus
 
@@ -215,24 +214,23 @@ impacket-GetNPUsers -dc-ip <DC_IP> -request -outputfile <outputfile> <domain>/ -
 .\Rubeus.exe kerberoast /nowrap /outfile:<outputfile>
 ```
 
-2. Hashcatで解析
-	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：13100）
+2. [Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)でクラック（モード：13100）
 
 ## Kerberoasting w/ Impacket
 
 - ✅リモートから実行可能
-- ❌Impacketだけではアカウントの種別がユーザーかそれ以外かがわからず、[💥AD認証システムの攻撃](#Kerberoastingの仕組み)の「使用に適したシチュエーション」であるかどうかが判別つかない
+- ❌Impacketだけではアカウントの種別がユーザーかそれ以外かがわからず、[Kerberoastingの仕組み](#Kerberoastingの仕組み)の「使用に適したシチュエーション」であるかどうかが判別つかない
 - ❌FWなどの影響で失敗することがある
-- →==可能な限りRubeusを使用==
-- 💡他攻撃手法：[389,636,3268 - LDAP](../../Ports%20-%20Service/389,636,3268%20-%20LDAP.md#💥Kerberoasting)
+	- →**可能な限りRubeusを使用**
+
+- 他攻撃手法：[💥Kerberoasting](../../Ports%20-%20Service/389,636,3268%20-%20LDAP.md#💥Kerberoasting)
 
 1. kerberoast実行
 ```zsh
 impacket-GetUserSPNs -dc-ip <DC_IP> '<domain>/<username>' -request -outputfile <outputfile>
 ```
 
-2. Hashcatで解析
-	- [🐈‍⬛Password Crack - JtR・Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)（モード：13100）
+2. [Hashcat](../../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#🐈‍⬛Hashcat)でクラック（モード：13100）
 
 - Error : "KRB_AP_ERR_SKEW(Clock skew too great)"と表示された場合は、攻撃者のマシンとDCの時刻を同期する必要がある
 ```zsh
@@ -252,7 +250,7 @@ sudo timedatactl set-ntp true
 
 # Silver Ticket
 
-[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#Silver%20Ticket)
+[Silver Ticket](../../../Tools/🥝Mimikatz.md#Silver%20Ticket)
 
 ---
 
@@ -260,7 +258,7 @@ sudo timedatactl set-ntp true
 
 ## Skelton Key(バックドア)
 
-[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#Skeleton%20Key（バックドア）)
+[Skeleton Key（バックドア）](../../../Tools/🥝Mimikatz.md#Skeleton%20Key（バックドア）)
 
 ## Rubeusの他の使い方
 
@@ -271,8 +269,3 @@ Rubeus.exe brute /password:<password> /noticket
 Rubeus.exe harvest /interval:30
 ```
 
----
-
-# チェックリスト
-
-- [ ] すべてのドメインユーザーに入手済み認証情報でパスワードスプレーしたか？
