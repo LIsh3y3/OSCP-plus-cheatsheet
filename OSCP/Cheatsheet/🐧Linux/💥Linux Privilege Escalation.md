@@ -1145,6 +1145,8 @@ curl http://127.0.0.1/phpMyAdmin/tmp/backdoor.php
 - `~/.gnupg/secring.gpg` (旧) や `~/.gnupg/private-keys-v1.d/` (新) を奪取する
 - 奪取した秘密鍵に対して、`gpg2john` でハッシュ化し、`john` や `hashcat` でパスフレーズをオフライン攻撃する
 
+[Cronの列挙コマンド](🔍Linux%20Enumeration.md#Cronの列挙コマンド)
+
 ### 秘密鍵をインポート→暗号ファイルの復号
 
 1. 秘密鍵があるか確認
