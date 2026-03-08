@@ -56,4 +56,4 @@ Nmapが使えないとき：
 # サブネットに存在する機器に対し、特定ポートがopenかどうかを検証
 for i in $(seq 1 254); do nc -zv -w 1 [サブネットIP第三オクテット].$i <Port>; done
 ```
-- Windowsの場合は[Living off the Land](../../Cheatsheet/🪟Windows/Living%20off%20the%20Land.md#Test-NetConnectionによるポートスキャン)
+- Windowsの場合は[Living off the Land](../../Misc/Living%20off%20the%20Land.md#Test-NetConnectionによるポートスキャン)
