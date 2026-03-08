@@ -96,7 +96,7 @@ whoami /groups /fo csv | ConvertFrom-Csv | Select-Object "Group Name"
 ```cmd
 whoami /priv
 ```
-- StateがDisabledは、実行中のプロセスがたった今"使っていない"だけで有効
+- StateがDisabledは、実行中のプロセスがたった今"使っていない"だけで権限自体は有効
 
 ローカルに存在するユーザー一覧
 ```powershell
@@ -346,7 +346,7 @@ Get-WmiObject win32_service | Select-Object Name, PathName, StartName | Where-Ob
 ```
 - ⚠️出力のPathNameが空白となるものは、アクセス権限がない
 
-### 💡Tip：サービス列挙がpermisison deniedで実行できないとき
+### サービス列挙がpermission deniedで実行できないとき
 
 - WinRMやbind shellのように、完全にインタラクティブなシェル（RDPやssh）でないと、WMIやCMIが使えずPermission deniedが返ることがある
 
@@ -605,7 +605,8 @@ Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | S
 
 ## Windows用列挙ツール一覧
 
-💡AVに検知される場合は、[Module 16：Antivirus Evasion](../../PEN-200/Module%2016：Antivirus%20Evasion.md)のテクニックを使用したり、他のツールを試したりする
+>[!TIP]
+>AVに検知される場合は、[Module 16：Antivirus Evasion](../../PEN-200/Module%2016：Antivirus%20Evasion.md)のテクニックを使用したり、他のツールを試したりする
 
 | ツール名                                                                                   | 説明                                                                                                                                               |
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
