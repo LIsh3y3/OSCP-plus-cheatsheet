@@ -74,21 +74,21 @@ dig <domain> MX
 
 ### フィルタ
 
-| フィルタ名                          | 説明                                              | 例                                                     |
-| ------------------------------ | ----------------------------------------------- | ----------------------------------------------------- |
-| allintext                      | 指定したすべてのキーワードがページ本文に含まれているものを検索             | allintext:"keyword"                                   |
-| intext                         | 指定したキーワードがすべてまたはどれか1つがページ本文に含まれているものを検索 | intext:"keyword"                                      |
-| inurl                          | URLに指定したキーワードが含まれているものを検索                       | inurl:"keyword"                                       |
-| allinurl                       | URLに指定したすべてのキーワードが含まれているものを検索               | allinurl:"hoge foo"                                   |
-| intitle                        | タイトルに指定したキーワードが含まれているものを検索（すべて or どれか1つ）        | intitle:"keyword"                                     |
-| allintitle                     | タイトルに指定したすべてのキーワードが含まれているものを検索              | allintitle:"hoge foo"                                 |
-| site                           | 指定したサイトに限定して検索し、そのサイト内のすべての結果を表示                | site:"[www.google.com](http://www.google.com)"        |
-| filetype                       | 指定したファイル形式のものを検索                                | filetype:"pdf"                                        |
-| link                           | 指定したキーワードがリンクとして貼られているページを検索                    | link:"keyword"                                        |
-| allinanchor / inanchor         | 他のページから貼られたリンクのアンカーテキストに指定キーワードが含まれるものを検索   | inanchor:rat                                          |
-| allinpostauthor / inpostauthor | ブログ検索限定。指定した著者が書いたブログ記事を検索                      | allinpostauthor:"keyword"                             |
-| related                        | 指定したページと似ているページを検索                          | related:www.google.com                                |
-| before / after                 | 特定の日付範囲を検索                                      | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
+| フィルタ名                          | 説明                                        | 例                                                     |
+| ------------------------------ | ----------------------------------------- | ----------------------------------------------------- |
+| allintext                      | 指定したすべてのキーワードがページ本文に含まれているものを検索           | allintext:"keyword1" "keyword2"                       |
+| intext                         | 指定したキーワードがすべてまたはどれか1つがページ本文に含まれているものを検索   | intext:"keyword"                                      |
+| inurl                          | URLに指定したキーワードが含まれているものを検索                 | inurl:"keyword"                                       |
+| allinurl                       | URLに指定したすべてのキーワードが含まれているものを検索             | allinurl:"hoge foo"                                   |
+| intitle                        | タイトルに指定したキーワードが含まれているものを検索（すべて or どれか1つ）  | intitle:"keyword"                                     |
+| allintitle                     | タイトルに指定したすべてのキーワードが含まれているものを検索            | allintitle:"hoge foo"                                 |
+| site                           | 指定したサイトに限定して検索し、そのサイト内のすべての結果を表示          | site:"[www.google.com](http://www.google.com)"        |
+| filetype                       | 指定したファイル形式のものを検索                          | filetype:"pdf"                                        |
+| link                           | 指定したキーワードがリンクとして貼られているページを検索              | link:"keyword"                                        |
+| allinanchor / inanchor         | 他のページから貼られたリンクのアンカーテキストに指定キーワードが含まれるものを検索 | inanchor:rat                                          |
+| allinpostauthor / inpostauthor | ブログ検索限定。指定した著者が書いたブログ記事を検索                | allinpostauthor:"keyword"                             |
+| related                        | 指定したページと似ているページを検索                        | related:www.google.com                                |
+| before / after                 | 特定の日付範囲を検索                                | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
 
 ### 演算子
 
@@ -126,12 +126,12 @@ dig <domain> MX
 
 機密情報探し
 
-|目的|Dork例|備考|
-|---|---|---|
-|環境設定ファイル探し|ext:env OR ext:conf intext:DB_PASSWORD|クラウド・アプリ設定狙い|
-|SQLダンプ探し|filetype:sql "INSERT INTO"|データベース漏洩チェック|
-|社内文書探し|filetype:pdf site:example.com|特定企業の内部文書|
-|機密ログ探し|filetype:log "password" OR "API key"|誤公開ログ探し|
+| 目的         | Dork例                                            | 備考           |
+| ---------- | ------------------------------------------------ | ------------ |
+| 環境設定ファイル探し | filetype:env OR filetype:conf intext:DB_PASSWORD | クラウド・アプリ設定狙い |
+| SQLダンプ探し   | filetype:sql "INSERT INTO"                       | データベース漏洩チェック |
+| 社内文書探し     | filetype:pdf site:example.com                    | 特定企業の内部文書    |
+| 機密ログ探し     | filetype:log "password" OR "API key"             | 誤公開ログ探し      |
 
 意図せず公開されたドキュメント探し
 
