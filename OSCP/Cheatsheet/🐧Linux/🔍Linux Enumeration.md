@@ -458,7 +458,9 @@ $$fstabの結果例$$
 mount
 ```
 - 💡[Normal Informations](../../Misc/Normal%20Informations.md#マウント仮想ファイルシステム)は着目の優先度は低い
+
 ![](../../画像ファイル/Pasted%20image%2020250826124828.png)
+
 $$mountの実行結果例$$
 
 利用可能なストレージ・パーティションを確認（未マウント領域も含む）
