@@ -2,7 +2,9 @@
 
 - ターゲットドメインの構成を把握してアタックサーフェースを明らかにすること
 - 脆弱そうなドメインやサーバーに当たりをつけること
-- 💡OSCPにおいては最初からIPアドレスが提供されているため、列挙の優先度低い
+
+>[!TIP]
+>OSCPにおいては最初からIPアドレスが提供されているため、列挙の優先度は低い。
 
 ---
 
@@ -15,7 +17,7 @@
 | host     | Linux   | Linuxデフォルト<br>シンプル・初心者向け | `host -t [record type] <domain>`        |
 | nslookup | Windows | Windowsデフォルト(LOLBIN)     | `nslookup -type=[record type] <domain>` |
 | dig      | Linux   | 高機能・詳細な情報取得向け            | `dig ANY <domain>`<br>（ANY =  一括取得）     |
-（record type : [53 - DNS](#DNS%20record)）
+（record type : [DNS record一覧表](#DNS%20record一覧表)）
 
 ---
 
@@ -33,7 +35,7 @@ dnsrecon -d <domain> -n <name_serverIP> -a
 
 逆引きスキャン
 ```zsh
-dnsrecon -r <IP/subnet→例：51.222.169.0/24> -n <name_serverIP>
+dnsrecon -r <IP/subnet> -n <name_serverIP>
 ```
 
 細かいスキャン（`-a`の実行内容を細分化）
@@ -104,6 +106,6 @@ for sub in $(cat <wordlist>); do host $sub.<domain>; done | grep -v "not found"
 | CNAME | Canonical Name | 別名（エイリアス）の設定                     | `CNAME www.example.com`                     |
 | TXT   | Text           | **任意のテキスト**情報。認証情報やSPFレコードなどにも使う | `TXT "v=spf1 include:_spf.google.com ~all"` |
 
-## 参考
+## 参考🔗
 
 - [Pentesting DNS - HackTricks](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-dns.html)

