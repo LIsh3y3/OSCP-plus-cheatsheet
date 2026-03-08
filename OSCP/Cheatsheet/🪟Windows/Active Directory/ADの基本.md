@@ -11,8 +11,8 @@
 デメリット：
 1. Attack Surfaceが増える
 	- SMB、RPC、LDAP、Kerberosなどのポートが、内部向けにデフォルトopenになる
-		- （SMBで横展開をしやすい）
-		- （closedにすることも可能）
+		- SMBで横展開をしやすい
+		- ※closedにすることも可能
 
 具体例：
 - 学校などで共通の認証情報を使ってログインできるのは、各PCではなくADで一元管理しているため
@@ -22,7 +22,7 @@
 
 - Active Directory などの中央認証基盤を使わず、各コンピュータが独立して認証・管理を行う Windows のネットワーク構成のこと
 - ワークグループ環境でも、SMB によるファイル共有やプリンタ共有を構成できる
-- リソースが完全に独立しており、認証情報はSAMに保存
+- リソースが完全に独立しており、認証情報はSAMに保存される
 
 ---
 
@@ -78,6 +78,7 @@
 - OUは階層化可能、ポリシー継承あり
 - デフォルトでBuiltin, Computersなどのコンテナが存在
 - OUには１ユーザーは１つだけ所属できる
+
 ![](../../../画像ファイル/Pasted%20image%2020230409150913.png)
 
 ## User管理
@@ -118,6 +119,7 @@
 3. 作成したポリシーを右クリックし、Editを開く
 4. User Configuration -> Administrative Templates -> Control Panel -> Prohibit Access をEnable
 5. 部門OUにリンク
+
 ![](../../../画像ファイル/Pasted%20image%2020230410135945.png)
 
 ---
@@ -150,7 +152,9 @@
 	- TGTは中身にSession Keyのコピーを保持しており、KDCは必要な時にTGTを復号してSession Keyを得ることができるので、KDC自体にSession keyを保持する必要はない(session keyはUserhashで暗号化)
 	- TGTは*krgtgt* hashという、サービスアカウントがTGTを発行するための鍵を内部に保持している = TGTはkrbtgtアカウントのパスワードハッシュを使用して暗号化されているため、ユーザーはTGTの内容を復号できない
 	- 💥krbtgtアカウントのパスワードが漏洩した場合、悪意のある攻撃者はWindowsドメイン内のすべてのアカウントにアクセスできる可能性がある→攻撃者に狙われやすい
+
 ![](../../../画像ファイル/Pasted%20image%2020230410155451.png)
+
 $$TGTのレスポンス$$
 
 3. *TGS-REQ*：TGTを使用してKDCにTGS（Ticket Granting Service）をリクエストするため、クライアントはUsernameとTimestampをセッションキーで暗号化して送信し、TGTと、SPNを添付する
@@ -160,14 +164,18 @@ $$TGTのレスポンス$$
 	- Service Ownerはサービスを所有するプリンシパル（クライアントではない）
 	- TGSは、サービス所有者がTGSを復号することでアクセスできるように、中身（暗号化されたコンテンツ）にSvc session keyのコピーをもつ
 		- Svc＝Serviceの略
+
 ![](../../../画像ファイル/Pasted%20image%2020230410161109.png)
+
 $$TGSのレスポンス$$
 
 5. *AP-REQ*：クライアントはSvc Session Keyで暗号化したUsernameとTimestamp、そしてService Owner Hashで暗号化されているTGSを、サービスが稼働しているSRV（サーバー）に送る
 	- SRVは自身の持つService Owner HashでTGSを復号し、Svc Session Keyを取り出す
 	- Svc Session Keyを使って、クライアントから送られてきた暗号化されたAuthenticator（UsernameとTimestamp）を復号する
 	- 復号した内容（UsernameとTimestamp）を検証する
+
 ![](../../../画像ファイル/Pasted%20image%2020230410162330.png)
+
 $$TGSでサービスの使用要求$$
 - 💥[[Attacking Kerberos#Golden/Silver Ticket Attacks w/ mimikatz]]にもあるように、Silver Ticket攻撃のステルス性が高いのは、TGSはKDCのTGSにより発行されるが、検証するのはKDCではなくSRVなので、偽造されたTGSがSRVに送られてもKDCのASで検証できないから。要はTGSは認証サーバに送られないから。
 

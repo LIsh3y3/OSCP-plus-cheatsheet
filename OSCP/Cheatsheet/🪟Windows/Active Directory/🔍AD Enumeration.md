@@ -200,7 +200,7 @@ Get-NetComputer | select dnshostname, operatingsystem, operatingsystemversion
 ```powershell
 Get-NetComputer '<dnshostname>'
 ```
-- `operatingsystemversion`は`10.0（20348）`のように、括弧内にビルド番号があり、ビルド番号を[List of Microsoft Windows versions - Wikipedia](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions)で検索することで、詳細なOSバージョンがわかる
+- `operatingsystemversion`は`10.0（20348）`のように、括弧内にビルド番号があり、ビルド番号を🔗[List of Microsoft Windows versions - Wikipedia](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions)で検索することで、詳細なOSバージョンがわかる
 
 特定ホストの名前解決
 ```powershell
@@ -215,7 +215,7 @@ Resolve-DnsName -ComputerName '<dnshostname>'
 ### 目的
 
 - ドメイン内の権限関係とログオン状況を把握して攻撃ベクター（足場→横展開→昇格）の候補を見つける（Chained Compromise）
-	- 最終ゴールはDomain Adminだが、[クラウンジュエル](https://www.sompocybersecurity.com/column/glossary/crown-jewel)を持つDBやファイルサーバーもゴールとなりえる
+	- 最終ゴールはDomain Adminだが、🔗[クラウンジュエル](https://www.sompocybersecurity.com/column/glossary/crown-jewel)を持つDBやファイルサーバーもゴールとなりえる
 	- 足場のユーザーが封鎖されても、同等権限を持つユーザーを侵害しておけば、足場を維持できる
 
 - 他のユーザーがどの端末にログオンしているかを把握することで、横展開や資格情報収集、「有利な踏み台」の発見につなげる
@@ -248,7 +248,7 @@ Get-NetSession -ComputerName <dnshostname(Get-NetComputerの出力)>　-Verbose
 
 対応策はPsLoggedOnを使うか、諦めるか
 
-- PowerViewのGet-NetSessionは[NetSessionEnum](https://learn.microsoft.com/en-us/windows/win32/api/lmshare/nf-lmshare-netsessionenum)APIに依存する
+- PowerViewのGet-NetSessionは🔗[NetSessionEnum](https://learn.microsoft.com/en-us/windows/win32/api/lmshare/nf-lmshare-netsessionenum)APIに依存する
 	- NetSessionEnumは`SrvsvcSessionInfo`レジストリキーの状態に依存する
 - たとえ管理者権限があったとしても、 Windows10 / Server 2019以降は、<u>デフォルトでリモートからの列挙が制限される</u>可能性がある
 	- レジストリへの「ローカルな」アクセス権と「リモート列挙できるか」は別の話
@@ -441,7 +441,7 @@ CN=Stephanie,CN=Users,DC=corp,DC=com
 
 ## 補足：samAccountType一覧
 
-ソース：[SAM-Account-Type 属性 - Microsoft](https://learn.microsoft.com/ja-jp/windows/win32/adschema/a-samaccounttype)
+ソース：🔗[SAM-Account-Type 属性 - Microsoft](https://learn.microsoft.com/ja-jp/windows/win32/adschema/a-samaccounttype)
 	16進数で記載されているが、LDAPで通信する際は10進数を使う
 
 | 名前                      | 16進値         | 10進値      | 説明          |
