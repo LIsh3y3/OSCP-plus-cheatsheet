@@ -138,6 +138,8 @@ openssl passwd -6 <pw>
 
 # SUIDとCapabilityを利用したPrivEsc
 
+[🔍Linux Enumeration](🔍Linux%20Enumeration.md#)
+
 > [!NOTE]
 > SGIDの場合は、バイナリの所有グループに属するユーザーへのLateral Movementが可能
 
