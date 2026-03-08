@@ -383,6 +383,7 @@ Aug 29 02:52:14 debian-privesc kernel: [ 5742.171462] audit: type=1400 audit(166
 ### Sudo権限と環境変数によるPrivEscの条件
 
 1. `sudo -l`の結果表示されたコマンドがGTFOBinsに載っていないとき
+
 2. コマンドが共有オブジェクトを動的リンクするとき
 ```zsh
 file <path_to_binary>
@@ -514,7 +515,7 @@ chmod +xs /tmp/nfs/shell.elf
 
 # カーネルの脆弱性を利用したPrivEsc
 
-[🔍Linux Enumeration](🔍Linux%20Enumeration.md#基本的なシステム情報の列挙)
+[基本的なシステム情報の列挙](🔍Linux%20Enumeration.md#基本的なシステム情報の列挙)
 
 ## 脆弱性を利用するにあたって...
 
