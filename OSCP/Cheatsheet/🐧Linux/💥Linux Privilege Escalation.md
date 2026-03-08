@@ -138,16 +138,18 @@ openssl passwd -6 <pw>
 
 # SUIDとCapabilityを利用したPrivEsc
 
-※SGIDの場合はバイナリ所有グループに属するユーザーに対しLatMovが可能
+> [!NOTE]
+> SGIDの場合は、バイナリの所有グループに属するユーザーへのLateral Movementが可能
 
 ## SUIDバイナリ w/ 公開エクスプロイト
 
-1. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)を実施
+1. [高権限をもつバイナリの列挙](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)を実施
 2. 💥[GTFOBins](https://gtfobins.github.io/)を使い、対象のバイナリを検索→"SUID"もしくは"Capability"に記載のコマンドを（説明を読んだ上で）実行
 	- SGIDがあるバイナリに対しては、SUIDのテクニックを使える
-	- [💥Linux Privilege Escalation](#補足：GTFOBinsの方法でPermission%20deniedの場合の原因追求)
+	- [補足：GTFOBinsの方法でPermission%20deniedの場合の原因追求](#補足：GTFOBinsの方法でPermission%20deniedの場合の原因追求)
 
-- 💡バイナリのバージョンによっては、Exploit-DBに公開エクスプロイトがあるかも
+> [!TIP]
+> バイナリのバージョンによっては、Exploit-DBに公開エクスプロイトが存在する場合がある
 
 ---
 
