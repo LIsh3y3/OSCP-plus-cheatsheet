@@ -180,7 +180,7 @@ uname -a
 ```zsh
 Linux 53d12eea1c2e 5.11.0-49-generic #55-Ubuntu SMP Wed Jan 12 17:36:34 UTC 2022 x86_64 GNU/Linux
 
-# Linux [hostname] [kernel version] [ビルド番号]-[このカーネルをビルドしたディストロ] SMP [ビルド日時][architecture] GNU/Linux
+# Linux <hostname> <kernel version> <ビルド番号>-<このカーネルをビルドしたディストロ> SMP <ビルド日時><architecture> GNU/Linux
 ```
 
 ディストリビューションの情報
