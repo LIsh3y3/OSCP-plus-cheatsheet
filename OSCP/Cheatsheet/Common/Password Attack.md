@@ -286,7 +286,7 @@ python3 cupp.py -a
 # Password Hashを用いた攻撃
 
 
-- [ ] [💥AD Exploit](../🪟Windows/Active%20Directory/💥AD%20Exploit.md)もしくは[🔍 Credentials Harvesting](../🪟Windows/Active%20Directory/🔍%20Credentials%20Harvesting.md)もしくは[💥Lateral Movement & Persistance in AD](../🪟Windows/Active%20Directory/💥Lateral%20Movement%20&%20Persistance%20in%20AD.md)にまとめたほうがいい
+- [ ]もしくは[🔍 Credentials Harvesting](../🪟Windows/Active%20Directory/🔍%20Credentials%20Harvesting.md)もしくは[💥Lateral Movement & Persistance in AD](../🪟Windows/Active%20Directory/💥Lateral%20Movement%20&%20Persistance%20in%20AD.md)にまとめたほうがいい
 
 - 前提知識：
 	- [用語](../../Misc/用語.md#SAM)
@@ -318,8 +318,8 @@ Local Group Memberships *Administrators
 
 ## PtH
 
-- [Password Attack](#NTLM%20Hashのクラッキング)がハッシュが複雑で成功しない場合、かつ、同じユーザー名、かつパスワードを使用するアカウントが存在するだろう場合に実施：
-	[💥Lateral Movement & Persistance in AD](../🪟Windows/Active%20Directory/💥Lateral%20Movement%20&%20Persistance%20in%20AD.md#PtH%20(Pass-the-Hash))
+- [Password Attack](#NTLM%20Hashのクラッキング)がハッシュが複雑で成功しない場合、かつ、同じパスワードを使用するアカウントが存在するだろう場合に実施
+	[PtH (Pass-the-Hash)](../🪟Windows/Active%20Directory/💥Lateral%20Movement%20&%20Persistance%20in%20AD.md#PtH%20(Pass-the-Hash))
 
 ---
 
