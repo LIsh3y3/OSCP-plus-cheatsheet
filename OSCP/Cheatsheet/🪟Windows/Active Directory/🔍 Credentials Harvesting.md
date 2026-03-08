@@ -274,14 +274,12 @@ impacket-secretsdump -sam <SAMデータベースのファイルフルパス> -sy
 
 ## GUIの方法
 
-1. この後の手順で"Access is denied"エラーを防ぐため、レジストリ値を修正
-
-2. Task Managerを開く -> Detailsタブへ -> lsass.exeファイルを右クリック -> Create dump file
+1. Task Managerを開く -> Detailsタブへ -> lsass.exeファイルを右クリック -> Create dump file
  
  ![ 380](../../../画像ファイル/Pasted%20image%2020230602114024.png)
  
 
-3.  ダンプされたプロセスをMimikatzフォルダにコピー
+2.  ダンプされたプロセスをMimikatzフォルダにコピー
 ```cmd
 copy <path_to_lsass.DMP> C:\Tools\Mimikatz\lsass.DMP
 ```
@@ -356,10 +354,10 @@ Get-WebCredentials
 ## NTDS ドメインコントローラ
 
 - New Technologies Directory Services (NTDS)は、オブジェクト、属性、Credsなど、すべてのADデータを含むDB
-- NTDS.DTSのデータは、次の3つのテーブルで構成されている：
+- NTDS.ditのデータは、次の3つのテーブルで構成されている：
 	- スキーマテーブル：オブジェクトの種類とその関係
 	- リンクテーブル：オブジェクトの属性とその値
-	- データ型：ユーザーとグループ
+	- データテーブル：ユーザーとグループ（オブジェクトの実データを格納する主テーブル）
 
 - NTDSは、デフォルトで`C:\Windows\NTDS`にあり、ターゲットマシンからのデータ抽出を防ぐために暗号化されている
 - NTDS.dit ファイルは ADで使用され、ロックされているため、実行中のマシンからのアクセスは禁止されている
