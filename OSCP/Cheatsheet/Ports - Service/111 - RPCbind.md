@@ -4,11 +4,11 @@
 # 目的・シチュエーション
 
 目的：
-- ターゲットのRPCサービスのポート情報を収集し、次の攻撃対象（例：NFS, rusersd）を見つける。
-- NULLセッションでの接続確認とユーザー列挙。
+- ターゲットのRPCサービスのポート情報を収集し、次の攻撃対象（例：NFS, rusersd）を見つける
+- NULLセッションでの接続確認とユーザー列挙
 
 シチュエーション：
-- LinuxもしくはWindowsマシン
+- LinuxもしくはWindowsマシンに対して使用可能
 
 ---
 
@@ -16,17 +16,17 @@
 
 バナー取得（手動）
 ```zsh
-nc -nvC $TargetIP 111
+nc -nvC <target_IP> 111
 ```
 
 サービスの簡易一覧（概要）
 ```zsh
-rpcinfo -s $TargetIP
+rpcinfo -s <target_IP>
 ```
 
 RPCサービスごとのポートを列挙
 ```zsh
-rpcinfo -p $TargetIP
+rpcinfo -p <target_IP>
 ```
 
 ---
@@ -34,13 +34,13 @@ rpcinfo -p $TargetIP
 # NULLセッションでのユーザー列挙
 
 ```zsh
-rpcclient -U "" $TargetIP
+rpcclient -U "" <target_IP>
 ```
 
 ログイン後のコマンド例（対話モード）
 ```zsh
 rpcclient $> enumdomusers
-rpcclient $> queryuser 0x[RID]
+rpcclient $> queryuser 0x<RID>
 ```
 
-その他のコマンドは[135,593 - MSRPC](135,593%20-%20MSRPC.md)を参照
+- その他のコマンドは[135,593 - MSRPC](135,593%20-%20MSRPC.md)を参照
