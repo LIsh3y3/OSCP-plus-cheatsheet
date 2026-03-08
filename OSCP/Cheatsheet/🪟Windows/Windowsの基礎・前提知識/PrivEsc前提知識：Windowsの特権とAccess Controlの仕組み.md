@@ -7,8 +7,8 @@
 
 # SIDについて
 
-- [用語](../../../Misc/用語.md#SID,%20RID)を参照
-- [well-known SID](https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids)があり、その中でもPrivEscの文脈で有用なものがある
+- 用語：[SID, RID](../../../Misc/用語.md#SID,%20RID)
+- 🔗[well-known SID](https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids)があり、その中でもPrivEscの文脈で有用なものがある
 
 | SID                          | 意味                  |
 | ---------------------------- | ------------------- |
@@ -22,7 +22,7 @@
 
 # Access token
 
-- [用語](../../../Misc/用語.md#プロセス・スレッド)
+- [プロセス・スレッド](../../../Misc/用語.md#プロセス・スレッド)
 
 ## Access Token の中身（セキュリティコンテキスト）
 
@@ -68,21 +68,21 @@ PrimaryとImpersonationの違い：
     - オブジェクト：ファイル、ディレクトリ等の操作対象のこと
 - Windowsでは以下の5段階が定義されている：
 
-|レベル|説明例|
-|---|---|
-|System|システムの重要プロセス（例：Winlogon、LSASS）|
-|High|管理者権限で実行されるプロセス|
-|Medium|標準ユーザーが起動したプロセス（デフォルト）|
-|Low|サンドボックスや制限付きプロセス（例：一部ブラウザ）|
-|Untrusted|非常に制限されたプロセス（一般的には使用されない）|
+| レベル       | 説明例                           |     |
+| --------- | ----------------------------- | --- |
+| System    | システムの重要プロセス（例：Winlogon、LSASS） |     |
+| High      | 管理者権限で実行されるプロセス               |     |
+| Medium    | 標準ユーザーが起動したプロセス（デフォルト）        |     |
+| Low       | サンドボックスや制限付きプロセス（例：一部ブラウザ）    |     |
+| Untrusted | 非常に制限されたプロセス（一般的には使用されない）     |     |
 
 ### 完全性レベルの確認手段
 
-|確認対象|使用ツール / コマンド|内容|
-|---|---|---|
-|プロセス|[Process Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer)|実行中プロセスの整合性レベルをGUI上で確認可能|
-|ユーザー|`whoami /groups`|出力中の「Mandatory Label」や SID でユーザーの整合性レベルを確認可能|
-|ファイル / フォルダ|`icacls [ファイル名]`|ファイルやディレクトリの整合性ラベルを表示（例：Low/Medium）|
+| 確認対象        | 使用ツール / コマンド                                                                                   | 内容                                           |
+| ----------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| プロセス        | 🔗[Process Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer) | 実行中プロセスの整合性レベルをGUI上で確認可能                     |
+| ユーザー        | `whoami /groups`                                                                               | 出力中の「Mandatory Label」や SID でユーザーの整合性レベルを確認可能 |
+| ファイル / フォルダ | `icacls <file>`                                                                                | ファイルやディレクトリの整合性ラベルを表示（例：Low/Medium）          |
 
 ## 継承の仕組み
 
@@ -99,7 +99,7 @@ PrimaryとImpersonationの違い：
 - 不正な、あるいは意図しないPrivEscを防ぐ目的
 - ==Access token + MIC + UACでセキュリティを担保==
 - アプリケーション・タスクを起動するユーザーがAdminであっても、Standard userの権限で実行する
-- 仕組みとして、LSASSはユーザーがログオン時に２つの[PrivEsc前提知識：Windowsの特権とAccess Controlの仕組み](#Access%20token)を発行する
+- 仕組みとして、LSASSはユーザーがログオン時に２つの[Access token](#Access%20token)を発行する
     - Adminトークン：必要なときのみ使われる
     - Standard userトークン：通常の操作
 - Administratorであっても、まずはStandard userトークン + Medium Integrityでプロセスを実行する
