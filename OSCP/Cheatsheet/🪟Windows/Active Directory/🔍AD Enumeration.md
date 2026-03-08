@@ -82,8 +82,6 @@ ADのパスワードポリシーを表示する
 net accounts /domain
 ```
 
----
-
 ### ⭐️PowerViewによるユーザー・グループの列挙列挙
 
 1. kaliにはpowerviewが以下のパスに存在するため、ターゲットマシンに転送する
@@ -123,8 +121,6 @@ Get-NetGroup '<common_name>'
 Get-DomainUser -PreauthNotRequired
 ```
 - (※)パスワードアタックの対象としてパスワードが全然変更されていないユーザーや、もしくは侵害しても注意を引かないような全然使われていないユーザーを列挙するため
-
----
 
 ### PowerShell自作関数によるユーザー・グループの列挙
 
@@ -184,7 +180,6 @@ $group.properties
 >nested group（グループの中にさらにグループがある）の場合は、重要なユーザーの見逃しに注意すること
 
 ---
----
 
 ## OS、ホストの列挙
 
@@ -213,7 +208,6 @@ Get-NetComputer '<dnshostname>'
 Resolve-DnsName -ComputerName '<dnshostname>'
 ```
 
----
 ---
 
 ## パーミッションとログイン中のユーザーの列挙
@@ -262,7 +256,6 @@ Get-NetSession -ComputerName <dnshostname(Get-NetComputerの出力)>　-Verbose
 	- しかし「リモート接続しているドメインユーザー」がその権限を利用して遠隔から読み取れるかは、ACL の対象（Identity）がリモート呼び出しを許すものであるかどうか次第
 
 ---
----
 
 ## SPNの列挙
 
@@ -302,7 +295,6 @@ setspn -L <サービスアカウント>
 >[!NOTE]
 >SPN があっても必ずサービスが稼働中とは限らない（古い登録、誤登録の可能性）ため、実接続で確認すること。
 
----
 ---
 
 ## オブジェクトの権限列挙
@@ -358,7 +350,6 @@ CORP\Enterprise Admins
 | Self（Self-Membership） | 自分自身をグループなどに追加できる |
 
 ---
----
 
 ## Domain共有の列挙
 
@@ -407,63 +398,6 @@ ls \\<ComputerName>\<Name>
 ```zsh
 gpp-decrypt '<cpasswordの値>'
 ```
-
----
----
-
-# Misc
-
-## Credential Injection w/Runas
-
-Runas：他のユーザーのクレデンシャルを使用してそのユーザの権限で別のプログラムを実行する。
-
-### 用途
-
-- ADの認証情報を入手したが、対象のマシンがSSHやRDPを有効にしておらず、ログインできないとき
-- 入手した認証情報の権限を利用してネットワークリソース（SYSVOLやSMB共有）を列挙したいとき
-
-### エクスプロイト条件
-
-- ADの認証情報を入手済
-- **実行環境**として、攻撃者側でWindowsマシンを用意するか、ターゲットのドメイン内に足場がある
-
-### ドメインに参加していないマシンに必要な準備：DNSの設定
-
-1. DNS設定をする理由：Runasが成功したかどうかはSYSVOLを列挙することでわかるが、DNSを設定していないとSYSVOLにアクセスできないため
-```powershell
-powershell -ep bypass
-$dnsip = "<DC_IP>"
-$index = Get-NetAdapter -Name '<Interface>' | Select-Object -ExpandProperty 'ifIndex'
-Set-DnsClientServerAddress -InterfaceIndex $index -ServerAddresses $dnsip
-```
-
-2. DNSの設定が成功したかどうかを確認
-```powershell
-nslookup <DC_FQDN>
-```
-
-### Runasによるcmd.exeの起動とSYSVOLへのアクセス
-
-cmd.exeの起動
-```powershell
-# 例：runas.exe /user:corp\robert cmd.exe
-runas.exe /user:<domain>\<username> cmd.exe
-```
-
-成功しているかどうかの確認
-```powershell
-# ユーザーの確認：成功していればrunasで指定したユーザー名が表示
-whoami
-
-# SYSVOLへアクセス
-dir \\<DC_FQDN>\SYSVOL\
-```
-
-### 留意点
-
-- パスワードは間違っていてもコマンドが実行できてしまう
-- 攻撃者自身のwindowsマシンからrunas.exeを実行するときは、コマンドプロンプトを"run as Administrator"で開くこと
-	- これにより攻撃者自身のwindowsマシンの管理者権限が、Runasで生成したコマンドプロンプトに付与される。だがこれは、ネットワーク上の特権を提供するものではなく、あくまでローカルでの特権の利用を確保するもの
 
 ---
 
