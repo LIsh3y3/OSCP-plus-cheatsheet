@@ -126,10 +126,10 @@ Get-DomainUser -PreauthNotRequired
 
 ### PowerShell自作関数によるユーザー・グループの列挙
 
-AMSIなどの影響で<u>PowerViewが使えないとき</u>に使う
+AMSIなどの影響で<u>PowerViewが使えないとき</u>に使う。
 
 1. 以下の関数を用意し、ファイルに保存する（ファイル名：`function.ps1`とする）
-	- [🔍AD Enumeration](#補足：powershell列挙関数の解説)
+	- [補足：powershell列挙関数の解説](#補足：powershell列挙関数の解説)
 ```powershell
 function LDAPSearch {
     param (
@@ -154,7 +154,6 @@ Import-Module .\function.ps1
 ```
 
 3. 関数を使い検索する
-	- 💡実行結果が`CN=hoge,CN=Users...`とあっても、hogeがuserかgroupかはそのプロパティを見る必要がある → nested groupの（グループの中にさらにグループがある）場合は、重要なユーザーの見逃しに注意すること
 ```powershell
 # ユーザーアカウントを列挙するため、
 # samAccountType(*1)でユーザーに絞り検索
@@ -174,81 +173,13 @@ $user.properties
 $group = LDAPSearch -LDAPQuery "(&(objectCategory=group)(cn=<common name>))"
 $group.properties
 ```
-- (※1)　[🔍AD Enumeration](#補足：samAccountType一覧)
+- (※1)　[補足：samAccountType一覧](#補足：samAccountType一覧)
 - (※2）ObjectCategory：オブジェクトの主要カテゴリ（グループ、ユーザー等）を表す
 - (※3)  例えば：`Development Department*`（ワイルドカード使用可）
 
-### 補足：ユーザー・グループの列挙
-
-#### 補足：powershell列挙関数の解説
-
-関連用語：[ADの基本](ADの基本.md#AD用語一覧表)
-
-##### ①LDAP pathの用意
-
-- 目的：Primaly Domain（PDC）をホスト名としたLDAP pathを用意する
-	- PDCは１つのドメインに１つまでしか存在できず、しかも最も新しい情報をもっている
-```powershell
-$PDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
-$DistinguishedName = ([adsi]'').distinguishedName
-```
-
-- 前提知識：<u>ADとの通信にはLDAP pathが必要</u>であり、LDAP provider（パス）の形式は以下となっている
-```powershell
-LDAP://HostName[:PortNumber][/DistinguishedName]
-```
-
-- `$DistinguishedName = ([adsi]'').distinguishedName`：ADSIを使い、LDAPで使用可能な命名規則に則ったDNのDCを抽出する
-```powershell
-# DNの命名規則
-CN=Stephanie,CN=Users,DC=corp,DC=com
-```
-- ※DNはDC(Domain Component)までを指定する。CNまで指定すると、探索範囲が狭まるから
-
-##### ②DirectoryEntryクラスでオブジェクトをカプセル化する
-
-- LDAP pathをカプセル化している
-- 目的：カプセル化することで、オブジェクトのプロパティ（属性）を参照したり、操作したりするのが統一的にできる
-	- 別ドメイン／別フォレストの AD に接続してクエリを実行したいときなどに、認証情報をカプセル化して渡すこともできる：`System.DirectoryServices.DirectoryEntry($LDAP, $username, $password)`
-
-##### ③フィルタリングして検索
-
-- `DirectorySearcher`クラスはLDAP pathを用いてADに対してクエリを実行できる
-- 第二引数にフィルタリング条件をもてる
-
-#### 補足：samAccountType一覧
-
-ソース：[SAM-Account-Type 属性 - Microsoft](https://learn.microsoft.com/ja-jp/windows/win32/adschema/a-samaccounttype)
-	16進数で記載されているが、LDAPで通信する際は10進数を使う
-
-| 名前                      | 16進値         | 10進値      | 説明          |
-| ----------------------- | ------------ | --------- | ----------- |
-| SAM_NORMAL_USER_ACCOUNT | `0x30000000` | 805306368 | 通常ユーザーアカウント |
-| SAM_MACHINE_ACCOUNT     | `0x30000001` | 805306369 | コンピュータアカウント |
-| SAM_TRUST_ACCOUNT       | `0x30000002` | 805306370 | トラストアカウント   |
-| SAM_GROUP_OBJECT        | `0x10000000` | 268435456 | グループ        |
-
-#### 補足：windowsに存在するユーザーについて
-
-| ユーザー（人）            | 詳細                                                                                |
-| ------------------ | --------------------------------------------------------------------------------- |
-| **Administrators** | 最も多くの特権を持っている。システム構成パラメータを変更したり、システム内のあらゆるファイルにアクセスすることができる                       |
-| Standard Users     | コンピューターにアクセスすることはできるが、限られたタスクしか実行できない。システムには永続的または重要な変更を加えることができず、変更はファイルだけに限定される |
-
-| ユーザー（人以外）                | 説明                                                                                                        |
-| ------------------------ | --------------------------------------------------------------------------------------------------------- |
-| **SYSTEM / LocalSystem** | OSが内部タスクを実行するために使用するアカウント。ホスト上で利用可能なすべてのファイルとリソースに==フルアクセスでき、Adminよりもさらに高い特権を持つ==                         |
-| Local Service            | Windowsサービスを「最小」権限で実行するために使用するデフォルトのアカウント。ネットワーク上で匿名接続を使用する                                               |
-| Network Service          | Local Serviceと同じく、Windowsサービスを「最小」権限で実行するために使用されるデフォルトのアカウント。しかし、ネットワークを通じて認証するために、コンピュータの認証情報を使用するところが違う |
-
-| AD ==Admin権限==アカウント    | 説明                          |
-| ---------------------- | --------------------------- |
-| BUILTIN\\Administrator | DCのローカル管理者権限                |
-| Domain Admins          | ドメイン内のすべてのリソースにアクセスできる管理者権限 |
-| Enterprise Admins      | forest rootのみで使用可能          |
-| Schema Admins          | ドメイン/フォレストを変更可能。攻撃者に狙い目     |
-| Server Operators       | ドメインサーバーの管理ができる             |
-| Account Operators      | 特権グループに属さないユーザーを管理できる       |
+>[!NOTE]
+>実行結果が`CN=hoge,CN=Users...`とあっても、hogeというオブジェクトがuserかgroupなのかは、そのプロパティを見る必要がある。
+>nested group（グループの中にさらにグループがある）の場合は、重要なユーザーの見逃しに注意すること
 
 ---
 ---
@@ -531,7 +462,74 @@ dir \\<DC FQDN>\SYSVOL\
 
 ---
 
-# チェックリスト
+# 補足
 
-- [ ] AS-REP roastingとKerberoastingが可能なユーザーは発見して、いたら実行したか？
-- [ ] キャッシュされたチケットはリストアップしたか？
+## 補足：powershell列挙関数の解説
+
+関連用語：[AD用語一覧表](ADの基本.md#AD用語一覧表)
+
+### ①LDAP pathの用意
+
+- 目的：Primaly Domain（PDC）をホスト名としたLDAP pathを用意する
+	- PDCは１つのドメインに１つまでしか存在できず、しかも最も新しい情報をもっている
+```powershell
+$PDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
+$DistinguishedName = ([adsi]'').distinguishedName
+```
+
+- 前提知識：<u>ADとの通信にはLDAP pathが必要</u>であり、LDAP provider（パス）の形式は以下となっている
+```powershell
+LDAP://HostName[:Port][/DistinguishedName]
+```
+
+- `$DistinguishedName = ([adsi]'').distinguishedName`：ADSIを使い、LDAPで使用可能な命名規則に則ったDNのDCを抽出する
+```powershell
+# DNの命名規則
+CN=Stephanie,CN=Users,DC=corp,DC=com
+```
+- ※DNはDC(Domain Component)までを指定する。CNまで指定すると、探索範囲が狭まるから
+
+### ②DirectoryEntryクラスでオブジェクトをカプセル化する
+
+- LDAP pathをカプセル化している
+- 目的：カプセル化することで、オブジェクトのプロパティ（属性）を参照したり、操作したりするのが統一的にできる
+	- 別ドメイン／別フォレストの AD に接続してクエリを実行したいときなどに、認証情報をカプセル化して渡すこともできる：`System.DirectoryServices.DirectoryEntry($LDAP, $username, $password)`
+
+### ③フィルタリングして検索
+
+- `DirectorySearcher`クラスはLDAP pathを用いてADに対してクエリを実行できる
+- 第二引数にフィルタリング条件をもてる
+
+## 補足：samAccountType一覧
+
+ソース：[SAM-Account-Type 属性 - Microsoft](https://learn.microsoft.com/ja-jp/windows/win32/adschema/a-samaccounttype)
+	16進数で記載されているが、LDAPで通信する際は10進数を使う
+
+| 名前                      | 16進値         | 10進値      | 説明          |
+| ----------------------- | ------------ | --------- | ----------- |
+| SAM_NORMAL_USER_ACCOUNT | `0x30000000` | 805306368 | 通常ユーザーアカウント |
+| SAM_MACHINE_ACCOUNT     | `0x30000001` | 805306369 | コンピュータアカウント |
+| SAM_TRUST_ACCOUNT       | `0x30000002` | 805306370 | トラストアカウント   |
+| SAM_GROUP_OBJECT        | `0x10000000` | 268435456 | グループ        |
+
+## 補足：windowsに存在するユーザーについて
+
+| ユーザー（人）            | 詳細                                                                                |
+| ------------------ | --------------------------------------------------------------------------------- |
+| **Administrators** | 最も多くの特権を持っている。システム構成パラメータを変更したり、システム内のあらゆるファイルにアクセスすることができる                       |
+| Standard Users     | コンピューターにアクセスすることはできるが、限られたタスクしか実行できない。システムには永続的または重要な変更を加えることができず、変更はファイルだけに限定される |
+
+| ユーザー（人以外）                | 説明                                                                                                        |
+| ------------------------ | --------------------------------------------------------------------------------------------------------- |
+| **SYSTEM / LocalSystem** | OSが内部タスクを実行するために使用するアカウント。ホスト上で利用可能なすべてのファイルとリソースに==フルアクセスでき、Adminよりもさらに高い特権を持つ==                         |
+| Local Service            | Windowsサービスを「最小」権限で実行するために使用するデフォルトのアカウント。ネットワーク上で匿名接続を使用する                                               |
+| Network Service          | Local Serviceと同じく、Windowsサービスを「最小」権限で実行するために使用されるデフォルトのアカウント。しかし、ネットワークを通じて認証するために、コンピュータの認証情報を使用するところが違う |
+
+| AD ==Admin権限==アカウント    | 説明                          |
+| ---------------------- | --------------------------- |
+| BUILTIN\\Administrator | DCのローカル管理者権限                |
+| Domain Admins          | ドメイン内のすべてのリソースにアクセスできる管理者権限 |
+| Enterprise Admins      | forest rootのみで使用可能          |
+| Schema Admins          | ドメイン/フォレストを変更可能。攻撃者に狙い目     |
+| Server Operators       | ドメインサーバーの管理ができる             |
+| Account Operators      | 特権グループに属さないユーザーを管理できる       |
