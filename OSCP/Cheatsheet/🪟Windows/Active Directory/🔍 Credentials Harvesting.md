@@ -10,7 +10,7 @@
 
 ## Snaffler
 
-- [Snaffler](https://github.com/SnaffCon/Snaffler)とは、Windows/AD環境の中から、資格情報などの価値ある情報を効率的に探し出すためのツール
+- 🔗[Snaffler](https://github.com/SnaffCon/Snaffler)とは、Windows/AD環境の中から、資格情報などの価値ある情報を効率的に探し出すためのツール
 ```powershell
 # 標準的な列挙（トラフィック大）
 .\Snaffler.exe -s -o <outputfile> [-n <target>]
@@ -202,7 +202,9 @@ PSReadlineモジュールのログ記録パス表示
 	- Filter Current Log：Event ID *4104* = Script Block Logging（※）でフィルター
 		- （※）PowerShellが関与するものすべての記録。デフォルトでは無効。
 	- もしくは、Find：ScriptBlockで検索
+
 ![](../../../画像ファイル/Pasted%20image%2020250804074835.png)
+
 $$EventViewerのイメージ$$
 
 ### 補足：履歴の種類
@@ -307,7 +309,9 @@ vaultcmd /list
 ```
 - デフォルトでは、Windowsには2つのvaultがあり、1つはWeb用、もう1つはWindowsマシンCreds用
 - （GUIでは、Control Panel -> User Accounts -> Credential Managerからアクセスできる）
+
 ![](../../../画像ファイル/Pasted%20image%2020230602142505.png)
+
 
 2. Web Credentials vaultに保存されているクレデンシャルがあるかどうかを確認する
 ```cmd
@@ -327,6 +331,7 @@ Import-Module .\Get-WebCredentials.ps1
 Get-WebCredentials
 ```
 - ↓出力例
+
 ![](../../../画像ファイル/Pasted%20image%2020230602143342.png)
 
 ### 補足：Credentials Managerとは
@@ -415,7 +420,9 @@ dir "C:\Program Files\LAPS\CSE"
 Find-AdmPwdExtendedRights -Identity <OU_Target>
 ```
 - 利用可能なすべての OU を一覧表示するには、`-Identity *` を使用
+
 ![](../../../画像ファイル/Pasted%20image%2020230602175950.png)
+
 
 3. ExtendedRightHoldersをもつグループのメンバーを確認する
 ```powershell
@@ -451,10 +458,14 @@ Get-AdmPwdPassword -ComputerName <MachineName>
 
 1. Toolsタブ >   Active Directory Users and Computersを選択
 	- Toolsの中にはEvent Viewerなど、さまざまなツールがある
+ 
  ![ 400](../../../画像ファイル/Pasted%20image%2020230421110906.png)
+ 
 
 2. Descriptionの中にサービスアカウントのパスワードがある
+
 ![ 500](../../../画像ファイル/Pasted%20image%2020230421111143.png)
+
 
 
 ---
