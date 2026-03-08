@@ -19,6 +19,8 @@
 
 tintinhogehoge aaaaaaaaaa<mark>LinPEAS</mark>aaaaaa
 
+**LINEPAS**
+
 unix-privesc-check
 	standardモードの方が、detailedモードよりも実行スピードが早く、誤検出も少ない
 ```zsh
