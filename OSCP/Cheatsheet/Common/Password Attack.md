@@ -181,7 +181,7 @@ python3 -c "print(916132832 / 134200000)"
 	- 攻撃や漏洩により公開・販売されたパスワードやハッシュのリスト
 	- ハッシュのみの場合はクラッキングが必要
 
-#### 🔗漏洩・デフォルトパスワード集リンク
+#### 漏洩・デフォルトパスワード集リンク🔗
 
 - 漏洩パスワードの販売（合法）：[Scattered Secrets](https://scatteredsecrets.com/)
 - [Default Passwords - CIRT.net](https://cirt.net/passwords?criteria=smartermail)
@@ -507,7 +507,7 @@ sudo rlwrap nc -lvnp <port>
 ## パスワード設定における人の脆弱性
 
 - 特殊文字はキーボード左側にある、`!@#$%`が使われがち
-	- [Research - The Washington Post](https://www.washingtonpost.com/national/health-science/you-added--or-1-to-your-password-thinking-this-made-it-strong-science-says-no/2017/09/08/0f244e2a-9260-11e7-89fa-bb822a46da5b_story.html)
+	- 🔗[Research - The Washington Post](https://www.washingtonpost.com/national/health-science/you-added--or-1-to-your-password-thinking-this-made-it-strong-science-says-no/2017/09/08/0f244e2a-9260-11e7-89fa-bb822a46da5b_story.html)
 - 大文字にする必要がある場合は、先頭文字を大文字にしがち
 - 特殊文字は末尾にしがち
 - パスワードのパターンはなかなか変わらない
