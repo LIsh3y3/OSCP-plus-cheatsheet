@@ -481,27 +481,62 @@ tscon <セッションID> /dest:[現在のセッション名]
 
 ## 他のユーザーとしてシステムにアクセスする方法
 
-### Runas
+### RunAs
+
+他のユーザーの認証情報を使用して、そのユーザーの権限で別のプログラムを実行する。
+
+- 用途
+	- ADの認証情報を入手したが、対象マシンがSSHやRDPを有効にしておらず直接ログインできないとき
+	- 入手した認証情報の権限を使ってネットワークリソース（SYSVOLやSMB共有）を列挙したいとき
 
 - 条件
+	- 認証情報を入手済み
+	- 実行環境として、攻撃者側でWindowsマシンを用意するか、ターゲットのドメイン内に足場がある
 	- 完全にインタラクティブなシェル（RDP等）にアクセス可能なとき
-		- 非インタラクティブシェルでは、パスワードプロンプトが入力を受け付けないので、[RunasCs](#RunasCs)等を使う
 
-基本コマンド
+> [!NOTE] 
+> 非インタラクティブシェルではパスワードプロンプトが入力を受け付けないため、RunasCs等を使う
+
 ```cmd
-runas /savecred /env /profile /user:<username> cmd.exe
+runas /env /profile /user:<domain>\<username> cmd.exe
 ```
-- `/savecred`：一度入力したパスワードをWindows Credential Managerに保存し、次回からパスワード入力を省略できるようにする
 - `/profile`：ターゲットユーザーのユーザープロファイル（レジストリやデスクトップ等）を読み込む
-- `/user`について 
-	- ローカルユーザー：`<username>`
-	- リモートPCのユーザーアカウント：`[NetBIOSコンピュータ名]\<username>`
-	- ADユーザー：`[NetBIOSドメイン名]\<username>` or `<username>@[FQDN]`
 - `/env`：現在の環境変数を保持して新しいユーザーで実行（プロンプトも現在のユーザーのものが引き継がれる）
+- `/user` の書き方：
+    - ローカルユーザー：`<username>`
+    - リモートPCのユーザー：`<NetBIOSコンピュータ名>\<username>`
+    - ADユーザー：`<NetBIOSドメイン名>\<username>` または `<username>@<FQDN>`
 
-![](../../../画像ファイル/Pasted%20image%2020250729080025.png)
+> [!WARNING]
+> 
+> - パスワードが間違っていてもコマンド自体は実行できてしまう（成功したかどうかは別途確認が必要）
+> - 攻撃者自身のWindowsマシンからrunas.exeを実行するときは、コマンドプロンプトを「管理者として実行」で開くこと。ただしこれはローカルでの特権であり、ネットワーク上の特権を付与するものではない
 
-$$/envを使った場合$$
+#### ドメイン非参加マシンからの実行（事前準備）
+
+ADユーザーの認証情報を入手したが、ドメインに参加していないマシンで`runas`を実行する場合、DNSを設定しないとSYSVOLにアクセスできないため、先にDNS設定が必要。
+
+1. DNS設定
+```powershell
+powershell -ep bypass
+$dnsip = "<DC_IP>"
+$index = Get-NetAdapter -Name '<Interface>' | Select-Object -ExpandProperty 'ifIndex'
+Set-DnsClientServerAddress -InterfaceIndex $index -ServerAddresses $dnsip
+```
+
+2. DNS設定の確認
+```powershell
+nslookup <DC_FQDN>
+```
+
+3. 成功確認
+```powershell
+# 指定したユーザー名が表示されれば成功
+whoami
+
+# SYSVOLへのアクセス確認
+dir \\<DC_FQDN>\SYSVOL\
+```
 
 ### RunasCs
 
