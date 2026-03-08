@@ -15,9 +15,9 @@
 	- 書き込み権限(`w`)のある実行可能ファイルを実行
 	- 実行間隔がテストに使える時間の範囲内(実行間隔が短い)
 
-1. [🔍Linux Enumeration#Cronの列挙コマンド](🔍Linux%20Enumeration.md#Cronの列挙コマンド)で、条件を満たすCronを検索
+1. [Cronの列挙コマンド](🔍Linux%20Enumeration.md#Cronの列挙コマンド)で、条件を満たすCronを検索
 
-2. [What is the shell](../Common/What%20is%20the%20shell.md#名前付きパイプを使ったnetcatリバースシェル)のペイロードを実行可能ファイルに追記する
+2. [名前付きパイプを使ったnetcatリバースシェル](../Common/What%20is%20the%20shell.md#名前付きパイプを使ったnetcatリバースシェル)のペイロードを実行可能ファイルに追記する
 ```zsh
 # ファイルが存在することを確認＆空白行を入れてペイロード注入による影響を減少
 echo >> <file.sh>
@@ -48,7 +48,7 @@ cat /etc/crontab
 
 ![](../../画像ファイル/Pasted%20image%2020230626210329.png)
 
-2. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#Cronの列挙コマンド)で実行ファイル(.sh)を実行するcronを探す
+2. [Cronの列挙コマンド](🔍Linux%20Enumeration.md#Cronの列挙コマンド)で実行ファイル(.sh)を実行するcronを探す
 
 3. 実行ファイルがフルパスではないことを確認
 	- 例：
@@ -78,7 +78,7 @@ chmod +x <(同じ名前)file.sh>
 
 ![](../../画像ファイル/Pasted%20image%2020260214172732.png)
 
-- 使用しているサービス(systemd)によって実行されるコマンドが相対パスで指定されている場合は、[💥Linux Privilege Escalation](#Cron%20w/%20PATH変数)と同じ原理で攻撃できる
+- 使用しているサービス(systemd)によって実行されるコマンドが相対パスで指定されている場合は、[Cron w/ PATH変数](#Cron%20w/%20PATH変数)と同じ原理で攻撃できる
 	- ※ただし、LinPEASは誤って引数もコマンドと解釈して検知することがある（上記画像で、`apache2.service: Uses relative path 'start'`と表示があるが、`start`は引数
 
 ---
@@ -146,7 +146,7 @@ openssl passwd -6 <pw>
 
 ## SUIDバイナリ w/ 公開エクスプロイト
 
-1. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)を実施
+1. [高権限をもつバイナリの列挙](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)を実施
 2. 💥[GTFOBins](https://gtfobins.github.io/)を使い、対象のバイナリを検索→"SUID"もしくは"Capability"に記載のコマンドを（説明を読んだ上で）実行
 	- SGIDがあるバイナリに対しては、SUIDのテクニックを使える
 	- [補足：GTFOBinsの方法でPermission%20deniedの場合の原因追求](#補足：GTFOBinsの方法でPermission%20deniedの場合の原因追求)
@@ -191,7 +191,7 @@ echo PATH.bkup
 export PATH=<PATH.bkupの中身>
 ```
 
-4. [🔍Linux Enumeration](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)で検出したSUIDバイナリが、フルパスを使わずにコマンドを呼び出している
+4. [高権限をもつバイナリの列挙](🔍Linux%20Enumeration.md#高権限をもつバイナリの列挙)で検出したSUIDバイナリが、フルパスを使わずにコマンドを呼び出している
 	- 実際にバイナリを動作させてエラーメッセージからコマンドを推測するか、`strings`コマンドで文字列を抽出してコマンドを確認する
 
 ### パターンA：書き込み可能なディレクトリがPATH内に存在する場合
@@ -320,7 +320,7 @@ export -f <実行コマンドフルパス>
 
 🔗[CVE-2016-7543](https://jvndb.jvn.jp/ja/contents/2016/JVNDB-2016-006966.html)
 
-4.3以下であっても、パッチの適用状況やディストロによってはこのエクスプロイトが成功せず、反対に[💥Linux Privilege Escalation](#SUID%20w/%20Bash%20<=%204.2.-048)の方法は成功する可能性もある。
+4.3以下であっても、パッチの適用状況やディストロによってはこのエクスプロイトが成功せず、反対に[SUID w/ Bash <= 4.2.-048](#SUID%20w/%20Bash%20<=%204.2.-048)の方法は成功する可能性もある。
 
 - 条件：
 	- Bashのバージョンが4.3以下のとき
@@ -354,7 +354,6 @@ sudo -l
 ```
 
 2. 💥[GTFOBins](https://gtfobins.github.io/)を使い、対象のバイナリを検索 → `Sudo`に記載のコマンドを（説明を読んだ上で）実行
-	- [💥Linux Privilege Escalation](#補足：Permission%20deniedの場合の原因追求)
 
 ### 補足：GTFOBinsの方法でPermission deniedの場合の原因追求
 
