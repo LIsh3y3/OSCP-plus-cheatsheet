@@ -106,7 +106,7 @@ $$smbclientで接続後ls実施した画面$$
 	- [NetExec](https://www.netexec.wiki/?q=)
 	- [smbclient](https://www.samba.org/samba/samba/docs/man/manpages/smbclient.1.html)
 	- [SMBMap](https://github.com/ShawnDEvans/smbmap)
-	- enum4linux
+	- [enum4linux](https://github.com/CiscoCXSecurity/enum4linux)
 	- impacket
 
 ## SMB スキャン & 基本列挙
