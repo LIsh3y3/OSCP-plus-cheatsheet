@@ -101,6 +101,8 @@ ffuf -x socks5://localhost:1080 -u http://<target_IP>/login -X POST -w /usr/shar
 
 # CMS Enumeration & Exploit
 
+- [ ] Todo: 以降編集
+
 ## Wordpress
 
 ### Enumeration
