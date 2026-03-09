@@ -5,7 +5,7 @@
 
 # Web scanning / Enumeration
 
-## Webサイト構成技術のスキャン
+## Webサイト構成技術の検出
 
 テクノロジースタックや、mailアドレス、ドメイン名などを列挙
 ```zsh
