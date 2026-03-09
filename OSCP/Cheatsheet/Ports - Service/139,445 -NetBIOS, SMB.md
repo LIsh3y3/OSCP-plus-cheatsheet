@@ -268,7 +268,7 @@ net share
 
 リモート共有
 ```powershell
-
+# 具体例:net view \\dc01 /all
 net view \\<TargetHost> /all
 ```
 
