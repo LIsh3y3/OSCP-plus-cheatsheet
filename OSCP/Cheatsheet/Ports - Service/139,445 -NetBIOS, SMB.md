@@ -219,7 +219,7 @@ smbmap -u anonymous -p '' -H <target_IP> -r
 
 認証あり
 ```zsh
-# ドメインなし
+# ドメインの指定: -d <domain>
 smbmap -u <username> -p "<password>" -H <target_IP>
 ```
 
