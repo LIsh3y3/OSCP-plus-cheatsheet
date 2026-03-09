@@ -93,7 +93,7 @@ $$smbclientで接続後ls実施した画面$$
 
 ## 用語
 
-- RID: Relative Identifier([用語](../../Misc/用語.md#SID,%20RID))
+- RID: Relative Identifier([SID, RID](../../Misc/用語.md#SID,%20RID))
 - NULLセッション: 認証なし接続
 - UNCパス（`\\example\ADMIN$\`）：ネットワーク上のリソースを指定するWindowsの標準形式
 
@@ -102,8 +102,7 @@ $$smbclientで接続後ls実施した画面$$
 
 # Enumeration
 
-主なツール：**NetExec**、**smbclient**、smbmap、enum4linux、impacket
-（NetExecとsmbclientが使いやすい。それ以外はサポートの役割で使う）
+主なツール：NetExec、smbclient、smbmap、enum4linux、impacket
 
 ## SMB スキャン & 基本列挙
 
@@ -148,6 +147,7 @@ nc -nv <target_IP> 445
 ### 総合列挙
 
 - enum4linux よりもSMBMapの方がメンテナンス状況や機能面で推奨される（[HTB "Active" - ippsec - Youtube](https://www.youtube.com/watch?v=jUc1J31DNdw)）
+- ターゲット環境によってはenum4linuxでのみ有用な結果が得られることもある
 
 smbmap
 ```zsh
@@ -167,9 +167,9 @@ enum4linux -aMld <target_IP> | tee enum4linux.log
 enum4linux -u guest -aMld <target_IP> | tee enum4linux.log
 ```
 
-#### 補足
+#### enum4linuxの補足
 
-- `enum4linux -w [WORKGROUP] ...` でワークグループ指定が必要な場合有り（`smbmap -vH` で取得可能）
+- `enum4linux -w <WORKGROUP> ...` でワークグループ指定が必要な場合有り（ワークグループ名は`smbmap -vH` で取得可能）
 - `Known Usernames`：一般的なユーザー名というだけで、ターゲットに存在するとは限らない
 
 ---
