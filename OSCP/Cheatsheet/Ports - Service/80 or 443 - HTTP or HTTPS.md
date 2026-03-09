@@ -160,7 +160,7 @@ echo sysetm($_GET["cmd"]);
 
 2. zip化する
 ```zsh
-zip [output name] [filename]
+
 ```
 
 3. アップロード→Activate Plugin
