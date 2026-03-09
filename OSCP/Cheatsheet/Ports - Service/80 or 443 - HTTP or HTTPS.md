@@ -48,12 +48,15 @@ feroxbuster -u http://<target_IP>:<Port>/ --depth <num> -r -k -w  /usr/share/sec
 
 # 脆弱性のスキャン
 
-nikto：[👽Nikto](../../Tools/👽Nikto.md)
+>[!NOTE]
+>OSCP試験においては、niktoはほとんど使わなかった。
+
+[👽Nikto](../../Tools/👽Nikto.md)
 ```zsh
 nikto -Format htm -o WebEnum/nikto.html --maxtime=180s -C all -h <target_IP>
 ```
 
-Nmap：[Port Scan & Vuln Scan](../Common/Port%20Scan%20&%20Vuln%20Scan.md#NSE)
+Nmap（[[Port Scan & Vuln Scan#Vuln Scan w/ NSE]]）
 ```zsh
 sudo nmap --script "http-*" <target_IP> -p <Port>
 ```
