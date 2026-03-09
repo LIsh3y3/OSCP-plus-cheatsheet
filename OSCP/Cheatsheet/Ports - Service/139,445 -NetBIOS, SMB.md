@@ -304,10 +304,8 @@ smb:> mget *
 
 ### mount
 
-
 > [!TIP]
-> Contents
-
+> smbclientよりもファイルの列挙が簡単にできる。
 
 基本コマンド
 ```zsh
