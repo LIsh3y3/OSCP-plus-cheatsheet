@@ -105,7 +105,7 @@ $$smbclientで接続後ls実施した画面$$
 - 主なツール：
 	- [NetExec](https://www.netexec.wiki/?q=)
 	- [smbclient](https://www.samba.org/samba/samba/docs/man/manpages/smbclient.1.html)
-	- smbmap
+	- SMap
 	- enum4linux
 	- impacket
 
