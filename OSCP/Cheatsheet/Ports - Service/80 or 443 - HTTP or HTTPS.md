@@ -5,16 +5,18 @@
 
 # Web scanning / Enumeration
 
-## Webテックスタックのスキャン
+## Webサイト構成技術のスキャン
 
 テクノロジースタックや、mailアドレス、ドメイン名などを列挙
-	（Wappalyzerでは同じ目的を遂行可能で、WappalyzerはPassive Recon（OSINT）なのでステルス性高いが、whatwebの方が可読性良好でより正確な結果がわかる）
 ```zsh
 whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<TargetIP>
 ```
 - `-a3`：アグレッシブ度（1～4）
 - ターゲットがhttpsの場合で"ERROR Opening:xxx- SSL_read: unexpected eof while reading"というエラーが出たら、解決策はないので、`curl -k https:...`で代替する
-- 💥PHP 5.xはShellshockに脆弱な可能性あり
+- PHP 5.xが表示されたら、**Shellshockに脆弱な可能性**あり
+
+>[!NOTE]
+>Wappalyzerでは同じ目的を遂行可能で、WappalyzerはPassive Recon（OSINT）なのでステルス性高いが、whatwebの方が正確な結果がわかるうえ、可読性良好
 
 ## ディレクトリ探索
 
