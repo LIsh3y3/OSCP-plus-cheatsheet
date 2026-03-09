@@ -58,34 +58,6 @@ sudo nmap --script "http-*" <TargetIP> -p <Port>
 
 ---
 
-## ☑️チェックリスト(要編集_20250520)
-
-- [ ] searchsploitでサーバソフトやWebスタックの脆弱性をチェック
-- [ ] `/robots.txt` や `/sitemap.xml` に注目すべきディレクトリやファイルがあるか確認
-	- ※Gobusterのwordlist(`dirb/common.txt`)で列挙済み
-- [ ] 開発者ツールでHTMLコメントやソースコードをチェックしjuicy infoを探す
-    - [ ] シークレット／パスワード
-    - [ ] 注目ディレクトリ
-    - [ ] 使用されているライブラリ
-    - [ ] すべてのリンク
-    - [ ] バージョン情報
-- [ ] SSL証明書からDNSサブドメインやメールアドレスを調査
-- [ ] Apache VirtualHost（または nginx/IIS の同等機能）に注意！ `/etc/hosts` にすべての(サブ)ドメインをTarget IPで登録
-- [ ] デフォルト／一般的な認証情報でログイン試行
-- [ ] 認証バイパス(SQLi)：`' or 1=1 -- #` などで試行
-- [ ] 悪意ある文字でSQL/NoSQLインジェクションのテスト：`'")}$%%;\`: [SQL Injection](../Common/SQL%20Injection.md#悪意のある文字を使ったテスト（"Bad%20Chars"）)
-- [ ] コマンドインジェクションをテスト：
-    - [ ] 区切り文字: `; | & || &&`
-    - [ ] クオート解除: `" '`
-    - [ ] UNIXサブシェル: `$(cmd), >(cmd), \`cmd``
-- [ ] URLクエリや任意ファイルアップロードでパストラバーサルのテスト
-- [ ] LFI/RFIのテスト（特にURLクエリパラメータで）
-- [ ] すべての入力フィールド、URLクエリ、HTTPヘッダでXSSテスト
-    - [ ] フィルタ通過後に残る内容を確認: `'';!--"<XSS>=&{()}`
-    - [ ] `<script>alert(1)</script>` のバリエーションを試す
-
----
-
 # Web Credential Bruteforcing
 
 まず、デフォルト／一般的な認証情報でログイン試行したか？
@@ -222,6 +194,35 @@ Drupal CMSを使っているとき
 droopescan scan drupal http://$TargetIP -t 32
 ```
 - [コンパイル・ビルド](../../Misc/コンパイル・ビルド.md#Python%20Package%20Management%20(pip))
+
+---
+
+# ☑️チェックリスト
+
+- [ ] searchsploitでサーバソフトやWebスタックの脆弱性をチェック
+- [ ] `/robots.txt` や `/sitemap.xml` に注目すべきディレクトリやファイルがあるか確認
+	- ※Gobusterのwordlist(`dirb/common.txt`)で列挙済み
+- [ ] 開発者ツールでHTMLコメントやソースコードをチェックしjuicy infoを探す
+    - [ ] シークレット／パスワード
+    - [ ] 注目ディレクトリ
+    - [ ] 使用されているライブラリ
+    - [ ] すべてのリンク
+    - [ ] バージョン情報
+- [ ] SSL証明書からDNSサブドメインやメールアドレスを調査
+- [ ] Apache VirtualHost（または nginx/IIS の同等機能）に注意！ `/etc/hosts` にすべての(サブ)ドメインをTarget IPで登録
+- [ ] デフォルト／一般的な認証情報でログイン試行
+- [ ] 認証バイパス(SQLi)：`' or 1=1 -- #` などで試行
+- [ ] 悪意ある文字でSQL/NoSQLインジェクションのテスト：[悪意のある文字を使ったテスト（"Bad Chars"）](../Common/SQL%20Injection.md#悪意のある文字を使ったテスト（"Bad%20Chars"）)
+- [ ] コマンドインジェクションをテスト：
+    - [ ] 区切り文字: `; | & || &&`
+    - [ ] クオート解除: `" '`
+    - [ ] UNIXサブシェル: `$(cmd), >(cmd), \`cmd``
+- [ ] URLクエリや任意ファイルアップロードでパストラバーサルのテスト
+- [ ] LFI/RFIのテスト（特にURLクエリパラメータで）
+- [ ] すべての入力フィールド、URLクエリ、HTTPヘッダでXSSテスト
+    - [ ] フィルタ通過後に残る内容を確認: `'';!--"<XSS>=&{()}`
+    - [ ] `<script>alert(1)</script>` のバリエーションを試す
+
 
 ---
 
