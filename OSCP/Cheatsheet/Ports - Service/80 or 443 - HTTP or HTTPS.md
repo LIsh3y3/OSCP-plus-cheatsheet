@@ -3,9 +3,7 @@
 
 ---
 
-# Web scanning / Enumeration
-
-## Webサイト構成技術の検出
+# Webサイト構成技術の検出
 
 テクノロジースタックや、mailアドレス、ドメイン名などを列挙
 ```zsh
@@ -18,7 +16,8 @@ whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<TargetIP>
 >[!NOTE]
 >Wappalyzerでは同じ目的を遂行可能で、WappalyzerはPassive Recon（OSINT）なのでステルス性高いが、whatwebの方が正確な結果がわかるうえ、可読性良好
 
-## ディレクトリ探索
+-
+# ディレクトリ探索
 
 推奨アプローチ：
 1. まずGobusterで1階層の高速スキャン
@@ -41,8 +40,8 @@ ulimit -n 8192
 feroxbuster -u http://<TargetIP>:<Port>/ --depth <num> -r -k -w  /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt --auto-tune -o WebEnum/feroxbuster.txt -x '<extensions>'
 ```
 
->[!WARNING] 注意
->レスポンスのステータスを絞ることは、表層が403で内部は200のようなパスを見逃すことにつながる
+>[!WARNING] 
+>レスポンスのステータスを絞ることは、表層が403で内部は200のようなパスを見逃すことにつながる。
 
 ## 脆弱性のスキャン
 
