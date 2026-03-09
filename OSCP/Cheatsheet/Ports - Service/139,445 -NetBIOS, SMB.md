@@ -221,8 +221,6 @@ smbmap -u anonymous -p '' -H <target_IP> -r
 ```zsh
 # ドメインなし
 smbmap -u <username> -p "<password>" -H <target_IP>
-# ドメインあり
-smbmap -d <d
 ```
 
 PtH
