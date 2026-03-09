@@ -5,7 +5,7 @@
 
 # Webサイト構成技術の検出
 
-テクノロジースタックや、mailアドレス、ドメイン名などを列挙
+テクノロジースタックや、メールアドレス、ドメイン名などを列挙
 ```zsh
 whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<target_IP>
 ```
@@ -14,14 +14,14 @@ whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<target_IP>
 - PHP 5.xが表示されたら、**Shellshockに脆弱な可能性**あり
 
 >[!NOTE]
->Wappalyzerでは同じ目的を遂行可能で、WappalyzerはPassive Recon（OSINT）なのでステルス性高いが、whatwebの方が正確な結果がわかるうえ、可読性良好
+>Wappalyzerでは同じ目的を遂行可能で、WappalyzerはPassive Recon（OSINT）なのでステルス性が高いが、whatwebの方が正確な結果がわかるうえ、可読性良好
 
 ---
 
 # ディレクトリ探索
 
 推奨アプローチ：
-1. まずGobusterで1階層の高速スキャン
+1. まずGobusterで1階層スキャン
 2. 気になるディレクトリ(301のレスポンス、`api`等)が見つかったらFeroxbusterで再帰的に探索
 
 [👻Gobuster](../../Tools/👻Gobuster.md)
@@ -42,7 +42,7 @@ feroxbuster -u http://<target_IP>:<Port>/ --depth <num> -r -k -w  /usr/share/sec
 ```
 
 >[!WARNING] 
->レスポンスのステータスを絞ることは、表層が403で内部は200のようなパスを見逃すことにつながる。
+>レスポンスのステータスを絞ることは、表層が403だが深い階層は200のようなパスを見逃すことにつながる。
 
 ---
 
@@ -103,21 +103,21 @@ ffuf -x socks5://localhost:1080 -u http://<target_IP>/login -X POST -w /usr/shar
 
 - [ ] Todo: 以降編集
 
-## Wordpress
+## WordPress
 
 ### Enumeration
 
 - [📓WPScan](../../Tools/📓WPScan.md#基本スキャン)
-- ターゲット環境にアクセスできるなら、`wp-config.php`に認証情報がないか探す
+- WordPressを使っているターゲット環境にアクセスできるなら、`wp-config.php`に認証情報がないか探す
 - 🔗参考： [Wordpress cheat sheet - HackTricks](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/wordpress.html)
 
 ### Exploit
 
 (a)  `/wp-admin`にアクセスし、`admin:admin`もしくは所有クレデンシャルでログイン試行
 
-(b) shell獲得のために、プラグインをアップロードする
+(b) shell獲得のために、プラグインをアップロードする↓
 
-#### reverse shell
+#### Reverse shell w/ WordPressプラグイン
 
 1. リスナーを開く
 ```zsh
