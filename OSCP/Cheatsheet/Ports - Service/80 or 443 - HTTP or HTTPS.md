@@ -8,7 +8,7 @@
 ## Webテックスタックのスキャン
 
 テクノロジースタックや、mailアドレス、ドメイン名などを列挙
-	（Wappalyzerでは同じ目的を遂行可能かつPassiveなのでステルスだが、whatwebの方が可読性良好）
+	（Wappalyzerでは同じ目的を遂行可能で、WappalyzerはPassive Recon（OSINT）なのでステルス性高いが、whatwebの方が可読性良好でより正確な結果がわかる）
 ```zsh
 whatweb -v -a3 --log-verbose WebEnum/whatweb.txt http://<TargetIP>
 ```
