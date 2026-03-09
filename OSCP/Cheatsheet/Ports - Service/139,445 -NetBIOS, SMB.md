@@ -230,7 +230,7 @@ smbmap -u <username> -p "<LMHash>:<NTHash>" -H <target_IP>
 
 再帰探索
 ```zsh
-smbmap -H <target_IP> -r <share_name>
+smbmap -H <target_IP> -r <share>
 ```
 
 よく使う追加オプション
@@ -288,19 +288,23 @@ impacket-smbclient <domain>/<username>:<password>@<target_IP|host> -k -no-pass
 ```zsh
 # 接続
 smbclient -W <domain> -U '<username>' \\\\<target_IP>\\<share>
+
 # ファイル名のフィルターを解除（すべて対象に）
 smb:> mask ""
+
 # ディレクトリを再帰的に処理
 smb:> recurse on
+
 # ファイルごとの確認を無効にする
 smb:> prompt off
+
 # すべてのファイルを取得（TIMEOUTとなる場合は使わない）
 smb:> mget *
 ```
 
 ### mount
 
-- 💡ファイルの列挙がより簡単にできる
+- 💡
 
 基本コマンド
 ```zsh
