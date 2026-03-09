@@ -102,7 +102,7 @@ $$smbclientで接続後ls実施した画面$$
 
 # Enumeration
 
-- 主なツール：
+- 使用ツールドキュメント🔗：
 	- [NetExec](https://www.netexec.wiki/?q=)
 	- [smbclient](https://www.samba.org/samba/samba/docs/man/manpages/smbclient.1.html)
 	- [SMBMap](https://github.com/ShawnDEvans/smbmap)
