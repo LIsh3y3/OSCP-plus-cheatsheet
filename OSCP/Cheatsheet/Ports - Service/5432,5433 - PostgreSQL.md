@@ -171,9 +171,14 @@ SELECT * FROM demo;
 管理者用関数による操作
 ```sql
 \c postgres
-SELECT * FROM pg_ls_dir('/tmp');
-SELECT * FROM pg_read_file('/etc/passwd', 0, 1000000);
-SELECT * FROM pg_read_binary_file('/etc/passwd');
+--ディレクトリの中身表示
+SELECT * FROM pg_ls_dir('<directory_path>');
+
+-- テキストファイルの中身表示
+SELECT * FROM pg_read_file('<file_path>', 0, 1000000);
+
+-- バイナリとしてファイルを読み取り
+SELECT * FROM pg_read_binary_file('<file_path>');
 
 -- データディレクトリの確認
 SHOW data_directory;
@@ -182,7 +187,7 @@ SHOW data_directory;
 ファイルの書き込み
 ```sql
 -- COPYコマンドによる書き込み（改行を含まないワンライナーである必要あり）
-COPY (SELECT convert_from(decode('<BASE64_PAYLOAD>','base64'),'utf-8')) TO '/path/to/file';
+COPY (SELECT convert_from(decode('<BASE64_PAYLOAD>','base64'),'utf-8')) TO '<outpt_path>';
 ```
 
 ## ローカルファイル書き込みによるテーブルデータ更新
