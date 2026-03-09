@@ -304,7 +304,10 @@ smb:> mget *
 
 ### mount
 
-- 💡
+
+> [!TIP]
+> Contents
+
 
 基本コマンド
 ```zsh
