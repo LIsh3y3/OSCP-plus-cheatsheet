@@ -114,9 +114,8 @@ ffuf -x socks5://localhost:1080 -u http://<target_IP>/login -X POST -w /usr/shar
 - 方法A: WPScanで検出した脆弱性から公開エクスプロイトを探索する
 
 - 方法B: 
-	- プラグインにペイロードを注入し、シェルを獲得する
-	- プラグインアップロードのためにWordPress管理画面にアクセスする必要がある
-	- `/wp-admin`にアクセスし、`admin:admin` もしくは所有クレデンシャルでログイン試行する。
+	- プラグインにペイロードを注入し、以下の方法でシェルを獲得する
+	- プラグインアップロードのためにWordPress管理画面にアクセスする必要があるので、`/wp-admin`にアクセスし、`admin:admin` もしくは所有クレデンシャルでログイン試行する
 
 #### Reverse Shell w/ WordPressプラグイン
 
@@ -169,18 +168,17 @@ zip <zip_filename> <php_filename>
 http://<target_IP>/wp-content/plugins/<プラグイン名>/<php_filename>?cmd=id
 ```
 
-## Misc
+## Joomla
 
 ### JoomScan
 
-Joomla CMSを使っているとき
-- [ ] -ecを指定せず、-uのみ指定すると脆弱性を検出するのか？
-
 1. JoomScanを実行
 ```zsh
-# /cmsや/cms/administratorも存在すれば、IPの後ろに付与するとより確実な情報を表示
 joomscan -ec -u <target_IP>
 ```
+
+>[!TIP]
+>[[#ディレクトリ探索]]の結果、/cmsや/cms/administratorも存在すれば、IPの後ろに付与するとより確実な情報を表示
 
 2. componentのバージョンを特定する
 	- （joomscanの特定したパスにアクセスし、xmlファイルにアクセス）
