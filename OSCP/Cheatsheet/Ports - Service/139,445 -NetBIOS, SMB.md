@@ -325,16 +325,17 @@ cd mount_point
 ### NetExec
 
 - すべてのデータを収集
-	- （出力はjsonファイルに保存されるが、ファイルがない場合は何も保存されずSMB shareの列挙に留まる）
+	- 出力はjsonファイルに保存されるが、ファイルがない場合は何も保存されずSMB shareの列挙に留まる
 ```zsh
 netexec smb <target_IP> -u <username> -p '<password>' -M spider_plus
 ```
 
 ---
 
-## アカウントの列挙
+## ユーザーの列挙
 
-- 💡AD環境ではkerbruteの方がよい
+- enum4linuxでも
+- 💡AD環境ではアカウントロックに強いkerbruteの方がよい
 
 ユーザー一覧の取得
 ```zsh
