@@ -29,7 +29,7 @@ mysql -u root
 mysql -u root -p
 
 # リモート接続
-mysql -u <username> -h <TargetIP> -p
+mysql -u <username> -h <target_IP> -p
 ```
 
 ## XAMPPの場合
