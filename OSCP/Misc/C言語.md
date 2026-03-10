@@ -76,8 +76,9 @@ printf("%s", src); // 出力は "ABC" まで。'D' は出力されない
 printf("Hello world.")
 ```
 	↓
-
-
+```
+Hello world.\0
+```
 ---
 
 # メモリの操作
