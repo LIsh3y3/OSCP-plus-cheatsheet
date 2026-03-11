@@ -1,4 +1,3 @@
-
 - 関連ノート：
 	- [Web攻撃の難読化](Web攻撃の難読化.md)
 - 参考🔗：[HackTricks - AV Bypass](https://book.hacktricks.wiki/en/windows-hardening/av-bypass.html)
@@ -7,11 +6,14 @@
 >AVの回避はOSCP試験において主眼ではなかったため、簡素な内容にとどめる。
 >しかし、現実のテストやこの後のOSEPでは非常に重要なテクニックなので、今後充実化していく。
 
-## Anti Virus — Windows
+---
+
+# Anti Virus — Windows
 
 目的：Windowsマシンからリバースシェルを獲得する
 
-> [!TIP] EXEよりもDLLのほうがAV回避の成功確率が高い
+> [!TIP] 
+> EXEよりもDLLのほうがAV回避の成功確率が高い
 
 ---
 
