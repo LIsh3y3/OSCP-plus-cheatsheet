@@ -137,14 +137,15 @@ netexec smb <target_IP>
 
 ### nbtscan
 
-NetBIOSの名前はホストの"役割"を詳細に語る
+NetBIOSの名前確認
 ```zsh
 sudo nbtscan -r <target_IP>
 ```
-- 例：`__MSBROWSE__`があればマスタブラウザ（DC）だと分かる
+- →ホストの"役割"を推測
 
 ### nc
 
+バナーグラブ
 ```zsh
 nc -nv <target_IP> 445
 ```
@@ -174,7 +175,7 @@ enum4linux -u guest -aMld <target_IP> | tee enum4linux.log
 
 #### enum4linuxの補足
 
-- `enum4linux -w <WORKGROUP> ...` でワークグループ指定が必要な場合有り（ワークグループ名は`smbmap -v -H` で取得可能）
+- `enum4linux -w <WORKGROUP> ...` でワークグループ指定が必要な場合有り（ワークグループ名は`smbmap -v -H <target_IP>` で取得可能）
 - `Known Usernames`：一般的なユーザー名というだけで、ターゲットに存在するとは限らない
 
 ---
