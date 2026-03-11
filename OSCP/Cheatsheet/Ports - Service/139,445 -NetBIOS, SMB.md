@@ -377,7 +377,8 @@ netexec smb <target_IP> --gen-relay-list <output.txt>
 
 ## ファイルアップロード
 
-※WRITE Permissionsが必要
+- 条件：WRITE Permissions
+- アタックベクター：PHP WebShellペイロードをアップロード→ブラウザで同ファイルにアクセスしてWebShell獲得
 
 ```zsh
 smbclient //<target_IP>/<share> -U <username>%<password>
@@ -401,11 +402,10 @@ smb: > put <local> <remote>
 
 ### プロトコルエラー対策
 
-最近の Kali では NTLMv1 が無効化されており、
+最近の Kali では NTLMv1 が無効化されており、以下のエラーが表示されることがある
 ```
 protocol negotiation failed: NT_STATUS_CONNECTION_DISCONNECTED
 ```
-と表示される場合がある。
 
 対処例：
 1. `/etc/samba/smb.conf` の `[global]` に追記
@@ -418,11 +418,9 @@ client max protocol = SMB3
 
 ### NT_STATUS_IO_TIMEOUT listing
 
-原因：
-- ディレクトリにファイルが大量にあるか、ファイルサイズが大きいのでタイムアウトする
+原因：ディレクトリにファイルが大量にあるか、ファイルサイズが大きい
 
-対処例：
-- `-t`でタイムアウト時間を延ばす
+対処例：`-t`でタイムアウト時間を延ばす
 ```zsh
 smbcilent \\\\<target_IP>\<share> -W <domain> -U '<username>' -t 60
 ```
