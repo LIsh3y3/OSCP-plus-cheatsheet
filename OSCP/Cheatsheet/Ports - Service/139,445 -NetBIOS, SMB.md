@@ -332,11 +332,12 @@ netexec smb <target_IP> -u <username> -p '<password>' -M spider_plus
 
 ---
 
-- [ ] todo: 以降編集
 ## ユーザーの列挙
 
 - enum4linuxでも列挙可能
-- 💡AD環境ではアカウントロックに強いkerbruteの方がよい
+
+>[!TIP]
+>AD環境ではアカウントロックに強いkerbruteの方がよい
 
 ユーザー一覧の取得
 ```zsh
