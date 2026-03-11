@@ -44,6 +44,6 @@ impacket-mssqlclient -k nagoya.nagoya-industries.com
 ```
 
 10. xp_cmdshellでリバースシェルを獲得
-	- [1433 - MSSQL](../Cheatsheet/Ports%20-%20Service/1433%20-%20MSSQL.md#対話セッション経由のコマンド実行（xp_cmdshell）)
+	- [1433,1434 - MSSQL](1433,1434%20-%20MSSQL.md#対話セッション経由のコマンド実行（xp_cmdshell）)
 
 11. MSSQLがSeImpersonatePrivilegeが有効であったため、SigmaPotatoで権限昇格
