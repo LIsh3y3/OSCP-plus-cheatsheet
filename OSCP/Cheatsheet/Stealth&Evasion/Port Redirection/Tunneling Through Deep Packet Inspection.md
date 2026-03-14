@@ -225,8 +225,8 @@ ip a show
 
 ### 用途
 
-- 攻撃者 → Agent(足場) → ローカルNW内の他のマシン：[Tunneling Through Deep Packet Inspection](#Tunneling%20w/%20Ligolo-ng)
-- ☑️ローカルNW内の他のマシン→攻撃者マシン：[Tunneling Through Deep Packet Inspection](#Listener)
+- 攻撃者 → Agent(足場) → ローカルNW内の他のマシン：[Tunneling w/ Ligolo-ng](#Tunneling%20w/%20Ligolo-ng)
+- ローカルNW内の他のマシン→攻撃者マシン：[Listener w/ Ligolo-ng](#Listener%20w/%20Ligolo-ng)
 - <u>ツール転送やSMB接続、リバースシェル等の用途</u>で使う
 	- 例えばローカルNW内のマシンにMimikatzを送りたいとき等
 	- ⚠️以下、[Tunneling Through Deep Packet Inspection](#Tunneling%20w/%20Ligolo-ng)のステップ７で`start`としてから実行するものとする
