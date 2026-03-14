@@ -127,7 +127,7 @@ tcp_connect_time_out 800
 
 ### Ligolo-ngの仕組み
 
-`ligolo-agent`と`ligolo-proxy`があり、AgentをJump Hostのマシンで、Proxyを攻撃者のマシンで起動させる。
+`ligolo-agent`と`ligolo-proxy`があり、Agentを足場のマシンで、Proxyを攻撃者のマシンで起動させる。
 
 1. 接続確立
 	侵害されたマシン上で`ligolo-agent`が起動されると、攻撃者のマシンで待機している`ligolo-proxy`に対してTCP/TLS接続を開始する。この「内側から外側へ」の接続方向により、ターゲットネットワークのFWによるインバウンド接続制限を回避しやすくなる。
@@ -156,7 +156,7 @@ ligolo-proxy -selfcert -laddr 0.0.0.0:<ListenPort>
 ```
 - Web UIを起動するか(y/n)と聞かれるが、起動しなくてよい
 
-4. [Ligolo-ng relase - GitHub](https://github.com/nicocha30/ligolo-ng/releases)からJump Hostのマシンのアーキテクチャ及びプロセッサに合ったagentバイナリをダウンロードし、Jump Hostに転送した上で、Jump HostでAgentを起動する
+4. [Ligolo-ng relase - GitHub](https://github.com/nicocha30/ligolo-ng/releases)から足場のマシンのアーキテクチャ及びプロセッサに合ったagentバイナリをダウンロードし、足場に転送した上で、足場でAgentを起動する
 ```zsh
 # windowsであってもコマンドは一緒(バイナリのパスは環境に合わせて)
 # githubからインストールした場合は./agent...
@@ -182,7 +182,7 @@ $$ローカルNW側インターフェースが表示されている$$
 6. 攻撃者のマシンで<u>新たなターミナルを開き</u>、攻撃者のマシンからローカルNWへの通信が、Ligolo-ngが作成したTUNインターフェース（`ligolo`）を経由するようにルーティングを設定
 ```zsh
 # 例：sudo ip route add 172.16.125.0/24 dev ligolo
-sudo ip route add <ローカルNW_cidr> dev ligolo
+sudo ip route add <ローカルNW_subnet> dev ligolo
 ```
 
 7. 攻撃者のマシンのProxyサーバーのインタラクティブシェル(`ifconfig`を実行したもの)に戻り、トンネリングを開始
@@ -196,11 +196,11 @@ start
 # nmapの例
 sudo nmap -sn 10.10.10.0/24 -oG ping-sweep.txt
 ```
-- ⚠️Ligolo-proxyが`ERRO connection was refused`となった場合：
+- Ligolo-proxyが`ERRO connection was refused`となった場合：
 	- Ligolo-agent側の接続有効期限が切れている可能性があるため、再度ステップ４を実行
 	- Nmapなどclosed portにアクセスする場合は、このエラーが表示されるが正常
 
-#### 補足：Ligolo-ngのクリーンアップ
+### 補足：Ligolo-ngのクリーンアップ
 
 1. Ligolo-proxyプロンプトから、トンネルを停止し、Proxyサーバーを修了する
 ```zsh
@@ -218,6 +218,8 @@ sudo ip tuntap del mode tun ligolo
 # 確認
 ip a show
 ```
+
+---
 
 ## Listener w/ Ligolo-ng 
 
