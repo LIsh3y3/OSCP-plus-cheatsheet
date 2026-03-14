@@ -1,6 +1,9 @@
 - 関連ノート：
 	- [Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md)
 
+>[!TIP]
+>OSCP試験においては、[Ligolo-ng](Tunneling%20Through%20Deep%20Packet%20Inspection.md#Ligolo-ng)もしくは[HTTP Tunneling w/ Chisel](Tunneling%20Through%20Deep%20Packet%20Inspection.md#HTTP%20Tunneling%20w/%20Chisel)で十分だった。
+
 ---
 
 # Port Redirectionの基礎

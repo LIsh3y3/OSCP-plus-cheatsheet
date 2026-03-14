@@ -3,15 +3,15 @@
 	- [53 - DNS](../../Ports%20-%20Service/53%20-%20DNS.md)
 
 ---
-# 前提知識：Deep Packet Inspection(DPI)とは
+
+# Deep Packet Inspection(DPI)とは
 
 - ルールベースでトラフィックを監視するための技術で、侵害を示すパターンを指定しておく
 - これにより、外向けのSSHトラフィックを遮断され、[Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)が失敗することがある
 - Deep Packet Inspectionを回避するために...
-	- HTTP通信が許可されているとき：[Tunneling Through Deep Packet Inspection](#HTTP%20Tunneling)
-	- DNS通信が許可されているとき：[Tunneling Through Deep Packet Inspection](#DNS%20Tunneling)
+	- HTTP通信が許可されているとき：[HTTP Tunneling](#HTTP%20Tunneling)
+	- DNS通信が許可されているとき：[DNS Tunneling](#DNS%20Tunneling)
 
----
 ---
 
 # HTTP Tunneling
@@ -21,7 +21,9 @@
 - 下図のように、HTTPのインバウンド通信のみが許可されている状況では、SSH通信によるポートフォワーディングも、リバースシェルの確立もできない
 - HTTPでトンネリングすることで、ローカルNW上にアクセスすることが可能になる
 	- SSH通信をHTTPでカプセル化するなど
+
 ![](../../../画像ファイル/Pasted%20image%2020250926065949.png)
+
 $$FWとINSPECTORによりマシンが保護されているイメージ図(PEN-200)$$
 
 ---
