@@ -346,23 +346,22 @@ socat -ddd TCP-LISTEN:<listen_port>,fork TCP:<target_IP>:<port>
 2. 攻撃者のマシン上でsshuttleを使用し、トンネルをしたい**サブネット**を指定
 ```zsh
 # 例：sshuttle -r database_admin@192.168.50.63:2222 10.4.50.0/24 172.16.50.0/24
-sshuttle -r [足場のsshユーザー名]@[足場のIP]:[リッスンポート] [サブネット]
+sshuttle -r <jump_host_ssh_username>@<jump_host_IP>:<listen_port> <target_subnet>
 ```
 
 3. 指定したサブネット内のIPに対し任意の操作
 ```zsh
 # smbclientの場合
-smbclient -L //172.16.50.217/ -U hr_admin --password=Welcome1234
+smbclient -L //<target_IP>/ -U <username> --password=<password>
 ```
 
----
 ---
 
 # WindowsツールによるPort Forwaring
 
 ## ssh.exe
 
-条件：windowsマシンにOpenSSHクライアント(ssh.exe)がインストールされているときに使用可能
+- 条件：windowsマシンにOpenSSHクライアント(ssh.exe)がインストールされているときに使用可能
 
 1. 攻撃者のマシンでsshをスタート
 ```zsh
@@ -370,7 +369,6 @@ sudo systemctl start ssh
 ```
 
 2. SSHクライアントであるwindowsマシンにssh.exeがあることを確認する
-	- リモートダイナミックポートフォワーディングが可能なバージョン は7.7以上
 ```powershell
 # cmdの場合：where ssh → ssh.exe -V
 Get-Command ssh
@@ -381,23 +379,19 @@ CommandType     Name    Version    Source
 -----------     ----    -------    ------
 Application     ssh.exe 8.1.0.1    C:\Windows\System32\OpenSSH\ssh.exe
 ```
+- リモートダイナミックポートフォワーディングが可能なバージョン は7.7以上
 
-3. あとは[Port Redirection & SSH Port Forwarding](#SSH%20Remote%20Dynamic%20Port%20Forwarding)のステップ３以降と同じ(`ssh -N...`)
+3. あとは[SSH Remote Dynamic Port Forwarding](#SSH%20Remote%20Dynamic%20Port%20Forwarding)のステップ３以降と同じ(`ssh -N...`)
 
-![](../../../画像ファイル/Pasted%20image%2020250924072013.png)
-$$ssh.exeを使ったリモートダイナミックポートフォワーディングのイメージ図(PEN-200)$$
-
----
-
-## Plink
+## 🔗[Plink](https://github.com/chrchang/plink-ng)
 
 - ssh.exeが使えない場合や、インタラクティブなシェルが使えないとき(WinRM接続中など）に使用を検討
 - 条件：足場のマシンへのCLIアクセスが可能なとき使用可能
 	- ❌リモートダイナミックポートフォワーディングは使えない
 - PlinkはPuTTYのCLI版
 
-> ⚠️ Kaliのパスワードが記録されてしまう恐れあり
-> 信頼できないNWに対してのペネトレにおいては、ポートフォワーディング用ユーザーを作成すべき
+>[!WARNING]
+>Attackerのパスワードが記録されてしまう恐れがあるため、信頼できないNWに対してのペネトレにおいては、ポートフォワーディング用ユーザーを別途作成すべき。
 
 1. 攻撃者のマシンでsshをスタート
 ```zsh
@@ -405,9 +399,9 @@ sudo systemctl start ssh
 ```
 
 2. 攻撃者のマシンからPlinkを足場のマシンに転送
-	- [ファイル操作、ユーティリティ](../../Common/ファイル操作、ユーティリティ.md#Apache%20webサーバー)
+	- [Apache webサーバー](../../Common/ファイル操作、ユーティリティ.md#Apache%20webサーバー)
 ```zsh
-# plinkのパス
+# Kali上のplinkのパス
 /usr/share/windows-resources/binaries/plink.exe
 ```
 
