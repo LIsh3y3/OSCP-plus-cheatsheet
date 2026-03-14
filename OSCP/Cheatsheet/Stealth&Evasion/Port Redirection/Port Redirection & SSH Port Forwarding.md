@@ -35,7 +35,6 @@ $$リモートポートフォワーディングのイメージ$$
 $$ローカルポートフォワーディングのイメージ$$
 
 ---
----
 
 # LinuxツールによるPort Forwading w/Socat
 
@@ -61,26 +60,25 @@ $$Socatポートフォワーディング成功時出力例$$
 >他のポートに対してポートフォワーディングをするためには、Ctrl + Zでターミナルを閉じ、再度ターミナルに接続後、既存のsocatプロセスを`kill`する。
 
 ---
----
 
 # SSH Port Forwardingの基礎
 
-- 仕組み：SSHセッションで通信を==カプセル化（暗号化）==してPort Redirection
+SSHセッションで通信を==カプセル化（暗号化）==してポートフォワーディングする。
 
 - **必要条件**：
 	- FWにSSH通信が許可されている
 	- インタラクティブなシェルが使える
 		- WinRM接続中など、インタラクティブなシェルが使えない場合は、
 			- (a) Unix系：`python3 -c 'import pty; pty.spawn("/bin/sh")'`
-			- (b) Windows：[Port Redirection & SSH Port Forwarding](#Plink)や[Port Redirection & SSH Port Forwarding](#Netsh)を使う
+			- (b) Windows：[Plink](#Plink)や[Netsh](#Netsh)を使う
 
 - ✅通常のネットワークトラフィックと見分けがつきにくい
 - ❌近年のFWに実装されているDeep Packet Inspection(DPI)機能により、悪意ある通信は検知され遮断されてしまう
-	→HTTP通信が許可されている場合は[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md)を使えば、DPIは回避可能
+	- →HTTP通信が許可されている場合は[Tunneling Through Deep Packet Inspection](Tunneling%20Through%20Deep%20Packet%20Inspection.md)を使えば、DPIは回避可能
 
 ## SSHポートフォワーディングの種類と概要
 
-単純な[Port Redirection & SSH Port Forwarding](#ポートフォワーディング)では、パケットをリッスンするホスト自身(CONFLUENCE01)がパケットを転送するが、SSHポートフォワーディングでは、リッスンする役割を担う機器と転送する役割を担う機器の２つの機器でポートフォワーディングをする
+単純なポートフォワーディングでは、パケットをリッスンするホスト自身(下図 Jump Host1 )がパケットを転送するが、SSHポートフォワーディングでは、リッスンする役割を担う機器と、転送する役割を担う機器の、合計２つのマシンを使ってポートフォワーディングをする
 
 ### SSHローカルポートフォワーディング
 
