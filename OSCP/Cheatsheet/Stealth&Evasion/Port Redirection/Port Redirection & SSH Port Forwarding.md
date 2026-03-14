@@ -25,29 +25,29 @@ Port Redirection ＝ Port Forwarding
 リモートポートフォワーディング
 	リッスンポートで受信したパケットをリモート端末のポートに転送すること。
 
-![](../../../画像ファイル/Pasted%20image%2020260314090316.png)
+![](../../../画像ファイル/Pasted%20image%2020260314091225.png)
 
-$$リモートポートフォワーディングの概要イメージ$$
+$$リモートポートフォワーディングのイメージ$$
 
 ローカルポートフォワーディング：
 	リッスンポートで受信したパケットをローカル端末のポートに転送すること
 
-![](../../../画像ファイル/Pasted%20image%2020260314090616.png)
+![](../../../画像ファイル/Pasted%20image%2020260314091325.png)
 
-$$ローカルポートフォワーディングの概要イメージ(TryHackMe)$$
+$$ローカルポートフォワーディングのイメージ$$
 
 ---
 ---
 
-# LinuxツールによるPort Forwading(Socat)
+# LinuxツールによるPort Forwading w/Socat
 
-- ⚠️Socatがインストールされていない場合は、[socat - 3ndG4me](https://github.com/3ndG4me/socat/releases)からスタンドアロンバイナリを攻撃者のマシンにダウンロードし、ターゲットに転送する
+- Socatがインストールされていない場合は、🔗[socat - 3ndG4me](https://github.com/3ndG4me/socat/releases)からスタンドアロンバイナリを攻撃者のマシンにダウンロードし、ターゲットに転送する
 - このような単純なポートフォワーディングは検知・遮断されやすい
 
-1. 足場上でリモートポートフォワーディング
+1. Jump Host上でリモートポートフォワーディング
 ```zsh
 # 下図例：socat -ddd TCP-LISTEN:2345,fork TCP:10.4.50.215:5432
-socat -ddd TCP-LISTEN:[リッスンポート],fork TCP:[DestIP]:[Port]
+socat -ddd TCP-LISTEN:<listen_port>,fork TCP:[DestIP]:[Port]
 ```
 - `-ddd`：詳細出力
 - `fork`：指定することで、１回きりの通信で接続断しないようになる
