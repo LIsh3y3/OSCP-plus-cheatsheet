@@ -7,7 +7,7 @@
 
 # SIDについて
 
-- 用語：[SID, RID](../../../Misc/用語.md#SID,%20RID)
+- 用語：[SID・RID](../../../Misc/用語.md#SID・RID)
 - 🔗[well-known SID](https://learn.microsoft.com/en-us/windows/win32/secauthz/well-known-sids)があり、その中でもPrivEscの文脈で有用なものがある
 
 | SID                          | 意味                  |
@@ -22,7 +22,7 @@
 
 # Access token
 
-- [プロセス・スレッド](../../../Misc/用語.md#プロセス・スレッド)
+- [プロセス・スレッド・プロシージャ](../../../Misc/用語.md#プロセス・スレッド・プロシージャ)
 
 ## Access Token の中身（セキュリティコンテキスト）
 

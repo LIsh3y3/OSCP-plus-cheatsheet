@@ -93,7 +93,7 @@ $$smbclientで接続後ls実施した画面$$
 
 ## 用語
 
-- RID: Relative Identifier([SID, RID](../../Misc/用語.md#SID,%20RID))
+- RID: Relative Identifier（[SID・RID](../../Misc/用語.md#SID・RID)）
 - NULLセッション: 認証なし接続
 - UNCパス（`\\example\ADMIN$\`）：ネットワーク上のリソースを指定するWindowsの標準形式
 
@@ -342,7 +342,7 @@ netexec smb <target_IP> -u <username> -p '<password>' -M spider_plus
 netexec smb <target_IP> -u <username> -p '<password>' --users
 ```
 
-ユーザーのブルートフォース([RID (Relative Identifier)](../../Misc/用語.md#RID%20(Relative%20Identifier)))
+ユーザーのブルートフォース（[RID（Relative Identifier）](../../Misc/用語.md#RID（Relative%20Identifier）)）
 ```zsh
 netexec smb <target_IP> -u guest -p '' --rid-brute
 ```

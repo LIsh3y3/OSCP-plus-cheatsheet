@@ -1,5 +1,5 @@
 - 関連ノート
-	- [Module 11：Phishing](Module%2011：Phishing.md)
+	- [Phishing](Phishing.md)
 	- [2. WeaponizationとDelivery](../TryHackME/Red%20Teaming/2.%20Initial%20Access/2.%20WeaponizationとDelivery.md)
 
 ---
@@ -628,7 +628,7 @@ sudo python -m http.server <Port>
 
 13. （スキップ可）kali上で`test.txt`があれば削除し、ライブラリファイルが変更されていたら再度クリーンにする：[Module 12：Client-side Attacks](#🚨注意：実行後はコードが変わるので要編集)
 
-14. Pretext（口実）を用いて、メールなどで「ライブラリファイル」(.library-ms)を送付（[Module 11：Phishing](Module%2011：Phishing.md#補足：メールの送信方法)）
+14. Pretext（口実）を用いて、メールなどで「ライブラリファイル」(.library-ms)を送付（[Phishing](Phishing.md#補足：メールの送信方法)）
     メッセージ例：
 ```
 件名：設定ファイルの実行のお願い（ITチームより）

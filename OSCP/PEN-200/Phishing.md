@@ -1,5 +1,3 @@
-（PEN-200のModule 11: Phishing BasicsとTHMのノートを融合）
-
 # 基本情報
 
 ## Intro
@@ -51,7 +49,7 @@
 ### 送信者のメールアドレスの入手先
 
 - 送信者のアドレスは、重要なブランド、既知の連絡先、または同僚を偽装したドメイン名であることが望ましい。
-	- [Module 11：Phishing](#フィッシングドメインの選択)
+	- [Phishing](Phishing.md#フィッシングドメインの選択)
 - ターゲットがどのようなブランドや人物と交流しているかを調べるには、OSINT戦術を活用：[1. Recon](../TryHackME/Red%20Teaming/2.%20Initial%20Access/1.%20Recon.md)
 - SNSアカウントを観察し、ターゲットが興味をもっているブランドや友人について調べる。  
 - Googleでターゲットの名前と大まかな場所を検索し、ターゲットが地元の企業やブランドについて残したレビューがないか確認する。  
@@ -115,7 +113,7 @@
 - フィッシングキャンペーンを成功させるためには、ある程度のインフラを整える必要がある
 
 ✅Domain Name:
-	本物そっくりのドメイン名か、他のドメインを模倣したドメイン名を登録する。完璧なドメイン名を作成する方法の詳細は[Module 11：Phishing](#Using%20GoPhish)
+	本物そっくりのドメイン名か、他のドメインを模倣したドメイン名を登録する。完璧なドメイン名を作成する方法の詳細は[Phishing](Phishing.md#Using%20GoPhish)
 
 ✅ SSL/TLS Certificates:
 	選択したドメイン名のSSL/TLS証明書を作成することで、攻撃に信憑性を持たせる
@@ -158,7 +156,7 @@
 
 - これはフィッシングメールがターゲットを誘導する先のWebサイト
 - 企業のWebサイトをクローンするなどの方法もとられる
-	- →[Module 11：Phishing](#Credential%20Phishing実践)
+	- →[Phishing](Phishing.md#Credential%20Phishing実践)
 
 - Landing Pages -> New Page
 - Name：欄に適切な名前をつけ、次にHTMLボックスで「Source」ボタンを押し、以下のようにHTMLコードを入力する
@@ -248,7 +246,7 @@
 
 ## フィッシングドメインの選択
 
-[Module 11：Phishing](#送信者のメールアドレス)
+[Phishing](Phishing.md#送信者のメールアドレス)
 
 - ターゲットに対して心理的優位性を確保するためには、攻撃を開始するフィッシング・ドメインを適切に選択することが不可欠。攻撃者は以下のような方法を用いて最適なドメイン名を選択する
 
@@ -317,7 +315,7 @@
 ※以下、Zoomをクローン対象とする
 
 
-- 上記の2〜4はSETで自動化できる：[Module 11：Phishing](#フィッシングサイト作成の自動化%20w/%20SET(Social-%20Engineer-Toolkit))
+- 上記の2〜4はSETで自動化できる：[Phishing](Phishing.md#フィッシングサイト作成の自動化%20w/%20SET(Social-%20Engineer-Toolkit))
 	- しかし、Zoomのログインページのように、POSTリクエストを他のエンドポイントに送信して処理する場合、SETは指定したURLの静的なページしか入力情報をキャプチャできないので、うまくいかない
 	- 💡まず、SETでクローンしてみて、うまくキャプチャできないのであれば、下記の手法でクローンする。
 
@@ -578,7 +576,7 @@ subl signin.html
 2. 正規のSigninページに存在する画像のURLをコピーする
 ![](../画像ファイル/Pasted%20image%2020250511162853.png)
 
-3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[Module 11：Phishing](#4.4%20LLMにPOSTデータ送信先を用意させる)）
+3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[Phishing](Phishing.md#4.4%20LLMにPOSTデータ送信先を用意させる)）
 ```txt
 divタグを2つ書き、1つは左側に配置し、次の画像を入れてください：
 https://file-paa.zoom.us/1xJu7pL8RIWc9lsGFcnRcQ/MS4yLqsI3_R6GW921i53kTJpxI85yLrAIDXer91U-i7ukgBK/12b43c75-e1f7-4d9c-93ee-aaa7f83fdd1a.png
@@ -650,8 +648,8 @@ cat test_data.txt
 
 ## 5. フィッシングメールの作成
 
-- [Module 11：Phishing](#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
-- ドメイン名は、正規のFQDNを真似ること（[Module 11：Phishing](#フィッシングドメインの選択)）
+- [Phishing](Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
+- ドメイン名は、正規のFQDNを真似ること（[Phishing](Phishing.md#フィッシングドメインの選択)）
 ```txt
 Hello Sales department,
 
