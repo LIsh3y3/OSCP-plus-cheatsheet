@@ -16,7 +16,6 @@
 	- デバッグが難しい：２層になっているため、問題の特定が複雑になる
 
 - マルウェア解析時は、==かならず有効化すること==
-- 
 
 ## メリット、デメリット
 
@@ -33,7 +32,7 @@
 
 ## 無効化手順
 
-ソース：[Windows 11 24h2 hsot - how to disable Virtual Based Security - VMware discussion](https://community.broadcom.com/vmware-cloud-foundation/discussion/windows-11-24h2-hsot-how-to-disable-virtual-based-security)
+ソース：🔗[Windows 11 24h2 hsot - how to disable Virtual Based Security - VMware discussion](https://community.broadcom.com/vmware-cloud-foundation/discussion/windows-11-24h2-hsot-how-to-disable-virtual-based-security)
 
 cmd.exeを管理者権限で開き、以下を実行する
 
@@ -163,12 +162,16 @@ sudo apt install sublime
 3. sublime text上で、Ctrl + Shift + Pを押し、「Package Control: Install Package」と入力
 4. 入力したいパッケージ名を入力（ここでは例としてANSI escapeをインストール）
 5. 右下のファイルタイプ(Plain Textを選択)
+
 ![](../画像ファイル/Pasted%20image%2020251101103833.png)
 
+
 6. ANSIを選択する→ANSIが適用される
-	- ⚠️注意点：
-		- 一度閉じて再度開くと、色付けはなくなっている
-		- 文字コードをANSIとしているときは、読み取り専用になっているため、Plain textに戻して書き込む
+
+>[!NOTE]
+>- 一度閉じて再度開くと、色付けはなくなっている
+>- 文字コードをANSIとしているときは、読み取り専用になっているため、Plain textに戻して書き込む
+
 ![](../画像ファイル/Pasted%20image%2020251101103951.png)
 
 
@@ -176,7 +179,7 @@ sudo apt install sublime
 
 # 日本語入力
 
-表示は英語のまま、入力だけ日本語を使うようにしたい
+表示は英語のまま、入力だけ日本語を使うようにしたい。
 
 1. パッケージインストール
 ```sh
@@ -201,6 +204,7 @@ reboot -h now
 
 4. アプリケーションからFcitx5 Configurationを開き、Inputを以下の構成にする
 	- ⚠️:この際、ポップアップで"現在のレイアウトと違うようです"のような表示が出ると思うが、OKとする
+
 ![](../画像ファイル/Pasted%20image%2020260208163838.png)
 
 5. いくつかのアプリケーションで日本語入力試行し、問題ないことを確認する
@@ -223,7 +227,7 @@ reboot -h now
 - 一般的に、接続切断は、Staged payloadをnetcatリスナーで使用した場合にのみ起こるため、Stageless payloadにする
 	- [5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md#Staged%20/%20Stageless%20Payloads)
 
-- ⭐️**mtu値を下げる** →代替これで解決する（ファイルダウンロードできない、などの事象も解消）
+- ⭐️**mtu値を下げる** →ほとんどこれで解決する（ファイルダウンロードできない、などの事象も解消）
 ```zsh
 sudo ifconfig tun0 mtu 1250
 ```
@@ -231,8 +235,8 @@ sudo ifconfig tun0 mtu 1250
 - あるいは、リバースシェルを獲得するのではなく、ユーザーを作成する
 	- ターゲット環境によっては、どうしても不安定になることがあるため
 ```cmd
-net user [username] [password] /add
-net localgroup Administrators [username] /add
+net user <username> <password> /add
+net localgroup Administrators <username> /add
 ```
 
 ## クリップボード共有がうまくいかない
@@ -300,24 +304,11 @@ sudo nano /etc/fstab
 .host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other,auto_unmount,defaults 0 0
 ```
 
-###### Caps LockとCtrlキーを入れ替えられない
+---
+
+# Caps LockとCtrlキーを入れ替えられない
 
 - windows sysinternalより、caps2ctrlをインストール（Kaliというより、windowsの話）
-
-###### VMが開けない
-
-①vmxファイルがある場合
-	VMの「仮想マシンを開く」から選択する
-
-②vmxファイルがない場合（VM立ち上げ時に自動で開いていたのに開かなくなった場合）
-	タスクバーのvmware fusionを右クリックすればリストにある
-
-
-###### ホストとVMの間でコピー＆ペーストができない
-
-- 
-
-
 
 ---
 
