@@ -131,7 +131,7 @@ powershell -ep bypass
 
 # AS-REP Roasting
 
-==AS-REP RoastingとKerberoastingが試行できないかどうかは、各AD環境で必ず１回試行する。==
+**AS-REP RoastingとKerberoastingが実行できないかどうか、各AD環境で必ず１回試行する。**
 
 ##  AS-REP Roastingの仕組み
 

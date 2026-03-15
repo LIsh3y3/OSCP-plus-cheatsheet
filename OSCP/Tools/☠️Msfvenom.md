@@ -8,7 +8,7 @@
 - `msfvenom` は、Metasploit Framework の一部でありながら、単独でも使用できるペイロード生成ツール
 - 様々なプラットフォーム向けのリバースシェルやバインドシェルを含む、豊富な形式・構造のペイロードを生成できる（exe, elf, asp, war, php, py, raw など）
 - エンコードや出力形式のカスタマイズも対応
-- OSCP試験で利用制限なし（multi handlerも）：[Metasploit Restrictions - OffSec](https://help.offsec.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions)
+- OSCP試験で利用制限なし（multi handlerも）：🔗[Metasploit Restrictions - OffSec](https://help.offsec.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions)
 
 ---
 

