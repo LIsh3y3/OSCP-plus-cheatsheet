@@ -1,10 +1,10 @@
-WPSCanとはなにか、なにをスキャンするかは、公式ドキュメントを参照→[WPScan docs - Github](https://github.com/wpscanteam/wpscan/wiki/WPScan-User-Documentation)
+🔗[WPScan docs - Github](https://github.com/wpscanteam/wpscan/wiki/WPScan-User-Documentation)
 
 - 用途は、**Wordpress**のテーマ、プラグインから脆弱性を検出することや、ユーザ・パスワードをブルートフォースすること
 	- Wordpress本体（コア）は開発者が迅速にセキュリティパッチを適用するが、コミュニティプラグインやテーマは脆弱性が放置されたまま残ってることが多い
 
 > [!NOTE] 
-> ターゲットがWordpressを使っていたら、必ず実行すること
+> ターゲットがWordpressを使っていたら、必ず実行すること。
 
 ---
 
@@ -19,8 +19,7 @@ wpscan --update
 ```zsh
 wpscan --url http://<target_IP> --no-banner --enumerate p,t --plugins-detection aggressive -o WebEnum/wpscan --api-token <API_token>
 ```
-- `[+]`発見情報、`[!]`脆弱性情報
-- 💡`out of date`に着目
+- `[+]`発見情報、`[!]`脆弱性情報、`out of date`に着目
 
 ## 補足：APIトークンについて
 

@@ -183,8 +183,10 @@ $$ノードのアイコンの意味$$
 	- Opsec Considerations：レッドチームメンバーが検知回避で考慮すべき点など
 
 ![](../画像ファイル/Pasted%20image%2020251007064618.png)
+
 $$edgeのプロパティを表示$$
-- その他の情報は、公式ドキュメントの「[Resources](https://bloodhound.specterops.io/resources/overview)」を閲覧
+
+- その他の情報は、公式ドキュメントの「🔗[Resources](https://bloodhound.specterops.io/resources/overview)」を閲覧
 
 ## Explorer
 
@@ -192,8 +194,10 @@ $$edgeのプロパティを表示$$
 
 - 検索機能
 - ノードについてのラベルをつけると、そのラベルに該当するオブジェクトに絞ることができる
-	- [🐶Bloodhound](#nodeについて)
+	- [nodeについて](#nodeについて)
+
 ![](../画像ファイル/Pasted%20image%2020251007065722.png)
+
 $$groupラベルでadminとつくグループのみを検索している$$
 
 ### PATHFINDING
@@ -214,6 +218,7 @@ $$groupラベルでadminとつくグループのみを検索している$$
 > - All Kerberoastable users
 
 ![](../画像ファイル/Pasted%20image%2020251006124753.png)
+
 $$定義済みクエリですべてのドメインadminを列挙しているイメージ$$
 
 ---

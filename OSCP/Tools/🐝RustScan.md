@@ -1,12 +1,12 @@
 # RustScanとは
 
-- [RustScan](https://github.com/bee-san/RustScan)
+- 🔗[RustScan - GitHub](https://github.com/bee-san/RustScan)
 - Rust言語で構築されたオープンソースのポートスキャナー
 - 全65,535ポートを最速で数秒以内にスキャンできる（バッチサイズ・タイムアウト次第）
 - **NmapのラッパーとしてNmapを置き換えるものではなく**、補完するツール
     - Openポートを高速で発見し、その結果を自動的にNmapへパイプするという思想
     - Nmapがインストールされていることが前提
-- RustScan Scripting Engine（RSE）により、Python・Lua・Shellで書かれた任意のスクリプトを実行可能（[詳細](https://github.com/RustScan/RustScan/wiki/RustScan-Scripting-Engine)）
+- RustScan Scripting Engine（RSE）により、Python・Lua・Shellで書かれた任意のスクリプトを実行可能（🔗[詳細](https://github.com/RustScan/RustScan/wiki/RustScan-Scripting-Engine)）
 - Adaptive Learning機能により、実行環境のOSを把握し、スキャン性能を動的に自動調整する
 
 ---
@@ -95,7 +95,7 @@ rustscan -a <target_IP> --scan-order "Random"
 
 ## RustScanの調整
 
-- [RustScan Usage](https://github.com/RustScan/RustScan/wiki/Usage)
+- 🔗[RustScan Usage](https://github.com/RustScan/RustScan/wiki/Usage)
 
 バッチサイズの調整（指定したポート数を一度にスキャン）
 ```zsh
@@ -111,7 +111,7 @@ rustscan -T <miliseconds>
 
 # RustScanインストール
 
-1. [RustScan release page]([https://github.com/RustScan/RustScan/releases](https://github.com/RustScan/RustScan/releases))から.deb.zipファイルをダウンロード
+1. 🔗[RustScan release page]([https://github.com/RustScan/RustScan/releases](https://github.com/RustScan/RustScan/releases))から.deb.zipファイルをダウンロード
 2. unzip
 3. dpkgでインストール
 ```zsh

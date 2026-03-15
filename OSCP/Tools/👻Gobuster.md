@@ -4,7 +4,7 @@
 	- ディレクトリ：dirモード
 	- サブドメイン：dnsモード
 	- バーチャルホスト：vhostモード
-- [Gobuster - GitHub](https://github.com/OJ/gobuster?tab=readme-ov-file)
+- 🔗[Gobuster - GitHub](https://github.com/OJ/gobuster?tab=readme-ov-file)
 
 ---
 
@@ -137,7 +137,7 @@ drwxrwxrwx 1 ftp ftp               0 Nov 29  2022 umbraco
 
 # Error
 
-- 参照：[Gobuster Trouble Shooting - GitHub](https://github.com/OJ/gobuster?tab=readme-ov-file#-troubleshooting)
+- 参照：🔗[Gobuster Trouble Shooting - GitHub](https://github.com/OJ/gobuster?tab=readme-ov-file#-troubleshooting)
 
 | エラー                                                                                       | 想定原因                                                                           | 対策                                                                  |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
