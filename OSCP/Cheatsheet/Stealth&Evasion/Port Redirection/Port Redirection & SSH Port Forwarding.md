@@ -311,7 +311,7 @@ tcp_connect_time_out 2000
 	- ユーザーにとっては**VPN で接続したかのように内部ネットワークを列挙できる**ように見える
 
 - 条件：
-	- 攻撃者のマシン：sshuttleがインストール済みであること
+	- 攻撃者のマシン：sshuttleがインストール済みであること、かつroot権限
 	- Jump Host（SSHサーバー）にPython3がインストールされていること：sshuttleがリモート側でTCPソケット制御コードを実行するために必要
 
 1. Jump Hostでリモートポートフォワーディング
@@ -355,7 +355,7 @@ CommandType     Name    Version    Source
 -----------     ----    -------    ------
 Application     ssh.exe 8.1.0.1    C:\Windows\System32\OpenSSH\ssh.exe
 ```
-- リモートダイナミックポートフォワーディングが可能なバージョン は7.7以上
+- リモートダイナミックポートフォワーディングが可能なバージョン は7.6以上
 
 3. あとは[SSH Remote Dynamic Port Forwarding](#SSH%20Remote%20Dynamic%20Port%20Forwarding)のステップ３以降と同じ(`ssh -N...`)
 
