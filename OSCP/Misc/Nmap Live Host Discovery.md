@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [Port Scan & Vuln Scan](../../Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
+	- [Port Scan & Vuln Scan](../Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
 
 >[!NOTE]
 >OSCP試験においては、ターゲットのホストIPが提供されるため、使わなかった。
