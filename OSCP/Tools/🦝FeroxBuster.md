@@ -7,7 +7,7 @@
 	- ✅ ワイルドカード検出が自動
 	- ✅ 動的なフィルタリング機能が豊富
 	- ❌サブドメイン・vhost列挙は非対応（ディレクトリ/ファイル列挙専用）
- - [Feroxbuster - GitHub](https://github.com/epi052/feroxbuster)
+ - 🔗[Feroxbuster - GitHub](https://github.com/epi052/feroxbuster)
 
 ---
 
@@ -43,7 +43,7 @@ ulimit -n 8192
 # スキャン
 feroxbuster -u http://<TargetIP|Domain>:<Port>/ --depth <num> -r -k -w  /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt --auto-tune -o feroxbuster.txt -x '<extensions>'
 ```
-- `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[🦝FeroxBuster](#拡張子リスト)）
+- `-x`にはターゲットのテクノロジースタック等に応じて拡張子を指定する（[拡張子リスト](#拡張子リスト)）
 
 再帰探索を無効化（Gobusterのように1階層のみ）
 ```zsh
@@ -99,9 +99,9 @@ feroxbuster -u http://<TargetIP|Domain>:<Port>/ -k -w /usr/share/seclists/Discov
 
 # よくある問題と対処法
 
-|問題|原因|対策|
-|---|---|---|
-|結果が多すぎる|ワイルドカードDNS / 同じサイズの404ページ|`-C 404 -S <size>` でフィルタリング|
-|スキャンが遅い|再帰が深すぎる|`--depth 2` で深さを制限|
-|エラーが多い|スレッド数が多すぎる|`--auto-tune` を使うか `-t 50` に減らす|
-|何も見つからない|ワードリストが適切でない|他のワードリストを試す（[🦝FeroxBuster](#補足：利用ワードリスト候補)）|
+| 問題       | 原因                        | 対策                                     |
+| -------- | ------------------------- | -------------------------------------- |
+| 結果が多すぎる  | ワイルドカードDNS / 同じサイズの404ページ | `-C 404 -S <size>` でフィルタリング            |
+| スキャンが遅い  | 再帰が深すぎる                   | `--depth 2` で深さを制限                     |
+| エラーが多い   | スレッド数が多すぎる                | `--auto-tune` を使うか `-t 50` に減らす        |
+| 何も見つからない | ワードリストが適切でない              | 他のワードリストを試す（[利用ワードリスト候補](#利用ワードリスト候補)） |

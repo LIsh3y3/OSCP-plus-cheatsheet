@@ -1,12 +1,12 @@
 # Process Monitor
 
-[Process Monitor](https://learn.microsoft.com/ja-jp/sysinternals/downloads/procmon)
+🔗[Process Monitor](https://learn.microsoft.com/ja-jp/sysinternals/downloads/procmon)
 
 ## Process Monitor（Procmon）とは？その用途
 
 - プロセス、スレッド、ファイルシステム、レジストリ関連の活動に関する情報をリアルタイムで表示できる
 - サービスバイナリがロードするDLLを識別することなどに使われる
-	- →[💥Windows Privilege Escalation](../Cheatsheet/🪟Windows/💥Windows%20Privilege%20Escalation.md#Service%20Exploits%20-%20DLL%20Hijacking)
+	- →[Service Exploits - DLL Hijacking](../Cheatsheet/🪟Windows/💥Windows%20Privilege%20Escalation.md#Service%20Exploits%20-%20DLL%20Hijacking)
 
 ## Process Monitorの使用方法
 
@@ -15,14 +15,16 @@
 
 - メニューバーのFileter > Filter > Addより、フィルターが可能
 	- 複数条件をAddしていき、最後にApplyするとフィルターが適用される（下イメージの✅）
+
 ![](../画像ファイル/Pasted%20image%2020250815125003.png)
+
 $$Procmonでフィルターを適用したイメージ$$
 
 ---
 
 # PsLoggedOn
 
-[PsLoggedOn](https://learn.microsoft.com/en-us/sysinternals/downloads/psloggedon)
+🔗[PsLoggedOn](https://learn.microsoft.com/en-us/sysinternals/downloads/psloggedon)
 
 ## PsLoggedOnとは？その用途
 
@@ -35,15 +37,17 @@ $$Procmonでフィルターを適用したイメージ$$
 
 - NetSessionEnum が使えないケースの補完手段として有用
 
-- 🚨動作するかどうかは、Remote Registry サービスに依存する
-	- Windows 8以降のworkstationではこのサービスはデフォルトで無効化
-	- Adminは管理目的でこのサービスを有効化している可能性もある
-	- Windows  Server 2012 R2、2016(1607)、2019(1809)、2022(21H2)ではデフォルト有効
+>[!NOTE]
+>- 動作するかどうかは、Remote Registry サービスに依存する
+>	- Windows 8以降のworkstationではこのサービスはデフォルトで無効化
+>	- Adminは管理目的でこのサービスを有効化している可能性もある
+>	- Windows  Server 2012 R2、2016(1607)、2019(1809)、2022(21H2)ではデフォルト有効
+
 
 ## PsLoggedOnの使用方法
 
 ADのdnshostnameで列挙したマシンに対して実行し、ドメイン内のマシンにログオン中のユーザーがいないかを確かめる
-	[🔍AD Enumeration](../Cheatsheet/🪟Windows/Active%20Directory/🔍AD%20Enumeration.md#コンピューターオブジェクトの列挙%20w/%20PowerView)
+	[コンピューターオブジェクトの列挙 w/ PowerView](../Cheatsheet/🪟Windows/Active%20Directory/🔍AD%20Enumeration.md#コンピューターオブジェクトの列挙%20w/%20PowerView)
 ```powershell
 # 例：.\PsLoggedon.exe \\files04.corp.com
 .\PsLoggedon.exe \\<dnshostname>

