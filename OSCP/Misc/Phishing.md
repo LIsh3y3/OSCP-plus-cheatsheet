@@ -592,7 +592,7 @@ subl signin.html
 
 ![](../画像ファイル/Pasted%20image%2020250511162853.png)
 
-3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[Phishing](Phishing.md#4.4%20LLMにPOSTデータ送信先を用意させる)）
+3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[4.4 LLMにPOSTデータ送信先を用意させる](Phishing.md#4.4%20LLMにPOSTデータ送信先を用意させる)）
 ```txt
 divタグを2つ書き、1つは左側に配置し、次の画像を入れてください：
 https://file-paa.zoom.us/1xJu7pL8RIWc9lsGFcnRcQ/MS4yLqsI3_R6GW921i53kTJpxI85yLrAIDXer91U-i7ukgBK/12b43c75-e1f7-4d9c-93ee-aaa7f83fdd1a.png
@@ -666,7 +666,7 @@ cat test_data.txt
 
 ## 5. フィッシングメールの作成
 
-- [1. Credential Phishing Pretext（口実）の作成(Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
+- [1. Credential Phishing Pretext（口実）の作成](Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
 - ドメイン名は、正規のFQDNを真似ること（[フィッシングドメインの選択](Phishing.md#フィッシングドメインの選択)）
 ```txt
 Hello Sales department,
