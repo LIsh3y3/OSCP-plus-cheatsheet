@@ -142,7 +142,7 @@ $$ICMPリクエストのキャプチャ$$
 
 ## DNS
 
-- 基本はUDP53ポートTCP53なら注意
+- 基本はUDP53ポートで、TCP53なら要観察
 - QueryとResponseの整合性を確認
 - Answerの内容に注目
 

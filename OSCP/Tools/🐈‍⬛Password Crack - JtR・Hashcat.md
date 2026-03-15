@@ -1,5 +1,5 @@
 >[!TIP]
->パスワードクラックに使用する wordlsit は fasttrack.txt の後、rockyou.txt
+>パスワードクラックに使用する wordlsit は fasttrack.txt の後、rockyou.txt。
 
 # ✂️JtR vs 🐈‍⬛Hashcat比較表
 
@@ -164,6 +164,7 @@ kdbxファイル：*keepass2john*
 keepass2john <file.kdbx> > <output_file>
 ```
 - `Database.kdbx`をクラックするとmasterパスワードを入手できるので、 `keepass2` で`Database.kdbx`ファイルを開き、master パスワードで中身のパスワードを確認する
+
 ![](../画像ファイル/Pasted%20image%2020260220163242.png)
 $$keepass2でパスワードを確認$$
 
