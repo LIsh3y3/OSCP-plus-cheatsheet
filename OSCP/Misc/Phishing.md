@@ -89,7 +89,7 @@
 | HTA             | ・HTML Application の略（`.hta`）  <br>・IEエンジン上でHTML + JavaScriptやVBScriptを**Windowsアプリのように実行可能**  <br>・拡張子を偽装して送ることで実行を誘導されやすい                                                                     |
 | JS / JSE        | ・JScript または JavaScriptファイル（`.js`, `.jse`）  <br>・Windows上では WScript で実行され、ファイル操作やネットワーク通信が可能  <br>・`jse` は暗号化されたスクリプト                                                                          |
 | VBS / VBE       | ・VBScriptファイル（`.vbs`）とその暗号化版（`.vbe`）  <br>・ユーザー操作や自動実行でコードを実行可能                                                                                                                                |
-| DOC / XLS / PPT | ・Office文書形式  <br>・マクロを含むことが可能（`.docm`, `.xlsm` など）  <br>・MotWがあるとマクロが自動実行されないように設計されている：[Module 12：Client-side Attacks](Module%2012：Client-side%20Attacks.md#MotW（Mark%20of%20the%20Web）)                                                |
+| DOC / XLS / PPT | ・Office文書形式  <br>・マクロを含むことが可能（`.docm`, `.xlsm` など）  <br>・MotWがあるとマクロが自動実行されないように設計されている：[Module 12：Client-side Attacks](../PEN-200/Module%2012：Client-side%20Attacks.md#MotW（Mark%20of%20the%20Web）)                                                |
 | RTF             | ・Rich Text Format（書式付きテキスト）  <br>・テキストベースであるが、埋め込みオブジェクトや脆弱性（例：CVE-2023-21716）を利用してコード実行が可能  <br>・マクロ不要で実行される場合もあり危険性が高い<br>・[CVE-2023-21716](https://nvd.nist.gov/vuln/detail/CVE-2023-21716) |
 | LNK             | ・Windowsショートカットファイル  <br>・見た目は普通のファイルだが、内部で任意のコマンド（EXEやスクリプト）を実行できる                                                                                                                            |
 | PDF             | ・use-after-free脆弱性によるRCE：[CVE-2023-21608](https://nvd.nist.gov/vuln/detail/CVE-2023-21608)                                                                                                     |
@@ -188,6 +188,7 @@
 </html>
 ```
 - Sourceボタンを再度クリックすると、下の画像のようにコードをレンダリングした結果を表示する。Capture Submitted DataボックスとCapture Passwordsボックスもクリックし、Save Pageボタンをクリック
+
 ![](../画像ファイル/Pasted%20image%2020230613115508.png)
 
 ### Email Templates:
@@ -198,13 +199,17 @@
 2. Template Nameに"Email 1"などの名前を入力 -> Subjectに"New Message Received"など件名を入力 -> "HTML"タブをクリックし、"Source"ボタンをクリックしてHTMLエディターモードを有効にする。
 3. コンテンツに、ユーザにリンクをクリックさせるようなメールを書く。
 4. リンクテキストは、Linkボタンをクリックで編集できる
+
 ![](../画像ファイル/Pasted%20image%2020230613120312.png)
-5. Display Textには`https://admin.acmeitsupport.thm`と入力
-6. 実際のリンクは`{{.URL}}`に設定する。これは、メール送信時に偽装したランディングページに変更される。
-7. Protocolを`<other>`に変更する。
+
+1. Display Textには`https://admin.acmeitsupport.thm`と入力
+2. 実際のリンクは`{{.URL}}`に設定する。これは、メール送信時に偽装したランディングページに変更される。
+3. Protocolを`<other>`に変更する
+
 ![](../画像ファイル/Pasted%20image%2020230613120629.png)
 
-8. Save Template
+4. Save Template
+
 ![ 400](../画像ファイル/Pasted%20image%2020230613120936.png)
 
 ### Users & Groups
@@ -212,6 +217,7 @@
 - ここに、ターゲットのメールアドレスを保存する。
 - Users & Groupsをクリック -> New Group -> Group Nameを"Targets"など名前付けし、メールアドレスを追加していく。
 - Save Changesボタンを押す
+
 ![](../画像ファイル/Pasted%20image%2020230613132642.png)
 
 ### Campaigns
@@ -219,6 +225,7 @@
 - 左側のCampaigns -> +New Campaign
 - 必要情報を入力していく
 - Launch CampaignをするとResultページに飛ぶ
+
 ![](../画像ファイル/Pasted%20image%2020230613132948.png)
 
 ### Results
@@ -228,7 +235,8 @@
 - 画面下部には、各メールアドレスの内訳が表示されている。MartinとBrianのメールは正常に送信されていて、このaccountsのメールはエラーになっていることがわかる
 - 左側の▶️ボタンから、エラーの詳細をみることができる。
 - "Submitted Data"のアカウントの▶️ボタンから詳細をみるとクレデンシャルなどのデータが入力・送信されたことがわかる。
-- ![](../画像ファイル/Pasted%20image%2020230613133226.png)
+
+![](../画像ファイル/Pasted%20image%2020230613133226.png)
 
 ---
 ---
@@ -246,7 +254,6 @@
 
 ## フィッシングドメインの選択
 
-[Phishing](Phishing.md#送信者のメールアドレス)
 
 - ターゲットに対して心理的優位性を確保するためには、攻撃を開始するフィッシング・ドメインを適切に選択することが不可欠。攻撃者は以下のような方法を用いて最適なドメイン名を選択する
 
@@ -276,7 +283,9 @@
 - もともとドメイン名はラテン文字のa-zと0-9で構成されていたが、1998年にIDN（International Domain Name）が実装され、アラビア語、中国語、キリル文字、ヘブライ語など、他の言語の文字やアルファベットに対応した。
 - IDNの実装によって生じる問題は、異なる言語の異なる文字が同一に見えるということ。
 - 例えば、Unicode文字U+0430（キリル文字の小文字a）は、英語で使用されるUnicode文字U+0061（ラテン文字の小文字a）と同じに見えるため、攻撃者は別のドメイン名とほとんど同じに見えるドメイン名を登録することができる
+ 
  ![ 300](../画像ファイル/Pasted%20image%2020230613134518.png)
+ 
 
 ---
 ---
@@ -284,7 +293,7 @@
 # フィッシングでのMS Officeの利用
 
 - フィッシングキャンペーンでは、Microsoft Office文書（通常、Word、Excel、PowerPoint）が添付ファイルとして添付されることがよくある。
-- Office文書にはマクロが含まれていることがある。マクロはコンピュータのコマンドを実行するために使用され、被害者のコンピュータにマルウェアをインストールさせたり、攻撃者のネットワークに接続して被害者のコンピュータを制御させたりする可能性がある。[2. WeaponizationとDelivery](../TryHackME/Red%20Teaming/2.%20Initial%20Access/2.%20WeaponizationとDelivery.md#Visual%20Basic%20for%20Application%20-%20VBA)
+- Office文書にはマクロが含まれていることがある。マクロはコンピュータのコマンドを実行するために使用され、被害者のコンピュータにマルウェアをインストールさせたり、攻撃者のネットワークに接続して被害者のコンピュータを制御させたりする可能性がある
 
 - 例えば、会社で働くスタッフが、人事部から「Staff_Salaries.xlsx」というExcelスプレッドシートを含むメールを受け取った。 これは実は、攻撃者が人事部のメールアドレスを詐称し、スタッフを誘惑して添付ファイルを開かせようとしている。  職員が添付ファイルを開き、マクロを有効にすると、その職員のコンピュータが危険にさらされた
 
@@ -297,7 +306,7 @@
 - 多くのブラウザは最新の状態に保たれており、ブラウザの開発方法によって悪用されにくく、バグバウンティングも積極的
 - しかし、商用ソフトウェア/ハードウェアとの互換性がないためにブラウザソフトウェアを更新できない可能性があるため、現場で古い技術を使っていることもある
 - 通常、被害者は電子メールを受け取り、攻撃者が設定した特定のWebサイトを訪問するよう誘導される。被害者がそのサイトにアクセスすると、エクスプロイトがブラウザに作用し、攻撃者は被害者のコンピュータ上で好きなコマンドを実行できるようになる
-- この例として、[CVE-2021-40444](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-40444)があり、これはマイクロソフトのシステムに見つかった脆弱性で、Webサイトを訪問しただけでコードを実行される可能性がある
+- この例として、🔗[CVE-2021-40444](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-40444)があり、これはマイクロソフトのシステムに見つかった脆弱性で、Webサイトを訪問しただけでコードを実行される可能性がある
 
 ---
 ---
@@ -315,7 +324,7 @@
 ※以下、Zoomをクローン対象とする
 
 
-- 上記の2〜4はSETで自動化できる：[Phishing](Phishing.md#フィッシングサイト作成の自動化%20w/%20SET(Social-%20Engineer-Toolkit))
+- 上記の2〜4はSETで自動化できる：[フィッシングサイト作成の自動化 w/ SET(Social- Engineer-Toolkit)](Phishing.md#フィッシングサイト作成の自動化%20w/%20SET(Social-%20Engineer-Toolkit))
 	- しかし、Zoomのログインページのように、POSTリクエストを他のエンドポイントに送信して処理する場合、SETは指定したURLの静的なページしか入力情報をキャプチャできないので、うまくいかない
 	- 💡まず、SETでクローンしてみて、うまくキャプチャできないのであれば、下記の手法でクローンする。
 
@@ -332,6 +341,7 @@
 ### 具体的なPretextの作成 w/ ChatGPT
 
 - 侵害したEmailアカウント上で、Zoomのライセンスについて従業員にアクティベートを要求するメールの送受信が行われていることが確認できた
+
 ![](../画像ファイル/Pasted%20image%2020250509074001.png)
 
 - ChatGPTなどの生成AIを用いて、正規のメールの特徴を"模倣"したメールを作成させる(↓プロンプトプロンプト)
@@ -368,6 +378,7 @@ Best regards,
 1. 正規のサインインページのURLを探す
 	Zoom signin：をインターネットで検索すると、このWebサイトがヒットする
 	https://zoom.us/ja/signin#/login
+
 ![](../画像ファイル/Pasted%20image%2020250509074928.png)
 
 2. クローンするwebサイトの構成情報を保持するディレクトリを作成し、cdする
@@ -397,6 +408,7 @@ sudo python -m http.server 80
 http://localhost/signin.html
 ```
 以下のエラーはOWASP CSRF Guardによるもので、外部にホストされていたJSを読み込むと表示される。無視してOKでよい。
+
 ![](../画像ファイル/Pasted%20image%2020250510094458.png)
 
 5. クローンしたサイトのログインフォームなどの入力フィールド（※）に適当な値を入力し、python webサーバーのログを確認
@@ -488,6 +500,7 @@ http://127.0.0.1/signin.html
 1.  どの`<div>`タグ内にHTMLフォームがあるかを確認するため、開発者ツールのElementsで分析する
 
 - 上の要素から順にマウスカーソルをあわせ、選択した要素がHTMLフォームをハイライトしているなら、その`<div>`タグ内にHTMLフォームがあると判断する
+
 ![](../画像ファイル/Pasted%20image%2020250511154425.png)
 
 - HTMLフォームは以下のdivタグ内（`<div id="app" class="login-page">`）にあることがわかる
@@ -551,14 +564,17 @@ sudo cp -f signin.html signin_orig.html
 subl signin.html
 ```
 - 変更前：
+
 ![](../画像ファイル/Pasted%20image%2020250511155905.png)
 
 - 変更後：
+
 ![](../画像ファイル/Pasted%20image%2020250511160432.png)
 
 4. 保存後、ページをリロードして中身を表示し、本来のページと異なる箇所を把握する
 	- zoomのアイコンがでかい
 	- 本来であれば画面の左側には画像が、右側にはフォームがあったのに消えている
+
 ![](../画像ファイル/Pasted%20image%2020250511160755.png)
 
 #### 4.3.5 LLMを用いたページの調整
@@ -571,9 +587,11 @@ subl signin.html
 
 <header class="layout-header">..{中略}..</header>
 ```
+
 ![](../画像ファイル/Pasted%20image%2020250511162117.png)
 
 2. 正規のSigninページに存在する画像のURLをコピーする
+
 ![](../画像ファイル/Pasted%20image%2020250511162853.png)
 
 3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[Phishing](Phishing.md#4.4%20LLMにPOSTデータ送信先を用意させる)）
@@ -602,6 +620,7 @@ https://zoom.us/ja/signin#/login
 
 5. 保存後、再度ページをリロードして正規とのページの差異を確かめる
 	- 画像の位置
+
 ![](../画像ファイル/Pasted%20image%2020250511163847.png)
 
 6. LLMに微調整させる
@@ -614,6 +633,7 @@ https://zoom.us/ja/signin#/login
 - この下にチェックボックスを作り、その横に「サインインしたままにする」と書いてください。
 - この下に「Zoom は reCAPTCHA で保護されています。Zoom には、Google のプライバシー ポリシーと利用規約が適用されます。」というテキストを追加し、「プライバシーポリシー」と「利用規約」が公式リソースを指すハイパーリンクになっていることを確認してください。
 ```
+
 ![](../画像ファイル/Pasted%20image%2020250511191303.png)
 
 ### 4.4 LLMにPOSTデータ送信先を用意させる
@@ -648,8 +668,8 @@ cat test_data.txt
 
 ## 5. フィッシングメールの作成
 
-- [Phishing](Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
-- ドメイン名は、正規のFQDNを真似ること（[Phishing](Phishing.md#フィッシングドメインの選択)）
+- [1. Credential Phishing Pretext（口実）の作成(Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
+- ドメイン名は、正規のFQDNを真似ること（[フィッシングドメインの選択](Phishing.md#フィッシングドメインの選択)）
 ```txt
 Hello Sales department,
 
@@ -668,9 +688,9 @@ Best regards,
 
 # フィッシングサイト作成の自動化 w/ SET(Social- Engineer-Toolkit)
 
-- [SET - github](https://github.com/trustedsec/social-engineer-toolkit)
+🔗[SET - github](https://github.com/trustedsec/social-engineer-toolkit)
 
-## 概要：
+## 概要
 
 - 特定のWebサイト上記で説明した以下の作業は自動化できる：
 	- 正規のWebサイトのクローン
@@ -683,7 +703,7 @@ Best regards,
 
 - 指定したURLのページのみ、HTMLを==静的==に取得してクローンする
 
-- 異なるエンドポイントへPOSTリクエストしているWebサイトは、<u>入力情報が正常にキャプチャできないため使用不可</u>（[SPA - single page application](https://qiita.com/shinkai_/items/79e539b614ac52e48ca4)など)
+- 異なるエンドポイントへPOSTリクエストしているWebサイトは、<u>入力情報が正常にキャプチャできないため使用不可</u>（🔗[SPA - single page application](https://qiita.com/shinkai_/items/79e539b614ac52e48ca4)など)
 
 - SETでうまく動作するのは、例えば以下のようなサイト：
 	- 古いWordPressのログインページ
@@ -718,6 +738,7 @@ set:webattack> Enter the url to clone: [URL]
 ```
 
 5. サイトがクローンされ、リクエストをキャプチャする状態となる
+
 ![](../画像ファイル/Pasted%20image%2020250510160554.png)
 
 6. Ctrl + Cでキャンセルするまでクローンしたサイトをホストし続ける
