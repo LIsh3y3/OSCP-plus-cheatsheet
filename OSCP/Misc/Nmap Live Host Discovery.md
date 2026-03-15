@@ -1,4 +1,11 @@
-[Port Scan & Vuln Scan](../../Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
+- 関連ノート：
+	- [Port Scan & Vuln Scan](../../Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
+
+>[!NOTE]
+>OSCP試験においては、ターゲットのホストIPが提供されるため、使わなかった。
+
+---
+
 # スキャンタイプ一覧表
 
 | スキャンタイプ                | コマンド例                                                      |
@@ -24,18 +31,9 @@
 
 ---
 
-# ホストディスカバリにおける注意点
-
-- `-Pn`を使ってはいけない
-	- 実際に生きているかどうかをチェックしない、という意味で、ホストディスカバリの意味がなくなる
-	- 使うと、存在しないホストでも、"Host is up"と表示される
-
----
-
 # ホストディスカバリ実行コマンド
 
-- どのホストがオンラインかわからない場合はまずこれを実行
-- `-Pn`は使わないこと [Nmap Live Host Discovery](#ホストディスカバリにおける注意点)
+どのホストがオンラインかわからない場合はまずこれを実行。
 
 複数ホストをスキャンしてオンラインホストの一覧を作成（ping sweep(`-sn`)より正確）
 ```zsh
@@ -51,9 +49,14 @@ ping sweep
 sudo nmap -sn 192.168.1.0/24 -oG ping-sweep.txt
 ```
 
-Nmapが使えないとき：
+Nmapが使えないとき
 ```zsh
 # サブネットに存在する機器に対し、特定ポートがopenかどうかを検証
 for i in $(seq 1 254); do nc -zv -w 1 [サブネットIP第三オクテット].$i <Port>; done
 ```
-- Windowsの場合は[Living off the Land](../../Misc/Living%20off%20the%20Land.md#Test-NetConnectionによるポートスキャン)
+- Windowsの場合は[PowerShell ポートスキャン](Living%20Off%20The%20Land.md#PowerShell%20ポートスキャン)
+
+>[!Warning]
+>- `-Pn`を使ってはいけない
+>	- 実際に生きているかどうかをチェックしない、という意味で、ホストディスカバリの意味がなくなる
+>	- 使うと、存在しないホストでも、"Host is up"と表示される
