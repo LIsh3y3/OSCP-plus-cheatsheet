@@ -342,6 +342,10 @@ cd /var/www/html
 
 1. ブラウザの開発者ツール（Elements）でログインフォームを含む `<div>` を特定する
 2. テキストエディタでファイルの同じ個所を開き、開発者ツールの表示と中身が一致しているか確認する
+	- 動的な場合の例：
+		- ブラウザのElementsでは `<div id="app">` の中にフォームが存在している
+		- テキストエディタでは `<div id="app"></div>` と空になっている
+		- → 中身が一致しない = JSで動的生成されていると判断できる
 
 |結果|判断|
 |---|---|
@@ -392,15 +396,12 @@ sudo touch <logfile>
 sudo chmod 664 <phpファイル> <logfile>
 ```
 
----
-
 ## 5. フィッシングメールの送信
 
 ステップ1で作成したメールに、クローンサイトへのリンクを埋め込んで送信する。
 
-- ドメイン名は正規サービスのFQDNを真似たものを使用すること（→[フィッシングドメインの選択](https://claude.ai/chat/Phishing_%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1.md#%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E9%81%B8%E6%8A%9E)）
+- ドメイン名は正規サービスのFQDNを真似たものを使用すること（[フィッシングドメインの選択](#フィッシングドメインの選択)）
 - 侵害したアカウントから「全返信」することで、既存のスレッドに乗っかり疑われにくくなる
-
 ```txt
 Subject: {正規メールの件名}
 
@@ -409,185 +410,6 @@ Subject: {正規メールの件名}
 [here](<クローンサイトのURL>)  ← フィッシングサイトへのリンクを埋め込む
 ```
 
-
-
----
----
----
-
-
-# Credential Phishing実践
-
-- [ ] Todo: 以降編集
-
-## 概要
-
-1. Credential Phishing Pretext（口実）の作成
-2. 正規のWebサイトのクローン
-3. クローンのクリーンアップ（整頓）
-4. クローンに悪意のある要素を注入する
-5. フィッシングメールの作成
-
-※以下、Zoomをクローン対象とする
-
-- 上記の2〜4はSETで自動化できる：[フィッシングサイト作成の自動化 w/ SET(Social- Engineer-Toolkit)](Phishing.md#フィッシングサイト作成の自動化%20w/%20SET(Social-%20Engineer-Toolkit))
-	- しかし、Zoomのログインページのように、POSTリクエストを他のエンドポイントに送信して処理する場合、SETは指定したURLの静的なページしか入力情報をキャプチャできないので、うまくいかない
-	- 💡まず、SETでクローンしてみて、うまくキャプチャできないのであれば、下記の手法でクローンする。
-
----
-
-## 4. クローンに悪意のある要素を注入する
-
-
-1. 開発者ツールのSourcesタブで、`div id="app"`と検索し、存在することを確認
-2. テキストエディタで同じファイルを開き、`div id="app"`と検索し、開発者ツールと出力が異なることを確認できれば、そのHTMLフォームは動的に生成されるものだとわかる
-
-- Vue / React / Angularなどのフレームワークでは、`<div id="app">`をマウントポイントにしてJavaScriptで内容を挿入・更新する
-
-### 4.3 LLMに任意の静的なHTMLフォームを作成させる
-
-（動的に生成されるJavaScriptコードを分析することも技術的には可能だが、時間がかかるので、LLMに静的なページを作成させる方が早い）
-
-1. 元ページのバックアップを作成する
-```zsh
-sudo cp -f signin.html signin_orig.html
-```
-`-f`：コピー先に同名のファイルがあっても確認せず上書き
-
-2. 開発者ツールのElementsタブから、singin.html上で動的に生成されているHTMLフォーム部分をコピーする（ここでは、`<header class...`を右クリック → Copy → *Copy OuterHTML*）とする
-```html
-<div id="app" class="login-page">
-	<header class="layout-header">...</header> <!-- ⇦この部分 -->
-	...　　<!-- ⇦この部分 -->
-</div>
-```
-	(Copy OuterHTMLは、選択した要素と、その子要素全てをコピーする)
-
-3. テキストエディタで該当の箇所をステップ２でコピーしたHTMLに書き換えて保存する
-```zsh
-subl signin.html
-```
-- 変更前：
-
-![](../画像ファイル/Pasted%20image%2020250511155905.png)
-
-- 変更後：
-
-![](../画像ファイル/Pasted%20image%2020250511160432.png)
-
-4. 保存後、ページをリロードして中身を表示し、本来のページと異なる箇所を把握する
-	- zoomのアイコンがでかい
-	- 本来であれば画面の左側には画像が、右側にはフォームがあったのに消えている
-
-![](../画像ファイル/Pasted%20image%2020250511160755.png)
-
-#### 4.3.5 LLMを用いたページの調整
-
->求める回答がくるようにプロンプトを微調整する必要がある可能性あり
-
-1. Zoomのアイコンを調整する
-```txt
-以下のコードについて、画像を縮小し、少し右下に移動させてください：
-
-<header class="layout-header">..{中略}..</header>
-```
-
-![](../画像ファイル/Pasted%20image%2020250511162117.png)
-
-2. 正規のSigninページに存在する画像のURLをコピーする
-
-![](../画像ファイル/Pasted%20image%2020250511162853.png)
-
-3. LLMに正規のSiginページに存在する画像（ステップ２でコピーしたURL）と、HTMLフォームを挿入させるコードを書かせる（POSTデータの送信先を*custom_login.php*とする：[4.4 LLMにPOSTデータ送信先を用意させる](Phishing.md#4.4%20LLMにPOSTデータ送信先を用意させる)）
-```txt
-divタグを2つ書き、1つは左側に配置し、次の画像を入れてください：
-https://file-paa.zoom.us/1xJu7pL8RIWc9lsGFcnRcQ/MS4yLqsI3_R6GW921i53kTJpxI85yLrAIDXer91U-i7ukgBK/12b43c75-e1f7-4d9c-93ee-aaa7f83fdd1a.png
-
-2つめのdivタグには次のZoomのSign inページに似たログインフォームを追加してください：
-https://zoom.us/ja/signin#/login
-
-最後に、誰かが "Sign In "ボタンをクリックすると、emailとpasswordが "custom_login.php "ページに送られるようにしてください。
-```
-
-4. ステップ３でLLMに生成させたコードを`</header>`タグの後に注入し保存する
-```html
-</header>
-
-{この部分}
-
-</div> <!-- ← <div id="custom_login">の閉じタグ-->
-
-</div>
-<input type="hidden" id="gtm_pageName" value=""/>
-...
-```
-
-5. 保存後、再度ページをリロードして正規とのページの差異を確かめる
-	- 画像の位置
-
-![](../画像ファイル/Pasted%20image%2020250511163847.png)
-
-6. LLMに微調整させる
-```txt
-上記のコードを以下のように編集してください：
-- 画像をもっと上と右に動かす。
-- フォームが画像と重ならないように調整する。
-- Zoomの公式サインインページには、"パスワードをお忘れですか？"の隣に "ヘルプ "のリンクがあるので、それも追加してください。
-- サインインボタンの下に、「サインインにより、私はZoom のプライバシーステートメントとサービス利用規約に同意します。」というテキストを追加し、「Zoomのプライバシーステートメント」と「サービス利用規約」に公式ウェブページへのリンクを設定します。
-- この下にチェックボックスを作り、その横に「サインインしたままにする」と書いてください。
-- この下に「Zoom は reCAPTCHA で保護されています。Zoom には、Google のプライバシー ポリシーと利用規約が適用されます。」というテキストを追加し、「プライバシーポリシー」と「利用規約」が公式リソースを指すハイパーリンクになっていることを確認してください。
-```
-
-![](../画像ファイル/Pasted%20image%2020250511191303.png)
-
-### 4.4 LLMにPOSTデータ送信先を用意させる
-
-- POSTデータ送信先のページを`custom_login.php`とする
-
-1. LLMにPHPファイル生成を依頼する
-```txt
-custom_login.phpファイルのコードを作成するのを手伝ってください。
-まず、メールアドレスとパスワードを取得し、既存のファイルやその内容を上書きすることなく、それらを「test_data.txt」というファイルに書き込む必要があります。
-その後、ユーザーを以下のページにリダイレクトする：
-https://zoom.us/ja/signin#/login
-```
->`test_data.txt`を`credential.txt`と依頼すると、生成AIのポリシーにより手伝ってもらえない可能性がある
-
-2. ステップ１の結果作成されたPHPコードをファイル(`custom_login.php`)に保存し、抽出したデータを書き込むファイルも作成し、権限を付与する
-```zsh
-sudo echo "" > test_data.txt
-sudo chmod 777 custom_login.php
-sudo chmod 777 test_data.txt
-```
-
-- 実際にメールアドレス、パスワードを入力し、サインインボタンを押すと、以下のようにデータを抽出できる
-```zsh
-cat test_data.txt      
-
-メールアドレス: hoge@gmail.com
-パスワード: foobaradmin
-```
-
----
-
-## 5. フィッシングメールの作成
-
-- [1. Credential Phishing Pretext（口実）の作成](Phishing.md#1.%20Credential%20Phishing%20Pretext（口実）の作成)で作成されたメールに、フィッシングサイトへのリンクを追加し、全返信する。
-- ドメイン名は、正規のFQDNを真似ること（[フィッシングドメインの選択](Phishing.md#フィッシングドメインの選択)）
-```txt
-Hello Sales department,
-
-Just a quick reminder—hope everything’s going smoothly on your end! We’re still working on updating our Zoom license inventory and noticed that some accounts haven’t yet logged in to schedule a meeting. To make sure your account remains on a full license, please click [here](http://フィッシングサイト) to log in and schedule a meeting within the next week.
-
-If no meeting is scheduled by the deadline, any inactive accounts will be moved to a free license.
-
-Thanks again for your cooperation, and sorry for the added task! Let us know if you have any questions.
-
-Best regards,
-[Example Company] Helpdesk Team
-```
-
----
 ---
 
 # フィッシングサイト作成の自動化 w/ SET(Social- Engineer-Toolkit)
@@ -611,8 +433,7 @@ Best regards,
 
 - SETでうまく動作するのは、例えば以下のようなサイト：
 	- 古いWordPressのログインページ
-	- 静的HTMLベースのフォームページ
-		- Facebook, Twitterなど
+	- 静的HTMLベースのフォームページ（Facebook, Twitterなど）
 	- PHPやASPのサーバーサイドフォーム付きページ
 
 
@@ -624,7 +445,7 @@ sudo setoolkit
 ```
 
 2. 「1) Social-Engineering Attacks」→「2) Website Attack Vectors」→「3) Credential Harvester Attack Method」→「2) Site Cloner」と遷移する
-	- 💡2)Site Clonerではなく、1)Web Templateを選択すると、GoogleやTwitterなどのフィッシングサイトテンプレートを生成できる。
+	- 2)Site Clonerではなく、1)Web Templateを選択すると、GoogleやTwitterなどのフィッシングサイトテンプレートを生成できる。
 
 3. クローンしたWebサイトをホストするIPアドレスを入力する
 ```zsh
@@ -651,7 +472,6 @@ set:webattack> Enter the url to clone: [URL]
 
 - SET実行イメージ参考ブログ🔗：[https://yamashiro.blog/it/phishing/](https://yamashiro.blog/it/phishing/)
 
----
 ---
 
 # 補足：メールの送信方法
