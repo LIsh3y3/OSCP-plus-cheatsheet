@@ -416,26 +416,22 @@ Subject: {正規メールの件名}
 
 🔗[SET - github](https://github.com/trustedsec/social-engineer-toolkit)
 
-## 概要
+## SETでできること
 
-- 特定のWebサイト上記で説明した以下の作業は自動化できる：
+- 特定のWebサイト上記で説明した以下の作業は自動化できる
 	- 正規のWebサイトのクローン
 	- クローンのクリーンアップ（整頓）
 	- クローンに悪意のある要素を注入する
 
-- SETのプロンプトに答えていくだけでクローンを作成し、リクエストのキャプチャ・レポート出力も可能
+- SETのプロンプトに答えていくだけでクローンを作成し、リクエストのキャプチャやレポート出力が可能
 
-## 🚨留意点
-
-- 指定したURLのページのみ、HTMLを==静的==に取得してクローンする
-
-- 異なるエンドポイントへPOSTリクエストしているWebサイトは、<u>入力情報が正常にキャプチャできないため使用不可</u>（🔗[SPA - single page application](https://qiita.com/shinkai_/items/79e539b614ac52e48ca4)など)
-
-- SETでうまく動作するのは、例えば以下のようなサイト：
-	- 古いWordPressのログインページ
-	- 静的HTMLベースのフォームページ（Facebook, Twitterなど）
-	- PHPやASPのサーバーサイドフォーム付きページ
-
+>[!NOTE]
+>- 指定したURLのページのみ、HTMLを==静的==に取得してクローンする
+>- 異なるエンドポイントへPOSTリクエストしているWebサイトは、<u>入力情報が正常にキャプチャできないため使用不可</u>（🔗[SPA - single page application](https://qiita.com/shinkai_/items/79e539b614ac52e48ca4)など)
+>- SETでうまく動作するのは、例えば以下のようなサイト：
+>	- 古いWordPressのログインページ
+>	- 静的HTMLベースのフォームページ（Facebook, Twitterなど）
+>	- PHPやASPのサーバーサイドフォーム付きページ
 
 ## SETによる認証情報窃取手順
 
@@ -451,11 +447,10 @@ sudo setoolkit
 ```zsh
 set:webattack> IP address for the POST back in Harvester/Tabnabbing [172.16.1.136]: [IPアドレス]
 ```
-- 🚨注意
-	- ドメイン名は不可
-	- グローバルIPアドレスを指定（`curl https://ipinfo.io/ip`の出力）
-	- ネットワークアダプタ設定はNATではなくブリッジで利用する
-		- （VM上ではデフォルトでネットワーク設定がNATとなっていることが多い。NATはゲストマシンのプライベートIPアドレスをルーターでグローバルIPアドレスに変換しているため、NAT設定のVM上で作成したクローンサイトをグローバルIPアドレスでホストしても使えない）
+- ドメイン名は不可
+- グローバルIPアドレスを指定（`curl https://ipinfo.io/ip`の出力）
+- ネットワークアダプタ設定はNATではなくブリッジで利用する
+	- （VM上ではデフォルトでネットワーク設定がNATとなっていることが多い。NATはゲストマシンのプライベートIPアドレスをルーターでグローバルIPアドレスに変換しているため、NAT設定のVM上で作成したクローンサイトをグローバルIPアドレスでホストしても使えない）
 
 4. クローン対象のURLを指定する(ユーザー名・パスワードを入力するサイトが望ましい)
 ```zsh
@@ -466,9 +461,9 @@ set:webattack> Enter the url to clone: [URL]
 
 ![](../画像ファイル/Pasted%20image%2020250510160554.png)
 
-6. Ctrl + Cでキャンセルするまでクローンしたサイトをホストし続ける
+$$SETで認証情報のキャプチャに成功した様子$$
 
-7. キャンセルするとレポートが生成され、`/root/.set/reports`に格納される（root権限で閲覧可）
+6. Ctrl + Cでキャンセルするまでクローンしたサイトをホストし続け、キャンセルするとレポートが生成され、`/root/.set/reports`に格納される（root権限で閲覧可）
 
 - SET実行イメージ参考ブログ🔗：[https://yamashiro.blog/it/phishing/](https://yamashiro.blog/it/phishing/)
 
