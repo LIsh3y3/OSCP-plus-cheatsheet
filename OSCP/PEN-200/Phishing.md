@@ -642,6 +642,7 @@ set:webattack> Enter the url to clone: [URL]
 ![](../画像ファイル/Pasted%20image%2020250510160554.png)
 
 6. Ctrl + Cでキャンセルするまでクローンしたサイトをホストし続ける
+
 7. キャンセルするとレポートが生成され、`/root/.set/reports`に格納される（root権限で閲覧可）
 
 - SET実行イメージ参考ブログ🔗：[https://yamashiro.blog/it/phishing/](https://yamashiro.blog/it/phishing/)
@@ -651,9 +652,8 @@ set:webattack> Enter the url to clone: [URL]
 
 # 補足：メールの送信方法
 
-→[💥Phishingの送信](../Cheatsheet/Ports%20-%20Service/25,465,587%20-%20SMTP.md#💥Phishingの送信)
+[💥Phishingの送信](../Cheatsheet/Ports%20-%20Service/25,465,587%20-%20SMTP.md#💥Phishingの送信)
 
----
 ---
 
 # 参考リンク集🔗
