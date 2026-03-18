@@ -357,7 +357,7 @@ nc -nv <target_IP> <port>
 - ❌文法が難しく、デフォルトでインストールされていない
 - ❌**Windowsではあまり意味がない**（netcatと変わらない）
 - 関連ノート：
-	- [Port Redirection & SSH Port Forwarding](../Stealth&Evasion/Port%20Redirection/Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#LinuxツールによるPort%20Forwading(Socat))
+	- [Port Redirection & SSH Port Forwarding](../Port%20Redirection/Port%20Redirection%20&%20SSH%20Port%20Forwarding.md#LinuxツールによるPort%20Forwading(Socat))
 
 ### Linuxシェルの安定化 w/ Socat
 

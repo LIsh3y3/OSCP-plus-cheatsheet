@@ -325,7 +325,7 @@ cat /etc/resolv.conf
 - すべての接続
 - ルーティングテーブル
 	- 対象マシンを経由して他のサブネットにアクセスできる可能性を探る。
-	- 他サブネットへのルートが存在すれば、そこを通じて新しいターゲットを列挙・攻撃可能 → [Port Redirection & SSH Port Forwarding](../Stealth&Evasion/Port%20Redirection/Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)
+	- 他サブネットへのルートが存在すれば、そこを通じて新しいターゲットを列挙・攻撃可能 → [Port Redirection & SSH Port Forwarding](../Port%20Redirection/Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)
 
 ---
 

