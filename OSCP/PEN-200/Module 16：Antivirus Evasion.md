@@ -6,7 +6,6 @@
 
 - [ ] 以下、OSEP受験時にまとめる
 - 関連ノート：
-	- [4. Introduction to Antivirus](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/4.%20Introduction%20to%20Antivirus.md)
 	- [5. AV Evasion：Shellcode](../TryHackME/Red%20Teaming/4.%20Host%20Evasions/5.%20AV%20Evasion：Shellcode.md)
 
 ---
