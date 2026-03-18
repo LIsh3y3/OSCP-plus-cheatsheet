@@ -344,7 +344,7 @@ msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse
 
 🔗[Veil-framework](https://github.com/Veil-Framework/Veil)：一般的なAVをバイパスするMetasploitペイロードを生成するツール。
 
-**メリット：** ターゲットにPowerShellを開かせてps1ファイルを実行させる必要がない（→後述のps1ファイルの欠点を回避）。
+**メリット：** ターゲットにPowerShellを開かせてps1ファイルを実行させる必要がない（→[PowerShell In-Memory Injection](#PowerShell%20In-Memory%20Injection)で後述のps1ファイルの欠点を回避）。
 
 ```zsh
 # インストール・起動
@@ -388,8 +388,7 @@ msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse
 
 ターゲット環境がそれほど厳しくなければ、PowerShell経由での回避が可能なケースがある。この手法ではPowerShellインタプリタ自身（x86版）へのリモートプロセスインジェクションを行う。
 
-**PowerShellの強み：**
-
+PowerShellの強み：
 - Windows APIと連携可能
 - インメモリインジェクション処理をスクリプト内で実現可能
 - PEと違いコンパイルなしに変更可能でテストが楽
@@ -450,7 +449,11 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
 > [!WARNING] GPOで実行ポリシーが制御されている場合は変更できないため、別のバイパスベクターを探す。
 
-> [!NOTE] ps1ファイルの欠点：ダブルクリックしてもメモ帳で開かれるだけで実行されない。ターゲットユーザーにPowerShellを開かせてスクリプトを実行させることは通常難しい。→ Veil-frameworkで回避可能。 PowerShellワンライナー方式ならファイル保存不要でファイルベーススキャンに引っ掛かりにくい：[Base64化したPowerShellリバースシェルワンライナー](https://claude.ai/Cheatsheet/Common/Bind%20&%20Reverse%20Shell%E3%83%BB%E3%83%9A%E3%82%A4%E3%83%AD%E3%83%BC%E3%83%89%E3%83%BB%E5%AE%89%E5%AE%9A%E5%8C%96%E6%89%8B%E6%B3%95.md#Base64%E5%8C%96%E3%81%97%E3%81%9FPowerShell%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B9%E3%82%B7%E3%82%A7%E3%83%AB%E3%83%AF%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC)
+> [!NOTE] ps1ファイルの欠点
+> ダブルクリックしてもメモ帳で開かれるだけで実行されない。
+> ターゲットユーザーにPowerShellを開かせてスクリプトを実行させることは通常難しい。
+> 　→ [Veil-framework](#Veil-framework)で回避可能。 
+> PowerShellワンライナー方式ならファイル保存不要でファイルベーススキャンに引っ掛かりにくい：[Base64化したPowerShellリバースシェルワンライナー](../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Base64化したPowerShellリバースシェルワンライナー)
 
 ---
 
