@@ -20,9 +20,9 @@
 
 # Todo
 
-- [ ] AttackerIP、TargetIPを、attacker_IP、target_IPに変える（snakeにする）
-- [ ] pwとしているのを、passwordに変更する
-- [ ] ファイルのバックアップを取る
+- [x] AttackerIP、TargetIPを、attacker_IP、target_IPに変える（snakeにする）
+- [x] pwとしているのを、passwordに変更する
+- [x] ファイルのバックアップを取る
 - [x] 不要なファイル（OSCP LABのwriteup、note_template、tryhackme、マインドなど）を削除
 - [ ] 個人情報を削除
 - [ ] 著作物は改変
@@ -33,4 +33,4 @@
 	- Cheatsheetまで修正済み
 	- Toolsも修正済み
 	- Miscも修正済み
-	- あとはPEN-200、Windows Internal, READMEのせいｂ
+	- あとはPEN-200、Windows Internal, READMEの整備、BSCPノートの削除もしくは整理
