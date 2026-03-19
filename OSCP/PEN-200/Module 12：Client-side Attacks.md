@@ -152,16 +152,19 @@ exiftool -a -u [ファイル]
 - MotWが付与されたファイルは...
 	- 保護ビュー（Protected view）で開かれ、すべての編集・変更設定が無効になる
 	- マクロ、埋め込みオブジェクトの実行がブロックされる
+
 ![](../画像ファイル/Pasted%20image%2020250514070955.png)
 
 これまでMotWへの対策として攻撃者は...
 - Enable Editing（編集を有効にする）をターゲットに押下させるために、Pretext（口実）として、ドキュメントの一部を"ぼかし"、「すべて閲覧するためには編集を有効にする必要があります」と依頼した
 - Enable Contentを押させるように依頼した
+
 ![](../画像ファイル/Pasted%20image%2020250514071005.png)
 
 しかしMicrosoftの方針が変わり...
 - マクロの実行はデフォルトで無効にするよう設定された（Offic 2013～）：[Microsoft announce 2022/07/20](https://techcommunity.microsoft.com/blog/microsoft_365blog/helping-users-stay-safe-blocking-internet-macros-by-default-in-office/3071805)
 - Enable Contentのボタンはなくなり、代わりにLearn Moreと表示されるようになった
+
 ![](../画像ファイル/Pasted%20image%2020250514071024.png)
 
 #### MotWありマクロの煩雑な実行ステップ
@@ -175,7 +178,7 @@ exiftool -a -u [ファイル]
 | ③ 保護されたビューの解除     | 上部バーにある「編集を有効にする」をクリック                                                                                                           |
 | ④ マクロの有効化         | さらに「マクロの有効化」をクリック（マクロ付きファイルのみ表示）  <br>※MotWが残っているとこのステップが出てこない or 永続的にブロックされる                                                    |
 
-#### 🏄‍♀️MotWのバイパス
+#### MotWのバイパス
 
 ファイルにMotWのプロパティを付与させない方法として以下がある：
 
@@ -212,13 +215,16 @@ LibreOfficeの場合のマクロ設定方法は、[Proving Grounds Practice writ
 	- Word Document：`.docx`
 	- Word Macro-Enabled Document：`.docm` → マクロの警告あり
 	- ✅Word 97 - 2003 Document：`.doc` → マクロの警告が出ないこともある
+
 ![](../画像ファイル/Pasted%20image%2020250515074938.png)
 
 2. マクロ作成ポップアップを開く
+
 ![](../画像ファイル/Pasted%20image%2020250515075253.png)
 
 3. Macro name（マクロ名）を入力し、Macros in（マクロの保存先）をステップ１で作成したWordファイル（mymacro.doc）を選択し、Create
 	⚠️：保存先を選択しないと、グローバルなテンプレートとして保存されてしまう
+
 ![](../画像ファイル/Pasted%20image%2020250515075507.png)
 
 #### 基礎知識2. マクロの基本的な挙動解説：PowerShellを自動で開く
@@ -270,14 +276,20 @@ Sub MyMacro()
 End Sub
 ```
 - `AutoOpen()`は定義済みマクロ、`Document_Open()`は定義済みイベントで、どちらも同じ目的を持つが、どちらもWord文書の開かれ方によって動作する・しないがあるので、お互いにカバーする
+
 ![](../画像ファイル/Pasted%20image%2020250516080832.png)
+
 $$編集後のマクロ$$
+
 4. Save Mymacro（💾）をクリックし、閉じる。Wordも保存し、閉じる
 5. マクロ挙動の確認のため、再度開いて、警告とEnable-Content（コンテンツを有効にする）ボタンが表示されることを確認
+
 ![](../画像ファイル/Pasted%20image%2020250516081730.png)
 
 6. Enable Contentを押下し、PowerShellが起動されることを確認
+
 ![](../画像ファイル/Pasted%20image%2020250516081833.png)
+
 $$PowerShell起動$$
 
 #### 💥3. Reverse Shell獲得マクロの作成手順
@@ -319,7 +331,8 @@ for i in range(0, len(str), n):
 - `n = 50`：VBAは255文字の制限ではあるが環境差異を考慮した値。なんでもいいが、100でもうまくいく可能性はある。
 - `range(0, len(str), n)`：0から str の長さまで、n（例: 50）文字単位で繰り返す
 - `str[i:i+n]`：文字列 str の i から i+n の範囲を切り出す（部分文字列）
-[](../画像ファイル/Pasted%20image%2020250517181019.png)
+
+![](../画像ファイル/Pasted%20image%2020250517181019.png)
 $$Pythonスクリプト実行結果$$
 
 5. マクロ編集画面で文字列型の変数を宣言し、Base64エンコードして分割した文字列を変数で連結していく
