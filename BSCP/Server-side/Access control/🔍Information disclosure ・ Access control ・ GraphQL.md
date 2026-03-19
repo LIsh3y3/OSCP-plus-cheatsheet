@@ -6,7 +6,7 @@
 
 ###### wordlist
 
-==⚠️Intruderで"URL-encode these characters"のチェックを外す
+⚠️Intruderで"URL-encode these characters"のチェックを外す
 ```
 admin
 .htaccess
