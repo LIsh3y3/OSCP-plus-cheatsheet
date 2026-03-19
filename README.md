@@ -25,6 +25,7 @@
 - [x] ファイルのバックアップを取る
 - [x] 不要なファイル（OSCP LABのwriteup、note_template、tryhackme、マインドなど）を削除
 - [ ] 個人情報を削除
+- [ ] claude, chatgptの文字列で検索かけてそんざいしないか確認する
 - [ ] 著作物は改変
 
 ---
