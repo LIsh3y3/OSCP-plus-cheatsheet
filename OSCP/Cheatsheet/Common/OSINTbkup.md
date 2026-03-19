@@ -42,37 +42,6 @@ dig <domain> MX
 
 # 無料ツール：Netcraft、Shodan
 
-## Netcraft：Search DNS
-
-**Webページの構成技術を表示**することができるWappalyzerのようなもので、Wappalyzerよりも情報量が多い。（2024年に一部機能が有料化・制限された。）
-ただし、個人的にはBurp Suiteを使用してレスポンスのServerやx-powered-byヘッダーの値を見るのが確実性高いと思う。
-
-### 使い方
-
--  [Tools Netcraft](https://www.netcraft.com/tools/) にアクセスし、"Search DNS"を開く
-- ターゲットのhostnameを入力
-- Site Reportに構成技術が書いてある
-
-![](../../画像ファイル/Pasted%20image%2020250302145854.png)
-
-## Shodan
-
-- NmapのOSINT版のようなもので、ターゲットとの接触なしで、**サービス情報や脆弱性を確認**できる
-- 用途は、Activeな列挙に入る前に、どこから列挙していくか当たりをつけるために使う
-
-### 使い方
-
-- `hostname:<target_domain>`を検索バーに入力する
-
-![](../../画像ファイル/Pasted%20image%2020250302172845.png)
-
-- 結果をクリックしてレポートを見る
-- open portでさらに結果を絞ることができる
-
-![](../../画像ファイル/Pasted%20image%2020250302173035.png)
-
-- その他、"Advanced Search"よりポート番号などを指定可能
-
 ## Security Headers & Qualys SSL Labs
 
 ターゲットのセキュリティへの意識に関する洞察を得る。

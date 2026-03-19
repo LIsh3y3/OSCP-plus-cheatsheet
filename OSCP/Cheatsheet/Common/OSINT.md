@@ -331,15 +331,20 @@ $$ViewDNS.infoの結果例$$
 
 🔗[Censys Search](https://search.censys.io/)：IPアドレスとドメインに関する多くの情報を提供する。ポート80・443などに関連する情報や、同じIPを使っている他のWebサイトも確認できる。
 
+![[Pasted image 20260319123255.png]]
 
+$$Censys検索例$$
 
 ## Security Headers
 
 🔗[Security Headers](https://securityheaders.com/)：ターゲットのHTTPレスポンスヘッダーで欠けているものを列挙する。
 
-> [!NOTE] ヘッダーの欠落はそれ自体が脆弱性とは限らないが、Web開発者やサーバー管理者がハードニングに精通していない可能性を示す。
+> [!NOTE] 
+> ヘッダーの欠落はそれ自体が脆弱性とは限らないが、Web開発者やサーバー管理者がハードニングに精通していない可能性を示す。
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020250302173940.png)
+![[Pasted image 20260319123446.png]]
+
+$$$$
 
 ## Qualys SSL Labs
 
