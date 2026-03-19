@@ -494,8 +494,8 @@ keys remove <key_name>           # keyの削除
 
 3. IPアドレスが表示される
 
-![](../../画像ファイル/Pasted%20image%2020260319125306.png)
+![](../../画像ファイル/Pasted%20image%2020260319125933.png)
 
 4. IPアドレスの一つを右クリックして「To DNS Name from passive DNS (Robtex)」などのトランスフォームを選択し、さらに情報を展開する
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230609171313.png)
+![](../../画像ファイル/Pasted%20image%2020260319125949.png)
