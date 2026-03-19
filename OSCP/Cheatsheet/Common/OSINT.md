@@ -422,8 +422,6 @@ db query select * from domains
 db insert domains
 ```
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230609151806.png)
-
 ## ③ マーケットプレイスでモジュールを検索
 
 |コマンド|説明|
@@ -439,8 +437,8 @@ db insert domains
 > - "K"列に`*`があるモジュールはAPIキーが必要（→[Keys](https://claude.ai/chat/154ce50b-1d75-4193-a686-e8b12aeb24cd#Keys)）
 > - "D"列に`*`があるモジュールはサードパーティのPythonライブラリが必要
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230609152847.png)
-
+![[Pasted image 20230609152847.png]]
+![[Pasted image 20230609153050.png]]
 ## ④ モジュールをロードし実行
 
 ```sh
