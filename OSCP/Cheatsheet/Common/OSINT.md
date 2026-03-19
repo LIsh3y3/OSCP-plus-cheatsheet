@@ -97,9 +97,8 @@ dig @<name_server> <domain> AXFR
 - 各検索エンジンの詳細文法：[Google Advanced Search](https://www.google.com/advanced_search) / [Google Refine Web Searches](https://support.google.com/websearch/answer/2466433) / [DuckDuckGo Search Syntax](https://help.duckduckgo.com/duckduckgo-help-pages/results/syntax/) / [Bing Advanced Search Options](https://help.bing.microsoft.com/apex/index/18/en-US/10002)
 
 > [!WARNING]
-> 不用意にアクセスすると法的に罰せられる可能性があるので注意する。
+> Dorkingで発見したサイトに不正にアクセスしたり、データを取得・改ざんしたりする行為は 不正アクセス禁止法等に抵触する可能性がある。検索自体は合法。
 
-- [ ] Todo: 本当に罰せられる？
 ## Dorking syntax
 
 ### フィルタ
