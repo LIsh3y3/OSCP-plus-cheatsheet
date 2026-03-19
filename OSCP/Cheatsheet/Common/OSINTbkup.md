@@ -1,26 +1,5 @@
 Passive Reconとも呼ばれる。
 
-# whois
-
-基本コマンド
-```zsh
-whois <domain|IP>
-```
-
-指定したWHOISサーバーにリクエスト
-```zsh
-whois <domain|IP> -h <whois_server_IP>
-```
-
-## whoisレコード
-
-| 項目             | 役割                                     | 具体例/観点                                                  |
-| -------------- | -------------------------------------- | ------------------------------------------------------- |
-| Registry       | TLDを管理する親分的な組織                         | `.com`, `.net` → Verisign / `.jp` → JPRS / `.org` → PIR |
-| Registrar      | Registryと契約し、ユーザーにドメイン登録を提供する業者（ブローカー） | GoDaddy, Google Domains, Namecheap, お名前.com             |
-| **Registrant** | 実際にドメインを登録する企業や個人（利用者）                 | 個人情報                                                    |
-| Name Server    | IPアドレスとホスト名を変換 or 知らないと応答              | `dig`などのコマンドで情報収集につながる。<br>==ゾーン転送に使える情報==。             |
-
 ## IP・ドメインを指定したときの違い
 
 |                 | IP WHOIS | ドメイン WHOIS |
