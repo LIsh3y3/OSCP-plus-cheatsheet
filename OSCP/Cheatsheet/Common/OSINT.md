@@ -437,8 +437,9 @@ db insert domains
 > - "K"列に`*`があるモジュールはAPIキーが必要（→[Keys](https://claude.ai/chat/154ce50b-1d75-4193-a686-e8b12aeb24cd#Keys)）
 > - "D"列に`*`があるモジュールはサードパーティのPythonライブラリが必要
 
-![[Pasted image 20230609152847.png]]
-![[Pasted image 20230609153050.png]]
+
+
+
 ## ④ モジュールをロードし実行
 
 ```sh
