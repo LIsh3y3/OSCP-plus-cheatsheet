@@ -331,7 +331,7 @@ $$ViewDNS.infoの結果例$$
 
 🔗[Censys Search](https://search.censys.io/)：IPアドレスとドメインに関する多くの情報を提供する。ポート80・443などに関連する情報や、同じIPを使っている他のWebサイトも確認できる。
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020230609140631.png)
+
 
 ## Security Headers
 
