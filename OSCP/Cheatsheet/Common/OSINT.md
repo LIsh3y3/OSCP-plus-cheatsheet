@@ -260,7 +260,8 @@ GitHubの右上検索バーで使えるGoogle Dorkingのようなもの。
 
 🔗[gitleaks](https://github.com/gitleaks/gitleaks)：大規模リポジトリ向け。エントロピー（複雑性）で機密情報と思われるハードコードを検出する。
 
-> [!NOTE] 手動での列挙後に実行すること。検知できないケースもある。
+> [!NOTE] 
+> 手動での列挙後に実行すること。検知できないケースもある。
 
 ```zsh
 sudo apt install gitleaks
@@ -280,11 +281,12 @@ gitleaks detect -v
 
 🔗[Tools Netcraft](https://www.netcraft.com/tools/)：Webページの構成技術を表示するツール（Wappalyzerより情報量が多い。2024年に一部機能が有料化・制限された）。
 
-> [!TIP] Burp Suiteでレスポンスの`Server`や`X-Powered-By`ヘッダーを確認するほうが確実性が高い。
+> [!TIP]
+> Active ReconでBurp Suiteでレスポンスの`Server`や`X-Powered-By`ヘッダーを確認するほうが確実性が高い。
 
-**使い方：** 「Search DNS」を開いてターゲットのhostnameを入力 → Site Reportに構成技術が表示される
+使い方：「Search DNS」を開いてターゲットのhostnameを入力 → Site Reportに構成技術が表示される
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020250302145854.png)
+![](../../画像ファイル/Pasted%20image%2020250302145854.png)
 
 ## Shodan
 
@@ -295,9 +297,9 @@ gitleaks detect -v
 - `hostname:<target_domain>` を検索バーに入力
 - 結果をクリックしてレポートを確認（open portで絞り込みも可能）
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020250302172845.png)
+![](../../画像ファイル/Pasted%20image%2020250302172845.png)
 
-![](https://claude.ai/%E7%94%BB%E5%83%8F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/Pasted%20image%2020250302173035.png)
+![](../../画像ファイル/Pasted%20image%2020250302173035.png)
 
 **CLI の使い方：**
 
