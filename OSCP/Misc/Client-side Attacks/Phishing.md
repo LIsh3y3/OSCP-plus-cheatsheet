@@ -55,7 +55,7 @@
 - SNSアカウントを観察してブランドや友人を把握する
 - Googleでターゲットの名前と場所を検索し、地元企業への口コミがないか調べる
 - ターゲットのビジネスWebサイトで取引先を確認する
-- OSINT戦術を活用する：[[../Cheatsheet/Common/OSINT]]
+- OSINT戦術を活用する：[[../../Cheatsheet/Common/OSINT]]
 
 ## 件名
 
@@ -109,7 +109,7 @@
 | HTA             | ・HTML Application の略（`.hta`）<br>・IEエンジン上でHTML + JavaScriptやVBScriptを**Windowsアプリのように実行可能**<br>・拡張子を偽装して送ることで実行を誘導されやすい                                                         |
 | JS / JSE        | ・JScript または JavaScriptファイル（`.js`, `.jse`）<br>・Windows上ではWScriptで実行され、ファイル操作やネットワーク通信が可能<br>・`.jse` は暗号化されたスクリプト                                                               |
 | VBS / VBE       | ・VBScriptファイル（`.vbs`）とその暗号化版（`.vbe`）<br>・ユーザー操作や自動実行でコードを実行可能                                                                                                                  |
-| DOC / XLS / PPT | ・Office文書形式<br>・マクロを含むことが可能（`.docm`, `.xlsm` など）<br>・MotWがあるとマクロが自動実行されないように設計されている：[[../PEN-200/Client-side Attacks]]                                                          |
+| DOC / XLS / PPT | ・Office文書形式<br>・マクロを含むことが可能（`.docm`, `.xlsm` など）<br>・MotWがあるとマクロが自動実行されないように設計されている：[[Client-side Attacks]]                                                          |
 | RTF             | ・Rich Text Format（書式付きテキスト）<br>・埋め込みオブジェクトや脆弱性（例：CVE-2023-21716）を利用してコード実行が可能<br>・マクロ不要で実行される場合もあり危険性が高い<br>・[CVE-2023-21716](https://nvd.nist.gov/vuln/detail/CVE-2023-21716) |
 | LNK             | ・Windowsショートカットファイル<br>・見た目は普通のファイルだが、内部で任意のコマンド（EXEやスクリプト）を実行できる                                                                                                              |
 | PDF             | ・use-after-free脆弱性によるRCE：[CVE-2023-21608](https://nvd.nist.gov/vuln/detail/CVE-2023-21608)                                                                                     |
@@ -271,7 +271,7 @@ http://localhost/<クローンされたhtmlファイル名>.html
 >[!Warning]
 >ただクローンしただけでは、OWASP CSRFGuardの警告が出るので、ターゲットに怪しまれる。
 
-![](../画像ファイル/Pasted%20image%2020250510094458.png)
+![](../../画像ファイル/Pasted%20image%2020250510094458.png)
 
 $$OWASPのCSRFGuardの画面$$
 
@@ -459,7 +459,7 @@ set:webattack> Enter the url to clone: [URL]
 
 5. サイトがクローンされ、リクエストをキャプチャする状態となる
 
-![](../画像ファイル/Pasted%20image%2020250510160554.png)
+![](../../画像ファイル/Pasted%20image%2020250510160554.png)
 
 $$SETで認証情報のキャプチャに成功した様子$$
 
@@ -471,7 +471,7 @@ $$SETで認証情報のキャプチャに成功した様子$$
 
 # 補足：メールの送信方法
 
-[💥Phishingの送信](../Cheatsheet/Ports%20-%20Service/25,465,587%20-%20SMTP.md#💥Phishingの送信)
+[💥Phishingの送信](../../Cheatsheet/Ports%20-%20Service/25,465,587%20-%20SMTP.md#💥Phishingの送信)
 
 ---
 
