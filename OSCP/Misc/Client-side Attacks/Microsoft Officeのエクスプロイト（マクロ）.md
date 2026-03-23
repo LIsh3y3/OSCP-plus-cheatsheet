@@ -63,8 +63,6 @@
 
 - LibreOfficeの場合のマクロ設定方法：🔗[Proving Grounds Practice write-up - Craft](https://medium.com/@Dpsypher/proving-grounds-practice-craft-4a62baf140cc)
 
-## 用語・前提知識
-
 - [マクロ・VBA・VBScript・WSH](../用語.md#マクロ・VBA・VBScript・WSH)
 - [ActiveX](../用語.md#ActiveX)
 
