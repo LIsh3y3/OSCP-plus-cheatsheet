@@ -87,7 +87,7 @@
 
 ![](../../画像ファイル/Pasted%20image%2020250515075507.png)
 
-### 基礎知識2. マクロの基本的な挙動解説：PowerShellを自動で開く
+### ステップ2：マクロの基本構造（PowerShellを自動起動する）
 
 以降は[macro-generator - GitHub](https://github.com/jotyGill/macro-generator)で自動化できる
 
