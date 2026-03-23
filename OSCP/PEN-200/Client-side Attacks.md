@@ -146,7 +146,7 @@
 | ------------------- | --------------------------------------- | ---------------------------------- |
 | ISOファイル化            | ISOにファイルを格納し、ユーザーにマウントさせる。              | ISO内のファイルはNTFSストリームが無いためMotWが付かない。 |
 | ZIP圧縮 + 解凍ツール依存     | ZIP圧縮し、7-Zipや古い解凍ツールで展開させる。             | 7-Zipなど一部ツールはMotWを伝播しない。           |
-| FAT32/NFSファイルシステム利用 | MotWはNTFSのADSに依存するため、FAT32やNFSでは保存されない。 | USBに保存してから実行させるように誘導               |
+| FAT32/NFSファイルシステム利用 | MotWはNTFSのADSに依存するため、FAT32やNFSでは保存されない。 | USBに保存してから実行させるように誘導。              |
 | IMG/VHD             | 仮想ディスク形式も、マウント後にMotWが除外されるケースがあり、悪用される。 |                                    |
 
 - 参考記事🔗：[Mark-of-the-Web Bypass - Red canary](https://redcanary.com/threat-detection-report/techniques/mark-of-the-web-bypass/)
@@ -159,13 +159,10 @@ LibreOfficeの場合のマクロ設定方法は、[Proving Grounds Practice writ
 
 ### 用語・前提知識
 
-- [用語](../Misc/用語.md#マクロに関する前提知識)
-- [用語](../Misc/用語.md#ActiveXオブジェクト)
-- [用語](../Misc/用語.md#Windows%20Script%20Host(WSH))
-- [用語](../Misc/用語.md#WScript・CScript)
+- [マクロ・VBA・VBScript・WSH](../Misc/用語.md#マクロ・VBA・VBScript・WSH)
+- [ActiveX](../Misc/用語.md#ActiveX)
 
-マクロはClient-Side Attackの攻撃ベクターとして2025年現在も有効
-	（[DDE](https://learn.microsoft.com/en-us/windows/win32/dataxchg/about-dynamic-data-exchange?redirectedfrom=MSDN)や[OLE](https://en.wikipedia.org/wiki/Object_Linking_and_Embedding)は現在はほぼ使えない）
+マクロはClient-Side Attackの攻撃ベクターとして2025年現在も有効。
 
 ### Reverse Shell獲得マクロ作成
 
