@@ -529,11 +529,10 @@ sudo python -m http.server <Port>
 ### 第5段階：配布と実行
 
 12. Windowsマシン上で作成したショートカット(.lnk)を、攻撃者マシンの`webdav`ディレクトリに配置する
-	- [ファイル操作、ユーティリティ](../Cheatsheet/Common/ファイル操作、ユーティリティ.md#scp)
 
 13. （スキップ可）kali上で`test.txt`があれば削除し、ライブラリファイルが変更されていたら再度クリーンにする：[Module 12：Client-side Attacks](#🚨注意：実行後はコードが変わるので要編集)
 
-14. Pretext（口実）を用いて、メールなどで「ライブラリファイル」(.library-ms)を送付（[Phishing](../Misc/Phishing.md#補足：メールの送信方法)）
+14. Pretext（口実）を用いて、メールなどで「ライブラリファイル」(.library-ms)を送付
     メッセージ例：
 ```
 件名：設定ファイルの実行のお願い（ITチームより）
