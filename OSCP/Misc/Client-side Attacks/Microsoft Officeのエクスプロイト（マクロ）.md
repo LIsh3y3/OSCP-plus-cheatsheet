@@ -68,7 +68,7 @@ LibreOfficeの場合のマクロ設定方法は、🔗[Proving Grounds Practice 
 - [マクロ・VBA・VBScript・WSH](../用語.md#マクロ・VBA・VBScript・WSH)
 - [ActiveX](../用語.md#ActiveX)
 
-マクロはClient-Side Attackの攻撃ベクターとして2025年現在も有効。
+マクロはClient-Side Attackのアタックベクターとして2026年現在も有効。
 
 ## Reverse Shell獲得マクロ作成
 
