@@ -102,7 +102,7 @@ Sub MyMacro()
 End Sub
 ```
 
-2.Shellオブジェクトを作成し、PowerShellを実行するマクロ
+Shellオブジェクトを作成し、PowerShellを実行するマクロ
 ```vb
 Sub MyMacro()
 
