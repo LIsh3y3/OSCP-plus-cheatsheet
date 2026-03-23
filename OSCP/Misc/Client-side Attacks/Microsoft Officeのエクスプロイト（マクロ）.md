@@ -89,7 +89,7 @@
 
 ### ステップ2：マクロの基本構造（PowerShellを自動起動する）
 
-以降は[macro-generator - GitHub](https://github.com/jotyGill/macro-generator)で自動化できる
+以降は[macro-generator - GitHub](https://github.com/jotyGill/macro-generator)で自動化できる。
 
 1. マクロ編集画面を開いた時
 ```vb
