@@ -7,21 +7,23 @@
 - 代わりに、Pretextを用意し、ダウンロードリンクなどの方法で悪意ある文書を提供する方法が使われる
 - ただし、外部からダウンロードされたOfficeファイルには、MotWが付与される
 
-## MotW（Mark of the Web）
+---
 
-### MotWとは
+# MotW（Mark of the Web）
+
+## MotWとは
 
 外部の信頼されていない場所からダウンロードされたファイルに自動的に付与されるプロパティ。Zone.Identifier ADS（代替データストリーム）によって付加される。
 	ADS（Alternate Data Stream）：NTFSの機能で、1つのファイルに複数のデータストリーム（見えない"裏ファイル"）を持たせることができる仕組み。
 
-### MotWが付与されたファイルに起きること
+## MotWが付与されたファイルに起きること
 
 - 保護ビュー（Protected View）で開かれ、すべての編集・変更設定が無効になる
 - マクロ・埋め込みオブジェクトの実行がブロックされる
 
 ![](../../画像ファイル/Pasted%20image%2020250514070955.png)
 
-### Microsoftの方針変更（2022年7月）
+## Microsoftの方針変更（2022年7月）
 
 **かつての攻撃手法**： ドキュメントの一部をぼかし「すべて閲覧するためには編集を有効にする必要があります」と依頼して、ターゲットに「Enable Editing（編集を有効にする）」や「Enable Content（コンテンツを有効にする）」を押させていた。
 
@@ -31,7 +33,7 @@
 
 ![](../../画像ファイル/Pasted%20image%2020250514071024.png)
 
-### MotWありのファイルでマクロを実行させる手順（煩雑）
+## MotWありのファイルでマクロを実行させる手順（煩雑）
 
 ターゲットがMotWを解除してマクロを実行するには、以下の煩雑な手順が必要となった。
 
@@ -42,7 +44,7 @@
 | ③ 保護されたビューの解除     | 上部バーにある「編集を有効にする」をクリック                                                                                                                         |
 | ④ マクロの有効化         | さらに「マクロの有効化」をクリック（マクロ付きファイルのみ表示）  <br>※MotWが残っているとこのステップが出てこない or 永続的にブロックされる                                                                  |
 
-### MotWのバイパス
+## MotWのバイパス
 
 ファイルにMotWのプロパティを付与させない方法として以下の手法がある。
 
@@ -59,7 +61,7 @@
 
 # Microsoft WordマクロによるReverse shell獲得
 
-LibreOfficeの場合のマクロ設定方法は、🔗[Proving Grounds Practice write-up - Craft](https://medium.com/@Dpsypher/proving-grounds-practice-craft-4a62baf140cc)を参照
+LibreOfficeの場合のマクロ設定方法は、🔗[Proving Grounds Practice write-up - Craft](https://medium.com/@Dpsypher/proving-grounds-practice-craft-4a62baf140cc)を参照。
 
 ## 用語・前提知識
 
