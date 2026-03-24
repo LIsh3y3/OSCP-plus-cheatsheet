@@ -80,8 +80,7 @@ $$WebDavサーバ構築成功時の出力$$
 >[!TIP] 
 >Windowsマシン（VMまたはRDP）で作業すると、ライブラリファイルや.lnkの構築・テストが楽になる。
 
-File > New Text File(※)で作成し、デスクトップ上にファイルを保存（ここではファイル名を`config.library-ms`とする）
-	- ※：ファイル形式はPlain textでOK
+VSCodeまたはメモ帳で新規テキストファイル (Plain text) を作成し、`config.library-ms` という名前でデスクトップに保存する。以下のXMLを記述して保存する。
 
 ![](../../画像ファイル/Pasted%20image%2020250518144800.png)
 
