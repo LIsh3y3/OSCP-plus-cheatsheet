@@ -88,7 +88,7 @@ $$WebDavサーバ構築成功時の出力$$
 $$空白Windowsライブラリファイル$$
 
 5. `config.library-ms`ファイルにXMLで記述し、保存
-	- ：[Module 12：Client-side Attacks](#補足：XMLコードの解説)
+	- [XMLコードの解説](#XMLコードの解説)
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library">
@@ -218,16 +218,16 @@ $$.lnk実行時の警告ポップアップ$$
 
 ## XMLコードの解説
 
-1. XMLの名前空間を明示する
+1. 名前空間の宣言
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library">
 ...
 </libraryDescription>
 ```
-- xmlns（xml name space)：XMLにおける名前空間（[📕](../../../BSCP/Misc/📕.md#名前空間)）
+- xmlns（xml name space)：XMLにおける名前空間
 - `http://schemas.microsoft.com/windows/2009/librarye`：Microsoftのライブラリスキーマに属することを明示する
-- [用語](../用語.md#xmlnsにおけるリンク)
+- [[xm]]
 
 2. 「ドキュメント」のローカライズリソース（文字列・UI要素）などを参照する
 ```xml
