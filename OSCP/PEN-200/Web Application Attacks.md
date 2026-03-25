@@ -96,7 +96,7 @@ ajaxRequest.send(params);
 ```
 - 1行目に、アクションのHTTP POSTリクエストのパラメタ、かつ、必須の値を指定している
 
-4. [Web攻撃の難読化](../Cheatsheet/Evasion(試験範囲外)/Web攻撃の難読化.md)のJS: CharCodeAt()に従い難読化する。
+4. [Web攻撃の難読化](../Cheatsheet/Evasion(OSCP+試験範囲外)/Web攻撃の難読化.md)のJS: CharCodeAt()に従い難読化する。
 
 5. 難読化したスクリプトをBurpSuiteを用いてXSSに脆弱な箇所に埋め込み、ルートディレクトリへGETリクエストをSend（`<script></script>`で囲む）
 
