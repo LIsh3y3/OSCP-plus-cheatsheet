@@ -198,6 +198,9 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 `LoadLibrary` または `LoadLibraryEx` を使って実行中にDLLをロードし、`GetProcAddress` で呼び出す関数を特定する方式。
 
 ```cpp
+...
+typedef VOID (*DLLPROC) (LPTSTR);
+...
 HINSTANCE hinstDLL;
 DLLPROC HelloWorld;
 BOOL fFreeDLL;
@@ -212,7 +215,9 @@ if (hinstDLL != NULL)
 }
 ```
 
-> [!NOTE] 悪意のあるコードではロードタイム方式よりランタイム方式が多く使われる。悪意あるプログラムがメモリ領域間でファイルを転送する必要がある場合、ランタイム方式は単一のDLLを転送するだけで済み、ロードタイム方式のように複数の依存ファイルを必要としないため管理しやすい。
+> [!NOTE] 
+> 悪意のあるコードではロードタイム方式よりランタイム方式が多く使われる。
+> 悪意あるプログラムがメモリ領域間でファイルを転送する必要がある場合、ランタイム方式は単一のDLLを転送するだけで済み、ロードタイム方式のように複数の依存ファイルを必要としないため管理しやすい。
 
 ---
 
