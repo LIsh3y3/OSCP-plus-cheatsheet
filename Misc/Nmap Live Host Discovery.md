@@ -54,7 +54,7 @@ Nmapが使えないとき
 # サブネットに存在する機器に対し、特定ポートがopenかどうかを検証
 for i in $(seq 1 254); do nc -zv -w 1 [サブネットIP第三オクテット].$i <Port>; done
 ```
-- Windowsの場合は[PowerShell ポートスキャン](Living%20Off%20The%20Land.md#PowerShell%20ポートスキャン)
+- Windowsの場合は[PowerShell ポートスキャン](Living%20off%20the%20Land.md#PowerShell%20ポートスキャン)
 
 >[!Warning]
 >- `-Pn`を使ってはいけない

@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [Bind & Reverse Shell・ペイロード・安定化手法](Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md)
+	- [Bind & Reverse Shell・ペイロード・安定化手法](../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md)
 
 ---
 
@@ -55,7 +55,7 @@ $$WebShell実行例$$
 - エンコード方法はターゲット環境に応じて異なる
 - 基本はBurp SuiteのHackVertorを使って、"url_encode_not_plus"する
 
-🪟Windows：[Bind & Reverse Shell・ペイロード・安定化手法](Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Base64化したPowerShellリバースシェルワンライナー)
+🪟Windows：[Bind & Reverse Shell・ペイロード・安定化手法](../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Base64化したPowerShellリバースシェルワンライナー)
 
 トラブルシューティング: Reverse Shell を実行したのに接続が確立しない場合、FWなどにより遮断されていないか、問題の切り分けに使う
 ```zsh
@@ -481,7 +481,7 @@ Current Dir: <%= Directory.GetCurrentDirectory() %><br>
 	- aspx
 	- ashx
 	- asmx
-- 拡張子は、[サーバ設定の上書きによるバイパス](../Web%20App/File%20upload%20vulnerability.md#サーバ設定の上書きによるバイパス)で変更できる可能性がある
+- 拡張子は、[サーバ設定の上書きによるバイパス](File%20upload%20vulnerability.md#サーバ設定の上書きによるバイパス)で変更できる可能性がある
 
 #### 認証バイパス
 

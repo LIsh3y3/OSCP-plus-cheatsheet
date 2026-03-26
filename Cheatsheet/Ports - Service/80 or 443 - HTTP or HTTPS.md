@@ -56,7 +56,7 @@ feroxbuster -u http://<target_IP>:<Port>/ --depth <num> -r -k -w  /usr/share/sec
 nikto -Format htm -o WebEnum/nikto.html --maxtime=180s -C all -h <target_IP>
 ```
 
-Nmap（[[Port Scan & Vuln Scan#Vuln Scan w/ NSE]]）
+Nmap（[[../Common/Port Scan & Vuln Scan#Vuln Scan w/ NSE]]）
 ```zsh
 sudo nmap --script "http-*" <target_IP> -p <Port>
 ```

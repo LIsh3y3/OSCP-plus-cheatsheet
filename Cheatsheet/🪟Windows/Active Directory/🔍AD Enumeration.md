@@ -299,7 +299,7 @@ setspn -L <サービスアカウント>
 ## オブジェクトの権限列挙
 
 - 関連ノート：
-	- [ACL・DACL・ACE](用語.md#ACL・DACL・ACE)
+	- [ACL・DACL・ACE](../../../Misc/用語.md#ACL・DACL・ACE)
 	- [SID・RID](../../../Misc/用語.md#SID・RID)
 
 ### 目的
