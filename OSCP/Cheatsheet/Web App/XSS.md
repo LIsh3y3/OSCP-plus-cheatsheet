@@ -286,7 +286,6 @@ body:document.cookie
 # Privilege Escalation w/ XSS & CSRF
 
 **シナリオ：**
-
 - CookieにHTTP onlyフラグが付与されていてJavaScriptで窃取できないとき
 - CMSでアカウント作成等のHTTPリクエストを使用した処理が実行され、nonceが使われているとき
 
