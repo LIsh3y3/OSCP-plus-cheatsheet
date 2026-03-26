@@ -108,7 +108,7 @@ ajaxRequest.send(params);
 
 ## Path traversal
 
-- BSCP valutのPath traversalノートを参照→[🔍Path traversal](../../../BSCP/Server-side/Path%20traversal/🔍Path%20traversal.md)
+- BSCP valutのPath traversalノートを参照→[🔍Path traversal](🔍Path%20traversal.md)
 
 ---
 

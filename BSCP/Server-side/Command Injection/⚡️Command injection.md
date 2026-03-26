@@ -46,7 +46,7 @@ nc -lvnp 4444
 
 Comman injectionの結果出力フィルタをバイパスできる
 
-1. `/image?filename=1.jpg`に対して[🔍Path traversal](../Path%20traversal/🔍Path%20traversal.md#Detect)でFile path manipulationが可能か？
+1. `/image?filename=1.jpg`に対して[🔍Path traversal](../../../OSCP/Cheatsheet/Web%20App/🔍Path%20traversal.md#Detect)でFile path manipulationが可能か？
 2. カレントディレクトリを明らかにする
 - Command injectionに脆弱な箇所に対して
 ```
