@@ -30,7 +30,6 @@
 > /api
 > ```
 
----
 
 ## APIエンドポイントの調査
 
@@ -57,26 +56,6 @@
 
 発見したエンドポイントに対して、Param Miner → Guess GET parametersを使用する。
 
----
-
-## Server-side Parameter Pollution
-
-サーバー側で正規のパラメータの値を上書きしたり、機密情報を不正に窃取する攻撃。POSTリクエスト × アクション（メール変更・パスワードリセット等）でみられる。平文だけでなくJSONやXML等の構造化データの場合もある。
-
-詳細：🔗[PortSwigger - Server-side parameter pollution](https://portswigger.net/web-security/api-testing/server-side-parameter-pollution)
-
-### 検知方法
-
-**確実な手がかり：** Backslash Powered Scannerによって「Suspicious input transformation」が検知されたときはほぼ確実。
-
-**手動での確認：** 正当なパラメータの後ろに `#` や `&` をURLエンコードして付与し、レスポンスがフィールド情報を示唆するものであれば陽性。
-
-```
-username=administrator%23hoge   # #をURLエンコード
-username=administrator%26hoge   # &をURLエンコード
-```
-
-→ [💥API testing](https://claude.ai/chat/%F0%9F%92%A5API%20testing.md#Server-side%20parameter%20pollution)
 
 ---
 
@@ -86,9 +65,8 @@ username=administrator%26hoge   # &をURLエンコード
 
 調査で発見したHTTPメソッドや `Content-Type` を使用して、任意の値に変更する。
 
-🔗[Lab: Finding and exploiting an unused API endpoint](https://portswigger.net/web-security/api-testing/lab-exploiting-unused-api-endpoint)
+🔗[Web Security Academy Lab: Finding and exploiting an unused API endpoint](https://portswigger.net/web-security/api-testing/lab-exploiting-unused-api-endpoint)
 
----
 
 ## Mass Assignment によるPrivEsc
 
@@ -97,7 +75,6 @@ username=administrator%26hoge   # &をURLエンコード
 ### 手順
 
 1. あるAPIエンドポイントへのリクエスト・レスポンスのパラメータを観察する
-
 ```json
 {
     "username": "wiener",
@@ -106,7 +83,6 @@ username=administrator%26hoge   # &をURLエンコード
 ```
 
 2. 他のAPIエンドポイントへのリクエスト・レスポンスを観察し、追加のパラメータを探す
-
 ```json
 {
     "id": 123,
@@ -118,8 +94,7 @@ username=administrator%26hoge   # &をURLエンコード
 
 3. `PATCH` または `POST` リクエストで、他のエンドポイントで使われているパラメータを試す
 
-**正常な値でエラーが出ないか確認：**
-
+正常な値でエラーが出ないか確認：
 ```http
 PATCH /api/users/
 
@@ -130,8 +105,7 @@ PATCH /api/users/
 }
 ```
 
-**不正な値でエラーが出るか確認（エラーが出る = パラメータを受け付けている）：**
-
+不正な値でエラーが出るか確認（エラーが出る = パラメータを受け付けている）：
 ```http
 {
     "isAdmin": hogehoge
@@ -156,74 +130,14 @@ PATCH /api/users/
 ---
 
 ---
-## Detect
-
-#### Server-side parameter pollutionの場合
-
-- サーバ側で正規のパラメタの値を上書きしたり不正に機密情報を窃取する攻撃-> [詳細：PortSwigger](https://portswigger.net/web-security/api-testing/server-side-parameter-pollution)
-- POSTリクエスト × アクション(メール変更、パスワードリセット等)でみられる。平文だけでなくJSONやXML等構造化データもあり得る
-
-###### Server-side parameter pollution?
-
-- Backslash Powererd Scannerによって"Suspicious input transformation"が検知されたときはほぼ確実
-- 正当なパラメタの後ろに`#`や`&`を付与し(urlencode)、レスポンスがフィールド情報を示唆するものであれば検知
-```
-username=administrator#hoge
-```
-```
-username=administrator&hoge
-```
--> [💥API testing](💥API%20testing.md#Server-side%20parameter%20pollution)
 
 
-↓その他
-
-### APIエンドポイントを発見する
-
-- `GET /` に対してAPIのエンドポイント[wordlist](https://github.com/chrislockard/api_wordlist/blob/master/common_paths.txt)でbrute-forceする
-	or
-- 1通り探索したあと、HTTP historyでapiへのリクエストを確認する(ログイン後の探索がいい)
-	or
-- Scannerでpassive scanで自動的に検出される
-	or
-- Extension: JS Link finderからJavaScriptファイル内でAPIエンドポイントへの参照を見つける
-
-- エンドポイントを特定したらベースのpathも閲覧すること。重要情報が得られることもある
-	- `/api/example/v1/users/123`↓
-		- `/api/example/v1`
-		- `/api/example`
-		- `/api`
-
----
-### 有効なHTTPリクエスト作成のためのAPIエンドポイントについての調査
-
-###### 利用可能なHTTPメソッドの特定
-
-- 発見したAPIエンドポイントで、かつ重要でないオブジェクトを扱うものに対してIntruderにかける
-- Payload type: Simple list -> Add from list -> HTTP verbs
-```
-§GET§ /api/v1/重要でないオブジェクト
-```
-
-###### 利用可能なContent-Typeヘッダの特定
-
-- 発見したAPIエンドポイントに対してContent type convertorを使用しリクエスト
- - Errorによる役立つ情報の開示はあるか？
- - Content-Typeを変更してもエラーはないか？
-
-###### 利用可能なパラメタの検出
-
-- 発見したAPIエンドポイントに対して、Param Miner -> Guess GET parameters
 
 ---
 
 # Exploitation
 
-###### 使用されてないエンドポイントを悪用する
 
-- [API testing](API%20testing.md#有効なHTTPリクエスト作成のためのAPIエンドポイントについての調査)で発見したHTTPメソッドや`Content-Type`を使用して任意の値に変更する
-
-[Lab: Finding and exploiting an unused API endpoint](https://portswigger.net/web-security/api-testing/lab-exploiting-unused-api-endpoint)
 
 ---
 ## Mass assignmentを利用したPrivEsc
