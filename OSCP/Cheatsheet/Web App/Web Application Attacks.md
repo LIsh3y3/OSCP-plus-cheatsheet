@@ -46,7 +46,7 @@
 
 ## XSS
 
-- 基本はBSCP valutのXSSノートを参照→[🔍XSS](../../../BSCP/Client-side/XSS/🔍XSS.md)
+- 基本はBSCP valutのXSSノートを参照→[🔍XSS](🔍XSS.md)
 
 ### 具体例：Privilege Escalation w/XSS & CSRF
 

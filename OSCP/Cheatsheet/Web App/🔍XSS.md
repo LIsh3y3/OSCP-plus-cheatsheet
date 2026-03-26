@@ -1,6 +1,6 @@
-[⚡️XSS](⚡️XSS.md)
+[💥XSS](💥XSS.md)
 
-🚨必ず一読：[🔍 Recon](../../cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
+🚨必ず一読：[🔍 Recon](../../../BSCP/cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
 # 注目ポイント
 
 - Post Comment機能
@@ -9,7 +9,7 @@
 - Check Stock機能
 - Cookieの値が`username: token`の形式
 - Remember me機能：Stay-logged-in Cookie
-- (LiveChat機能): [2. WebSocketの脆弱性と悪用](../WebSockets/2.%20WebSocketの脆弱性と悪用.md#脆弱性を悪用するためのWebSocketメッセージの操作)
+- (LiveChat機能): [2. WebSocketの脆弱性と悪用](../../../BSCP/Client-side/WebSockets/2.%20WebSocketの脆弱性と悪用.md#脆弱性を悪用するためのWebSocketメッセージの操作)
 
 ---
 # Detect
@@ -48,24 +48,24 @@ HTTP headerも追加する場合
 
 #### JSファイル
 
-- もしWeb cache poisoningの脆弱性も併せて検出したら、[🔍Web cache poisoning](../../Advanced/Web%20cache%20poisoning/🔍Web%20cache%20poisoning.md)へ
+- もしWeb cache poisoningの脆弱性も併せて検出したら、[🔍Web cache poisoning](../../../BSCP/Advanced/Web%20cache%20poisoning/🔍Web%20cache%20poisoning.md)へ
 
 ### 持続型
 
 #### Comment機能
 
 - Comment、Websiteのパラメタ値をScan 
-	- OAST：[⚡️XSS](⚡️XSS.md#Comment機能の場合)
+	- OAST：[💥XSS](💥XSS.md#Comment機能の場合)
 	- 通常↓
 ![[Pasted image 20240208110822.png | 400]]
 
 ##### Cookieが`username:token`の場合
 
-- `username`をScan selected insertion point ->[⚡️XSS](⚡️XSS.md#Cookieがusername%20tokenの場合)
+- `username`をScan selected insertion point ->[💥XSS](💥XSS.md#Cookieがusername%20tokenの場合)
 
 ### DOM-based XSS
 
-- DOM XSSはScannerじゃ見つからない可能性が高いので[🔍DOM-based Vuln](../DOM-based%20vuln/🔍DOM-based%20Vuln.md#Detect)へ
+- DOM XSSはScannerじゃ見つからない可能性が高いので[🔍DOM-based Vuln](../../../BSCP/Client-side/DOM-based%20vuln/🔍DOM-based%20Vuln.md#Detect)へ
 
 ---
 

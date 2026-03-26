@@ -1,18 +1,3 @@
-###### まとめ
-
-- [4. XSS contexts](#HTMLタグ内でのXSS)
-- [4. XSS contexts](#HTMLタグの属性内のXSS)
-- [4. XSS contexts](#JavaScriptへのXSS)
-	- [4. XSS contexts](#既存のスクリプトを強制終了させ任意のJSを実行する方法)
-	- [4. XSS contexts](#引用符('or")で囲まれた文字列からの脱却)
-	- [4. XSS contexts](#HTMLエンコードの利用)
-	- [4. XSS contexts](#JSテンプレートリテラルの利用)
-- [4. XSS contexts](#Misc)
-	- [4. XSS contexts](#難読化)
-	- [4. XSS contexts](#クエリストリングへの埋め込み)
-	- [4. XSS contexts](#もしURLエンコードされて実行されないならWebキャッシュポイズニング)
-
----
 ## HTMLタグ内でのXSS
 
 ##### 🚨：HTMLタグ内でのXSSペイロード注入時の注意点
@@ -26,7 +11,7 @@
 "><body onresize=print()>"
 ```
 
-- [🔍 Recon](../../cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
+- [🔍 Recon](../../../BSCP/cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
 
 ---
 ### HTMLタグ内のXSSメソドロジー
@@ -171,7 +156,7 @@ http://foo?&apos;-alert(1)-&apos;
 
 ###### 利用可能なケースと特徴
 
-- 入力した内容がテンプレートリテラル([JavaScriptとJSON](../../Misc/JavaScriptとJSON.md#テンプレートリテラルとは))に埋め込まれているケース
+- 入力した内容がテンプレートリテラル([JavaScriptとJSON](../../../BSCP/Misc/JavaScriptとJSON.md#テンプレートリテラルとは))に埋め込まれているケース
 - 他のテクニックと違って、既存のJSを終了させる必要がない。
 
 ###### 方法
@@ -214,4 +199,4 @@ ${alert(1)}
 
 ###### もしURLエンコードされて実行されないならWebキャッシュポイズニング
 
-- [3. 実装の欠陥の悪用](../../Advanced/Web%20cache%20poisoning/4.%20キャッシュ実装の欠陥の悪用/3.%20実装の欠陥の悪用.md#正規化されたCache%20keyの悪用)
+- [3. 実装の欠陥の悪用](../../../BSCP/Advanced/Web%20cache%20poisoning/4.%20キャッシュ実装の欠陥の悪用/3.%20実装の欠陥の悪用.md#正規化されたCache%20keyの悪用)

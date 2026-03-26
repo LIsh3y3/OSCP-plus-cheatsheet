@@ -31,7 +31,7 @@
 
 
 - [🔍 Recon](#Content%20discovery)
-- [🔍XSS](../Client-side/XSS/🔍XSS.md)
+- [🔍XSS](../../OSCP/Cheatsheet/Web%20App/🔍XSS.md)
 - [🔍DOM-based Vuln](../Client-side/DOM-based%20vuln/🔍DOM-based%20Vuln.md)
 - [🔍Web cache poisoning](../Advanced/Web%20cache%20poisoning/🔍Web%20cache%20poisoning.md)
 - [🔍HTTP Host header attack](../Advanced/HTTP%20Host%20header%20attacks/🔍HTTP%20Host%20header%20attack.md)

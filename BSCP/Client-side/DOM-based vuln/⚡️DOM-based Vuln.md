@@ -1,5 +1,5 @@
  [XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
- [⚡️XSS](../XSS/⚡️XSS.md#Cookie窃取用スクリプト基本形)
+ [💥XSS](../../../OSCP/Cheatsheet/Web%20App/💥XSS.md#Cookie窃取用スクリプト基本形)
 
 ### DOM XSS
 
