@@ -1,10 +1,3 @@
-###### まとめ
-
-- [⚡️CSRF](#&%20OAuth)
-- [⚡️CSRF](#&%20WebSocket)
-- [⚡️CSRF](#Referer%20validation)
-- [⚡️CSRF](#CSRF%20token%20validation%20flow)
-- [⚡️CSRF](#SameSite%20cookie制限バイパス)
 
 ---
 ## & OAuth
