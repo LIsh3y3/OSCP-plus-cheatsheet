@@ -12,25 +12,34 @@
 - ペネトレーションテストの技術を体系的に学びたい方
 - 日本語で攻撃的セキュリティを学びたい方
 
-# 注意
+# Obsidianセットアップ / 使用方法
 
-- マシンはKali Linux（Debian 12）を使っているので、使用環境に応じてコマンドを変更する必要がある
-	- 例：`sudo apt install...`→`sudo apt-get`
+## 1. 事前準備
 
-# 使用方法
+- **Obsidianのインストール**
+    
+    - 公式サイトからOSに合わせたインストーラーをダウンロードし、実行
+        
+- **Gitのインストール**
+    
+    - Windows環境の場合、Git for Windowsなどをインストール
+        
 
-1. obsidianをインストール
-2. Windowsの場合はGitをインストール
-3. git pull
-4. create vault（保管庫）で、保存したノートのルートフォルダを開く
+### 2. リポジトリの取得
 
-# Tips
+- ターミナル（PowerShellやbash）を開き、任意のディレクトリで以下のコマンドを実行
+    
 
-- [ ] todo:　これいれるかどうか迷う。本題ではない気がする。
+Bash
 
-- Web Appの攻撃手法詳細は、[Web Security Academy - PortSwigger](https://portswigger.net/web-security)を参照
+```
+git clone <リポジトリのURL>
+```
 
-- モバイル端末の動機は、🔗[GitSync](https://viscouspotenti.al/posts/gitsync-all-devices-tutorial)を使う
-	- GitSyncとObsidian Gitの併用は競合の原因となるので、.gitignoreに、./obsidian/plugin/を追加したうえで、AndroidはGitSyncで、Windows/MacはObsidian.gitで管理
+### 3. Obsidianでの展開
 
-
+2. 「Open folder as vault（フォルダを保管庫として開く）」をクリック
+    
+3. 手順2でクローンしたリポジトリのルートフォルダ（`README.md` がある階層）を選択
+    
+4. 「Trust this author（この作者を信頼する）」を選択して読み込み完了
