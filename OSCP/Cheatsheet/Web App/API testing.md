@@ -1,11 +1,159 @@
+# 注目ポイント
 
-
-#### 注目ポイント
-
-- Forgot password機能： Please enter your username
+- Forgot password機能（Please enter your usernameなど）
 - Update your email
 - JSON形式のレスポンス
-- `/api~`リクエスト
+- `/api~` リクエスト
+
+---
+
+# Detection
+
+## APIエンドポイントの発見
+
+以下のいずれかの方法で発見する：
+
+|方法|説明|
+|---|---|
+|Brute-force|`GET /` に対してAPIエンドポイント用[wordlist](https://github.com/chrislockard/api_wordlist/blob/master/common_paths.txt)でブルートフォースする|
+|HTTP history|一通り探索した後、HTTP historyでAPIへのリクエストを確認する（ログイン後の探索が効果的）|
+|Scanner|Passive Scanで自動的に検出される|
+|JS Link Finder|JavaScriptファイル内のAPIエンドポイントへの参照を見つける（Extension）|
+
+> [!TIP] エンドポイントを特定したらベースのパスも確認すること。重要な情報が得られることがある。
+> 
+> ```
+> /api/example/v1/users/123
+>   ↓ 確認する
+> /api/example/v1
+> /api/example
+> /api
+> ```
+
+---
+
+## APIエンドポイントの調査
+
+発見したエンドポイントに対して有効なリクエストを作成するために以下を調査する。
+
+### 利用可能なHTTPメソッドの特定
+
+重要でないオブジェクトを扱うエンドポイントに対してIntruderをかける：
+
+```http
+§GET§ /api/v1/<重要でないオブジェクト>
+```
+
+- Payload type: Simple list → Add from list → HTTP verbs
+
+### 利用可能なContent-Typeヘッダの特定
+
+発見したエンドポイントに対してContent Type Convertorを使用してリクエストを送り、以下を確認する：
+
+- Content-Typeを変更してもエラーはないか
+- エラーメッセージに有用な情報が含まれないか
+
+### 利用可能なパラメータの検出
+
+発見したエンドポイントに対して、Param Miner → Guess GET parametersを使用する。
+
+---
+
+## Server-side Parameter Pollution
+
+サーバー側で正規のパラメータの値を上書きしたり、機密情報を不正に窃取する攻撃。POSTリクエスト × アクション（メール変更・パスワードリセット等）でみられる。平文だけでなくJSONやXML等の構造化データの場合もある。
+
+詳細：🔗[PortSwigger - Server-side parameter pollution](https://portswigger.net/web-security/api-testing/server-side-parameter-pollution)
+
+### 検知方法
+
+**確実な手がかり：** Backslash Powered Scannerによって「Suspicious input transformation」が検知されたときはほぼ確実。
+
+**手動での確認：** 正当なパラメータの後ろに `#` や `&` をURLエンコードして付与し、レスポンスがフィールド情報を示唆するものであれば陽性。
+
+```
+username=administrator%23hoge   # #をURLエンコード
+username=administrator%26hoge   # &をURLエンコード
+```
+
+→ [💥API testing](https://claude.ai/chat/%F0%9F%92%A5API%20testing.md#Server-side%20parameter%20pollution)
+
+---
+
+# Exploitation
+
+## 未使用エンドポイントの悪用
+
+調査で発見したHTTPメソッドや `Content-Type` を使用して、任意の値に変更する。
+
+🔗[Lab: Finding and exploiting an unused API endpoint](https://portswigger.net/web-security/api-testing/lab-exploiting-unused-api-endpoint)
+
+---
+
+## Mass Assignment によるPrivEsc
+
+**Mass Assignmentとは：** 隠しパラメータ、または他のエンドポイントへのリクエストに使用されるパラメータを使って、攻撃者の意図する値に変更する攻撃。
+
+### 手順
+
+1. あるAPIエンドポイントへのリクエスト・レスポンスのパラメータを観察する
+
+```json
+{
+    "username": "wiener",
+    "email": "wiener@example.com"
+}
+```
+
+2. 他のAPIエンドポイントへのリクエスト・レスポンスを観察し、追加のパラメータを探す
+
+```json
+{
+    "id": 123,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "isAdmin": "false"
+}
+```
+
+3. `PATCH` または `POST` リクエストで、他のエンドポイントで使われているパラメータを試す
+
+**正常な値でエラーが出ないか確認：**
+
+```http
+PATCH /api/users/
+
+{
+    "username": "wiener",
+    "email": "wiener@example.com",
+    "isAdmin": false
+}
+```
+
+**不正な値でエラーが出るか確認（エラーが出る = パラメータを受け付けている）：**
+
+```http
+{
+    "isAdmin": hogehoge
+}
+```
+
+4. パラメータの値を改変してリクエストし、PrivEscを完了する
+
+```http
+PATCH /api/users/
+
+{
+    "username": "wiener",
+    "email": "wiener@example.com",
+    "isAdmin": true
+}
+```
+
+🔗[Lab: Exploiting a mass assignment vulnerability](https://portswigger.net/web-security/api-testing/lab-exploiting-mass-assignment-vulnerability)
+
+---
+---
 
 ---
 ## Detect
