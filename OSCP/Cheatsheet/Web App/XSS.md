@@ -1,8 +1,6 @@
-
-🔗[XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet) 🔗[OWASP XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
-
-- 関連ノート：[XSS](https://claude.ai/chat/XSS.md)
-- 🚨必ず一読：[URLエンコードについて](https://claude.ai/BSCP/cheatsheet/%F0%9F%94%8D%20Recon.md#%E2%AD%90%EF%B8%8FURL%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- 参考リンク：
+	- 🔗[XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet) 
+	- 🔗[OWASP XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
 
 ---
 

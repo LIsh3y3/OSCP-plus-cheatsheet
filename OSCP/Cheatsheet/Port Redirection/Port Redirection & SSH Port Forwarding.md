@@ -181,16 +181,17 @@ sudo proxychains smbclient -L //<target_IP>/ -U <username> --password=<password>
 ```
 
 >[!TIP]
->`proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする。```zsh
+>`proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする
+>```sh
 ># Some timeouts in milliseconds
 >tcp_read_time_out 15000
 >tcp_connect_time_out 8000
 >```
-	↓
-```zsh
-tcp_read_time_out 1200
-tcp_connect_time_out 800
-```
+>↓
+>```sh
+>tcp_read_time_out 1200
+>tcp_connect_time_out 800
+>```
 
 ---
 
@@ -289,17 +290,17 @@ sudo proxychains nmap -vvv -sT --top-ports=20 -Pn -n <target_IP>
 >`target_IP`には、Jump Host 01からネットワーク情報を列挙して発見した、**内部NW側**のインターフェースを使用する。たとえば、TargetがNICを2つもっていて、222.111.123.231という外部からアクセスできるIPと192.168.1.1という内部からのみアクセスできるIPをもっていたら、`target_IP`には192.168.1.1を指定する。
 
 >[!TIP]
->`proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする。
-```zsh
-# Some timeouts in milliseconds
-tcp_read_time_out 15000
-tcp_connect_time_out 8000
-```
-	↓
-```zsh
-tcp_read_time_out 4000
-tcp_connect_time_out 2000
-```
+>`proxychains nmap`の速度が遅い場合は、Proxychainsの設定で以下の２つの値を小さくする
+>```sh
+># Some timeouts in milliseconds
+>tcp_read_time_out 15000
+>tcp_connect_time_out 8000
+>```
+>↓
+>```sh
+>tcp_read_time_out 1200
+>tcp_connect_time_out 800
+>```
 
 ---
 
