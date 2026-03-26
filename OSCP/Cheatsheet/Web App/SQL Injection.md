@@ -1,5 +1,7 @@
 - 関連ノート：
 	- [1433 - MSSQL](1433%20-%20MSSQL.md)
+	- [3306 - MySQL](../Ports%20-%20Service/3306%20-%20MySQL.md)
+	- [5432,5433 - PostgreSQL](../Ports%20-%20Service/5432,5433%20-%20PostgreSQL.md)
 	- [0. RDBMSの基本](../../../BSCP/Server-side/SQLi/0.%20RDBMSの基本.md)
 
 - 参考リンク🔗：
