@@ -34,10 +34,6 @@
 
 # 攻撃手法
 
-## Information disclosure
-
-- BSCPのInformation disclosureのノートを参照
-	- →[🔍Information disclosure ・ Access control ・ GraphQL](../../BSCP/Server-side/Access%20control/🔍Information%20disclosure%20・%20Access%20control%20・%20GraphQL.md)
 
 ---
 
