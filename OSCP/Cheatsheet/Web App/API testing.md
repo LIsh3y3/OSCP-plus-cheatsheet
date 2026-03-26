@@ -13,12 +13,12 @@
 
 以下のいずれかの方法で発見する：
 
-|方法|説明|
-|---|---|
-|Brute-force|`GET /` に対してAPIエンドポイント用[wordlist](https://github.com/chrislockard/api_wordlist/blob/master/common_paths.txt)でブルートフォースする|
-|HTTP history|一通り探索した後、HTTP historyでAPIへのリクエストを確認する（ログイン後の探索が効果的）|
-|Scanner|Passive Scanで自動的に検出される|
-|JS Link Finder|JavaScriptファイル内のAPIエンドポイントへの参照を見つける（Extension）|
+| 方法             | 説明                                                                                                        |
+| -------------- | --------------------------------------------------------------------------------------------------------- |
+| Brute-force    | `GET /` に対してAPIエンドポイント用🔗[api_wordlist - GitHub](https://github.com/chrislockard/api_wordlist)でブルートフォースする |
+| HTTP history   | 一通り探索した後、HTTP historyでAPIへのリクエストを確認する（ログイン後の探索が効果的）                                                       |
+| Scanner        | Passive Scanで自動的に検出される                                                                                    |
+| JS Link Finder | JavaScriptファイル内のAPIエンドポイントへの参照を見つける（Extension）                                                            |
 
 > [!TIP] エンドポイントを特定したらベースのパスも確認すること。重要な情報が得られることがある。
 > 
