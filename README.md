@@ -30,13 +30,34 @@
 
 #### Active Directory
 
+- [ADの基本](OSCP/Cheatsheet/🪟Windows/Active%20Directory/ADの基本.md)
 - [🔍AD Enumeration](OSCP/Cheatsheet/🪟Windows/Active%20Directory/🔍AD%20Enumeration.md)
 - [🔍 Credentials Harvesting](OSCP/Cheatsheet/🪟Windows/Active%20Directory/🔍%20Credentials%20Harvesting.md)
 - [💥AD認証システムの攻撃](OSCP/Cheatsheet/🪟Windows/Active%20Directory/💥AD認証システムの攻撃.md)
 - [💥Lateral Movement & Persistance in AD](OSCP/Cheatsheet/🪟Windows/Active%20Directory/💥Lateral%20Movement%20&%20Persistance%20in%20AD.md)
-- [[]]
+- [💥AD Exploit](OSCP/Cheatsheet/🪟Windows/Active%20Directory/💥AD%20Exploit.md)
 
+#### Windowsの基礎・前提知識
 
+- [PrivEsc前提知識：Windowsの特権とAccess Controlの仕組み](OSCP/Cheatsheet/🪟Windows/Windowsの基礎・前提知識/PrivEsc前提知識：Windowsの特権とAccess%20Controlの仕組み.md)
+- [Windows Internal](OSCP/Cheatsheet/🪟Windows/Windowsの基礎・前提知識/Windows%20Internal.md)
+
+### Common
+
+- [Bind & Reverse Shell・ペイロード・安定化手法](OSCP/Cheatsheet/Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md)
+- [Git Enumeration](OSCP/Cheatsheet/Common/Git%20Enumeration.md)
+- [OSINT](OSCP/Cheatsheet/Common/OSINT.md)
+- [Password Attack](OSCP/Cheatsheet/Common/Password%20Attack.md)
+- [Port Scan & Vuln Scan](OSCP/Cheatsheet/Common/Port%20Scan%20&%20Vuln%20Scan.md)
+- [スクリプト・コマンド・シェル操作](OSCP/Cheatsheet/Common/スクリプト・コマンド・シェル操作.md)
+- [ファイル操作、ユーティリティ](OSCP/Cheatsheet/Common/ファイル操作、ユーティリティ.md)
+- [権限関連の知識、コマンド](OSCP/Cheatsheet/Common/権限関連の知識、コマンド.md)
+- [公開エクスプロイトの探索](OSCP/Cheatsheet/Common/公開エクスプロイトの探索.md)
+- [公開エクスプロイトの修正](OSCP/Cheatsheet/Common/公開エクスプロイトの修正.md)
+
+### Port Redirection
+
+- [[http]]
 
 ---
 
