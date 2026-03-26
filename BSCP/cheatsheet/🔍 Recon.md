@@ -63,7 +63,7 @@
 - [🔍XXEi](../Server-side/XXE%20injection/🔍XXEi.md)
 - [🔍SSRF](../Server-side/SSRF/🔍SSRF.md)
 - [🔍SSTI](../Advanced/Server-side%20template%20injection/🔍SSTI.md)
-- [🔍Path traversal](../../OSCP/Cheatsheet/Web%20App/🔍Path%20traversal.md)
+- [🔍Path traversala](../../OSCP/Cheatsheet/Web%20App/🔍Path%20traversala.md)
 - [⚡️File upload vuln](../Server-side/File%20upload%20vuln/⚡️File%20upload%20vuln.md)
 - [🔍 Insecure deserialization](../Advanced/Insecure%20deserialization/🔍%20Insecure%20deserialization.md)
 - [🔍Command Injection](../Server-side/Command%20Injection/🔍Command%20Injection.md)
