@@ -9,7 +9,7 @@
 1. Burpを起動し、Interceptはoffのままで、診断対象のwebサイトにアクセスする
 2. ある程度アクセスしたら、TargetのSitemapのエントリから診断したいエントリを右クリックで選択し、Add to scopeを選択する
 3. Proxy Settings->Request|Responce Interception rulesの下記項目にチェックを入れる
-![ 500](../../OSCP/Images/Pasted%20image%2020230311192214.png)
+![ 500](../../Images/Pasted%20image%2020230311192214.png)
 
 4. upボタンで追加したルールを最上位（最優先)に設定する
 
@@ -72,7 +72,7 @@ WebSocketの場合：
 2. Battering Ram
 	- sniperと同じく一つのアイテム(payload set)を使用するが、違いは、各ポジションに一斉に同じ値を代入するところ
 	- ↓下イメージみたいに、どこが壊れるかみるために一斉にぶつけるイメージ
-	![ 150](../../OSCP/Images/Pasted%20image%2020230312164020.png)
+	![ 150](../../Images/Pasted%20image%2020230312164020.png)
 
 3. Pitch fork
 	- sniperの次によく使われるattack type
@@ -82,7 +82,7 @@ WebSocketの場合：
 	- 理想的にはペイロードの数は同じくらいがいい
 	- なぜなら、100行と90行のリストがあった時、intruderは90回しかリクエストしない。何か一つのリストが終了したらintruderはテストをやめてしまう
 	- ポジションは上から下、左から右の順番でpayloadsetを選択してpayload settingsを変更する
-	 ![ 150](../../OSCP/Images/Pasted%20image%2020230312164332.png)
+	 ![ 150](../../Images/Pasted%20image%2020230312164332.png)
 
  4. Cluseter Bomb
 	 - pitch forkと同様に複数のpayload setを使用可能
@@ -98,7 +98,7 @@ WebSocketの場合：
 	- 自動でURLエンコードされてしまうので、ペイロードの動作のために、エンコードしないようにすることも可能
 
 - payloadに設定して攻撃し、以下の画像のようにStatusやLengthを見比べて他と異なるレスポンスを返すリクエストをみる。（この場合Length 592)
-![](../../OSCP/Images/Pasted%20image%2020230313134935.png)
+![](../../Images/Pasted%20image%2020230313134935.png)
 
 - ログインフォームを突破しようとしたとき、ログインフォームに適当な値を入力してキャプチャすると、ユーザ名とパスワードだけでなく、*リクエスト毎に*異なるセッションクッキーやCSRFトークン（正規のページからアクセスが行われてることを証明するための値）がレスポンスに見られることがある。
 	- この場合、ユーザ名とパスワードはpitch fork攻撃などで割り出せるが、セッションクッキーとCSRFトークンは割りだせない
@@ -199,13 +199,13 @@ BAPPのインストールが進まない
 ### 応用的な使い方
 
 - [Burpの基本的な操作やトラブルシューティング](#Turbo%20Intruder)と合わせて使用可能
-- 詳細は[3. 多要素認証の脆弱性](../Server-side/Authentication/3.%20多要素認証の脆弱性.md#CSRF%20Token%20bypass%20一定回数の入力ミスで認証コードがリセットされる場合)を確認
+- 詳細は[3. 多要素認証の脆弱性](../../../BSCP/Server-side/Authentication/3.%20多要素認証の脆弱性.md#CSRF%20Token%20bypass%20一定回数の入力ミスで認証コードがリセットされる場合)を確認
 
 ---
 
 # WebSocket関連
 
-- [1. WebSocketsの基本と安全化](../Client-side/WebSockets/1.%20WebSocketsの基本と安全化.md)
+- [1. WebSocketsの基本と安全化](../../../BSCP/Client-side/WebSockets/1.%20WebSocketsの基本と安全化.md)
 - 詳細は[記事](https://portswigger.net/web-security/websockets#manipulating-websocket-messages-to-exploit-vulnerabilities)
 
 ## WebSocketメッセージのinterceptと変更
