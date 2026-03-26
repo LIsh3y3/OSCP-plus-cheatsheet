@@ -1,5 +1,5 @@
 - 関連ノート：
-	- [SQL Injection](../Common/SQL%20Injection.md)
+	- [SQL Injection](../Web%20App/SQL%20Injection.md)
 
 ---
 
@@ -213,7 +213,7 @@ droopescan scan drupal http://<target_IP> -t 32
 - [ ] Apache VirtualHost（または nginx/IIS の同等機能）に注意！ `/etc/hosts` にすべての(サブ)ドメインをtarget IPで登録
 - [ ] デフォルト／一般的な認証情報でログイン試行
 - [ ] 認証バイパス(SQLi)：`' or 1=1 -- #` などで試行
-- [ ] 悪意ある文字でSQL/NoSQLインジェクションのテスト：[悪意のある文字を使ったテスト（"Bad Chars"）](../Common/SQL%20Injection.md#悪意のある文字を使ったテスト（"Bad%20Chars"）)
+- [ ] 悪意ある文字でSQL/NoSQLインジェクションのテスト：[](../Web%20App/SQL%20Injection.md#悪意のある文字を使ったテスト（"Bad%20Chars"）)
 - [ ] コマンドインジェクションをテスト：
     - [ ] 区切り文字: `; | & || &&`
     - [ ] クオート解除: `" '`

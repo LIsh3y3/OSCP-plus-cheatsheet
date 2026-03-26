@@ -54,12 +54,12 @@ $
 
 エラーメッセージの種類表
 
-| RDBMS      | 典型エラーメッセージ                                                                        | 備考                                                                                                               |
-| ---------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| MSSQL      | `Unclosed quotation mark after the character string`  <br>`Incorrect syntax near` | `SqlException` や `.SqlClient.` を含む<br>（参考ノート：[Webアプリケーションのテクノロジー](../../../BSCP/Misc/Webアプリケーションのテクノロジー.md#ASP)） |
-| MySQL      | `You have an error in your SQL syntax; check the manual...`                       | `MySqlException` など                                                                                              |
-| PostgreSQL | `syntax error at or near`                                                         | `org.postgresql.util.PSQLException`（Java系）                                                                       |
-| Oracle     | `ORA-01756: quoted string not properly terminated`                                | `OracleException` が出ることもある                                                                                       |
+| RDBMS      | 典型エラーメッセージ                                                                        | 備考                                         |
+| ---------- | --------------------------------------------------------------------------------- | ------------------------------------------ |
+| MSSQL      | `Unclosed quotation mark after the character string`  <br>`Incorrect syntax near` | `SqlException` や `.SqlClient.` を含む         |
+| MySQL      | `You have an error in your SQL syntax; check the manual...`                       | `MySqlException` など                        |
+| PostgreSQL | `syntax error at or near`                                                         | `org.postgresql.util.PSQLException`（Java系） |
+| Oracle     | `ORA-01756: quoted string not properly terminated`                                | `OracleException` が出ることもある                 |
 
 バージョン情報表示のコマンド表
 
