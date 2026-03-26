@@ -238,16 +238,7 @@ BApp Storeから拡張機能をダウンロード・管理する機能。
 
 ---
 
-# Extender
-
-- 拡張機能をBapp storeからダウンロードできる
-- ページ上部のBurp Extentionsのリストは上から順でburp suiteのトラフィックが通過するので、up downボタンで順番を並び替えることができる
-- ページ下部のボックスには現在選択しているモジュールの内容が出る
-- BApp storeでインストールすると新しいタブが出たり拡張機能によっては見た目に反映されなかったりする
-- pythonでコーディングされた拡張機能を適用するにはJythonをインストールする必要がある
-	- [Jython website](https://www.jython.org/download)　へアクセス
-	- jaython standaloneを適当な位置に保存して、burpのoptionsサブタブを開く
-	- python enviromentまでスクロールして、保存したファイルのパスを指定する
+ E
 
 ---
 
