@@ -62,16 +62,3 @@ PATCH /api/users/
 
 [Lab: Exploiting a mass assignment vulnerability](https://portswigger.net/web-security/api-testing/lab-exploiting-mass-assignment-vulnerability)
 
----
-## Server-side parameter pollution
-
-- パスワードリセット
-- [2. クエリとして内部APIへ送信するストリングのテスト](4.%20Server-sideパラメタ汚染/2.%20クエリとして内部APIへ送信するストリングのテスト.md#Server-side%20parameter%20pollution)
-
-[Lab: Exploiting server-side parameter pollution in a query string](https://portswigger.net/web-security/api-testing/server-side-parameter-pollution/lab-exploiting-server-side-parameter-pollution-in-query-string)
-
----
-## Expert: REST pathのテスト(可能性低)
-
-- [3. REST pathのテスト](4.%20Server-sideパラメタ汚染/3.%20REST%20pathのテスト.md)
-
