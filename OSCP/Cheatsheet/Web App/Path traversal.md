@@ -128,35 +128,7 @@ user:x:1000:1000:user,,,:/home/<username>:/usr/bin/zsh
 ssh -i id_rsa <username>@<target_IP>
 ```
 
-パスフレーズがある場合はssh2johnでクラックを試みる：[🐈‍⬛Password Crack - JtR・Hashcat](https://claude.ai/OSCP/Tools/%F0%9F%90%88%E2%80%8D%E2%AC%9BPassword%20Crack%20-%20JtR%E3%83%BBHashcat.md#%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E5%80%A4%E3%81%AE%E6%95%B4%E5%BD%A2)
+パスフレーズがある場合はssh2johnでクラックを試みる：[ハッシュ値の整形](../../Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ハッシュ値の整形)
 
-> [!TIP] `/etc/shadow` なども抽出の候補となり得る。
-
-
-
----
----
-
-
----
-
-# SSH private keyの抽出
-
-初期侵入ができていない段階で有効
-
-1. [⚡️Path traversal](#手法)に従い、`/etc/passwd`を抽出し、ユーザーとそのhome directoryをメモ（`/home/<username>`）
-```
-user:x:1000:1000:user,,,:/home/<username>:/usr/bin/zsh
-```
-
-2. home directory配下の秘密鍵を抽出
-	- id_rsa以外にもある：[22 - SSH](../../../OSCP/Cheatsheet/Ports%20-%20Service/22%20-%20SSH.md#SSH%20Private%20Keyの種類)
-```
-../../../../../../../../../home/<username>/.ssh/id_rsa
-```
-
-3. 秘密鍵を使ってSSHサーバーにアクセスする
-	- パスフレーズがあればssh2johnでクラックを試みる：[🐈‍⬛Password Crack - JtR・Hashcat](../../../OSCP/Tools/🐈‍⬛Password%20Crack%20-%20JtR・Hashcat.md#ハッシュ値の整形)
-
-
--  その他、`/etc/shadow`なども抽出の候補となり得る
+> [!Note]
+> `/etc/shadow` なども抽出の候補となり得る。
